@@ -6,48 +6,37 @@ useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
 </script>
 
 <template>
-  <div v-if="dialect" class="dialect">
-    <header class="dialect-header">
-      <p v-if="dialect.parent" class="crumb">
-        <NuxtLink :to="`/d/${dialect.parent.slug}`">{{ dialect.parent.nameAr }}</NuxtLink>
-      </p>
-      <h1 class="lemma title">{{ dialect.nameAr }}</h1>
-      <p v-if="dialect.descriptionAr" class="muted">{{ dialect.descriptionAr }}</p>
-      <p v-if="dialect.children.length" class="children">
-        <NuxtLink v-for="c in dialect.children" :key="c.id" :to="`/d/${c.slug}`" class="pill">{{ c.nameAr }}</NuxtLink>
-      </p>
-    </header>
+  <article v-if="dialect">
+    <hgroup>
+      <p v-if="dialect.parent">ضمن <NuxtLink :to="`/d/${dialect.parent.slug}`">{{ dialect.parent.nameAr }}</NuxtLink></p>
+      <h1>{{ dialect.nameAr }}</h1>
+      <p v-if="dialect.descriptionAr">{{ dialect.descriptionAr }}</p>
+    </hgroup>
+    <p v-if="dialect.children.length">
+      تتفرع إلى:
+      <template v-for="c in dialect.children" :key="c.id">
+        <NuxtLink :to="`/d/${c.slug}`" rel="tag">{{ c.nameAr }}</NuxtLink>{{ ' ' }}
+      </template>
+    </p>
 
-    <p v-if="!dialect.entries.length" class="muted">لا توجد كلمات بعد في هذه اللهجة.</p>
-    <div v-for="e in dialect.entries" :key="e.id" class="entry">
-      <div class="entry-head">
-        <span class="lemma form">{{ e.form }}</span>
-        <NuxtLink v-if="e.dialect.slug !== dialect.slug" :to="`/d/${e.dialect.slug}`" class="pill">{{ e.dialect.nameAr }}</NuxtLink>
-        <VoteBox :score="e.score" class="entry-vote" />
+    <dl v-if="dialect.entries.length">
+      <div v-for="e in dialect.entries" :key="e.id">
+        <dt>
+          <b>{{ e.form }}</b>
+          <NuxtLink v-if="e.dialect.slug !== dialect.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
+        </dt>
+        <dd>
+          <p v-if="e.words.length">
+            بالفصحى:
+            <template v-for="(w, i) in e.words" :key="w.id">
+              <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
+            </template>
+          </p>
+          <p>{{ e.meaning }}</p>
+          <div><VoteBox :score="e.score" /></div>
+        </dd>
       </div>
-      <p class="meaning">
-        <span class="form-inline">{{ e.form }}</span> تعني:
-        <NuxtLink v-for="w in e.words" :key="w.id" :to="`/w/${w.id}`" class="msa">{{ w.headword }}</NuxtLink>
-      </p>
-      <p class="meaning-text">{{ e.meaning }}</p>
-    </div>
-  </div>
+    </dl>
+    <p v-else>لا توجد كلمات بعد في هذه اللهجة.</p>
+  </article>
 </template>
-
-<style scoped>
-.dialect { max-width: var(--measure); }
-.dialect-header { margin-bottom: var(--space-l); }
-.crumb { font-size: var(--step--1); }
-.title { font-size: var(--step-5); }
-.dialect-header p { margin-top: var(--space-2xs); }
-.children { display: flex; flex-wrap: wrap; gap: var(--space-3xs); }
-
-.entry { margin-bottom: var(--space-m); }
-.entry-head { display: flex; align-items: baseline; gap: var(--space-2xs); flex-wrap: wrap; }
-.form { font-size: var(--step-3); }
-.entry-vote { margin-inline-start: auto; align-self: center; }
-.meaning { margin-top: var(--space-3xs); }
-.form-inline { font-weight: 700; }
-.msa { font-weight: 700; margin-inline-end: var(--space-3xs); }
-.meaning-text { color: var(--muted); margin-top: 0; }
-</style>

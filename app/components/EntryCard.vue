@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// One entry of the dictionary list: a <dt> (the form, tagged with its dialect)
+// and a <dd> (what it means, examples, synonyms, date, votes). Must sit in a <dl>.
 defineProps<{
   entry: {
     id: number
@@ -15,51 +17,44 @@ defineProps<{
   hideDialect?: boolean
 }>()
 
-const fmt = (d?: string | Date) => d ? new Intl.DateTimeFormat('ar', { day: 'numeric', month: 'long' }).format(new Date(d)) : ''
+const iso = (d: string | Date) => new Date(d).toISOString().slice(0, 10)
+const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(d))
 </script>
 
 <template>
-  <article class="entry">
-    <p v-if="entry.createdAt" class="date">{{ fmt(entry.createdAt) }}</p>
-    <div class="entry-head">
-      <span class="lemma">{{ entry.form }}</span>
-      <NuxtLink v-if="!hideDialect" :to="`/d/${entry.dialect.slug}`" class="pill">{{ entry.dialect.nameAr }}</NuxtLink>
-      <VoteBox :score="entry.score" class="entry-vote" />
-    </div>
+  <div>
+    <dt>
+      <b>{{ entry.form }}</b>
+      <NuxtLink v-if="!hideDialect" :to="`/d/${entry.dialect.slug}`" rel="tag">{{ entry.dialect.nameAr }}</NuxtLink>
+    </dt>
+    <dd>
+      <p v-if="entry.words.length">
+        بالفصحى:
+        <template v-for="(w, i) in entry.words" :key="w.id">
+          <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
+        </template>
+      </p>
+      <p>{{ entry.meaning }}</p>
+      <p v-if="entry.notes"><small>{{ entry.notes }}</small></p>
 
-    <p class="meaning">
-      <span class="form-inline">{{ entry.form }}</span> تعني:
-      <NuxtLink v-for="w in entry.words" :key="w.id" :to="`/w/${w.id}`" class="msa">{{ w.headword }}</NuxtLink>
-      <span v-if="!entry.words.length">{{ entry.meaning }}</span>
-    </p>
-    <p v-if="entry.words.length" class="meaning-text">{{ entry.meaning }}</p>
-    <p v-if="entry.notes" class="muted">{{ entry.notes }}</p>
+      <ul v-if="entry.examples.length">
+        <li v-for="x in entry.examples" :key="x.id">
+          <q>{{ x.text }}</q>
+          <small v-if="x.gloss"> {{ x.gloss }}</small>
+        </li>
+      </ul>
 
-    <ul v-if="entry.examples.length" class="examples">
-      <li v-for="x in entry.examples" :key="x.id">
-        <span class="example">{{ x.text }}</span>
-        <span v-if="x.gloss" class="gloss">{{ x.gloss }}</span>
-      </li>
-    </ul>
+      <p v-if="entry.synonyms.length">
+        مرادفات:
+        <template v-for="s in entry.synonyms" :key="s.id">
+          <NuxtLink :to="`/w/${s.wordId}`" rel="tag">{{ s.dialect.nameAr }}</NuxtLink> {{ s.form }}
+        </template>
+      </p>
 
-    <p v-if="entry.synonyms.length" class="synonyms">
-      <span class="row-label">مرادفات</span>
-      <NuxtLink v-for="s in entry.synonyms" :key="s.id" :to="`/w/${s.wordId}`" class="pill pill--green" :title="s.form">{{ s.dialect.nameAr }}</NuxtLink>
-    </p>
-  </article>
+      <div>
+        <VoteBox :score="entry.score" />
+        <time v-if="entry.createdAt" :datetime="iso(entry.createdAt)">{{ fmt(entry.createdAt) }}</time>
+      </div>
+    </dd>
+  </div>
 </template>
-
-<style scoped>
-.entry { margin-bottom: var(--space-l); }
-.date { line-height: 1.2; }
-.entry-head { display: flex; align-items: baseline; gap: var(--space-2xs); flex-wrap: wrap; }
-.entry-vote { margin-inline-start: auto; align-self: center; }
-.meaning { margin-top: var(--space-2xs); }
-.form-inline { font-weight: 700; }
-.msa { font-weight: 700; margin-inline-end: var(--space-3xs); }
-.meaning-text { color: var(--muted); margin-top: 0; }
-.examples { list-style: none; padding: 0; margin: var(--space-3xs) 0 0; }
-.examples li { display: flex; flex-direction: column; }
-.gloss { color: var(--muted); font-size: var(--step--1); }
-.synonyms { margin-top: var(--space-2xs); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3xs); }
-</style>

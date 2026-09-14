@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  // <search> is a native HTML element Vue's tag list does not know yet.
+  vue: { compilerOptions: { isCustomElement: tag => tag === 'search' } },
   runtimeConfig: {
     public: {
       // true for the read-only GitHub Pages snapshot (set LAHGA_STATIC=1 at build time)

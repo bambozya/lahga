@@ -34,26 +34,26 @@ if (config.public.staticSite) {
 
 const submit = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
 watch(() => route.query.q, v => { q.value = String(v ?? '') })
+useHead({ title: 'الفهرس - لهجة' })
 </script>
 
 <template>
-  <div>
-    <h1 class="page-title">الفهرس</h1>
-    <form class="search-form browse-search mb-3" @submit.prevent="submit">
-      <input v-model="q" type="search" class="search-input" placeholder="ابحث بالفصحى أو بأي لهجة..." />
-      <button type="submit" class="search-button">بحث</button>
+  <article>
+    <h1>الفهرس</h1>
+    <form action="/browse" method="get" @submit.prevent="submit">
+      <p>
+        <label for="q">ابحث بالفصحى أو بأي لهجة</label>
+        <input id="q" v-model="q" type="search" name="q" />
+      </p>
+      <p><button type="submit">بحث</button></p>
     </form>
 
-    <p v-if="activeQuery" class="muted mb-2">نتائج البحث عن «{{ activeQuery }}»</p>
-    <p v-if="status === 'pending'" class="muted">جاري البحث...</p>
-    <p v-else-if="!words?.length" class="muted">لا توجد نتائج.</p>
-    <div v-else class="results">
-      <WordCard v-for="w in words" :key="w.id" :word="w" />
-    </div>
-  </div>
-</template>
+    <p v-if="status === 'pending'" role="status">جاري البحث…</p>
+    <p v-else-if="activeQuery" role="status">{{ words?.length ?? 0 }} نتيجة للبحث عن «{{ activeQuery }}»</p>
 
-<style scoped>
-.browse-search { max-width: 520px; }
-.results { max-width: var(--measure); }
-</style>
+    <dl v-if="words?.length">
+      <WordCard v-for="w in words" :key="w.id" :word="w" />
+    </dl>
+    <p v-else-if="status !== 'pending'">لا توجد نتائج.</p>
+  </article>
+</template>

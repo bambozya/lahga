@@ -1,135 +1,129 @@
 @import './fonts.css';
 @import './scale.css';
-@import './base.css';
 
 /* ------------------------------------------------------------------
-   Tokens. Colours from the Arab Revolt flag, warmed: brick red chrome,
-   black type and pattern, green for dialect links, straw in the sadu
-   motif, all on a cream ground with a white column.
-   Type sizes are Utopia steps (--step-N) and spacing Utopia spaces
-   (--space-N); see scale.css. Old variable names are kept as aliases so
-   the ported static pages follow the palette.
+   Brutal. Two colours, one rule weight, no classes, no media queries.
+   Elements are styled by what they are, so the markup must be honest:
+   the feed is a <dl>, a dialect tag is <a rel="tag">, an example is <q>,
+   a date is <time>, the vote score is <output>, the search box is
+   <search>. Layout is flex-wrap with a 3px gap over an ink background,
+   which draws the rules between cells whatever way they wrap.
+   Dark mode comes from light-dark() for free.
+   The home page is the only page whose root is a <div>: it holds a
+   <section> (feed) and an <aside> (dialects) side by side.
    ------------------------------------------------------------------ */
 :root {
-  --ink: #141414;
-  --red: #b3271e;
-  --red-dark: #8e1d16;
-  --green: #1d6b3a;
-  --green-dark: #14512b;
-  --straw: #e8b82b;
-  --pill: #f3ecc4;
-  --cream: #efe7c2;
-  --paper: #ffffff;
-  --line: #d9d2ad;
-  --text: #141414;
-  --muted: #6b665a;
-  --faint: #9a9484;
-
-  --font-body: 'Noto Naskh Arabic', 'Geeza Pro', 'Arabic Typesetting', serif;
-  --font-display: 'Aref Ruqaa', 'Noto Naskh Arabic', serif;
-  --font-logo: 'Amiri', 'Noto Naskh Arabic', serif;
-
-  --column: 1040px;
-  --measure: 720px;
-
-  /* aliases used by the ported pages */
-  --primary-color: var(--red);
-  --primary-dark: var(--red-dark);
-  --secondary-color: var(--green);
-  --accent-color: var(--straw);
-  --text-color: var(--text);
-  --light-text: var(--muted);
-  --lighter-text: var(--faint);
-  --background-color: var(--paper);
-  --card-background: var(--paper);
-  --border-color: var(--line);
-  --success-color: var(--green);
-  --error-color: var(--red);
-  --shadow: none;
-  --font-family: var(--font-body);
+  color-scheme: light dark;
+  --ink: light-dark(#000, #fff);
+  --paper: light-dark(#fff, #000);
+  --accent: light-dark(#b3271e, #ff6a5c);
+  --rule: 3px solid var(--ink);
+  --measure: 62ch;
 }
 
-/* ---------- Sadu band: Bedouin weaving, the site's one ornament ---------- */
-.sadu {
-  height: 30px;
-  background-color: var(--cream);
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: 60px 30px;
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23efe7c2'/%3E%3Cpath d='M2 3h26L15 15z' fill='%23141414'/%3E%3Cpath d='M2 27h26L15 15z' fill='%23141414'/%3E%3Cpath d='M15 10l4 5-4 5-4-5z' fill='%23e8b82b'/%3E%3Cpath d='M45 3l12 12-12 12-12-12z' fill='%23b3271e'/%3E%3Cpath d='M45 9l6 6-6 6-6-6z' fill='%23e8b82b'/%3E%3Cpath d='M45 13l2 2-2 2-2-2z' fill='%23141414'/%3E%3C/svg%3E");
-}
-
-/* ---------- Base ---------- */
+* { box-sizing: border-box; }
 html { direction: rtl; }
 body {
-  font-family: var(--font-body); font-size: var(--step-0); line-height: 1.8;
-  background: var(--cream); color: var(--text);
-  font-synthesis: none; -webkit-font-smoothing: antialiased;
-}
-button, input, textarea, select { font-family: var(--font-body); font-size: var(--step-0); }
-button { cursor: pointer; }
-h1, h2, h3 { line-height: 1.3; text-wrap: balance; margin: 0; }
-p { margin: 0; }
-p + p { margin-top: var(--space-2xs); }
-
-a { text-decoration: none; color: var(--red); transition: color 0.15s; }
-a:hover { color: var(--green); }
-:focus-visible { outline: 3px solid var(--straw); outline-offset: 2px; }
-
-.container { width: 100%; max-width: var(--column); margin: 0 auto; padding-inline: var(--space-s-m); }
-
-/* ---------- Shared building blocks ---------- */
-.page-title { font-size: var(--step-4); font-weight: 700; color: var(--ink); margin-bottom: var(--space-s); }
-.section-title {
-  font-family: var(--font-display); font-size: var(--step-2); color: var(--ink);
-  margin-bottom: var(--space-xs); padding-bottom: var(--space-3xs); border-bottom: 2px solid var(--ink);
+  margin: 0; min-height: 100dvh;
+  font: 400 var(--step-0)/1.8 'Noto Naskh Arabic', 'Geeza Pro', serif;
+  font-synthesis: none; background: var(--paper); color: var(--ink);
 }
 
-/* Headword: big, underlined like a dictionary lemma */
-.lemma {
-  display: inline-block; font-size: var(--step-3); font-weight: 700; color: var(--ink); line-height: 1.25;
-  border-bottom: 3px solid var(--ink); padding-bottom: 0.05em;
+/* ---------- Text ---------- */
+h1, h2, h3, p, dl, dd, ul, ol, figure, fieldset { margin: 0; }
+h1 { font-size: var(--step-4); line-height: 1.2; text-wrap: balance; }
+h2 { font-size: var(--step-2); line-height: 1.3; }
+h3 { font-size: var(--step-1); line-height: 1.4; }
+small { font-size: var(--step--1); }
+time { font-variant-numeric: tabular-nums; }
+dfn, address, cite { font-style: normal; }
+q { font-size: var(--step-1); quotes: '«' '»'; }
+hr { border: 0; border-top: var(--rule); margin-block: var(--space-m); }
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 4px solid var(--accent); outline-offset: 2px; }
+
+/* Vertical rhythm: siblings inside a block get a gap; headings get a bigger one. */
+:is(article, section, aside, dd, hgroup, footer, fieldset, main > div > *) > * + * { margin-block-start: var(--space-xs); }
+* + h2 { margin-block-start: var(--space-l); }
+main :is(p, li, dd) { max-width: var(--measure); }
+
+/* ---------- Links ---------- */
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+a[rel="tag"] {
+  display: inline-block; border: 2px solid; padding-inline: 0.45em; line-height: 1.6;
+  font-size: var(--step--1); font-weight: 700; text-decoration: none; vertical-align: middle; white-space: nowrap;
 }
-a.lemma:hover { color: var(--red); border-bottom-color: var(--red); }
 
-/* Dialect pill */
-.pill {
-  display: inline-block; background: var(--pill); color: var(--ink);
-  padding-inline: var(--space-2xs); line-height: 1.7; font-size: var(--step--1); font-weight: 700; white-space: nowrap;
+/* Skip link: off screen until focused */
+a[href="#main"] {
+  position: absolute; inset-block-start: 0; inset-inline-start: 0; z-index: 1;
+  padding: var(--space-2xs) var(--space-s); background: var(--ink); color: var(--paper); transform: translateY(-100%);
 }
-a.pill:hover { background: var(--straw); color: var(--ink); }
-.pill--green { color: var(--green); }
+a[href="#main"]:focus { transform: none; }
 
-/* Example sentence in Ruqaa */
-.example { font-family: var(--font-display); font-size: var(--step-1); line-height: 1.8; color: var(--ink); }
-
-/* Label before a row of pills (synonyms, MSA) */
-.row-label { color: var(--muted); font-size: var(--step--1); margin-inline-end: var(--space-3xs); }
-
-.btn {
-  display: inline-block; background: var(--red); color: #fff;
-  padding: var(--space-3xs) var(--space-s); font-weight: 700; font-size: var(--step-0); border: none;
+/* ---------- Header: logo | search, then the nav row ---------- */
+header { display: flex; flex-wrap: wrap; gap: 3px; background: var(--ink); border-block-end: var(--rule); }
+header > * { background: var(--paper); }
+header > a {
+  font: 700 clamp(3rem, 9vw, 5.5rem)/1 'Amiri', 'Noto Naskh Arabic', serif;
+  padding: var(--space-2xs) var(--space-s-m); text-decoration: none; flex: 1 1 auto;
 }
-.btn:hover { background: var(--red-dark); color: #fff; }
+/* Search takes almost all spare width, so the logo only grows when it has a row to itself. */
+search { flex: 999 1 18rem; display: flex; }
+search form { flex: 1; display: flex; }
+search label { flex: 1; display: flex; align-items: center; gap: var(--space-2xs); padding-inline-start: var(--space-s-m); font-weight: 700; }
+search input { flex: 1; min-width: 0; align-self: stretch; border-block: 0; border-inline-end: 0; }
+search button { border: 0; border-inline-start: var(--rule); }
+header nav { flex: 1 1 100%; }
 
-.search-form { display: flex; }
-.search-input {
-  flex: 1; min-width: 0; padding: var(--space-3xs) var(--space-xs); font-size: var(--step-0);
-  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--ink); }
+nav li { flex: 1 1 auto; background: var(--paper); }
+nav a { display: block; padding: var(--space-2xs) var(--space-s); text-align: center; font-weight: 700; text-decoration: none; }
+nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+
+/* ---------- Main ---------- */
+main > * { padding: var(--space-m) var(--space-s-m) var(--space-xl); }
+main > div { padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--ink); }
+main > div > * { background: var(--paper); padding: var(--space-m) var(--space-s-m) var(--space-xl); }
+main > div > section { flex: 3 1 30rem; }
+main > div > aside { flex: 1 1 14rem; }
+
+/* ---------- Footer ---------- */
+footer { border-block-start: var(--rule); padding: var(--space-m) var(--space-s-m); }
+footer nav { border: var(--rule); }
+
+/* ---------- Definition lists: the dictionary itself ---------- */
+dl > div + div { border-block-start: var(--rule); padding-block-start: var(--space-s); margin-block-start: var(--space-s); }
+dt { font-size: var(--step-3); font-weight: 700; line-height: 1.3; }
+dt a[rel="tag"] { margin-inline-start: 0.3em; }
+dd { margin-block-start: var(--space-2xs); }
+dd ul { padding-inline-start: 1.2em; list-style: square; }
+
+/* ---------- Tables ---------- */
+table { border-collapse: collapse; width: 100%; }
+caption { text-align: start; font-weight: 700; padding-block-end: var(--space-2xs); }
+th, td { border: var(--rule); padding: var(--space-2xs) var(--space-xs); text-align: start; vertical-align: top; }
+th { font-size: var(--step-1); }
+
+/* ---------- Disclosure ---------- */
+details { border: var(--rule); }
+details + details { border-block-start: 0; margin-block-start: 0; }
+summary { padding: var(--space-2xs) var(--space-s); font-weight: 700; font-size: var(--step-1); cursor: pointer; }
+details[open] > summary { border-block-end: var(--rule); }
+details > ul { list-style: none; padding: var(--space-2xs) var(--space-s); }
+
+/* ---------- Forms ---------- */
+input, textarea, button, select {
+  font: inherit; color: inherit; background: var(--paper);
+  border: var(--rule); border-radius: 0; padding: var(--space-3xs) var(--space-xs);
 }
-.search-input:focus { outline: 2px solid var(--straw); outline-offset: 0; }
-.search-button {
-  display: inline-flex; align-items: center; padding: var(--space-3xs) var(--space-xs);
-  border: 1px solid var(--line); border-inline-end: none;
-  background: var(--paper); color: var(--ink); font-weight: 700;
-}
-.search-button:hover { background: var(--pill); }
-
-.muted { color: var(--muted); }
-.date { color: var(--red); font-size: var(--step--2); }
-
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: var(--space-2xs); } .mb-2 { margin-bottom: var(--space-s); } .mb-3 { margin-bottom: var(--space-m); } .mb-4 { margin-bottom: var(--space-l); }
-.mt-1 { margin-top: var(--space-2xs); } .mt-2 { margin-top: var(--space-s); } .mt-3 { margin-top: var(--space-m); } .mt-4 { margin-top: var(--space-l); }
+button { font-weight: 700; cursor: pointer; }
+button:hover, button:active { background: var(--ink); color: var(--paper); }
+button:disabled { cursor: not-allowed; opacity: 0.4; }
+main label { display: block; font-weight: 700; }
+main input, main textarea { display: block; width: 100%; max-width: 40rem; }
+textarea { min-height: 8lh; }
+fieldset { border: var(--rule); padding: var(--space-xs) var(--space-s); }
+legend { font-weight: 700; padding-inline: 0.4em; }
+[role="status"] { border: var(--rule); padding: var(--space-xs) var(--space-s); font-weight: 700; }

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// One index result: a <dt> (the MSA headword) and a <dd> (definition and the
+// dialect forms that map to it). Must sit in a <dl>.
 defineProps<{
   word: {
     id: number
@@ -10,26 +12,15 @@ defineProps<{
 </script>
 
 <template>
-  <article class="word-card">
-    <div class="head">
-      <NuxtLink :to="`/w/${word.id}`" class="lemma">{{ word.headword }}</NuxtLink>
-      <span class="row-label">بالفصحى</span>
-    </div>
-    <p class="definition">{{ word.definition }}</p>
-    <p class="forms">
-      <span v-for="e in word.entries" :key="e.id" class="form-item">
-        <span class="form">{{ e.form }}</span>
-        <NuxtLink :to="`/d/${e.dialect.slug}`" class="pill">{{ e.dialect.nameAr }}</NuxtLink>
-      </span>
-    </p>
-  </article>
+  <div>
+    <dt><NuxtLink :to="`/w/${word.id}`">{{ word.headword }}</NuxtLink> <small>بالفصحى</small></dt>
+    <dd>
+      <p>{{ word.definition }}</p>
+      <p v-if="word.entries.length">
+        <template v-for="e in word.entries" :key="e.id">
+          <NuxtLink :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink> <b>{{ e.form }}</b>
+        </template>
+      </p>
+    </dd>
+  </div>
 </template>
-
-<style scoped>
-.word-card { margin-bottom: var(--space-l); }
-.head { display: flex; align-items: baseline; gap: var(--space-2xs); }
-.definition { color: var(--muted); margin-top: var(--space-3xs); }
-.forms { margin-top: var(--space-2xs); display: flex; flex-wrap: wrap; gap: var(--space-3xs) var(--space-s); }
-.form-item { display: inline-flex; align-items: baseline; gap: var(--space-3xs); }
-.form { font-weight: 700; font-size: var(--step-1); }
-</style>
