@@ -1,46 +1,119 @@
 @import './base.css';
 
+/* ------------------------------------------------------------------
+   Palette: the Arab Revolt flag (black, green, white, red) on a sand
+   ground, with one warm ochre accent. Old variable names are kept as
+   aliases so the ported static pages pick the palette up unchanged.
+   ------------------------------------------------------------------ */
 :root {
-  --primary-color: #4a6fa5;
-  --secondary-color: #ff6b6b;
-  --accent-color: #ffd166;
-  --text-color: #333;
-  --light-text: #666;
-  --lighter-text: #999;
-  --background-color: #f9f9f9;
-  --card-background: #fff;
-  --border-color: #e0e0e0;
-  --success-color: #4caf50;
-  --error-color: #f44336;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --ink: #141414;
+  --green: #007a3d;
+  --green-dark: #005c2e;
+  --red: #ce1126;
+  --red-dark: #a30d1e;
+  --sand: #f4eee2;
+  --sand-dark: #e6dcc7;
+  --paper: #fffdf9;
+  --ochre: #c9a45c;
+  --text: #141414;
+  --muted: #6b655a;
+  --faint: #9a9284;
+
+  --font-body: 'Noto Naskh Arabic', 'Noto Naskh Arabic UI', 'Geeza Pro', 'Segoe UI', serif;
+  --font-example: 'Aref Ruqaa', 'Noto Naskh Arabic', serif;
+
+  /* aliases used by the ported pages */
+  --primary-color: var(--green);
+  --primary-dark: var(--green-dark);
+  --secondary-color: var(--red);
+  --accent-color: var(--ochre);
+  --text-color: var(--text);
+  --light-text: var(--muted);
+  --lighter-text: var(--faint);
+  --background-color: var(--sand);
+  --card-background: var(--paper);
+  --border-color: var(--sand-dark);
+  --success-color: var(--green);
+  --error-color: var(--red);
+  --shadow: none;
+  --font-family: var(--font-body);
 }
 
-html { direction: rtl; }
-body { font-family: var(--font-family); }
-button, input, textarea, select { font-family: var(--font-family); }
+/* ---------- Sadu band: the Bedouin weaving motif used as a divider ---------- */
+.sadu {
+  height: 18px;
+  background-color: var(--sand);
+  background-repeat: repeat-x;
+  background-size: 36px 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Crect width='28' height='14' fill='%23f4eee2'/%3E%3Crect y='0' width='28' height='1.5' fill='%23007a3d'/%3E%3Crect y='12.5' width='28' height='1.5' fill='%23007a3d'/%3E%3Cpath d='M7 2.5L11.5 7 7 11.5 2.5 7z' fill='%23141414'/%3E%3Cpath d='M21 2.5L25.5 7 21 11.5 16.5 7z' fill='%23ce1126'/%3E%3Cpath d='M7 5.2L8.8 7 7 8.8 5.2 7z' fill='%23f4eee2'/%3E%3Cpath d='M21 5.2L22.8 7 21 8.8 19.2 7z' fill='%23f4eee2'/%3E%3C/svg%3E");
+}
+.sadu--dark { background-color: var(--ink); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Crect width='28' height='14' fill='%23141414'/%3E%3Crect y='0' width='28' height='1.5' fill='%23007a3d'/%3E%3Crect y='12.5' width='28' height='1.5' fill='%23007a3d'/%3E%3Cpath d='M7 2.5L11.5 7 7 11.5 2.5 7z' fill='%23f4eee2'/%3E%3Cpath d='M21 2.5L25.5 7 21 11.5 16.5 7z' fill='%23ce1126'/%3E%3Cpath d='M7 5.2L8.8 7 7 8.8 5.2 7z' fill='%23141414'/%3E%3Cpath d='M21 5.2L22.8 7 21 8.8 19.2 7z' fill='%23141414'/%3E%3C/svg%3E"); }
+
+/* ---------- Base typography ---------- */
+html { direction: rtl; font-size: 17px; }
+body { font-family: var(--font-body); line-height: 1.85; background: var(--sand); color: var(--text); }
+button, input, textarea, select { font-family: var(--font-body); font-size: 1rem; }
 button { cursor: pointer; }
+h1, h2, h3 { line-height: 1.35; }
 
-a { text-decoration: none; color: var(--primary-color); transition: color 0.3s; }
-a:hover { color: var(--secondary-color); }
+a { text-decoration: none; color: var(--green); transition: color 0.15s; }
+a:hover { color: var(--red); }
 
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
 
-/* Shared building blocks used by several pages */
-.page-title { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+/* ---------- Shared building blocks ---------- */
+.page-title { font-size: 2.4rem; font-weight: 700; color: var(--ink); margin-bottom: 1.25rem; }
+
 .card {
-  background: var(--card-background);
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
-  padding: 1.5rem;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 1.25rem 1.5rem;
 }
+
+.btn {
+  display: inline-block;
+  border: 2px solid var(--ink);
+  background: var(--ink); color: var(--sand);
+  padding: 0.5rem 1.4rem; font-weight: 700; font-size: 1rem;
+  transition: background 0.15s, color 0.15s;
+}
+.btn:hover { background: var(--green); border-color: var(--green); color: #fff; }
+.btn--green { background: var(--green); border-color: var(--green); color: #fff; }
+.btn--green:hover { background: var(--green-dark); border-color: var(--green-dark); color: #fff; }
+.btn--red { background: var(--red); border-color: var(--red); color: #fff; }
+.btn--red:hover { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
+
 .dialect-tag {
   display: inline-block;
-  background: var(--primary-color); color: #fff;
-  padding: 0.15rem 0.6rem; border-radius: 1rem; font-size: 0.85rem;
+  border: 1.5px solid var(--green); color: var(--green);
+  padding: 0 0.6rem; line-height: 1.6; font-size: 0.85rem; font-weight: 700;
+  white-space: nowrap;
 }
-.score { color: var(--light-text); font-size: 0.9rem; }
-.muted { color: var(--light-text); }
+a.dialect-tag:hover { background: var(--green); color: #fff; }
+
+.example {
+  font-family: var(--font-example);
+  font-size: 1.45rem; line-height: 1.7;
+  color: var(--ink);
+}
+.example::before { content: '«'; color: var(--red); margin-inline-end: 0.15em; }
+.example::after { content: '»'; color: var(--red); margin-inline-start: 0.15em; }
+
+.score { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
+.muted { color: var(--muted); }
+
+.search-form { display: flex; width: 100%; }
+.search-input {
+  flex: 1; min-width: 0;
+  padding: 0.7rem 1rem; font-size: 1.15rem;
+  border: 2px solid var(--ink); border-inline-end: none; background: var(--paper); color: var(--ink);
+}
+.search-input:focus { outline: none; border-color: var(--green); }
+.search-button {
+  padding: 0.7rem 1.6rem; font-size: 1.1rem; font-weight: 700;
+  border: 2px solid var(--ink); background: var(--ink); color: var(--sand);
+}
+.search-button:hover { background: var(--green); border-color: var(--green); color: #fff; }
 
 .text-center { text-align: center; }
 .mb-1 { margin-bottom: 0.5rem; } .mb-2 { margin-bottom: 1rem; } .mb-3 { margin-bottom: 1.5rem; } .mb-4 { margin-bottom: 2rem; }

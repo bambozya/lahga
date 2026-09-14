@@ -203,7 +203,7 @@
 }
 
 .cta-button.primary:hover {
-  background-color: #3a5a84;
+  background-color: var(--primary-dark);
 }
 
 .cta-button.secondary {

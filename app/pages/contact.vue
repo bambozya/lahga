@@ -321,7 +321,7 @@ const handleSubmit = async () => {
 }
 
 .submit-button:hover:not(:disabled) {
-  background-color: #3a5a84;
+  background-color: var(--primary-dark);
 }
 
 .submit-button:disabled {

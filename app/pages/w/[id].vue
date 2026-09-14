@@ -6,10 +6,10 @@ useHead({ title: () => `${word.value?.headword} - لهجة` })
 </script>
 
 <template>
-  <article v-if="word">
-    <header class="word-header card">
-      <h1 class="headword">{{ word.headword }}</h1>
+  <article v-if="word" class="word">
+    <header class="word-header">
       <p class="msa-label">بالفصحى</p>
+      <h1 class="headword">{{ word.headword }}</h1>
       <p class="definition">{{ word.definition }}</p>
     </header>
 
@@ -17,22 +17,22 @@ useHead({ title: () => `${word.value?.headword} - لهجة` })
       <h2 class="group-title">
         <NuxtLink :to="`/d/${g.slug}`">{{ g.nameAr }}</NuxtLink>
       </h2>
-      <div class="entries">
-        <div v-for="e in g.entries" :key="e.id" class="card entry">
+      <div v-for="e in g.entries" :key="e.id" class="card entry">
+        <div class="entry-main">
           <div class="entry-head">
             <span class="form">{{ e.form }}</span>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" class="dialect-tag">{{ e.dialect.nameAr }}</NuxtLink>
-            <span class="score">{{ e.score >= 0 ? '+' : '' }}{{ e.score }}</span>
           </div>
           <p class="meaning">{{ e.meaning }}</p>
-          <p v-if="e.notes" class="muted">{{ e.notes }}</p>
+          <p v-if="e.notes" class="muted notes">{{ e.notes }}</p>
           <ul v-if="e.examples.length" class="examples">
             <li v-for="x in e.examples" :key="x.id">
-              <span class="example-text">{{ x.text }}</span>
-              <span v-if="x.gloss" class="muted"> — {{ x.gloss }}</span>
+              <span class="example">{{ x.text }}</span>
+              <span v-if="x.gloss" class="gloss">{{ x.gloss }}</span>
             </li>
           </ul>
         </div>
+        <VoteBox :score="e.score" class="entry-vote" />
       </div>
     </section>
 
@@ -41,17 +41,35 @@ useHead({ title: () => `${word.value?.headword} - لهجة` })
 </template>
 
 <style scoped>
-.word-header { text-align: center; margin-bottom: 2rem; }
-.headword { font-size: 3rem; color: var(--primary-color); margin-bottom: 0; }
-.msa-label { color: var(--lighter-text); font-size: 0.85rem; margin-bottom: 0.5rem; }
-.definition { font-size: 1.2rem; margin: 0; }
-.group { margin-bottom: 2rem; }
-.group-title { font-size: 1.4rem; margin-bottom: 0.75rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.25rem; }
-.entries { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-.entry-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
-.form { font-size: 1.5rem; font-weight: 700; }
-.entry-head .score { margin-inline-start: auto; }
-.meaning { margin-bottom: 0.5rem; }
-.examples { list-style: none; padding: 0; margin: 0.5rem 0 0; border-inline-start: 3px solid var(--accent-color); padding-inline-start: 0.75rem; }
-.example-text { font-style: italic; }
+.word { max-width: 820px; }
+.word-header { border-bottom: 4px solid var(--ink); padding-bottom: 1rem; margin-bottom: 2rem; }
+.msa-label { color: var(--red); font-weight: 700; font-size: 0.9rem; margin: 0; }
+.headword { font-size: 3.8rem; font-weight: 700; color: var(--ink); margin: 0; line-height: 1.15; }
+.definition { font-size: 1.3rem; margin: 0.25rem 0 0; color: var(--muted); }
+
+.group { margin-bottom: 2.25rem; }
+.group-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.6rem; }
+.group-title a { color: var(--green); }
+.group-title a:hover { color: var(--red); }
+
+.entry {
+  display: flex; gap: 1.25rem; align-items: flex-start;
+  border-inline-start-width: 8px; border-inline-start-color: var(--green);
+  margin-bottom: 0.75rem;
+}
+.entry-main { flex: 1; min-width: 0; }
+.entry-vote { flex-shrink: 0; margin-top: 0.5rem; }
+.entry-head { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.form { font-size: 2.2rem; font-weight: 700; line-height: 1.2; }
+.meaning { margin: 0.2rem 0 0; font-size: 1.1rem; }
+.notes { margin: 0.2rem 0 0; }
+.examples { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+.examples li { display: flex; flex-direction: column; }
+.example { font-size: 1.6rem; }
+.gloss { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+  .entry { flex-direction: column; gap: 0.5rem; }
+  .headword { font-size: 3rem; }
+}
 </style>

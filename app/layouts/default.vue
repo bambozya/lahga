@@ -8,14 +8,12 @@ const closeMenu = () => { isMenuOpen.value = false }
   <div class="app-container">
     <header class="header">
       <div class="container header-content">
-        <div class="logo-container">
-          <NuxtLink to="/" @click="closeMenu">
-            <h1 class="site-title">لهجة</h1>
-            <span class="site-subtitle">قاموس اللهجات العربية</span>
-          </NuxtLink>
-        </div>
+        <NuxtLink to="/" class="brand" @click="closeMenu">
+          <span class="site-title">لهجة</span>
+          <span class="site-subtitle">قاموس اللهجات العربية</span>
+        </NuxtLink>
 
-        <button class="menu-toggle" @click="toggleMenu" aria-label="القائمة">
+        <button class="menu-toggle" :class="{ open: isMenuOpen }" @click="toggleMenu" aria-label="القائمة">
           <span></span><span></span><span></span>
         </button>
 
@@ -25,6 +23,7 @@ const closeMenu = () => { isMenuOpen.value = false }
           <NuxtLink to="/about" @click="closeMenu">عن الموقع</NuxtLink>
         </nav>
       </div>
+      <div class="sadu"></div>
     </header>
 
     <main class="main-content">
@@ -34,8 +33,9 @@ const closeMenu = () => { isMenuOpen.value = false }
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <p>© {{ new Date().getFullYear() }} لهجة - قاموس اللهجات العربية</p>
+      <div class="sadu sadu--dark"></div>
+      <div class="container footer-content">
+        <p class="footer-brand">لهجة <span class="muted-on-dark">· قاموس اللهجات العربية · {{ new Date().getFullYear() }}</span></p>
         <div class="footer-links">
           <NuxtLink to="/about">عن الموقع</NuxtLink>
           <NuxtLink to="/privacy">سياسة الخصوصية</NuxtLink>
@@ -49,50 +49,47 @@ const closeMenu = () => { isMenuOpen.value = false }
 
 <style scoped>
 .app-container { display: flex; flex-direction: column; min-height: 100vh; }
-.main-content { flex: 1; padding: 2rem 0; }
+.main-content { flex: 1; padding: 2rem 0 3rem; }
 
-.header {
-  background-color: var(--card-background);
-  box-shadow: var(--shadow);
-  position: sticky; top: 0; z-index: 100;
-}
-.header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-.logo-container { display: flex; align-items: center; }
-.logo-container a { display: flex; align-items: baseline; gap: 0.5rem; }
-.site-title { font-size: 2rem; color: var(--primary-color); margin: 0; }
-.site-subtitle { font-size: 0.9rem; color: var(--light-text); }
+.header { background: var(--paper); position: sticky; top: 0; z-index: 100; }
+.header-content { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; }
 
-.main-nav { display: flex; align-items: center; gap: 1.5rem; }
-.main-nav a { color: var(--text-color); font-weight: 500; }
-.main-nav a:hover, .main-nav a.router-link-active { color: var(--primary-color); }
+.brand { display: flex; align-items: baseline; gap: 0.75rem; color: var(--ink); }
+.brand:hover { color: var(--ink); }
+.site-title { font-size: 2.4rem; font-weight: 700; color: var(--green); line-height: 1; }
+.brand:hover .site-title { color: var(--red); }
+.site-subtitle { font-size: 0.95rem; color: var(--muted); }
+
+.main-nav { display: flex; align-items: center; gap: 1.75rem; }
+.main-nav a { color: var(--ink); font-weight: 700; font-size: 1.05rem; padding: 0.2rem 0; border-bottom: 3px solid transparent; }
+.main-nav a:hover { color: var(--green); }
+.main-nav a.router-link-active { border-bottom-color: var(--red); }
 
 .menu-toggle {
-  display: none; background: none; border: none;
-  width: 30px; height: 25px; flex-direction: column; justify-content: space-between;
+  display: none; background: none; border: none; padding: 0;
+  width: 30px; height: 24px; flex-direction: column; justify-content: space-between;
 }
-.menu-toggle span { display: block; height: 3px; width: 100%; background-color: var(--text-color); border-radius: 3px; }
+.menu-toggle span { display: block; height: 4px; width: 100%; background: var(--ink); }
 
-.footer {
-  background-color: var(--card-background);
-  border-top: 1px solid var(--border-color);
-  padding: 2rem 0; margin-top: 2rem;
-}
-.footer .container { display: flex; justify-content: space-between; align-items: center; }
-.footer-links { display: flex; gap: 1.5rem; }
-.footer-links a { color: var(--light-text); font-size: 0.9rem; }
-.footer-links a:hover { color: var(--primary-color); }
+.footer { background: var(--ink); color: var(--sand); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 1rem; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { margin: 0; font-weight: 700; font-size: 1.2rem; }
+.muted-on-dark { color: var(--faint); font-weight: 400; font-size: 0.9rem; }
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links a { color: var(--sand); font-size: 0.95rem; }
+.footer-links a:hover { color: var(--ochre); }
 
 @media (max-width: 768px) {
-  .header-content { flex-wrap: wrap; }
+  .site-subtitle { display: none; }
   .menu-toggle { display: flex; }
   .main-nav {
-    display: none; flex-direction: column; align-items: flex-start; gap: 0;
+    display: none; flex-direction: column; align-items: stretch; gap: 0;
     position: absolute; top: 100%; right: 0; left: 0;
-    background-color: var(--card-background); box-shadow: var(--shadow); padding: 1rem;
+    background: var(--paper); border-bottom: 2px solid var(--ink); padding: 0.5rem 1rem 1rem;
   }
   .main-nav.is-open { display: flex; }
-  .main-nav a { margin: 0.5rem 0; width: 100%; }
-  .footer .container { flex-direction: column; gap: 1rem; }
-  .footer-links { flex-wrap: wrap; }
+  .main-nav a { padding: 0.6rem 0; border-bottom: 1px solid var(--sand-dark); }
+  .main-nav a.router-link-active { border-bottom-color: var(--red); }
+  .footer-content { flex-direction: column; align-items: flex-start; }
 }
 </style>

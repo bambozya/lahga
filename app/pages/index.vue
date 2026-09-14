@@ -12,32 +12,29 @@ const handleSearch = () => {
 <template>
   <div class="home">
     <section class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">لهجة</h1>
-        <p class="hero-subtitle">قاموس اللهجات العربية</p>
-        <p class="hero-description">
-          اكتشف كيف تُقال الكلمة نفسها في مختلف اللهجات العربية، وشارك بكلمات من لهجتك
-        </p>
-        <form class="search-form" @submit.prevent="handleSearch">
-          <input v-model="searchTerm" type="text" placeholder="ابحث عن كلمة بالفصحى أو بأي لهجة..." class="search-input" />
-          <button type="submit" class="search-button">بحث</button>
-        </form>
-      </div>
+      <h1 class="hero-title">كيف تقولها في لهجتك؟</h1>
+      <p class="hero-description">
+        كلمة واحدة بالفصحى، وعشرات الطرق لقولها من المحيط إلى الخليج. ابحث، قارن، وأضف من لهجتك.
+      </p>
+      <form class="search-form hero-search" @submit.prevent="handleSearch">
+        <input v-model="searchTerm" type="search" placeholder="ابحث بالفصحى أو بأي لهجة…" class="search-input" />
+        <button type="submit" class="search-button">بحث</button>
+      </form>
     </section>
 
     <section class="section">
-      <h2 class="section-title">تصفح حسب اللهجة</h2>
+      <h2 class="section-title">اللهجات</h2>
       <div class="dialects-grid">
         <NuxtLink v-for="d in dialects" :key="d.id" :to="`/d/${d.slug}`" class="dialect-card">
-          <h3>{{ d.nameAr }}</h3>
-          <p v-if="d.children.length" class="muted">{{ d.children.map(c => c.nameAr).join('، ') }}</p>
+          <span class="dialect-name">{{ d.nameAr }}</span>
+          <span v-if="d.children.length" class="dialect-children">{{ d.children.map(c => c.nameAr).join('، ') }}</span>
         </NuxtLink>
       </div>
     </section>
 
     <section class="section">
       <h2 class="section-title">أحدث الكلمات</h2>
-      <div class="words-grid">
+      <div class="words-list">
         <WordCard v-for="w in words" :key="w.id" :word="w" />
       </div>
     </section>
@@ -46,29 +43,35 @@ const handleSearch = () => {
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, var(--primary-color), #3a5a84);
-  color: #fff; border-radius: 0.75rem; padding: 3rem 1.5rem; text-align: center; margin-bottom: 2.5rem;
+  background: var(--ink); color: var(--sand);
+  padding: 3rem 1.5rem 3.25rem; margin-bottom: 2.5rem; text-align: center;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 18px, rgba(244, 238, 226, 0.05) 18px 20px),
+    repeating-linear-gradient(-45deg, transparent 0 18px, rgba(244, 238, 226, 0.05) 18px 20px);
 }
-.hero-title { font-size: 3.5rem; margin: 0; }
-.hero-subtitle { font-size: 1.4rem; opacity: 0.9; margin-bottom: 0.5rem; }
-.hero-description { max-width: 600px; margin: 0 auto 1.5rem; opacity: 0.9; }
-.search-form { display: flex; max-width: 600px; margin: 0 auto; }
-.search-input {
-  flex: 1; padding: 0.9rem 1rem; border: none; border-radius: 0 0.5rem 0.5rem 0; font-size: 1.1rem;
+.hero-title { font-size: 2.8rem; font-weight: 700; margin: 0 0 0.5rem; color: #fff; }
+.hero-description { max-width: 640px; margin: 0 auto 1.75rem; font-size: 1.15rem; color: var(--sand-dark); }
+.hero-search { max-width: 640px; margin: 0 auto; }
+.hero .search-input { border-color: var(--paper); }
+.hero .search-button { background: var(--green); border-color: var(--green); color: #fff; }
+.hero .search-button:hover { background: var(--red); border-color: var(--red); }
+
+.section { margin-bottom: 2.75rem; }
+.section-title {
+  font-size: 1.7rem; font-weight: 700; margin-bottom: 1rem;
+  border-bottom: 3px solid var(--ink); padding-bottom: 0.2rem;
 }
-.search-button {
-  padding: 0.9rem 1.5rem; border: none; background: var(--accent-color); color: var(--text-color);
-  font-weight: 700; font-size: 1.1rem; border-radius: 0.5rem 0 0 0.5rem;
-}
-.section { margin-bottom: 2.5rem; }
-.section-title { font-size: 1.6rem; color: var(--primary-color); margin-bottom: 1rem; }
-.dialects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+
+.dialects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; }
 .dialect-card {
-  background: var(--card-background); border-radius: 0.5rem; box-shadow: var(--shadow);
-  padding: 1.25rem; text-align: center; color: var(--text-color); transition: transform 0.2s;
+  display: flex; flex-direction: column; gap: 0.1rem;
+  background: var(--paper); border: 2px solid var(--ink); padding: 0.8rem 1rem; color: var(--ink);
+  transition: background 0.15s, color 0.15s;
 }
-.dialect-card:hover { transform: translateY(-3px); color: var(--primary-color); }
-.dialect-card h3 { margin-bottom: 0.25rem; }
-.dialect-card p { font-size: 0.8rem; margin: 0; }
-.words-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+.dialect-card:hover { background: var(--green); border-color: var(--green); color: #fff; }
+.dialect-name { font-size: 1.35rem; font-weight: 700; }
+.dialect-children { font-size: 0.8rem; color: var(--muted); }
+.dialect-card:hover .dialect-children { color: var(--sand-dark); }
+
+.words-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
 </style>
