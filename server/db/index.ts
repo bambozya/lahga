@@ -6,6 +6,7 @@ import { PGlite } from '@electric-sql/pglite'
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import * as schema from './schema'
+import { seedIfEmpty } from './seed'
 
 export type Db = ReturnType<typeof drizzlePg<typeof schema>> | ReturnType<typeof drizzlePglite<typeof schema>>
 
@@ -28,13 +29,16 @@ async function connect(): Promise<Db> {
   const url = process.env.DATABASE_URL
   if (url) {
     const client = postgres(url, { prepare: false })
-    return drizzlePg(client, { schema })
+    const db = drizzlePg(client, { schema })
+    await seedIfEmpty(db)
+    return db
   }
   const dataDir = resolve(process.cwd(), '.data/lahga')
   mkdirSync(dataDir, { recursive: true })
   const client = new PGlite(dataDir)
   const db = drizzlePglite(client, { schema })
   await migratePglite(db, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
+  await seedIfEmpty(db)
   return db
 }
 
