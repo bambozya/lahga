@@ -1,11 +1,36 @@
 <script setup lang="ts">
 const route = useRoute()
 const router = useRouter()
+const config = useRuntimeConfig()
 const q = ref(String(route.query.q ?? ''))
+const activeQuery = computed(() => String(route.query.q ?? '').trim())
 
-const { data: words, status } = await useFetch('/api/words', {
-  query: computed(() => ({ q: String(route.query.q ?? ''), limit: 30 })),
-})
+type WordList = { id: number, headword: string, definition: string, score: number,
+  entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
+
+let words: Ref<WordList | null>
+let status: Ref<string>
+
+if (config.public.staticSite) {
+  // Static build (GitHub Pages): no server to search, so filter the full list in the browser.
+  const { data: all, status: s } = await useFetch<WordList>('/api/words/all', { responseType: 'json' })
+  status = s
+  words = computed(() => {
+    const term = normalizeArabic(activeQuery.value)
+    const list = all.value ?? []
+    if (!term) return list
+    return list.filter(w =>
+      normalizeArabic(w.headword).includes(term)
+      || w.entries.some(e => normalizeArabic(e.form).includes(term)),
+    )
+  })
+} else {
+  const res = await useFetch<WordList>('/api/words', {
+    query: computed(() => ({ q: activeQuery.value, limit: 30 })),
+  })
+  words = res.data
+  status = res.status
+}
 
 const submit = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
 watch(() => route.query.q, v => { q.value = String(v ?? '') })
@@ -19,7 +44,7 @@ watch(() => route.query.q, v => { q.value = String(v ?? '') })
       <button type="submit" class="search-button">بحث</button>
     </form>
 
-    <p v-if="route.query.q" class="muted mb-2">نتائج البحث عن «{{ route.query.q }}»</p>
+    <p v-if="activeQuery" class="muted mb-2">نتائج البحث عن «{{ activeQuery }}»</p>
     <p v-if="status === 'pending'" class="muted">جاري البحث...</p>
     <p v-else-if="!words?.length" class="muted">لا توجد نتائج.</p>
     <div v-else class="words-grid">

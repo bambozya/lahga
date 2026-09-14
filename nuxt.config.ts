@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      // true for the read-only GitHub Pages snapshot (set LAHGA_STATIC=1 at build time)
+      staticSite: process.env.LAHGA_STATIC === '1',
+    },
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'ar', dir: 'rtl' },
@@ -21,5 +27,6 @@ export default defineNuxtConfig({
   nitro: {
     // PGlite ships WASM assets; keep it external so the bundler leaves it alone.
     externals: { external: ['@electric-sql/pglite'] },
+    prerender: { crawlLinks: true, routes: ['/', '/browse', '/api/words/all'] },
   },
 })
