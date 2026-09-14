@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const base = (process.env.NUXT_APP_BASE_URL || '/').replace(/\/$/, '')
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -18,9 +20,9 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap' },
+        // Fonts are self-hosted under public/fonts (see app/assets/css/fonts.css); preload the two that paint first.
+        { rel: 'preload', href: `${base}/fonts/amiri-700-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: `${base}/fonts/noto-naskh-arabic-400-700-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
       ],
     },
   },

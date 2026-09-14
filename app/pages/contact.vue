@@ -217,7 +217,7 @@ const handleSubmit = async () => {
 .section-title {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
-  font-size: 1.5rem;
+  font-size: var(--step-3);
 }
 
 .info-item {
@@ -227,7 +227,7 @@ const handleSubmit = async () => {
 .info-item h3 {
   margin-bottom: 0.5rem;
   color: var(--text-color);
-  font-size: 1.1rem;
+  font-size: var(--step-1);
 }
 
 .info-item p {
@@ -256,7 +256,7 @@ const handleSubmit = async () => {
   padding: 1.5rem;
   border-radius: 0.5rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: var(--step-1);
 }
 
 .submit-error {
@@ -283,7 +283,7 @@ const handleSubmit = async () => {
   padding: 0.8rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: 0.25rem;
-  font-size: 1rem;
+  font-size: var(--step-0);
 }
 
 .form-input:focus,
@@ -301,7 +301,7 @@ const handleSubmit = async () => {
 .error-message {
   display: block;
   color: var(--error-color);
-  font-size: 0.9rem;
+  font-size: var(--step--1);
   margin-top: 0.5rem;
 }
 
@@ -315,7 +315,7 @@ const handleSubmit = async () => {
   border: none;
   padding: 0.8rem 2rem;
   border-radius: 0.25rem;
-  font-size: 1rem;
+  font-size: var(--step-0);
   cursor: pointer;
   transition: background-color 0.3s;
 }

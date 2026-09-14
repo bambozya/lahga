@@ -12,13 +12,10 @@ defineProps<{ score: number }>()
 </template>
 
 <style scoped>
-.vote { display: inline-flex; align-items: center; border: 1px solid var(--line); }
-.vote-btn {
-  background: var(--paper); border: none; padding: 0.1rem 0.55rem; font-size: 0.75rem; line-height: 1.6;
-  color: var(--muted);
-}
+.vote { display: inline-flex; align-items: center; border: 1px solid var(--line); font-size: var(--step--1); }
+.vote-btn { background: var(--paper); border: none; padding: 0 var(--space-2xs); font-size: 0.8em; line-height: 1.9; color: var(--muted); }
 .vote-btn.up:hover { background: var(--green); color: #fff; }
 .vote-btn.down:hover { background: var(--red); color: #fff; }
 .vote-btn:disabled { cursor: default; }
-.vote-score { min-width: 2rem; text-align: center; font-weight: 700; font-size: 0.9rem; border-inline: 1px solid var(--line); padding: 0 0.3rem; line-height: 1.6; }
+.vote-score { min-width: 2.2em; text-align: center; font-weight: 700; border-inline: 1px solid var(--line); padding-inline: var(--space-3xs); line-height: 1.9; }
 </style>

@@ -38,7 +38,7 @@
 }
 
 .error-code {
-  font-size: 6rem;
+  font-size: var(--step-5);
   font-weight: bold;
   color: var(--primary-color);
   margin: 0;
@@ -46,13 +46,13 @@
 }
 
 .error-title {
-  font-size: 2rem;
+  font-size: var(--step-4);
   margin: 1rem 0;
   color: var(--text-color);
 }
 
 .error-message {
-  font-size: 1.1rem;
+  font-size: var(--step-1);
   color: var(--light-text);
   margin-bottom: 2rem;
 }
@@ -96,11 +96,11 @@
 
 @media (max-width: 768px) {
   .error-code {
-    font-size: 4rem;
+    font-size: var(--step-5);
   }
 
   .error-title {
-    font-size: 1.5rem;
+    font-size: var(--step-3);
   }
 }
 </style>

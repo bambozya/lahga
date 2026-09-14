@@ -145,7 +145,7 @@
 .section-title {
   color: var(--primary-color);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: var(--step-3);
 }
 
 .about-section p {
@@ -170,7 +170,7 @@
 .feature-title {
   color: var(--primary-color);
   margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  font-size: var(--step-1);
 }
 
 .dialects-list {

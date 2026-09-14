@@ -69,38 +69,39 @@ const search = () => { if (q.value.trim()) router.push({ path: '/browse', query:
 </template>
 
 <style scoped>
-.page { display: flex; flex-direction: column; min-height: 100vh; max-width: 1040px; margin: 0 auto; background: var(--paper); }
+.page { display: flex; flex-direction: column; min-height: 100vh; max-width: var(--column); margin: 0 auto; background: var(--paper); }
 
 /* Red masthead: logo, search, tagline */
 .masthead { background: var(--red); color: var(--cream); }
-.masthead-inner { display: flex; align-items: center; gap: 2rem; padding: 0.75rem 1.25rem; }
-.logo { font-family: var(--font-display); font-size: 4.2rem; line-height: 1; color: var(--cream); padding-bottom: 0.15em; }
+.masthead-inner { display: flex; align-items: center; gap: var(--space-m-l); padding-block: var(--space-xs); }
+.logo {
+  font-family: var(--font-logo); font-weight: 700; font-size: var(--step-5); line-height: 1.1;
+  color: var(--cream); letter-spacing: -0.01em;
+}
 .logo:hover { color: #fff; }
-.masthead-search { flex: 1; max-width: 300px; }
-.tagline { margin: 0; margin-inline-start: auto; text-align: start; font-size: 1.05rem; line-height: 1.5; color: var(--cream); }
+.masthead-search { flex: 1; max-width: 320px; }
+.tagline { margin-inline-start: auto; font-size: var(--step-0); line-height: 1.5; color: var(--cream); }
 
 /* Nav with icons */
 .mainnav { background: var(--paper); border-bottom: 1px solid var(--line); }
-.mainnav-inner { display: flex; justify-content: space-around; gap: 1rem; padding: 0.45rem 1.25rem; flex-wrap: wrap; }
-.mainnav a { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--red); font-family: var(--font-display); font-size: 1.25rem; }
-.mainnav a svg { width: 22px; height: 22px; }
+.mainnav-inner { display: flex; justify-content: space-around; gap: var(--space-s); padding-block: var(--space-2xs); flex-wrap: wrap; }
+.mainnav a { display: inline-flex; align-items: center; gap: var(--space-3xs); color: var(--red); font-family: var(--font-display); font-size: var(--step-1); }
+.mainnav a svg { width: 1.1em; height: 1.1em; }
 .mainnav a:hover, .mainnav a.router-link-active { color: var(--ink); }
 
-.main { flex: 1; background: var(--paper); padding: 1.75rem 0 3rem; }
+.main { flex: 1; background: var(--paper); padding-block: var(--space-m-l) var(--space-xl); }
 
 /* Footer: black/red stripes framing the sadu band, then text */
-.footer { background: var(--paper); }
-.stripes { background: var(--ink); padding: 8px 0; border-top: 6px solid var(--red); border-bottom: 6px solid var(--red); }
+.stripes { background: var(--ink); padding-block: 8px; border-top: 6px solid var(--red); border-bottom: 6px solid var(--red); }
 .stripes .sadu { border-color: var(--cream); }
-.footer-inner { padding: 1.25rem 1.25rem 1.75rem; }
-.footer-text { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); margin: 0 0 0.75rem; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.9rem; }
+.footer-inner { padding-block: var(--space-s) var(--space-m); }
+.footer-text { font-family: var(--font-display); font-size: var(--step-0); color: var(--ink); margin-bottom: var(--space-xs); max-width: var(--measure); }
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-s); font-size: var(--step--1); }
 
 @media (max-width: 700px) {
-  .masthead-inner { flex-wrap: wrap; gap: 0.75rem 1.25rem; }
-  .logo { font-size: 3.2rem; }
+  .masthead-inner { flex-wrap: wrap; gap: var(--space-2xs) var(--space-s); }
   .tagline { display: none; }
   .masthead-search { flex-basis: 100%; max-width: none; }
-  .mainnav a { font-size: 1.05rem; }
+  .mainnav a { font-size: var(--step-0); }
 }
 </style>

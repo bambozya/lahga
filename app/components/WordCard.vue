@@ -26,10 +26,10 @@ defineProps<{
 </template>
 
 <style scoped>
-.word-card { margin-bottom: 2rem; }
-.head { display: flex; align-items: baseline; gap: 0.6rem; }
-.definition { color: var(--muted); margin: 0.35rem 0 0.4rem; }
-.forms { margin: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
-.form-item { display: inline-flex; align-items: baseline; gap: 0.35rem; }
-.form { font-weight: 700; font-size: 1.1rem; }
+.word-card { margin-bottom: var(--space-l); }
+.head { display: flex; align-items: baseline; gap: var(--space-2xs); }
+.definition { color: var(--muted); margin-top: var(--space-3xs); }
+.forms { margin-top: var(--space-2xs); display: flex; flex-wrap: wrap; gap: var(--space-3xs) var(--space-s); }
+.form-item { display: inline-flex; align-items: baseline; gap: var(--space-3xs); }
+.form { font-weight: 700; font-size: var(--step-1); }
 </style>

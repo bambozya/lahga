@@ -12,5 +12,6 @@ useHead({ title: 'أضف كلمة - لهجة' })
 </template>
 
 <style scoped>
-.add { max-width: 640px; }
+.add { max-width: var(--measure); }
+.add p + p { margin-top: var(--space-xs); }
 </style>

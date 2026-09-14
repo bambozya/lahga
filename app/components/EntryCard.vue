@@ -50,16 +50,16 @@ const fmt = (d?: string | Date) => d ? new Intl.DateTimeFormat('ar', { day: 'num
 </template>
 
 <style scoped>
-.entry { margin-bottom: 2.25rem; }
-.date { margin: 0; line-height: 1.2; }
-.entry-head { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.entry { margin-bottom: var(--space-l); }
+.date { line-height: 1.2; }
+.entry-head { display: flex; align-items: baseline; gap: var(--space-2xs); flex-wrap: wrap; }
 .entry-vote { margin-inline-start: auto; align-self: center; }
-.meaning { margin: 0.5rem 0 0; }
+.meaning { margin-top: var(--space-2xs); }
 .form-inline { font-weight: 700; }
-.msa { font-weight: 700; margin-inline-end: 0.3rem; }
-.meaning-text { margin: 0; color: var(--muted); }
-.examples { list-style: none; padding: 0; margin: 0.35rem 0 0; }
+.msa { font-weight: 700; margin-inline-end: var(--space-3xs); }
+.meaning-text { color: var(--muted); margin-top: 0; }
+.examples { list-style: none; padding: 0; margin: var(--space-3xs) 0 0; }
 .examples li { display: flex; flex-direction: column; }
-.gloss { color: var(--muted); font-size: 0.85rem; }
-.synonyms { margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+.gloss { color: var(--muted); font-size: var(--step--1); }
+.synonyms { margin-top: var(--space-2xs); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3xs); }
 </style>

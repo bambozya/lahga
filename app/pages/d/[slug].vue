@@ -35,19 +35,19 @@ useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
 </template>
 
 <style scoped>
-.dialect { max-width: 720px; }
-.dialect-header { margin-bottom: 2rem; }
-.crumb { margin: 0; font-size: 0.9rem; }
-.title { font-size: 2.8rem; margin: 0; }
-.dialect-header p { margin: 0.4rem 0 0; }
-.children { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.dialect { max-width: var(--measure); }
+.dialect-header { margin-bottom: var(--space-l); }
+.crumb { font-size: var(--step--1); }
+.title { font-size: var(--step-5); }
+.dialect-header p { margin-top: var(--space-2xs); }
+.children { display: flex; flex-wrap: wrap; gap: var(--space-3xs); }
 
-.entry { margin-bottom: 1.75rem; }
-.entry-head { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
-.form { font-size: 1.8rem; }
+.entry { margin-bottom: var(--space-m); }
+.entry-head { display: flex; align-items: baseline; gap: var(--space-2xs); flex-wrap: wrap; }
+.form { font-size: var(--step-3); }
 .entry-vote { margin-inline-start: auto; align-self: center; }
-.meaning { margin: 0.35rem 0 0; }
+.meaning { margin-top: var(--space-3xs); }
 .form-inline { font-weight: 700; }
-.msa { font-weight: 700; margin-inline-end: 0.3rem; }
-.meaning-text { margin: 0; color: var(--muted); }
+.msa { font-weight: 700; margin-inline-end: var(--space-3xs); }
+.meaning-text { color: var(--muted); margin-top: 0; }
 </style>

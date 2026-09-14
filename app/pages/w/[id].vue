@@ -39,22 +39,22 @@ useHead({ title: () => `${word.value?.headword} - لهجة` })
 </template>
 
 <style scoped>
-.word { max-width: 720px; }
-.word-header { margin-bottom: 2rem; }
-.word-header .row-label { margin: 0; color: var(--red); font-weight: 700; }
-.headword { font-size: 3.2rem; margin: 0; }
-.definition { font-size: 1.15rem; margin: 0.5rem 0 0; color: var(--muted); }
+.word { max-width: var(--measure); }
+.word-header { margin-bottom: var(--space-l); }
+.word-header .row-label { color: var(--red); font-weight: 700; }
+.headword { font-size: var(--step-5); }
+.definition { font-size: var(--step-1); margin-top: var(--space-2xs); color: var(--muted); }
 
-.group { margin-bottom: 2rem; }
+.group { margin-bottom: var(--space-l); }
 .section-title a { color: var(--ink); }
 .section-title a:hover { color: var(--red); }
 
-.entry { margin-bottom: 1.5rem; }
-.entry-head { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
-.form { font-size: 1.8rem; }
+.entry { margin-bottom: var(--space-m); }
+.entry-head { display: flex; align-items: baseline; gap: var(--space-2xs); flex-wrap: wrap; }
+.form { font-size: var(--step-3); }
 .entry-vote { margin-inline-start: auto; align-self: center; }
-.meaning { margin: 0.35rem 0 0; }
-.examples { list-style: none; padding: 0; margin: 0.25rem 0 0; }
+.meaning { margin-top: var(--space-3xs); }
+.examples { list-style: none; padding: 0; margin: var(--space-3xs) 0 0; }
 .examples li { display: flex; flex-direction: column; }
-.gloss { color: var(--muted); font-size: 0.85rem; }
+.gloss { color: var(--muted); font-size: var(--step--1); }
 </style>

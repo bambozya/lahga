@@ -25,16 +25,16 @@ const { data: dialects } = await useFetch('/api/dialects')
 </template>
 
 <style scoped>
-.home { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 3rem; }
+.home { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: var(--space-xl); }
 .dialect-list { list-style: none; padding: 0; margin: 0; }
-.dialect-list li { margin-bottom: 0.5rem; line-height: 1.5; }
-.dialect-list li > a { font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); }
+.dialect-list li { margin-bottom: var(--space-2xs); line-height: 1.5; }
+.dialect-list li > a { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); }
 .dialect-list li > a:hover { color: var(--red); }
-.sub { display: block; font-size: 0.8rem; color: var(--muted); }
+.sub { display: block; font-size: var(--step--2); color: var(--muted); }
 .sub a { color: var(--muted); }
 .sub a:hover { color: var(--red); }
-.sub a + a::before { content: '،'; margin-inline-end: 0.25rem; color: var(--faint); }
+.sub a + a::before { content: '،'; margin-inline-end: 0.25em; color: var(--faint); }
 @media (max-width: 760px) {
-  .home { grid-template-columns: 1fr; gap: 2rem; }
+  .home { grid-template-columns: 1fr; gap: var(--space-l); }
 }
 </style>

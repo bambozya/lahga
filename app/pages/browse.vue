@@ -55,7 +55,5 @@ watch(() => route.query.q, v => { q.value = String(v ?? '') })
 
 <style scoped>
 .browse-search { max-width: 520px; }
-.browse-search .search-input { padding: 0.55rem 0.9rem; font-size: 1.1rem; }
-.browse-search .search-button { padding: 0.55rem 1.2rem; }
-.results { max-width: 720px; }
+.results { max-width: var(--measure); }
 </style>

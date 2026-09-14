@@ -168,13 +168,13 @@
 .section-title {
   color: var(--primary-color);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: var(--step-3);
 }
 
 .subsection-title {
   color: var(--text-color);
   margin: 1.5rem 0 0.8rem;
-  font-size: 1.2rem;
+  font-size: var(--step-1);
 }
 
 .privacy-section p {
@@ -196,7 +196,7 @@
   text-align: left;
   margin-top: 3rem;
   color: var(--light-text);
-  font-size: 0.9rem;
+  font-size: var(--step--1);
   font-style: italic;
 }
 

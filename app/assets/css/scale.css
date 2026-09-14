@@ -1,0 +1,31 @@
+/* Utopia fluid scales — https://utopia.fyi
+   Type: 320px→1240px, 17px@1.2 → 20px@1.25. Space: derived from step 0. */
+:root {
+  --step--2: clamp(0.7381rem, 0.7166rem + 0.1076vw, 0.8rem);
+  --step--1: clamp(0.8856rem, 0.8458rem + 0.1989vw, 1rem);
+  --step-0: clamp(1.062rem, 0.9973rem + 0.3261vw, 1.25rem);
+  --step-1: clamp(1.275rem, 1.175rem + 0.5vw, 1.562rem);
+  --step-2: clamp(1.53rem, 1.383rem + 0.7359vw, 1.953rem);
+  --step-3: clamp(1.836rem, 1.626rem + 1.052vw, 2.441rem);
+  --step-4: clamp(2.203rem, 1.908rem + 1.476vw, 3.052rem);
+  --step-5: clamp(2.644rem, 2.236rem + 2.037vw, 3.815rem);
+
+  --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+  --space-xs: clamp(0.8125rem, 0.769rem + 0.2174vw, 0.9375rem);
+  --space-s: clamp(1.062rem, 0.9973rem + 0.3261vw, 1.25rem);
+  --space-m: clamp(1.625rem, 1.538rem + 0.4348vw, 1.875rem);
+  --space-l: clamp(2.125rem, 1.995rem + 0.6522vw, 2.5rem);
+  --space-xl: clamp(3.188rem, 2.992rem + 0.9783vw, 3.75rem);
+  --space-2xl: clamp(4.25rem, 3.989rem + 1.304vw, 5rem);
+  --space-3xl: clamp(6.375rem, 5.984rem + 1.957vw, 7.5rem);
+  --space-3xs-2xs: clamp(0.25rem, 0.1196rem + 0.6522vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
+  --space-xs-s: clamp(0.8125rem, 0.6603rem + 0.7609vw, 1.25rem);
+  --space-s-m: clamp(1.062rem, 0.7799rem + 1.413vw, 1.875rem);
+  --space-m-l: clamp(1.625rem, 1.321rem + 1.522vw, 2.5rem);
+  --space-l-xl: clamp(2.125rem, 1.56rem + 2.826vw, 3.75rem);
+  --space-xl-2xl: clamp(3.188rem, 2.557rem + 3.152vw, 5rem);
+  --space-2xl-3xl: clamp(4.25rem, 3.12rem + 5.652vw, 7.5rem);
+  --space-s-l: clamp(1.062rem, 0.5625rem + 2.5vw, 2.5rem);
+}

@@ -20,9 +20,8 @@ useHead({ title: 'اللهجات - لهجة' })
 </template>
 
 <style scoped>
-.groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem 2.5rem; }
-.group h2 { margin: 0; }
-.group-name { font-size: 1.7rem; }
-.group p { margin: 0.25rem 0 0; }
-.children { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-m) var(--space-l); }
+.group-name { font-size: var(--step-2); }
+.group p { margin-top: var(--space-3xs); }
+.children { display: flex; flex-wrap: wrap; gap: var(--space-3xs); }
 </style>
