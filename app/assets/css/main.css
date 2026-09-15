@@ -17,7 +17,8 @@
   --ink: light-dark(#000, #fff);
   --paper: light-dark(#fff, #000);
   --accent: light-dark(#b3271e, #ff6a5c);
-  --rule: 3px solid var(--ink);
+  --line: light-dark(#999, #666);
+  --rule: 3px solid var(--line);
   --measure: 62ch;
 }
 /* The theme switch sets data-theme; without it the system decides (see ThemeSwitch.vue). */
@@ -81,7 +82,7 @@ search label { flex: 1; display: flex; align-items: center; gap: var(--space-2xs
 search input { flex: 1; min-width: 0; }
 header nav { flex: 1 1 100%; border-block-start: var(--rule);}
 
-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--ink); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--line); }
 nav li { flex: 1 1 auto; background: var(--paper); }
 nav a { display: block; padding: var(--space-2xs) var(--space-s); text-align: center; font-weight: 700; text-decoration: none; }
 nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
