@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const router = useRouter()
 const q = ref('')
+// The GitHub Pages snapshot is read-only; tell visitors so until the real server is live.
+const staticSite = useRuntimeConfig().public.staticSite
 // The form has a real action so it works without JS; with JS we stay in the app.
 const search = () => { if (q.value.trim()) router.push({ path: '/browse', query: { q: q.value.trim() } }) }
 </script>
@@ -10,6 +12,10 @@ const search = () => { if (q.value.trim()) router.push({ path: '/browse', query:
     <a href="#main">تخطَّ إلى المحتوى</a>
 
     <ThemeSwitch />
+
+    <p v-if="staticSite" role="status">
+      الموقع قيد الإنشاء. هذه نسخة تجريبية للقراءة فقط: الإضافة والتصويت غير متاحين بعد.
+    </p>
 
     <header>
       <div>

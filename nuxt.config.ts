@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const base = (process.env.NUXT_APP_BASE_URL || '/').replace(/\/$/, '')
+// The read-only GitHub Pages snapshot (LAHGA_STATIC=1 at build time) prerenders every page.
+// The live server must not: a prerendered home page would be frozen until the next deploy.
+const isStatic = process.env.LAHGA_STATIC === '1'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -10,7 +13,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       // true for the read-only GitHub Pages snapshot (set LAHGA_STATIC=1 at build time)
-      staticSite: process.env.LAHGA_STATIC === '1',
+      staticSite: isStatic,
+      // Canonical origin of the live site; override with NUXT_PUBLIC_SITE_URL.
+      siteUrl: 'https://lahga.fyi',
     },
   },
   app: {
@@ -38,6 +43,8 @@ export default defineNuxtConfig({
   nitro: {
     // PGlite ships WASM assets; keep it external so the bundler leaves it alone.
     externals: { external: ['@electric-sql/pglite'] },
-    prerender: { crawlLinks: true, routes: ['/', '/browse', '/api/words/all'] },
+    prerender: isStatic
+      ? { crawlLinks: true, routes: ['/', '/browse', '/api/words/all'] }
+      : { crawlLinks: false, routes: [] },
   },
 })

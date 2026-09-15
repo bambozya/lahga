@@ -67,6 +67,12 @@ a[href="#main"]:focus { transform: none; }
 /* ---------- Frame: the whole page sits in a phone-width box with a rule on every side ---------- */
 .frame { max-width: calc( var(--step-5) * 12); margin: 0 auto; border: var(--rule); }
 
+/* ---------- Construction notice: only in the read-only static snapshot ---------- */
+.frame > p[role="status"] {
+  margin: 0; padding: var(--space-2xs) var(--space-s-m); border-block-end: var(--rule);
+  background: var(--accent); color: #fff; font-weight: 700; text-align: center; text-wrap: balance;
+}
+
 /* ---------- Header: logo + tagline | search, then the nav row ---------- */
 header { display: flex; flex-wrap: wrap; border-block-end: var(--rule); }
 header > * { background: var(--paper); }

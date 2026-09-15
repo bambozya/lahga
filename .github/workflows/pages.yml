@@ -1,5 +1,6 @@
 # Publishes a read-only static snapshot of the site to GitHub Pages on every
-# push to main: https://bambozya.github.io/lahga
+# push to main. It is served on the custom domain https://lahga.fyi (configured
+# under Settings → Pages in the repository), so the site lives at the root path.
 #
 # The snapshot is generated from the seed data (no external database). Voting
 # and contributing need the real server and are not available in this build.
@@ -32,7 +33,6 @@ jobs:
       - name: Generate static site
         run: npx nuxt generate
         env:
-          NUXT_APP_BASE_URL: /lahga/
           LAHGA_STATIC: '1'
       - uses: actions/configure-pages@v5
         with:

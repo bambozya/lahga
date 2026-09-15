@@ -1,8 +1,6 @@
 import { drizzle as drizzlePg } from 'drizzle-orm/postgres-js'
-import { drizzle as drizzlePglite } from 'drizzle-orm/pglite'
-import { migrate as migratePglite } from 'drizzle-orm/pglite/migrator'
+import type { drizzle as drizzlePglite } from 'drizzle-orm/pglite'
 import postgres from 'postgres'
-import { PGlite } from '@electric-sql/pglite'
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import * as schema from './schema'
@@ -15,10 +13,13 @@ let dbPromise: Promise<Db> | undefined
 /**
  * Returns the shared database handle.
  *
- * - With DATABASE_URL set: a real PostgreSQL connection (Neon, Supabase, local, …).
- *   Migrations are applied separately with `npm run db:migrate` (the build script does it).
+ * - With DATABASE_URL set: a real PostgreSQL connection (Neon in production, or any Postgres).
+ *   Migrations are applied before the build by `npm run db:migrate`; on Vercel the
+ *   `vercel-build` script does that. The connection is a small pool because a serverless
+ *   function may run many copies at once.
  * - Without it: an embedded PGlite database stored in ./.data/lahga, so local
  *   development needs no Postgres install. Migrations run automatically on first use.
+ *   PGlite is imported lazily so production never loads its WASM.
  */
 export function useDb(): Promise<Db> {
   if (!dbPromise) dbPromise = connect()
@@ -28,11 +29,16 @@ export function useDb(): Promise<Db> {
 async function connect(): Promise<Db> {
   const url = process.env.DATABASE_URL
   if (url) {
-    const client = postgres(url, { prepare: false })
+    const client = postgres(url, { prepare: false, max: 5 })
     const db = drizzlePg(client, { schema })
     await seedIfEmpty(db)
     return db
   }
+  const [{ PGlite }, { drizzle: drizzlePglite }, { migrate: migratePglite }] = await Promise.all([
+    import('@electric-sql/pglite'),
+    import('drizzle-orm/pglite'),
+    import('drizzle-orm/pglite/migrator'),
+  ])
   const dataDir = resolve(process.cwd(), '.data/lahga')
   mkdirSync(dataDir, { recursive: true })
   const client = new PGlite(dataDir)
