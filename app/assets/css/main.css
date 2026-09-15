@@ -20,6 +20,9 @@
   --rule: 3px solid var(--ink);
   --measure: 62ch;
 }
+/* The theme switch sets data-theme; without it the system decides (see ThemeSwitch.vue). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html { direction: rtl; }
@@ -47,9 +50,7 @@ hr { border: 0; border-top: var(--rule); margin-block: var(--space-m); }
 * + h2 { margin-block-start: var(--space-l); }
 main :is(p, li, dd) { max-width: var(--measure); }
 
-/* ---------- Links ---------- */
-a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
-a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+/* ---------- Links: native colours (unvisited, visited, active) and native underline ---------- */
 a[rel="tag"] {
   display: inline-block; border: 2px solid; padding-inline: 0.45em; line-height: 1.6;
   font-size: var(--step--1); font-weight: 700; text-decoration: none; vertical-align: middle; white-space: nowrap;
@@ -62,20 +63,23 @@ a[href="#main"] {
 }
 a[href="#main"]:focus { transform: none; }
 
-/* ---------- Header: logo | search, then the nav row ---------- */
-header { display: flex; flex-wrap: wrap; gap: 3px; background: var(--ink); border-block-end: var(--rule); }
+/* ---------- Frame: the whole page sits in a phone-width box with a rule on every side ---------- */
+.frame { max-width: calc( var(--step-5) * 12); margin: 0 auto; border: var(--rule); }
+
+/* ---------- Header: logo + tagline | search, then the nav row ---------- */
+header { display: flex; flex-wrap: wrap; border-block-end: var(--rule); }
 header > * { background: var(--paper); }
-header > a {
-  font: 700 clamp(3rem, 9vw, 5.5rem)/1 'Amiri', 'Noto Naskh Arabic', serif;
-  padding: var(--space-2xs) var(--space-s-m); text-decoration: none; flex: 1 1 auto;
+header > div { flex: 1 1 auto; padding: var(--space-2xs) var(--space-s-m); }
+header > div > a {
+  display: block; font: 700 clamp(3rem, 9vw, 5.5rem)/1 'Amiri', 'Noto Naskh Arabic', serif; text-decoration: none;
 }
+header > div > p { font-weight: 700; }
 /* Search takes almost all spare width, so the logo only grows when it has a row to itself. */
-search { flex: 999 1 18rem; display: flex; }
-search form { flex: 1; display: flex; }
-search label { flex: 1; display: flex; align-items: center; gap: var(--space-2xs); padding-inline-start: var(--space-s-m); font-weight: 700; }
-search input { flex: 1; min-width: 0; align-self: stretch; border-block: 0; border-inline-end: 0; }
-search button { border: 0; border-inline-start: var(--rule); }
-header nav { flex: 1 1 100%; }
+search { display: flex; align-items: center; justify-items: center; padding: var(--space-s); }
+search form { flex: 1; display: flex; gap: var(--space-xs); }
+search label { flex: 1; display: flex; align-items: center; gap: var(--space-2xs); font-weight: 700; }
+search input { flex: 1; min-width: 0; }
+header nav { flex: 1 1 100%; border-block-start: var(--rule);}
 
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--ink); }
 nav li { flex: 1 1 auto; background: var(--paper); }
@@ -113,14 +117,10 @@ summary { padding: var(--space-2xs) var(--space-s); font-weight: 700; font-size:
 details[open] > summary { border-block-end: var(--rule); }
 details > ul { list-style: none; padding: var(--space-2xs) var(--space-s); }
 
-/* ---------- Forms ---------- */
-input, textarea, button, select {
-  font: inherit; color: inherit; background: var(--paper);
-  border: var(--rule); border-radius: 0; padding: var(--space-3xs) var(--space-xs);
-}
-button { font-weight: 700; cursor: pointer; }
-button:hover, button:active { background: var(--ink); color: var(--paper); }
-button:disabled { cursor: not-allowed; opacity: 0.4; }
+/* ---------- Forms: native controls, only their size is touched ---------- */
+input, textarea, button, select { font-size: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
 main label { display: block; font-weight: 700; }
 main input, main textarea { display: block; width: 100%; max-width: 40rem; }
 textarea { min-height: 8lh; }

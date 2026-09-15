@@ -16,6 +16,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'ar', dir: 'rtl' },
+      // Apply the saved theme before the first paint (see app/components/ThemeSwitch.vue).
+      script: [{
+        innerHTML: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
+      }],
       title: 'لهجة - قاموس اللهجات العربية',
       meta: [
         { name: 'description', content: 'لهجة - قاموس اللهجات العربية. اكتشف وشارك كلمات ومصطلحات من مختلف اللهجات العربية.' },

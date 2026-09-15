@@ -14,8 +14,7 @@ defineProps<{ score: number }>()
 </template>
 
 <style scoped>
-fieldset { display: inline-flex; align-items: center; gap: var(--space-2xs); padding: 0 var(--space-2xs); vertical-align: middle; margin-inline-end: var(--space-s); }
+fieldset { display: inline-flex; direction: rtl; align-items: center; gap: var(--space-2xs); padding: 0 var(--space-2xs); vertical-align: middle; margin-inline-end: var(--space-s); }
 fieldset > * { margin: 0; }
-button { border: 0; padding: 0 0.3em; }
 output { min-width: 2.5ch; text-align: center; font-weight: 700; }
 </style>

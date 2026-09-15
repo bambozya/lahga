@@ -6,11 +6,16 @@ const search = () => { if (q.value.trim()) router.push({ path: '/browse', query:
 </script>
 
 <template>
-  <div>
+  <div class="frame">
     <a href="#main">تخطَّ إلى المحتوى</a>
 
+    <ThemeSwitch />
+
     <header>
-      <NuxtLink to="/">لهجة</NuxtLink>
+      <div>
+        <NuxtLink to="/">لهجة</NuxtLink>
+        <p>قاموس اللهجات العربية</p>
+      </div>
       <search>
         <form action="/browse" method="get" @submit.prevent="search">
           <label>ابحث <input v-model="q" type="search" name="q" /></label>
@@ -48,3 +53,4 @@ const search = () => { if (q.value.trim()) router.push({ path: '/browse', query:
     </footer>
   </div>
 </template>
+
