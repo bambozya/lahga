@@ -18,10 +18,11 @@ const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q:
       الموقع قيد الإنشاء. هذه نسخة تجريبية للقراءة فقط: الإضافة والتصويت غير متاحين بعد.
     </p>
 
+    <ThemeSwitch />
+
     <header>
       <NuxtLink to="/" aria-label="لهجة، قاموس اللهجات العربية: الصفحة الرئيسية">
         <AppLogo />
-        <span>قاموس اللهجات العربية</span>
       </NuxtLink>
       <nav aria-label="الرئيسي">
         <ul>
@@ -31,7 +32,6 @@ const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q:
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
         </ul>
       </nav>
-      <ThemeSwitch />
       <search>
         <form action="/browse" method="get" @submit.prevent="search">
           <label><input v-model="q" type="search" name="q" aria-label="ابحث عن كلمة بالفصحى أو بأي لهجة" placeholder="ابحث عن كلمة…" /></label>
