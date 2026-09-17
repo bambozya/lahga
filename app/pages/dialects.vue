@@ -7,8 +7,9 @@ useHead({ title: 'اللهجات - لهجة' })
   <article>
     <h1>اللهجات</h1>
     <p>اللهجات مرتبة في مجموعات كبرى تتفرع منها لهجات أدق. اختر ما تعرفه، ولو كان المجموعة فقط.</p>
+    <div role="region" aria-labelledby="dialects-caption" tabindex="0">
     <table>
-      <caption>مجموعات اللهجات وما يتفرع منها</caption>
+      <caption id="dialects-caption">مجموعات اللهجات وما يتفرع منها</caption>
       <thead>
         <tr>
           <th scope="col">المجموعة</th>
@@ -28,5 +29,6 @@ useHead({ title: 'اللهجات - لهجة' })
         </tr>
       </tbody>
     </table>
+    </div>
   </article>
 </template>

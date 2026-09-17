@@ -1,33 +1,28 @@
 <script setup lang="ts">
 const router = useRouter()
-const q = ref('')
+const route = useRoute()
+// The header search is the only search box: on the index page it shows the active query.
+const q = ref(String(route.query.q ?? ''))
+watch(() => route.query.q, v => { q.value = String(v ?? '') })
 // The GitHub Pages snapshot is read-only; tell visitors so until the real server is live.
 const staticSite = useRuntimeConfig().public.staticSite
 // The form has a real action so it works without JS; with JS we stay in the app.
-const search = () => { if (q.value.trim()) router.push({ path: '/browse', query: { q: q.value.trim() } }) }
+const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
 </script>
 
 <template>
-  <div class="frame">
+  <div>
     <a href="#main">تخطَّ إلى المحتوى</a>
-
-    <ThemeSwitch />
 
     <p v-if="staticSite" role="status">
       الموقع قيد الإنشاء. هذه نسخة تجريبية للقراءة فقط: الإضافة والتصويت غير متاحين بعد.
     </p>
 
     <header>
-      <div>
-        <NuxtLink to="/">لهجة</NuxtLink>
-        <p>قاموس اللهجات العربية</p>
-      </div>
-      <search>
-        <form action="/browse" method="get" @submit.prevent="search">
-          <label>ابحث <input v-model="q" type="search" name="q" /></label>
-          <button type="submit">بحث</button>
-        </form>
-      </search>
+      <NuxtLink to="/" aria-label="لهجة، قاموس اللهجات العربية: الصفحة الرئيسية">
+        <AppLogo />
+        <span>قاموس اللهجات العربية</span>
+      </NuxtLink>
       <nav aria-label="الرئيسي">
         <ul>
           <li><NuxtLink to="/">الرئيسية</NuxtLink></li>
@@ -36,6 +31,13 @@ const search = () => { if (q.value.trim()) router.push({ path: '/browse', query:
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
         </ul>
       </nav>
+      <ThemeSwitch />
+      <search>
+        <form action="/browse" method="get" @submit.prevent="search">
+          <label><input v-model="q" type="search" name="q" aria-label="ابحث عن كلمة بالفصحى أو بأي لهجة" placeholder="ابحث عن كلمة…" /></label>
+          <button type="submit"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" /></svg> بحث</button>
+        </form>
+      </search>
     </header>
 
     <main id="main">
@@ -43,6 +45,7 @@ const search = () => { if (q.value.trim()) router.push({ path: '/browse', query:
     </main>
 
     <footer>
+      <AppLogo />
       <p>
         لهجة هو قاموس إلكتروني للمصطلحات اليومية المستخدمة في اللهجات العربية المختلفة في أنحاء الوطن العربي.
         هذه الصفحة تتيح الفرصة للجمهور بإضافة المزيد من المواد والتصويت على ما هو موجود.

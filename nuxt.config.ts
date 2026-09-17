@@ -30,12 +30,12 @@ export default defineNuxtConfig({
         { name: 'description', content: 'لهجة - قاموس اللهجات العربية. اكتشف وشارك كلمات ومصطلحات من مختلف اللهجات العربية.' },
       ],
       link: [
-        // The letter lam from the Amiri logo, white on a black tile (public/favicon.svg is the source).
+        // The nuqta, the dot of the jeem in the logo, on an ink tile (public/favicon.svg is the source).
         { rel: 'icon', href: `${base}/favicon.svg`, type: 'image/svg+xml' },
         { rel: 'icon', href: `${base}/favicon.ico`, sizes: '48x48' },
         { rel: 'apple-touch-icon', href: `${base}/apple-touch-icon.png` },
         // Fonts are self-hosted under public/fonts (see app/assets/css/fonts.css); preload the two that paint first.
-        { rel: 'preload', href: `${base}/fonts/amiri-700-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: `${base}/fonts/ibm-plex-sans-arabic-400-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
         { rel: 'preload', href: `${base}/fonts/noto-naskh-arabic-400-700-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
       ],
     },

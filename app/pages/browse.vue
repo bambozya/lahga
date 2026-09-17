@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const router = useRouter()
 const config = useRuntimeConfig()
-const q = ref(String(route.query.q ?? ''))
 const activeQuery = computed(() => String(route.query.q ?? '').trim())
 
 type WordList = { id: number, headword: string, definition: string, score: number,
@@ -32,21 +30,13 @@ if (config.public.staticSite) {
   status = res.status
 }
 
-const submit = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
-watch(() => route.query.q, v => { q.value = String(v ?? '') })
 useHead({ title: 'الفهرس - لهجة' })
 </script>
 
 <template>
   <article>
     <h1>الفهرس</h1>
-    <form action="/browse" method="get" @submit.prevent="submit">
-      <p>
-        <label for="q">ابحث بالفصحى أو بأي لهجة</label>
-        <input id="q" v-model="q" type="search" name="q" />
-      </p>
-      <p><button type="submit">بحث</button></p>
-    </form>
+    <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو تصفح كل الكلمات.</p>
 
     <p v-if="status === 'pending'" role="status">جاري البحث…</p>
     <p v-else-if="activeQuery" role="status">{{ words?.length ?? 0 }} نتيجة للبحث عن «{{ activeQuery }}»</p>

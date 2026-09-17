@@ -2,24 +2,39 @@
 @import './scale.css';
 
 /* ------------------------------------------------------------------
-   Brutal. Two colours, one rule weight, no classes, no media queries.
-   Elements are styled by what they are, so the markup must be honest:
-   the feed is a <dl>, a dialect tag is <a rel="tag">, an example is <q>,
-   a date is <time>, the vote score is <output>, the search box is
-   <search>. Layout is flex-wrap with a 3px gap over an ink background,
-   which draws the rules between cells whatever way they wrap.
-   Dark mode comes from light-dark() for free.
-   The home page is the only page whose root is a <div>: it holds a
-   <section> (feed) and an <aside> (dialects) side by side.
+   Nuqta. Ink, paper and one colour.
+   The skeleton is still classless: elements are styled by what they
+   are, so the markup must be honest (the feed is a <dl>, a dialect tag
+   is <a rel="tag">, an example is <q>, a date is <time>, the vote score
+   is <output>, the search box is <search>).
+
+   The brand is the nuqta: the rhombic dot of the jeem in the logo
+   (see AppLogo.vue). It is the only decoration. It marks the current
+   page, dialect tags and list items, always in --accent.
+   --accent is otherwise used only for link underlines, the focus ring,
+   example quotes and hover. Everything else is ink on paper.
+
+   Two type voices: IBM Plex Sans Arabic speaks for the site, Noto Naskh
+   Arabic for the words of the dictionary (headwords and examples).
+   Dark mode comes from light-dark(); ThemeSwitch.vue can force a scheme.
    ------------------------------------------------------------------ */
 :root {
   color-scheme: light dark;
-  --ink: light-dark(#000, #fff);
-  --paper: light-dark(#fff, #000);
-  --accent: light-dark(#b3271e, #ff6a5c);
-  --line: light-dark(#999, #666);
-  --rule: 3px solid var(--line);
+  --paper: light-dark(#f6f3ec, #15130f);
+  --surface: light-dark(#fffdf9, #1f1c16);
+  --ink: light-dark(#16140f, #f1ede4);
+  --muted: light-dark(#5c574c, #aaa397);
+  --hair: light-dark(#d5cfc0, #3b372e);
+  --accent: light-dark(#b8321a, #ff8466);
+  --rule: 3px solid var(--ink);
+  --thin: 1px solid var(--hair);
+  --radius: 6px;
   --measure: 62ch;
+  --page: 70rem;
+  --gutter: max(var(--space-s-m), (100% - var(--page)) / 2);
+  --nuqta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.4 5.1Q39.5 -0.3 46.9 1.7Q60.5 6.5 73.1 13.9Q85.7 21.4 96.6 31Q102 36.4 98.6 43.2L66 94.9Q61.2 101.7 53.7 96.3Q46.9 90.8 4.8 65.6Q-2.7 60.9 2 54.1L35.4 5.1Z'/%3E%3C/svg%3E");
+  --sans: 'IBM Plex Sans Arabic', 'Geeza Pro', system-ui, sans-serif;
+  --naskh: 'Noto Naskh Arabic', 'Geeza Pro', serif;
 }
 /* The theme switch sets data-theme; without it the system decides (see ThemeSwitch.vue). */
 :root[data-theme="light"] { color-scheme: light; }
@@ -29,108 +44,176 @@
 html { direction: rtl; }
 body {
   margin: 0; min-height: 100dvh;
-  font: 400 var(--step-0)/1.8 'Noto Naskh Arabic', 'Geeza Pro', serif;
+  font: 400 var(--step-0)/1.8 var(--sans);
   font-synthesis: none; background: var(--paper); color: var(--ink);
 }
+svg { fill: currentColor; }
 
 /* ---------- Text ---------- */
 h1, h2, h3, p, dl, dd, ul, ol, figure, fieldset { margin: 0; }
-h1 { font-size: var(--step-4); line-height: 1.2; text-wrap: balance; }
-h2 { font-size: var(--step-2); line-height: 1.3; }
-h3 { font-size: var(--step-1); line-height: 1.4; }
-small { font-size: var(--step--1); }
+h1 { font-size: var(--step-4); line-height: 1.3; text-wrap: balance; }
+h2 { font-size: var(--step-2); line-height: 1.4; }
+h3 { font-size: var(--step-1); line-height: 1.5; }
+small, time { font-size: var(--step--1); color: var(--muted); }
 time { font-variant-numeric: tabular-nums; }
 dfn, address, cite { font-style: normal; }
-q { font-size: var(--step-1); quotes: '«' '»'; }
+dfn { font-family: var(--naskh); }
 hr { border: 0; border-top: var(--rule); margin-block: var(--space-m); }
-::selection { background: var(--accent); color: #fff; }
-:focus-visible { outline: 4px solid var(--accent); outline-offset: 2px; }
+::selection { background: var(--ink); color: var(--paper); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 
 /* Vertical rhythm: siblings inside a block get a gap; headings get a bigger one. */
-:is(article, section, aside, dd, hgroup, footer, fieldset, main > div > *) > * + * { margin-block-start: var(--space-xs); }
+:is(article, section, aside, dd, hgroup, fieldset, form) > * + * { margin-block-start: var(--space-s); }
 * + h2 { margin-block-start: var(--space-l); }
 main :is(p, li, dd) { max-width: var(--measure); }
+hgroup > p:first-child { color: var(--muted); font-weight: 600; }
 
-/* ---------- Links: native colours (unvisited, visited, active) and native underline ---------- */
-a[rel="tag"] {
-  display: inline-block; border: 2px solid; padding-inline: 0.45em; line-height: 1.6;
-  font-size: var(--step--1); font-weight: 700; text-decoration: none; vertical-align: middle; white-space: nowrap;
+/* The nuqta as a marker. */
+main ul:not(nav ul, details ul, dd ul) { list-style: none; padding-inline-start: 1.4em; }
+main ul:not(nav ul, details ul, dd ul) > li::before, a[rel="tag"]::before, nav a[aria-current="page"]::before {
+  content: ''; display: inline-block; width: 0.5em; aspect-ratio: 1; margin-inline-end: 0.45em; vertical-align: 0.1em;
+  background: var(--accent); mask: var(--nuqta) center / contain no-repeat;
 }
+main ul:not(nav ul, details ul, dd ul) > li::before { margin-inline-start: -1.1em; }
+
+/* ---------- Links: ink text, accent underline ---------- */
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+a:visited { text-decoration-color: var(--muted); }
+a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+/* Dialect tag: an outlined pill that starts with the nuqta. */
+a[rel="tag"] {
+  display: inline-block; margin-inline: 0.1em; padding: 0 0.7em; line-height: 1.75; vertical-align: middle; white-space: nowrap;
+  font: 600 var(--step--1)/1.75 var(--sans); text-decoration: none; border: 1.5px solid var(--ink); border-radius: 99rem;
+}
+a[rel="tag"]:hover { background: var(--ink); color: var(--paper); }
+/* In a run of synonyms each tag opens a new pair, so it keeps its distance from the word before it. */
+dd p > a[rel="tag"] { margin-inline-start: 0.7em; }
+dd p > a[rel="tag"]:first-child { margin-inline-start: 0.1em; }
 
 /* Skip link: off screen until focused */
 a[href="#main"] {
-  position: absolute; inset-block-start: 0; inset-inline-start: 0; z-index: 1;
-  padding: var(--space-2xs) var(--space-s); background: var(--ink); color: var(--paper); transform: translateY(-100%);
+  position: absolute; inset-block-start: var(--space-2xs); inset-inline-start: var(--space-2xs); z-index: 3;
+  padding: var(--space-2xs) var(--space-s); background: var(--ink); color: var(--paper); border-radius: var(--radius);
+  font-weight: 600; transform: translateY(-200%);
 }
 a[href="#main"]:focus { transform: none; }
 
-/* ---------- Frame: the whole page sits in a phone-width box with a rule on every side ---------- */
-.frame { max-width: calc( var(--step-5) * 12); margin: 0 auto; border: var(--rule); }
-
 /* ---------- Construction notice: only in the read-only static snapshot ---------- */
-.frame > p[role="status"] {
-  margin: 0; padding: var(--space-2xs) var(--space-s-m); border-block-end: var(--rule);
-  background: var(--accent); color: #fff; font-weight: 700; text-align: center; text-wrap: balance;
+p[role="status"]:has(+ header) {
+  margin: 0; max-width: none; padding: var(--space-3xs) var(--gutter); border: 0; border-radius: 0;
+  background: var(--ink); color: var(--paper); font-size: var(--step--1); font-weight: 600; text-align: center; text-wrap: balance;
 }
 
-/* ---------- Header: logo + tagline | search, then the nav row ---------- */
-header { display: flex; flex-wrap: wrap; border-block-end: var(--rule); }
-header > * { background: var(--paper); }
-header > div { flex: 1 1 auto; padding: var(--space-2xs) var(--space-s-m); }
-header > div > a {
-  display: block; font: 700 clamp(3rem, 9vw, 5.5rem)/1 'Amiri', 'Noto Naskh Arabic', serif; text-decoration: none;
+/* ---------- Header: logo + tagline | nav | theme, then the search row, then one heavy rule ---------- */
+header {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-m);
+  margin-inline: var(--gutter); padding-block: var(--space-s) var(--space-m); border-block-end: var(--rule);
 }
-header > div > p { font-weight: 700; }
-/* Search takes almost all spare width, so the logo only grows when it has a row to itself. */
-search { display: flex; align-items: center; justify-items: center; padding: var(--space-s); }
-search form { flex: 1; display: flex; gap: var(--space-xs); }
-search label { flex: 1; display: flex; align-items: center; gap: var(--space-2xs); font-weight: 700; }
-search input { flex: 1; min-width: 0; }
-header nav { flex: 1 1 100%; border-block-start: var(--rule);}
+header > a { display: flex; align-items: flex-end; gap: var(--space-xs); text-decoration: none; }
+header > a svg { height: clamp(3rem, 7vw, 4.25rem); width: auto; display: block; }
+header > a span { padding-block-end: 0.75em; font-size: var(--step--1); font-weight: 600; color: var(--muted); }
+header > a:hover { color: inherit; }
+header > nav { margin-inline-start: auto; }
+search { flex: 1 1 100%; }
+search form { display: flex; gap: var(--space-2xs); }
+search form > * { margin: 0; }
+search label { flex: 1; min-width: 0; display: flex; }
+search input { flex: 1; min-width: 0; font-size: var(--step-1); }
 
-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--line); }
-nav li { flex: 1 1 auto; background: var(--paper); }
-nav a { display: block; padding: var(--space-2xs) var(--space-s); text-align: center; font-weight: 700; text-decoration: none; }
-nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-3xs) var(--space-m); }
+nav a { display: inline-block; padding-block: 0.4em; font-weight: 600; text-decoration-color: transparent; }
+nav a:hover, nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
+nav a[aria-current="page"] { color: inherit; }
 
 /* ---------- Main ---------- */
-main > * { padding: var(--space-m) var(--space-s-m) var(--space-xl); }
-main > div { padding: 0; display: flex; flex-wrap: wrap; gap: 3px; background: var(--line); }
-main > div > * { background: var(--paper); padding: var(--space-m) var(--space-s-m) var(--space-xl); }
-main > div > section { flex: 3 1 30rem; }
-main > div > aside { flex: 1 1 14rem; }
+main { padding: var(--space-l) var(--gutter) var(--space-2xl); }
+/* A page of text or results keeps a readable width; a table may use the whole page. */
+main > article { max-width: 50rem; }
+main > article:has(table) { max-width: none; }
+main > div { display: flex; flex-wrap: wrap; gap: var(--space-l) var(--space-xl); }
+main > div > section { flex: 3 1 30rem; min-width: 0; }
+main > div > aside { flex: 1 1 15rem; }
 
-/* ---------- Footer ---------- */
-footer { border-block-start: var(--rule); padding: var(--space-m) var(--space-s-m); }
-footer nav { border: var(--rule); }
+/* ---------- Footer: the page turned over, paper on ink ---------- */
+footer {
+  --accent: light-dark(#ff8466, #b8321a);
+  padding: var(--space-l) var(--gutter); background: var(--ink); color: var(--paper);
+}
+footer > * + * { margin-block-start: var(--space-s); }
+footer > svg { height: 3rem; width: auto; display: block; }
+footer small { color: inherit; opacity: 0.75; }
+footer :focus-visible { outline-color: var(--paper); }
 
-/* ---------- Definition lists: the dictionary itself ---------- */
-dl > div + div { border-block-start: var(--rule); padding-block-start: var(--space-s); margin-block-start: var(--space-s); }
-dt { font-size: var(--step-3); font-weight: 700; line-height: 1.3; }
-dt a[rel="tag"] { margin-inline-start: 0.3em; }
+/* ---------- Definition lists: the dictionary itself. One heavy rule on top of each entry. ---------- */
+* + dl { margin-block-start: var(--space-m); }
+dl > div { position: relative; border-block-start: var(--rule); padding-block: var(--space-s) var(--space-l); }
+dt { font: 700 var(--step-3)/1.5 var(--naskh); }
+dt :is(small, a[rel="tag"]) { margin-inline-start: 0.4em; }
+dt small { font: 400 var(--step--1) var(--sans); }
 dd { margin-block-start: var(--space-2xs); }
-dd ul { padding-inline-start: 1.2em; list-style: square; }
+dd > div { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-s); }
+dd b { font-family: var(--naskh); font-size: var(--step-1); }
+/* Examples: quoted speech in the dictionary's voice, flagged with an accent bar. */
+dd ul { list-style: none; padding: 0; }
+dd li { padding-inline-start: var(--space-s); border-inline-start: 3px solid var(--accent); }
+dd li + li { margin-block-start: var(--space-2xs); }
+q { font: 400 var(--step-1)/1.7 var(--naskh); quotes: '«' '»'; }
+/* A plain-text term (the about page) is not a dictionary word: it speaks in the site's voice. */
+dt:not(:has(*)) { font: 700 var(--step-1)/1.5 var(--sans); }
+dl > div:has(> dt:not(:has(*))) { border-block-start: var(--thin); padding-block: var(--space-s); }
 
-/* ---------- Tables ---------- */
+/* A result card whose headword is a link: the whole card is the link's target, tags stay on top.
+   (Inclusive Components, "Cards".) */
+dt > a:first-child { text-decoration: none; }
+dt > a:first-child::after { content: ''; position: absolute; inset: 0; }
+dl > div:has(> dt > a:first-child) :is(a[rel="tag"]) { position: relative; z-index: 1; }
+dl > div:has(> dt > a:first-child:hover) { border-block-start-color: var(--accent); }
+dt > a:first-child:focus-visible { outline: none; }
+dl > div:has(> dt > a:first-child:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+/* ---------- Tables: a wide table scrolls inside its own focusable region, never the page ---------- */
+[role="region"][tabindex] { overflow-x: auto; }
+[role="region"][tabindex] > table { min-width: 34rem; }
 table { border-collapse: collapse; width: 100%; }
-caption { text-align: start; font-weight: 700; padding-block-end: var(--space-2xs); }
-th, td { border: var(--rule); padding: var(--space-2xs) var(--space-xs); text-align: start; vertical-align: top; }
-th { font-size: var(--step-1); }
+caption { text-align: start; font-weight: 600; color: var(--muted); padding-block-end: var(--space-2xs); }
+th, td { padding: var(--space-xs) var(--space-xs); text-align: start; vertical-align: top; border-block-end: var(--thin); }
+thead th { border-block-end: var(--rule); font-size: var(--step--1); color: var(--muted); }
+tbody th { font: 700 var(--step-1) var(--naskh); white-space: nowrap; }
+td a[rel="tag"] { margin-block: 0.15em; }
 
-/* ---------- Disclosure ---------- */
-details { border: var(--rule); }
-details + details { border-block-start: 0; margin-block-start: 0; }
-summary { padding: var(--space-2xs) var(--space-s); font-weight: 700; font-size: var(--step-1); cursor: pointer; }
-details[open] > summary { border-block-end: var(--rule); }
-details > ul { list-style: none; padding: var(--space-2xs) var(--space-s); }
+/* ---------- Disclosure: a ruled list ---------- */
+aside > h2 { border-block-end: var(--rule); padding-block-end: var(--space-2xs); }
+details { border-block-end: var(--thin); }
+aside > * + details { margin-block-start: 0; }
+summary { padding-block: var(--space-2xs); font-weight: 600; cursor: pointer; }
+summary:hover { color: var(--accent); }
+summary::marker { color: var(--accent); }
+details > ul { list-style: none; padding: 0 var(--space-s) var(--space-xs); }
 
-/* ---------- Forms: native controls, only their size is touched ---------- */
-input, textarea, button, select { font-size: inherit; }
-button { cursor: pointer; }
-button:disabled { cursor: not-allowed; }
-main label { display: block; font-weight: 700; }
+/* ---------- Forms: solid ink buttons, plain fields ---------- */
+input, textarea, button, select { font: inherit; color: inherit; }
+button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4em;
+  min-height: 2.75rem; min-width: 2.75rem; padding: 0 1.1em; font-weight: 600; cursor: pointer;
+  background: var(--ink); color: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
+}
+button:hover { background: var(--accent); border-color: var(--accent); }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+button svg { width: 1.3em; height: 1.3em; flex: none; }
+/* Quiet buttons: toggles and votes are outlined; the pressed one fills with ink. */
+button[aria-pressed], fieldset[disabled] button { background: transparent; color: var(--ink); padding: 0; }
+button[aria-pressed]:hover { background: transparent; color: var(--accent); }
+button[aria-pressed="true"], button[aria-pressed="true"]:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+input, textarea, select {
+  min-height: 2.75rem; padding: 0.2em 0.8em; background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius);
+}
+main label { display: block; font-weight: 600; margin-block-end: var(--space-3xs); }
 main input, main textarea { display: block; width: 100%; max-width: 40rem; }
-textarea { min-height: 8lh; }
-fieldset { border: var(--rule); padding: var(--space-xs) var(--space-s); }
-legend { font-weight: 700; padding-inline: 0.4em; }
-[role="status"] { border: var(--rule); padding: var(--space-xs) var(--space-s); font-weight: 700; }
+textarea { min-height: 8lh; padding-block: 0.5em; }
+fieldset { border: var(--thin); border-radius: var(--radius); padding: var(--space-s) var(--space-s-m) var(--space-m); }
+legend { font-weight: 700; padding-inline: 0.5em; }
+[role="status"] {
+  max-width: none; background: var(--surface); border-inline-start: 6px solid var(--accent);
+  padding: var(--space-xs) var(--space-s); font-weight: 600;
+}
