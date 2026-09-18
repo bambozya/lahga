@@ -39,5 +39,6 @@ Rules, all enforced by the importer:
   Use the top level when the word is common to the whole region.
 - A word needs at least one entry. `notes`, `examples` and `gloss` are optional.
 - A headword that already exists is merged: new entries are added to it, an
-  entry that already exists for that dialect and form is skipped.
+  entry whose form already exists on that word anywhere in the same dialect
+  group (for example Egyptian and Cairene) is skipped.
 - At most 500 words per file.
