@@ -4,7 +4,7 @@ import postgres from 'postgres'
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import * as schema from './schema'
-import { seedIfEmpty } from './seed'
+import { seedIfEmpty, ensureDevAdmin } from './seed'
 
 // Typed as the Postgres flavour; the PGlite handle has the same API and is cast to it,
 // which keeps query builders (insert().returning(), transactions) typed as one thing.
@@ -50,6 +50,7 @@ async function connect(): Promise<Db> {
   const db = drizzlePglite(client, { schema }) as unknown as Db
   await migratePglite(db as any, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
   await seedIfEmpty(db)
+  await ensureDevAdmin(db)
   return db
 }
 

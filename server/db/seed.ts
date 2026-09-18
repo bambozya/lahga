@@ -52,3 +52,21 @@ export async function seedIfEmpty(db: Db): Promise<void> {
   }
   console.log('[lahga] seed complete')
 }
+
+/**
+ * Local development only (the embedded PGlite database): makes sure an admin
+ * account exists, so nobody has to fish a verification link out of the
+ * terminal. Credentials come from .env (DEV_ADMIN_EMAIL, DEV_ADMIN_PASSWORD,
+ * DEV_ADMIN_NAME) with harmless defaults. Never called with DATABASE_URL set.
+ */
+export async function ensureDevAdmin(db: Db): Promise<void> {
+  const email = (process.env.DEV_ADMIN_EMAIL || 'admin@lahga.test').toLowerCase()
+  const password = process.env.DEV_ADMIN_PASSWORD || 'lahga1234'
+  const displayName = process.env.DEV_ADMIN_NAME || 'المدير المحلي'
+  const existing = await db.query.users.findFirst({ where: (u, { eq }) => eq(u.email, email) })
+  if (existing) return
+  await db.insert(schema.users).values({
+    email, displayName, role: 'admin', emailVerifiedAt: new Date(), passwordHash: await hashPassword(password),
+  })
+  console.log(`[lahga] local admin ready: ${email} / ${password}`)
+}
