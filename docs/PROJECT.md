@@ -22,16 +22,16 @@ entries grouped by dialect, each with its examples, ranked by votes.
 1. **Arabic script only.** The interface, the content, and the search are all
    in Arabic script. Latin transliteration and Arabizi (3, 7, 2, …) are
    rejected at input. Dialect-specific letters are allowed (گ ڤ چ پ ڨ).
-2. **Open by default.** Anyone can browse, search, and vote without an account.
-   An account is required to add words, entries, examples, and links. This may
-   be revisited.
+2. **Open to read, account to act.** Anyone can browse and search. An account
+   is required to vote and to add words, entries, examples, and links.
+   (Decided 2026-09-18; anonymous voting was the earlier idea.)
 3. **Users link, votes decide.** Any user can propose that an entry belongs to a
    word. Links are voted on like everything else. A wiki-style reputation
    system (trusted users whose votes and edits weigh more) is planned for
    later and must not be blocked by early decisions.
-4. **Everyone votes up or down.** One vote per person per item. Anonymous votes
-   are tied to a signed browser token and rate-limited by IP. This is a known
-   weak point; reputation weighting will later reduce the impact of abuse.
+4. **Everyone votes up or down.** One vote per account per item. Flags, not
+   downvotes, are the path for content that is wrong or abusive. Reputation
+   weighting comes later.
 
 ## Dialects
 
@@ -78,11 +78,16 @@ reputation system. The data model leaves room for all of them.
 Nuxt 4 (Vue 3, RTL layout from day one) with its built-in Nitro server for
 the API, Drizzle ORM over PostgreSQL. Locally the database is PGlite, an
 embedded Postgres stored under `.data/`, so nothing needs installing. In
-production `DATABASE_URL` points at a managed Postgres (Neon to start).
-Search uses normalised text columns in Postgres; Meilisearch is the upgrade
-path. Auth (planned) via nuxt-auth-utils: email magic link plus Google.
-Hosting on Vercel or Netlify.
+production `DATABASE_URL` points at a PostgreSQL container on the same
+server. Search uses normalised text columns in Postgres; a trigram index is
+the next step and Meilisearch the upgrade path. Auth (planned) via
+nuxt-auth-utils: email and password plus Google. Hosting on a netcup server in
+Nuremberg, deployed with Coolify (see the README's Production section).
+
 ## Order of work
+
+The detailed plan with schema changes and endpoints per phase is in
+[PLAN.md](PLAN.md). The original order, kept for the record:
 
 1. ~~Data model and migrations (see DATA_MODEL.md).~~ done
 2. Seed the dialect tree (done) and a few hundred words with entries in three

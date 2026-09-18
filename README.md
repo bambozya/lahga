@@ -9,6 +9,7 @@ across the Arab world.
 - **Live site:** https://lahga.fyi
 - **Product description:** [docs/PROJECT.md](docs/PROJECT.md)
 - **Database design:** [docs/DATA_MODEL.md](docs/DATA_MODEL.md)
+- **Plan:** [docs/PLAN.md](docs/PLAN.md), phase by phase
 
 ## Status
 
@@ -128,9 +129,7 @@ fallback.
 
 ## Roadmap
 
-1. Accounts and login.
-2. Contributions: adding words, entries, examples and links; voting.
-3. Moderation: flags, a moderator queue, hiding and restoring content.
-4. Abuse protection: rate limits and a challenge on sign-up and submit.
-5. Faster search with a trigram index.
-6. Offsite backups, error tracking, an Impressum page.
+The phases, with schema changes and endpoints, are in [docs/PLAN.md](docs/PLAN.md):
+accounts, contribution with revision history, votes and flags, moderation and
+proposals, seed content and launch, then audio, images, dialect suggestions,
+phrases and reputation.
