@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
-useHead({ title: 'الإدارة: استيراد - لهجة' })
+useSeo({ title: 'الإدارة: استيراد', noindex: true })
 const text = ref('')
 const report = ref<any>(null)
 const mode = ref<'dry' | 'real'>('dry')

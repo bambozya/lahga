@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
-useHead({ title: 'الإدارة: البلاغات - لهجة' })
+useSeo({ title: 'الإدارة: البلاغات', noindex: true })
 const route = useRoute()
 const showResolved = computed(() => route.query.status === 'resolved')
 const { data: flags, refresh } = await useFetch('/api/admin/flags', { query: computed(() => ({ status: showResolved.value ? 'resolved' : 'open' })) })

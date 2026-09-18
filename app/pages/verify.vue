@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useHead({ title: 'تأكيد البريد - لهجة' })
+useSeo({ title: 'تأكيد البريد', noindex: true })
 const route = useRoute()
 const { loggedIn, user, fetch: refresh } = useUserSession()
 const token = typeof route.query.token === 'string' ? route.query.token : ''

@@ -4,7 +4,53 @@ const { loggedIn, user } = useUserSession()
 // The literal type narrows the URL to the [id] route for typing.
 const { data: word, error, refresh } = await useFetch(`/api/words/${route.params.id}` as `/api/words/${number}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
-useHead({ title: () => `${word.value?.headword} - لهجة` })
+// One line per distinct form, with every dialect that uses it: «الحين (خليجي، نجدي)».
+const forms = computed(() => {
+  const byForm = new Map<string, string[]>()
+  for (const g of word.value?.groups ?? []) {
+    for (const e of g.entries) {
+      const list = byForm.get(e.form) ?? byForm.set(e.form, []).get(e.form)!
+      if (!list.includes(e.dialect.nameAr)) list.push(e.dialect.nameAr)
+    }
+  }
+  return [...byForm].map(([form, dialects]) => ({ form, dialects }))
+})
+const kindWord = computed(() => ({ word: 'كلمة', phrase: 'عبارة', proverb: 'مثل' })[word.value?.kind ?? 'word'])
+useSeo({
+  // The title carries the dialect forms, because that is what people type into a search box.
+  title: () => {
+    if (!word.value) return ''
+    const list = forms.value.slice(0, 5).map(f => f.form).join('، ')
+    return list ? `${word.value.headword} بالعامية: ${list}` : `${word.value.headword} في اللهجات العربية`
+  },
+  description: () => {
+    if (!word.value) return ''
+    const list = forms.value.map(f => `${f.form} (${f.dialects.join('، ')})`).join('، ')
+    const head = `كيف تُقال «${word.value.headword}» في اللهجات العربية؟`
+    return list ? `${head} ${list}.` : `${head} ${word.value.definition}`
+  },
+  jsonLd: () => {
+    if (!word.value) return undefined
+    return [{
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTerm',
+      name: word.value.headword,
+      description: word.value.definition,
+      inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'لهجة، قاموس اللهجات العربية', url: 'https://lahga.fyi' },
+      url: `https://lahga.fyi/w/${word.value.id}`,
+      inLanguage: 'ar',
+      ...(forms.value.length ? { alternateName: forms.value.map(f => f.form) } : {}),
+    }, {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://lahga.fyi/' },
+        { '@type': 'ListItem', position: 2, name: 'الفهرس', item: 'https://lahga.fyi/browse' },
+        { '@type': 'ListItem', position: 3, name: word.value.headword },
+      ],
+    }]
+  },
+})
 
 const kindLabel = { word: '', phrase: 'عبارة', proverb: 'مثل شعبي' } as const
 const mine = (createdBy: number | null | undefined) => loggedIn.value && (user.value?.id === createdBy || user.value?.role === 'admin')

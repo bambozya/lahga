@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useHead({ title: 'سياسة الخصوصية - لهجة' })
+useSeo({ title: 'سياسة الخصوصية', description: 'ما تجمعه لهجة من بيانات، وكيف تُستعمل، ومن يعالجها، وحقوقك في الوصول إليها وحذفها.' })
 </script>
 
 <template>

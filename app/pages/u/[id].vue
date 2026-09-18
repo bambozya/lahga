@@ -4,7 +4,10 @@ const { data: profile, error } = await useFetch(`/api/users/${route.params.id}` 
 if (error.value) throw createError({ statusCode: 404, statusMessage: 'المستخدم غير موجود', fatal: true })
 const { data: contributions } = await useFetch(`/api/users/${route.params.id}/contributions` as `/api/users/${number}/contributions`)
 const kindLabel = { word: '', phrase: 'عبارة', proverb: 'مثل' } as const
-useHead({ title: () => `${profile.value?.displayName ?? ''} - لهجة` })
+useSeo({
+  title: () => profile.value?.displayName ?? '',
+  description: () => profile.value ? `صفحة ${profile.value.displayName} في لهجة: الكلمات التي أضافها إلى قاموس اللهجات العربية.` : '',
+})
 const since = computed(() => profile.value ? new Intl.DateTimeFormat('ar', { year: 'numeric', month: 'long' }).format(new Date(profile.value.createdAt)) : '')
 const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as const
 </script>

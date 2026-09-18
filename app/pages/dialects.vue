@@ -1,6 +1,9 @@
 <script setup lang="ts">
 const { data: dialects } = await useFetch('/api/dialects')
-useHead({ title: 'اللهجات - لهجة' })
+useSeo({
+  title: 'اللهجات العربية',
+  description: 'اللهجات العربية مرتبة في مجموعات: المصرية والشامية والخليجية والنجدية والحجازية واليمنية والعراقية والسودانية والمغاربية والحسانية، وما يتفرع عنها.',
+})
 // Only the first paragraph fits a table cell; the dialect page has the rest.
 const summary = (t: string | null | undefined) => (t ?? '').split(/\n\s*\n/)[0]?.trim() ?? ''
 </script>

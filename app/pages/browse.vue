@@ -9,7 +9,13 @@ const { data: words, status } = await useFetch<WordList>('/api/words', {
   query: computed(() => ({ q: activeQuery.value, limit: 30 })),
 })
 
-useHead({ title: 'الفهرس - لهجة' })
+useSeo({
+  title: () => activeQuery.value ? `بحث: ${activeQuery.value}` : 'فهرس الكلمات',
+  description: () => activeQuery.value
+    ? `نتائج البحث عن «${activeQuery.value}» في قاموس اللهجات العربية.`
+    : 'كل كلمات القاموس: الكلمة بالفصحى ومقابلها في كل لهجة عربية، من المصري والشامي والخليجي إلى المغاربي والسوداني.',
+  noindex: () => !!activeQuery.value,
+})
 </script>
 
 <template>

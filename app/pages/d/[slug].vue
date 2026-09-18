@@ -2,9 +2,25 @@
 const route = useRoute()
 const { data: dialect, error } = await useFetch(`/api/dialects/${route.params.slug}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'اللهجة غير موجودة', fatal: true })
-useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
 // The description is written in paragraphs separated by blank lines; the first one is the summary.
 const paragraphs = computed(() => (dialect.value?.descriptionAr ?? '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean))
+useSeo({
+  // The dialect name stays a label, so the title reads correctly for every name.
+  title: () => dialect.value ? `${dialect.value.nameAr}: قاموس كلمات اللهجة` : '',
+  description: () => {
+    if (!dialect.value) return ''
+    const words = dialect.value.entries.slice(0, 6).map(e => e.form).join('، ')
+    return words ? `${paragraphs.value[0] ?? ''} من كلماتها: ${words}.` : (paragraphs.value[0] ?? '')
+  },
+  jsonLd: () => dialect.value ? {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: `كلمات اللهجة: ${dialect.value.nameAr}`,
+    description: paragraphs.value[0],
+    url: `https://lahga.fyi/d/${dialect.value.slug}`,
+    inLanguage: 'ar',
+  } : undefined,
+})
 const proposing = ref(false)
 const proposed = ref(false)
 const description = ref('')

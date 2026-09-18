@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
-useHead({ title: 'الإدارة: الأعضاء - لهجة' })
+useSeo({ title: 'الإدارة: الأعضاء', noindex: true })
 const q = ref('')
 const query = ref('')
 const { data: users, refresh } = await useFetch('/api/admin/users', { query: computed(() => ({ q: query.value })) })

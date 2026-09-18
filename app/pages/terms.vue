@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useHead({ title: 'شروط الاستخدام - لهجة' })
+useSeo({ title: 'شروط الاستخدام', description: 'شروط استخدام موقع لهجة: الحساب، قواعد السلوك، والمحتوى الذي يضيفه المستخدمون.' })
 </script>
 
 <template>
