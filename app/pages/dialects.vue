@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const { data: dialects } = await useFetch('/api/dialects')
 useHead({ title: 'اللهجات - لهجة' })
+// Only the first paragraph fits a table cell; the dialect page has the rest.
+const summary = (t: string | null | undefined) => (t ?? '').split(/\n\s*\n/)[0]?.trim() ?? ''
 </script>
 
 <template>
@@ -25,7 +27,7 @@ useHead({ title: 'اللهجات - لهجة' })
               <NuxtLink :to="`/d/${c.slug}`" rel="tag">{{ c.nameAr }}</NuxtLink>{{ ' ' }}
             </template>
           </td>
-          <td>{{ d.descriptionAr }}</td>
+          <td>{{ summary(d.descriptionAr) }}</td>
         </tr>
       </tbody>
     </table>

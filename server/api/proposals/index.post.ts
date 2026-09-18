@@ -8,7 +8,7 @@ import { isArabicOnly } from '../../../shared/utils/arabic'
 const Body = v.object({
   dialect: v.pipe(v.string('اللهجة مطلوبة'), v.regex(/^[a-z0-9-]{2,60}$/, 'اللهجة غير معروفة')),
   descriptionAr: v.pipe(
-    v.string('الوصف مطلوب'), v.trim(), v.minLength(20, 'الوصف قصير جداً (20 حرفاً على الأقل)'), v.maxLength(1200, 'الوصف طويل جداً (1200 حرف كحد أقصى)'),
+    v.string('الوصف مطلوب'), v.trim(), v.minLength(20, 'الوصف قصير جداً (20 حرفاً على الأقل)'), v.maxLength(3000, 'الوصف طويل جداً (3000 حرف كحد أقصى)'),
     v.check(isArabicOnly, 'الوصف يجب أن يكون بالحروف العربية'),
   ),
 })

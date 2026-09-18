@@ -43,6 +43,13 @@
       "when": 1789722733776,
       "tag": "0005_trigram_search",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1789729228148,
+      "tag": "0006_dialect_descriptions",
+      "breakpoints": true
     }
   ]
 }
