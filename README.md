@@ -29,6 +29,10 @@ Open http://localhost:3000. No database setup is needed: without a
 `.data/`, applies the migrations, and seeds the dialect tree plus a few sample
 words on first start. Delete `.data/` to start fresh.
 
+Locally an admin account is created on start (`admin@lahga.test` /
+`lahga1234`, or your own values via `DEV_ADMIN_*` in `.env`), because
+verification emails are only printed to the terminal in development.
+
 Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 
 | Command | What it does |
