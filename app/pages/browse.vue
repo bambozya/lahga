@@ -6,7 +6,7 @@ const activeQuery = computed(() => String(route.query.q ?? '').trim())
 type WordList = { id: number, headword: string, definition: string, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
 
-let words: Ref<WordList | null>
+let words: Ref<WordList | null | undefined>
 let status: Ref<string>
 
 if (config.public.staticSite) {

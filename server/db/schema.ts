@@ -9,6 +9,7 @@ export const contentStatus = pgEnum('content_status', ['active', 'hidden', 'dele
 export const voteTarget = pgEnum('vote_target', ['word', 'entry', 'link', 'example'])
 export const flagReason = pgEnum('flag_reason', ['offensive', 'wrong_dialect', 'wrong_link', 'spam', 'other'])
 export const userRole = pgEnum('user_role', ['user', 'moderator', 'admin'])
+export const emailTokenPurpose = pgEnum('email_token_purpose', ['verify', 'reset'])
 
 // ---------- users ----------
 
@@ -18,8 +19,43 @@ export const users = pgTable('users', {
   displayName: text('display_name').notNull(),
   role: userRole('role').notNull().default('user'),
   reputation: integer('reputation').notNull().default(0),
+  // null for accounts that only ever logged in through a provider (Google, …)
+  passwordHash: text('password_hash'),
+  emailVerifiedAt: timestamp('email_verified_at', { withTimezone: true }),
+  avatarUrl: text('avatar_url'),
+  bio: text('bio'),
+  lastSeenAt: timestamp('last_seen_at', { withTimezone: true }),
+  // Set when the account is deleted. The row stays, anonymised, so content keeps its author id.
+  deletedAt: timestamp('deleted_at', { withTimezone: true }),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
+
+// ---------- oauth accounts: one row per linked provider login ----------
+
+export const oauthAccounts = pgTable('oauth_accounts', {
+  id: serial('id').primaryKey(),
+  userId: integer('user_id').notNull().references(() => users.id),
+  provider: text('provider').notNull(), // 'google', later 'gitlab', 'facebook', …
+  providerUserId: text('provider_user_id').notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  uniqueIndex('oauth_accounts_provider_unique').on(t.provider, t.providerUserId),
+  index('oauth_accounts_user_idx').on(t.userId),
+])
+
+// ---------- email tokens: single-use links for verification and password reset ----------
+
+export const emailTokens = pgTable('email_tokens', {
+  id: serial('id').primaryKey(),
+  userId: integer('user_id').notNull().references(() => users.id),
+  purpose: emailTokenPurpose('purpose').notNull(),
+  tokenHash: text('token_hash').notNull().unique(), // sha256 of the token in the link
+  expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+  usedAt: timestamp('used_at', { withTimezone: true }),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  index('email_tokens_user_idx').on(t.userId),
+])
 
 // ---------- dialects (reference data, two-level tree) ----------
 
@@ -130,6 +166,14 @@ export const dialectsRelations = relations(dialects, ({ one, many }) => ({
   parent: one(dialects, { fields: [dialects.parentId], references: [dialects.id], relationName: 'tree' }),
   children: many(dialects, { relationName: 'tree' }),
   entries: many(entries),
+}))
+
+export const usersRelations = relations(users, ({ many }) => ({
+  oauthAccounts: many(oauthAccounts),
+}))
+
+export const oauthAccountsRelations = relations(oauthAccounts, ({ one }) => ({
+  user: one(users, { fields: [oauthAccounts.userId], references: [users.id] }),
 }))
 
 export const wordsRelations = relations(words, ({ many }) => ({

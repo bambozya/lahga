@@ -1,13 +1,14 @@
 import { drizzle as drizzlePg } from 'drizzle-orm/postgres-js'
 import { migrate as migratePg } from 'drizzle-orm/postgres-js/migrator'
-import type { drizzle as drizzlePglite } from 'drizzle-orm/pglite'
 import postgres from 'postgres'
 import { mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import * as schema from './schema'
 import { seedIfEmpty } from './seed'
 
-export type Db = ReturnType<typeof drizzlePg<typeof schema>> | ReturnType<typeof drizzlePglite<typeof schema>>
+// Typed as the Postgres flavour; the PGlite handle has the same API and is cast to it,
+// which keeps query builders (insert().returning(), transactions) typed as one thing.
+export type Db = ReturnType<typeof drizzlePg<typeof schema>>
 
 let dbPromise: Promise<Db> | undefined
 
@@ -44,8 +45,8 @@ async function connect(): Promise<Db> {
   const dataDir = resolve(process.cwd(), '.data/lahga')
   mkdirSync(dataDir, { recursive: true })
   const client = new PGlite(dataDir)
-  const db = drizzlePglite(client, { schema })
-  await migratePglite(db, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
+  const db = drizzlePglite(client, { schema }) as unknown as Db
+  await migratePglite(db as any, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
   await seedIfEmpty(db)
   return db
 }

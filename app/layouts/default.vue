@@ -8,6 +8,9 @@ watch(() => route.query.q, v => { q.value = String(v ?? '') })
 const staticSite = useRuntimeConfig().public.staticSite
 // The form has a real action so it works without JS; with JS we stay in the app.
 const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
+// Account links in the nav. The snapshot has no server, so it never shows them.
+const { loggedIn, user, clear } = useUserSession()
+const logout = async () => { await clear(); await router.push('/') }
 </script>
 
 <template>
@@ -30,6 +33,11 @@ const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q:
           <li><NuxtLink to="/dialects">اللهجات</NuxtLink></li>
           <li><NuxtLink to="/browse">الفهرس</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
+          <template v-if="!staticSite">
+            <li v-if="loggedIn"><NuxtLink to="/settings">{{ user?.displayName }}</NuxtLink></li>
+            <li v-if="loggedIn"><a href="/api/auth/logout" @click.prevent="logout">خروج</a></li>
+            <li v-else><NuxtLink to="/login">دخول</NuxtLink></li>
+          </template>
         </ul>
       </nav>
       <search>

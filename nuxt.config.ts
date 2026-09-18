@@ -7,15 +7,24 @@ const isStatic = process.env.LAHGA_STATIC === '1'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  // Sessions (sealed cookie), password hashing and the OAuth handlers.
+  modules: ['nuxt-auth-utils'],
   css: ['~/assets/css/main.css'],
   // <search> is a native HTML element Vue's tag list does not know yet.
   vue: { compilerOptions: { isCustomElement: tag => tag === 'search' } },
   runtimeConfig: {
+    // Secrets come from the environment (NUXT_SESSION_PASSWORD, NUXT_OAUTH_GOOGLE_CLIENT_ID, …);
+    // see .env.example. Empty here on purpose.
+    session: { maxAge: 60 * 60 * 24 * 30 }, // 30 days
     public: {
       // true for the read-only GitHub Pages snapshot (set LAHGA_STATIC=1 at build time)
       staticSite: isStatic,
       // Canonical origin of the live site; override with NUXT_PUBLIC_SITE_URL.
       siteUrl: 'https://lahga.fyi',
+      // Cloudflare Turnstile site key for the registration form; empty disables the widget.
+      turnstileSiteKey: '',
+      // Set to '1' when NUXT_OAUTH_GOOGLE_CLIENT_ID is configured, so the pages show the Google button.
+      googleLogin: '',
     },
   },
   app: {

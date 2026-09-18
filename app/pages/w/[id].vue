@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
-const { data: word, error } = await useFetch(`/api/words/${route.params.id}`)
+// The literal type narrows the URL to the [id] route; a plain template string would also match /api/words/all.
+const { data: word, error } = await useFetch(`/api/words/${route.params.id}` as `/api/words/${number}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
 useHead({ title: () => `${word.value?.headword} - لهجة` })
 </script>

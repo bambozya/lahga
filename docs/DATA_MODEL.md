@@ -125,7 +125,47 @@ weighs 1.
 | display_name  | text        | Arabic script enforced                     |
 | role          | enum        | user, moderator, admin                     |
 | reputation    | int         | 0 for now; reserved for the future system  |
+| password_hash | text null   | null for provider-only accounts (Google)   |
+| email_verified_at | timestamptz null | set by the verification link or by Google |
+| avatar_url    | text null   |                                            |
+| bio           | text null   | Arabic script enforced                     |
+| last_seen_at  | timestamptz null | updated on login                      |
+| deleted_at    | timestamptz null | see below                             |
 | created_at    | timestamptz |                                            |
+
+Deleting an account keeps the row and anonymises it (email becomes
+`deleted-<id>@lahga.invalid`, display_name «مستخدم محذوف», everything personal
+nulled, `deleted_at` set). Content stays attributed to the row, so other
+people's examples and votes on it survive.
+
+### oauth_accounts
+
+One row per linked provider login. Sign-in with a provider whose email matches
+an existing account links to it instead of creating a second account.
+
+| column           | type        | notes                              |
+|------------------|-------------|------------------------------------|
+| id               | int pk      |                                    |
+| user_id          | int fk      |                                    |
+| provider         | text        | google, later gitlab, facebook, …  |
+| provider_user_id | text        | unique with provider               |
+| created_at       | timestamptz |                                    |
+
+### email_tokens
+
+Single-use links for email verification and password reset. The link carries
+a random 32-byte token; the table stores only its SHA-256, so a database leak
+does not hand out working links.
+
+| column     | type        | notes                                         |
+|------------|-------------|-----------------------------------------------|
+| id         | int pk      |                                               |
+| user_id    | int fk      |                                               |
+| purpose    | enum        | verify, reset                                 |
+| token_hash | text uniq   |                                               |
+| expires_at | timestamptz | one hour after issue                          |
+| used_at    | timestamptz null | set on use; issuing a new token also voids older ones of the same purpose |
+| created_at | timestamptz |                                               |
 
 ## Ranking
 
