@@ -3,6 +3,8 @@ const route = useRoute()
 const { data: dialect, error } = await useFetch(`/api/dialects/${route.params.slug}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'اللهجة غير موجودة', fatal: true })
 useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
+// The description is written in paragraphs separated by blank lines; the first one is the summary.
+const paragraphs = computed(() => (dialect.value?.descriptionAr ?? '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean))
 const proposing = ref(false)
 const proposed = ref(false)
 const description = ref('')
@@ -18,9 +20,12 @@ const proposal = useForm(async () => {
     <hgroup>
       <p v-if="dialect.parent">ضمن <NuxtLink :to="`/d/${dialect.parent.slug}`">{{ dialect.parent.nameAr }}</NuxtLink></p>
       <h1>{{ dialect.nameAr }}</h1>
-      <p v-if="dialect.descriptionAr">{{ dialect.descriptionAr }}</p>
+      <p v-if="paragraphs[0]">{{ paragraphs[0] }}</p>
       <p v-else><small>لا وصف بعد.</small></p>
     </hgroup>
+    <section v-if="paragraphs.length > 1">
+      <p v-for="(t, i) in paragraphs.slice(1)" :key="i">{{ t }}</p>
+    </section>
     <p><small>
       <template v-if="dialect.descriptionBy">الوصف من <NuxtLink v-if="dialect.descriptionBy.id" :to="`/u/${dialect.descriptionBy.id}`">{{ dialect.descriptionBy.displayName }}</NuxtLink><template v-else>{{ dialect.descriptionBy.displayName }}</template> · </template>
       <span v-if="proposed" role="status">شكراً، وصل اقتراحك وسينظر فيه المديرون.</span>
@@ -33,7 +38,7 @@ const proposal = useForm(async () => {
           <p role="alert" v-if="proposal.error.value">{{ proposal.error.value }}</p>
           <p>
             <label for="description">الوصف المقترح</label>
-            <textarea id="description" v-model="description" required minlength="20" maxlength="1200" rows="4"></textarea>
+            <textarea id="description" v-model="description" required minlength="20" maxlength="3000" rows="8"></textarea>
             <small>أين تُتكلم، وما أبرز ملامحها، وما يميزها عن جاراتها. يراجعه مدير قبل نشره.</small>
           </p>
           <p><button type="submit">أرسل الاقتراح</button> <button type="button" @click="proposing = false">إلغاء</button></p>

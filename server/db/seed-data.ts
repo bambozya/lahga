@@ -4,6 +4,8 @@
  * Applied by server/plugins/seed.ts only when the dialects table is empty.
  */
 
+import { dialectDescriptions } from './dialect-descriptions'
+
 export interface DialectSeed {
   slug: string
   nameAr: string
@@ -13,18 +15,18 @@ export interface DialectSeed {
 }
 
 export const dialectTree: DialectSeed[] = [
-  { slug: 'egyptian', nameAr: 'مصري', descriptionAr: 'اللهجة المصرية', children: [
+  { slug: 'egyptian', nameAr: 'مصري', children: [
     { slug: 'cairene', nameAr: 'قاهري' },
     { slug: 'saidi', nameAr: 'صعيدي' },
     { slug: 'alexandrian', nameAr: 'إسكندراني' },
   ] },
-  { slug: 'levantine', nameAr: 'شامي', descriptionAr: 'اللهجات الشامية (سوريا، لبنان، فلسطين، الأردن)', children: [
+  { slug: 'levantine', nameAr: 'شامي', children: [
     { slug: 'syrian', nameAr: 'سوري' },
     { slug: 'lebanese', nameAr: 'لبناني' },
     { slug: 'palestinian', nameAr: 'فلسطيني' },
     { slug: 'jordanian', nameAr: 'أردني' },
   ] },
-  { slug: 'gulf', nameAr: 'خليجي', descriptionAr: 'لهجات الخليج العربي (الكويت، البحرين، قطر، الإمارات، عمان، شرق السعودية)', children: [
+  { slug: 'gulf', nameAr: 'خليجي', children: [
     { slug: 'kuwaiti', nameAr: 'كويتي' },
     { slug: 'bahraini', nameAr: 'بحريني' },
     { slug: 'qatari', nameAr: 'قطري' },
@@ -32,30 +34,39 @@ export const dialectTree: DialectSeed[] = [
     { slug: 'omani', nameAr: 'عماني' },
     { slug: 'eastern-saudi', nameAr: 'شرق السعودية' },
   ] },
-  { slug: 'najdi', nameAr: 'نجدي', descriptionAr: 'لهجة نجد (وسط السعودية)' },
-  { slug: 'hejazi', nameAr: 'حجازي', descriptionAr: 'لهجة الحجاز (غرب السعودية)' },
-  { slug: 'yemeni', nameAr: 'يمني', descriptionAr: 'اللهجات اليمنية', children: [
+  { slug: 'najdi', nameAr: 'نجدي' },
+  { slug: 'hejazi', nameAr: 'حجازي' },
+  { slug: 'yemeni', nameAr: 'يمني', children: [
     { slug: 'sanaani', nameAr: 'صنعاني' },
     { slug: 'adeni', nameAr: 'عدني' },
     { slug: 'hadhrami', nameAr: 'حضرمي' },
   ] },
-  { slug: 'iraqi', nameAr: 'عراقي', descriptionAr: 'اللهجات العراقية', children: [
+  { slug: 'iraqi', nameAr: 'عراقي', children: [
     { slug: 'baghdadi', nameAr: 'بغدادي' },
     { slug: 'mosuli', nameAr: 'موصلي' },
     { slug: 'basrawi', nameAr: 'بصراوي' },
   ] },
-  { slug: 'sudanese', nameAr: 'سوداني', descriptionAr: 'اللهجة السودانية' },
-  { slug: 'maghrebi', nameAr: 'مغاربي', descriptionAr: 'اللهجات المغاربية (المغرب، الجزائر، تونس، ليبيا)', children: [
+  { slug: 'sudanese', nameAr: 'سوداني' },
+  { slug: 'maghrebi', nameAr: 'مغاربي', children: [
     { slug: 'moroccan', nameAr: 'مغربي' },
     { slug: 'algerian', nameAr: 'جزائري' },
     { slug: 'tunisian', nameAr: 'تونسي' },
     { slug: 'libyan', nameAr: 'ليبي' },
   ] },
-  { slug: 'hassaniya', nameAr: 'حساني', descriptionAr: 'لهجة حسانية (موريتانيا، الصحراء، جنوب المغرب)' },
+  { slug: 'hassaniya', nameAr: 'حساني' },
   { slug: 'andalusi', nameAr: 'أندلسي', descriptionAr: 'اللهجة الأندلسية التاريخية', active: false },
   { slug: 'siculo', nameAr: 'صقلي', descriptionAr: 'اللهجة العربية الصقلية التاريخية', active: false },
   { slug: 'maltese', nameAr: 'مالطي', descriptionAr: 'اللغة المالطية (متفرعة من العربية)', active: false },
-]
+].map(withDescription)
+
+/** Fills descriptionAr from dialect-descriptions.ts, for the group and its children. */
+function withDescription(d: DialectSeed): DialectSeed {
+  return {
+    ...d,
+    descriptionAr: d.descriptionAr ?? dialectDescriptions[d.slug],
+    children: d.children?.map(withDescription),
+  }
+}
 
 export interface WordSeed {
   headword: string

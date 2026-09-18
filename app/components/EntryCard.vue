@@ -49,7 +49,7 @@ const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { day: 'numeric'
 
       <p v-if="entry.synonyms.length">
         مرادفات:
-        <template v-for="s in entry.synonyms" :key="s.id"><NuxtLink :to="`/w/${s.wordId}`">{{ s.form }}</NuxtLink><NuxtLink :to="`/d/${s.dialect.slug}`" rel="tag">{{ s.dialect.nameAr }}</NuxtLink></template>
+        <template v-for="s in entry.synonyms" :key="s.id"><NuxtLink :to="`/w/${s.wordId}`"><b>{{ s.form }}</b></NuxtLink><NuxtLink :to="`/d/${s.dialect.slug}`" rel="tag">{{ s.dialect.nameAr }}</NuxtLink></template>
       </p>
 
       <div>
