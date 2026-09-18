@@ -57,7 +57,6 @@ const logout = async () => { await clear(); await router.push('/') }
           <li><NuxtLink to="/privacy">سياسة الخصوصية</NuxtLink></li>
           <li><NuxtLink to="/terms">شروط الاستخدام</NuxtLink></li>
           <li><NuxtLink to="/contact">اتصل بنا</NuxtLink></li>
-          <li><NuxtLink to="/impressum">Impressum</NuxtLink></li>
         </ul>
       </nav>
       <p><small>© {{ new Date().getFullYear() }} لهجة</small></p>
