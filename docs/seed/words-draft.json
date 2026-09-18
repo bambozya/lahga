@@ -1,0 +1,2574 @@
+{
+ "words": [
+  {
+   "headword": "سيارة",
+   "definition": "مركبة ذات أربع عجلات تسير بمحرك وتنقل الناس",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "عربية",
+     "meaning": "السيارة",
+     "notes": "الأكثر شيوعاً في مصر",
+     "examples": [
+      {
+       "text": "ركبت العربية ورحت الشغل",
+       "gloss": "ركبت السيارة وذهبت إلى العمل"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "سيارة",
+     "meaning": "السيارة",
+     "examples": [
+      {
+       "text": "جبت سيارة جديدة",
+       "gloss": "اشتريت سيارة جديدة"
+      }
+     ]
+    },
+    {
+     "dialect": "emirati",
+     "form": "موتر",
+     "meaning": "السيارة",
+     "notes": "من الإنجليزية «موتور»",
+     "examples": [
+      {
+       "text": "الموتر واقف برع",
+       "gloss": "السيارة واقفة في الخارج"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سيارة",
+     "meaning": "السيارة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "طوموبيل",
+     "meaning": "السيارة",
+     "notes": "من الفرنسية «أوتوموبيل»",
+     "examples": [
+      {
+       "text": "الطوموبيل ديالي خاسرة",
+       "gloss": "سيارتي معطلة"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "كرهبة",
+     "meaning": "السيارة",
+     "examples": [
+      {
+       "text": "الكرهبة مرتبة قدام الدار",
+       "gloss": "السيارة مركونة أمام البيت"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "طونوبيل",
+     "meaning": "السيارة",
+     "notes": "من الفرنسية «أوتوموبيل»"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "عربية",
+     "meaning": "السيارة"
+    }
+   ]
+  },
+  {
+   "headword": "الآن",
+   "definition": "في هذا الوقت",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "دلوقتي",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "أنا جاي دلوقتي",
+       "gloss": "أنا قادم الآن"
+      }
+     ]
+    },
+    {
+     "dialect": "syrian",
+     "form": "هلّق",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "هلّق بجي",
+       "gloss": "سآتي الآن"
+      }
+     ]
+    },
+    {
+     "dialect": "lebanese",
+     "form": "هلّق",
+     "meaning": "الآن"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "هسّا",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "هسا بطلع",
+       "gloss": "سأخرج الآن"
+      }
+     ]
+    },
+    {
+     "dialect": "jordanian",
+     "form": "هسّا",
+     "meaning": "الآن"
+    },
+    {
+     "dialect": "gulf",
+     "form": "الحين",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "الحين أروح",
+       "gloss": "سأذهب الآن"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "هسّة",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "هسة أجي",
+       "gloss": "سآتي الآن"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "دابا",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "دابا نمشي",
+       "gloss": "الآن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "توّا",
+     "meaning": "الآن",
+     "examples": [
+      {
+       "text": "توا نجي",
+       "gloss": "سآتي الآن"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "ضرك",
+     "meaning": "الآن",
+     "notes": "وتُنطق «دروك» في بعض المناطق"
+    },
+    {
+     "dialect": "libyan",
+     "form": "توا",
+     "meaning": "الآن"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "هسّع",
+     "meaning": "الآن"
+    }
+   ]
+  },
+  {
+   "headword": "ماذا",
+   "definition": "أداة استفهام عن غير العاقل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "إيه",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "إيه ده؟",
+       "gloss": "ما هذا؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شو",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "شو بدك؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "kuwaiti",
+     "form": "شنو",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "شنو تبي؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "najdi",
+     "form": "وش",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "وش تبغى؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "hejazi",
+     "form": "إيش",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "إيش تبغى؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شنو",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "شنو تريد؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "آش",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "آش بغيتي؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "شنو",
+     "meaning": "ماذا"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "شنوّة",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "شنوة تحب؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "واش",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "واش راك تدير؟",
+       "gloss": "ماذا تفعل؟"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "شن",
+     "meaning": "ماذا",
+     "examples": [
+      {
+       "text": "شن تبي؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شنو",
+     "meaning": "ماذا"
+    }
+   ]
+  },
+  {
+   "headword": "جيد",
+   "definition": "حسن، على ما يرام",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "كويّس",
+     "meaning": "جيد",
+     "examples": [
+      {
+       "text": "الأكل كويس",
+       "gloss": "الطعام جيد"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "منيح",
+     "meaning": "جيد",
+     "examples": [
+      {
+       "text": "الجو منيح اليوم",
+       "gloss": "الطقس جيد اليوم"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "زين",
+     "meaning": "جيد",
+     "examples": [
+      {
+       "text": "الوضع زين",
+       "gloss": "الوضع جيد"
+      }
+     ]
+    },
+    {
+     "dialect": "najdi",
+     "form": "زين",
+     "meaning": "جيد"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "زين",
+     "meaning": "جيد"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "مزيان",
+     "meaning": "جيد",
+     "examples": [
+      {
+       "text": "هاد الشي مزيان",
+       "gloss": "هذا الشيء جيد"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "باهي",
+     "meaning": "جيد",
+     "examples": [
+      {
+       "text": "الأكل باهي",
+       "gloss": "الطعام جيد"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "مليح",
+     "meaning": "جيد",
+     "examples": [
+      {
+       "text": "راك مليح؟",
+       "gloss": "هل أنت بخير؟"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "باهي",
+     "meaning": "جيد"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سمح",
+     "meaning": "جيد، وتُقال أيضاً للجميل"
+    }
+   ]
+  },
+  {
+   "headword": "كثيراً",
+   "definition": "بقدر كبير",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "أوي",
+     "meaning": "كثيراً، جداً",
+     "notes": "تُكتب أيضاً «قوي»",
+     "examples": [
+      {
+       "text": "الأكل حلو أوي",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "كتير",
+     "meaning": "كثيراً",
+     "examples": [
+      {
+       "text": "بحبك كتير",
+       "gloss": "أحبك كثيراً"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "وايد",
+     "meaning": "كثيراً، جداً",
+     "examples": [
+      {
+       "text": "الجو حار وايد",
+       "gloss": "الطقس حار جداً"
+      }
+     ]
+    },
+    {
+     "dialect": "najdi",
+     "form": "مرّة",
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "حلو مرة",
+       "gloss": "جميل جداً"
+      }
+     ]
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مرّة",
+     "meaning": "جداً"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "هوايه",
+     "meaning": "كثيراً",
+     "examples": [
+      {
+       "text": "أكلت هوايه",
+       "gloss": "أكلت كثيراً"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "كلّش",
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "كلش زين",
+       "gloss": "جيد جداً"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بزّاف",
+     "meaning": "كثيراً",
+     "examples": [
+      {
+       "text": "كاين بزاف ديال الناس",
+       "gloss": "هناك ناس كثيرون"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "برشا",
+     "meaning": "كثيراً",
+     "examples": [
+      {
+       "text": "عندي برشا خدمة",
+       "gloss": "عندي عمل كثير"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "بزّاف",
+     "meaning": "كثيراً"
+    },
+    {
+     "dialect": "libyan",
+     "form": "هلبة",
+     "meaning": "كثيراً",
+     "examples": [
+      {
+       "text": "الناس هلبة",
+       "gloss": "الناس كثيرون"
+      }
+     ]
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شديد",
+     "meaning": "كثيراً، جداً",
+     "examples": [
+      {
+       "text": "الجو حار شديد",
+       "gloss": "الطقس حار جداً"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "headword": "طفل",
+   "definition": "الولد الصغير",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "عيّل",
+     "meaning": "طفل",
+     "notes": "والجمع عيال",
+     "examples": [
+      {
+       "text": "العيل نايم",
+       "gloss": "الطفل نائم"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ولد",
+     "meaning": "طفل، صبي"
+    },
+    {
+     "dialect": "kuwaiti",
+     "form": "ياهل",
+     "meaning": "طفل",
+     "notes": "والجمع يهّال"
+    },
+    {
+     "dialect": "emirati",
+     "form": "ياهل",
+     "meaning": "طفل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جاهل",
+     "meaning": "طفل",
+     "notes": "والجمع جهّال",
+     "examples": [
+      {
+       "text": "الجاهل يبچي",
+       "gloss": "الطفل يبكي"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "درّي",
+     "meaning": "طفل، ولد",
+     "notes": "والأنثى درّية"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "صغيّر",
+     "meaning": "طفل"
+    }
+   ]
+  },
+  {
+   "headword": "خبز",
+   "definition": "الطعام المخبوز من العجين",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "عيش",
+     "meaning": "الخبز",
+     "notes": "لأنه أساس العيش",
+     "examples": [
+      {
+       "text": "هات عيش من الفرن",
+       "gloss": "أحضر خبزاً من المخبز"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "خبز",
+     "meaning": "الخبز"
+    },
+    {
+     "dialect": "gulf",
+     "form": "خبز",
+     "meaning": "الخبز"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "صمّون",
+     "meaning": "الخبز الرغيف المخبوز في الفرن، بخلاف الخبز الرقيق",
+     "examples": [
+      {
+       "text": "جيب صمون حار",
+       "gloss": "أحضر خبزاً ساخناً"
+      }
+     ]
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "خبز",
+     "meaning": "الخبز"
+    }
+   ]
+  },
+  {
+   "headword": "نعم",
+   "definition": "كلمة إجابة بالإيجاب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "أيوة",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "levantine",
+     "form": "إي",
+     "meaning": "نعم",
+     "examples": [
+      {
+       "text": "إي، أكيد",
+       "gloss": "نعم، بالتأكيد"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "أيوا",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "إي",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "kuwaiti",
+     "form": "هيه",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "إي",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بلي",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "إيه",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "واه",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "إي",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "algerian",
+     "form": "إيه",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أيوة",
+     "meaning": "نعم"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "إيوه",
+     "meaning": "نعم"
+    }
+   ]
+  },
+  {
+   "headword": "لماذا",
+   "definition": "أداة استفهام عن السبب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "ليه",
+     "meaning": "لماذا",
+     "examples": [
+      {
+       "text": "ليه ما جيتش؟",
+       "gloss": "لماذا لم تأت؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ليش",
+     "meaning": "لماذا",
+     "examples": [
+      {
+       "text": "ليش ما إجيت؟",
+       "gloss": "لماذا لم تأت؟"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "ليش",
+     "meaning": "لماذا"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ليش",
+     "meaning": "لماذا"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "علاش",
+     "meaning": "لماذا",
+     "examples": [
+      {
+       "text": "علاش ما جيتيش؟",
+       "gloss": "لماذا لم تأت؟"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "علاش",
+     "meaning": "لماذا"
+    },
+    {
+     "dialect": "algerian",
+     "form": "علاش",
+     "meaning": "لماذا"
+    },
+    {
+     "dialect": "libyan",
+     "form": "علاش",
+     "meaning": "لماذا"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ليه",
+     "meaning": "لماذا"
+    }
+   ]
+  },
+  {
+   "headword": "أين",
+   "definition": "أداة استفهام عن المكان",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "فين",
+     "meaning": "أين",
+     "examples": [
+      {
+       "text": "إنت فين؟",
+       "gloss": "أين أنت؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "وين",
+     "meaning": "أين",
+     "examples": [
+      {
+       "text": "وينك؟",
+       "gloss": "أين أنت؟"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "وين",
+     "meaning": "أين"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "وين",
+     "meaning": "أين"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "فين",
+     "meaning": "أين",
+     "examples": [
+      {
+       "text": "فين غادي؟",
+       "gloss": "إلى أين تذهب؟"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "وين",
+     "meaning": "أين"
+    },
+    {
+     "dialect": "algerian",
+     "form": "وين",
+     "meaning": "أين"
+    },
+    {
+     "dialect": "libyan",
+     "form": "وين",
+     "meaning": "أين"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "وين",
+     "meaning": "أين"
+    }
+   ]
+  },
+  {
+   "headword": "كيف",
+   "definition": "أداة استفهام عن الحال أو الطريقة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "إزّاي",
+     "meaning": "كيف",
+     "examples": [
+      {
+       "text": "إزاي عملت كده؟",
+       "gloss": "كيف فعلت ذلك؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "كيف",
+     "meaning": "كيف",
+     "examples": [
+      {
+       "text": "كيفك؟",
+       "gloss": "كيف حالك؟"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "شلون",
+     "meaning": "كيف",
+     "examples": [
+      {
+       "text": "شلونك؟",
+       "gloss": "كيف حالك؟"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شلون",
+     "meaning": "كيف",
+     "examples": [
+      {
+       "text": "شلونك؟",
+       "gloss": "كيف حالك؟"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "كيفاش",
+     "meaning": "كيف",
+     "examples": [
+      {
+       "text": "كيفاش داير؟",
+       "gloss": "كيف حالك؟"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "كيفاش",
+     "meaning": "كيف"
+    },
+    {
+     "dialect": "algerian",
+     "form": "كيفاش",
+     "meaning": "كيف"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كيف",
+     "meaning": "كيف"
+    }
+   ]
+  },
+  {
+   "headword": "مَن",
+   "definition": "أداة استفهام عن العاقل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "مين",
+     "meaning": "من",
+     "examples": [
+      {
+       "text": "مين ده؟",
+       "gloss": "من هذا؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مين",
+     "meaning": "من"
+    },
+    {
+     "dialect": "gulf",
+     "form": "منو",
+     "meaning": "من",
+     "examples": [
+      {
+       "text": "منو هذا؟",
+       "gloss": "من هذا؟"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "منو",
+     "meaning": "من"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "شكون",
+     "meaning": "من",
+     "examples": [
+      {
+       "text": "شكون هادا؟",
+       "gloss": "من هذا؟"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "شكون",
+     "meaning": "من"
+    },
+    {
+     "dialect": "algerian",
+     "form": "شكون",
+     "meaning": "من"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "منو",
+     "meaning": "من"
+    }
+   ]
+  },
+  {
+   "headword": "متى",
+   "definition": "أداة استفهام عن الزمان",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "إمتى",
+     "meaning": "متى",
+     "examples": [
+      {
+       "text": "إمتى هتيجي؟",
+       "gloss": "متى ستأتي؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "إيمتى",
+     "meaning": "متى"
+    },
+    {
+     "dialect": "gulf",
+     "form": "متى",
+     "meaning": "متى"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شوكت",
+     "meaning": "متى",
+     "examples": [
+      {
+       "text": "شوكت تجي؟",
+       "gloss": "متى تأتي؟"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "فوقاش",
+     "meaning": "متى",
+     "examples": [
+      {
+       "text": "فوقاش غادي تجي؟",
+       "gloss": "متى ستأتي؟"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "وقتاش",
+     "meaning": "متى"
+    },
+    {
+     "dialect": "algerian",
+     "form": "وقتاش",
+     "meaning": "متى"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "متين",
+     "meaning": "متى"
+    }
+   ]
+  },
+  {
+   "headword": "يريد",
+   "definition": "يرغب في",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "عايز",
+     "meaning": "يريد",
+     "notes": "وتُقال أيضاً «عاوز»",
+     "examples": [
+      {
+       "text": "أنا عايز أنام",
+       "gloss": "أريد أن أنام"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "بدّو",
+     "meaning": "يريد",
+     "notes": "بدّي، بدّك، بدّو…",
+     "examples": [
+      {
+       "text": "بدي روح",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "يبي",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "أبي أروح",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "najdi",
+     "form": "يبغى",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "وش تبغى؟",
+       "gloss": "ماذا تريد؟"
+      }
+     ]
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يبغى",
+     "meaning": "يريد"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يريد",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "أريد أروح",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بغا",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "بغيت نمشي",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يحب",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "نحب نمشي",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "يحب",
+     "meaning": "يريد"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يبي",
+     "meaning": "يريد"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "داير",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "أنا داير أمشي",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يشتي",
+     "meaning": "يريد",
+     "examples": [
+      {
+       "text": "أشتي أروح",
+       "gloss": "أريد أن أذهب"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "headword": "يتكلم",
+   "definition": "ينطق بالكلام ويتحدث",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "يتكلم",
+     "meaning": "يتكلم"
+    },
+    {
+     "dialect": "levantine",
+     "form": "يحكي",
+     "meaning": "يتكلم",
+     "examples": [
+      {
+       "text": "عم يحكي بالتلفون",
+       "gloss": "يتكلم بالهاتف"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "يسولف",
+     "meaning": "يتحدث ويقص الأحاديث",
+     "examples": [
+      {
+       "text": "قاعدين نسولف",
+       "gloss": "نجلس نتحدث"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يحچي",
+     "meaning": "يتكلم",
+     "examples": [
+      {
+       "text": "شنو دتحچي؟",
+       "gloss": "ماذا تقول؟"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يهضر",
+     "meaning": "يتكلم",
+     "examples": [
+      {
+       "text": "كيهضر بزاف",
+       "gloss": "يتكلم كثيراً"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "يهدر",
+     "meaning": "يتكلم"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يحكي",
+     "meaning": "يتكلم"
+    }
+   ]
+  },
+  {
+   "headword": "ينظر",
+   "definition": "يوجه بصره إلى",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "يبصّ",
+     "meaning": "ينظر",
+     "examples": [
+      {
+       "text": "بص هنا",
+       "gloss": "انظر هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يطّلع",
+     "meaning": "ينظر",
+     "examples": [
+      {
+       "text": "طلّع لهون",
+       "gloss": "انظر إلى هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "يطالع",
+     "meaning": "ينظر",
+     "examples": [
+      {
+       "text": "طالع هناك",
+       "gloss": "انظر هناك"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يباوع",
+     "meaning": "ينظر",
+     "examples": [
+      {
+       "text": "باوع هنا",
+       "gloss": "انظر هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "يشوف",
+     "meaning": "ينظر، يرى"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يعاين",
+     "meaning": "ينظر",
+     "examples": [
+      {
+       "text": "عاين هنا",
+       "gloss": "انظر هنا"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "headword": "حسناً",
+   "definition": "كلمة موافقة أو قبول",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "ماشي",
+     "meaning": "حسناً، موافق",
+     "examples": [
+      {
+       "text": "ماشي، هاجي بكرة",
+       "gloss": "حسناً، سآتي غداً"
+      }
+     ]
+    },
+    {
+     "dialect": "cairene",
+     "form": "طيب",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "levantine",
+     "form": "ماشي",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "levantine",
+     "form": "تمام",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "gulf",
+     "form": "زين",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "زين",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "واخّا",
+     "meaning": "حسناً، موافق",
+     "examples": [
+      {
+       "text": "واخا، غادي نجي",
+       "gloss": "حسناً، سآتي"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "باهي",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "algerian",
+     "form": "واخّا",
+     "meaning": "حسناً"
+    },
+    {
+     "dialect": "libyan",
+     "form": "باهي",
+     "meaning": "حسناً"
+    }
+   ]
+  },
+  {
+   "headword": "شكراً",
+   "definition": "كلمة امتنان",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "متشكّر",
+     "meaning": "شكراً",
+     "notes": "والأنثى متشكرة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "يسلمو",
+     "meaning": "شكراً",
+     "notes": "من «يسلمو إيديك»",
+     "examples": [
+      {
+       "text": "يسلمو كتير",
+       "gloss": "شكراً جزيلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "مشكور",
+     "meaning": "شكراً"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "عاشت إيدك",
+     "meaning": "شكراً، لمن قدم لك شيئاً"
+    },
+    {
+     "dialect": "algerian",
+     "form": "صحّيت",
+     "meaning": "شكراً",
+     "examples": [
+      {
+       "text": "صحيت خويا",
+       "gloss": "شكراً يا أخي"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يعيّشك",
+     "meaning": "شكراً",
+     "examples": [
+      {
+       "text": "يعيشك برشا",
+       "gloss": "شكراً جزيلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بارك الله فيك",
+     "meaning": "شكراً"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كتّر خيرك",
+     "meaning": "شكراً"
+    }
+   ]
+  },
+  {
+   "headword": "حذاء",
+   "definition": "ما يُلبس في القدم",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "جزمة",
+     "meaning": "حذاء",
+     "examples": [
+      {
+       "text": "الجزمة دي غالية",
+       "gloss": "هذا الحذاء غال"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "صبّاط",
+     "meaning": "حذاء"
+    },
+    {
+     "dialect": "levantine",
+     "form": "كندرة",
+     "meaning": "حذاء"
+    },
+    {
+     "dialect": "gulf",
+     "form": "جوتي",
+     "meaning": "حذاء",
+     "examples": [
+      {
+       "text": "اشتريت جوتي جديد",
+       "gloss": "اشتريت حذاءً جديداً"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قندرة",
+     "meaning": "حذاء"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "صبّاط",
+     "meaning": "حذاء"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "جزمة",
+     "meaning": "حذاء"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "جزمة",
+     "meaning": "حذاء"
+    }
+   ]
+  },
+  {
+   "headword": "ملابس",
+   "definition": "ما يُلبس على الجسد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "هدوم",
+     "meaning": "ملابس",
+     "examples": [
+      {
+       "text": "غسلت الهدوم",
+       "gloss": "غسلت الملابس"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "أواعي",
+     "meaning": "ملابس"
+    },
+    {
+     "dialect": "levantine",
+     "form": "تياب",
+     "meaning": "ملابس"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "هدوم",
+     "meaning": "ملابس"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "حوايج",
+     "meaning": "ملابس",
+     "examples": [
+      {
+       "text": "شريت حوايج جداد",
+       "gloss": "اشتريت ملابس جديدة"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "دبش",
+     "meaning": "ملابس"
+    },
+    {
+     "dialect": "algerian",
+     "form": "قشّ",
+     "meaning": "ملابس"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "هدوم",
+     "meaning": "ملابس"
+    }
+   ]
+  },
+  {
+   "headword": "قليل",
+   "definition": "مقدار صغير",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "شويّة",
+     "meaning": "قليل",
+     "examples": [
+      {
+       "text": "استنى شوية",
+       "gloss": "انتظر قليلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شوي",
+     "meaning": "قليل",
+     "examples": [
+      {
+       "text": "استنى شوي",
+       "gloss": "انتظر قليلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "شوي",
+     "meaning": "قليل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شويّة",
+     "meaning": "قليل"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "شويّة",
+     "meaning": "قليل"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شويّة",
+     "meaning": "قليل"
+    }
+   ]
+  },
+  {
+   "headword": "نقود",
+   "definition": "المال",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "فلوس",
+     "meaning": "نقود",
+     "examples": [
+      {
+       "text": "معيش فلوس",
+       "gloss": "ليس معي نقود"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مصاري",
+     "meaning": "نقود",
+     "examples": [
+      {
+       "text": "ما معي مصاري",
+       "gloss": "ليس معي نقود"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "فلوس",
+     "meaning": "نقود"
+    },
+    {
+     "dialect": "kuwaiti",
+     "form": "بيزات",
+     "meaning": "نقود"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "فلوس",
+     "meaning": "نقود"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "فلوس",
+     "meaning": "نقود"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "فلوس",
+     "meaning": "نقود"
+    },
+    {
+     "dialect": "algerian",
+     "form": "دراهم",
+     "meaning": "نقود",
+     "examples": [
+      {
+       "text": "ما عنديش دراهم",
+       "gloss": "ليس عندي نقود"
+      }
+     ]
+    },
+    {
+     "dialect": "sudanese",
+     "form": "قروش",
+     "meaning": "نقود"
+    }
+   ]
+  },
+  {
+   "headword": "جميل",
+   "definition": "حسن المنظر",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "حلو",
+     "meaning": "جميل"
+    },
+    {
+     "dialect": "levantine",
+     "form": "حلو",
+     "meaning": "جميل"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حلو",
+     "meaning": "جميل"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "زوين",
+     "meaning": "جميل",
+     "notes": "والأنثى زوينة",
+     "examples": [
+      {
+       "text": "منظر زوين",
+       "gloss": "منظر جميل"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "شباب",
+     "meaning": "جميل",
+     "notes": "بمعنى الجمال لا الشباب",
+     "examples": [
+      {
+       "text": "طفلة شابة",
+       "gloss": "فتاة جميلة"
+      }
+     ]
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سمح",
+     "meaning": "جميل",
+     "examples": [
+      {
+       "text": "بيت سمح",
+       "gloss": "بيت جميل"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "حلو",
+     "meaning": "جميل"
+    }
+   ]
+  },
+  {
+   "headword": "بيت",
+   "definition": "المسكن",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بيت",
+     "meaning": "بيت"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بيت",
+     "meaning": "بيت"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بيت",
+     "meaning": "بيت"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بيت",
+     "meaning": "بيت"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "دار",
+     "meaning": "بيت",
+     "examples": [
+      {
+       "text": "مشيت للدار",
+       "gloss": "ذهبت إلى البيت"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "دار",
+     "meaning": "بيت"
+    },
+    {
+     "dialect": "algerian",
+     "form": "دار",
+     "meaning": "بيت"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بيت",
+     "meaning": "بيت"
+    }
+   ]
+  },
+  {
+   "headword": "أب",
+   "definition": "الوالد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "بابا",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بابا",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بيّي",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يبه",
+     "meaning": "يا أبي، في النداء"
+    },
+    {
+     "dialect": "gulf",
+     "form": "أبوي",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بابا",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بّا",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "بابا",
+     "meaning": "أبي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أبوي",
+     "meaning": "أبي"
+    }
+   ]
+  },
+  {
+   "headword": "أم",
+   "definition": "الوالدة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "ماما",
+     "meaning": "أمي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "إمّي",
+     "meaning": "أمي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يمّه",
+     "meaning": "يا أمي، في النداء"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يمّه",
+     "meaning": "أمي، وفي النداء"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "مّي",
+     "meaning": "أمي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يمّا",
+     "meaning": "أمي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أمي",
+     "meaning": "أمي"
+    }
+   ]
+  },
+  {
+   "headword": "صديق",
+   "definition": "الرفيق المقرّب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "صاحب",
+     "meaning": "صديق",
+     "examples": [
+      {
+       "text": "ده صاحبي",
+       "gloss": "هذا صديقي"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "رفيق",
+     "meaning": "صديق"
+    },
+    {
+     "dialect": "levantine",
+     "form": "صاحب",
+     "meaning": "صديق"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ربع",
+     "meaning": "الأصدقاء، جماعة الشخص",
+     "notes": "تُقال للجمع",
+     "examples": [
+      {
+       "text": "رايح مع ربعي",
+       "gloss": "ذاهب مع أصدقائي"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "صديق",
+     "meaning": "صديق"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "صاحب",
+     "meaning": "صديق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "صاحب",
+     "meaning": "صديق"
+    }
+   ]
+  },
+  {
+   "headword": "عمل",
+   "definition": "الوظيفة أو الشغل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "شغل",
+     "meaning": "عمل",
+     "examples": [
+      {
+       "text": "رايح الشغل",
+       "gloss": "ذاهب إلى العمل"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شغل",
+     "meaning": "عمل"
+    },
+    {
+     "dialect": "gulf",
+     "form": "شغل",
+     "meaning": "عمل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شغل",
+     "meaning": "عمل"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "خدمة",
+     "meaning": "عمل، وظيفة",
+     "examples": [
+      {
+       "text": "مشيت للخدمة",
+       "gloss": "ذهبت إلى العمل"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "خدمة",
+     "meaning": "عمل"
+    },
+    {
+     "dialect": "algerian",
+     "form": "خدمة",
+     "meaning": "عمل"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شغل",
+     "meaning": "عمل"
+    }
+   ]
+  },
+  {
+   "headword": "غداً",
+   "definition": "اليوم التالي",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "بكرة",
+     "meaning": "غداً",
+     "examples": [
+      {
+       "text": "أشوفك بكرة",
+       "gloss": "أراك غداً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "بكرا",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "gulf",
+     "form": "باچر",
+     "meaning": "غداً",
+     "notes": "وتُنطق «باكر» في نجد والحجاز"
+    },
+    {
+     "dialect": "najdi",
+     "form": "باكر",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بكرة",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "باچر",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "غدّا",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "غدوة",
+     "meaning": "غداً",
+     "examples": [
+      {
+       "text": "نتقابلوا غدوة",
+       "gloss": "نلتقي غداً"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "غدوة",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "libyan",
+     "form": "غدوة",
+     "meaning": "غداً"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بكرة",
+     "meaning": "غداً"
+    }
+   ]
+  },
+  {
+   "headword": "اليوم",
+   "definition": "هذا النهار",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "النهارده",
+     "meaning": "اليوم",
+     "examples": [
+      {
+       "text": "النهارده الجو حلو",
+       "gloss": "الطقس جميل اليوم"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "اليوم",
+     "meaning": "اليوم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "اليوم",
+     "meaning": "اليوم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "اليوم",
+     "meaning": "اليوم"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "اليوم",
+     "meaning": "اليوم"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "الليلة",
+     "meaning": "اليوم كله، لا الليل فقط",
+     "notes": "قد يلتبس على غير السودانيين",
+     "examples": [
+      {
+       "text": "الليلة عندي شغل",
+       "gloss": "اليوم عندي عمل"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "headword": "شيء",
+   "definition": "أي أمر أو غرض",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "حاجة",
+     "meaning": "شيء",
+     "examples": [
+      {
+       "text": "عايز حاجة؟",
+       "gloss": "هل تريد شيئاً؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شي",
+     "meaning": "شيء"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "إشي",
+     "meaning": "شيء",
+     "examples": [
+      {
+       "text": "بدك إشي؟",
+       "gloss": "هل تريد شيئاً؟"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "شي",
+     "meaning": "شيء"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شي",
+     "meaning": "شيء"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "حاجة",
+     "meaning": "شيء"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "حاجة",
+     "meaning": "شيء"
+    },
+    {
+     "dialect": "algerian",
+     "form": "حاجة",
+     "meaning": "شيء"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حاجة",
+     "meaning": "شيء"
+    }
+   ]
+  },
+  {
+   "headword": "رائع",
+   "definition": "ممتاز، يفوق الوصف",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "جامد",
+     "meaning": "رائع",
+     "notes": "عامية شبابية",
+     "examples": [
+      {
+       "text": "الفيلم جامد",
+       "gloss": "الفيلم رائع"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "رهيب",
+     "meaning": "رائع"
+    },
+    {
+     "dialect": "gulf",
+     "form": "رهيب",
+     "meaning": "رائع"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "خوش",
+     "meaning": "رائع، جيد جداً",
+     "notes": "تسبق الاسم: خوش أكل",
+     "examples": [
+      {
+       "text": "خوش أكل",
+       "gloss": "طعام رائع"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "واعر",
+     "meaning": "رائع",
+     "notes": "عامية شبابية"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يهبّل",
+     "meaning": "رائع، مذهل",
+     "notes": "عامية شبابية"
+    }
+   ]
+  },
+  {
+   "headword": "تعالَ",
+   "definition": "فعل أمر بالحضور",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "تعالى",
+     "meaning": "تعال",
+     "examples": [
+      {
+       "text": "تعالى هنا",
+       "gloss": "تعال إلى هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "تعا",
+     "meaning": "تعال",
+     "examples": [
+      {
+       "text": "تعا لهون",
+       "gloss": "تعال إلى هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "تعال",
+     "meaning": "تعال"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "تعال",
+     "meaning": "تعال"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "أجي",
+     "meaning": "تعال",
+     "examples": [
+      {
+       "text": "أجي لهنا",
+       "gloss": "تعال إلى هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "أرواح",
+     "meaning": "تعال"
+    },
+    {
+     "dialect": "algerian",
+     "form": "أرواح",
+     "meaning": "تعال",
+     "examples": [
+      {
+       "text": "أرواح لهنا",
+       "gloss": "تعال إلى هنا"
+      }
+     ]
+    },
+    {
+     "dialect": "sudanese",
+     "form": "تعال",
+     "meaning": "تعال"
+    }
+   ]
+  },
+  {
+   "headword": "أعطني",
+   "definition": "فعل أمر بالإعطاء",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "إدّيني",
+     "meaning": "أعطني",
+     "examples": [
+      {
+       "text": "إديني كوباية مية",
+       "gloss": "أعطني كوب ماء"
+      }
+     ]
+    },
+    {
+     "dialect": "cairene",
+     "form": "هات",
+     "meaning": "أعطني، ناولني"
+    },
+    {
+     "dialect": "levantine",
+     "form": "عطيني",
+     "meaning": "أعطني"
+    },
+    {
+     "dialect": "gulf",
+     "form": "عطني",
+     "meaning": "أعطني"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "انطيني",
+     "meaning": "أعطني",
+     "examples": [
+      {
+       "text": "انطيني ماي",
+       "gloss": "أعطني ماءً"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "عطيني",
+     "meaning": "أعطني"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "عطيني",
+     "meaning": "أعطني"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أدّيني",
+     "meaning": "أعطني"
+    }
+   ]
+  },
+  {
+   "headword": "لذيذ",
+   "definition": "طيب الطعم",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "حلو",
+     "meaning": "لذيذ"
+    },
+    {
+     "dialect": "levantine",
+     "form": "طيّب",
+     "meaning": "لذيذ",
+     "examples": [
+      {
+       "text": "الأكل طيب كتير",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "زاكي",
+     "meaning": "لذيذ"
+    },
+    {
+     "dialect": "gulf",
+     "form": "لذيذ",
+     "meaning": "لذيذ"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "طيّب",
+     "meaning": "لذيذ"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بنين",
+     "meaning": "لذيذ",
+     "examples": [
+      {
+       "text": "الطاجين بنين",
+       "gloss": "الطاجين لذيذ"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "بنين",
+     "meaning": "لذيذ"
+    },
+    {
+     "dialect": "algerian",
+     "form": "بنين",
+     "meaning": "لذيذ"
+    }
+   ]
+  },
+  {
+   "headword": "بسرعة",
+   "definition": "على عجل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "بسرعة",
+     "meaning": "بسرعة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "قوام",
+     "meaning": "بسرعة",
+     "examples": [
+      {
+       "text": "تعا قوام",
+       "gloss": "تعال بسرعة"
+      }
+     ]
+    },
+    {
+     "dialect": "gulf",
+     "form": "عجل",
+     "meaning": "بسرعة",
+     "examples": [
+      {
+       "text": "تعال عجل",
+       "gloss": "تعال بسرعة"
+      }
+     ]
+    },
+    {
+     "dialect": "moroccan",
+     "form": "دغيا",
+     "meaning": "بسرعة",
+     "examples": [
+      {
+       "text": "أجي دغيا",
+       "gloss": "تعال بسرعة"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "فيسع",
+     "meaning": "بسرعة",
+     "examples": [
+      {
+       "text": "أرواح فيسع",
+       "gloss": "تعال بسرعة"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "بالزربة",
+     "meaning": "بسرعة"
+    }
+   ]
+  },
+  {
+   "headword": "لا بأس",
+   "definition": "عبارة تهوين أو قبول",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "cairene",
+     "form": "ولا يهمّك",
+     "meaning": "لا بأس، لا تقلق",
+     "examples": [
+      {
+       "text": "ولا يهمك، هظبطها",
+       "gloss": "لا تقلق، سأصلحها"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ولا يهمّك",
+     "meaning": "لا بأس"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مافي مشكلة",
+     "meaning": "لا بأس"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ما عليه",
+     "meaning": "لا بأس",
+     "examples": [
+      {
+       "text": "ما عليه، خلاص",
+       "gloss": "لا بأس، انتهى الأمر"
+      }
+     ]
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ما يخالف",
+     "meaning": "لا بأس"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "ما كاين مشكل",
+     "meaning": "لا بأس"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "ما فماش مشكل",
+     "meaning": "لا بأس"
+    },
+    {
+     "dialect": "algerian",
+     "form": "ما كانش مشكل",
+     "meaning": "لا بأس"
+    }
+   ]
+  }
+ ]
+}

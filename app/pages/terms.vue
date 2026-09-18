@@ -148,7 +148,7 @@ useHead({ title: 'شروط الاستخدام - لهجة' })
   </p>
   <p>
   البريد الإلكتروني:
-  <a href="mailto:terms@lahga.com">terms@lahga.com</a>
+  <a href="mailto:info@lahga.fyi">terms@lahga.com</a>
   </p>
   </section>
   <p><small>آخر تحديث: <time datetime="2026-09-14">١٤ سبتمبر ٢٠٢٦</time></small></p>

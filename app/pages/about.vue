@@ -101,7 +101,7 @@ useHead({ title: 'عن الموقع - لهجة' })
         الموقع، يمكنك التواصل معنا عبر:
       </p>
       <address>
-        البريد الإلكتروني: <a href="mailto:info@lahga.com">info@lahga.com</a><br />
+        البريد الإلكتروني: <a href="mailto:info@lahga.fyi">info@lahga.fyi</a><br />
         أو من خلال <NuxtLink to="/contact">نموذج الاتصال</NuxtLink>
       </address>
     </section>

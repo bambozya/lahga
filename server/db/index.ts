@@ -37,14 +37,16 @@ async function connect(): Promise<Db> {
     await seedIfEmpty(db)
     return db
   }
-  const [{ PGlite }, { drizzle: drizzlePglite }, { migrate: migratePglite }] = await Promise.all([
+  const [{ PGlite }, { pg_trgm }, { drizzle: drizzlePglite }, { migrate: migratePglite }] = await Promise.all([
     import('@electric-sql/pglite'),
+    import('@electric-sql/pglite/contrib/pg_trgm'),
     import('drizzle-orm/pglite'),
     import('drizzle-orm/pglite/migrator'),
   ])
   const dataDir = resolve(process.cwd(), '.data/lahga')
   mkdirSync(dataDir, { recursive: true })
-  const client = new PGlite(dataDir)
+  // pg_trgm backs the search index (migration 0005); PGlite needs the extension handed in.
+  const client = new PGlite(dataDir, { extensions: { pg_trgm } })
   const db = drizzlePglite(client, { schema }) as unknown as Db
   await migratePglite(db as any, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
   await seedIfEmpty(db)

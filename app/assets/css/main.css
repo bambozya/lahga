@@ -99,11 +99,6 @@ a[href="#main"] {
 }
 a[href="#main"]:focus { transform: none; }
 
-/* ---------- Construction notice: only in the read-only static snapshot ---------- */
-p[role="status"]:has(+ header) {
-  margin: 0; max-width: none; padding: var(--space-3xs) var(--gutter); border: 0; border-radius: 0;
-  background: var(--ink); color: var(--paper); font-size: var(--step--1); font-weight: 600; text-align: center; text-wrap: balance;
-}
 
 /* ---------- Header: logo + tagline | nav | theme, then the search row, then one heavy rule ---------- */
 header {

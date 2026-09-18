@@ -21,11 +21,17 @@ export default defineEventHandler(async (event) => {
     }).then(shape)
   }
 
+  // Substring match on the trigram-indexed columns (migration 0005), best matches first:
+  // an exact headword, then a headword starting with the term, then by trigram similarity.
   const pattern = `%${term}%`
   const matchedEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
     .from(schema.entries)
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
-    .where(ilike(schema.entries.formNormalized, pattern))
+    .where(and(
+      ilike(schema.entries.formNormalized, pattern),
+      eq(schema.entries.status, 'active'),
+      eq(schema.wordEntryLinks.status, 'active'),
+    ))
 
   const ids = await db.select({ id: schema.words.id }).from(schema.words)
     .where(and(
@@ -35,14 +41,21 @@ export default defineEventHandler(async (event) => {
         sql`${schema.words.id} in ${matchedEntryWords}`,
       ),
     ))
+    .orderBy(
+      sql`(${schema.words.headwordNormalized} = ${term}) desc`,
+      sql`(${schema.words.headwordNormalized} like ${term + '%'}) desc`,
+      sql`similarity(${schema.words.headwordNormalized}, ${term}) desc`,
+      desc(schema.words.score),
+    )
     .limit(max)
   if (!ids.length) return []
 
+  const order = new Map(ids.map((r, i) => [r.id, i]))
   const rows = await db.query.words.findMany({
     where: sql`${schema.words.id} in (${sql.join(ids.map(r => sql`${r.id}`), sql`, `)})`,
     with: { links: { with: { entry: { with: { dialect: true } } } } },
   })
-  return shape(rows)
+  return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
 })
 
 function shape(rows: any[]) {

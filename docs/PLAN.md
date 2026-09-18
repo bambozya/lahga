@@ -152,18 +152,22 @@ Users get `banned_at` and `ban_reason`; a banned user cannot log in or act.
 Done when: a user proposes a new dialect description, an admin approves it, and
 the dialect page shows the new text with the proposer credited.
 
-### Phase 5: content and launch (2 weeks, in parallel with 3 and 4)
+### Phase 5: content and launch (2 weeks, in parallel with 3 and 4) — in progress
 
 - Seed a few hundred words with entries in at least four dialects. Sources:
   the founder's own knowledge, friends per dialect, and existing public-domain
-  word lists. Every seeded row is attributed to a "lahga" system user.
-- Trigram index (`pg_trgm`) on the normalised columns so search stays fast.
-- Legal: Impressum, terms that grant the site a licence to user content,
-  privacy page updated for accounts and emails, cookie note if any non-essential
-  cookie appears.
-- Ops: offsite copy of the nightly backups to a German object storage, error
-  tracking, uptime check.
-- Remove the GitHub Pages snapshot once nobody needs the fallback.
+  word lists. Every seeded row is attributed to the «لهجة» system user.
+  Done so far: the bulk importer at `/admin/import` (format in
+  `docs/seed/FORMAT.md`) and a first draft of 37 everyday words with 300+
+  entries in `docs/seed/words-draft.json`, awaiting the founder's review.
+- ~~Trigram index (`pg_trgm`) on the normalised columns so search stays fast.~~ done
+- Legal: Impressum (page exists with placeholders for the operator's name and
+  address), terms already grant the site a licence to user content, privacy
+  page rewritten for accounts, processors and retention, no non-essential
+  cookies. Contact form sends email (needs `CONTACT_EMAIL`).
+- Ops: offsite copy of the nightly backups to a German object storage (needs
+  a bucket), error tracking, uptime check.
+- ~~Remove the GitHub Pages snapshot once nobody needs the fallback.~~ done
 
 Done when: the construction wording is gone, the front page has real content,
 and a stranger can register and contribute.
