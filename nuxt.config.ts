@@ -49,6 +49,19 @@ export default defineNuxtConfig({
       ],
     },
   },
+  routeRules: {
+    // Security headers on every response. HSTS makes browsers use https for a year
+    // once they have seen the site over https; browsers ignore it on plain http.
+    '/**': {
+      headers: {
+        'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+        'X-Content-Type-Options': 'nosniff',
+        'X-Frame-Options': 'DENY',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      },
+    },
+  },
   nitro: {
     // PGlite ships WASM assets; keep it external so the bundler leaves it alone.
     externals: { external: ['@electric-sql/pglite'] },
