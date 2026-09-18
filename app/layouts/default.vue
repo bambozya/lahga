@@ -6,9 +6,8 @@ const q = ref(String(route.query.q ?? ''))
 watch(() => route.query.q, v => { q.value = String(v ?? '') })
 // The form has a real action so it works without JS; with JS we stay in the app.
 const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
-// Account links in the nav.
-const { loggedIn, user, clear } = useUserSession()
-const logout = async () => { await clear(); await router.push('/') }
+// Account link in the nav: the person icon and the name. Logging out lives on the settings page.
+const { loggedIn, user } = useUserSession()
 </script>
 
 <template>
@@ -28,8 +27,8 @@ const logout = async () => { await clear(); await router.push('/') }
           <li><NuxtLink to="/browse">الفهرس</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
           <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
-          <li v-if="loggedIn"><NuxtLink to="/settings">{{ user?.displayName }}</NuxtLink></li>
-          <li v-if="loggedIn"><a href="/api/auth/logout" @click.prevent="logout">خروج</a></li>
+          <!-- Icon: Material Symbols (Apache 2.0): person. -->
+          <li v-if="loggedIn"><NuxtLink to="/settings"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" /></svg>{{ user?.displayName }}</NuxtLink></li>
           <li v-else><NuxtLink to="/login">دخول</NuxtLink></li>
         </ul>
       </nav>

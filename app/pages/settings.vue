@@ -30,6 +30,8 @@ const resend = useForm(async () => {
   resent.value = true
 })
 
+const logout = async () => { await clear(); await navigateTo('/') }
+
 const confirmDelete = ref('')
 const deletePassword = ref('')
 const remove = useForm(async () => {
@@ -54,6 +56,7 @@ const remove = useForm(async () => {
         <p v-else><button type="button" :disabled="resend.busy.value" @click="resend.run">أرسل رابط التأكيد مجدداً</button></p>
       </template>
       <p v-if="me.providers.length">حسابات مرتبطة: {{ me.providers.map(p => p === 'google' ? 'Google' : p).join('، ') }}</p>
+      <p><button type="button" @click="logout">تسجيل الخروج</button></p>
     </section>
 
     <section>
