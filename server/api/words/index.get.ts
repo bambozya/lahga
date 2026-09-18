@@ -1,4 +1,4 @@
-import { desc, eq, ilike, or, sql } from 'drizzle-orm'
+import { and, desc, eq, ilike, or, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { normalizeArabic } from '../../../shared/utils/arabic'
 
@@ -28,9 +28,12 @@ export default defineEventHandler(async (event) => {
     .where(ilike(schema.entries.formNormalized, pattern))
 
   const ids = await db.select({ id: schema.words.id }).from(schema.words)
-    .where(or(
-      ilike(schema.words.headwordNormalized, pattern),
-      sql`${schema.words.id} in ${matchedEntryWords}`,
+    .where(and(
+      eq(schema.words.status, 'active'),
+      or(
+        ilike(schema.words.headwordNormalized, pattern),
+        sql`${schema.words.id} in ${matchedEntryWords}`,
+      ),
     ))
     .limit(max)
   if (!ids.length) return []

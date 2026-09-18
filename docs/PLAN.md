@@ -39,7 +39,7 @@ product and [DATA_MODEL.md](DATA_MODEL.md) for the tables that exist today.
 Each phase ends with something visible on lahga.fyi. Estimates assume evenings
 and weekends.
 
-### Phase 1: accounts (2 weeks)
+### Phase 1: accounts (2 weeks) — done 2026-09-18
 
 Goal: a person can create an account, log in, and see their own profile.
 
@@ -69,7 +69,7 @@ Done when: a stranger can register with email, confirm it, log out, log in
 again with Google using the same email and land on the same account, and delete
 the account, which anonymises their content instead of removing it.
 
-### Phase 2: contribution (3 weeks)
+### Phase 2: contribution (3 weeks) — done 2026-09-18
 
 Goal: a logged-in user adds a word with an entry and an example, and the word
 appears on the site.
@@ -77,9 +77,9 @@ appears on the site.
 Schema:
 - New `revisions` (id, target_type, target_id, revision_no, data jsonb,
   author_id, reason text null, created_at). Every create and edit writes one
-  row. The live tables hold the current version.
-- `words`, `entries`, `examples`, `word_entry_links`: add `updated_at` and
-  `current_revision_id`.
+  row. The live tables hold the current version. (`current_revision_id` was
+  dropped as redundant: the highest revision_no is the current one.)
+- `words`, `entries`, `examples`, `word_entry_links`: add `updated_at`.
 - `words`: add `kind` enum (word, phrase, proverb), default word.
 
 Server:
@@ -94,8 +94,9 @@ Server:
 - Rate limits: contributions per user per hour, and a daily cap for accounts
   younger than a week.
 
-Pages: `/add-word` becomes real; edit forms on word, entry and example; a
-"my contributions" tab on the profile; a history view per word.
+Pages: `/add-word` becomes real; `/w/[id]/edit` for the word, inline forms on
+the word page for entries and examples; contributions on the public profile;
+`/w/[id]/history` per word.
 
 Done when: a new user can add, edit and delete their own word, cannot touch
 someone else's, and an admin can open a word's history.

@@ -1,8 +1,9 @@
 # Data model
 
-Everything users create is a separate, votable row. Nothing user-generated is
-edited in place; corrections are new rows that compete on votes. This keeps the
-door open for the future reputation system.
+Everything users create is a separate, votable row. Authors may edit and delete
+their own rows, but nothing is lost: every create and edit writes a row to
+`revisions`, and deletes only set `status = deleted`. A row that other people
+have built on (examples, links, votes) can no longer be deleted by its author.
 
 ## Tables
 
@@ -83,6 +84,25 @@ by dialect. Links below the threshold are shown collapsed as "suggested".
 | created_at  | timestamptz  |                                          |
 | score       | int          |                                          |
 | status      | enum         |                                          |
+
+### revisions
+
+The history of every user-generated row. `data` holds the content fields after
+the change (for a delete, `{"status": "deleted"}`). Revision 1 is the creation.
+
+| column      | type        | notes                                     |
+|-------------|-------------|-------------------------------------------|
+| id          | int pk      |                                           |
+| target_type | enum        | word, entry, link, example                |
+| target_id   | int         |                                           |
+| revision_no | int         | unique with target_type + target_id       |
+| data        | jsonb       | content after the change                  |
+| author_id   | int fk null |                                           |
+| reason      | text null   | optional, entered by the editor           |
+| created_at  | timestamptz |                                           |
+
+`words`, `entries`, `word_entry_links` and `examples` also carry `updated_at`,
+and `words` has `kind` (word, phrase, proverb; default word).
 
 ### votes
 One table for all targets.

@@ -1,5 +1,5 @@
 import {
-  pgTable, pgEnum, serial, bigserial, integer, smallint, text, timestamp, uniqueIndex, index,
+  pgTable, pgEnum, serial, bigserial, integer, smallint, text, timestamp, jsonb, uniqueIndex, index,
 } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm'
 
@@ -10,6 +10,7 @@ export const voteTarget = pgEnum('vote_target', ['word', 'entry', 'link', 'examp
 export const flagReason = pgEnum('flag_reason', ['offensive', 'wrong_dialect', 'wrong_link', 'spam', 'other'])
 export const userRole = pgEnum('user_role', ['user', 'moderator', 'admin'])
 export const emailTokenPurpose = pgEnum('email_token_purpose', ['verify', 'reset'])
+export const wordKind = pgEnum('word_kind', ['word', 'phrase', 'proverb'])
 
 // ---------- users ----------
 
@@ -76,12 +77,15 @@ export const words = pgTable('words', {
   headword: text('headword').notNull(),
   headwordNormalized: text('headword_normalized').notNull(),
   definition: text('definition').notNull(),
+  kind: wordKind('kind').notNull().default('word'),
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
   score: integer('score').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   index('words_headword_normalized_idx').on(t.headwordNormalized),
+  index('words_created_by_idx').on(t.createdBy),
 ])
 
 // ---------- entries: a dialect's word ----------
@@ -95,11 +99,13 @@ export const entries = pgTable('entries', {
   notes: text('notes'),
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
   score: integer('score').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   index('entries_form_normalized_idx').on(t.formNormalized),
   index('entries_dialect_idx').on(t.dialectId),
+  index('entries_created_by_idx').on(t.createdBy),
 ])
 
 // ---------- links: the cross-dialect graph ----------
@@ -110,6 +116,7 @@ export const wordEntryLinks = pgTable('word_entry_links', {
   entryId: integer('entry_id').notNull().references(() => entries.id),
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
   score: integer('score').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
@@ -126,10 +133,29 @@ export const examples = pgTable('examples', {
   gloss: text('gloss'),
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
   score: integer('score').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   index('examples_entry_idx').on(t.entryId),
+])
+
+// ---------- revisions: the history of every user-generated row ----------
+// Every create and edit writes one row with the content fields after the change.
+// The live tables hold the current version; this table lets anyone see what changed
+// and lets an admin put an older version back.
+
+export const revisions = pgTable('revisions', {
+  id: serial('id').primaryKey(),
+  targetType: voteTarget('target_type').notNull(),
+  targetId: integer('target_id').notNull(),
+  revisionNo: integer('revision_no').notNull(),
+  data: jsonb('data').notNull().$type<Record<string, unknown>>(),
+  authorId: integer('author_id').references(() => users.id),
+  reason: text('reason'),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  uniqueIndex('revisions_target_no_unique').on(t.targetType, t.targetId, t.revisionNo),
 ])
 
 // ---------- votes ----------
@@ -176,14 +202,16 @@ export const oauthAccountsRelations = relations(oauthAccounts, ({ one }) => ({
   user: one(users, { fields: [oauthAccounts.userId], references: [users.id] }),
 }))
 
-export const wordsRelations = relations(words, ({ many }) => ({
+export const wordsRelations = relations(words, ({ one, many }) => ({
   links: many(wordEntryLinks),
+  author: one(users, { fields: [words.createdBy], references: [users.id] }),
 }))
 
 export const entriesRelations = relations(entries, ({ one, many }) => ({
   dialect: one(dialects, { fields: [entries.dialectId], references: [dialects.id] }),
   links: many(wordEntryLinks),
   examples: many(examples),
+  author: one(users, { fields: [entries.createdBy], references: [users.id] }),
 }))
 
 export const wordEntryLinksRelations = relations(wordEntryLinks, ({ one }) => ({
@@ -193,4 +221,9 @@ export const wordEntryLinksRelations = relations(wordEntryLinks, ({ one }) => ({
 
 export const examplesRelations = relations(examples, ({ one }) => ({
   entry: one(entries, { fields: [examples.entryId], references: [entries.id] }),
+  author: one(users, { fields: [examples.createdBy], references: [users.id] }),
+}))
+
+export const revisionsRelations = relations(revisions, ({ one }) => ({
+  author: one(users, { fields: [revisions.authorId], references: [users.id] }),
 }))

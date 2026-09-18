@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
   })
 
   return rows.map((e) => {
-    const words = e.links.filter(l => l.status === 'active').map(l => l.word)
+    const words = e.links.filter(l => l.status === 'active' && l.word.status === 'active').map(l => l.word)
     const synonyms = words.flatMap(w => w.links
       .filter(l => l.status === 'active' && l.entry.id !== e.id && l.entry.status === 'active')
       .map(l => ({ id: l.entry.id, form: l.entry.form, wordId: w.id, dialect: { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr } })))

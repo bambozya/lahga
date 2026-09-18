@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
     with: {
       links: {
         with: {
-          entry: { with: { dialect: { with: { parent: true } }, examples: true } },
+          entry: { with: { dialect: { with: { parent: true } }, examples: true, author: true } },
         },
       },
     },
@@ -29,6 +29,8 @@ export default defineEventHandler(async (event) => {
       meaning: l.entry.meaning,
       notes: l.entry.notes,
       score: l.entry.score,
+      createdBy: l.entry.createdBy,
+      author: l.entry.author && !l.entry.author.deletedAt ? { id: l.entry.author.id, displayName: l.entry.author.displayName } : null,
       dialect: { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr },
       group: l.entry.dialect.parent
         ? { slug: l.entry.dialect.parent.slug, nameAr: l.entry.dialect.parent.nameAr }
@@ -36,7 +38,7 @@ export default defineEventHandler(async (event) => {
       examples: l.entry.examples
         .filter(x => x.status === 'active')
         .sort((a, b) => b.score - a.score)
-        .map(x => ({ id: x.id, text: x.text, gloss: x.gloss, score: x.score })),
+        .map(x => ({ id: x.id, text: x.text, gloss: x.gloss, score: x.score, createdBy: x.createdBy })),
     }))
     .sort((a, b) => b.linkScore - a.linkScore || b.score - a.score)
 
@@ -48,7 +50,8 @@ export default defineEventHandler(async (event) => {
   }
 
   return {
-    id: word.id, headword: word.headword, definition: word.definition, score: word.score, createdAt: word.createdAt,
+    id: word.id, headword: word.headword, definition: word.definition, kind: word.kind, score: word.score,
+    createdAt: word.createdAt, createdBy: word.createdBy,
     groups: Object.values(groups),
   }
 })
