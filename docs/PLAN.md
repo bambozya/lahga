@@ -161,8 +161,7 @@ the dialect page shows the new text with the proposer credited.
   `docs/seed/FORMAT.md`) and a first draft of 37 everyday words with 300+
   entries in `docs/seed/words-draft.json`, awaiting the founder's review.
 - ~~Trigram index (`pg_trgm`) on the normalised columns so search stays fast.~~ done
-- Legal: Impressum (page exists with placeholders for the operator's name and
-  address), terms already grant the site a licence to user content, privacy
+- Legal: Impressum deferred at the founder's request (2026-09-18); terms already grant the site a licence to user content, privacy
   page rewritten for accounts, processors and retention, no non-essential
   cookies. Contact form sends email (needs `CONTACT_EMAIL`).
 - Ops: offsite copy of the nightly backups to a German object storage (needs
