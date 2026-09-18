@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useHead({ title: 'إعادة تعيين كلمة المرور - لهجة' })
+useSeo({ title: 'إعادة تعيين كلمة المرور', noindex: true })
 const route = useRoute()
 const { fetch: refresh } = useUserSession()
 const token = computed(() => typeof route.query.token === 'string' ? route.query.token : '')

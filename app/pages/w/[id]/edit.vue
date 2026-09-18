@@ -7,7 +7,7 @@ if (error.value || !word.value) throw createError({ statusCode: 404, statusMessa
 if (user.value?.id !== word.value.createdBy && user.value?.role !== 'admin') {
   throw createError({ statusCode: 403, statusMessage: 'يمكنك تعديل ما أضفته أنت فقط', fatal: true })
 }
-useHead({ title: () => `تعديل ${word.value?.headword} - لهجة` })
+useSeo({ title: () => `تعديل ${word.value?.headword ?? ''}`, noindex: true })
 const form = reactive({ headword: word.value.headword, definition: word.value.definition, kind: word.value.kind, reason: '' })
 const { busy, error: failure, run } = useForm(async () => {
   await $fetch(`/api/words/${word.value!.id}`, { method: 'PATCH', body: form })

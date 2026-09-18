@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
-useHead({ title: 'الإدارة: آخر الإضافات - لهجة' })
+useSeo({ title: 'الإدارة: آخر الإضافات', noindex: true })
 const { data: items, refresh } = await useFetch('/api/admin/recent')
 const typeLabel: Record<string, string> = { word: 'كلمة', entry: 'مدخل', example: 'مثال' }
 const statusLabel: Record<string, string> = { active: 'ظاهر', hidden: 'مخفي', deleted: 'محذوف' }

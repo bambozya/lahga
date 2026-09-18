@@ -1,4 +1,23 @@
 <script setup lang="ts">
+useSeo({
+  title: 'قاموس اللهجات العربية',
+  path: '/',
+  description: 'قاموس تشاركي للهجات العربية: كيف تُقال الكلمة نفسها في مصر والشام والخليج والعراق واليمن والمغرب والسودان. أحدث الكلمات المضافة، ومعانيها، وأمثلة على استعمالها.',
+  jsonLd: [{
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'لهجة',
+    alternateName: 'لهجة، قاموس اللهجات العربية',
+    url: 'https://lahga.fyi/',
+    inLanguage: 'ar',
+    description: 'قاموس تشاركي يربط كلمات اللهجات العربية بمعانيها بالفصحى.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: 'https://lahga.fyi/browse?q={search_term_string}' },
+      'query-input': 'required name=search_term_string',
+    },
+  }],
+})
 const { data: entries } = await useFetch('/api/entries', { query: { limit: 20 } })
 const { data: dialects } = await useFetch('/api/dialects')
 </script>

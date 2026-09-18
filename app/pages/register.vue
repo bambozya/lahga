@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'guest' })
-useHead({ title: 'إنشاء حساب - لهجة' })
+useSeo({ title: 'إنشاء حساب', description: 'أنشئ حساباً في لهجة لتضيف كلمات لهجتك وتصوّت على ما يضيفه غيرك.', noindex: true })
 const { fetch: refresh } = useUserSession()
 const siteKey = useRuntimeConfig().public.turnstileSiteKey
 // Turnstile renders into the div and writes its token into a hidden input named cf-turnstile-response.

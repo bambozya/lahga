@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
-useHead({ title: 'الإدارة: الاقتراحات - لهجة' })
+useSeo({ title: 'الإدارة: الاقتراحات', noindex: true })
 const route = useRoute()
 const status = computed(() => (['approved', 'rejected'].includes(String(route.query.status)) ? String(route.query.status) : 'pending'))
 const { data: proposals, refresh } = await useFetch('/api/admin/proposals', { query: computed(() => ({ status: status.value })) })

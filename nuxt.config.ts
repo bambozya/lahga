@@ -31,6 +31,9 @@ export default defineNuxtConfig({
       title: 'لهجة - قاموس اللهجات العربية',
       meta: [
         { name: 'description', content: 'لهجة - قاموس اللهجات العربية. اكتشف وشارك كلمات ومصطلحات من مختلف اللهجات العربية.' },
+        // Pages set their own through useSeo(); these are the fallbacks.
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
       ],
       link: [
         // The nuqta, the dot of the jeem in the logo, on an ink tile (public/favicon.svg is the source).

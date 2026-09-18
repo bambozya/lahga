@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'guest' })
-useHead({ title: 'تسجيل الدخول - لهجة' })
+useSeo({ title: 'تسجيل الدخول', noindex: true })
 const route = useRoute()
 const { fetch: refresh } = useUserSession()
 const form = reactive({ email: '', password: '' })

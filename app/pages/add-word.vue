@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
-useHead({ title: 'أضف كلمة - لهجة' })
+useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى قاموس لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
 const { user } = useUserSession()
 const form = reactive({
   headword: '', definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',

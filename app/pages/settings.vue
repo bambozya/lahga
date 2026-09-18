@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'auth' })
-useHead({ title: 'الإعدادات - لهجة' })
+useSeo({ title: 'الإعدادات', noindex: true })
 const route = useRoute()
 const { user, fetch: refresh, clear } = useUserSession()
 const { data: me, refresh: reload } = await useFetch('/api/me')
