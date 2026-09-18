@@ -25,8 +25,13 @@ export default defineEventHandler(async (event) => {
 
   const { user } = await getUserSession(event)
   const mine = await myVotes(db, user?.id, 'entry', entries.map(e => e.id))
+  const lastApproved = await db.query.proposals.findFirst({
+    where: and(eq(schema.proposals.kind, 'dialect_description'), eq(schema.proposals.targetId, dialect.id), eq(schema.proposals.status, 'approved')),
+    orderBy: desc(schema.proposals.decidedAt), with: { author: true },
+  })
   return {
     ...dialect,
+    descriptionBy: lastApproved ? publicUser(lastApproved.author) : null,
     entries: entries.map(e => ({
       id: e.id, form: e.form, meaning: e.meaning, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },

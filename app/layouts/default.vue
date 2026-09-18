@@ -34,6 +34,7 @@ const logout = async () => { await clear(); await router.push('/') }
           <li><NuxtLink to="/browse">الفهرس</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
           <template v-if="!staticSite">
+            <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
             <li v-if="loggedIn"><NuxtLink to="/settings">{{ user?.displayName }}</NuxtLink></li>
             <li v-if="loggedIn"><a href="/api/auth/logout" @click.prevent="logout">خروج</a></li>
             <li v-else><NuxtLink to="/login">دخول</NuxtLink></li>

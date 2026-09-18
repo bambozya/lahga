@@ -125,7 +125,7 @@ Pages: `VoteBox` wired up; a flag dialog with the reason list.
 Done when: votes change ordering on a word page, a user cannot vote twice,
 and a flagged item shows up for admins.
 
-### Phase 4: moderation and proposals (2 weeks)
+### Phase 4: moderation and proposals (2 weeks) — done 2026-09-18
 
 Goal: admins can keep the site clean without touching the database.
 
@@ -144,8 +144,10 @@ Server:
 - `POST /api/proposals` for users; a proposal is refused while the same user
   has one pending for the same target.
 
-Pages: `/admin` with tabs for flags, proposals, recent contributions and users;
-a "propose a change" form on each dialect page.
+Pages: `/admin` (flags), `/admin/proposals`, `/admin/recent`, `/admin/users`;
+a "propose a better description" form on each dialect page; a revert button
+per revision on the history page for admins; "my proposals" in settings.
+Users get `banned_at` and `ban_reason`; a banned user cannot log in or act.
 
 Done when: a user proposes a new dialect description, an admin approves it, and
 the dialect page shows the new text with the proposer credited.

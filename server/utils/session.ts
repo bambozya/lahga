@@ -31,6 +31,10 @@ export async function requireUser(event: H3Event) {
     await clearUserSession(event)
     throw createError({ statusCode: 401, statusMessage: 'يجب تسجيل الدخول' })
   }
+  if (row.bannedAt) {
+    await clearUserSession(event)
+    throw createError({ statusCode: 403, statusMessage: 'حسابك موقوف' + (row.banReason ? ': ' + row.banReason : '') })
+  }
   return row
 }
 

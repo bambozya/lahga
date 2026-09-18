@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) => {
   const user = await db.query.users.findFirst({ where: eq(schema.users.email, body.email) })
   if (!user || user.deletedAt || !user.passwordHash) throw WRONG()
   if (!await verifyPassword(user.passwordHash, body.password)) throw WRONG()
+  if (user.bannedAt) throw createError({ statusCode: 403, statusMessage: 'حسابك موقوف' + (user.banReason ? ': ' + user.banReason : '') })
 
   await login(event, user)
   return { ok: true }

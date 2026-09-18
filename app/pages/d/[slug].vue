@@ -3,6 +3,14 @@ const route = useRoute()
 const { data: dialect, error } = await useFetch(`/api/dialects/${route.params.slug}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'اللهجة غير موجودة', fatal: true })
 useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
+const proposing = ref(false)
+const proposed = ref(false)
+const description = ref('')
+const proposal = useForm(async () => {
+  await $fetch('/api/proposals', { method: 'POST', body: { dialect: route.params.slug, descriptionAr: description.value } })
+  proposed.value = true
+  proposing.value = false
+})
 </script>
 
 <template>
@@ -11,7 +19,27 @@ useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
       <p v-if="dialect.parent">ضمن <NuxtLink :to="`/d/${dialect.parent.slug}`">{{ dialect.parent.nameAr }}</NuxtLink></p>
       <h1>{{ dialect.nameAr }}</h1>
       <p v-if="dialect.descriptionAr">{{ dialect.descriptionAr }}</p>
+      <p v-else><small>لا وصف بعد.</small></p>
     </hgroup>
+    <p><small>
+      <template v-if="dialect.descriptionBy">الوصف من <NuxtLink v-if="dialect.descriptionBy.id" :to="`/u/${dialect.descriptionBy.id}`">{{ dialect.descriptionBy.displayName }}</NuxtLink><template v-else>{{ dialect.descriptionBy.displayName }}</template> · </template>
+      <span v-if="proposed" role="status">شكراً، وصل اقتراحك وسينظر فيه المديرون.</span>
+      <a v-else href="#" @click.prevent="proposing = !proposing; description = description || dialect.descriptionAr || ''">اقترح وصفاً أفضل</a>
+    </small></p>
+    <ContributeGate v-if="proposing">
+      <form @submit.prevent="proposal.run">
+        <fieldset :disabled="proposal.busy.value">
+          <legend>اقتراح وصف لـ{{ dialect.nameAr }}</legend>
+          <p role="alert" v-if="proposal.error.value">{{ proposal.error.value }}</p>
+          <p>
+            <label for="description">الوصف المقترح</label>
+            <textarea id="description" v-model="description" required minlength="20" maxlength="1200" rows="4"></textarea>
+            <small>أين تُتكلم، وما أبرز ملامحها، وما يميزها عن جاراتها. يراجعه مدير قبل نشره.</small>
+          </p>
+          <p><button type="submit">أرسل الاقتراح</button> <button type="button" @click="proposing = false">إلغاء</button></p>
+        </fieldset>
+      </form>
+    </ContributeGate>
     <p v-if="dialect.children.length">
       تتفرع إلى:
       <template v-for="c in dialect.children" :key="c.id">

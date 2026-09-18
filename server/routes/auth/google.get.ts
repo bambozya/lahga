@@ -21,6 +21,7 @@ export default defineOAuthGoogleEventHandler({
     })
     let user = linked?.user ?? await db.query.users.findFirst({ where: eq(schema.users.email, email) })
     if (user?.deletedAt) return sendRedirect(event, '/login?error=deleted')
+    if (user?.bannedAt) return sendRedirect(event, '/login?error=banned')
 
     if (!user) {
       // Google names are usually Latin; the site's names are Arabic. Fall back to a placeholder the user changes in settings.

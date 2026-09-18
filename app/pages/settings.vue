@@ -4,6 +4,8 @@ useHead({ title: 'الإعدادات - لهجة' })
 const route = useRoute()
 const { user, fetch: refresh, clear } = useUserSession()
 const { data: me, refresh: reload } = await useFetch('/api/me')
+const { data: myProposals } = await useFetch('/api/me/proposals')
+const proposalStatus: Record<string, string> = { pending: 'قيد المراجعة', approved: 'قُبل', rejected: 'رُفض' }
 
 const profile = reactive({ displayName: me.value?.displayName ?? '', bio: me.value?.bio ?? '' })
 const profileSaved = ref(false)
@@ -73,6 +75,16 @@ const remove = useForm(async () => {
           <p><button type="submit">حفظ</button> <NuxtLink :to="`/u/${me.id}`">عرض صفحتي العامة</NuxtLink></p>
         </fieldset>
       </form>
+    </section>
+
+    <section v-if="myProposals?.length">
+      <h2>اقتراحاتي</h2>
+      <ul>
+        <li v-for="p in myProposals" :key="p.id">
+          <template v-if="p.dialect">وصف <NuxtLink :to="`/d/${p.dialect.slug}`">{{ p.dialect.nameAr }}</NuxtLink></template><template v-else>{{ p.kind }}</template>:
+          <b>{{ proposalStatus[p.status] }}</b><small v-if="p.note"> · {{ p.note }}</small>
+        </li>
+      </ul>
     </section>
 
     <section>

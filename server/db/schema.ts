@@ -12,6 +12,8 @@ export const userRole = pgEnum('user_role', ['user', 'moderator', 'admin'])
 export const emailTokenPurpose = pgEnum('email_token_purpose', ['verify', 'reset'])
 export const wordKind = pgEnum('word_kind', ['word', 'phrase', 'proverb'])
 export const flagResolution = pgEnum('flag_resolution', ['dismissed', 'hidden', 'deleted'])
+export const proposalKind = pgEnum('proposal_kind', ['dialect_description', 'new_dialect'])
+export const proposalStatus = pgEnum('proposal_status', ['pending', 'approved', 'rejected'])
 
 // ---------- users ----------
 
@@ -29,6 +31,9 @@ export const users = pgTable('users', {
   lastSeenAt: timestamp('last_seen_at', { withTimezone: true }),
   // Set when the account is deleted. The row stays, anonymised, so content keeps its author id.
   deletedAt: timestamp('deleted_at', { withTimezone: true }),
+  // Set by an admin. A banned user cannot log in or act; their content stays as it is.
+  bannedAt: timestamp('banned_at', { withTimezone: true }),
+  banReason: text('ban_reason'),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
 
@@ -203,6 +208,48 @@ export const flags = pgTable('flags', {
 
 export const flagsRelations = relations(flags, ({ one }) => ({
   reporter: one(users, { fields: [flags.userId], references: [users.id] }),
+}))
+
+// ---------- proposals: changes that need an admin's approval ----------
+// One mechanism for everything gated: today a dialect's description, later new dialects.
+
+export const proposals = pgTable('proposals', {
+  id: serial('id').primaryKey(),
+  kind: proposalKind('kind').notNull(),
+  targetId: integer('target_id'), // the dialect for dialect_description; null for new_dialect
+  data: jsonb('data').notNull().$type<Record<string, unknown>>(),
+  authorId: integer('author_id').notNull().references(() => users.id),
+  status: proposalStatus('status').notNull().default('pending'),
+  decidedBy: integer('decided_by').references(() => users.id),
+  decidedAt: timestamp('decided_at', { withTimezone: true }),
+  note: text('note'), // the admin's word to the proposer
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  index('proposals_status_idx').on(t.status),
+  index('proposals_target_idx').on(t.kind, t.targetId),
+])
+
+export const proposalsRelations = relations(proposals, ({ one }) => ({
+  author: one(users, { fields: [proposals.authorId], references: [users.id] }),
+  decider: one(users, { fields: [proposals.decidedBy], references: [users.id] }),
+}))
+
+// ---------- moderation log: every admin action, on record ----------
+
+export const moderationLog = pgTable('moderation_log', {
+  id: serial('id').primaryKey(),
+  actorId: integer('actor_id').notNull().references(() => users.id),
+  action: text('action').notNull(), // hide, restore, delete, revert, resolve_flag, approve, reject, ban, unban
+  targetType: text('target_type').notNull(), // word, entry, link, example, user, flag, proposal
+  targetId: integer('target_id').notNull(),
+  reason: text('reason'),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  index('moderation_log_target_idx').on(t.targetType, t.targetId),
+])
+
+export const moderationLogRelations = relations(moderationLog, ({ one }) => ({
+  actor: one(users, { fields: [moderationLog.actorId], references: [users.id] }),
 }))
 
 // ---------- relations (for db.query.* helpers) ----------

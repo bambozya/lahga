@@ -155,6 +155,8 @@ One open flag per user per item.
 | bio           | text null   | Arabic script enforced                     |
 | last_seen_at  | timestamptz null | updated on login                      |
 | deleted_at    | timestamptz null | see below                             |
+| banned_at     | timestamptz null | set by an admin; blocks login and actions |
+| ban_reason    | text null   | shown to the user when they try to log in  |
 | created_at    | timestamptz |                                            |
 
 Deleting an account keeps the row and anonymises it (email becomes
@@ -190,6 +192,32 @@ does not hand out working links.
 | expires_at | timestamptz | one hour after issue                          |
 | used_at    | timestamptz null | set on use; issuing a new token also voids older ones of the same purpose |
 | created_at | timestamptz |                                               |
+
+### proposals
+
+Changes that need an admin's approval, one mechanism for all of them. Today a
+dialect's description; later new dialects.
+
+| column     | type        | notes                                        |
+|------------|-------------|----------------------------------------------|
+| id         | int pk      |                                              |
+| kind       | enum        | dialect_description, new_dialect             |
+| target_id  | int null    | the dialect for dialect_description          |
+| data       | jsonb       | e.g. `{"descriptionAr": "..."}`              |
+| author_id  | int fk      |                                              |
+| status     | enum        | pending, approved, rejected                  |
+| decided_by | int fk null |                                              |
+| decided_at | timestamptz null |                                         |
+| note       | text null   | the admin's word to the proposer             |
+| created_at | timestamptz |                                              |
+
+One pending proposal per user per target. Approval applies the change; the
+dialect page credits the author of the latest approved description.
+
+### moderation_log
+
+Every admin action, on record: actor, action (hide, restore, delete, revert,
+resolve_flag, approve, reject, ban, unban), target type and id, reason, time.
 
 ## Ranking
 

@@ -13,6 +13,7 @@ const urlError = computed(() => ({
   'google': 'تعذر تسجيل الدخول بحساب Google، حاول مرة أخرى',
   'google-email': 'حساب Google هذا ليس له بريد إلكتروني مؤكد',
   'deleted': 'هذا الحساب محذوف',
+  'banned': 'هذا الحساب موقوف',
 } as Record<string, string>)[String(route.query.error)] ?? '')
 </script>
 
