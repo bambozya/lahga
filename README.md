@@ -13,10 +13,9 @@ across the Arab world.
 
 ## Status
 
-The site is live and read-only. Browsing, search, dialect pages and word pages
-work against a real PostgreSQL database. Accounts are the next milestone: they
-unlock adding words, voting and moderation. The tables for all of that already
-exist in the schema; the write endpoints and the login do not yet.
+The site is live with accounts, contributions, votes, flags and an admin area
+(phases 1 to 4 of the plan). Phase 5, launch, is in progress: seed content,
+legal pages, offsite backups.
 
 ## Run it locally
 
@@ -37,7 +36,6 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 | `npm run dev` | Development server with hot reload |
 | `npm run build` | Production server build into `.output/` |
 | `npm run preview` | Run the production build locally |
-| `npm run generate` | Static HTML export (used for the GitHub Pages snapshot) |
 | `npm run db:generate` | Create a migration from schema changes |
 | `npm run db:migrate` | Apply migrations to the database in `DATABASE_URL` |
 | `npm run db:studio` | Browser UI over the database |
@@ -46,21 +44,23 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 
 ```
 app/                Vue side (Nuxt 4)
-  layouts/          header, nav, footer, construction notice for the snapshot
-  pages/            one file per route: /, /browse, /dialects, /w/[id], /d/[slug], static pages
-  components/       AppLogo, WordCard, EntryCard, VoteBox, ThemeSwitch
+  layouts/          header, nav, footer
+  pages/            one file per route: /, /browse, /dialects, /w/[id], /d/[slug], account, admin, static pages
+  components/       AppLogo, WordCard, EntryCard, VoteBox, FlagButton, forms, admin pieces
+  middleware/       auth, guest, admin route guards
   assets/css/       main.css (the design), scale.css (fluid type and space), fonts.css
   error.vue         the error page
 shared/utils/       code used by both client and server (Arabic normalisation)
 server/
-  api/              HTTP endpoints, one file per route; /api/health is the container health check
+  api/              HTTP endpoints, one file per route; /api/admin/* for admins; /api/health for the container
   db/               Drizzle schema, connection, migrations on startup, seed data
-  plugins/          runs at startup (opens the database, which migrates and seeds)
+  utils/            session, validation, rate limits, email, tokens, contribution and admin helpers
+  plugins/          runs at startup (opens the database; drops the session cookie for anonymous visitors)
 drizzle/            generated SQL migrations, committed
 public/             favicons, robots.txt, self-hosted fonts
 docs/               product and data-model docs
 Dockerfile          the production image
-.github/workflows/  the GitHub Pages snapshot
+docs/seed/          seed content format and the draft word list (import at /admin/import)
 ```
 
 ## Design
@@ -113,12 +113,11 @@ serves its DNS.
   updates install automatically, fail2ban blocks repeated login attempts, and
   Coolify's setup ports are firewalled off (`/usr/local/sbin/lahga-firewall.sh`).
 
-### Static snapshot
+### Configuration
 
-`.github/workflows/pages.yml` also publishes a read-only copy to
-https://bambozya.github.io/lahga on every push. It is built from the seed data
-with `LAHGA_STATIC=1`, shows a construction notice, and exists only as a
-fallback.
+Secrets live in Coolify's environment variables, never in the repository. See
+`.env.example` for the full list: database, session secret, Brevo (email),
+Google login, Turnstile, contact form address.
 
 ## Rules
 

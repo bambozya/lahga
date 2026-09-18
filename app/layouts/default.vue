@@ -4,11 +4,9 @@ const route = useRoute()
 // The header search is the only search box: on the index page it shows the active query.
 const q = ref(String(route.query.q ?? ''))
 watch(() => route.query.q, v => { q.value = String(v ?? '') })
-// The GitHub Pages snapshot is read-only; tell visitors so until the real server is live.
-const staticSite = useRuntimeConfig().public.staticSite
 // The form has a real action so it works without JS; with JS we stay in the app.
 const search = () => router.push({ path: '/browse', query: q.value.trim() ? { q: q.value.trim() } : {} })
-// Account links in the nav. The snapshot has no server, so it never shows them.
+// Account links in the nav.
 const { loggedIn, user, clear } = useUserSession()
 const logout = async () => { await clear(); await router.push('/') }
 </script>
@@ -16,10 +14,6 @@ const logout = async () => { await clear(); await router.push('/') }
 <template>
   <div>
     <a href="#main">تخطَّ إلى المحتوى</a>
-
-    <p v-if="staticSite" role="status">
-      الموقع قيد الإنشاء. هذه نسخة تجريبية للقراءة فقط: الإضافة والتصويت غير متاحين بعد.
-    </p>
 
     <ThemeSwitch />
 
@@ -33,12 +27,10 @@ const logout = async () => { await clear(); await router.push('/') }
           <li><NuxtLink to="/dialects">اللهجات</NuxtLink></li>
           <li><NuxtLink to="/browse">الفهرس</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
-          <template v-if="!staticSite">
-            <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
-            <li v-if="loggedIn"><NuxtLink to="/settings">{{ user?.displayName }}</NuxtLink></li>
-            <li v-if="loggedIn"><a href="/api/auth/logout" @click.prevent="logout">خروج</a></li>
-            <li v-else><NuxtLink to="/login">دخول</NuxtLink></li>
-          </template>
+          <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
+          <li v-if="loggedIn"><NuxtLink to="/settings">{{ user?.displayName }}</NuxtLink></li>
+          <li v-if="loggedIn"><a href="/api/auth/logout" @click.prevent="logout">خروج</a></li>
+          <li v-else><NuxtLink to="/login">دخول</NuxtLink></li>
         </ul>
       </nav>
       <search>
@@ -65,6 +57,7 @@ const logout = async () => { await clear(); await router.push('/') }
           <li><NuxtLink to="/privacy">سياسة الخصوصية</NuxtLink></li>
           <li><NuxtLink to="/terms">شروط الاستخدام</NuxtLink></li>
           <li><NuxtLink to="/contact">اتصل بنا</NuxtLink></li>
+          <li><NuxtLink to="/impressum">Impressum</NuxtLink></li>
         </ul>
       </nav>
       <p><small>© {{ new Date().getFullYear() }} لهجة</small></p>

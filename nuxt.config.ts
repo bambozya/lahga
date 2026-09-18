@@ -1,8 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const base = (process.env.NUXT_APP_BASE_URL || '/').replace(/\/$/, '')
-// The read-only GitHub Pages snapshot (LAHGA_STATIC=1 at build time) prerenders every page.
-// The live server must not: a prerendered home page would be frozen until the next deploy.
-const isStatic = process.env.LAHGA_STATIC === '1'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -17,8 +13,6 @@ export default defineNuxtConfig({
     // see .env.example. Empty here on purpose.
     session: { maxAge: 60 * 60 * 24 * 30 }, // 30 days
     public: {
-      // true for the read-only GitHub Pages snapshot (set LAHGA_STATIC=1 at build time)
-      staticSite: isStatic,
       // Canonical origin of the live site; override with NUXT_PUBLIC_SITE_URL.
       siteUrl: 'https://lahga.fyi',
       // Cloudflare Turnstile site key for the registration form; empty disables the widget.
@@ -40,12 +34,12 @@ export default defineNuxtConfig({
       ],
       link: [
         // The nuqta, the dot of the jeem in the logo, on an ink tile (public/favicon.svg is the source).
-        { rel: 'icon', href: `${base}/favicon.svg`, type: 'image/svg+xml' },
-        { rel: 'icon', href: `${base}/favicon.ico`, sizes: '48x48' },
-        { rel: 'apple-touch-icon', href: `${base}/apple-touch-icon.png` },
+        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         // Fonts are self-hosted under public/fonts (see app/assets/css/fonts.css); preload the two that paint first.
-        { rel: 'preload', href: `${base}/fonts/ibm-plex-sans-arabic-400-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
-        { rel: 'preload', href: `${base}/fonts/noto-naskh-arabic-400-700-arabic.woff2`, as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: '/fonts/ibm-plex-sans-arabic-400-arabic.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
+        { rel: 'preload', href: '/fonts/noto-naskh-arabic-400-700-arabic.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
       ],
     },
   },
@@ -65,8 +59,7 @@ export default defineNuxtConfig({
   nitro: {
     // PGlite ships WASM assets; keep it external so the bundler leaves it alone.
     externals: { external: ['@electric-sql/pglite'] },
-    prerender: isStatic
-      ? { crawlLinks: true, routes: ['/', '/browse', '/api/words/all'] }
-      : { crawlLinks: false, routes: [] },
+    // Nothing is prerendered: every page reads the live database.
+    prerender: { crawlLinks: false, routes: [] },
   },
 })
