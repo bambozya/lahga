@@ -81,15 +81,15 @@ a { color: inherit; text-decoration: underline; text-decoration-color: var(--acc
 a:visited { text-decoration-color: var(--muted); }
 a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
-/* Dialect tag: an outlined pill that starts with the nuqta. */
+/* Dialect tag: the nuqta, then the name in the small sans voice. No box around it. */
 a[rel="tag"] {
-  display: inline-block; margin-inline: 0.1em; padding: 0 0.7em; line-height: 1.75; vertical-align: middle; white-space: nowrap;
-  font: 600 var(--step--1)/1.75 var(--sans); text-decoration: none; border: 1.5px solid var(--ink); border-radius: 99rem;
+  display: inline-block; margin-inline: 0.4em 0.1em; line-height: 1.75; vertical-align: middle; white-space: nowrap;
+  font: 600 var(--step--1)/1.75 var(--sans); text-decoration: none;
 }
-a[rel="tag"]:hover { background: var(--ink); color: var(--paper); }
-/* In a run of synonyms each tag opens a new pair, so it keeps its distance from the word before it. */
-dd p > a[rel="tag"] { margin-inline-start: 0.7em; }
-dd p > a[rel="tag"]:first-child { margin-inline-start: 0.1em; }
+a[rel="tag"]:hover { color: var(--accent); }
+/* In a run of synonyms each pair opens with its word, so it keeps its distance from the pair before it. */
+dd p > a:has(+ a[rel="tag"]) { margin-inline-start: 1.1em; }
+dd p > a:first-child { margin-inline-start: 0; }
 
 /* Skip link: off screen until focused */
 a[href="#main"] {

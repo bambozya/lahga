@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // One entry of the dictionary list: a <dt> (the form, tagged with its dialect)
 // and a <dd> (what it means, examples, synonyms, date, votes). Must sit in a <dl>.
+// A synonym reads like the headword row above it: the form first, then its dialect.
 defineProps<{
   entry: {
     id: number
@@ -48,9 +49,7 @@ const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { day: 'numeric'
 
       <p v-if="entry.synonyms.length">
         مرادفات:
-        <template v-for="s in entry.synonyms" :key="s.id">
-          <NuxtLink :to="`/w/${s.wordId}`" rel="tag">{{ s.dialect.nameAr }}</NuxtLink> {{ s.form }}
-        </template>
+        <template v-for="s in entry.synonyms" :key="s.id"><NuxtLink :to="`/w/${s.wordId}`">{{ s.form }}</NuxtLink><NuxtLink :to="`/d/${s.dialect.slug}`" rel="tag">{{ s.dialect.nameAr }}</NuxtLink></template>
       </p>
 
       <div>
