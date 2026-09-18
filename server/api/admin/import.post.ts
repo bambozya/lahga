@@ -9,7 +9,7 @@ import { fields, normalizeArabic } from '../../utils/contribute'
  * with its dialect entries and examples; see docs/seed/FORMAT.md. Each word is
  * validated on its own, so one bad item does not stop the rest. A headword
  * that already exists gets the new entries merged in; an entry that already
- * exists for that word and dialect is skipped. Everything is attributed to the
+ * exists for that word anywhere in the same dialect group is skipped. Everything is attributed to the
  * system account «لهجة» unless `authorId` is given. `dryRun` validates only.
  */
 const Example = v.object({ text: fields.text, gloss: fields.gloss })
@@ -26,13 +26,27 @@ async function systemUserId(db: Awaited<ReturnType<typeof useDb>>) {
   return u!.id
 }
 
+/**
+ * Besides a logged-in admin, the importer accepts a bearer token equal to
+ * IMPORT_TOKEN from the environment, so seed files can be loaded from a script.
+ * With the token, actions are logged under the system account.
+ */
+async function requireImporter(event: Parameters<typeof requireAdmin>[0]) {
+  const token = process.env.IMPORT_TOKEN
+  const auth = getHeader(event, 'authorization') || ''
+  if (token && token.length >= 32 && auth === `Bearer ${token}`) return null
+  return requireAdmin(event)
+}
+
 export default defineEventHandler(async (event) => {
-  const admin = await requireAdmin(event)
+  const admin = await requireImporter(event)
   const body = await readBody$(event, Body)
   const db = await useDb()
   const report = { wordsCreated: 0, wordsMerged: 0, entriesCreated: 0, entriesSkipped: 0, examplesCreated: 0, errors: [] as { index: number, headword?: string, message: string }[] }
   const dialects = await db.query.dialects.findMany({ where: eq(schema.dialects.active, 1) })
   const bySlug = new Map(dialects.map(d => [d.slug, d]))
+  // The top-level group of each dialect: a form already present anywhere in the group is a duplicate.
+  const groupOf = new Map(dialects.map(d => [d.id, d.parentId ?? d.id]))
   const authorId = body.dryRun ? 0 : (body.authorId ?? await systemUserId(db))
 
   for (const [index, raw] of body.words.entries()) {
@@ -60,7 +74,8 @@ export default defineEventHandler(async (event) => {
       for (const e of w.entries) {
         const dialect = bySlug.get(e.dialect)!
         const formNormalized = normalizeArabic(e.form)
-        const dup = word.links.some(l => l.status === 'active' && l.entry.status === 'active' && l.entry.dialectId === dialect.id && l.entry.formNormalized === formNormalized)
+        const dup = word.links.some(l => l.status === 'active' && l.entry.status === 'active'
+          && groupOf.get(l.entry.dialectId) === groupOf.get(dialect.id) && l.entry.formNormalized === formNormalized)
         if (dup) { report.entriesSkipped++; continue }
         const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning: e.meaning, notes: e.notes || null, createdBy: authorId }).returning()
         await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
@@ -75,6 +90,6 @@ export default defineEventHandler(async (event) => {
       }
     })
   }
-  if (!body.dryRun) await db.transaction(tx => logModeration(tx, admin.id, 'import', 'import', 0, `${report.wordsCreated} كلمة جديدة، ${report.wordsMerged} مدمجة، ${report.entriesCreated} مدخل`))
+  if (!body.dryRun) await db.transaction(tx => logModeration(tx, admin?.id ?? authorId, 'import', 'import', 0, `${report.wordsCreated} كلمة جديدة، ${report.wordsMerged} مدمجة، ${report.entriesCreated} مدخل`))
   return report
 })
