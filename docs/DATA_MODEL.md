@@ -113,15 +113,15 @@ One table for all targets.
 | target_type  | enum        | word, entry, link, example                   |
 | target_id    | int         |                                              |
 | value        | smallint    | +1 or -1                                     |
-| voter_key    | text        | `u:<user_id>` or `a:<anon_token>`            |
-| ip_hash      | text        | for rate limiting, salted hash               |
+| user_id      | int fk      | only logged-in, verified users vote          |
 | created_at   | timestamptz |                                              |
-| unique (target_type, target_id, voter_key) |
+| updated_at   | timestamptz | changes when the vote flips                  |
+| unique (target_type, target_id, user_id) |
 
-Anonymous voters get a signed, httpOnly cookie token on first vote. When an
-anonymous voter later signs up, their `a:` votes are re-keyed to `u:`. A
-`weight` column will be added when reputation lands; until then every vote
-weighs 1.
+Authors cannot vote on their own rows. Each content table carries `upvotes`,
+`downvotes` and `score` (= up − down), recomputed from this table on every
+vote so they never drift. A `weight` column will be added when reputation
+lands; until then every vote weighs 1.
 
 ### flags
 
@@ -131,10 +131,14 @@ weighs 1.
 | target_type  | enum        |                                       |
 | target_id    | int         |                                       |
 | reason       | enum        | offensive, wrong_dialect, wrong_link, spam, other |
-| comment      | text null   |                                       |
-| reporter_key | text        | same scheme as votes                  |
+| comment      | text null   | Arabic script                         |
+| user_id      | int fk      | the reporter                          |
 | created_at   | timestamptz |                                       |
-| resolved_at  | timestamptz null |                                  |
+| resolved_at  | timestamptz null | set by the admin who handled it  |
+| resolved_by  | int fk null |                                       |
+| resolution   | enum null   | dismissed, hidden, deleted            |
+
+One open flag per user per item.
 
 ### users
 
@@ -189,9 +193,10 @@ does not hand out working links.
 
 ## Ranking
 
-Lists are ordered by a time-decayed score (Reddit "hot" style) for the
-front page and by a Wilson lower bound for entries inside a word page, so a
-new, well-received entry can overtake an old one with many mixed votes.
+Entries inside a word page are ordered by the Wilson lower bound of their
+votes, so a new, well-received entry can overtake an old one with many mixed
+votes; regions are ordered by their best entry. The front page is newest
+first.
 
 ## Input validation
 

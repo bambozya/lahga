@@ -23,10 +23,12 @@ export default defineEventHandler(async (event) => {
     },
   })
 
+  const { user } = await getUserSession(event)
+  const mine = await myVotes(db, user?.id, 'entry', entries.map(e => e.id))
   return {
     ...dialect,
     entries: entries.map(e => ({
-      id: e.id, form: e.form, meaning: e.meaning, score: e.score,
+      id: e.id, form: e.form, meaning: e.meaning, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },
       words: e.links.filter(l => l.status === 'active').map(l => ({ id: l.word.id, headword: l.word.headword })),
     })),

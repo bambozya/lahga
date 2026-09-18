@@ -33,7 +33,7 @@ useHead({ title: () => `${dialect.value?.nameAr} - لهجة` })
             </template>
           </p>
           <p>{{ e.meaning }}</p>
-          <div><VoteBox :score="e.score" /></div>
+          <div><VoteBox target-type="entry" :target-id="e.id" :score="e.score" :my-vote="e.myVote" :created-by="e.createdBy" /></div>
         </dd>
       </div>
     </dl>

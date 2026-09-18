@@ -8,6 +8,8 @@ defineProps<{
     meaning: string
     notes?: string | null
     score: number
+    myVote?: number
+    createdBy?: number | null
     createdAt?: string | Date
     dialect: { slug: string, nameAr: string }
     words: { id: number, headword: string }[]
@@ -52,7 +54,7 @@ const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { day: 'numeric'
       </p>
 
       <div>
-        <VoteBox :score="entry.score" />
+        <VoteBox target-type="entry" :target-id="entry.id" :score="entry.score" :my-vote="entry.myVote" :created-by="entry.createdBy" />
         <time v-if="entry.createdAt" :datetime="iso(entry.createdAt)">{{ fmt(entry.createdAt) }}</time>
       </div>
     </dd>

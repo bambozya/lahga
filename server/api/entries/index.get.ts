@@ -22,13 +22,16 @@ export default defineEventHandler(async (event) => {
     },
   })
 
+  const { user } = await getUserSession(event)
+  const mine = await myVotes(db, user?.id, 'entry', rows.map(r => r.id))
+
   return rows.map((e) => {
     const words = e.links.filter(l => l.status === 'active' && l.word.status === 'active').map(l => l.word)
     const synonyms = words.flatMap(w => w.links
       .filter(l => l.status === 'active' && l.entry.id !== e.id && l.entry.status === 'active')
       .map(l => ({ id: l.entry.id, form: l.entry.form, wordId: w.id, dialect: { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr } })))
     return {
-      id: e.id, form: e.form, meaning: e.meaning, notes: e.notes, score: e.score, createdAt: e.createdAt,
+      id: e.id, form: e.form, meaning: e.meaning, notes: e.notes, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy, createdAt: e.createdAt,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },
       words: words.map(w => ({ id: w.id, headword: w.headword })),
       examples: e.examples.filter(x => x.status === 'active').map(x => ({ id: x.id, text: x.text, gloss: x.gloss })),

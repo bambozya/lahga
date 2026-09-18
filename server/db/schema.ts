@@ -11,6 +11,7 @@ export const flagReason = pgEnum('flag_reason', ['offensive', 'wrong_dialect', '
 export const userRole = pgEnum('user_role', ['user', 'moderator', 'admin'])
 export const emailTokenPurpose = pgEnum('email_token_purpose', ['verify', 'reset'])
 export const wordKind = pgEnum('word_kind', ['word', 'phrase', 'proverb'])
+export const flagResolution = pgEnum('flag_resolution', ['dismissed', 'hidden', 'deleted'])
 
 // ---------- users ----------
 
@@ -81,7 +82,9 @@ export const words = pgTable('words', {
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
-  score: integer('score').notNull().default(0),
+  score: integer('score').notNull().default(0), // upvotes - downvotes, kept in step by /api/votes
+  upvotes: integer('upvotes').notNull().default(0),
+  downvotes: integer('downvotes').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   index('words_headword_normalized_idx').on(t.headwordNormalized),
@@ -100,7 +103,9 @@ export const entries = pgTable('entries', {
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
-  score: integer('score').notNull().default(0),
+  score: integer('score').notNull().default(0), // upvotes - downvotes, kept in step by /api/votes
+  upvotes: integer('upvotes').notNull().default(0),
+  downvotes: integer('downvotes').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   index('entries_form_normalized_idx').on(t.formNormalized),
@@ -117,7 +122,9 @@ export const wordEntryLinks = pgTable('word_entry_links', {
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
-  score: integer('score').notNull().default(0),
+  score: integer('score').notNull().default(0), // upvotes - downvotes, kept in step by /api/votes
+  upvotes: integer('upvotes').notNull().default(0),
+  downvotes: integer('downvotes').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   uniqueIndex('word_entry_links_unique').on(t.wordId, t.entryId),
@@ -134,7 +141,9 @@ export const examples = pgTable('examples', {
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
-  score: integer('score').notNull().default(0),
+  score: integer('score').notNull().default(0), // upvotes - downvotes, kept in step by /api/votes
+  upvotes: integer('upvotes').notNull().default(0),
+  downvotes: integer('downvotes').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
 }, t => [
   index('examples_entry_idx').on(t.entryId),
@@ -160,16 +169,17 @@ export const revisions = pgTable('revisions', {
 
 // ---------- votes ----------
 
+// One vote per account per item. Only logged-in users vote (decided 2026-09-18).
 export const votes = pgTable('votes', {
   id: bigserial('id', { mode: 'number' }).primaryKey(),
   targetType: voteTarget('target_type').notNull(),
   targetId: integer('target_id').notNull(),
   value: smallint('value').notNull(), // +1 or -1
-  voterKey: text('voter_key').notNull(), // "u:<user_id>" or "a:<anon_token>"
-  ipHash: text('ip_hash'),
+  userId: integer('user_id').notNull().references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 }, t => [
-  uniqueIndex('votes_unique_per_voter').on(t.targetType, t.targetId, t.voterKey),
+  uniqueIndex('votes_unique_per_user').on(t.targetType, t.targetId, t.userId),
   index('votes_target_idx').on(t.targetType, t.targetId),
 ])
 
@@ -181,10 +191,19 @@ export const flags = pgTable('flags', {
   targetId: integer('target_id').notNull(),
   reason: flagReason('reason').notNull(),
   comment: text('comment'),
-  reporterKey: text('reporter_key').notNull(),
+  userId: integer('user_id').notNull().references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   resolvedAt: timestamp('resolved_at', { withTimezone: true }),
-})
+  resolvedBy: integer('resolved_by').references(() => users.id),
+  resolution: flagResolution('resolution'),
+}, t => [
+  index('flags_target_idx').on(t.targetType, t.targetId),
+  index('flags_open_idx').on(t.resolvedAt),
+])
+
+export const flagsRelations = relations(flags, ({ one }) => ({
+  reporter: one(users, { fields: [flags.userId], references: [users.id] }),
+}))
 
 // ---------- relations (for db.query.* helpers) ----------
 

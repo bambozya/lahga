@@ -40,8 +40,9 @@ const removeWord = async () => {
       <h1><dfn>{{ word.headword }}</dfn></h1>
       <p>{{ word.definition }}</p>
     </hgroup>
-    <p v-if="mine(word.createdBy)">
-      <small><NuxtLink :to="`/w/${word.id}/edit`">تعديل الكلمة</NuxtLink> · <a href="#" @click.prevent="removeWord">حذف</a></small>
+    <p>
+      <small v-if="mine(word.createdBy)"><NuxtLink :to="`/w/${word.id}/edit`">تعديل الكلمة</NuxtLink> · <a href="#" @click.prevent="removeWord">حذف</a> · </small>
+      <FlagButton target-type="word" :target-id="word.id" />
     </p>
 
     <section v-for="g in word.groups" :key="g.slug">
@@ -77,7 +78,7 @@ const removeWord = async () => {
                 <template v-if="loggedIn && user?.emailVerified"> · <a href="#" @click.prevent="toggle(`add-example-${e.id}`)">أضف مثالاً</a></template>
               </small></p>
               <ExampleForm v-if="open === `add-example-${e.id}`" :entry-id="e.id" @done="done" @cancel="open = null" />
-              <div><VoteBox :score="e.score" /></div>
+              <div><VoteBox target-type="entry" :target-id="e.id" :score="e.score" :my-vote="e.myVote" :created-by="e.createdBy" /> <FlagButton target-type="entry" :target-id="e.id" /></div>
             </template>
           </dd>
         </div>

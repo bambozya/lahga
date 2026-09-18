@@ -101,7 +101,7 @@ the word page for entries and examples; contributions on the public profile;
 Done when: a new user can add, edit and delete their own word, cannot touch
 someone else's, and an admin can open a word's history.
 
-### Phase 3: votes and flags (1 week)
+### Phase 3: votes and flags (1 week) — done 2026-09-18
 
 Goal: quality control by the community.
 
@@ -115,8 +115,10 @@ Server:
 - `PUT /api/votes` (idempotent: sets the user's vote to +1, -1 or 0) and
   recompute the target's `score`.
 - `POST /api/flags`. One open flag per user per target.
-- Ranking: Wilson lower bound for entries inside a word page, time-decayed
-  score for the front page, both computed in SQL.
+- Ranking: Wilson lower bound for entries inside a word page (computed when
+  the page is assembled; up and down counts live on the row). The front page
+  stays "newest first" for now; a time-decayed ranking can come when there is
+  enough voting to make it meaningful.
 
 Pages: `VoteBox` wired up; a flag dialog with the reason list.
 
