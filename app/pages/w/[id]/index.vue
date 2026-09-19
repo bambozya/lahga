@@ -118,7 +118,7 @@ const removeWord = async () => {
                   </template>
                 </li>
               </ul>
-              <p><small>
+              <p v-if="loggedIn"><small class="left">
                 <template v-if="e.author">أضافها <NuxtLink :to="`/u/${e.author.id}`">{{ e.author.displayName }}</NuxtLink></template>
                 <template v-if="mine(e.createdBy)"> · <a href="#" @click.prevent="toggle(`entry-${e.id}`)">تعديل</a> · <a href="#" @click.prevent="remove('entries', e.id, 'المدخل')">حذف</a></template>
                 <template v-if="loggedIn && user?.emailVerified"> · <a href="#" @click.prevent="toggle(`add-example-${e.id}`)">أضف مثالاً</a></template>
@@ -146,13 +146,13 @@ const removeWord = async () => {
 
 <style scoped>
 /* The headword is the page. Everything under it is evidence, set quieter. */
-.pivot { border-block-end: var(--rule); padding-block-end: var(--space-s); }
+.pivot { border-block-end: var(--thin); padding-block-end: var(--space-s); }
 .pivot > h1 { font-size: var(--step-5); line-height: 1.2; margin-block-start: var(--space-3xs); }
 .pivot > .definition { font-size: var(--step-1); margin-block-start: var(--space-2xs); }
 
 /* The glance itself is styled in main.css, shared with the result cards; here
    it only needs the air that separates it from the headword above. */
-.glance { margin-block-start: var(--space-s); }
+.glance { margin-block-start: var(--space-s); border-block-end: var(--rule); padding-block-end: var(--space-s); }
 
 .tools { margin-block-start: var(--space-xs); }
 
@@ -166,7 +166,10 @@ section > h2 a { text-decoration-color: var(--hair); }
    No rule under a dialect's name: inside one dialect the forms are kin, held
    apart by space alone. The fine line belongs between one dialect and the next. */
 section + section { border-block-start: var(--thin); padding-block-start: var(--space-m); }
+section + section:last-child { border-block-start: var(--rule); }
 dl > div { border-block-start: 0; padding-block: 0; scroll-margin-block-start: var(--space-s); }
 dl > div + div { margin-block-start: var(--space-m); }
 dt { font: 700 var(--step-1)/1.5 var(--naskh); }
+
+.left { text-align: left; }
 </style>

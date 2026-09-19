@@ -145,7 +145,7 @@ footer :focus-visible { outline-color: var(--paper); }
 
 /* ---------- Definition lists: the dictionary itself. One heavy rule on top of each entry. ---------- */
 * + dl { margin-block-start: var(--space-m); }
-dl > div { position: relative; border-block-start: var(--rule); padding-block: var(--space-s) var(--space-l); }
+dl > div { position: relative; border-block-start: var(--thin); padding-block: var(--space-s) var(--space-l); }
 dt { font: 700 var(--step-3)/1.5 var(--naskh); }
 dt :is(small, a[rel="tag"]) { margin-inline-start: 0.4em; }
 dt small { font: 400 var(--step--1) var(--sans); }
@@ -166,7 +166,6 @@ dl > div:has(> dt:not(:has(*))) { border-block-start: var(--thin); padding-block
 dt > a:first-child { text-decoration: none; }
 dt > a:first-child::after { content: ''; position: absolute; inset: 0; }
 dl > div:has(> dt > a:first-child) :is(a[rel="tag"]) { position: relative; z-index: 1; }
-dl > div:has(> dt > a:first-child:hover) { border-block-start-color: var(--accent); }
 dt > a:first-child:focus-visible { outline: none; }
 dl > div:has(> dt > a:first-child:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
 
