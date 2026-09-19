@@ -8,67 +8,145 @@
     {
      "dialect": "egyptian",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "البيت كبير وواسع",
+       "gloss": "البيت كبير وواسع"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "البيت كبير كتير",
+       "gloss": "البيت كبير جداً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "البيت كبير ماشاء الله",
+       "gloss": "البيت كبير، ما شاء الله"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "چبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "عنده بيت چبير",
+       "gloss": "عنده بيت كبير"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "المجلس كبير ويكفي الكل",
+       "gloss": "المجلس كبير ويسع الجميع"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "چبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "البيت چبير هواية",
+       "gloss": "البيت كبير جداً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "السوق كبير ومزدحم",
+       "gloss": "السوق كبير ومزدحم"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "الدار كبيرة بزاف",
+       "gloss": "البيت كبير جداً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "الدار كبيرة ياسر",
+       "gloss": "البيت كبير جداً"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "الدار كبيرة برشا",
+       "gloss": "البيت كبير جداً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "الحوش كبير",
+       "gloss": "البيت كبير"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "البيت كبير شديد",
+       "gloss": "البيت كبير جداً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "كبير",
-     "meaning": "كبير"
+     "meaning": "كبير",
+     "examples": [
+      {
+       "text": "الخيمة كبيرة",
+       "gloss": "الخيمة كبيرة"
+      }
+     ]
     }
    ]
   },
@@ -80,77 +158,167 @@
     {
      "dialect": "egyptian",
      "form": "صغيّر",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الواد لسه صغيّر",
+       "gloss": "الولد ما زال صغيراً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "زغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد زغير عالمدرسة",
+       "gloss": "الولد صغير على المدرسة"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "البيت صغير بس مريح",
+       "gloss": "البيت صغير لكنه مريح"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد صغير عمره خمس",
+       "gloss": "الولد صغير، عمره خمس سنوات"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الغرفة صغيرة شوي",
+       "gloss": "الغرفة صغيرة قليلاً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "زغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الجاهل زغير بعد",
+       "gloss": "الطفل ما زال صغيراً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "البيت صغير بس زين",
+       "gloss": "البيت صغير لكنه جيد"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد صغير ما يفهم",
+       "gloss": "الولد صغير لا يفهم"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد صغير بزاف",
+       "gloss": "الولد صغير جداً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "صغيور",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "عندو ولد صغيور",
+       "gloss": "عنده ولد صغير"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الطفل صغير ياسر",
+       "gloss": "الطفل صغير جداً"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الصبي صغير برشا",
+       "gloss": "الولد صغير جداً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد صغير لسة",
+       "gloss": "الولد ما زال صغيراً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد صغير لسة",
+       "gloss": "الولد ما زال صغيراً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "صغير",
-     "meaning": "صغير"
+     "meaning": "صغير",
+     "examples": [
+      {
+       "text": "الولد صغير",
+       "gloss": "الولد صغير"
+      }
+     ]
     }
    ]
   },

@@ -8,107 +8,233 @@
     {
      "dialect": "egyptian",
      "form": "مية",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "هاتلي كوباية مية بالله",
+       "gloss": "أحضر لي كوب ماء من فضلك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مي",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "بدي شربة مي",
+       "gloss": "أريد شربة ماء"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ماي",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "عبيلي الماي بالبراد",
+       "gloss": "املأ لي الماء في الإبريق"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "ماي",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "عطني ماي بارد",
+       "gloss": "أعطني ماءً بارداً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "موية",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "الموية خلصت من الثلاجة",
+       "gloss": "نفد الماء من الثلاجة"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "موية",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "اشرب موية قبل ما تطلع",
+       "gloss": "اشرب ماءً قبل أن تخرج"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "ماي",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "الماي حار شوي",
+       "gloss": "الماء حار قليلاً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "موية",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "جيب موية من البقالة",
+       "gloss": "أحضر ماءً من البقالة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "ماي",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "جيب لي گلاص ماي",
+       "gloss": "أحضر لي كوب ماء"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "ماء",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "اسقني ماء لو سمحت",
+       "gloss": "اسقني ماء من فضلك"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "ما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "الما بارد في القلة",
+       "gloss": "الماء بارد في الجرة"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "ما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "عطيني شوية د الما",
+       "gloss": "أعطني قليلاً من الماء"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "لما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "لما سخون بزاف",
+       "gloss": "الماء ساخن جداً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "جيب لي ما نشرب",
+       "gloss": "أحضر لي ماء لأشرب"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "لما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "لما بارد ملیح",
+       "gloss": "الماء بارد جيد"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "ما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "اسقيني ما يعيشك",
+       "gloss": "اسقني ماء، شكراً لك"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "ماء",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "الماء موش بارد",
+       "gloss": "الماء ليس بارداً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "ماء",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "شربت ماء من الحنفية",
+       "gloss": "شربت ماء من الصنبور"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "ما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "الما قاطع اليوم",
+       "gloss": "الماء منقطع اليوم"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "موية",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "الموية باردة شديد",
+       "gloss": "الماء بارد جداً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "ما",
-     "meaning": "ماء"
+     "meaning": "ماء",
+     "examples": [
+      {
+       "text": "اعطيني شوي من الما",
+       "gloss": "أعطني قليلاً من الماء"
+      }
+     ]
     }
    ]
   },
@@ -120,88 +246,190 @@
     {
      "dialect": "egyptian",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل جاهز، تعالوا",
+       "gloss": "الطعام جاهز، تعالوا"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل عالطاولة",
+       "gloss": "الطعام على الطاولة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل بارد، سخنه",
+       "gloss": "الطعام بارد، سخّنه"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل كفاية للكل",
+       "gloss": "الطعام يكفي الجميع"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "عشا",
      "meaning": "طعام",
-     "notes": "أي وجبة"
+     "notes": "أي وجبة",
+     "examples": [
+      {
+       "text": "تعال عندنا عالعشا",
+       "gloss": "تعال إلينا على العشاء"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل طيب هواية",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل جاهز يا ولدي",
+       "gloss": "الطعام جاهز يا بني"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "ماكلة",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الماكلة بنينة بزاف",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل واجد فالكوزينة",
+       "gloss": "الطعام جاهز في المطبخ"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ماكلة",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الماكلة راهي سخونة",
+       "gloss": "الطعام ساخن"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل كامل تكمل",
+       "gloss": "الطعام كله انتهى"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "ماكلة",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الماكلة بنينة برشا",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل حاضر",
+       "gloss": "الطعام جاهز"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل في الفرن",
+       "gloss": "الطعام في الفرن"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "ماكلة",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الماكلة طيبة",
+       "gloss": "الطعام لذيذ"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "أكل",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الأكل جاهز يا زول",
+       "gloss": "الطعام جاهز يا رجل"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "ماكلة",
-     "meaning": "طعام"
+     "meaning": "طعام",
+     "examples": [
+      {
+       "text": "الماكلة حاضرة",
+       "gloss": "الطعام جاهز"
+      }
+     ]
     }
    ]
   },
@@ -2643,62 +2871,134 @@
     {
      "dialect": "egyptian",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "بياكل بسرعة على طول",
+       "gloss": "يأكل بسرعة دائماً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "عم ياكل هلق",
+       "gloss": "إنه يأكل الآن"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "ياكل وايد وما يشبع",
+       "gloss": "يأكل كثيراً ولا يشبع"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "ياكل مع أهله كل يوم",
+       "gloss": "يأكل مع أهله كل يوم"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "دا ياكل تمن",
+       "gloss": "إنه يأكل أرزاً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "ياكل مع الضيوف",
+       "gloss": "يأكل مع الضيوف"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "كياكل بزربة",
+       "gloss": "يأكل بسرعة"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "راه ياكل دروك",
+       "gloss": "إنه يأكل الآن"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "قاعد ياكل في الكسكسي",
+       "gloss": "إنه يأكل الكسكس"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "قاعد ياكل مع صحابه",
+       "gloss": "يأكل مع أصدقائه"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "قاعد ياكل عصيدة",
+       "gloss": "يأكل العصيدة"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "ياكل",
-     "meaning": "يأكل"
+     "meaning": "يأكل",
+     "examples": [
+      {
+       "text": "ياكل مع اهلو",
+       "gloss": "يأكل مع أهله"
+      }
+     ]
     }
    ]
   },
