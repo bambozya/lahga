@@ -126,6 +126,10 @@ nav a { display: inline-block; padding-block: 0.4em; font-weight: 600; text-deco
 nav a:hover, nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
 nav a[aria-current="page"] { color: inherit; }
 nav a svg { width: 1.2em; height: 1.2em; vertical-align: -0.25em; margin-inline-end: 0.3em; }
+/* The login link is an icon on its own, kept quiet: no label, muted until touched. */
+.login-link { color: var(--muted); font-weight: 400; }
+.login-link svg { margin-inline-end: 0; }
+.login-link:hover { color: inherit; }
 
 /* ---------- Main ---------- */
 main { padding: var(--space-m) var(--gutter) var(--space-2xl); }
@@ -208,11 +212,12 @@ button[aria-pressed="true"], button[aria-pressed="true"]:hover { background: var
 /* A link that carries the main action of a page wears the button's clothes:
    the empty search result, the invitation to contribute. */
 a.cta {
-  display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1.1em; margin-inline-end: 0.5em;
+  display: inline-flex; align-items: center; gap: 0.4em; min-height: 2.75rem; padding: 0 1.1em; margin-inline-end: 0.5em;
   background: var(--ink); color: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
   font-weight: 600; text-decoration: none;
 }
 a.cta:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+a.cta svg { width: 1.3em; height: 1.3em; flex: none; }
 input, textarea, select {
   min-height: 2.75rem; padding: 0.2em 0.8em; background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius);
 }

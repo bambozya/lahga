@@ -28,7 +28,8 @@ const { loggedIn, user } = useUserSession()
           <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
           <!-- Icon: Material Symbols (Apache 2.0): person. -->
           <li v-if="loggedIn"><NuxtLink to="/settings"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" /></svg>{{ user?.displayName }}</NuxtLink></li>
-          <li v-else><NuxtLink to="/login">دخول</NuxtLink></li>
+          <!-- Icon: Material Symbols (Apache 2.0): login. -->
+          <li v-else><NuxtLink to="/login" class="login-link" aria-label="دخول"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" /></svg></NuxtLink></li>
         </ul>
       </nav>
       <search>
