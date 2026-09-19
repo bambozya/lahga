@@ -10,11 +10,11 @@ const props = defineProps<{
   }
 }>()
 
-// A word may be said in thirty dialects; a result card shows the best-supported
-// few and counts the rest, so a page of results stays a page of results.
-const SHOWN = 6
-const shown = computed(() => props.word.entries.slice(0, SHOWN))
-const rest = computed(() => Math.max(0, props.word.entries.length - SHOWN))
+// The same glance the word's own page opens with, in the same order: the form
+// once, then everyone who says it. Nothing is held back — a form the card hides
+// is the very thing someone came to read, and saying each form once keeps the
+// line short enough that it never needs to be.
+const forms = computed(() => formsOf(props.word.entries))
 </script>
 
 <template>
@@ -22,11 +22,11 @@ const rest = computed(() => Math.max(0, props.word.entries.length - SHOWN))
     <dt><NuxtLink :to="`/w/${word.id}`">{{ word.headword }}</NuxtLink> <small>بالفصحى</small></dt>
     <dd>
       <p>{{ word.definition }}</p>
-      <p v-if="shown.length">
-        <template v-for="e in shown" :key="e.id">
-          <NuxtLink :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink> <b>{{ e.form }}</b>
+      <p v-if="forms.length" class="glance">
+        <span>تُقال:</span>
+        <template v-for="(f, i) in forms" :key="f.form">
+          <template v-if="i">، </template><b>{{ f.form }}</b> <small>{{ f.dialects.join('، ') }}</small>
         </template>
-        <small v-if="rest">‏+{{ rest }} أخرى</small>
       </p>
     </dd>
   </div>

@@ -49,18 +49,9 @@ export default defineEventHandler(async (event) => {
         .sort((a, b) => b.score - a.score)
         .map(x => ({ id: x.id, text: x.text, gloss: x.gloss, score: x.score, myVote: exampleVotes[x.id] ?? 0, createdBy: x.createdBy })),
     }))
-    // Best-supported entries first: the Wilson lower bound rewards agreement, not just volume.
-    .sort((a, b) => b.rank - a.rank || b.score - a.score || a.id - b.id)
 
-  // Group by top-level dialect so the page reads "one block per region".
-  const groups: Record<string, { slug: string, nameAr: string, entries: typeof entries }> = {}
-  for (const e of entries) {
-    groups[e.group.slug] ??= { ...e.group, entries: [] }
-    groups[e.group.slug]!.entries.push(e)
-  }
-
-  // Regions ordered by their best entry, so the strongest evidence comes first.
-  const groupList = Object.values(groups).sort((a, b) => (b.entries[0]?.rank ?? 0) - (a.entries[0]?.rank ?? 0))
+  // One block per region, in the order the result cards read them too.
+  const groupList = groupByRegion(entries)
   return {
     id: word.id, headword: word.headword, definition: word.definition, kind: word.kind, score: word.score,
     createdAt: word.createdAt, createdBy: word.createdBy,

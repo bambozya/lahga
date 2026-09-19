@@ -4,19 +4,8 @@ const { loggedIn, user } = useUserSession()
 // The literal type narrows the URL to the [id] route for typing.
 const { data: word, error, refresh } = await useFetch(`/api/words/${route.params.id}` as `/api/words/${number}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
-// One line per distinct form, with every dialect that uses it: «الحين (خليجي، نجدي)».
-// The first entry that says it is where the line points, so the summary doubles
-// as the table of contents for the detail below.
-const forms = computed(() => {
-  const byForm = new Map<string, { entryId: number, dialects: string[] }>()
-  for (const g of word.value?.groups ?? []) {
-    for (const e of g.entries) {
-      const seen = byForm.get(e.form) ?? byForm.set(e.form, { entryId: e.id, dialects: [] }).get(e.form)!
-      if (!seen.dialects.includes(e.dialect.nameAr)) seen.dialects.push(e.dialect.nameAr)
-    }
-  }
-  return [...byForm].map(([form, v]) => ({ form, ...v }))
-})
+// The same glance a result card shows: each form once, with everyone who says it.
+const forms = computed(() => formsOf(word.value?.groups.flatMap(g => g.entries) ?? []))
 const kindWord = computed(() => ({ word: 'كلمة', phrase: 'عبارة', proverb: 'مثل' })[word.value?.kind ?? 'word'])
 useSeo({
   // The title carries the dialect forms, because that is what people type into a search box.
@@ -161,13 +150,9 @@ const removeWord = async () => {
 .pivot > h1 { font-size: var(--step-5); line-height: 1.2; margin-block-start: var(--space-3xs); }
 .pivot > .definition { font-size: var(--step-1); margin-block-start: var(--space-2xs); }
 
-/* The forms at a glance: one line of the dictionary's voice, links into the detail. */
-.glance { max-width: none; margin-block-start: var(--space-s); line-height: 2; }
-.glance > span { color: var(--muted); font-size: var(--step--1); margin-inline-end: 0.3em; }
-.glance a { text-decoration-color: transparent; }
-.glance a:hover, .glance a:focus-visible { text-decoration-color: var(--accent); }
-.glance b { font-family: var(--naskh); font-size: var(--step-1); }
-.glance small { margin-inline-start: 0.25em; }
+/* The glance itself is styled in main.css, shared with the result cards; here
+   it only needs the air that separates it from the headword above. */
+.glance { margin-block-start: var(--space-s); }
 
 .tools { margin-block-start: var(--space-xs); }
 
