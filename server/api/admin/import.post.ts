@@ -9,7 +9,7 @@ import { fields, normalizeArabic } from '../../utils/contribute'
  * with its dialect entries and examples; see docs/seed/FORMAT.md. Each word is
  * validated on its own, so one bad item does not stop the rest. A headword
  * that already exists gets the new entries merged in; an entry that already
- * exists is merged, never skipped: the entry that is there keeps what it has
+ * exists in the same dialect is merged, never skipped: the entry that is there keeps what it has
  * and gains what the file brings (examples, a meaning or notes it was missing).
  * A form that already exists in the same dialect under another headword is
  * linked to this word too, rather than stored twice. Everything is attributed to the
@@ -48,8 +48,6 @@ export default defineEventHandler(async (event) => {
   const report = { wordsCreated: 0, wordsMerged: 0, entriesCreated: 0, entriesMerged: 0, entriesLinked: 0, entriesFilled: 0, examplesCreated: 0, examplesSkipped: 0, errors: [] as { index: number, headword?: string, message: string }[] }
   const dialects = await db.query.dialects.findMany({ where: eq(schema.dialects.active, 1) })
   const bySlug = new Map(dialects.map(d => [d.slug, d]))
-  // The top-level group of each dialect: a form already present anywhere in the group is a duplicate.
-  const groupOf = new Map(dialects.map(d => [d.id, d.parentId ?? d.id]))
   const authorId = body.dryRun ? 0 : (body.authorId ?? await systemUserId(db))
 
   for (const [index, raw] of body.words.entries()) {
@@ -102,11 +100,12 @@ export default defineEventHandler(async (event) => {
       for (const e of w.entries) {
         const dialect = bySlug.get(e.dialect)!
         const formNormalized = normalizeArabic(e.form)
-        // Already on this word, somewhere in the same dialect group: keep the one
-        // that is there and give it whatever the file adds — examples, a meaning,
-        // notes it was missing.
+        // Already on this word in this very dialect: keep the one that is there
+        // and give it whatever the file adds — examples, a meaning, notes it was
+        // missing. Sub-dialects keep their own rows: that شامي and فلسطيني both
+        // say «كيفك؟» is worth recording, not deduplicating away.
         const dup = word.links.find(l => l.status === 'active' && l.entry.status === 'active'
-          && groupOf.get(l.entry.dialectId) === groupOf.get(dialect.id) && l.entry.formNormalized === formNormalized)
+          && l.entry.dialectId === dialect.id && l.entry.formNormalized === formNormalized)
         if (dup) {
           report.entriesMerged++
           await fillGaps(dup.entry, e)

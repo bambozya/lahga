@@ -48,7 +48,7 @@
      "form": "تذكرة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "تيكي",
      "notes": "من الفرنسية",
      "examples": [
@@ -131,7 +131,7 @@
      "form": "الزحمة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "tunisian",
      "form": "زحمة"
     },
     {
@@ -184,7 +184,7 @@
      "form": "كاوتش"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "بنو",
      "notes": "من الفرنسية",
      "examples": [
@@ -313,7 +313,7 @@
      "form": "شنطة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "فاليزة",
      "notes": "من الفرنسية"
     },
@@ -375,7 +375,7 @@
      "form": "جواز"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "باسبور"
     },
     {
@@ -432,7 +432,7 @@
      "form": "موقف"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "باركينغ"
     },
     {
@@ -483,7 +483,7 @@
      "form": "باخرة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "باطو",
      "notes": "من الفرنسية",
      "examples": [
@@ -494,7 +494,7 @@
      ]
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "tunisian",
      "form": "باخرة"
     },
     {
@@ -541,7 +541,7 @@
      "form": "ميناء"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "البور"
     },
     {
@@ -598,7 +598,7 @@
      "form": "حادث"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "أكسيدة",
      "notes": "من الفرنسية",
      "examples": [
@@ -661,7 +661,7 @@
      "notes": "من الفرنسية"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "algerian",
      "form": "طروطوار"
     },
     {
@@ -718,7 +718,7 @@
      "form": "كبري"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "قنطرة"
     },
     {
@@ -769,7 +769,7 @@
      "form": "دركسيون"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الفولان",
      "notes": "من الفرنسية"
     },
@@ -821,7 +821,7 @@
      "form": "راكب"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "راكب"
     },
     {
@@ -874,7 +874,7 @@
      "form": "سفر"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "سفر"
     },
     {
@@ -921,7 +921,7 @@
      "form": "جمارك"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الديوانة"
     },
     {
@@ -982,7 +982,7 @@
      "form": "الضو الحمر"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "algerian",
      "form": "الفو"
     },
     {
@@ -1033,7 +1033,7 @@
      "form": "وصول"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "وصول"
     },
     {
@@ -1086,7 +1086,7 @@
      "form": "تأخير"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "ريطار",
      "notes": "من الفرنسية"
     },
@@ -1138,7 +1138,7 @@
      "form": "الحدود"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الحدود"
     },
     {

@@ -44,7 +44,7 @@
      "form": "كراسة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "كاييه",
      "notes": "من الفرنسية",
      "examples": [
@@ -116,7 +116,7 @@
      "form": "السبورة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "algerian",
      "form": "تابلو"
     },
     {
@@ -173,7 +173,7 @@
      "form": "أستيكة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "گومة",
      "notes": "من الفرنسية"
     },
@@ -225,7 +225,7 @@
      "form": "قلم رصاص"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "كريون",
      "notes": "من الفرنسية",
      "examples": [
@@ -283,7 +283,7 @@
      "form": "شنطة المدرسة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الكرطابل",
      "notes": "من الفرنسية",
      "examples": [
@@ -356,7 +356,7 @@
      "notes": "من الفرنسية"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "tunisian",
      "form": "عطلة"
     },
     {
@@ -409,7 +409,7 @@
      "form": "حصة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "حصة"
     },
     {
@@ -462,7 +462,7 @@
      "form": "واجب"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الدوفوار",
      "notes": "من الفرنسية"
     },
@@ -520,7 +520,7 @@
      "form": "ناجح"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "ناجح"
     },
     {
@@ -577,7 +577,7 @@
      "form": "راسب"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "طايح",
      "examples": [
       {
@@ -634,7 +634,7 @@
      "form": "شهادة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الديبلوم"
     },
     {
@@ -689,7 +689,7 @@
      "form": "التلميذ"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "algerian",
      "form": "تلميذ"
     },
     {
@@ -746,7 +746,7 @@
      "form": "يقرا بالغيب"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "algerian",
      "form": "يحفظ"
     },
     {
@@ -799,7 +799,7 @@
      "form": "يشرح"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "يشرح"
     },
     {
@@ -856,7 +856,7 @@
      "form": "فصل"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "القسم"
     },
     {
@@ -907,12 +907,12 @@
      "form": "الجرس"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الصونري",
      "notes": "من الفرنسية"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "tunisian",
      "form": "الجرس"
     },
     {
@@ -959,7 +959,7 @@
      "form": "مسطرة"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الريگلة",
      "notes": "من الفرنسية"
     },
@@ -1021,7 +1021,7 @@
      "form": "بنك"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الطابلة"
     },
     {
@@ -1076,7 +1076,7 @@
      "form": "ملخص"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "الريزومي",
      "notes": "من الفرنسية"
     },
@@ -1128,7 +1128,7 @@
      "form": "عقاب"
     },
     {
-     "dialect": "maghrebi",
+     "dialect": "moroccan",
      "form": "العقاب"
     },
     {
