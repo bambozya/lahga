@@ -91,7 +91,7 @@ useSeo({ title: 'عن الموقع', description: 'لهجة قاموس تشار�
         نرحب بمساهماتكم في إثراء قاموس «لهجة» بالكلمات والتعبيرات من لهجاتكم
         المحلية. كلما زادت المساهمات، أصبح القاموس أكثر شمولاً وفائدة للجميع.
       </p>
-      <p><NuxtLink to="/browse">تصفح الكلمات</NuxtLink> أو <NuxtLink to="/contact">اقترح كلمة</NuxtLink>.</p>
+      <p><NuxtLink to="/">تصفح الكلمات</NuxtLink> أو <NuxtLink to="/contact">اقترح كلمة</NuxtLink>.</p>
     </section>
 
     <section>

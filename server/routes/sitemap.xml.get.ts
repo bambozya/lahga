@@ -6,7 +6,7 @@ import { useDb, schema } from '../db'
  * dialect and every active word. Cached for an hour, since the set changes
  * slowly and crawlers fetch it often.
  */
-const STATIC = ['/', '/browse', '/dialects', '/about', '/terms', '/privacy', '/contact']
+const STATIC = ['/', '/dialects', '/about', '/terms', '/privacy', '/contact']
 
 export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')

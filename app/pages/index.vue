@@ -1,8 +1,53 @@
 <script setup lang="ts">
+// The home page is the dictionary itself: the search results when something is
+// being looked for, the index of the newest words otherwise. Nothing stands
+// between the search box in the header and the answer.
+const route = useRoute()
+const activeQuery = computed(() => String(route.query.q ?? '').trim())
+const LIMIT = 50
+
+type WordList = { id: number, headword: string, definition: string, score: number,
+  entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
+
+const { data: words, status } = await useFetch<WordList>('/api/words', {
+  query: computed(() => ({ q: activeQuery.value, limit: LIMIT })),
+})
+// The dialect tree is for the sidebar, which a search hides: while a query is
+// active it is neither fetched nor shipped to the browser.
+type DialectTree = { id: number, slug: string, nameAr: string, children: { id: number, slug: string, nameAr: string }[] }[]
+const { data: dialects } = await useAsyncData<DialectTree>('dialects', () => (
+  activeQuery.value ? Promise.resolve([]) : $fetch<DialectTree>('/api/dialects')
+), { watch: [activeQuery] })
+
+const count = computed(() => words.value?.length ?? 0)
+const searching = computed(() => status.value === 'pending')
+const nothing = computed(() => !!activeQuery.value && !searching.value && count.value === 0)
+
+// A search that found nothing asks once more for the nearest words, so the
+// empty answer can still point somewhere («هل تقصد…»).
+const { data: suggestions } = await useAsyncData<WordList>('near', () => (
+  activeQuery.value && !count.value
+    ? $fetch<WordList>('/api/words', { query: { q: activeQuery.value, limit: 6, fuzzy: 1 } })
+    : Promise.resolve([])
+), { watch: [words] })
+
+// Arabic counts the way Arabic counts: one, two, a few, many.
+const countLabel = computed(() => {
+  const n = count.value
+  if (n === 0) return 'لا نتائج'
+  if (n === 1) return 'نتيجة واحدة'
+  if (n === 2) return 'نتيجتان'
+  if (n === LIMIT) return `أول ${n} نتيجة`
+  return n <= 10 ? `${n} نتائج` : `${n} نتيجة`
+})
+
 useSeo({
-  title: 'قاموس اللهجات العربية',
+  title: () => activeQuery.value ? `بحث: ${activeQuery.value}` : 'قاموس اللهجات العربية',
   path: '/',
-  description: 'قاموس تشاركي للهجات العربية: كيف تُقال الكلمة نفسها في مصر والشام والخليج والعراق واليمن والمغرب والسودان. أحدث الكلمات المضافة، ومعانيها، وأمثلة على استعمالها.',
+  description: () => activeQuery.value
+    ? `نتائج البحث عن «${activeQuery.value}» في قاموس اللهجات العربية.`
+    : 'قاموس تشاركي للهجات العربية: ابحث عن كلمة بالفصحى أو بأي لهجة وشاهد كيف تُقال في مصر والشام والخليج والعراق واليمن والمغرب والسودان.',
+  noindex: () => !!activeQuery.value,
   jsonLd: [{
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -13,26 +58,49 @@ useSeo({
     description: 'قاموس تشاركي يربط كلمات اللهجات العربية بمعانيها بالفصحى.',
     potentialAction: {
       '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: 'https://lahga.fyi/browse?q={search_term_string}' },
+      target: { '@type': 'EntryPoint', urlTemplate: 'https://lahga.fyi/?q={search_term_string}' },
       'query-input': 'required name=search_term_string',
     },
   }],
 })
-const { data: entries } = await useFetch('/api/entries', { query: { limit: 20 } })
-const { data: dialects } = await useFetch('/api/dialects')
 </script>
 
 <template>
   <div>
     <section>
-      <h1>أحدث الكلمات</h1>
-      <dl v-if="entries?.length">
-        <EntryCard v-for="e in entries" :key="e.id" :entry="e" />
+      <!-- Searching: one quiet line, then the results. -->
+      <hgroup v-if="activeQuery" class="head">
+        <h1>«{{ activeQuery }}»</h1>
+        <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
+      </hgroup>
+      <hgroup v-else class="head">
+        <h1>كل الكلمات</h1>
+        <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو تصفّح أحدث ما أُضيف.</p>
+      </hgroup>
+
+      <!-- Nothing found: not a line of text like any other, but a door. -->
+      <div v-if="nothing" class="empty">
+        <h2>لم نجد «{{ activeQuery }}»</h2>
+        <p>لا شيء بعد بهذا الاسم. ربما تُكتب بحروف أخرى، أو لم يضفها أحد بعد — وهنا يأتي دورك.</p>
+        <p v-if="suggestions?.length" class="near">
+          هل تقصد:
+          <template v-for="(w, i) in suggestions" :key="w.id">
+            <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
+          </template>
+        </p>
+        <p>
+          <NuxtLink class="cta" :to="{ path: '/add-word', query: { headword: activeQuery } }">أضف «{{ activeQuery }}» إلى القاموس</NuxtLink>
+        </p>
+        <p><small><NuxtLink to="/" aria-current-value="false">تصفّح كل الكلمات</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
+      </div>
+
+      <dl v-else-if="words?.length">
+        <WordCard v-for="w in words" :key="w.id" :word="w" />
       </dl>
-      <p v-else>لا توجد كلمات بعد.</p>
+      <p v-else-if="!searching">لا توجد كلمات بعد.</p>
     </section>
 
-    <aside>
+    <aside v-if="!activeQuery">
       <h2>اللهجات</h2>
       <details v-for="d in dialects" :key="d.id" name="dialects">
         <summary>{{ d.nameAr }}</summary>
@@ -44,3 +112,25 @@ const { data: dialects } = await useFetch('/api/dialects')
     </aside>
   </div>
 </template>
+
+<style scoped>
+/* The search state wastes no height: the query is a line, not a banner. */
+.head > h1 { font-size: var(--step-2); }
+.head > p { margin-block-start: var(--space-3xs); }
+/* The result count is a whisper; only the empty state raises its voice. */
+.head > p[role="status"] {
+  background: none; border: 0; padding: 0;
+  font: 400 var(--step--1)/1.6 var(--sans); color: var(--muted);
+}
+
+/* Nothing found: a bordered panel, so it can never be mistaken for a result. */
+.empty {
+  margin-block-start: var(--space-m);
+  padding: var(--space-m) var(--space-s-m);
+  background: var(--surface);
+  border: var(--thin); border-inline-start: 6px solid var(--accent); border-radius: var(--radius);
+}
+.empty > * + * { margin-block-start: var(--space-s); }
+.empty h2 { font-size: var(--step-1); }
+.near { color: var(--muted); }
+</style>
