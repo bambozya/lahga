@@ -146,6 +146,7 @@ footer :focus-visible { outline-color: var(--paper); }
 /* ---------- Definition lists: the dictionary itself. One heavy rule on top of each entry. ---------- */
 * + dl { margin-block-start: var(--space-m); }
 dl > div { position: relative; border-block-start: var(--thin); padding-block: var(--space-s) var(--space-l); }
+dl > div:first-child { border-block-start: var(--rule); }
 dt { font: 700 var(--step-3)/1.5 var(--naskh); }
 dt :is(small, a[rel="tag"]) { margin-inline-start: 0.4em; }
 dt small { font: 400 var(--step--1) var(--sans); }
