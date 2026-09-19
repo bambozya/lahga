@@ -20,7 +20,8 @@ const CHUNK = 500 // the importer's limit per request
 
 type Report = {
   wordsCreated: number, wordsMerged: number, entriesCreated: number,
-  entriesSkipped: number, examplesCreated: number, examplesSkipped: number,
+  entriesMerged: number, entriesLinked: number, entriesFilled: number,
+  examplesCreated: number, examplesSkipped: number,
   errors: { index: number, headword?: string, message: string }[]
 }
 
@@ -68,13 +69,14 @@ async function send(words: unknown[], dryRun: boolean, bearer: string): Promise<
 
 const line = (r: Report) =>
   `${r.wordsCreated} new, ${r.wordsMerged} merged, ${r.entriesCreated} entries `
-  + `(${r.entriesSkipped} already there), ${r.examplesCreated} examples added`
+  + `(${r.entriesMerged} merged, ${r.entriesLinked} linked to another word, ${r.entriesFilled} filled in), `
+  + `${r.examplesCreated} examples added`
   + (r.examplesSkipped ? ` (${r.examplesSkipped} already there)` : '')
 
 if (!files.length) die('Usage: npm run import -- <file.json…> [--commit] [--url https://lahga.fyi] [--token …]')
 
 const bearer = await token()
-const total = { words: 0, entries: 0, examples: 0, skipped: 0, errors: 0 }
+const total = { words: 0, entries: 0, examples: 0, merged: 0, errors: 0 }
 console.log(`\n  ${commit ? 'Importing into' : 'Checking against'} ${url}\n`)
 
 for (const file of files) {
@@ -108,12 +110,12 @@ for (const file of files) {
     total.words += saved.wordsCreated
     total.entries += saved.entriesCreated
     total.examples += saved.examplesCreated
-    total.skipped += saved.entriesSkipped
+    total.merged += saved.entriesMerged + saved.entriesLinked
     total.errors += saved.errors.length
   }
 }
 
 console.log(commit
-  ? `\n  ${total.words} new words, ${total.entries} entries, ${total.examples} examples, ${total.skipped} duplicates skipped, ${total.errors} errors\n`
+  ? `\n  ${total.words} new words, ${total.entries} entries, ${total.examples} examples, ${total.merged} merged into what was there, ${total.errors} errors\n`
   : `\n  ${total.words} words ready, ${total.errors} errors. Add --commit to save them.\n`)
 process.exit(total.errors ? 1 : 0)

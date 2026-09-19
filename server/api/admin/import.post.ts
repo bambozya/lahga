@@ -9,9 +9,10 @@ import { fields, normalizeArabic } from '../../utils/contribute'
  * with its dialect entries and examples; see docs/seed/FORMAT.md. Each word is
  * validated on its own, so one bad item does not stop the rest. A headword
  * that already exists gets the new entries merged in; an entry that already
- * exists for that word anywhere in the same dialect group is skipped, though
- * any examples it brings are added to the entry that is already there — that is
- * how existing content gets enriched. Everything is attributed to the
+ * exists is merged, never skipped: the entry that is there keeps what it has
+ * and gains what the file brings (examples, a meaning or notes it was missing).
+ * A form that already exists in the same dialect under another headword is
+ * linked to this word too, rather than stored twice. Everything is attributed to the
  * system account «لهجة» unless `authorId` is given. `dryRun` validates only.
  */
 const Example = v.object({ text: fields.text, gloss: fields.gloss })
@@ -44,7 +45,7 @@ export default defineEventHandler(async (event) => {
   const admin = await requireImporter(event)
   const body = await readBody$(event, Body)
   const db = await useDb()
-  const report = { wordsCreated: 0, wordsMerged: 0, entriesCreated: 0, entriesSkipped: 0, examplesCreated: 0, examplesSkipped: 0, errors: [] as { index: number, headword?: string, message: string }[] }
+  const report = { wordsCreated: 0, wordsMerged: 0, entriesCreated: 0, entriesMerged: 0, entriesLinked: 0, entriesFilled: 0, examplesCreated: 0, examplesSkipped: 0, errors: [] as { index: number, headword?: string, message: string }[] }
   const dialects = await db.query.dialects.findMany({ where: eq(schema.dialects.active, 1) })
   const bySlug = new Map(dialects.map(d => [d.slug, d]))
   // The top-level group of each dialect: a form already present anywhere in the group is a duplicate.
@@ -85,16 +86,49 @@ export default defineEventHandler(async (event) => {
         }
       }
 
+      /** Fills the blanks on an entry that is already there. What it has, it keeps. */
+      const fillGaps = async (entry: { id: number, meaning: string | null, notes: string | null, dialectId: number }, e: { meaning?: string, notes?: string }) => {
+        const patch: { meaning?: string, notes?: string } = {}
+        if (!entry.meaning && e.meaning) patch.meaning = e.meaning
+        if (!entry.notes && e.notes) patch.notes = e.notes
+        if (!Object.keys(patch).length) return
+        await tx.update(schema.entries).set({ ...patch, updatedAt: new Date() }).where(eq(schema.entries.id, entry.id))
+        Object.assign(entry, patch)
+        const slug = dialects.find(d => d.id === entry.dialectId)?.slug
+        await recordRevision(tx, 'entry', entry.id, { dialect: slug, meaning: entry.meaning, notes: entry.notes }, authorId, 'استيراد')
+        report.entriesFilled++
+      }
+
       for (const e of w.entries) {
         const dialect = bySlug.get(e.dialect)!
         const formNormalized = normalizeArabic(e.form)
-        // A form already present in this dialect group is not added twice — but the
-        // file may still carry examples the entry does not have yet, and those go in.
+        // Already on this word, somewhere in the same dialect group: keep the one
+        // that is there and give it whatever the file adds — examples, a meaning,
+        // notes it was missing.
         const dup = word.links.find(l => l.status === 'active' && l.entry.status === 'active'
           && groupOf.get(l.entry.dialectId) === groupOf.get(dialect.id) && l.entry.formNormalized === formNormalized)
         if (dup) {
-          report.entriesSkipped++
+          report.entriesMerged++
+          await fillGaps(dup.entry, e)
           if (e.examples.length) await addExamples(dup.entry.id, e.examples, dup.entry.examples)
+          continue
+        }
+        // The same word in the same dialect may already exist under another
+        // headword — «زين» is both جيد and جميل. One entry, linked to both: that
+        // is what the link table is for, and the dialect page then shows the
+        // form with every MSA word it answers to.
+        const shared = await tx.query.entries.findFirst({
+          where: and(eq(schema.entries.dialectId, dialect.id), eq(schema.entries.formNormalized, formNormalized), eq(schema.entries.status, 'active')),
+          with: { examples: true },
+        })
+        if (shared) {
+          const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: shared.id, createdBy: authorId })
+            .onConflictDoNothing().returning()
+          if (link) await recordRevision(tx, 'link', link.id, { wordId: word.id, entryId: shared.id }, authorId, 'استيراد')
+          report.entriesLinked++
+          await fillGaps(shared, e)
+          if (e.examples.length) await addExamples(shared.id, e.examples, shared.examples)
+          word.links.push({ ...(link ?? { id: 0 }), status: 'active', entry: { ...shared, examples: shared.examples } } as typeof word.links[number])
           continue
         }
         const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning: e.meaning || null, notes: e.notes || null, createdBy: authorId }).returning()

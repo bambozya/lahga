@@ -12,7 +12,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "typecheck": "nuxt typecheck",
-    "import": "tsx scripts/import.ts"
+    "import": "tsx scripts/import.ts",
+    "add-examples": "tsx scripts/add-examples.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",
