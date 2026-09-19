@@ -8,7 +8,7 @@ if (user.value?.id !== word.value.createdBy && user.value?.role !== 'admin') {
   throw createError({ statusCode: 403, statusMessage: 'يمكنك تعديل ما أضفته أنت فقط', fatal: true })
 }
 useSeo({ title: () => `تعديل ${word.value?.headword ?? ''}`, noindex: true })
-const form = reactive({ headword: word.value.headword, definition: word.value.definition, kind: word.value.kind, reason: '' })
+const form = reactive({ headword: word.value.headword, definition: word.value.definition ?? '', kind: word.value.kind, reason: '' })
 const { busy, error: failure, run } = useForm(async () => {
   await $fetch(`/api/words/${word.value!.id}`, { method: 'PATCH', body: form })
   await navigateTo(`/w/${word.value!.id}`)
@@ -27,8 +27,8 @@ const { busy, error: failure, run } = useForm(async () => {
           <input id="headword" v-model="form.headword" required maxlength="80" />
         </p>
         <p>
-          <label for="definition">التعريف</label>
-          <textarea id="definition" v-model="form.definition" required maxlength="600" rows="3"></textarea>
+          <label for="definition">التعريف <small>(اختياري)</small></label>
+          <textarea id="definition" v-model="form.definition" maxlength="600" rows="3"></textarea>
         </p>
         <p>
           <label for="kind">النوع</label>

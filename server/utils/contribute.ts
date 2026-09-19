@@ -72,7 +72,9 @@ const optionalArabic = (label: string, max: number) => v.optional(v.pipe(
 
 export const fields = {
   headword: arabic('الكلمة بالفصحى', 1, 80),
-  definition: arabic('التعريف', 3, 600),
+  // Optional: «ماء» needs no gloss, and demanding one turns a word somebody
+  // wanted to add into a form they abandon.
+  definition: optionalArabic('التعريف', 600),
   kind: v.optional(v.picklist(['word', 'phrase', 'proverb'], 'النوع غير معروف'), 'word'),
   dialect: v.pipe(v.string('اللهجة مطلوبة'), v.regex(/^[a-z0-9-]{2,60}$/, 'اللهجة غير معروفة')),
   form: arabic('الكلمة باللهجة', 1, 80),

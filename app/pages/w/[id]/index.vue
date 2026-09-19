@@ -18,7 +18,7 @@ useSeo({
     if (!word.value) return ''
     const list = forms.value.map(f => `${f.form} (${f.dialects.join('، ')})`).join('، ')
     const head = `كيف تُقال «${word.value.headword}» في اللهجات العربية؟`
-    return list ? `${head} ${list}.` : `${head} ${word.value.definition}`
+    return list ? `${head} ${list}.` : `${head} ${word.value.definition ?? ''}`.trim()
   },
   jsonLd: () => {
     if (!word.value) return undefined
@@ -75,7 +75,7 @@ const removeWord = async () => {
     <hgroup class="pivot">
       <p><b>بالفصحى</b><template v-if="kindLabel[word.kind]"> · {{ kindLabel[word.kind] }}</template></p>
       <h1><dfn>{{ word.headword }}</dfn></h1>
-      <p class="definition">{{ word.definition }}</p>
+      <p v-if="word.definition" class="definition">{{ word.definition }}</p>
     </hgroup>
 
     <!-- Every dialect form at a glance; the detail waits below. -->
