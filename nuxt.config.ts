@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+// Self-hosted Umami (docs/REACH.md, Phase R1): cookie-free, served from our own
+// domain so ad/tracker blockers that key on a third-party hostname do not strip
+// it. Read directly from the environment (not runtimeConfig) so the <script>
+// tag itself is only emitted once an id is actually configured; unset in dev
+// and on any deploy that hasn't been given one, the site ships with no
+// analytics call at all rather than one pointed at an empty id.
+const umamiWebsiteId = process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID ?? ''
+const umamiScriptUrl = process.env.NUXT_PUBLIC_UMAMI_SCRIPT_URL ?? 'https://analytics.lahga.fyi/script.js'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -19,15 +28,27 @@ export default defineNuxtConfig({
       turnstileSiteKey: '',
       // Set to '1' when NUXT_OAUTH_GOOGLE_CLIENT_ID is configured, so the pages show the Google button.
       googleLogin: '',
+      // Empty unless NUXT_PUBLIC_UMAMI_WEBSITE_ID is set; read by useAnalytics() to
+      // know whether window.umami exists, so custom events no-op safely without it.
+      umamiWebsiteId,
     },
   },
   app: {
     head: {
       htmlAttrs: { lang: 'ar', dir: 'rtl' },
       // Apply the saved theme before the first paint (see app/components/ThemeSwitch.vue).
-      script: [{
-        innerHTML: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
-      }],
+      script: [
+        {
+          innerHTML: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
+        },
+        // Umami's own script tracks pageviews (and referrers) automatically;
+        // useAnalytics() adds custom events (share, game finished, …) on top.
+        // data-domains scopes it to the real domain so a stray env var never
+        // counts dev or preview traffic.
+        ...(umamiWebsiteId
+          ? [{ src: umamiScriptUrl, defer: true, 'data-website-id': umamiWebsiteId, 'data-domains': 'lahga.fyi' }]
+          : []),
+      ],
       title: 'لهجة - قاموس اللهجات العربية',
       meta: [
         { name: 'description', content: 'لهجة - قاموس اللهجات العربية. اكتشف وشارك كلمات ومصطلحات من مختلف اللهجات العربية.' },
@@ -60,8 +81,17 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    // PGlite ships WASM assets; keep it external so the bundler leaves it alone.
-    externals: { external: ['@electric-sql/pglite'] },
+    // PGlite ships WASM assets, and @resvg/resvg-js (the card renderer, docs/REACH.md
+    // Phase R2) is a native binding: both need to stay external so the bundler
+    // leaves their binaries alone instead of trying to inline them.
+    externals: { external: ['@electric-sql/pglite', '@resvg/resvg-js'] },
+    // The card renderer's ttf fonts (server/assets/fonts/*.ttf) are plain files,
+    // not imports, so nitro's build tracer would otherwise leave them out of
+    // .output entirely. No config needed for this: nitro always auto-mounts the
+    // whole server/assets/ directory under storage key "server", which is how
+    // server/utils/ogCard.ts reads them back (useStorage('assets').getItemRaw
+    // ('server:fonts:<file>')) — verified against a running server, since this
+    // auto-mount is not documented as clearly as it is real.
     // Nothing is prerendered: every page reads the live database.
     prerender: { crawlLinks: false, routes: [] },
   },

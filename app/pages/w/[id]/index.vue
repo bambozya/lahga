@@ -40,6 +40,7 @@ useSeo({
       ],
     }]
   },
+  image: () => word.value ? `/og/w/${word.value.id}.png` : undefined,
 })
 
 const kindLabel = { word: '', phrase: 'عبارة', proverb: 'مثل شعبي' } as const

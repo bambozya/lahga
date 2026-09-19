@@ -29,6 +29,7 @@ useSeo({
     url: `https://lahga.fyi/d/${dialect.value.slug}`,
     inLanguage: 'ar',
   } : undefined,
+  image: () => dialect.value ? `/og/d/${dialect.value.slug}.png` : undefined,
 })
 const proposing = ref(false)
 const proposed = ref(false)

@@ -16,6 +16,15 @@ export interface SeoOptions {
   path?: MaybeGetter<string | undefined>
   /** Keep the page out of search results (account pages, admin, search results). */
   noindex?: MaybeGetter<boolean | undefined>
+  /**
+   * Absolute or root-relative path to a preview image; defaults to the
+   * generic 1200×630 /og.png. A word or dialect card (/og/w/[id].png,
+   * /og/d/[slug].png — docs/REACH.md, Phase R2) is portrait, 1080×1350, so
+   * `og:image:width`/`height` switch with it — a wrong aspect ratio in those
+   * tags is worse than not sending them, since some crawlers lay out the
+   * preview from the declared size before the image itself ever loads.
+   */
+  image?: MaybeGetter<string | undefined>
   /** Structured data objects; each becomes one <script type="application/ld+json">. */
   jsonLd?: MaybeGetter<Record<string, unknown> | Record<string, unknown>[] | undefined>
 }
@@ -41,6 +50,11 @@ export function useSeo(options: SeoOptions) {
     return t ? `${t} - ${SITE_NAME}` : SITE_NAME
   })
   const description = computed(() => clampText(read(options.description)))
+  const image = computed(() => {
+    const img = read(options.image)
+    if (!img) return { url: `${site}/og.png`, width: 1200, height: 630 }
+    return { url: img.startsWith('http') ? img : site + img, width: 1080, height: 1350 }
+  })
 
   useHead(() => {
     const ld = read(options.jsonLd)
@@ -56,7 +70,9 @@ export function useSeo(options: SeoOptions) {
         { property: 'og:locale', content: 'ar_AR' },
         { property: 'og:title', content: title.value },
         { property: 'og:url', content: url.value },
-        { property: 'og:image', content: `${site}/og.png` },
+        { property: 'og:image', content: image.value.url },
+        { property: 'og:image:width', content: String(image.value.width) },
+        { property: 'og:image:height', content: String(image.value.height) },
         ...(description.value ? [{ property: 'og:description', content: description.value }] : []),
         { name: 'twitter:card', content: 'summary_large_image' },
       ],
