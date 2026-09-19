@@ -47,6 +47,7 @@ const doImport = () => { if (confirm('استيراد الكلمات إلى ال�
           <tr><th>مداخل</th><td>{{ report.entriesCreated }}</td></tr>
           <tr><th>مداخل متخطاة (مكررة)</th><td>{{ report.entriesSkipped }}</td></tr>
           <tr><th>أمثلة</th><td>{{ report.examplesCreated }}</td></tr>
+          <tr><th>أمثلة متخطاة (موجودة)</th><td>{{ report.examplesSkipped }}</td></tr>
           <tr><th>أخطاء</th><td>{{ report.errors.length }}</td></tr>
         </tbody>
       </table>
