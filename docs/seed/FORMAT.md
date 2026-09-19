@@ -1,8 +1,22 @@
 # Seed content format
 
-A JSON file with a list of words. Import it at `/admin/import` (admins only).
-"تحقق" validates without saving; "استيراد" saves. Everything imported is
-attributed to the site account «لهجة» and marked "استيراد" in the history.
+A JSON file with a list of words. Everything imported is attributed to the site
+account «لهجة» and marked "استيراد" in the history.
+
+Two ways in. At `/admin/import` (admins only), "تحقق" validates without saving
+and "استيراد" saves. From the command line, with `IMPORT_TOKEN` set in `.env`
+and in the server's environment:
+
+```sh
+npm run import -- docs/seed/words-*.json           # validates, saves nothing
+npm run import -- docs/seed/words-05-food.json --commit
+npm run import -- file.json --url https://lahga.fyi --commit
+```
+
+The script validates every chunk before saving it, never saves a chunk that has
+errors, and splits files larger than 500 words. Running it twice is safe:
+a headword that exists is merged and a form already present in that dialect
+group is skipped.
 
 ```json
 {
