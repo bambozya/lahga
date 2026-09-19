@@ -2356,162 +2356,354 @@
     {
      "dialect": "egyptian",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن ييجي بكرة، مش متأكد",
+       "gloss": "ربما يأتي غداً، لست متأكداً"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "جايز",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "جايز يكون نسي الميعاد",
+       "gloss": "ربما يكون قد نسي الموعد"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نروح بكرة",
+       "gloss": "ربما نذهب غداً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يرجع بكرا",
+       "gloss": "ربما يعود غداً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "بلكي",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "بلكي بيجي معنا",
+       "gloss": "ربما يأتي معنا"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نتأخر شوي",
+       "gloss": "ربما نتأخر قليلاً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يوصل بعد ساعة",
+       "gloss": "ربما يصل بعد ساعة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نروح البحر",
+       "gloss": "ربما نذهب إلى البحر"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "يجوز",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يجوز ما يقدر ييي",
+       "gloss": "ربما لا يستطيع المجيء"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي العصر",
+       "gloss": "ربما يأتي بعد العصر"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نتأخر شوي",
+       "gloss": "ربما نتأخر قليلاً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يكون مشغول",
+       "gloss": "ربما يكون مشغولاً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نتقابل بكرة",
+       "gloss": "ربما نلتقي غداً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي باچر",
+       "gloss": "ربما يأتي غداً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بلكي",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "بلكي يتصل بينا",
+       "gloss": "ربما يتصل بنا"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نروح سوية",
+       "gloss": "ربما نذهب معاً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يوصل بكرة",
+       "gloss": "ربما يصل غداً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نشوفه اليوم",
+       "gloss": "ربما نراه اليوم"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي غدا",
+       "gloss": "ربما يأتي غداً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "واقيلا",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "واقيلا نسا الموعد",
+       "gloss": "ربما نسي الموعد"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "ربما",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ربما يكون مشغول",
+       "gloss": "ربما يكون مشغولاً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يروح غدوة",
+       "gloss": "ربما يذهب غداً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بالاك",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "بالاك ما جاش",
+       "gloss": "ربما لم يأت"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نتلاقاو",
+       "gloss": "ربما نلتقي"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي في العشية",
+       "gloss": "ربما يأتي في المساء"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نمشيو اليوم",
+       "gloss": "ربما نذهب اليوم"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بالك",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "بالك نساك",
+       "gloss": "ربما نسيك"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي بعدين",
+       "gloss": "ربما يأتي لاحقاً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نروحو سوا",
+       "gloss": "ربما نذهب معاً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي بكرة",
+       "gloss": "ربما يأتي غداً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "ممكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "ممكن نتقابل الليلة",
+       "gloss": "ربما نلتقي اليوم"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "يمكن",
-     "meaning": "ربما"
+     "meaning": "ربما",
+     "examples": [
+      {
+       "text": "يمكن يجي",
+       "gloss": "ربما يأتي"
+      }
+     ]
     }
    ]
   },
@@ -3453,148 +3645,322 @@
     {
      "dialect": "egyptian",
      "form": "أوي",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الأكل حلو أوي",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "جداً",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الفيلم كان جميل جداً",
+       "gloss": "كان الفيلم جميلاً جداً"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "خالص",
      "meaning": "جداً",
-     "notes": "بعد النفي أو الوصف"
+     "notes": "بعد النفي أو الوصف",
+     "examples": [
+      {
+       "text": "تعبت خالص النهارده",
+       "gloss": "تعبت جداً اليوم"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "كتير",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الجو حلو كتير اليوم",
+       "gloss": "الجو جميل جداً اليوم"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "جداً",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "هالشغلة مهمة جداً",
+       "gloss": "هذا الأمر مهم جداً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "لدرجة",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "تعبان لدرجة ما فيني قوم",
+       "gloss": "متعب لدرجة أني لا أقوى على القيام"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "وايد",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الشغل وايد اليوم",
+       "gloss": "العمل كثير جداً اليوم"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "مرّة",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الجو مرّة حار",
+       "gloss": "الجو حار جداً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "جداً",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الأمر مهم جداً",
+       "gloss": "الأمر مهم جداً"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "مرّة",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "القهوة مرّة زينة",
+       "gloss": "القهوة جيدة جداً"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "حيل",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "تعبت حيل اليوم",
+       "gloss": "تعبت كثيراً اليوم"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "مرّة",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الأكل مرّة لذيذ",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "قوي",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الجو حر قوي",
+       "gloss": "الجو حار جداً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "كلّش",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الأكل كلّش طيب",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "هوايه",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "أحبك هوايه",
+       "gloss": "أحبك كثيراً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "قوي",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الشغل قوي اليوم",
+       "gloss": "العمل كثير جداً اليوم"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "شي",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "البيت بعيد شي",
+       "gloss": "البيت بعيد جداً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "جداً",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الطريق طويل جداً",
+       "gloss": "الطريق طويل جداً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "بزّاف",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "هاد الشي غالي بزّاف",
+       "gloss": "هذا غالٍ جداً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "شديد",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "عيينا شديد",
+       "gloss": "تعبنا كثيراً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بزّاف",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الدنيا سخانة بزّاف",
+       "gloss": "الجو حار جداً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ياسر",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "خدمنا ياسر اليوم",
+       "gloss": "عملنا كثيراً اليوم"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "برشا",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الماكلة بنينة برشا",
+       "gloss": "الطعام لذيذ جداً"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "ياسر",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الطريق طويلة ياسر",
+       "gloss": "الطريق طويل جداً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "هلبة",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الجو بارد هلبة",
+       "gloss": "الجو بارد جداً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "ياسر",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الناس ياسر في السوق",
+       "gloss": "الناس كثيرون جداً في السوق"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "شديد",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الجو حار شديد",
+       "gloss": "الجو حار جداً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "خالص",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "تعبت خالص",
+       "gloss": "تعبت جداً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "حتّى",
-     "meaning": "جداً"
+     "meaning": "جداً",
+     "examples": [
+      {
+       "text": "الطريق بعيد حتّى",
+       "gloss": "الطريق بعيد جداً"
+      }
+     ]
     }
    ]
   },
@@ -5338,167 +5704,365 @@
     {
      "dialect": "egyptian",
      "form": "بجد؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بجد؟ ما كنتش أعرف",
+       "gloss": "حقاً؟ لم أكن أعلم"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "صحيح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صحيح سافر امبارح؟",
+       "gloss": "أحقاً سافر أمس؟"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ مبروك عليك",
+       "gloss": "حقاً؟ مبارك لك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "عن جد؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "عن جد؟ ما بصدق",
+       "gloss": "حقاً؟ لا أصدق"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ خبرني كيف صار",
+       "gloss": "حقاً؟ أخبرني كيف حدث"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "صحيح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صحيح رح تسافر؟",
+       "gloss": "أحقاً ستسافر؟"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "صدق؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صدق تزوج؟",
+       "gloss": "أحقاً تزوج؟"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ ما توقعت",
+       "gloss": "حقاً؟ لم أتوقع"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "عن جد؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "عن جد بتسافر؟",
+       "gloss": "أحقاً ستسافر؟"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "صدق؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صدق قالوا لك؟",
+       "gloss": "أحقاً أخبروك؟"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ ما كنت أدري",
+       "gloss": "حقاً؟ لم أكن أدري"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "بجد؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بجد نجح؟",
+       "gloss": "أحقاً نجح؟"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "صدق؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صدق الكلام ده؟",
+       "gloss": "أحقيقي هذا الكلام؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "صدق؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صدق تركوا البيت؟",
+       "gloss": "أحقاً تركوا البيت؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ هاي أخبار زينة",
+       "gloss": "حقاً؟ هذه أخبار سارة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بالله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بالله؟ ما أصدق",
+       "gloss": "حقاً؟ لا أصدق"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "صدق؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صدق وصل اليوم؟",
+       "gloss": "أحقاً وصل اليوم؟"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ ما سمعت",
+       "gloss": "حقاً؟ لم أسمع"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "بصح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بصح مشا؟",
+       "gloss": "أحقاً ذهب؟"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "واش بصح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "واش بصح داز الامتحان؟",
+       "gloss": "أحقاً اجتاز الامتحان؟"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ مبروك",
+       "gloss": "حقاً؟ مبارك"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بصح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بصح راح؟",
+       "gloss": "أحقاً ذهب؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "صح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صح هاد الخبر؟",
+       "gloss": "أصحيح هذا الخبر؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ ما قالولي والو",
+       "gloss": "حقاً؟ لم يخبروني بشيء"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بالحق؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بالحق مشى؟",
+       "gloss": "أحقاً ذهب؟"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ ما نجمش نصدق",
+       "gloss": "حقاً؟ لا أستطيع التصديق"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "صحيح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صحيح باش تسافر؟",
+       "gloss": "أحقاً ستسافر؟"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "صح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صح الكلام هذا؟",
+       "gloss": "أصحيح هذا الكلام؟"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ توا عرفت",
+       "gloss": "حقاً؟ الآن عرفت"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "بجد؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بجد قالو ليك؟",
+       "gloss": "أحقاً أخبروك؟"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "والله؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "والله؟ ما سمعت بيها",
+       "gloss": "حقاً؟ لم أسمع بها"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "صاح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "صاح الكلام ده؟",
+       "gloss": "أصحيح هذا الكلام؟"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "بالصح؟",
-     "meaning": "حقاً؟"
+     "meaning": "حقاً؟",
+     "examples": [
+      {
+       "text": "بالصح جا؟",
+       "gloss": "أحقاً جاء؟"
+      }
+     ]
     }
    ]
   },
