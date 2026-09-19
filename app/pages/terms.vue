@@ -148,7 +148,7 @@ useSeo({ title: 'شروط الاستخدام', description: 'شروط استخد
   </p>
   <p>
   البريد الإلكتروني:
-  <a href="mailto:info@lahga.fyi">terms@lahga.com</a>
+  <a href="mailto:info@lahga.fyi">info@lahga.fyi</a>
   </p>
   </section>
   <p><small>آخر تحديث: <time datetime="2026-09-14">١٤ سبتمبر ٢٠٢٦</time></small></p>
