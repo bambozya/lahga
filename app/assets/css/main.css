@@ -31,7 +31,7 @@
   --thin: 1px solid var(--hair);
   --radius: 6px;
   --measure: 62ch;
-  --page: 70rem;
+  --page: 60rem;
   --gutter: max(var(--space-s-m), (100% - var(--page)) / 2);
   --nuqta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.4 5.1Q39.5 -0.3 46.9 1.7Q60.5 6.5 73.1 13.9Q85.7 21.4 96.6 31Q102 36.4 98.6 43.2L66 94.9Q61.2 101.7 53.7 96.3Q46.9 90.8 4.8 65.6Q-2.7 60.9 2 54.1L35.4 5.1Z'/%3E%3C/svg%3E");
   --sans: 'IBM Plex Sans Arabic', 'Geeza Pro', system-ui, sans-serif;
