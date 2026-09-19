@@ -95,7 +95,12 @@ const proposal = useForm(async () => {
         </dd>
       </div>
     </dl>
-    <p v-else>لا توجد كلمات بعد في هذه اللهجة.</p>
+    <!-- An empty sub-dialect is not listed anywhere; whoever is here came by a
+         link or by guessing, and is exactly the person who can end the emptiness. -->
+    <div v-else class="empty">
+      <p>لا توجد كلمات بعد في هذه اللهجة.</p>
+      <p><NuxtLink class="cta" :to="{ path: '/add-word', query: { dialect: dialect.slug } }">كن أول من يضيف كلمة بها</NuxtLink></p>
+    </div>
     <ShuffleButton v-if="dialect.entries.length" label="كلمات أخرى" :busy="shuffling" @shuffle="refresh" />
   </article>
 </template>

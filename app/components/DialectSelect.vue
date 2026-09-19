@@ -1,9 +1,13 @@
 <script setup lang="ts">
 // A native <select> over the dialect tree: each region is an <optgroup> holding
 // itself ("عام", for when the contributor only knows the region) and its sub-dialects.
+//
+// ?all=1: the browsing pages hide a sub-dialect with no words in it, but this
+// list must keep it — it is the only way the first word ever gets filed under
+// بغدادي, and that first word is what puts it back on the map.
 const model = defineModel<string>({ default: '' })
 defineProps<{ id?: string }>()
-const { data: dialects } = await useFetch('/api/dialects')
+const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } })
 </script>
 
 <template>

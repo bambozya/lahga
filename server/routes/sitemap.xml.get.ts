@@ -1,5 +1,6 @@
 import { desc, eq } from 'drizzle-orm'
 import { useDb, schema } from '../db'
+import { entryCounts } from '../api/dialects/index.get'
 
 /**
  * The sitemap, built from the database on request: every public page, every
@@ -14,8 +15,13 @@ export default defineEventHandler(async (event) => {
   const [words, dialects] = await Promise.all([
     db.select({ id: schema.words.id, updatedAt: schema.words.updatedAt }).from(schema.words)
       .where(eq(schema.words.status, 'active')).orderBy(desc(schema.words.updatedAt)).limit(45000),
-    db.select({ slug: schema.dialects.slug }).from(schema.dialects).where(eq(schema.dialects.active, 1)),
+    db.select({ id: schema.dialects.id, slug: schema.dialects.slug, parentId: schema.dialects.parentId })
+      .from(schema.dialects).where(eq(schema.dialects.active, 1)),
   ])
+
+  // A sub-dialect with nothing in it has an empty page; crawlers are not sent to it.
+  const filled = await entryCounts(db)
+  const listed = dialects.filter(d => d.parentId === null || filled.has(d.id))
 
   const day = (d: Date | null) => (d ?? new Date()).toISOString().slice(0, 10)
   const url = (loc: string, lastmod?: string, priority?: string) =>
@@ -25,7 +31,7 @@ export default defineEventHandler(async (event) => {
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...STATIC.map(p => url(p, undefined, p === '/' ? '1.0' : '0.7')),
-    ...dialects.map(d => url(`/d/${d.slug}`, undefined, '0.8')),
+    ...listed.map(d => url(`/d/${d.slug}`, undefined, '0.8')),
     ...words.map(w => url(`/w/${w.id}`, day(w.updatedAt), '0.6')),
     '</urlset>',
   ].join('\n')

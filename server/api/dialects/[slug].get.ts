@@ -1,8 +1,11 @@
 import { and, desc, eq, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
+import { entryCounts } from './index.get'
 
 /**
- * One dialect with the entries tagged with it or any of its sub-dialects.
+ * One dialect with the entries tagged with it or any of its sub-dialects. The
+ * sub-dialects it names are the ones that have words; an empty one is not
+ * advertised, though its own page still answers (see index.get).
  * ?random=1 draws them at random instead of best-first: what the dialect page
  * shows, and what its shuffle button asks for again. ?limit= caps the draw.
  */
@@ -17,7 +20,11 @@ export default defineEventHandler(async (event) => {
   })
   if (!dialect) throw createError({ statusCode: 404, statusMessage: 'اللهجة غير موجودة' })
 
+  // Every child counts when gathering the words — the group page shows what its
+  // sub-dialects hold — but only the ones that hold something are named on it.
   const dialectIds = [dialect.id, ...dialect.children.map(c => c.id)]
+  const filled = await entryCounts(db)
+  const children = dialect.children.filter(c => c.active === 1 && filled.has(c.id))
   const inDialect = and(inArray(schema.entries.dialectId, dialectIds), eq(schema.entries.status, 'active'))
   const entries = await db.query.entries.findMany({
     where: inDialect,
@@ -42,6 +49,7 @@ export default defineEventHandler(async (event) => {
   })
   return {
     ...dialect,
+    children,
     descriptionBy: lastApproved ? publicUser(lastApproved.author) : null,
     topForms: topForms.map(f => f.form),
     entries: entries.map(e => ({

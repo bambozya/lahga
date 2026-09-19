@@ -6,10 +6,14 @@
 useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى قاموس لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
 // A search that found nothing sends the term along (?headword=…), so the page
 // opens on the word the visitor was already looking for.
-const headword = String(useRoute().query.headword ?? '').trim().slice(0, 80)
+const route = useRoute()
+const headword = String(route.query.headword ?? '').trim().slice(0, 80)
+// ?dialect=: an empty dialect page sends its own slug along, so the one person
+// who went looking for بغدادي does not have to find it again in the list.
+const dialect = /^[a-z0-9-]{2,60}$/.test(String(route.query.dialect ?? '')) ? String(route.query.dialect) : ''
 const form = reactive({
   headword, definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
-  dialect: '', form: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
+  dialect, form: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
 })
 const existingId = ref<number | null>(null)
 const { busy, error, run } = useForm(async () => {
