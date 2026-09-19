@@ -473,69 +473,6 @@
    ]
   },
   {
-   "headword": "غسالة",
-   "definition": "جهاز يغسل الثياب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "palestinian",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "najdi",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "hejazi",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "الماشينة"
-    },
-    {
-     "dialect": "algerian",
-     "form": "الماشينة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "الماشينة"
-    },
-    {
-     "dialect": "libyan",
-     "form": "غسالة"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "الغساله"
-    }
-   ]
-  },
-  {
    "headword": "مروحة",
    "definition": "جهاز يحرك الهواء",
    "kind": "word",

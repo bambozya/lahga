@@ -791,76 +791,6 @@
    ]
   },
   {
-   "headword": "أين",
-   "definition": "أداة استفهام عن المكان",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "cairene",
-     "form": "فين",
-     "meaning": "أين",
-     "examples": [
-      {
-       "text": "إنت فين؟",
-       "gloss": "أين أنت؟"
-      }
-     ]
-    },
-    {
-     "dialect": "levantine",
-     "form": "وين",
-     "meaning": "أين",
-     "examples": [
-      {
-       "text": "وينك؟",
-       "gloss": "أين أنت؟"
-      }
-     ]
-    },
-    {
-     "dialect": "gulf",
-     "form": "وين",
-     "meaning": "أين"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "وين",
-     "meaning": "أين"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "فين",
-     "meaning": "أين",
-     "examples": [
-      {
-       "text": "فين غادي؟",
-       "gloss": "إلى أين تذهب؟"
-      }
-     ]
-    },
-    {
-     "dialect": "tunisian",
-     "form": "وين",
-     "meaning": "أين"
-    },
-    {
-     "dialect": "algerian",
-     "form": "وين",
-     "meaning": "أين"
-    },
-    {
-     "dialect": "libyan",
-     "form": "وين",
-     "meaning": "أين"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "وين",
-     "meaning": "أين"
-    }
-   ]
-  },
-  {
    "headword": "كيف",
    "definition": "أداة استفهام عن الحال أو الطريقة",
    "kind": "word",
@@ -1578,55 +1508,6 @@
    ]
   },
   {
-   "headword": "قليل",
-   "definition": "مقدار صغير",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "cairene",
-     "form": "شويّة",
-     "meaning": "قليل",
-     "examples": [
-      {
-       "text": "استنى شوية",
-       "gloss": "انتظر قليلاً"
-      }
-     ]
-    },
-    {
-     "dialect": "levantine",
-     "form": "شوي",
-     "meaning": "قليل",
-     "examples": [
-      {
-       "text": "استنى شوي",
-       "gloss": "انتظر قليلاً"
-      }
-     ]
-    },
-    {
-     "dialect": "gulf",
-     "form": "شوي",
-     "meaning": "قليل"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "شويّة",
-     "meaning": "قليل"
-    },
-    {
-     "dialect": "maghrebi",
-     "form": "شويّة",
-     "meaning": "قليل"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "شويّة",
-     "meaning": "قليل"
-    }
-   ]
-  },
-  {
    "headword": "نقود",
    "definition": "المال",
    "kind": "word",
@@ -1755,59 +1636,6 @@
      "dialect": "iraqi",
      "form": "حلو",
      "meaning": "جميل"
-    }
-   ]
-  },
-  {
-   "headword": "بيت",
-   "definition": "المسكن",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "بيت",
-     "meaning": "بيت"
-    },
-    {
-     "dialect": "levantine",
-     "form": "بيت",
-     "meaning": "بيت"
-    },
-    {
-     "dialect": "gulf",
-     "form": "بيت",
-     "meaning": "بيت"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "بيت",
-     "meaning": "بيت"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "دار",
-     "meaning": "بيت",
-     "examples": [
-      {
-       "text": "مشيت للدار",
-       "gloss": "ذهبت إلى البيت"
-      }
-     ]
-    },
-    {
-     "dialect": "tunisian",
-     "form": "دار",
-     "meaning": "بيت"
-    },
-    {
-     "dialect": "algerian",
-     "form": "دار",
-     "meaning": "بيت"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "بيت",
-     "meaning": "بيت"
     }
    ]
   },
@@ -1957,65 +1785,6 @@
      "dialect": "sudanese",
      "form": "صاحب",
      "meaning": "صديق"
-    }
-   ]
-  },
-  {
-   "headword": "عمل",
-   "definition": "الوظيفة أو الشغل",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "cairene",
-     "form": "شغل",
-     "meaning": "عمل",
-     "examples": [
-      {
-       "text": "رايح الشغل",
-       "gloss": "ذاهب إلى العمل"
-      }
-     ]
-    },
-    {
-     "dialect": "levantine",
-     "form": "شغل",
-     "meaning": "عمل"
-    },
-    {
-     "dialect": "gulf",
-     "form": "شغل",
-     "meaning": "عمل"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "شغل",
-     "meaning": "عمل"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "خدمة",
-     "meaning": "عمل، وظيفة",
-     "examples": [
-      {
-       "text": "مشيت للخدمة",
-       "gloss": "ذهبت إلى العمل"
-      }
-     ]
-    },
-    {
-     "dialect": "tunisian",
-     "form": "خدمة",
-     "meaning": "عمل"
-    },
-    {
-     "dialect": "algerian",
-     "form": "خدمة",
-     "meaning": "عمل"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "شغل",
-     "meaning": "عمل"
     }
    ]
   },

@@ -1,94 +1,754 @@
-{"words":[
- {"headword":"مقلاة","definition":"إناء مسطح يُقلى فيه الطعام","kind":"word","entries":[
-  {"dialect":"egyptian","form":"طاسة","examples":[{"text":"حطي البيض في الطاسة","gloss":"ضعي البيض في المقلاة"}]},
-  {"dialect":"levantine","form":"مقلاية"},{"dialect":"palestinian","form":"مقلاية"},
-  {"dialect":"gulf","form":"مقلاة"},{"dialect":"najdi","form":"مقلاة"},{"dialect":"hejazi","form":"مقلاة"},
-  {"dialect":"iraqi","form":"طاوة"},{"dialect":"yemeni","form":"مقلاة"},{"dialect":"sudanese","form":"طاسة"},
-  {"dialect":"moroccan","form":"المقلة"},{"dialect":"algerian","form":"الطاوة"},{"dialect":"tunisian","form":"الطاجين"},{"dialect":"libyan","form":"طاوة"},
-  {"dialect":"hassaniya","form":"مقلاه"}]},
-
- {"headword":"قدر","definition":"إناء عميق يُطبخ فيه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"حلة","examples":[{"text":"الرز في الحلة الكبيرة","gloss":"الأرز في القدر الكبير"}]},
-  {"dialect":"levantine","form":"طنجرة"},{"dialect":"palestinian","form":"طنجرة"},
-  {"dialect":"gulf","form":"قدر"},{"dialect":"najdi","form":"قدر"},{"dialect":"hejazi","form":"حلة"},
-  {"dialect":"iraqi","form":"قدر"},{"dialect":"yemeni","form":"قدر"},{"dialect":"sudanese","form":"حلة"},
-  {"dialect":"moroccan","form":"الطنجرة"},{"dialect":"algerian","form":"الطنجرة"},{"dialect":"tunisian","form":"القدرة"},{"dialect":"libyan","form":"قدرة"},
-  {"dialect":"hassaniya","form":"قدر"}]},
-
- {"headword":"ملعقة","definition":"أداة يؤكل بها الطعام السائل","kind":"word","entries":[
-  {"dialect":"egyptian","form":"معلقة","examples":[{"text":"هات معلقة للشوربة","gloss":"أحضر ملعقة للحساء"}]},
-  {"dialect":"levantine","form":"ملعقة"},{"dialect":"palestinian","form":"ملعقة"},
-  {"dialect":"gulf","form":"ملعقة"},{"dialect":"najdi","form":"ملعقة"},{"dialect":"hejazi","form":"معلقة"},
-  {"dialect":"iraqi","form":"خاشوكة","examples":[{"text":"جيب خاشوكة للشوربة","gloss":"أحضر ملعقة للحساء"}]},
-  {"dialect":"yemeni","form":"ملعقة"},{"dialect":"sudanese","form":"معلقة"},
-  {"dialect":"moroccan","form":"المعلقة"},{"dialect":"algerian","form":"المعلقة"},{"dialect":"tunisian","form":"المعلقة"},{"dialect":"libyan","form":"معلقة"},
-  {"dialect":"hassaniya","form":"معلقه"}]},
-
- {"headword":"سكين","definition":"أداة حادة يُقطع بها","kind":"word","entries":[
-  {"dialect":"egyptian","form":"سكينة"},{"dialect":"levantine","form":"سكين"},{"dialect":"palestinian","form":"سكينة"},
-  {"dialect":"gulf","form":"سچين"},{"dialect":"najdi","form":"سكين"},{"dialect":"hejazi","form":"سكينة"},
-  {"dialect":"iraqi","form":"سچينة"},{"dialect":"yemeni","form":"سكين"},{"dialect":"sudanese","form":"سكينة"},
-  {"dialect":"moroccan","form":"الموس","examples":[{"text":"قطع الخبز بالموس","gloss":"قطع الخبز بالسكين"}]},
-  {"dialect":"algerian","form":"الموس"},{"dialect":"tunisian","form":"السكينة"},{"dialect":"libyan","form":"سكينة"},
-  {"dialect":"hassaniya","form":"سكين"}]},
-
- {"headword":"صحن","definition":"إناء مسطح يوضع فيه الطعام","kind":"word","entries":[
-  {"dialect":"egyptian","form":"طبق"},{"dialect":"levantine","form":"صحن"},{"dialect":"palestinian","form":"صحن"},
-  {"dialect":"gulf","form":"صحن"},{"dialect":"najdi","form":"صحن"},{"dialect":"hejazi","form":"صحن"},
-  {"dialect":"iraqi","form":"ماعون"},{"dialect":"yemeni","form":"صحن"},{"dialect":"sudanese","form":"صحن"},
-  {"dialect":"moroccan","form":"الطبسيل"},{"dialect":"algerian","form":"الطبسي"},{"dialect":"tunisian","form":"الصحن"},{"dialect":"libyan","form":"صحن"},
-  {"dialect":"hassaniya","form":"صحن"}]},
-
- {"headword":"كوب","definition":"إناء يُشرب به","kind":"word","entries":[
-  {"dialect":"egyptian","form":"كوباية","examples":[{"text":"اشرب كوباية شاي","gloss":"اشرب كوب شاي"}]},
-  {"dialect":"levantine","form":"كاسة"},{"dialect":"palestinian","form":"كاسة"},
-  {"dialect":"gulf","form":"كوب"},{"dialect":"najdi","form":"كوب"},{"dialect":"hejazi","form":"كباية"},
-  {"dialect":"iraqi","form":"گلاص"},{"dialect":"yemeni","form":"كوب"},{"dialect":"sudanese","form":"كباية"},
-  {"dialect":"moroccan","form":"الكاس"},{"dialect":"algerian","form":"الكاس"},{"dialect":"tunisian","form":"الكاس"},{"dialect":"libyan","form":"كاس"},
-  {"dialect":"hassaniya","form":"كاس"}]},
-
- {"headword":"ثلاجة","definition":"جهاز يحفظ الطعام بارداً","kind":"word","entries":[
-  {"dialect":"egyptian","form":"تلاجة","examples":[{"text":"حط الأكل في التلاجة","gloss":"ضع الطعام في الثلاجة"}]},
-  {"dialect":"levantine","form":"براد"},{"dialect":"palestinian","form":"براد"},
-  {"dialect":"gulf","form":"ثلاجة"},{"dialect":"najdi","form":"ثلاجة"},{"dialect":"hejazi","form":"ثلاجة"},
-  {"dialect":"iraqi","form":"ثلاجة"},{"dialect":"yemeni","form":"ثلاجة"},{"dialect":"sudanese","form":"تلاجة"},
-  {"dialect":"moroccan","form":"الفريجيدير","notes":"من الفرنسية"},{"dialect":"algerian","form":"الفريجيدير"},{"dialect":"tunisian","form":"الفريجيدار"},{"dialect":"libyan","form":"تلاجة"},
-  {"dialect":"hassaniya","form":"ثلاجه"}]},
-
- {"headword":"إبريق الشاي","definition":"ما يُغلى فيه الشاي ويُصب","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"براد"},{"dialect":"levantine","form":"بكرج"},{"dialect":"palestinian","form":"بكرج"},
-  {"dialect":"gulf","form":"دلة"},{"dialect":"najdi","form":"دلة"},{"dialect":"hejazi","form":"دلة"},
-  {"dialect":"iraqi","form":"قوري"},{"dialect":"yemeni","form":"براد"},{"dialect":"sudanese","form":"براد"},
-  {"dialect":"moroccan","form":"البراد","examples":[{"text":"دير أتاي فالبراد","gloss":"اصنع الشاي في الإبريق"}]},
-  {"dialect":"algerian","form":"البراد"},{"dialect":"tunisian","form":"البراد"},{"dialect":"libyan","form":"براد"},
-  {"dialect":"hassaniya","form":"البراد"}]},
-
- {"headword":"دقيق","definition":"مسحوق القمح الذي يُخبز منه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"دقيق"},{"dialect":"levantine","form":"طحين"},{"dialect":"palestinian","form":"طحين"},
-  {"dialect":"gulf","form":"طحين"},{"dialect":"najdi","form":"طحين"},{"dialect":"hejazi","form":"دقيق"},
-  {"dialect":"iraqi","form":"طحين"},{"dialect":"yemeni","form":"دقيق"},{"dialect":"sudanese","form":"دقيق"},
-  {"dialect":"moroccan","form":"الدقيق"},{"dialect":"algerian","form":"الفارينة","notes":"من الفرنسية"},{"dialect":"tunisian","form":"الفارينة"},{"dialect":"libyan","form":"طحين"},
-  {"dialect":"hassaniya","form":"دقيق"}]},
-
- {"headword":"يسلق","definition":"يطبخ الشيء في الماء المغلي","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يسلق","examples":[{"text":"اسلقي البيض عشر دقايق","gloss":"اسلقي البيض عشر دقائق"}]},
-  {"dialect":"levantine","form":"يسلق"},{"dialect":"palestinian","form":"يسلق"},
-  {"dialect":"gulf","form":"يسلق"},{"dialect":"najdi","form":"يسلق"},{"dialect":"hejazi","form":"يسلق"},
-  {"dialect":"iraqi","form":"يسلگ"},{"dialect":"yemeni","form":"يسلق"},{"dialect":"sudanese","form":"يسلق"},
-  {"dialect":"moroccan","form":"يطيب"},{"dialect":"algerian","form":"يسلق"},{"dialect":"tunisian","form":"يسلق"},{"dialect":"libyan","form":"يسلق"},
-  {"dialect":"hassaniya","form":"يسلق"}]},
-
- {"headword":"خلاط","definition":"جهاز يخلط الطعام ويهرسه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"خلاط"},{"dialect":"levantine","form":"خلاط"},{"dialect":"palestinian","form":"خلاط"},
-  {"dialect":"gulf","form":"خلاط"},{"dialect":"najdi","form":"خلاط"},{"dialect":"hejazi","form":"خلاط"},
-  {"dialect":"iraqi","form":"خلاط"},{"dialect":"yemeni","form":"خلاط"},{"dialect":"sudanese","form":"خلاط"},
-  {"dialect":"moroccan","form":"الميكسير","notes":"من الفرنسية"},{"dialect":"algerian","form":"الميكسير"},{"dialect":"tunisian","form":"الميكسير"},{"dialect":"libyan","form":"خلاط"},
-  {"dialect":"hassaniya","form":"خلاط"}]},
-
- {"headword":"قدر الضغط","definition":"قدر محكم يطبخ بالبخار بسرعة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"حلة البريستو"},{"dialect":"levantine","form":"طنجرة الضغط"},{"dialect":"palestinian","form":"طنجرة الضغط"},
-  {"dialect":"gulf","form":"قدر الضغط"},{"dialect":"najdi","form":"قدر الضغط"},{"dialect":"hejazi","form":"قدر الضغط"},
-  {"dialect":"iraqi","form":"قدر الضغط"},{"dialect":"yemeni","form":"قدر الضغط"},{"dialect":"sudanese","form":"حلة الضغط"},
-  {"dialect":"moroccan","form":"الكوكوت","notes":"من الفرنسية"},{"dialect":"algerian","form":"الكوكوت"},{"dialect":"tunisian","form":"الكوكوت"},{"dialect":"libyan","form":"قدر الضغط"},
-  {"dialect":"hassaniya","form":"قدر الضغط"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "مقلاة",
+   "definition": "إناء مسطح يُقلى فيه الطعام",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "طاسة",
+     "examples": [
+      {
+       "text": "حطي البيض في الطاسة",
+       "gloss": "ضعي البيض في المقلاة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مقلاية"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مقلاية"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مقلاة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مقلاة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مقلاة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "طاوة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مقلاة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "طاسة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "المقلة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الطاوة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الطاجين"
+    },
+    {
+     "dialect": "libyan",
+     "form": "طاوة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مقلاه"
+    }
+   ]
+  },
+  {
+   "headword": "قدر",
+   "definition": "إناء عميق يُطبخ فيه",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حلة",
+     "examples": [
+      {
+       "text": "الرز في الحلة الكبيرة",
+       "gloss": "الأرز في القدر الكبير"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "طنجرة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "طنجرة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "قدر"
+    },
+    {
+     "dialect": "najdi",
+     "form": "قدر"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حلة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قدر"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "قدر"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حلة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الطنجرة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الطنجرة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "القدرة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "قدرة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "قدر"
+    }
+   ]
+  },
+  {
+   "headword": "ملعقة",
+   "definition": "أداة يؤكل بها الطعام السائل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "معلقة",
+     "examples": [
+      {
+       "text": "هات معلقة للشوربة",
+       "gloss": "أحضر ملعقة للحساء"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ملعقة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ملعقة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ملعقة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ملعقة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "معلقة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "خاشوكة",
+     "examples": [
+      {
+       "text": "جيب خاشوكة للشوربة",
+       "gloss": "أحضر ملعقة للحساء"
+      }
+     ]
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ملعقة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "معلقة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "المعلقة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "المعلقة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "المعلقة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "معلقة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "معلقه"
+    }
+   ]
+  },
+  {
+   "headword": "سكين",
+   "definition": "أداة حادة يُقطع بها",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سكينة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "سكين"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "سكينة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سچين"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سكين"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سكينة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سچينة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سكين"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سكينة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الموس",
+     "examples": [
+      {
+       "text": "قطع الخبز بالموس",
+       "gloss": "قطع الخبز بالسكين"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "الموس"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السكينة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سكينة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "سكين"
+    }
+   ]
+  },
+  {
+   "headword": "صحن",
+   "definition": "إناء مسطح يوضع فيه الطعام",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "طبق"
+    },
+    {
+     "dialect": "levantine",
+     "form": "صحن"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "صحن"
+    },
+    {
+     "dialect": "gulf",
+     "form": "صحن"
+    },
+    {
+     "dialect": "najdi",
+     "form": "صحن"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "صحن"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ماعون"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "صحن"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "صحن"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الطبسيل"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الطبسي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الصحن"
+    },
+    {
+     "dialect": "libyan",
+     "form": "صحن"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "صحن"
+    }
+   ]
+  },
+  {
+   "headword": "كوب",
+   "definition": "إناء يُشرب به",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كوباية",
+     "examples": [
+      {
+       "text": "اشرب كوباية شاي",
+       "gloss": "اشرب كوب شاي"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "كاسة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "كاسة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "كوب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "كوب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "كباية"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "گلاص"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "كوب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كباية"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكاس"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكاس"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكاس"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كاس"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "كاس"
+    }
+   ]
+  },
+  {
+   "headword": "ثلاجة",
+   "definition": "جهاز يحفظ الطعام بارداً",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تلاجة",
+     "examples": [
+      {
+       "text": "حط الأكل في التلاجة",
+       "gloss": "ضع الطعام في الثلاجة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "براد"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "براد"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ثلاجة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ثلاجة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ثلاجة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ثلاجة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ثلاجة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "تلاجة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الفريجيدير",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الفريجيدير"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الفريجيدار"
+    },
+    {
+     "dialect": "libyan",
+     "form": "تلاجة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ثلاجه"
+    }
+   ]
+  },
+  {
+   "headword": "إبريق الشاي",
+   "definition": "ما يُغلى فيه الشاي ويُصب",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "براد"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بكرج"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "بكرج"
+    },
+    {
+     "dialect": "gulf",
+     "form": "دلة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دلة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دلة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قوري"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "براد"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "براد"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البراد",
+     "examples": [
+      {
+       "text": "دير أتاي فالبراد",
+       "gloss": "اصنع الشاي في الإبريق"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "البراد"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البراد"
+    },
+    {
+     "dialect": "libyan",
+     "form": "براد"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "البراد"
+    }
+   ]
+  },
+  {
+   "headword": "دقيق",
+   "definition": "مسحوق القمح الذي يُخبز منه",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "دقيق"
+    },
+    {
+     "dialect": "levantine",
+     "form": "طحين"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "طحين"
+    },
+    {
+     "dialect": "gulf",
+     "form": "طحين"
+    },
+    {
+     "dialect": "najdi",
+     "form": "طحين"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دقيق"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "طحين"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دقيق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "دقيق"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الدقيق"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الفارينة",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الفارينة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "طحين"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "دقيق"
+    }
+   ]
+  },
+  {
+   "headword": "يسلق",
+   "definition": "يطبخ الشيء في الماء المغلي",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يسلق",
+     "examples": [
+      {
+       "text": "اسلقي البيض عشر دقايق",
+       "gloss": "اسلقي البيض عشر دقائق"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يسلگ"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يطيب"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يسلق"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يسلق"
+    }
+   ]
+  },
+  {
+   "headword": "قدر الضغط",
+   "definition": "قدر محكم يطبخ بالبخار بسرعة",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حلة البريستو"
+    },
+    {
+     "dialect": "levantine",
+     "form": "طنجرة الضغط"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "طنجرة الضغط"
+    },
+    {
+     "dialect": "gulf",
+     "form": "قدر الضغط"
+    },
+    {
+     "dialect": "najdi",
+     "form": "قدر الضغط"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "قدر الضغط"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قدر الضغط"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "قدر الضغط"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حلة الضغط"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكوكوت",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكوكوت"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكوكوت"
+    },
+    {
+     "dialect": "libyan",
+     "form": "قدر الضغط"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "قدر الضغط"
+    }
+   ]
+  }
+ ]
+}

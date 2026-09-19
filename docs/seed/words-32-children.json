@@ -1,95 +1,620 @@
-{"words":[
- {"headword":"طفل رضيع","definition":"المولود الذي ما زال يرضع","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"بيبي","examples":[{"text":"البيبي نايم، متعملش دوشة","gloss":"الرضيع نائم، لا تحدث ضجيجاً"}]},
-  {"dialect":"levantine","form":"بيبي"},{"dialect":"palestinian","form":"رضيع"},
-  {"dialect":"gulf","form":"بيبي"},{"dialect":"najdi","form":"رضيع"},{"dialect":"hejazi","form":"بيبي"},
-  {"dialect":"iraqi","form":"جاهل"},{"dialect":"yemeni","form":"رضيع"},{"dialect":"sudanese","form":"بيبي"},
-  {"dialect":"moroccan","form":"البيبي"},{"dialect":"algerian","form":"البيبي"},{"dialect":"tunisian","form":"البيبي"},{"dialect":"libyan","form":"بيبي"},
-  {"dialect":"hassaniya","form":"الرضيع"}]},
-
- {"headword":"لعبة الأطفال","definition":"ما يلعب به الطفل","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"لعبة","examples":[{"text":"اشتريتله لعبة جديدة","gloss":"اشتريت له لعبة جديدة"}]},
-  {"dialect":"levantine","form":"لعبة"},{"dialect":"palestinian","form":"لعبة"},
-  {"dialect":"gulf","form":"لعبة"},{"dialect":"najdi","form":"لعبة"},{"dialect":"hejazi","form":"لعبة"},
-  {"dialect":"iraqi","form":"لعبة"},{"dialect":"yemeni","form":"لعبة"},{"dialect":"sudanese","form":"لعبة"},
-  {"dialect":"moroccan","form":"الجوجو"},{"dialect":"algerian","form":"الجوجو"},{"dialect":"tunisian","form":"اللعبة"},{"dialect":"libyan","form":"لعبة"},
-  {"dialect":"hassaniya","form":"اللعبه"}]},
-
- {"headword":"حفاض","definition":"ما يوضع للطفل ليمتص البلل","kind":"word","entries":[
-  {"dialect":"egyptian","form":"بامبرز","examples":[{"text":"غير للطفل البامبرز","gloss":"غير للطفل الحفاض"}]},
-  {"dialect":"levantine","form":"بامبرز"},{"dialect":"palestinian","form":"حفاضة"},
-  {"dialect":"gulf","form":"حفاظة"},{"dialect":"najdi","form":"حفاظة"},{"dialect":"hejazi","form":"حفاظة"},
-  {"dialect":"iraqi","form":"بامبرز"},{"dialect":"yemeni","form":"حفاظة"},{"dialect":"sudanese","form":"حفاضة"},
-  {"dialect":"moroccan","form":"الكوش"},{"dialect":"algerian","form":"الكوش"},{"dialect":"tunisian","form":"الكوش"},{"dialect":"libyan","form":"حفاظة"},
-  {"dialect":"hassaniya","form":"الحفاضه"}]},
-
- {"headword":"رضّاعة","definition":"قارورة يرضع منها الطفل","kind":"word","entries":[
-  {"dialect":"egyptian","form":"ببرونة","examples":[{"text":"حضري الببرونة للولد","gloss":"حضري الرضاعة للطفل"}]},
-  {"dialect":"levantine","form":"رضّاعة"},{"dialect":"palestinian","form":"رضّاعة"},
-  {"dialect":"gulf","form":"رضّاعة"},{"dialect":"najdi","form":"رضّاعة"},{"dialect":"hejazi","form":"رضّاعة"},
-  {"dialect":"iraqi","form":"بزازة"},{"dialect":"yemeni","form":"رضّاعة"},{"dialect":"sudanese","form":"ببرونة"},
-  {"dialect":"moroccan","form":"البيبرو"},{"dialect":"algerian","form":"البيبرو"},{"dialect":"tunisian","form":"البيبرو"},{"dialect":"libyan","form":"ببرونة"},
-  {"dialect":"hassaniya","form":"الرضاعه"}]},
-
- {"headword":"يبكي","definition":"يسيل دمعه من حزن أو ألم","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يعيط","examples":[{"text":"الطفل بيعيط من الصبح","gloss":"الطفل يبكي منذ الصباح"}]},
-  {"dialect":"levantine","form":"يبكي"},{"dialect":"palestinian","form":"يبكي"},
-  {"dialect":"gulf","form":"يبچي"},{"dialect":"najdi","form":"يبكي"},{"dialect":"hejazi","form":"يبكي"},
-  {"dialect":"iraqi","form":"يبچي"},{"dialect":"yemeni","form":"يبكي"},{"dialect":"sudanese","form":"يبكي"},
-  {"dialect":"moroccan","form":"يبكي"},{"dialect":"algerian","form":"يبكي"},{"dialect":"tunisian","form":"يبكي"},{"dialect":"libyan","form":"يبكي"},
-  {"dialect":"hassaniya","form":"يبكي"}]},
-
- {"headword":"يدلل","definition":"يعامل الطفل بلين ويعطيه ما يريد","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يدلع","examples":[{"text":"جدته بتدلعه زيادة","gloss":"جدته تدلله كثيراً"}]},
-  {"dialect":"levantine","form":"يدلع"},{"dialect":"palestinian","form":"يدلع"},
-  {"dialect":"gulf","form":"يدلع"},{"dialect":"najdi","form":"يدلع"},{"dialect":"hejazi","form":"يدلع"},
-  {"dialect":"iraqi","form":"يدلع"},{"dialect":"yemeni","form":"يدلع"},{"dialect":"sudanese","form":"يدلع"},
-  {"dialect":"moroccan","form":"يدلل"},{"dialect":"algerian","form":"يدلع"},{"dialect":"tunisian","form":"يدلع"},{"dialect":"libyan","form":"يدلع"},
-  {"dialect":"hassaniya","form":"يدلل"}]},
-
- {"headword":"شقي","definition":"الطفل الكثير الحركة والعبث","kind":"word","entries":[
-  {"dialect":"egyptian","form":"شقي","examples":[{"text":"الواد شقي ومش قاعد","gloss":"الولد شقي ولا يهدأ"}]},
-  {"dialect":"levantine","form":"شقي"},{"dialect":"palestinian","form":"شقي"},
-  {"dialect":"gulf","form":"شقي"},{"dialect":"najdi","form":"مشاغب"},{"dialect":"hejazi","form":"شقي"},
-  {"dialect":"iraqi","form":"شقي"},{"dialect":"yemeni","form":"شقي"},{"dialect":"sudanese","form":"شقي"},
-  {"dialect":"moroccan","form":"مشرمل"},{"dialect":"algerian","form":"مشاغب"},{"dialect":"tunisian","form":"مشاغب"},{"dialect":"libyan","form":"شقي"},
-  {"dialect":"hassaniya","form":"مشاغب"}]},
-
- {"headword":"مدرسة الحضانة","definition":"مكان يُترك فيه الأطفال الصغار","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"حضانة"},{"dialect":"levantine","form":"حضانة"},{"dialect":"palestinian","form":"روضة"},
-  {"dialect":"gulf","form":"روضة"},{"dialect":"najdi","form":"روضة"},{"dialect":"hejazi","form":"روضة"},
-  {"dialect":"iraqi","form":"روضة"},{"dialect":"yemeni","form":"روضة"},{"dialect":"sudanese","form":"حضانة"},
-  {"dialect":"moroccan","form":"الكريش","notes":"من الفرنسية"},{"dialect":"algerian","form":"الكريش"},{"dialect":"tunisian","form":"الكريش"},{"dialect":"libyan","form":"حضانة"},
-  {"dialect":"hassaniya","form":"الروضه"}]},
-
- {"headword":"أرجوحة","definition":"ما يتأرجح عليه الطفل","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مرجيحة","examples":[{"text":"العيال على المرجيحة","gloss":"الأطفال على الأرجوحة"}]},
-  {"dialect":"levantine","form":"مرجوحة"},{"dialect":"palestinian","form":"مرجوحة"},
-  {"dialect":"gulf","form":"مرجيحة"},{"dialect":"najdi","form":"مرجوحة"},{"dialect":"hejazi","form":"مرجيحة"},
-  {"dialect":"iraqi","form":"مرجوحة"},{"dialect":"yemeni","form":"مرجوحة"},{"dialect":"sudanese","form":"مرجيحة"},
-  {"dialect":"moroccan","form":"البالانصوار"},{"dialect":"algerian","form":"البالانصوار"},{"dialect":"tunisian","form":"المرجوحة"},{"dialect":"libyan","form":"مرجيحة"},
-  {"dialect":"hassaniya","form":"المرجوحه"}]},
-
- {"headword":"يختبئ","definition":"يستتر حتى لا يُرى","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يتخبى","examples":[{"text":"اتخبى ورا الباب","gloss":"اختبأ خلف الباب"}]},
-  {"dialect":"levantine","form":"يتخبى"},{"dialect":"palestinian","form":"يتخبى"},
-  {"dialect":"gulf","form":"يتخبى"},{"dialect":"najdi","form":"يتخبى"},{"dialect":"hejazi","form":"يتخبى"},
-  {"dialect":"iraqi","form":"يتخبى"},{"dialect":"yemeni","form":"يتخبى"},{"dialect":"sudanese","form":"يتخبى"},
-  {"dialect":"moroccan","form":"يتخبع"},{"dialect":"algerian","form":"يتخبى"},{"dialect":"tunisian","form":"يتخبى"},{"dialect":"libyan","form":"يتخبى"},
-  {"dialect":"hassaniya","form":"يتخبا"}]},
-
- {"headword":"مصروف الجيب","definition":"ما يُعطى للطفل من مال","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"مصروف"},{"dialect":"levantine","form":"مصروف"},{"dialect":"palestinian","form":"مصروف"},
-  {"dialect":"gulf","form":"مصروف"},{"dialect":"najdi","form":"مصروف"},{"dialect":"hejazi","form":"مصروف"},
-  {"dialect":"iraqi","form":"مصروف"},{"dialect":"yemeni","form":"مصروف"},{"dialect":"sudanese","form":"مصروف"},
-  {"dialect":"moroccan","form":"الصرفة"},{"dialect":"algerian","form":"المصروف"},{"dialect":"tunisian","form":"المصروف"},{"dialect":"libyan","form":"مصروف"},
-  {"dialect":"hassaniya","form":"المصروف"}]},
-
- {"headword":"حلوى","definition":"ما يؤكل حلواً من سكر وشوكولاتة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"حلويات","examples":[{"text":"العيال بيحبوا الحلويات","gloss":"الأطفال يحبون الحلوى"}]},
-  {"dialect":"levantine","form":"حلو"},{"dialect":"palestinian","form":"حلويات"},
-  {"dialect":"gulf","form":"حلويات"},{"dialect":"najdi","form":"حلا"},{"dialect":"hejazi","form":"حلا"},
-  {"dialect":"iraqi","form":"حلويات"},{"dialect":"yemeni","form":"حلويات"},{"dialect":"sudanese","form":"حلويات"},
-  {"dialect":"moroccan","form":"الحلوة"},{"dialect":"algerian","form":"الحلوة"},{"dialect":"tunisian","form":"الحلو"},{"dialect":"libyan","form":"حلويات"},
-  {"dialect":"hassaniya","form":"الحلويات"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "طفل رضيع",
+   "definition": "المولود الذي ما زال يرضع",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بيبي",
+     "examples": [
+      {
+       "text": "البيبي نايم، متعملش دوشة",
+       "gloss": "الرضيع نائم، لا تحدث ضجيجاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "بيبي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "رضيع"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بيبي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "رضيع"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بيبي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جاهل"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "رضيع"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بيبي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البيبي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البيبي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البيبي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بيبي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الرضيع"
+    }
+   ]
+  },
+  {
+   "headword": "حفاض",
+   "definition": "ما يوضع للطفل ليمتص البلل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بامبرز",
+     "examples": [
+      {
+       "text": "غير للطفل البامبرز",
+       "gloss": "غير للطفل الحفاض"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "بامبرز"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حفاضة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حفاظة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حفاظة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حفاظة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بامبرز"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حفاظة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حفاضة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكوش"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكوش"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكوش"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حفاظة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحفاضه"
+    }
+   ]
+  },
+  {
+   "headword": "رضّاعة",
+   "definition": "قارورة يرضع منها الطفل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ببرونة",
+     "examples": [
+      {
+       "text": "حضري الببرونة للولد",
+       "gloss": "حضري الرضاعة للطفل"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "رضّاعة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "رضّاعة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "رضّاعة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "رضّاعة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "رضّاعة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بزازة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "رضّاعة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ببرونة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البيبرو"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البيبرو"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البيبرو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ببرونة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الرضاعه"
+    }
+   ]
+  },
+  {
+   "headword": "يبكي",
+   "definition": "يسيل دمعه من حزن أو ألم",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يعيط",
+     "examples": [
+      {
+       "text": "الطفل بيعيط من الصبح",
+       "gloss": "الطفل يبكي منذ الصباح"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يبچي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يبچي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يبكي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يبكي"
+    }
+   ]
+  },
+  {
+   "headword": "شقي",
+   "definition": "الطفل الكثير الحركة والعبث",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شقي",
+     "examples": [
+      {
+       "text": "الواد شقي ومش قاعد",
+       "gloss": "الولد شقي ولا يهدأ"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شقي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "شقي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "شقي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مشاغب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "شقي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شقي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "شقي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شقي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "مشرمل"
+    },
+    {
+     "dialect": "algerian",
+     "form": "مشاغب"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "مشاغب"
+    },
+    {
+     "dialect": "libyan",
+     "form": "شقي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مشاغب"
+    }
+   ]
+  },
+  {
+   "headword": "مدرسة الحضانة",
+   "definition": "مكان يُترك فيه الأطفال الصغار",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حضانة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "حضانة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "روضة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "روضة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "روضة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "روضة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "روضة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "روضة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حضانة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكريش",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكريش"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكريش"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حضانة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الروضه"
+    }
+   ]
+  },
+  {
+   "headword": "أرجوحة",
+   "definition": "ما يتأرجح عليه الطفل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مرجيحة",
+     "examples": [
+      {
+       "text": "العيال على المرجيحة",
+       "gloss": "الأطفال على الأرجوحة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مرجوحة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مرجوحة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مرجيحة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مرجوحة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مرجيحة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مرجوحة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مرجوحة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مرجيحة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البالانصوار"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البالانصوار"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "المرجوحة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مرجيحة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المرجوحه"
+    }
+   ]
+  },
+  {
+   "headword": "يختبئ",
+   "definition": "يستتر حتى لا يُرى",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يتخبى",
+     "examples": [
+      {
+       "text": "اتخبى ورا الباب",
+       "gloss": "اختبأ خلف الباب"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يتخبع"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يتخبى"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يتخبا"
+    }
+   ]
+  },
+  {
+   "headword": "حلوى",
+   "definition": "ما يؤكل حلواً من سكر وشوكولاتة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حلويات",
+     "examples": [
+      {
+       "text": "العيال بيحبوا الحلويات",
+       "gloss": "الأطفال يحبون الحلوى"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حلو"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حلويات"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حلويات"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حلا"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حلا"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "حلويات"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حلويات"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حلويات"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الحلوة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الحلوة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الحلو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حلويات"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحلويات"
+    }
+   ]
+  }
+ ]
+}

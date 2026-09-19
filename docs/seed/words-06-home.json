@@ -693,63 +693,6 @@
    ]
   },
   {
-   "headword": "مفتاح",
-   "definition": "أداة فتح القفل",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "levantine",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "gulf",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "ساروت",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "algerian",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "algerian",
-     "form": "ساروت",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "libyan",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "مفتاح",
-     "meaning": "مفتاح"
-    }
-   ]
-  },
-  {
    "headword": "هاتف",
    "definition": "التلفون",
    "kind": "word",
@@ -1432,73 +1375,6 @@
      "dialect": "hassaniya",
      "form": "ورقة",
      "meaning": "ورق"
-    }
-   ]
-  },
-  {
-   "headword": "قلم",
-   "definition": "أداة الكتابة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "levantine",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "gulf",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "ستيلو",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "algerian",
-     "form": "ستيلو",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "algerian",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "ستيلو",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "libyan",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "قلم",
-     "meaning": "قلم"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "قلم",
-     "meaning": "قلم"
     }
    ]
   },

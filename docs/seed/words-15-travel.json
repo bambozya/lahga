@@ -619,62 +619,6 @@
    ]
   },
   {
-   "headword": "رصيف",
-   "definition": "جانب الطريق الذي يمشي عليه الناس",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "levantine",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "gulf",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "najdi",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "hejazi",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "الطروطوار",
-     "notes": "من الفرنسية"
-    },
-    {
-     "dialect": "algerian",
-     "form": "طروطوار"
-    },
-    {
-     "dialect": "libyan",
-     "form": "رصيف"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "رصيف"
-    }
-   ]
-  },
-  {
    "headword": "جسر",
    "definition": "ما يُعبر عليه فوق نهر أو طريق",
    "kind": "word",
@@ -892,64 +836,6 @@
     {
      "dialect": "hassaniya",
      "form": "الإشاره"
-    }
-   ]
-  },
-  {
-   "headword": "تأخير",
-   "definition": "وقوع الشيء بعد وقته",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "تأخير",
-     "examples": [
-      {
-       "text": "الطيارة فيها تأخير ساعتين",
-       "gloss": "الطائرة متأخرة ساعتين"
-      }
-     ]
-    },
-    {
-     "dialect": "levantine",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "gulf",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "najdi",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "hejazi",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "ريطار",
-     "notes": "من الفرنسية"
-    },
-    {
-     "dialect": "libyan",
-     "form": "تأخير"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "تأخير"
     }
    ]
   }

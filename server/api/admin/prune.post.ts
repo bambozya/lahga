@@ -1,4 +1,4 @@
-import { eq, inArray } from 'drizzle-orm'
+import { and, eq, inArray } from 'drizzle-orm'
 import * as v from 'valibot'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
@@ -32,11 +32,13 @@ export default defineEventHandler(async (event) => {
 
   for (const headword of body.headwords) {
     const normalized = normalizeArabic(headword)
+    // A retired word keeps its row, so the same headword can exist twice: match
+    // the live one, or a deleted twin hides a word that is still on the site.
     const word = await db.query.words.findFirst({
-      where: eq(schema.words.headwordNormalized, normalized),
+      where: and(eq(schema.words.headwordNormalized, normalized), eq(schema.words.status, 'active')),
       with: { links: { with: { entry: { with: { links: true } } } } },
     })
-    if (!word || word.status !== 'active') { report.notFound.push(headword); continue }
+    if (!word) { report.notFound.push(headword); continue }
     const links = word.links.filter(l => l.status === 'active' && l.entry.status === 'active')
     // An entry that also answers to another word stays: only this page goes.
     const orphans = links.filter(l => !l.entry.links.some(o => o.status === 'active' && o.wordId !== word.id))
