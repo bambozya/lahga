@@ -1,0 +1,100 @@
+{"words":[
+ {"headword":"بطيخ","definition":"فاكهة صيفية كبيرة حمراء اللب","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بطيخ","examples":[{"text":"البطيخ حلو في الصيف","gloss":"البطيخ لذيذ في الصيف"}]},
+  {"dialect":"levantine","form":"بطيخ"},{"dialect":"palestinian","form":"جبس"},
+  {"dialect":"gulf","form":"جح","examples":[{"text":"اشتريت جحة كبيرة","gloss":"اشتريت بطيخة كبيرة"}]},
+  {"dialect":"najdi","form":"جح"},{"dialect":"hejazi","form":"حبحب"},
+  {"dialect":"iraqi","form":"رقي","examples":[{"text":"الرقي حلو هاي السنة","gloss":"البطيخ لذيذ هذا العام"}]},
+  {"dialect":"yemeni","form":"حبحب"},{"dialect":"sudanese","form":"بطيخ"},
+  {"dialect":"moroccan","form":"الدلاح","examples":[{"text":"شرينا دلاحة من السوق","gloss":"اشترينا بطيخة من السوق"}]},
+  {"dialect":"algerian","form":"الدلاع"},{"dialect":"tunisian","form":"الدلاع"},{"dialect":"libyan","form":"دلاع"},
+  {"dialect":"hassaniya","form":"الدلاح"}]},
+
+ {"headword":"باذنجان","definition":"ثمرة بنفسجية تُطبخ","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بتنجان","examples":[{"text":"عملت بتنجان مقلي","gloss":"طبخت باذنجاناً مقلياً"}]},
+  {"dialect":"levantine","form":"باذنجان"},{"dialect":"palestinian","form":"باذنجان"},
+  {"dialect":"gulf","form":"باذنجان"},{"dialect":"najdi","form":"باذنجان"},{"dialect":"hejazi","form":"باذنجان"},
+  {"dialect":"iraqi","form":"بيتنجان"},{"dialect":"yemeni","form":"باذنجان"},{"dialect":"sudanese","form":"باذنجان"},
+  {"dialect":"moroccan","form":"الدنجال","examples":[{"text":"طيبت الدنجال","gloss":"طبخت الباذنجان"}]},
+  {"dialect":"algerian","form":"الباذنجال"},{"dialect":"tunisian","form":"البادنجان"},{"dialect":"libyan","form":"بادنجان"},
+  {"dialect":"hassaniya","form":"الدنجال"}]},
+
+ {"headword":"بطاطس","definition":"درنة تؤكل مقلية أو مسلوقة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بطاطس","examples":[{"text":"بطاطس محمرة مع الأكل","gloss":"بطاطس مقلية مع الطعام"}]},
+  {"dialect":"levantine","form":"بطاطا"},{"dialect":"palestinian","form":"بطاطا"},
+  {"dialect":"gulf","form":"بطاط"},{"dialect":"najdi","form":"بطاط"},{"dialect":"hejazi","form":"بطاطس"},
+  {"dialect":"iraqi","form":"بتيتة","examples":[{"text":"بتيتة مقلية","gloss":"بطاطس مقلية"}]},
+  {"dialect":"yemeni","form":"بطاط"},{"dialect":"sudanese","form":"بطاطس"},
+  {"dialect":"moroccan","form":"البطاطا"},{"dialect":"algerian","form":"البطاطا"},{"dialect":"tunisian","form":"البطاطا"},{"dialect":"libyan","form":"بطاطا"},
+  {"dialect":"hassaniya","form":"البطاطا"}]},
+
+ {"headword":"ملفوف","definition":"خضار أوراقه ملتفة بعضها على بعض","kind":"word","entries":[
+  {"dialect":"egyptian","form":"كرنب","examples":[{"text":"محشي كرنب على الغدا","gloss":"محشي ملفوف على الغداء"}]},
+  {"dialect":"levantine","form":"ملفوف"},{"dialect":"palestinian","form":"ملفوف"},
+  {"dialect":"gulf","form":"ملفوف"},{"dialect":"najdi","form":"ملفوف"},{"dialect":"hejazi","form":"كرنب"},
+  {"dialect":"iraqi","form":"لهانة","examples":[{"text":"دولمة لهانة","gloss":"محشي ملفوف"}]},
+  {"dialect":"yemeni","form":"كرنب"},{"dialect":"sudanese","form":"كرنب"},
+  {"dialect":"moroccan","form":"الكرومب"},{"dialect":"algerian","form":"الكرومب"},{"dialect":"tunisian","form":"الكرنب"},{"dialect":"libyan","form":"كرنب"},
+  {"dialect":"hassaniya","form":"الكرنب"}]},
+
+ {"headword":"صنبور","definition":"ما يخرج منه الماء في الحوض","kind":"word","entries":[
+  {"dialect":"egyptian","form":"حنفية","examples":[{"text":"اقفل الحنفية، المية ضايعة","gloss":"أغلق الصنبور، الماء يُهدر"}]},
+  {"dialect":"levantine","form":"حنفية"},{"dialect":"palestinian","form":"حنفية"},
+  {"dialect":"gulf","form":"حنفية"},{"dialect":"najdi","form":"صنبور"},{"dialect":"hejazi","form":"حنفية"},
+  {"dialect":"iraqi","form":"ماي حنفية"},{"dialect":"yemeni","form":"حنفية"},{"dialect":"sudanese","form":"حنفية"},
+  {"dialect":"moroccan","form":"الروبيني","notes":"من الفرنسية","examples":[{"text":"سد الروبيني","gloss":"أغلق الصنبور"}]},
+  {"dialect":"algerian","form":"الروبيني"},{"dialect":"tunisian","form":"الروبيني"},{"dialect":"libyan","form":"حنفية"},
+  {"dialect":"hassaniya","form":"الحنفيه"}]},
+
+ {"headword":"منديل ورقي","definition":"ورقة رقيقة تُمسح بها اليد أو الأنف","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"كلينكس","examples":[{"text":"هات كلينكس من فضلك","gloss":"أحضر منديلاً ورقياً من فضلك"}]},
+  {"dialect":"levantine","form":"محارم","examples":[{"text":"في محارم بالسيارة","gloss":"توجد مناديل في السيارة"}]},
+  {"dialect":"palestinian","form":"محارم"},
+  {"dialect":"gulf","form":"كلينكس"},{"dialect":"najdi","form":"مناديل"},{"dialect":"hejazi","form":"كلينكس"},
+  {"dialect":"iraqi","form":"كلينكس"},{"dialect":"yemeni","form":"مناديل"},{"dialect":"sudanese","form":"كلينكس"},
+  {"dialect":"moroccan","form":"الموشوار","notes":"من الفرنسية"},{"dialect":"algerian","form":"الموشوار"},{"dialect":"tunisian","form":"الموشوار"},{"dialect":"libyan","form":"مناديل"},
+  {"dialect":"hassaniya","form":"المناديل"}]},
+
+ {"headword":"مرحاض","definition":"موضع قضاء الحاجة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"الحمام","examples":[{"text":"فين الحمام لو سمحت؟","gloss":"أين المرحاض من فضلك؟"}]},
+  {"dialect":"levantine","form":"الحمام"},{"dialect":"palestinian","form":"التواليت"},
+  {"dialect":"gulf","form":"دورة المياه"},{"dialect":"najdi","form":"دورة المياه"},{"dialect":"hejazi","form":"الحمام"},
+  {"dialect":"iraqi","form":"المرافق"},{"dialect":"yemeni","form":"الحمام"},{"dialect":"sudanese","form":"الحمام"},
+  {"dialect":"moroccan","form":"الطوالات","notes":"من الفرنسية"},{"dialect":"algerian","form":"الطوالات"},{"dialect":"tunisian","form":"الطوالات"},{"dialect":"libyan","form":"الحمام"},
+  {"dialect":"hassaniya","form":"المرحاض"}]},
+
+ {"headword":"مكواة","definition":"أداة تُملس بها الثياب بالحرارة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مكواة","examples":[{"text":"سخني المكواة","gloss":"سخني المكواة"}]},
+  {"dialect":"levantine","form":"مكواية"},{"dialect":"palestinian","form":"مكواية"},
+  {"dialect":"gulf","form":"مكواة"},{"dialect":"najdi","form":"مكواة"},{"dialect":"hejazi","form":"مكواة"},
+  {"dialect":"iraqi","form":"أوتي","examples":[{"text":"شغل الأوتي","gloss":"شغل المكواة"}]},
+  {"dialect":"yemeni","form":"مكواة"},{"dialect":"sudanese","form":"مكواة"},
+  {"dialect":"moroccan","form":"الفير","notes":"من الفرنسية"},{"dialect":"algerian","form":"الفير"},{"dialect":"tunisian","form":"الفير"},{"dialect":"libyan","form":"مكواة"},
+  {"dialect":"hassaniya","form":"المكواه"}]},
+
+ {"headword":"بقشيش","definition":"ما يُعطى للخادم زيادة على الأجر","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بقشيش","examples":[{"text":"سبتله بقشيش على الطاولة","gloss":"تركت له بقشيشاً على الطاولة"}]},
+  {"dialect":"levantine","form":"بخشيش"},{"dialect":"palestinian","form":"بخشيش"},
+  {"dialect":"gulf","form":"إكرامية"},{"dialect":"najdi","form":"إكرامية"},{"dialect":"hejazi","form":"بقشيش"},
+  {"dialect":"iraqi","form":"إكرامية"},{"dialect":"yemeni","form":"بقشيش"},{"dialect":"sudanese","form":"بقشيش"},
+  {"dialect":"moroccan","form":"البوربوار","notes":"من الفرنسية","examples":[{"text":"خليت ليه البوربوار","gloss":"تركت له البقشيش"}]},
+  {"dialect":"algerian","form":"البوربوار"},{"dialect":"tunisian","form":"البوربوار"},{"dialect":"libyan","form":"بقشيش"},
+  {"dialect":"hassaniya","form":"الإكراميه"}]},
+
+ {"headword":"فلفل حار","definition":"ثمرة حريفة تُضاف للطعام","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"شطة","examples":[{"text":"حط شطة على الأكل","gloss":"ضع فلفلاً حاراً على الطعام"}]},
+  {"dialect":"levantine","form":"فليفلة حارة"},{"dialect":"palestinian","form":"شطة"},
+  {"dialect":"gulf","form":"فلفل حار"},{"dialect":"najdi","form":"فلفل حار"},{"dialect":"hejazi","form":"شطة"},
+  {"dialect":"iraqi","form":"فلفل حار"},{"dialect":"yemeni","form":"بسباس","examples":[{"text":"البسباس حار قوي","gloss":"الفلفل حار جداً"}]},
+  {"dialect":"sudanese","form":"شطة"},
+  {"dialect":"moroccan","form":"السودانية"},{"dialect":"algerian","form":"الفلفل الحار"},{"dialect":"tunisian","form":"الهريسة","notes":"معجون الفلفل الحار"},{"dialect":"libyan","form":"فلفل حار"},
+  {"dialect":"hassaniya","form":"الفلفل الحار"}]},
+
+ {"headword":"ثوم","definition":"نبات ذو فصوص قوي الرائحة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"توم","examples":[{"text":"حطي توم في الطبيخ","gloss":"ضعي ثوماً في الطبخ"}]},
+  {"dialect":"levantine","form":"توم"},{"dialect":"palestinian","form":"توم"},
+  {"dialect":"gulf","form":"ثوم"},{"dialect":"najdi","form":"ثوم"},{"dialect":"hejazi","form":"ثوم"},
+  {"dialect":"iraqi","form":"ثوم"},{"dialect":"yemeni","form":"ثوم"},{"dialect":"sudanese","form":"توم"},
+  {"dialect":"moroccan","form":"التوما"},{"dialect":"algerian","form":"التوم"},{"dialect":"tunisian","form":"التوم"},{"dialect":"libyan","form":"توم"},
+  {"dialect":"hassaniya","form":"التوم"}]}
+]}
