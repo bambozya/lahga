@@ -1,0 +1,77 @@
+{"words":[
+ {"headword":"قط","definition":"حيوان أليف صغير يربى في البيوت","kind":"word","entries":[
+  {"dialect":"egyptian","form":"قطة","examples":[{"text":"القطة نايمة على الكنبة","gloss":"القطة نائمة على الأريكة"}]},
+  {"dialect":"levantine","form":"بسة"},{"dialect":"palestinian","form":"بسة"},
+  {"dialect":"gulf","form":"بزون"},{"dialect":"najdi","form":"قط"},{"dialect":"hejazi","form":"بسة"},
+  {"dialect":"iraqi","form":"بزون","examples":[{"text":"البزون كعد عالحيط","gloss":"جلس القط على الحائط"}]},
+  {"dialect":"yemeni","form":"بسة"},{"dialect":"sudanese","form":"كديسة"},
+  {"dialect":"moroccan","form":"المش"},{"dialect":"algerian","form":"القطوس"},{"dialect":"tunisian","form":"القطوس"},{"dialect":"libyan","form":"قطوس"},
+  {"dialect":"hassaniya","form":"المش"}]},
+
+ {"headword":"دجاجة","definition":"طائر داجن يؤكل لحمه وبيضه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"فرخة","examples":[{"text":"اشتريت فرختين من السوق","gloss":"اشتريت دجاجتين من السوق"}]},
+  {"dialect":"levantine","form":"جاجة"},{"dialect":"palestinian","form":"جاجة"},
+  {"dialect":"gulf","form":"دياية"},{"dialect":"najdi","form":"دجاجة"},{"dialect":"hejazi","form":"دجاجة"},
+  {"dialect":"iraqi","form":"دجاجة"},{"dialect":"yemeni","form":"دجاجة"},{"dialect":"sudanese","form":"جداد"},
+  {"dialect":"moroccan","form":"الدجاجة"},{"dialect":"algerian","form":"الدجاجة"},{"dialect":"tunisian","form":"الدجاجة"},{"dialect":"libyan","form":"دجاجة"},
+  {"dialect":"hassaniya","form":"الدجاجه"}]},
+
+ {"headword":"بقرة","definition":"حيوان يُربى للحمه ولبنه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بقرة"},{"dialect":"levantine","form":"بقرة"},{"dialect":"palestinian","form":"بقرة"},
+  {"dialect":"gulf","form":"بقرة"},{"dialect":"najdi","form":"بقرة"},{"dialect":"hejazi","form":"بقرة"},
+  {"dialect":"iraqi","form":"بقرة"},{"dialect":"yemeni","form":"بقرة"},{"dialect":"sudanese","form":"بقرة"},
+  {"dialect":"moroccan","form":"البكرة"},{"dialect":"algerian","form":"البقرة"},{"dialect":"tunisian","form":"البقرة"},{"dialect":"libyan","form":"بقرة"},
+  {"dialect":"hassaniya","form":"البقره"}]},
+
+ {"headword":"ماعز","definition":"حيوان يُربى للحمه ولبنه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"معزة"},{"dialect":"levantine","form":"ماعز"},{"dialect":"palestinian","form":"عنزة"},
+  {"dialect":"gulf","form":"عنز"},{"dialect":"najdi","form":"عنز"},{"dialect":"hejazi","form":"عنز"},
+  {"dialect":"iraqi","form":"عنزة"},{"dialect":"yemeni","form":"عنزة"},{"dialect":"sudanese","form":"عنزة"},
+  {"dialect":"moroccan","form":"المعزة"},{"dialect":"algerian","form":"المعزة"},{"dialect":"tunisian","form":"المعزة"},{"dialect":"libyan","form":"معزة"},
+  {"dialect":"hassaniya","form":"المعزه"}]},
+
+ {"headword":"فأر","definition":"حيوان صغير يدخل البيوت","kind":"word","entries":[
+  {"dialect":"egyptian","form":"فار","examples":[{"text":"في فار في المطبخ","gloss":"يوجد فأر في المطبخ"}]},
+  {"dialect":"levantine","form":"فار"},{"dialect":"palestinian","form":"فار"},
+  {"dialect":"gulf","form":"فار"},{"dialect":"najdi","form":"فار"},{"dialect":"hejazi","form":"فار"},
+  {"dialect":"iraqi","form":"جرذي"},{"dialect":"yemeni","form":"فار"},{"dialect":"sudanese","form":"فار"},
+  {"dialect":"moroccan","form":"الفار"},{"dialect":"algerian","form":"الفار"},{"dialect":"tunisian","form":"الفار"},{"dialect":"libyan","form":"فار"},
+  {"dialect":"hassaniya","form":"الفار"}]},
+
+ {"headword":"نملة","definition":"حشرة صغيرة تعيش في جماعات","kind":"word","entries":[
+  {"dialect":"egyptian","form":"نملة"},{"dialect":"levantine","form":"نملة"},{"dialect":"palestinian","form":"نملة"},
+  {"dialect":"gulf","form":"نملة"},{"dialect":"najdi","form":"نملة"},{"dialect":"hejazi","form":"نملة"},
+  {"dialect":"iraqi","form":"نملة"},{"dialect":"yemeni","form":"نملة"},{"dialect":"sudanese","form":"نملة"},
+  {"dialect":"moroccan","form":"النملة"},{"dialect":"algerian","form":"النملة"},{"dialect":"tunisian","form":"النملة"},{"dialect":"libyan","form":"نملة"},
+  {"dialect":"hassaniya","form":"النمله"}]},
+
+ {"headword":"عصفور","definition":"طائر صغير","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عصفور"},{"dialect":"levantine","form":"عصفور"},{"dialect":"palestinian","form":"عصفور"},
+  {"dialect":"gulf","form":"عصفور"},{"dialect":"najdi","form":"عصفور"},{"dialect":"hejazi","form":"عصفور"},
+  {"dialect":"iraqi","form":"عصفور"},{"dialect":"yemeni","form":"عصفور"},{"dialect":"sudanese","form":"عصفور"},
+  {"dialect":"moroccan","form":"العصفور"},{"dialect":"algerian","form":"العصفور"},{"dialect":"tunisian","form":"العصفور"},{"dialect":"libyan","form":"عصفور"},
+  {"dialect":"hassaniya","form":"العصفور"}]},
+
+ {"headword":"سمكة","definition":"حيوان يعيش في الماء يؤكل لحمه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"سمكة","examples":[{"text":"أكلنا سمك مشوي على البحر","gloss":"أكلنا سمكاً مشوياً على الشاطئ"}]},
+  {"dialect":"levantine","form":"سمكة"},{"dialect":"palestinian","form":"سمكة"},
+  {"dialect":"gulf","form":"سمچة"},{"dialect":"najdi","form":"سمكة"},{"dialect":"hejazi","form":"سمكة"},
+  {"dialect":"iraqi","form":"سمچة"},{"dialect":"yemeni","form":"سمكة"},{"dialect":"sudanese","form":"سمكة"},
+  {"dialect":"moroccan","form":"الحوتة"},{"dialect":"algerian","form":"الحوتة"},{"dialect":"tunisian","form":"الحوتة"},{"dialect":"libyan","form":"حوتة"},
+  {"dialect":"hassaniya","form":"الحوته"}]},
+
+ {"headword":"ذبابة","definition":"حشرة طائرة تقع على الطعام","kind":"word","entries":[
+  {"dialect":"egyptian","form":"دبانة"},{"dialect":"levantine","form":"دبانة"},{"dialect":"palestinian","form":"دبانة"},
+  {"dialect":"gulf","form":"ذبابة"},{"dialect":"najdi","form":"ذبابة"},{"dialect":"hejazi","form":"ذبابة"},
+  {"dialect":"iraqi","form":"دبانة"},{"dialect":"yemeni","form":"ذبابة"},{"dialect":"sudanese","form":"دبانة"},
+  {"dialect":"moroccan","form":"الدبانة"},{"dialect":"algerian","form":"الدبانة"},{"dialect":"tunisian","form":"الدبانة"},{"dialect":"libyan","form":"دبانة"},
+  {"dialect":"hassaniya","form":"الدبانه"}]},
+
+ {"headword":"بعوضة","definition":"حشرة تلسع وتمص الدم","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ناموسة","examples":[{"text":"الناموس مسبنيش أنام","gloss":"لم يتركني البعوض أنام"}]},
+  {"dialect":"levantine","form":"ناموسة"},{"dialect":"palestinian","form":"ناموسة"},
+  {"dialect":"gulf","form":"بعوضة"},{"dialect":"najdi","form":"بعوضة"},{"dialect":"hejazi","form":"ناموسة"},
+  {"dialect":"iraqi","form":"بقة"},{"dialect":"yemeni","form":"بعوضة"},{"dialect":"sudanese","form":"ناموسة"},
+  {"dialect":"moroccan","form":"الناموسة"},{"dialect":"algerian","form":"الناموسة"},{"dialect":"tunisian","form":"الناموسة"},{"dialect":"libyan","form":"ناموسة"},
+  {"dialect":"hassaniya","form":"الناموسه"}]}
+]}

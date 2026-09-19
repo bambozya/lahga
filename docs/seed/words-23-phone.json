@@ -1,0 +1,94 @@
+{"words":[
+ {"headword":"شاشة","definition":"وجه الجهاز الذي تظهر عليه الصورة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"شاشة","examples":[{"text":"الشاشة اتكسرت من الوقعة","gloss":"انكسرت الشاشة من السقطة"}]},
+  {"dialect":"levantine","form":"شاشة"},{"dialect":"palestinian","form":"شاشة"},
+  {"dialect":"gulf","form":"شاشة"},{"dialect":"najdi","form":"شاشة"},{"dialect":"hejazi","form":"شاشة"},
+  {"dialect":"iraqi","form":"شاشة"},{"dialect":"yemeni","form":"شاشة"},{"dialect":"sudanese","form":"شاشة"},
+  {"dialect":"moroccan","form":"الإيكران","notes":"من الفرنسية"},{"dialect":"algerian","form":"الإيكران"},{"dialect":"tunisian","form":"الشاشة"},{"dialect":"libyan","form":"شاشة"},
+  {"dialect":"hassaniya","form":"الشاشه"}]},
+
+ {"headword":"مكالمة","definition":"حديث بين اثنين في الهاتف","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مكالمة","examples":[{"text":"جتلي مكالمة من رقم غريب","gloss":"وصلتني مكالمة من رقم مجهول"}]},
+  {"dialect":"levantine","form":"مكالمة"},{"dialect":"palestinian","form":"مكالمة"},
+  {"dialect":"gulf","form":"مكالمة"},{"dialect":"najdi","form":"اتصال"},{"dialect":"hejazi","form":"مكالمة"},
+  {"dialect":"iraqi","form":"مكالمة"},{"dialect":"yemeni","form":"مكالمة"},{"dialect":"sudanese","form":"مكالمة"},
+  {"dialect":"moroccan","form":"الطيليفون"},{"dialect":"algerian","form":"الكوديسيون"},{"dialect":"tunisian","form":"المكالمة"},{"dialect":"libyan","form":"مكالمة"},
+  {"dialect":"hassaniya","form":"المكالمه"}]},
+
+ {"headword":"بطارية","definition":"ما يخزن الكهرباء في الجهاز","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بطارية","examples":[{"text":"البطارية خلصت بسرعة","gloss":"نفدت البطارية سريعاً"}]},
+  {"dialect":"levantine","form":"بطارية"},{"dialect":"palestinian","form":"بطارية"},
+  {"dialect":"gulf","form":"بطارية"},{"dialect":"najdi","form":"بطارية"},{"dialect":"hejazi","form":"بطارية"},
+  {"dialect":"iraqi","form":"بطارية"},{"dialect":"yemeni","form":"بطارية"},{"dialect":"sudanese","form":"بطارية"},
+  {"dialect":"moroccan","form":"البطري"},{"dialect":"algerian","form":"البطري"},{"dialect":"tunisian","form":"البطري"},{"dialect":"libyan","form":"بطارية"},
+  {"dialect":"hassaniya","form":"البطاريه"}]},
+
+ {"headword":"يشحن","definition":"يملأ البطارية بالكهرباء","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يشحن","examples":[{"text":"حط التليفون يشحن","gloss":"ضع الهاتف ليشحن"}]},
+  {"dialect":"levantine","form":"يشحن"},{"dialect":"palestinian","form":"يشحن"},
+  {"dialect":"gulf","form":"يشحن"},{"dialect":"najdi","form":"يشحن"},{"dialect":"hejazi","form":"يشحن"},
+  {"dialect":"iraqi","form":"يشحن"},{"dialect":"yemeni","form":"يشحن"},{"dialect":"sudanese","form":"يشحن"},
+  {"dialect":"moroccan","form":"يشارجي","notes":"من الفرنسية"},{"dialect":"algerian","form":"يشارجي"},{"dialect":"tunisian","form":"يشارجي"},{"dialect":"libyan","form":"يشحن"},
+  {"dialect":"hassaniya","form":"يشحن"}]},
+
+ {"headword":"شبكة","definition":"تغطية الاتصال التي يعمل بها الهاتف","kind":"word","entries":[
+  {"dialect":"egyptian","form":"شبكة","examples":[{"text":"مفيش شبكة في المكان ده","gloss":"لا توجد تغطية في هذا المكان"}]},
+  {"dialect":"levantine","form":"إرسال"},{"dialect":"palestinian","form":"إرسال"},
+  {"dialect":"gulf","form":"شبكة"},{"dialect":"najdi","form":"شبكة"},{"dialect":"hejazi","form":"شبكة"},
+  {"dialect":"iraqi","form":"شبكة"},{"dialect":"yemeni","form":"شبكة"},{"dialect":"sudanese","form":"شبكة"},
+  {"dialect":"moroccan","form":"الريزو","notes":"من الفرنسية"},{"dialect":"algerian","form":"الريزو"},{"dialect":"tunisian","form":"الريزو"},{"dialect":"libyan","form":"شبكة"},
+  {"dialect":"hassaniya","form":"الشبكه"}]},
+
+ {"headword":"رصيد","definition":"ما بقي في الخط من قيمة للاتصال","kind":"word","entries":[
+  {"dialect":"egyptian","form":"رصيد","examples":[{"text":"خلص رصيدي، هشحن","gloss":"نفد رصيدي، سأعبئ"}]},
+  {"dialect":"levantine","form":"رصيد"},{"dialect":"palestinian","form":"رصيد"},
+  {"dialect":"gulf","form":"رصيد"},{"dialect":"najdi","form":"رصيد"},{"dialect":"hejazi","form":"رصيد"},
+  {"dialect":"iraqi","form":"رصيد"},{"dialect":"yemeni","form":"رصيد"},{"dialect":"sudanese","form":"رصيد"},
+  {"dialect":"moroccan","form":"الكريدي","notes":"من الفرنسية"},{"dialect":"algerian","form":"الكريدي"},{"dialect":"tunisian","form":"الكريدي"},{"dialect":"libyan","form":"رصيد"},
+  {"dialect":"hassaniya","form":"الرصيد"}]},
+
+ {"headword":"سماعة","definition":"ما يُسمع به الصوت في الأذن","kind":"word","entries":[
+  {"dialect":"egyptian","form":"سماعة"},{"dialect":"levantine","form":"سماعة"},{"dialect":"palestinian","form":"سماعة"},
+  {"dialect":"gulf","form":"سماعة"},{"dialect":"najdi","form":"سماعة"},{"dialect":"hejazi","form":"سماعة"},
+  {"dialect":"iraqi","form":"سماعة"},{"dialect":"yemeni","form":"سماعة"},{"dialect":"sudanese","form":"سماعة"},
+  {"dialect":"moroccan","form":"الإيكوتور"},{"dialect":"algerian","form":"الإيكوتور"},{"dialect":"tunisian","form":"السماعة"},{"dialect":"libyan","form":"سماعة"},
+  {"dialect":"hassaniya","form":"السماعه"}]},
+
+ {"headword":"كلمة السر","definition":"ما يُفتح به الحساب أو الجهاز","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"الباسورد"},{"dialect":"levantine","form":"كلمة السر"},{"dialect":"palestinian","form":"كلمة السر"},
+  {"dialect":"gulf","form":"الرقم السري"},{"dialect":"najdi","form":"الرقم السري"},{"dialect":"hejazi","form":"الباسورد"},
+  {"dialect":"iraqi","form":"الرمز"},{"dialect":"yemeni","form":"كلمة السر"},{"dialect":"sudanese","form":"كلمة السر"},
+  {"dialect":"moroccan","form":"الكود"},{"dialect":"algerian","form":"الكود"},{"dialect":"tunisian","form":"الكود"},{"dialect":"libyan","form":"كلمة السر"},
+  {"dialect":"hassaniya","form":"كلمة السر"}]},
+
+ {"headword":"تطبيق","definition":"برنامج يُثبت في الهاتف","kind":"word","entries":[
+  {"dialect":"egyptian","form":"تطبيق","examples":[{"text":"نزلت التطبيق على التليفون","gloss":"ثبّت التطبيق على الهاتف"}]},
+  {"dialect":"levantine","form":"تطبيق"},{"dialect":"palestinian","form":"تطبيق"},
+  {"dialect":"gulf","form":"تطبيق"},{"dialect":"najdi","form":"تطبيق"},{"dialect":"hejazi","form":"تطبيق"},
+  {"dialect":"iraqi","form":"تطبيق"},{"dialect":"yemeni","form":"تطبيق"},{"dialect":"sudanese","form":"تطبيق"},
+  {"dialect":"moroccan","form":"الأبليكاسيون"},{"dialect":"algerian","form":"الأبليكاسيون"},{"dialect":"tunisian","form":"الأبليكاسيون"},{"dialect":"libyan","form":"تطبيق"},
+  {"dialect":"hassaniya","form":"التطبيق"}]},
+
+ {"headword":"واي فاي","definition":"اتصال الإنترنت اللاسلكي","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"واي فاي","examples":[{"text":"شغل الواي فاي بدل الداتا","gloss":"شغّل الواي فاي بدل بيانات الهاتف"}]},
+  {"dialect":"levantine","form":"واي فاي"},{"dialect":"palestinian","form":"واي فاي"},
+  {"dialect":"gulf","form":"واي فاي"},{"dialect":"najdi","form":"واي فاي"},{"dialect":"hejazi","form":"واي فاي"},
+  {"dialect":"iraqi","form":"واي فاي"},{"dialect":"yemeni","form":"واي فاي"},{"dialect":"sudanese","form":"واي فاي"},
+  {"dialect":"moroccan","form":"الويفي"},{"dialect":"algerian","form":"الويفي"},{"dialect":"tunisian","form":"الويفي"},{"dialect":"libyan","form":"واي فاي"},
+  {"dialect":"hassaniya","form":"واي فاي"}]},
+
+ {"headword":"يحذف","definition":"يمحو الملف أو الرسالة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يمسح","examples":[{"text":"امسح الصور القديمة","gloss":"احذف الصور القديمة"}]},
+  {"dialect":"levantine","form":"يمحي"},{"dialect":"palestinian","form":"يمسح"},
+  {"dialect":"gulf","form":"يمسح"},{"dialect":"najdi","form":"يمسح"},{"dialect":"hejazi","form":"يمسح"},
+  {"dialect":"iraqi","form":"يمحي"},{"dialect":"yemeni","form":"يمسح"},{"dialect":"sudanese","form":"يمسح"},
+  {"dialect":"moroccan","form":"يمسح"},{"dialect":"algerian","form":"يمسح"},{"dialect":"tunisian","form":"يمسح"},{"dialect":"libyan","form":"يمسح"},
+  {"dialect":"hassaniya","form":"يمسح"}]},
+
+ {"headword":"مكبر الصوت","definition":"ما يخرج الصوت عالياً من الجهاز","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"السبيكر"},{"dialect":"levantine","form":"مكبر الصوت"},{"dialect":"palestinian","form":"السبيكر"},
+  {"dialect":"gulf","form":"السبيكر"},{"dialect":"najdi","form":"السماعة الخارجية"},{"dialect":"hejazi","form":"السبيكر"},
+  {"dialect":"iraqi","form":"السبيكر"},{"dialect":"yemeni","form":"مكبر الصوت"},{"dialect":"sudanese","form":"السبيكر"},
+  {"dialect":"moroccan","form":"الهوبارلور","notes":"من الفرنسية"},{"dialect":"algerian","form":"الهوبارلور"},{"dialect":"tunisian","form":"الهوبارلور"},{"dialect":"libyan","form":"سبيكر"},
+  {"dialect":"hassaniya","form":"مكبر الصوت"}]}
+]}
