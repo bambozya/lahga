@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // The home page is the dictionary itself: the search results when something is
 // being looked for, a handful of words drawn at random otherwise. Nothing stands
-// between the search box in the header and the answer.
+// between the search box in the header and the answer — one column, and no
+// sidebar beside it repeating the «اللهجات» link the header already carries.
 //
 // Five random words rather than the whole index: anyone looking for a word types
 // it in the box above, so the page is free to be an invitation instead of a
@@ -19,12 +20,6 @@ const { data: words, status, refresh } = await useFetch<WordList>('/api/words', 
     ? { q: activeQuery.value, limit: LIMIT }
     : { random: 1, limit: SAMPLE }),
 })
-// The dialect tree is for the sidebar, which a search hides: while a query is
-// active it is neither fetched nor shipped to the browser.
-type DialectTree = { id: number, slug: string, nameAr: string, children: { id: number, slug: string, nameAr: string }[] }[]
-const { data: dialects } = await useAsyncData<DialectTree>('dialects', () => (
-  activeQuery.value ? Promise.resolve([]) : $fetch<DialectTree>('/api/dialects')
-), { watch: [activeQuery] })
 
 const count = computed(() => words.value?.length ?? 0)
 const searching = computed(() => status.value === 'pending')
@@ -74,55 +69,42 @@ useSeo({
 </script>
 
 <template>
-  <div>
-    <section>
-      <!-- Searching: one quiet line, then the results. -->
-      <hgroup v-if="activeQuery" class="head">
-        <h1>«{{ activeQuery }}»</h1>
-        <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
-      </hgroup>
-      <hgroup v-else class="head">
-        <h1>كلمات من القاموس</h1>
-        <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.</p>
-      </hgroup>
+  <article>
+    <!-- Searching: one quiet line, then the results. -->
+    <hgroup v-if="activeQuery" class="head">
+      <h1>«{{ activeQuery }}»</h1>
+      <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
+    </hgroup>
+    <hgroup v-else class="head">
+      <h1>كلمات من القاموس</h1>
+      <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.</p>
+    </hgroup>
 
-      <!-- Nothing found: not a line of text like any other, but a door. -->
-      <div v-if="nothing" class="empty">
-        <h2>لم نجد «{{ activeQuery }}»</h2>
-        <p>لا شيء بعد بهذا الاسم. ربما تُكتب بحروف أخرى، أو لم يضفها أحد بعد — وهنا يأتي دورك.</p>
-        <p v-if="suggestions?.length" class="near">
-          هل تقصد:
-          <template v-for="(w, i) in suggestions" :key="w.id">
-            <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
-          </template>
-        </p>
-        <p>
-          <NuxtLink class="cta" :to="{ path: '/add-word', query: { headword: activeQuery } }">أضف «{{ activeQuery }}» إلى القاموس</NuxtLink>
-        </p>
-        <p><small><NuxtLink to="/" aria-current-value="false">اقرأ كلمات أخرى</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
-      </div>
+    <!-- Nothing found: not a line of text like any other, but a door. -->
+    <div v-if="nothing" class="empty">
+      <h2>لم نجد «{{ activeQuery }}»</h2>
+      <p>لا شيء بعد بهذا الاسم. ربما تُكتب بحروف أخرى، أو لم يضفها أحد بعد — وهنا يأتي دورك.</p>
+      <p v-if="suggestions?.length" class="near">
+        هل تقصد:
+        <template v-for="(w, i) in suggestions" :key="w.id">
+          <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
+        </template>
+      </p>
+      <p>
+        <NuxtLink class="cta" :to="{ path: '/add-word', query: { headword: activeQuery } }">أضف «{{ activeQuery }}» إلى القاموس</NuxtLink>
+      </p>
+      <p><small><NuxtLink to="/" aria-current-value="false">اقرأ كلمات أخرى</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
+    </div>
 
-      <dl v-else-if="words?.length" :aria-busy="shuffling">
-        <WordCard v-for="w in words" :key="w.id" :word="w" />
-      </dl>
-      <p v-else-if="!searching">لا توجد كلمات بعد.</p>
+    <dl v-else-if="words?.length" :aria-busy="shuffling">
+      <WordCard v-for="w in words" :key="w.id" :word="w" />
+    </dl>
+    <p v-else-if="!searching">لا توجد كلمات بعد.</p>
 
-      <!-- Nothing to shuffle while a search is on screen: the dice belong to
-           the random handful, not to someone's results. -->
-      <ShuffleButton v-if="!activeQuery && words?.length" label="كلمات أخرى" :busy="shuffling" @shuffle="refresh" />
-    </section>
-
-    <aside v-if="!activeQuery">
-      <h2>اللهجات</h2>
-      <details v-for="d in dialects" :key="d.id" name="dialects">
-        <summary>{{ d.nameAr }}</summary>
-        <ul>
-          <li><NuxtLink :to="`/d/${d.slug}`">كل كلمات {{ d.nameAr }}</NuxtLink></li>
-          <li v-for="c in d.children" :key="c.id"><NuxtLink :to="`/d/${c.slug}`">{{ c.nameAr }}</NuxtLink></li>
-        </ul>
-      </details>
-    </aside>
-  </div>
+    <!-- Nothing to shuffle while a search is on screen: the dice belong to
+         the random handful, not to someone's results. -->
+    <ShuffleButton v-if="!activeQuery && words?.length" label="كلمات أخرى" :busy="shuffling" @shuffle="refresh" />
+  </article>
 </template>
 
 <style scoped>
