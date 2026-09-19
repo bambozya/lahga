@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
         : eq(schema.words.status, 'active'),
       orderBy: random ? sql`random()` : desc(schema.words.createdAt),
       limit: max,
-      with: { links: { with: { entry: { with: { dialect: true } } } } },
+      with: { links: { with: { entry: { with: { dialect: { with: { parent: true } } } } } } },
     }).then(shape)
   }
 
@@ -69,7 +69,7 @@ export default defineEventHandler(async (event) => {
   const order = new Map(ids.map((r, i) => [r.id, i]))
   const rows = await db.query.words.findMany({
     where: sql`${schema.words.id} in (${sql.join(ids.map(r => sql`${r.id}`), sql`, `)})`,
-    with: { links: { with: { entry: { with: { dialect: true } } } } },
+    with: { links: { with: { entry: { with: { dialect: { with: { parent: true } } } } } } },
   })
   return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
 })
@@ -102,7 +102,7 @@ async function near(db: Awaited<ReturnType<typeof useDb>>, term: string, max: nu
   const order = new Map(ids.map((r, i) => [r.id, i]))
   const rows = await db.query.words.findMany({
     where: sql`${schema.words.id} in (${sql.join(ids.map(r => sql`${r.id}`), sql`, `)})`,
-    with: { links: { with: { entry: { with: { dialect: true } } } } },
+    with: { links: { with: { entry: { with: { dialect: { with: { parent: true } } } } } } },
   })
   return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
 }
@@ -115,9 +115,28 @@ function likeEscape(term: string) {
 function shape(rows: any[]) {
   return rows.map(w => ({
     id: w.id, headword: w.headword, definition: w.definition, score: w.score,
-    entries: w.links
-      .filter((l: any) => l.status === 'active' && l.entry.status === 'active')
-      .sort((a: any, b: any) => b.score - a.score)
-      .map((l: any) => ({ id: l.entry.id, form: l.entry.form, dialect: { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr } })),
+    entries: cardEntries(w.links),
   }))
+}
+
+/**
+ * The dialect forms a result card shows: flat, but in the word page's own
+ * order, so a card and the page it opens name the forms in the same sequence.
+ */
+function cardEntries(links: any[]) {
+  const entries = links
+    .filter(l => l.status === 'active' && l.entry.status === 'active')
+    .map(l => ({
+      id: l.entry.id as number,
+      form: l.entry.form as string,
+      score: l.entry.score as number,
+      rank: wilson(l.entry.upvotes, l.entry.downvotes),
+      dialect: { slug: l.entry.dialect.slug as string, nameAr: l.entry.dialect.nameAr as string },
+      group: l.entry.dialect.parent
+        ? { slug: l.entry.dialect.parent.slug as string, nameAr: l.entry.dialect.parent.nameAr as string }
+        : { slug: l.entry.dialect.slug as string, nameAr: l.entry.dialect.nameAr as string },
+    }))
+  return groupByRegion(entries)
+    .flatMap(g => g.entries)
+    .map(e => ({ id: e.id, form: e.form, dialect: e.dialect }))
 }

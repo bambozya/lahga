@@ -91,9 +91,6 @@ a[rel="tag"] {
   font: 600 var(--step--1)/1.75 var(--sans); text-decoration: none;
 }
 a[rel="tag"]:hover { color: var(--accent); }
-/* In a run of synonyms each pair opens with its word, so it keeps its distance from the pair before it. */
-dd p > a:has(+ a[rel="tag"]) { margin-inline-start: 1.1em; }
-dd p > a:first-child { margin-inline-start: 0; }
 
 /* Skip link: off screen until focused */
 a[href="#main"] {
@@ -175,6 +172,16 @@ dl > div:has(> dt > a:first-child) :is(a[rel="tag"]) { position: relative; z-ind
 dl > div:has(> dt > a:first-child:hover) { border-block-start-color: var(--accent); }
 dt > a:first-child:focus-visible { outline: none; }
 dl > div:has(> dt > a:first-child:focus-visible) { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+/* The forms at a glance: one line of the dictionary's voice, the same on a
+   result card as at the top of the word's own page — each form said once,
+   followed quietly by everyone who says it. */
+main p.glance { max-width: none; line-height: 2; }
+.glance > span { color: var(--muted); font-size: var(--step--1); margin-inline-end: 0.3em; }
+.glance a { text-decoration-color: transparent; }
+.glance a:hover, .glance a:focus-visible { text-decoration-color: var(--accent); }
+.glance b { font-family: var(--naskh); font-size: var(--step-1); }
+.glance small { margin-inline-start: 0.25em; }
 
 /* ---------- Tables: a wide table scrolls inside its own focusable region, never the page ---------- */
 [role="region"][tabindex] { overflow-x: auto; }
