@@ -1,6 +1,9 @@
 /**
  * Loads seed files into a running site through /api/admin/import.
  *
+ * Re-running a file is how content grows: words and forms already present are
+ * left alone, and any examples the file has gained are added to them.
+ *
  *   npm run import -- docs/seed/words-*.json            # check only, saves nothing
  *   npm run import -- docs/seed/words-02-social.json --commit
  *   npm run import -- file.json --url https://lahga.fyi --commit
@@ -17,7 +20,7 @@ const CHUNK = 500 // the importer's limit per request
 
 type Report = {
   wordsCreated: number, wordsMerged: number, entriesCreated: number,
-  entriesSkipped: number, examplesCreated: number,
+  entriesSkipped: number, examplesCreated: number, examplesSkipped: number,
   errors: { index: number, headword?: string, message: string }[]
 }
 
@@ -65,7 +68,8 @@ async function send(words: unknown[], dryRun: boolean, bearer: string): Promise<
 
 const line = (r: Report) =>
   `${r.wordsCreated} new, ${r.wordsMerged} merged, ${r.entriesCreated} entries `
-  + `(${r.entriesSkipped} duplicates skipped), ${r.examplesCreated} examples`
+  + `(${r.entriesSkipped} already there), ${r.examplesCreated} examples added`
+  + (r.examplesSkipped ? ` (${r.examplesSkipped} already there)` : '')
 
 if (!files.length) die('Usage: npm run import -- <file.json…> [--commit] [--url https://lahga.fyi] [--token …]')
 

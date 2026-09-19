@@ -9,7 +9,9 @@ import { fields, normalizeArabic } from '../../utils/contribute'
  * with its dialect entries and examples; see docs/seed/FORMAT.md. Each word is
  * validated on its own, so one bad item does not stop the rest. A headword
  * that already exists gets the new entries merged in; an entry that already
- * exists for that word anywhere in the same dialect group is skipped. Everything is attributed to the
+ * exists for that word anywhere in the same dialect group is skipped, though
+ * any examples it brings are added to the entry that is already there — that is
+ * how existing content gets enriched. Everything is attributed to the
  * system account «لهجة» unless `authorId` is given. `dryRun` validates only.
  */
 const Example = v.object({ text: fields.text, gloss: fields.gloss })
@@ -42,7 +44,7 @@ export default defineEventHandler(async (event) => {
   const admin = await requireImporter(event)
   const body = await readBody$(event, Body)
   const db = await useDb()
-  const report = { wordsCreated: 0, wordsMerged: 0, entriesCreated: 0, entriesSkipped: 0, examplesCreated: 0, errors: [] as { index: number, headword?: string, message: string }[] }
+  const report = { wordsCreated: 0, wordsMerged: 0, entriesCreated: 0, entriesSkipped: 0, examplesCreated: 0, examplesSkipped: 0, errors: [] as { index: number, headword?: string, message: string }[] }
   const dialects = await db.query.dialects.findMany({ where: eq(schema.dialects.active, 1) })
   const bySlug = new Map(dialects.map(d => [d.slug, d]))
   // The top-level group of each dialect: a form already present anywhere in the group is a duplicate.
@@ -62,7 +64,7 @@ export default defineEventHandler(async (event) => {
 
     await db.transaction(async (tx) => {
       const headwordNormalized = normalizeArabic(w.headword)
-      let word = await tx.query.words.findFirst({ where: and(eq(schema.words.headwordNormalized, headwordNormalized), eq(schema.words.status, 'active')), with: { links: { with: { entry: true } } } })
+      let word = await tx.query.words.findFirst({ where: and(eq(schema.words.headwordNormalized, headwordNormalized), eq(schema.words.status, 'active')), with: { links: { with: { entry: { with: { examples: true } } } } } })
       if (word) {
         report.wordsMerged++
       } else {
@@ -71,25 +73,42 @@ export default defineEventHandler(async (event) => {
         word = { ...created!, links: [] }
         report.wordsCreated++
       }
+      /** Adds the examples a file brings, skipping any the entry already has. */
+      const addExamples = async (entryId: number, list: { text: string, gloss?: string }[], existing: { text: string, status: string }[]) => {
+        const seen = new Set(existing.filter(x => x.status === 'active').map(x => normalizeArabic(x.text)))
+        for (const x of list) {
+          if (seen.has(normalizeArabic(x.text))) { report.examplesSkipped++; continue }
+          seen.add(normalizeArabic(x.text))
+          const [ex] = await tx.insert(schema.examples).values({ entryId, text: x.text, gloss: x.gloss || null, createdBy: authorId }).returning()
+          await recordRevision(tx, 'example', ex!.id, { text: ex!.text, gloss: ex!.gloss }, authorId, 'استيراد')
+          report.examplesCreated++
+        }
+      }
+
       for (const e of w.entries) {
         const dialect = bySlug.get(e.dialect)!
         const formNormalized = normalizeArabic(e.form)
-        const dup = word.links.some(l => l.status === 'active' && l.entry.status === 'active'
+        // A form already present in this dialect group is not added twice — but the
+        // file may still carry examples the entry does not have yet, and those go in.
+        const dup = word.links.find(l => l.status === 'active' && l.entry.status === 'active'
           && groupOf.get(l.entry.dialectId) === groupOf.get(dialect.id) && l.entry.formNormalized === formNormalized)
-        if (dup) { report.entriesSkipped++; continue }
+        if (dup) {
+          report.entriesSkipped++
+          if (e.examples.length) await addExamples(dup.entry.id, e.examples, dup.entry.examples)
+          continue
+        }
         const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning: e.meaning || null, notes: e.notes || null, createdBy: authorId }).returning()
         await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
         const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId }).returning()
         await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, authorId, 'استيراد')
         report.entriesCreated++
-        for (const x of e.examples) {
-          const [ex] = await tx.insert(schema.examples).values({ entryId: entry!.id, text: x.text, gloss: x.gloss || null, createdBy: authorId }).returning()
-          await recordRevision(tx, 'example', ex!.id, { text: ex!.text, gloss: ex!.gloss }, authorId, 'استيراد')
-          report.examplesCreated++
-        }
+        // Keep the in-memory picture current, so a form repeated later in the same
+        // file is recognised as the duplicate it is.
+        word.links.push({ ...link!, entry: { ...entry!, examples: [] } } as typeof word.links[number])
+        await addExamples(entry!.id, e.examples, [])
       }
     })
   }
-  if (!body.dryRun) await db.transaction(tx => logModeration(tx, admin?.id ?? authorId, 'import', 'import', 0, `${report.wordsCreated} كلمة جديدة، ${report.wordsMerged} مدمجة، ${report.entriesCreated} مدخل`))
+  if (!body.dryRun) await db.transaction(tx => logModeration(tx, admin?.id ?? authorId, 'import', 'import', 0, `${report.wordsCreated} كلمة جديدة، ${report.wordsMerged} مدمجة، ${report.entriesCreated} مدخل، ${report.examplesCreated} مثال`))
   return report
 })
