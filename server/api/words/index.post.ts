@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
 
     const [entry] = await tx.insert(schema.entries).values({
       dialectId: dialect.id, form: body.form, formNormalized: normalizeArabic(body.form),
-      meaning: body.meaning, notes: body.notes || null, createdBy: user.id,
+      meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
     await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, user.id)
 

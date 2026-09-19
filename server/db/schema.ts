@@ -103,7 +103,10 @@ export const entries = pgTable('entries', {
   dialectId: integer('dialect_id').notNull().references(() => dialects.id),
   form: text('form').notNull(),
   formNormalized: text('form_normalized').notNull(),
-  meaning: text('meaning').notNull(),
+  // Optional: the MSA word this entry links to already defines the sense. A
+  // meaning is only worth writing when the dialect word says something the
+  // headword does not — a narrower use, a different colour.
+  meaning: text('meaning'),
   notes: text('notes'),
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),

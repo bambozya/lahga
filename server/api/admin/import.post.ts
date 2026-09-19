@@ -77,7 +77,7 @@ export default defineEventHandler(async (event) => {
         const dup = word.links.some(l => l.status === 'active' && l.entry.status === 'active'
           && groupOf.get(l.entry.dialectId) === groupOf.get(dialect.id) && l.entry.formNormalized === formNormalized)
         if (dup) { report.entriesSkipped++; continue }
-        const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning: e.meaning, notes: e.notes || null, createdBy: authorId }).returning()
+        const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning: e.meaning || null, notes: e.notes || null, createdBy: authorId }).returning()
         await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
         const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId }).returning()
         await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, authorId, 'استيراد')

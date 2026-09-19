@@ -76,7 +76,8 @@ export const fields = {
   kind: v.optional(v.picklist(['word', 'phrase', 'proverb'], 'النوع غير معروف'), 'word'),
   dialect: v.pipe(v.string('اللهجة مطلوبة'), v.regex(/^[a-z0-9-]{2,60}$/, 'اللهجة غير معروفة')),
   form: arabic('الكلمة باللهجة', 1, 80),
-  meaning: arabic('المعنى', 2, 400),
+  // Optional: the MSA headword already defines the sense (see entries.meaning).
+  meaning: optionalArabic('المعنى', 400),
   notes: optionalArabic('الملاحظات', 400),
   text: arabic('المثال', 3, 400),
   gloss: optionalArabic('شرح المثال', 400),

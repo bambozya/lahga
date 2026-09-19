@@ -50,6 +50,13 @@
       "when": 1789729228148,
       "tag": "0006_dialect_descriptions",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1789803995287,
+      "tag": "0007_optional_entry_meaning",
+      "breakpoints": true
     }
   ]
 }

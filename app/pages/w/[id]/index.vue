@@ -115,7 +115,7 @@ const removeWord = async () => {
               <EntryForm :word-id="word.id" :entry="e" @done="done" @cancel="open = null" />
             </template>
             <template v-else>
-              <p>{{ e.meaning }}</p>
+              <p v-if="e.meaning">{{ e.meaning }}</p>
               <p v-if="e.notes"><small>{{ e.notes }}</small></p>
               <ul v-if="e.examples.length">
                 <li v-for="x in e.examples" :key="x.id">

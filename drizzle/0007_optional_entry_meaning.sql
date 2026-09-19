@@ -1,0 +1,1 @@
+ALTER TABLE "entries" ALTER COLUMN "meaning" DROP NOT NULL;

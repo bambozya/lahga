@@ -70,8 +70,9 @@ const { busy, error, run } = useForm(async () => {
             <input id="form" v-model="form.form" required maxlength="80" />
           </p>
           <p>
-            <label for="meaning">المعنى</label>
-            <textarea id="meaning" v-model="form.meaning" required maxlength="400" rows="2"></textarea>
+            <label for="meaning">المعنى <small>(اختياري)</small></label>
+            <textarea id="meaning" v-model="form.meaning" maxlength="400" rows="2"></textarea>
+            <small>تعريف الكلمة بالفصحى يغني عنه غالباً؛ اكتبه إن كان لها في لهجتك معنى أخص أو استعمال مختلف.</small>
           </p>
           <p>
             <label for="notes">ملاحظات <small>(اختيارية)</small></label>
