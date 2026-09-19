@@ -585,163 +585,355 @@
     {
      "dialect": "egyptian",
      "form": "مرات",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرات أخويا دكتورة",
+       "gloss": "زوجة أخي طبيبة"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "مراتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مراتي طالعة السوق",
+       "gloss": "زوجتي ذاهبة إلى السوق"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "الست",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "الست مشغولة في المطبخ",
+       "gloss": "الزوجة مشغولة في المطبخ"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مرة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرة جاري طيبة كتير",
+       "gloss": "زوجة جاري طيبة جداً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي رايحة عند أهلها",
+       "gloss": "زوجتي ذاهبة إلى أهلها"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "زوجة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "زوجة أخوي معلمة",
+       "gloss": "زوجة أخي معلمة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "حرمة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "حرمته ساكنة وياه",
+       "gloss": "زوجته تسكن معه"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "زوجة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "زوجة أخوي من الرياض",
+       "gloss": "زوجة أخي من الرياض"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "أهلي",
      "meaning": "زوجة",
-     "notes": "كناية"
+     "notes": "كناية",
+     "examples": [
+      {
+       "text": "أهلي في البيت",
+       "gloss": "زوجتي في البيت"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "زوجة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "زوجة ولدي من القصيم",
+       "gloss": "زوجة ابني من القصيم"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "أهلي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "أهلي عند أمها اليوم",
+       "gloss": "زوجتي عند أمها اليوم"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "حرمتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "حرمتي طيبة الله يحفظها",
+       "gloss": "زوجتي طيبة، الله يحفظها"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "مرة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرة الجار سافرت",
+       "gloss": "زوجة الجار سافرت"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي تسلم عليك",
+       "gloss": "زوجتي تسلم عليك"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "زوجة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "زوجة خالي من جدة",
+       "gloss": "زوجة خالي من جدة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "مرة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرة عمي زارتنا",
+       "gloss": "زوجة عمي زارتنا"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي دتطبخ هسة",
+       "gloss": "زوجتي تطبخ الآن"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "زوجة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "زوجة أخويا معلمة",
+       "gloss": "زوجة أخي معلمة"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "مرة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرة الجار طيبة",
+       "gloss": "زوجة الجار طيبة"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "زوجة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "زوجة أخي من تعز",
+       "gloss": "زوجة أخي من تعز"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "مرا",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرا خويا من فاس",
+       "gloss": "زوجة أخي من فاس"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي مشات لدار وليديها",
+       "gloss": "زوجتي ذهبت إلى بيت أهلها"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "مرا",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرا جاري خدامة",
+       "gloss": "زوجة جاري تعمل"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي راهي في الدار",
+       "gloss": "زوجتي في البيت"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "مرا",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرا خويا من صفاقس",
+       "gloss": "زوجة أخي من صفاقس"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي قاعدة تخدم",
+       "gloss": "زوجتي تعمل"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مرا",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرا جاري معلمة",
+       "gloss": "زوجة جاري معلمة"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي في الحوش",
+       "gloss": "زوجتي في البيت"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "حرمة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "حرمته من بنغازي",
+       "gloss": "زوجته من بنغازي"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "مرة",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرة الجار طيبة شديد",
+       "gloss": "زوجة الجار طيبة جداً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "مرتي",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرتي ماشة السوق",
+       "gloss": "زوجتي ذاهبة إلى السوق"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "مرا",
-     "meaning": "زوجة"
+     "meaning": "زوجة",
+     "examples": [
+      {
+       "text": "مرا خويا من نواكشوط",
+       "gloss": "زوجة أخي من نواكشوط"
+      }
+     ]
     }
    ]
   },

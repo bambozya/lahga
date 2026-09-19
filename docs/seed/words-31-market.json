@@ -1,0 +1,96 @@
+{"words":[
+ {"headword":"كم الثمن؟","definition":"سؤال عن ثمن الشيء","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"بكام؟","examples":[{"text":"الكيلو بكام؟","gloss":"كم ثمن الكيلو؟"}]},
+  {"dialect":"levantine","form":"قديش؟","examples":[{"text":"قديش هالقميص؟","gloss":"كم ثمن هذا القميص؟"}]},
+  {"dialect":"palestinian","form":"أديش؟"},
+  {"dialect":"gulf","form":"بكم؟"},{"dialect":"najdi","form":"بكم؟"},{"dialect":"hejazi","form":"بكم؟"},
+  {"dialect":"iraqi","form":"بيش؟","examples":[{"text":"بيش الكيلو؟","gloss":"كم ثمن الكيلو؟"}]},
+  {"dialect":"yemeni","form":"بكم؟"},{"dialect":"sudanese","form":"بكم؟"},
+  {"dialect":"moroccan","form":"بشحال؟","examples":[{"text":"بشحال هاد الشي؟","gloss":"كم ثمن هذا؟"}]},
+  {"dialect":"algerian","form":"بشحال؟"},{"dialect":"tunisian","form":"بقداش؟"},{"dialect":"libyan","form":"بكم؟"},
+  {"dialect":"hassaniya","form":"بشحال؟"}]},
+
+ {"headword":"غالٍ جداً","definition":"وصف للثمن المرتفع","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"غالي أوي","examples":[{"text":"ده غالي أوي، نزلي شوية","gloss":"هذا غالٍ جداً، خفضي قليلاً"}]},
+  {"dialect":"levantine","form":"غالي كتير"},{"dialect":"palestinian","form":"غالي كتير"},
+  {"dialect":"gulf","form":"غالي وايد"},{"dialect":"najdi","form":"غالي مرّة"},{"dialect":"hejazi","form":"غالي مرّة"},
+  {"dialect":"iraqi","form":"غالي كلّش"},{"dialect":"yemeni","form":"غالي قوي"},{"dialect":"sudanese","form":"غالي شديد"},
+  {"dialect":"moroccan","form":"غالي بزاف"},{"dialect":"algerian","form":"غالي بزاف"},{"dialect":"tunisian","form":"غالي برشا"},{"dialect":"libyan","form":"غالي هلبة"},
+  {"dialect":"hassaniya","form":"غالي حتى"}]},
+
+ {"headword":"كيس","definition":"ما يوضع فيه المشترى","kind":"word","entries":[
+  {"dialect":"egyptian","form":"شنطة","examples":[{"text":"حط الخضار في الشنطة","gloss":"ضع الخضار في الكيس"}]},
+  {"dialect":"levantine","form":"كيس"},{"dialect":"palestinian","form":"كيس"},
+  {"dialect":"gulf","form":"كيس"},{"dialect":"najdi","form":"كيس"},{"dialect":"hejazi","form":"كيس"},
+  {"dialect":"iraqi","form":"كيس"},{"dialect":"yemeni","form":"كيس"},{"dialect":"sudanese","form":"كيس"},
+  {"dialect":"moroccan","form":"الساشي"},{"dialect":"algerian","form":"الساشي"},{"dialect":"tunisian","form":"الساشي"},{"dialect":"libyan","form":"كيس"},
+  {"dialect":"hassaniya","form":"الكيس"}]},
+
+ {"headword":"رخيص","definition":"قليل الثمن","kind":"word","entries":[
+  {"dialect":"egyptian","form":"رخيص","examples":[{"text":"السوق ده رخيص","gloss":"هذا السوق رخيص"}]},
+  {"dialect":"levantine","form":"رخيص"},{"dialect":"palestinian","form":"رخيص"},
+  {"dialect":"gulf","form":"رخيص"},{"dialect":"najdi","form":"رخيص"},{"dialect":"hejazi","form":"رخيص"},
+  {"dialect":"iraqi","form":"رخيص"},{"dialect":"yemeni","form":"رخيص"},{"dialect":"sudanese","form":"رخيص"},
+  {"dialect":"moroccan","form":"رخيص"},{"dialect":"algerian","form":"رخيص"},{"dialect":"tunisian","form":"رخيص"},{"dialect":"libyan","form":"رخيص"},
+  {"dialect":"hassaniya","form":"رخيص"}]},
+
+ {"headword":"بضاعة","definition":"ما يُباع ويُشترى","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بضاعة"},{"dialect":"levantine","form":"بضاعة"},{"dialect":"palestinian","form":"بضاعة"},
+  {"dialect":"gulf","form":"بضاعة"},{"dialect":"najdi","form":"بضاعة"},{"dialect":"hejazi","form":"بضاعة"},
+  {"dialect":"iraqi","form":"بضاعة"},{"dialect":"yemeni","form":"بضاعة"},{"dialect":"sudanese","form":"بضاعة"},
+  {"dialect":"moroccan","form":"السلعة"},{"dialect":"algerian","form":"السلعة"},{"dialect":"tunisian","form":"السلعة"},{"dialect":"libyan","form":"سلعة"},
+  {"dialect":"hassaniya","form":"السلعه"}]},
+
+ {"headword":"طابور","definition":"صف من الناس ينتظرون دورهم","kind":"word","entries":[
+  {"dialect":"egyptian","form":"طابور","examples":[{"text":"وقفت في الطابور ساعة","gloss":"وقفت في الطابور ساعة"}]},
+  {"dialect":"levantine","form":"دور"},{"dialect":"palestinian","form":"دور"},
+  {"dialect":"gulf","form":"صف"},{"dialect":"najdi","form":"صف"},{"dialect":"hejazi","form":"طابور"},
+  {"dialect":"iraqi","form":"صف"},{"dialect":"yemeni","form":"صف"},{"dialect":"sudanese","form":"صف"},
+  {"dialect":"moroccan","form":"الصف"},{"dialect":"algerian","form":"الشيني"},{"dialect":"tunisian","form":"الصف"},{"dialect":"libyan","form":"صف"},
+  {"dialect":"hassaniya","form":"الصف"}]},
+
+ {"headword":"عربة اليد","definition":"عربة يدفعها البائع في السوق","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"عربية"},{"dialect":"levantine","form":"بسطة"},{"dialect":"palestinian","form":"بسطة"},
+  {"dialect":"gulf","form":"عربة"},{"dialect":"najdi","form":"عربة"},{"dialect":"hejazi","form":"عربة"},
+  {"dialect":"iraqi","form":"عربانة"},{"dialect":"yemeni","form":"عربة"},{"dialect":"sudanese","form":"كارو"},
+  {"dialect":"moroccan","form":"الكرّوسة"},{"dialect":"algerian","form":"الكروسة"},{"dialect":"tunisian","form":"الكروسة"},{"dialect":"libyan","form":"كروسة"},
+  {"dialect":"hassaniya","form":"العربه"}]},
+
+ {"headword":"ميزان","definition":"ما يوزن به المشترى","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ميزان"},{"dialect":"levantine","form":"ميزان"},{"dialect":"palestinian","form":"ميزان"},
+  {"dialect":"gulf","form":"ميزان"},{"dialect":"najdi","form":"ميزان"},{"dialect":"hejazi","form":"ميزان"},
+  {"dialect":"iraqi","form":"ميزان"},{"dialect":"yemeni","form":"ميزان"},{"dialect":"sudanese","form":"ميزان"},
+  {"dialect":"moroccan","form":"الميزان"},{"dialect":"algerian","form":"الميزان"},{"dialect":"tunisian","form":"الميزان"},{"dialect":"libyan","form":"ميزان"},
+  {"dialect":"hassaniya","form":"الميزان"}]},
+
+ {"headword":"يزن","definition":"يعرف ثقل الشيء بالميزان","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يوزن","examples":[{"text":"وزنلي كيلو طماطم","gloss":"زن لي كيلو طماطم"}]},
+  {"dialect":"levantine","form":"يوزن"},{"dialect":"palestinian","form":"يوزن"},
+  {"dialect":"gulf","form":"يوزن"},{"dialect":"najdi","form":"يوزن"},{"dialect":"hejazi","form":"يوزن"},
+  {"dialect":"iraqi","form":"يوزن"},{"dialect":"yemeni","form":"يوزن"},{"dialect":"sudanese","form":"يوزن"},
+  {"dialect":"moroccan","form":"يوزن"},{"dialect":"algerian","form":"يوزن"},{"dialect":"tunisian","form":"يوزن"},{"dialect":"libyan","form":"يوزن"},
+  {"dialect":"hassaniya","form":"يوزن"}]},
+
+ {"headword":"طازج","definition":"وصف لما هو جديد لم يقدم","kind":"word","entries":[
+  {"dialect":"egyptian","form":"طازة","examples":[{"text":"العيش ده طازة","gloss":"هذا الخبز طازج"}]},
+  {"dialect":"levantine","form":"طازة"},{"dialect":"palestinian","form":"طازة"},
+  {"dialect":"gulf","form":"طازج"},{"dialect":"najdi","form":"طازج"},{"dialect":"hejazi","form":"طازة"},
+  {"dialect":"iraqi","form":"طازة"},{"dialect":"yemeni","form":"طازج"},{"dialect":"sudanese","form":"طازة"},
+  {"dialect":"moroccan","form":"طري"},{"dialect":"algerian","form":"طري"},{"dialect":"tunisian","form":"طري"},{"dialect":"libyan","form":"طازة"},
+  {"dialect":"hassaniya","form":"طري"}]},
+
+ {"headword":"باقٍ","definition":"ما فضل من النقود بعد الدفع","kind":"word","entries":[
+  {"dialect":"egyptian","form":"الباقي","examples":[{"text":"هات الباقي لو سمحت","gloss":"أعطني الباقي من فضلك"}]},
+  {"dialect":"levantine","form":"الباقي"},{"dialect":"palestinian","form":"الباقي"},
+  {"dialect":"gulf","form":"الباقي"},{"dialect":"najdi","form":"الباقي"},{"dialect":"hejazi","form":"الباقي"},
+  {"dialect":"iraqi","form":"الباقي"},{"dialect":"yemeni","form":"الباقي"},{"dialect":"sudanese","form":"الباقي"},
+  {"dialect":"moroccan","form":"الصرف"},{"dialect":"algerian","form":"الباقي"},{"dialect":"tunisian","form":"الباقي"},{"dialect":"libyan","form":"الباقي"},
+  {"dialect":"hassaniya","form":"الباقي"}]},
+
+ {"headword":"زبون","definition":"من يشتري من البائع","kind":"word","entries":[
+  {"dialect":"egyptian","form":"زبون"},{"dialect":"levantine","form":"زبون"},{"dialect":"palestinian","form":"زبون"},
+  {"dialect":"gulf","form":"زبون"},{"dialect":"najdi","form":"زبون"},{"dialect":"hejazi","form":"زبون"},
+  {"dialect":"iraqi","form":"زبون"},{"dialect":"yemeni","form":"زبون"},{"dialect":"sudanese","form":"زبون"},
+  {"dialect":"moroccan","form":"الكليان","notes":"من الفرنسية"},{"dialect":"algerian","form":"الكليان"},{"dialect":"tunisian","form":"الكليان"},{"dialect":"libyan","form":"زبون"},
+  {"dialect":"hassaniya","form":"الزبون"}]}
+]}

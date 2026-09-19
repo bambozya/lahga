@@ -2715,143 +2715,311 @@
     {
      "dialect": "egyptian",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "أنا كمان جاي معاكم",
+       "gloss": "أنا أيضاً قادم معكم"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "برضه",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا برضه مش عارف",
+       "gloss": "وأنا أيضاً لا أعرف"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "جيب لي كمان وحدة",
+       "gloss": "أحضر لي واحدة أخرى أيضاً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "كذلك",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهو كذلك ما بيعرف",
+       "gloss": "وهو أيضاً لا يعرف"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "بعد",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا بعد رايح",
+       "gloss": "وأنا أيضاً ذاهب"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "هات لي كمان واحد",
+       "gloss": "أحضر لي واحداً آخر أيضاً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "أيضاً",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهذا أيضاً مهم",
+       "gloss": "وهذا أيضاً مهم"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "بعد",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا بعد ما أدري",
+       "gloss": "وأنا أيضاً لا أدري"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "كذلك",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهو كذلك جاء متأخر",
+       "gloss": "وهو أيضاً جاء متأخراً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا كمان تعبت",
+       "gloss": "وأنا أيضاً تعبت"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "برضو",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "برضو ما وصل الخبر",
+       "gloss": "أيضاً لم يصل الخبر"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "هم",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وآني هم رايح",
+       "gloss": "وأنا أيضاً ذاهب"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "همين",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "همين هاي تنفع",
+       "gloss": "هذه أيضاً تصلح"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بعد",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهو بعد ما جا",
+       "gloss": "وهو أيضاً لم يأت"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا كمان معكم",
+       "gloss": "وأنا أيضاً معكم"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "بعد",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهذا بعد لازم",
+       "gloss": "وهذا أيضاً ضروري"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "حتى",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا حتى غادي",
+       "gloss": "وأنا أيضاً ذاهب"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "زعما",
      "meaning": "أيضاً",
-     "notes": "بمعنى مختلف قليلاً"
+     "notes": "بمعنى مختلف قليلاً",
+     "examples": [
+      {
+       "text": "زعما هو ما عارفش",
+       "gloss": "يعني هو أيضاً لا يعرف"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ثاني",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا ثاني راني رايح",
+       "gloss": "وأنا أيضاً ذاهب"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "تاني",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهي تاني جات",
+       "gloss": "وهي أيضاً جاءت"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "حتى",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "حتى أنا ما فهمتش",
+       "gloss": "حتى أنا لم أفهم"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "زادة",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا زادة ماشي",
+       "gloss": "وأنا أيضاً ذاهب"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "تاني",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وهو تاني جا",
+       "gloss": "وهو أيضاً جاء"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "زادة",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا زادة نمشي",
+       "gloss": "وأنا أيضاً سأذهب"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "جيب كمان وحدة",
+       "gloss": "أحضر واحدة أخرى أيضاً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "برضو",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا برضو ما عارف",
+       "gloss": "وأنا أيضاً لا أعرف"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "كمان",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "جيب لي كمان واحد",
+       "gloss": "أحضر لي واحداً آخر أيضاً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "زاد",
-     "meaning": "أيضاً"
+     "meaning": "أيضاً",
+     "examples": [
+      {
+       "text": "وأنا زاد نمشي",
+       "gloss": "وأنا أيضاً سأذهب"
+      }
+     ]
     }
    ]
   },
@@ -6360,142 +6528,310 @@
     {
      "dialect": "egyptian",
      "form": "خلي بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "خلي بالك من العربيات",
+       "gloss": "انتبه للسيارات"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "حاسب",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "حاسب، في حفرة قدامك",
+       "gloss": "انتبه، أمامك حفرة"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "انتبه",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "انتبه عالدرج، زحليط",
+       "gloss": "انتبه على الدرج، فهو زلق"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "دير بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "دير بالك عحالك",
+       "gloss": "انتبه إلى نفسك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "أوعى",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "أوعى توقع",
+       "gloss": "احذر أن تقع"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "انتبه",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "انتبه للسيارة",
+       "gloss": "انتبه للسيارة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "دير بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "دير بالك على عيالك",
+       "gloss": "انتبه لأولادك"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "خلّك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "خلّك منتبه في الطريق",
+       "gloss": "كن منتبهاً في الطريق"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "انتبه",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "انتبه لا تتأخر",
+       "gloss": "انتبه، لا تتأخر"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "ترى",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "ترى الطريق مزدحم",
+       "gloss": "انتبه، الطريق مزدحم"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "انتبه",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "انتبه على نفسك",
+       "gloss": "انتبه لنفسك"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "دير بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "دير بالك من الشنطة",
+       "gloss": "انتبه إلى الحقيبة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "دير بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "دير بالك من السيارة",
+       "gloss": "انتبه من السيارة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "انتبه",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "انتبه الدرج زالگ",
+       "gloss": "انتبه، الدرج زلق"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "انتبه",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "انتبه للطريق",
+       "gloss": "انتبه للطريق"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "دير بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "دير بالك من نفسك",
+       "gloss": "انتبه إلى نفسك"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "رد بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "رد بالك من الطوموبيلات",
+       "gloss": "انتبه من السيارات"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "عندك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "عندك تطيح",
+       "gloss": "احذر أن تقع"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "رد بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "رد بالك في الطريق",
+       "gloss": "انتبه في الطريق"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "عندك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "عندك تنسى",
+       "gloss": "احذر أن تنسى"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "بالك من الكلب",
+       "gloss": "انتبه من الكلب"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "رد بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "رد بالك من الكرهبة",
+       "gloss": "انتبه من السيارة"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "عندك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "عندك تطيح",
+       "gloss": "احذر أن تقع"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "رد بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "رد بالك في الطريق",
+       "gloss": "انتبه في الطريق"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "دير بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "دير بالك من روحك",
+       "gloss": "انتبه إلى نفسك"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "خلي بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "خلي بالك من العربية",
+       "gloss": "انتبه من السيارة"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "أوع",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "أوع تقع",
+       "gloss": "احذر أن تقع"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "رد بالك",
-     "meaning": "انتبه"
+     "meaning": "انتبه",
+     "examples": [
+      {
+       "text": "رد بالك من الطريق",
+       "gloss": "انتبه من الطريق"
+      }
+     ]
     }
    ]
   }
