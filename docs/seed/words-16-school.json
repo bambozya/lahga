@@ -1,0 +1,1145 @@
+{
+ "words": [
+  {
+   "headword": "دفتر",
+   "definition": "كراسة يكتب فيها التلميذ",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كشكول",
+     "examples": [
+      {
+       "text": "نسيت الكشكول في البيت",
+       "gloss": "نسيت الدفتر في البيت"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "دفتر"
+    },
+    {
+     "dialect": "gulf",
+     "form": "دفتر"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دفتر"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دفتر"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "دفتر"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دفتر"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كراسة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "كاييه",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "كتب الدرس فالكاييه",
+       "gloss": "كتب الدرس في الدفتر"
+      }
+     ]
+    },
+    {
+     "dialect": "tunisian",
+     "form": "كراس"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كراسة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "دفتر"
+    }
+   ]
+  },
+  {
+   "headword": "سبورة",
+   "definition": "لوح يكتب عليه المعلم أمام التلاميذ",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سبورة",
+     "examples": [
+      {
+       "text": "المدرس كتب المسألة على السبورة",
+       "gloss": "كتب المعلم المسألة على السبورة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "لوح"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سبورة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سبورة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سبورة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "تختة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سبورة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سبورة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "السبورة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "تابلو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سبورة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "سبوره"
+    }
+   ]
+  },
+  {
+   "headword": "ممحاة",
+   "definition": "ما يُمحى به أثر القلم",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "أستيكة",
+     "examples": [
+      {
+       "text": "هات الأستيكة أمسح الغلط",
+       "gloss": "أعطني الممحاة لأمحو الخطأ"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "محاية"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ممحاة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ممحاة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ممحاة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ممحاية"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ممحاة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أستيكة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "گومة",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ممحاة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ممحاه"
+    }
+   ]
+  },
+  {
+   "headword": "قلم رصاص",
+   "definition": "قلم يُكتب به ويُمحى أثره",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "levantine",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "gulf",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "najdi",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "كريون",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "كتب بالكريون باش يمحي من بعد",
+       "gloss": "كتب بقلم الرصاص ليمحو لاحقاً"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "قلم رصاص"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "قلم رصاص"
+    }
+   ]
+  },
+  {
+   "headword": "حقيبة مدرسية",
+   "definition": "ما يحمل فيه التلميذ كتبه",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "شنتة المدرسة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جنطة المدرسة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الكرطابل",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "حط الكتوبة فالكرطابل",
+       "gloss": "وضع الكتب في الحقيبة"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "شنطة المدرسة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "شنطة المدرسه"
+    }
+   ]
+  },
+  {
+   "headword": "عطلة",
+   "definition": "أيام ينقطع فيها الدوام",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "أجازة",
+     "examples": [
+      {
+       "text": "الأجازة بدأت وخلصت بسرعة",
+       "gloss": "بدأت العطلة وانتهت سريعاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "عطلة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "إجازة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "إجازة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "إجازة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "عطلة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "إجازة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أجازة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "العطلة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "فاكانس",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "عطلة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "عطله"
+    }
+   ]
+  },
+  {
+   "headword": "حصة دراسية",
+   "definition": "وقت الدرس الواحد في المدرسة",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حصة",
+     "examples": [
+      {
+       "text": "عندنا خمس حصص النهارده",
+       "gloss": "لدينا خمس حصص اليوم"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حصة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حصة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حصة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حصة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "درس"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حصة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حصة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "حصة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "حصه"
+    }
+   ]
+  },
+  {
+   "headword": "واجب مدرسي",
+   "definition": "ما يكلَّف به التلميذ ليعمله في البيت",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "واجب",
+     "examples": [
+      {
+       "text": "خلصت الواجب قبل ما ألعب",
+       "gloss": "أنهيت الواجب قبل أن ألعب"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "وظيفة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "واجب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "واجب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "واجب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "واجب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "واجب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "واجب"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الدوفوار",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "واجب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "واجب"
+    }
+   ]
+  },
+  {
+   "headword": "ناجح",
+   "definition": "من اجتاز الامتحان",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ناجح",
+     "examples": [
+      {
+       "text": "نجح بتفوق الحمد لله",
+       "gloss": "نجح بتفوق والحمد لله"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "ناجح"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "نجح"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ناجح"
+    }
+   ]
+  },
+  {
+   "headword": "راسب",
+   "definition": "من لم يجتز الامتحان",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ساقط",
+     "examples": [
+      {
+       "text": "سقط في مادتين السنة دي",
+       "gloss": "رسب في مادتين هذا العام"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "راسب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "راسب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "راسب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "راسب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "راسب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "راسب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "راسب"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "طايح",
+     "examples": [
+      {
+       "text": "طاح فالامتحان ديال الرياضيات",
+       "gloss": "رسب في امتحان الرياضيات"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "راسب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "راسب"
+    }
+   ]
+  },
+  {
+   "headword": "شهادة",
+   "definition": "ورقة تثبت إتمام الدراسة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الديبلوم"
+    },
+    {
+     "dialect": "libyan",
+     "form": "شهادة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "شهاده"
+    }
+   ]
+  },
+  {
+   "headword": "تلميذ",
+   "definition": "من يتعلم في المدرسة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تلميذ"
+    },
+    {
+     "dialect": "levantine",
+     "form": "تلميذ"
+    },
+    {
+     "dialect": "gulf",
+     "form": "طالب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "طالب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "طالب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "تلميذ"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "طالب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "تلميذ"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "التلميذ"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "تلميذ"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "تلميذ"
+    }
+   ]
+  },
+  {
+   "headword": "يحفظ",
+   "definition": "يثبت الشيء في ذاكرته",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يحفظ",
+     "examples": [
+      {
+       "text": "حفظ الدرس عن ظهر قلب",
+       "gloss": "حفظ الدرس عن ظهر قلب"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يقرا بالغيب"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "يحفظ"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يحفظ"
+    }
+   ]
+  },
+  {
+   "headword": "يشرح",
+   "definition": "يبين المعنى حتى يفهمه غيره",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يشرح",
+     "examples": [
+      {
+       "text": "المدرس شرح الدرس تاني",
+       "gloss": "أعاد المعلم شرح الدرس"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "يشرح"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يفسر"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يشرح"
+    }
+   ]
+  },
+  {
+   "headword": "فصل دراسي",
+   "definition": "الغرفة التي يدرس فيها التلاميذ",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فصل",
+     "examples": [
+      {
+       "text": "دخلنا الفصل بعد الجرس",
+       "gloss": "دخلنا الفصل بعد الجرس"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "صف"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فصل"
+    },
+    {
+     "dialect": "najdi",
+     "form": "فصل"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "فصل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "صف"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "فصل"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "فصل"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "القسم"
+    },
+    {
+     "dialect": "libyan",
+     "form": "فصل"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "فصل"
+    }
+   ]
+  },
+  {
+   "headword": "جرس المدرسة",
+   "definition": "الصوت الذي يعلن بدء الحصة أو نهايتها",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "levantine",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "gulf",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "najdi",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الصونري",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الجرس"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الجرس"
+    }
+   ]
+  },
+  {
+   "headword": "مسطرة",
+   "definition": "أداة مستقيمة يُرسم بها الخط",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الريگلة",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "المسطرة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مسطرة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مسطره"
+    }
+   ]
+  },
+  {
+   "headword": "مقعد الدراسة",
+   "definition": "ما يجلس عليه التلميذ في الفصل",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تختة",
+     "examples": [
+      {
+       "text": "قعد على التختة الأخيرة",
+       "gloss": "جلس على المقعد الأخير"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "درج"
+    },
+    {
+     "dialect": "gulf",
+     "form": "درج"
+    },
+    {
+     "dialect": "najdi",
+     "form": "كرسي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "درج"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "رحلة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "درج"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بنك"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الطابلة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الطاولة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "طاولة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مقعد"
+    }
+   ]
+  },
+  {
+   "headword": "ملخص",
+   "definition": "اختصار الدرس في ورقة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "levantine",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الريزومي",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ملخص"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ملخص"
+    }
+   ]
+  },
+  {
+   "headword": "عقاب مدرسي",
+   "definition": "ما يُعاقب به التلميذ المقصر",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "levantine",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "العقاب"
+    },
+    {
+     "dialect": "libyan",
+     "form": "عقاب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "عقاب"
+    }
+   ]
+  }
+ ]
+}

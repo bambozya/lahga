@@ -1,0 +1,1151 @@
+{
+ "words": [
+  {
+   "headword": "تذكرة",
+   "definition": "ورقة تثبت دفع أجرة السفر أو الدخول",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تذكرة",
+     "examples": [
+      {
+       "text": "قطعت تذكرتين للقطر",
+       "gloss": "اشتريت تذكرتين للقطار"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "تيكي",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "خصني نشري تيكي ديال الطران",
+       "gloss": "علي أن أشتري تذكرة قطار"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "تذكرة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "تذكره"
+    }
+   ]
+  },
+  {
+   "headword": "ازدحام",
+   "definition": "كثرة الناس أو السيارات في مكان واحد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "زحمة",
+     "examples": [
+      {
+       "text": "الشارع زحمة من الصبح",
+       "gloss": "الشارع مزدحم منذ الصباح"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "عجقة",
+     "notes": "شائعة في لبنان وسوريا",
+     "examples": [
+      {
+       "text": "في عجقة سير عالطريق",
+       "gloss": "يوجد ازدحام مروري في الطريق"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "زحام"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الزحام"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الزحمة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "زحمة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "زحمه"
+    }
+   ]
+  },
+  {
+   "headword": "إطار السيارة",
+   "definition": "العجلة المطاطية التي تدور عليها السيارة",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كاوتش",
+     "examples": [
+      {
+       "text": "الكاوتش نام وأنا في نص الطريق",
+       "gloss": "انفجر الإطار وأنا في منتصف الطريق"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "تاير"
+    },
+    {
+     "dialect": "najdi",
+     "form": "تاير"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "تاير"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "تاير"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "تاير"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كاوتش"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "بنو",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "تقب ليا البنو",
+       "gloss": "ثُقب لي الإطار"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "عجلة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "تاير"
+    }
+   ]
+  },
+  {
+   "headword": "دراجة",
+   "definition": "مركبة بعجلتين تُدفع بالقدمين",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "عجلة",
+     "examples": [
+      {
+       "text": "بيروح المدرسة بالعجلة",
+       "gloss": "يذهب إلى المدرسة بالدراجة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "بسكليت"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سيكل"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دراجة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سيكل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بايسكل"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دراجة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "عجلة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بشكليطة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "بيسكليت"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "بسكلات"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بسكليتة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "دراجه"
+    }
+   ]
+  },
+  {
+   "headword": "حقيبة سفر",
+   "definition": "ما يوضع فيه المتاع عند السفر",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شنطة",
+     "examples": [
+      {
+       "text": "حزمت الشنطة قبل السفر بيوم",
+       "gloss": "حزمت الحقيبة قبل السفر بيوم"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شنتة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "شنطة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "شنطة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "شنطة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جنطة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "شنطة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شنطة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "فاليزة",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "شنطة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "شنطه"
+    }
+   ]
+  },
+  {
+   "headword": "جواز سفر",
+   "definition": "وثيقة يسافر بها المرء بين الدول",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "باسبور",
+     "examples": [
+      {
+       "text": "جدد الباسبور قبل ما يخلص",
+       "gloss": "جدد جواز السفر قبل أن تنتهي صلاحيته"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "جواز"
+    },
+    {
+     "dialect": "levantine",
+     "form": "باسبور"
+    },
+    {
+     "dialect": "gulf",
+     "form": "جواز"
+    },
+    {
+     "dialect": "najdi",
+     "form": "جواز"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "جواز"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "باسبورت"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "جواز"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "جواز"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "باسبور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "جواز"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "جواز"
+    }
+   ]
+  },
+  {
+   "headword": "موقف سيارات",
+   "definition": "مكان تُترك فيه السيارات",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "جراج",
+     "examples": [
+      {
+       "text": "ركن العربية في الجراج",
+       "gloss": "أوقف السيارة في الموقف"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "كراج"
+    },
+    {
+     "dialect": "gulf",
+     "form": "موقف"
+    },
+    {
+     "dialect": "najdi",
+     "form": "موقف"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "موقف"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "كراج"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "موقف"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "موقف"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "باركينغ"
+    },
+    {
+     "dialect": "libyan",
+     "form": "موقف"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "موقف"
+    }
+   ]
+  },
+  {
+   "headword": "سفينة",
+   "definition": "مركب كبير يسير في البحر",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مركب"
+    },
+    {
+     "dialect": "levantine",
+     "form": "باخرة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سفينة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سفينة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سفينة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سفينة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سفينة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "باخرة"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "باطو",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "دوزنا البحر فالباطو",
+       "gloss": "عبرنا البحر بالسفينة"
+      }
+     ]
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "باخرة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "سفينه"
+    }
+   ]
+  },
+  {
+   "headword": "ميناء",
+   "definition": "مرفأ ترسو فيه السفن",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مرفأ"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "البور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ميناء"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مينا"
+    }
+   ]
+  },
+  {
+   "headword": "حادث",
+   "definition": "اصطدام أو أذى يقع فجأة في الطريق",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حادثة",
+     "examples": [
+      {
+       "text": "حصلت حادثة على الدايري",
+       "gloss": "وقع حادث على الطريق الدائري"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حادث"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حادث"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حادث"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حادث"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "حادث"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حادث"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حادث"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "أكسيدة",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "دار أكسيدة بالطوموبيل",
+       "gloss": "تعرض لحادث بالسيارة"
+      }
+     ]
+    },
+    {
+     "dialect": "libyan",
+     "form": "حادث"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "حادث"
+    }
+   ]
+  },
+  {
+   "headword": "رصيف",
+   "definition": "جانب الطريق الذي يمشي عليه الناس",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "levantine",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "gulf",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "najdi",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الطروطوار",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "طروطوار"
+    },
+    {
+     "dialect": "libyan",
+     "form": "رصيف"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "رصيف"
+    }
+   ]
+  },
+  {
+   "headword": "جسر",
+   "definition": "ما يُعبر عليه فوق نهر أو طريق",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كوبري",
+     "examples": [
+      {
+       "text": "عدينا الكوبري ووصلنا",
+       "gloss": "عبرنا الجسر ووصلنا"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "جسر"
+    },
+    {
+     "dialect": "gulf",
+     "form": "جسر"
+    },
+    {
+     "dialect": "najdi",
+     "form": "جسر"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "كبري"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جسر"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "جسر"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كبري"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "قنطرة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كبري"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "قنطره"
+    }
+   ]
+  },
+  {
+   "headword": "مقود",
+   "definition": "ما يمسكه السائق ليوجه السيارة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "دركسيون"
+    },
+    {
+     "dialect": "levantine",
+     "form": "دركسيون"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ستيرنك"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ستيرنق"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دركسون"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ستيرنك"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دركسون"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "دركسيون"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الفولان",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "دركسيون"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مقود"
+    }
+   ]
+  },
+  {
+   "headword": "راكب",
+   "definition": "من يركب المركبة ولا يقودها",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "راكب"
+    },
+    {
+     "dialect": "levantine",
+     "form": "راكب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "راكب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "راكب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "راكب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "راكب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "راكب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "راكب"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "راكب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "راكب"
+    }
+   ]
+  },
+  {
+   "headword": "سفر",
+   "definition": "الانتقال من بلد إلى بلد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سفر",
+     "examples": [
+      {
+       "text": "السفر بكرة الفجر",
+       "gloss": "السفر غداً فجراً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "سفر"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سفر"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سفر"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سفر"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سفر"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سفر"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سفر"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "سفر"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "سفر"
+    }
+   ]
+  },
+  {
+   "headword": "جمارك",
+   "definition": "ما يُدفع على البضاعة عند الحدود، ودائرته",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "جمرك"
+    },
+    {
+     "dialect": "levantine",
+     "form": "جمرك"
+    },
+    {
+     "dialect": "gulf",
+     "form": "جمارك"
+    },
+    {
+     "dialect": "najdi",
+     "form": "جمارك"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "جمارك"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "كمرك"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "جمارك"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "جمارك"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الديوانة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "جمارك"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "جمارك"
+    }
+   ]
+  },
+  {
+   "headword": "إشارة المرور",
+   "definition": "الضوء الذي ينظم سير السيارات",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "الإشارة",
+     "examples": [
+      {
+       "text": "استنى لما الإشارة تفتح",
+       "gloss": "انتظر حتى تصير الإشارة خضراء"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الضو الحمر"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الفو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "الإشارة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الإشاره"
+    }
+   ]
+  },
+  {
+   "headword": "وصول",
+   "definition": "بلوغ المسافر مقصده",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "وصول"
+    },
+    {
+     "dialect": "levantine",
+     "form": "وصول"
+    },
+    {
+     "dialect": "gulf",
+     "form": "وصول"
+    },
+    {
+     "dialect": "najdi",
+     "form": "وصول"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "وصول"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "وصول"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "وصول"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "وصول"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "وصول"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "وصول"
+    }
+   ]
+  },
+  {
+   "headword": "تأخير",
+   "definition": "وقوع الشيء بعد وقته",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تأخير",
+     "examples": [
+      {
+       "text": "الطيارة فيها تأخير ساعتين",
+       "gloss": "الطائرة متأخرة ساعتين"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "gulf",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "najdi",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "ريطار",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "تأخير"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "تأخير"
+    }
+   ]
+  },
+  {
+   "headword": "حدود",
+   "definition": "الخط الفاصل بين بلدين",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "levantine",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "gulf",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "najdi",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "maghrebi",
+     "form": "الحدود"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحدود"
+    }
+   ]
+  }
+ ]
+}
