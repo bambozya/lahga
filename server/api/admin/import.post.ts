@@ -20,27 +20,6 @@ const Entry = v.object({ dialect: fields.dialect, form: fields.form, meaning: fi
 const Word = v.object({ headword: fields.headword, definition: fields.definition, kind: fields.kind, entries: v.pipe(v.array(Entry), v.minLength(1, 'كل كلمة تحتاج إلى مدخل واحد على الأقل')) })
 const Body = v.object({ words: v.pipe(v.array(v.unknown()), v.minLength(1, 'القائمة فارغة'), v.maxLength(500, '500 كلمة كحد أقصى في المرة الواحدة')), dryRun: v.optional(v.boolean(), false), authorId: v.optional(v.number()) })
 
-const SYSTEM_EMAIL = 'system@lahga.invalid'
-
-async function systemUserId(db: Awaited<ReturnType<typeof useDb>>) {
-  const existing = await db.query.users.findFirst({ where: eq(schema.users.email, SYSTEM_EMAIL) })
-  if (existing) return existing.id
-  const [u] = await db.insert(schema.users).values({ email: SYSTEM_EMAIL, displayName: 'لهجة', emailVerifiedAt: new Date(), bio: 'حساب الموقع: المحتوى الأول الذي بدأ به القاموس.' }).returning()
-  return u!.id
-}
-
-/**
- * Besides a logged-in admin, the importer accepts a bearer token equal to
- * IMPORT_TOKEN from the environment, so seed files can be loaded from a script.
- * With the token, actions are logged under the system account.
- */
-async function requireImporter(event: Parameters<typeof requireAdmin>[0]) {
-  const token = process.env.IMPORT_TOKEN
-  const auth = getHeader(event, 'authorization') || ''
-  if (token && token.length >= 32 && auth === `Bearer ${token}`) return null
-  return requireAdmin(event)
-}
-
 export default defineEventHandler(async (event) => {
   const admin = await requireImporter(event)
   const body = await readBody$(event, Body)
