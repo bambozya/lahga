@@ -57,6 +57,13 @@
       "when": 1789803995287,
       "tag": "0007_optional_entry_meaning",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1789828144126,
+      "tag": "0008_optional_word_definition",
+      "breakpoints": true
     }
   ]
 }

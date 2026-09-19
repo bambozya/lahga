@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
   await db.transaction(async (tx) => {
     const [updated] = await tx.update(schema.words).set({
       ...(body.headword !== undefined && { headword: body.headword, headwordNormalized: normalizeArabic(body.headword) }),
-      ...(body.definition !== undefined && { definition: body.definition }),
+      ...(body.definition !== undefined && { definition: body.definition || null }),
       ...(body.kind !== undefined && { kind: body.kind }),
       updatedAt: new Date(),
     }).where(eq(schema.words.id, id)).returning()

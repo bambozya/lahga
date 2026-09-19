@@ -12,7 +12,7 @@ const activeQuery = computed(() => String(route.query.q ?? '').trim())
 const LIMIT = 50
 const SAMPLE = 5
 
-type WordList = { id: number, headword: string, definition: string, score: number,
+type WordList = { id: number, headword: string, definition: string | null, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
 
 const { data: words, status, refresh } = await useFetch<WordList>('/api/words', {

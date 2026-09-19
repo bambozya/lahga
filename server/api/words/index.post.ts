@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
   const dialect = await findDialect(db, body.dialect)
   const id = await db.transaction(async (tx) => {
     const [word] = await tx.insert(schema.words).values({
-      headword: body.headword, headwordNormalized, definition: body.definition, kind: body.kind, createdBy: user.id,
+      headword: body.headword, headwordNormalized, definition: body.definition || null, kind: body.kind, createdBy: user.id,
     }).returning()
     await recordRevision(tx, 'word', word!.id, { headword: word!.headword, definition: word!.definition, kind: word!.kind }, user.id)
 

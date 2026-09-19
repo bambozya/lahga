@@ -5,7 +5,7 @@ const props = defineProps<{
   word: {
     id: number
     headword: string
-    definition: string
+    definition: string | null
     entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[]
   }
 }>()
@@ -21,7 +21,7 @@ const forms = computed(() => formsOf(props.word.entries))
   <div>
     <dt><NuxtLink :to="`/w/${word.id}`">{{ word.headword }}</NuxtLink> <small>بالفصحى</small></dt>
     <dd>
-      <p>{{ word.definition }}</p>
+      <p v-if="word.definition">{{ word.definition }}</p>
       <p v-if="forms.length" class="glance">
         <span>تُقال:</span>
         <template v-for="(f, i) in forms" :key="f.form">

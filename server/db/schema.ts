@@ -82,7 +82,9 @@ export const words = pgTable('words', {
   id: serial('id').primaryKey(),
   headword: text('headword').notNull(),
   headwordNormalized: text('headword_normalized').notNull(),
-  definition: text('definition').notNull(),
+  // Optional: a headword like «ماء» defines itself, and a definition nobody
+  // needs is a field that keeps a word out of the dictionary (see entries.meaning).
+  definition: text('definition'),
   kind: wordKind('kind').notNull().default('word'),
   createdBy: integer('created_by').references(() => users.id),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
