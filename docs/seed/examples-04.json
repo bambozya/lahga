@@ -1,0 +1,183 @@
+{
+ "words": [
+  { "headword": "وسخ", "entries": [
+    { "dialect": "iraqi", "form": "وصخ", "examples": [{ "text": "إيدك وصخة", "gloss": "يدك متسخة" }] },
+    { "dialect": "moroccan", "form": "موسّخ", "examples": [{ "text": "القميجة موسّخة", "gloss": "القميص متسخ" }] },
+    { "dialect": "algerian", "form": "مخمّج", "examples": [{ "text": "الحوايج مخمّجة", "gloss": "الملابس متسخة" }] },
+    { "dialect": "hassaniya", "form": "موسّخ", "examples": [{ "text": "الثوب موسّخ", "gloss": "الثوب متسخ" }] } ] },
+
+  { "headword": "يعمل", "entries": [
+    { "dialect": "gulf", "form": "يسوّي", "examples": [{ "text": "شتسوّي الحين؟", "gloss": "ماذا تفعل الآن؟" }] },
+    { "dialect": "moroccan", "form": "يدير", "examples": [{ "text": "شنو كدير؟", "gloss": "ماذا تفعل؟" }] },
+    { "dialect": "levantine", "form": "يساوي", "examples": [{ "text": "شو بتساوي؟", "gloss": "ماذا تفعل؟" }] },
+    { "dialect": "hassaniya", "form": "يدير", "examples": [{ "text": "شنهو تدير؟", "gloss": "ماذا تفعل؟" }] } ] },
+
+  { "headword": "يغلق", "entries": [
+    { "dialect": "gulf", "form": "يبنّد", "examples": [{ "text": "بنّد الباب", "gloss": "أغلق الباب" }] },
+    { "dialect": "iraqi", "form": "يسدّ", "examples": [{ "text": "سدّ الباب", "gloss": "أغلق الباب" }] },
+    { "dialect": "algerian", "form": "يبلّع", "examples": [{ "text": "بلّع الباب", "gloss": "أغلق الباب" }] },
+    { "dialect": "levantine", "form": "يسكّر", "examples": [{ "text": "سكّر الشبّاك", "gloss": "أغلق النافذة" }] } ] },
+
+  { "headword": "يبحث", "entries": [
+    { "dialect": "moroccan", "form": "يقلّب", "examples": [{ "text": "كنقلّب على خدمة", "gloss": "أبحث عن عمل" }] },
+    { "dialect": "algerian", "form": "يحوّس", "examples": [{ "text": "يحوّس على دار", "gloss": "يبحث عن بيت" }] },
+    { "dialect": "tunisian", "form": "يلوّج", "examples": [{ "text": "نلوّج على مفاتيحي", "gloss": "أبحث عن مفاتيحي" }] },
+    { "dialect": "hassaniya", "form": "يقلّب", "examples": [{ "text": "نقلّب عليه", "gloss": "أبحث عنه" }] } ] },
+
+  { "headword": "يجد", "entries": [
+    { "dialect": "iraqi", "form": "يلگى", "examples": [{ "text": "ما لگيت شي", "gloss": "لم أجد شيئاً" }] },
+    { "dialect": "moroccan", "form": "يصيب", "examples": [{ "text": "صبت الفلوس فالزنقة", "gloss": "وجدت المال في الزقاق" }] },
+    { "dialect": "gulf", "form": "يحصّل", "examples": [{ "text": "حصّلت الكتاب", "gloss": "وجدت الكتاب" }] },
+    { "dialect": "najdi", "form": "يلقى", "examples": [{ "text": "ما لقيت أحد", "gloss": "لم أجد أحداً" }] } ] },
+
+  { "headword": "يتذكر", "entries": [
+    { "dialect": "moroccan", "form": "يتفكّر", "examples": [{ "text": "كنتفكّر داك النهار", "gloss": "أتذكر ذلك اليوم" }] },
+    { "dialect": "algerian", "form": "يعقل", "examples": [{ "text": "ما نعقلش عليه", "gloss": "لا أتذكره" }] },
+    { "dialect": "hassaniya", "form": "يعگل", "examples": [{ "text": "نعگل عليه", "gloss": "أتذكره" }] },
+    { "dialect": "levantine", "form": "يتذكّر", "examples": [{ "text": "بتذكّر كل شي", "gloss": "أتذكر كل شيء" }] } ] },
+
+  { "headword": "يرمي", "entries": [
+    { "dialect": "iraqi", "form": "يذبّ", "examples": [{ "text": "ذبّ الورقة", "gloss": "ارمِ الورقة" }] },
+    { "dialect": "moroccan", "form": "يلوح", "examples": [{ "text": "لوّح الكورة", "gloss": "ارمِ الكرة" }] },
+    { "dialect": "gulf", "form": "يحذف", "examples": [{ "text": "حذف الحجر بعيد", "gloss": "رمى الحجر بعيداً" }] },
+    { "dialect": "levantine", "form": "يكبّ", "examples": [{ "text": "كبّ الزبالة", "gloss": "ارمِ القمامة" }] } ] },
+
+  { "headword": "يسرق", "entries": [
+    { "dialect": "gulf", "form": "يبوق", "examples": [{ "text": "باقوا سيارته", "gloss": "سرقوا سيارته" }] },
+    { "dialect": "iraqi", "form": "يبوگ", "examples": [{ "text": "بوگوا الفلوس", "gloss": "سرقوا المال" }] },
+    { "dialect": "moroccan", "form": "يشفر", "examples": [{ "text": "شفرو ليه التيليفون", "gloss": "سرقوا هاتفه" }] },
+    { "dialect": "hassaniya", "form": "يسرگ", "examples": [{ "text": "سرگو لو لفلوس", "gloss": "سرقوا ماله" }] } ] },
+
+  { "headword": "يخلع", "entries": [
+    { "dialect": "levantine", "form": "يشلح", "examples": [{ "text": "اشلح جزمتك", "gloss": "اخلع حذاءك" }] },
+    { "dialect": "moroccan", "form": "يحيّد", "examples": [{ "text": "حيّد صباطك", "gloss": "اخلع حذاءك" }] },
+    { "dialect": "algerian", "form": "ينحّي", "examples": [{ "text": "نحّي الكبّوط", "gloss": "اخلع المعطف" }] },
+    { "dialect": "hejazi", "form": "يقلع", "examples": [{ "text": "اقلع نعالك", "gloss": "اخلع حذاءك" }] } ] },
+
+  { "headword": "سمين", "entries": [
+    { "dialect": "gulf", "form": "متين", "examples": [{ "text": "رجّال متين", "gloss": "رجل سمين" }] },
+    { "dialect": "moroccan", "form": "غليظ", "examples": [{ "text": "ولد غليظ", "gloss": "ولد سمين" }] },
+    { "dialect": "levantine", "form": "مليان", "examples": [{ "text": "شوي مليان", "gloss": "سمين قليلاً" }] },
+    { "dialect": "hassaniya", "form": "سمين", "examples": [{ "text": "سمين ياسر", "gloss": "سمين جداً" }] } ] },
+
+  { "headword": "دكان", "entries": [
+    { "dialect": "moroccan", "form": "حانوت", "examples": [{ "text": "مشيت للحانوت", "gloss": "ذهبت إلى الدكان" }] },
+    { "dialect": "hassaniya", "form": "حانوت", "examples": [{ "text": "الحانوت مسدود", "gloss": "الدكان مغلق" }] },
+    { "dialect": "levantine", "form": "دكّانة", "examples": [{ "text": "دكّانة صغيرة بالحارة", "gloss": "دكان صغير في الحي" }] },
+    { "dialect": "najdi", "form": "بقالة", "examples": [{ "text": "البقالة جنب البيت", "gloss": "الدكان بجانب البيت" }] } ] },
+
+  { "headword": "سيارة نقل", "entries": [
+    { "dialect": "moroccan", "form": "كاميو", "examples": [{ "text": "كاميو محمّل بالرمل", "gloss": "شاحنة محمّلة بالرمل" }] },
+    { "dialect": "levantine", "form": "كميون", "examples": [{ "text": "كميون رمل", "gloss": "شاحنة رمل" }] },
+    { "dialect": "gulf", "form": "لوري", "examples": [{ "text": "لوري كبير", "gloss": "شاحنة كبيرة" }] },
+    { "dialect": "hassaniya", "form": "كاميو", "examples": [{ "text": "الكاميو وصل", "gloss": "وصلت الشاحنة" }] } ] },
+
+  { "headword": "حافلة", "entries": [
+    { "dialect": "moroccan", "form": "طوبيس", "examples": [{ "text": "ركبت الطوبيس للخدمة", "gloss": "ركبت الحافلة إلى العمل" }] },
+    { "dialect": "algerian", "form": "كار", "examples": [{ "text": "الكار راه جاي", "gloss": "الحافلة قادمة" }] },
+    { "dialect": "tunisian", "form": "كار", "examples": [{ "text": "الكار مشى", "gloss": "ذهبت الحافلة" }] },
+    { "dialect": "sudanese", "form": "بص", "examples": [{ "text": "البص مليان", "gloss": "الحافلة ممتلئة" }] } ] },
+
+  { "headword": "بنزين", "entries": [
+    { "dialect": "moroccan", "form": "ليسانس", "examples": [{ "text": "عمّرت ليسانس", "gloss": "ملأت الخزان بنزيناً" }] },
+    { "dialect": "tunisian", "form": "إيسانس", "examples": [{ "text": "الإيسانس غلا", "gloss": "غلا البنزين" }] },
+    { "dialect": "gulf", "form": "پترول", "examples": [{ "text": "عبّيت پترول", "gloss": "ملأت بنزيناً" }] },
+    { "dialect": "hassaniya", "form": "ليسانس", "examples": [{ "text": "ما عندي ليسانس", "gloss": "ليس عندي بنزين" }] } ] },
+
+  { "headword": "وظيفة", "entries": [
+    { "dialect": "moroccan", "form": "خدمة", "examples": [{ "text": "لقا خدمة فالبنك", "gloss": "وجد وظيفة في المصرف" }] },
+    { "dialect": "algerian", "form": "بوسط", "examples": [{ "text": "عندو بوسط فالإدارة", "gloss": "عنده وظيفة في الإدارة" }] },
+    { "dialect": "hassaniya", "form": "خدمة", "examples": [{ "text": "الخدمة صعيبة", "gloss": "الوظيفة صعبة" }] },
+    { "dialect": "levantine", "form": "شغل", "examples": [{ "text": "شغل منيح", "gloss": "وظيفة جيدة" }] } ] },
+
+  { "headword": "مجاناً", "entries": [
+    { "dialect": "moroccan", "form": "فابور", "examples": [{ "text": "خدّيتها فابور", "gloss": "أخذتها مجاناً" }] },
+    { "dialect": "algerian", "form": "باطل", "examples": [{ "text": "عطاهالي باطل", "gloss": "أعطانيها مجاناً" }] },
+    { "dialect": "tunisian", "form": "فابور", "examples": [{ "text": "دخلت فابور", "gloss": "دخلت مجاناً" }] },
+    { "dialect": "hassaniya", "form": "بلاش", "examples": [{ "text": "عطاني بلاش", "gloss": "أعطاني مجاناً" }] } ] },
+
+  { "headword": "خروف", "entries": [
+    { "dialect": "moroccan", "form": "حولي", "examples": [{ "text": "شرينا حولي للعيد", "gloss": "اشترينا خروفاً للعيد" }] },
+    { "dialect": "algerian", "form": "علّوش", "examples": [{ "text": "ذبحنا العلّوش", "gloss": "ذبحنا الخروف" }] },
+    { "dialect": "tunisian", "form": "علّوش", "examples": [{ "text": "علّوش العيد", "gloss": "خروف العيد" }] },
+    { "dialect": "hassaniya", "form": "حولي", "examples": [{ "text": "الحولي سمين", "gloss": "الخروف سمين" }] } ] },
+
+  { "headword": "مزحة", "entries": [
+    { "dialect": "moroccan", "form": "تفليّة", "examples": [{ "text": "غير تفليّة", "gloss": "مجرد مزحة" }] },
+    { "dialect": "algerian", "form": "تفليّة", "examples": [{ "text": "درتها تفليّة", "gloss": "قلتها مزحةً" }] },
+    { "dialect": "levantine", "form": "مزحة", "examples": [{ "text": "مزحة سخيفة", "gloss": "مزحة سخيفة" }] },
+    { "dialect": "najdi", "form": "مزح", "examples": [{ "text": "هذا مزح بس", "gloss": "هذا مزاح فقط" }] } ] },
+
+  { "headword": "يمزح", "entries": [
+    { "dialect": "moroccan", "form": "يتفلّى", "examples": [{ "text": "راه كيتفلّى", "gloss": "إنه يمزح" }] },
+    { "dialect": "gulf", "form": "يتمازح", "examples": [{ "text": "يتمازح وياهم", "gloss": "يمزح معهم" }] },
+    { "dialect": "tunisian", "form": "يتفلّى", "examples": [{ "text": "يتفلّى برشا", "gloss": "يمزح كثيراً" }] },
+    { "dialect": "hejazi", "form": "يهزّر", "examples": [{ "text": "يهزّر معاي", "gloss": "يمزح معي" }] } ] },
+
+  { "headword": "اسكت", "entries": [
+    { "dialect": "iraqi", "form": "انجب", "examples": [{ "text": "انجب شويّة", "gloss": "اسكت قليلاً" }] },
+    { "dialect": "moroccan", "form": "سكت", "examples": [{ "text": "سكت شويّة", "gloss": "اسكت قليلاً" }] },
+    { "dialect": "levantine", "form": "سكوت", "examples": [{ "text": "سكوت شوي", "gloss": "اسكت قليلاً" }] },
+    { "dialect": "tunisian", "form": "أسكت", "examples": [{ "text": "أسكت، راهم يسمعوك", "gloss": "اسكت، إنهم يسمعونك" }] } ] },
+
+  { "headword": "اذهب", "entries": [
+    { "dialect": "moroccan", "form": "سير", "examples": [{ "text": "سير لدارك", "gloss": "اذهب إلى بيتك" }] },
+    { "dialect": "tunisian", "form": "بارا", "examples": [{ "text": "بارا لدارك", "gloss": "اذهب إلى بيتك" }] },
+    { "dialect": "hassaniya", "form": "سير", "examples": [{ "text": "سير معه", "gloss": "اذهب معه" }] },
+    { "dialect": "yemeni", "form": "سر", "examples": [{ "text": "سر بسلام", "gloss": "اذهب بسلام" }] } ] },
+
+  { "headword": "اجلس", "entries": [
+    { "dialect": "moroccan", "form": "گلس", "examples": [{ "text": "گلس هنا", "gloss": "اجلس هنا" }] },
+    { "dialect": "iraqi", "form": "اگعد", "examples": [{ "text": "اگعد وياي", "gloss": "اجلس معي" }] },
+    { "dialect": "levantine", "form": "أعود", "examples": [{ "text": "أعود شوي", "gloss": "اجلس قليلاً" }] },
+    { "dialect": "hassaniya", "form": "اگعد", "examples": [{ "text": "اگعد معانا", "gloss": "اجلس معنا" }] } ] },
+
+  { "headword": "الله يعينك", "entries": [
+    { "dialect": "moroccan", "form": "الله يعاون", "examples": [{ "text": "الله يعاون على هاد الخدمة", "gloss": "الله يعينك على هذا العمل" }] },
+    { "dialect": "algerian", "form": "الله يعاونك", "examples": [{ "text": "الله يعاونك يا خويا", "gloss": "الله يعينك يا أخي" }] },
+    { "dialect": "gulf", "form": "الله يقوّيك", "examples": [{ "text": "الله يقوّيك على شغلك", "gloss": "الله يعينك على عملك" }] },
+    { "dialect": "hassaniya", "form": "الله يعينك", "examples": [{ "text": "الله يعينك على الطريق", "gloss": "الله يعينك في الطريق" }] } ] },
+
+  { "headword": "صباح الخير", "entries": [
+    { "dialect": "levantine", "form": "صباحو", "examples": [{ "text": "صباحو، كيفك؟", "gloss": "صباح الخير، كيف حالك؟" }] },
+    { "dialect": "gulf", "form": "صبّحك الله بالخير", "examples": [{ "text": "صبّحك الله بالخير يا بو محمد", "gloss": "صباح الخير يا أبا محمد" }] },
+    { "dialect": "moroccan", "form": "صباح النور", "examples": [{ "text": "صباح النور عليك", "gloss": "صباح النور عليك" }] },
+    { "dialect": "egyptian", "form": "صباح الفل", "examples": [{ "text": "صباح الفل يا أسطى", "gloss": "صباح الخير يا معلّم" }] } ] },
+
+  { "headword": "كذب", "entries": [
+    { "dialect": "gulf", "form": "چذب", "examples": [{ "text": "هذا چذب واضح", "gloss": "هذا كذب واضح" }] },
+    { "dialect": "sudanese", "form": "كضب", "examples": [{ "text": "دا كضب", "gloss": "هذا كذب" }] },
+    { "dialect": "moroccan", "form": "كذوب", "examples": [{ "text": "هادشي كذوب", "gloss": "هذا كذب" }] },
+    { "dialect": "iraqi", "form": "چذب", "examples": [{ "text": "كلّه چذب", "gloss": "كله كذب" }] } ] },
+
+  { "headword": "صحن", "entries": [
+    { "dialect": "iraqi", "form": "ماعون", "examples": [{ "text": "غسل الماعون", "gloss": "غسل الصحن" }] },
+    { "dialect": "moroccan", "form": "الطبسيل", "examples": [{ "text": "حطّ الطبسيل على الميدة", "gloss": "ضع الصحن على الطاولة" }] },
+    { "dialect": "algerian", "form": "الطبسي", "examples": [{ "text": "الطبسي مكسور", "gloss": "الصحن مكسور" }] },
+    { "dialect": "palestinian", "form": "صحن", "examples": [{ "text": "صحن حمّص", "gloss": "صحن حمّص" }] } ] },
+
+  { "headword": "قدر الضغط", "entries": [
+    { "dialect": "moroccan", "form": "الكوكوت", "examples": [{ "text": "طيّبت اللحم فالكوكوت", "gloss": "طبخت اللحم في قدر الضغط" }] },
+    { "dialect": "palestinian", "form": "طنجرة الضغط", "examples": [{ "text": "طنجرة الضغط أسرع", "gloss": "قدر الضغط أسرع" }] },
+    { "dialect": "egyptian", "form": "حلة البريستو", "examples": [{ "text": "حطّيت الفول في حلة البريستو", "gloss": "وضعت الفول في قدر الضغط" }] },
+    { "dialect": "sudanese", "form": "حلة الضغط", "examples": [{ "text": "حلة الضغط كبيرة", "gloss": "قدر الضغط كبير" }] } ] },
+
+  { "headword": "صراف آلي", "entries": [
+    { "dialect": "moroccan", "form": "الغيشي", "examples": [{ "text": "سحبت من الغيشي", "gloss": "سحبت من الصراف الآلي" }] },
+    { "dialect": "algerian", "form": "الديستريبيتور", "examples": [{ "text": "الديستريبيتور خاوي", "gloss": "الصراف الآلي فارغ" }] },
+    { "dialect": "palestinian", "form": "صراف آلي", "examples": [{ "text": "في صراف آلي هون؟", "gloss": "هل يوجد صراف آلي هنا؟" }] },
+    { "dialect": "najdi", "form": "صراف", "examples": [{ "text": "الصراف قريب من البيت", "gloss": "الصراف الآلي قريب من البيت" }] } ] },
+
+  { "headword": "كلمة السر", "entries": [
+    { "dialect": "moroccan", "form": "الكود", "examples": [{ "text": "نسيت الكود", "gloss": "نسيت كلمة السر" }] },
+    { "dialect": "gulf", "form": "الرقم السري", "examples": [{ "text": "لا تعطي أحد الرقم السري", "gloss": "لا تعطِ أحداً كلمة السر" }] },
+    { "dialect": "iraqi", "form": "الرمز", "examples": [{ "text": "شنو الرمز؟", "gloss": "ما كلمة السر؟" }] },
+    { "dialect": "palestinian", "form": "كلمة السر", "examples": [{ "text": "شو كلمة السر؟", "gloss": "ما كلمة السر؟" }] } ] },
+
+  { "headword": "وسط البلد", "entries": [
+    { "dialect": "moroccan", "form": "السنطر", "examples": [{ "text": "مشينا للسنطر", "gloss": "ذهبنا إلى وسط البلد" }] },
+    { "dialect": "algerian", "form": "السنطر", "examples": [{ "text": "السنطر زحمة", "gloss": "وسط البلد مزدحم" }] },
+    { "dialect": "libyan", "form": "وسط البلاد", "examples": [{ "text": "وسط البلاد فيه السوق", "gloss": "وسط البلد فيه السوق" }] },
+    { "dialect": "palestinian", "form": "وسط البلد", "examples": [{ "text": "بنتلاقى بوسط البلد", "gloss": "نلتقي في وسط البلد" }] } ] }
+ ]
+}
