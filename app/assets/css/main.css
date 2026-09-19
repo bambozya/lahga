@@ -67,18 +67,18 @@ hr { border: 0; border-top: var(--rule); margin-block: var(--space-m); }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 
 /* Vertical rhythm: siblings inside a block get a gap; headings get a bigger one. */
-:is(article, section, aside, dd, hgroup, fieldset, form) > * + * { margin-block-start: var(--space-s); }
+:is(article, section, dd, hgroup, fieldset, form) > * + * { margin-block-start: var(--space-s); }
 * + h2 { margin-block-start: var(--space-l); }
 main :is(p, li, dd) { max-width: var(--measure); }
 hgroup > p:first-child { color: var(--muted); font-weight: 600; margin-block-end: var(--space-s); }
 
 /* The nuqta as a marker. */
-main ul:not(nav ul, details ul, dd ul) { list-style: none; padding-inline-start: 1.4em; }
-main ul:not(nav ul, details ul, dd ul) > li::before, a[rel="tag"]::before, nav a[aria-current="page"]::before {
+main ul:not(nav ul, dd ul) { list-style: none; padding-inline-start: 1.4em; }
+main ul:not(nav ul, dd ul) > li::before, a[rel="tag"]::before, nav a[aria-current="page"]::before {
   content: ''; display: inline-block; width: 0.5em; aspect-ratio: 1; margin-inline-end: 0.45em; vertical-align: 0.1em;
   background: var(--accent); mask: var(--nuqta) center / contain no-repeat;
 }
-main ul:not(nav ul, details ul, dd ul) > li::before { margin-inline-start: -1.1em; }
+main ul:not(nav ul, dd ul) > li::before { margin-inline-start: -1.1em; }
 
 /* ---------- Links: ink text, accent underline ---------- */
 a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
@@ -132,9 +132,6 @@ main { padding: var(--space-m) var(--gutter) var(--space-2xl); }
 /* A page of text or results keeps a readable width; a table may use the whole page. */
 main > article { max-width: 50rem; }
 main > article:has(table) { max-width: none; }
-main > div { display: flex; flex-wrap: wrap; gap: var(--space-l) var(--space-xl); }
-main > div > section { flex: 3 1 30rem; min-width: 0; }
-main > div > aside { flex: 1 1 15rem; }
 
 /* ---------- Footer: the page turned over, paper on ink ---------- */
 footer {
@@ -192,15 +189,6 @@ th, td { padding: var(--space-xs) var(--space-xs); text-align: start; vertical-a
 thead th { border-block-end: var(--rule); font-size: var(--step--1); color: var(--muted); }
 tbody th { font: 700 var(--step-1) var(--naskh); white-space: nowrap; }
 td a[rel="tag"] { margin-block: 0.15em; }
-
-/* ---------- Disclosure: a ruled list ---------- */
-aside > h2 { border-block-end: var(--rule); padding-block-end: var(--space-2xs); }
-details { border-block-end: var(--thin); }
-aside > * + details { margin-block-start: 0; }
-summary { padding-block: var(--space-2xs); font-weight: 600; cursor: pointer; }
-summary:hover { color: var(--accent); }
-summary::marker { color: var(--accent); }
-details > ul { list-style: none; padding: 0 var(--space-s) var(--space-xs); }
 
 /* ---------- Forms: solid ink buttons, plain fields ---------- */
 input, textarea, button, select { font: inherit; color: inherit; }
