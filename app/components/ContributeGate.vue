@@ -9,6 +9,12 @@ const route = useRoute()
 
 <template>
   <slot v-if="loggedIn && user?.emailVerified" />
-  <p v-else-if="loggedIn"><small>أكّد بريدك الإلكتروني لتتمكن من الإضافة. تجد الرابط في بريدك أو في <NuxtLink to="/settings">الإعدادات</NuxtLink>.</small></p>
-  <p v-else><small><NuxtLink :to="{ path: '/login', query: { next: route.fullPath } }">سجّل الدخول</NuxtLink> أو <NuxtLink to="/register">أنشئ حساباً</NuxtLink> لتضيف إلى هذه الصفحة.</small></p>
+  <p v-else-if="loggedIn">
+    <NuxtLink class="cta" to="/settings">أكّد بريدك الإلكتروني</NuxtLink>
+    <small>خطوة واحدة قبل الإضافة؛ الرابط في بريدك أو في الإعدادات.</small>
+  </p>
+  <p v-else>
+    <NuxtLink class="cta" :to="{ path: '/login', query: { next: route.fullPath } }">سجّل الدخول لتضيف</NuxtLink>
+    <small>أو <NuxtLink to="/register">أنشئ حساباً</NuxtLink> في دقيقة، ثم تعود إلى هذه الصفحة.</small>
+  </p>
 </template>
