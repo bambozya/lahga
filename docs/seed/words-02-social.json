@@ -5535,43 +5535,6 @@
    ]
   },
   {
-   "headword": "الشهر",
-   "definition": "ثلاثون يوماً",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "الشهر",
-     "meaning": "الشهر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "الشهر",
-     "meaning": "الشهر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "الشهر",
-     "meaning": "الشهر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "الشهر",
-     "meaning": "الشهر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "الشهر",
-     "meaning": "الشهر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "الشهر",
-     "meaning": "الشهر"
-    }
-   ]
-  },
-  {
    "headword": "السنة",
    "definition": "اثنا عشر شهراً",
    "kind": "word",

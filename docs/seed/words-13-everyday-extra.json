@@ -339,43 +339,6 @@
    ]
   },
   {
-   "headword": "سؤال",
-   "definition": "ما يُسأل عنه",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "سؤال",
-     "meaning": "سؤال"
-    },
-    {
-     "dialect": "levantine",
-     "form": "سؤال",
-     "meaning": "سؤال"
-    },
-    {
-     "dialect": "gulf",
-     "form": "سؤال",
-     "meaning": "سؤال"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "سؤال",
-     "meaning": "سؤال"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "سؤال",
-     "meaning": "سؤال"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "سؤال",
-     "meaning": "سؤال"
-    }
-   ]
-  },
-  {
    "headword": "جواب",
    "definition": "الرد",
    "kind": "word",
@@ -439,43 +402,6 @@
      "dialect": "hassaniya",
      "form": "جواب",
      "meaning": "جواب"
-    }
-   ]
-  },
-  {
-   "headword": "كلمة",
-   "definition": "اللفظة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "كلمة",
-     "meaning": "كلمة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "كلمة",
-     "meaning": "كلمة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "كلمة",
-     "meaning": "كلمة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "كلمة",
-     "meaning": "كلمة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "كلمة",
-     "meaning": "كلمة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "كلمة",
-     "meaning": "كلمة"
     }
    ]
   },
@@ -847,80 +773,6 @@
      "dialect": "hassaniya",
      "form": "يربح",
      "meaning": "يفوز"
-    }
-   ]
-  },
-  {
-   "headword": "يخسر",
-   "definition": "يُهزم",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يخسر",
-     "meaning": "يخسر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يخسر",
-     "meaning": "يخسر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يخسر",
-     "meaning": "يخسر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يخسر",
-     "meaning": "يخسر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يخسر",
-     "meaning": "يخسر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يخسر",
-     "meaning": "يخسر"
-    }
-   ]
-  },
-  {
-   "headword": "عيد",
-   "definition": "المناسبة السعيدة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "عيد",
-     "meaning": "عيد"
-    },
-    {
-     "dialect": "levantine",
-     "form": "عيد",
-     "meaning": "عيد"
-    },
-    {
-     "dialect": "gulf",
-     "form": "عيد",
-     "meaning": "عيد"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "عيد",
-     "meaning": "عيد"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "عيد",
-     "meaning": "عيد"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "عيد",
-     "meaning": "عيد"
     }
    ]
   },
@@ -1415,43 +1267,6 @@
      "dialect": "hassaniya",
      "form": "شارجور",
      "meaning": "شاحن"
-    }
-   ]
-  },
-  {
-   "headword": "فيلم",
-   "definition": "الفيلم",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "فيلم",
-     "meaning": "فيلم"
-    },
-    {
-     "dialect": "levantine",
-     "form": "فيلم",
-     "meaning": "فيلم"
-    },
-    {
-     "dialect": "gulf",
-     "form": "فيلم",
-     "meaning": "فيلم"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "فيلم",
-     "meaning": "فيلم"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "فيلم",
-     "meaning": "فيلم"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "فيلم",
-     "meaning": "فيلم"
     }
    ]
   },
@@ -2160,43 +1975,6 @@
    ]
   },
   {
-   "headword": "جيران",
-   "definition": "الجيران",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "جيران",
-     "meaning": "جيران"
-    },
-    {
-     "dialect": "levantine",
-     "form": "جيران",
-     "meaning": "جيران"
-    },
-    {
-     "dialect": "gulf",
-     "form": "جيران",
-     "meaning": "جيران"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "جيران",
-     "meaning": "جيران"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "جيران",
-     "meaning": "جيران"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "جيران",
-     "meaning": "جيران"
-    }
-   ]
-  },
-  {
    "headword": "حفلة",
    "definition": "الاجتماع للفرح",
    "kind": "word",
@@ -2260,80 +2038,6 @@
      "dialect": "hassaniya",
      "form": "حفلة",
      "meaning": "حفلة"
-    }
-   ]
-  },
-  {
-   "headword": "زيارة",
-   "definition": "الزيارة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "زيارة",
-     "meaning": "زيارة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "زيارة",
-     "meaning": "زيارة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "زيارة",
-     "meaning": "زيارة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "زيارة",
-     "meaning": "زيارة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "زيارة",
-     "meaning": "زيارة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "زيارة",
-     "meaning": "زيارة"
-    }
-   ]
-  },
-  {
-   "headword": "سلام",
-   "definition": "التحية والأمان",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "سلام",
-     "meaning": "سلام"
-    },
-    {
-     "dialect": "levantine",
-     "form": "سلام",
-     "meaning": "سلام"
-    },
-    {
-     "dialect": "gulf",
-     "form": "سلام",
-     "meaning": "سلام"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "سلام",
-     "meaning": "سلام"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "سلام",
-     "meaning": "سلام"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "سلام",
-     "meaning": "سلام"
     }
    ]
   },
@@ -2458,43 +2162,6 @@
      "dialect": "hassaniya",
      "form": "حكومة",
      "meaning": "حكومة"
-    }
-   ]
-  },
-  {
-   "headword": "خبر",
-   "definition": "النبأ",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "خبر",
-     "meaning": "خبر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "خبر",
-     "meaning": "خبر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "خبر",
-     "meaning": "خبر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "خبر",
-     "meaning": "خبر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "خبر",
-     "meaning": "خبر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "خبر",
-     "meaning": "خبر"
     }
    ]
   },
@@ -2648,43 +2315,6 @@
    ]
   },
   {
-   "headword": "الموت",
-   "definition": "الوفاة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "الموت",
-     "meaning": "الموت"
-    },
-    {
-     "dialect": "levantine",
-     "form": "الموت",
-     "meaning": "الموت"
-    },
-    {
-     "dialect": "gulf",
-     "form": "الموت",
-     "meaning": "الموت"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "الموت",
-     "meaning": "الموت"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "الموت",
-     "meaning": "الموت"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "الموت",
-     "meaning": "الموت"
-    }
-   ]
-  },
-  {
    "headword": "الحظ",
    "definition": "الطالع",
    "kind": "word",
@@ -2783,48 +2413,6 @@
      "dialect": "hassaniya",
      "form": "زهر",
      "meaning": "الحظ"
-    }
-   ]
-  },
-  {
-   "headword": "رائحة",
-   "definition": "ما يُشم",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "ريحة",
-     "meaning": "رائحة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "ريحة",
-     "meaning": "رائحة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "ريحة",
-     "meaning": "رائحة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "ريحة",
-     "meaning": "رائحة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "ريحة",
-     "meaning": "رائحة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "ريحة",
-     "meaning": "رائحة"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "ريحة",
-     "meaning": "رائحة"
     }
    ]
   },
@@ -5133,191 +4721,6 @@
    ]
   },
   {
-   "headword": "حل",
-   "definition": "الجواب عن المشكلة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "حل",
-     "meaning": "حل"
-    },
-    {
-     "dialect": "levantine",
-     "form": "حل",
-     "meaning": "حل"
-    },
-    {
-     "dialect": "gulf",
-     "form": "حل",
-     "meaning": "حل"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "حل",
-     "meaning": "حل"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "حل",
-     "meaning": "حل"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "حل",
-     "meaning": "حل"
-    }
-   ]
-  },
-  {
-   "headword": "فرصة",
-   "definition": "المناسبة السانحة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "فرصة",
-     "meaning": "فرصة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "فرصة",
-     "meaning": "فرصة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "فرصة",
-     "meaning": "فرصة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "فرصة",
-     "meaning": "فرصة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "فرصة",
-     "meaning": "فرصة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "فرصة",
-     "meaning": "فرصة"
-    }
-   ]
-  },
-  {
-   "headword": "خطر",
-   "definition": "التهديد",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "خطر",
-     "meaning": "خطر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "خطر",
-     "meaning": "خطر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "خطر",
-     "meaning": "خطر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "خطر",
-     "meaning": "خطر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "خطر",
-     "meaning": "خطر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "خطر",
-     "meaning": "خطر"
-    }
-   ]
-  },
-  {
-   "headword": "أمان",
-   "definition": "السلامة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "أمان",
-     "meaning": "أمان"
-    },
-    {
-     "dialect": "levantine",
-     "form": "أمان",
-     "meaning": "أمان"
-    },
-    {
-     "dialect": "gulf",
-     "form": "أمان",
-     "meaning": "أمان"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "أمان",
-     "meaning": "أمان"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "أمان",
-     "meaning": "أمان"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "أمان",
-     "meaning": "أمان"
-    }
-   ]
-  },
-  {
-   "headword": "حرية",
-   "definition": "التحرر",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "حرية",
-     "meaning": "حرية"
-    },
-    {
-     "dialect": "levantine",
-     "form": "حرية",
-     "meaning": "حرية"
-    },
-    {
-     "dialect": "gulf",
-     "form": "حرية",
-     "meaning": "حرية"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "حرية",
-     "meaning": "حرية"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "حرية",
-     "meaning": "حرية"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "حرية",
-     "meaning": "حرية"
-    }
-   ]
-  },
-  {
    "headword": "حب",
    "definition": "المحبة",
    "kind": "word",
@@ -5576,43 +4979,6 @@
    ]
   },
   {
-   "headword": "راحة",
-   "definition": "السكينة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "راحة",
-     "meaning": "راحة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "راحة",
-     "meaning": "راحة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "راحة",
-     "meaning": "راحة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "راحة",
-     "meaning": "راحة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "راحة",
-     "meaning": "راحة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "راحة",
-     "meaning": "راحة"
-    }
-   ]
-  },
-  {
    "headword": "تعب",
    "definition": "الإرهاق",
    "kind": "word",
@@ -5676,43 +5042,6 @@
      "dialect": "hassaniya",
      "form": "عيا",
      "meaning": "تعب"
-    }
-   ]
-  },
-  {
-   "headword": "صبر",
-   "definition": "التحمّل",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "صبر",
-     "meaning": "صبر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "صبر",
-     "meaning": "صبر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "صبر",
-     "meaning": "صبر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "صبر",
-     "meaning": "صبر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "صبر",
-     "meaning": "صبر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "صبر",
-     "meaning": "صبر"
     }
    ]
   },
@@ -5790,80 +5119,6 @@
      "dialect": "hassaniya",
      "form": "كذب",
      "meaning": "كذب"
-    }
-   ]
-  },
-  {
-   "headword": "حق",
-   "definition": "الصواب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "حق",
-     "meaning": "حق"
-    },
-    {
-     "dialect": "levantine",
-     "form": "حق",
-     "meaning": "حق"
-    },
-    {
-     "dialect": "gulf",
-     "form": "حق",
-     "meaning": "حق"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "حق",
-     "meaning": "حق"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "حق",
-     "meaning": "حق"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "حق",
-     "meaning": "حق"
-    }
-   ]
-  },
-  {
-   "headword": "وقت",
-   "definition": "الزمن",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "وقت",
-     "meaning": "وقت"
-    },
-    {
-     "dialect": "levantine",
-     "form": "وقت",
-     "meaning": "وقت"
-    },
-    {
-     "dialect": "gulf",
-     "form": "وقت",
-     "meaning": "وقت"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "وقت",
-     "meaning": "وقت"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "وقت",
-     "meaning": "وقت"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "وقت",
-     "meaning": "وقت"
     }
    ]
   },

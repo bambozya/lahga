@@ -1,105 +1,528 @@
-{"words":[
- {"headword":"عمة","definition":"أخت الأب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"عمتي","examples":[{"text":"عمتي بتزورنا كل جمعة","gloss":"عمتي تزورنا كل جمعة"}]},
-  {"dialect":"levantine","form":"عمتي"},{"dialect":"palestinian","form":"عمتي"},
-  {"dialect":"gulf","form":"عمتي"},{"dialect":"najdi","form":"عمتي"},{"dialect":"hejazi","form":"عمتي"},
-  {"dialect":"iraqi","form":"عمتي"},{"dialect":"yemeni","form":"عمتي"},{"dialect":"sudanese","form":"عمتي"},
-  {"dialect":"moroccan","form":"عمتي"},{"dialect":"algerian","form":"عمتي"},{"dialect":"tunisian","form":"عمتي"},{"dialect":"libyan","form":"عمتي"},
-  {"dialect":"hassaniya","form":"عمتي"}]},
-
- {"headword":"خالة","definition":"أخت الأم","kind":"word","entries":[
-  {"dialect":"egyptian","form":"خالتي","examples":[{"text":"خالتي ساكنة جنبنا","gloss":"خالتي تسكن بجوارنا"}]},
-  {"dialect":"levantine","form":"خالتي"},{"dialect":"palestinian","form":"خالتي"},
-  {"dialect":"gulf","form":"خالتي"},{"dialect":"najdi","form":"خالتي"},{"dialect":"hejazi","form":"خالتي"},
-  {"dialect":"iraqi","form":"خالتي"},{"dialect":"yemeni","form":"خالتي"},{"dialect":"sudanese","form":"خالتي"},
-  {"dialect":"moroccan","form":"خالتي"},{"dialect":"algerian","form":"خالتي"},{"dialect":"tunisian","form":"خالتي"},{"dialect":"libyan","form":"خالتي"},
-  {"dialect":"hassaniya","form":"خالتي"}]},
-
- {"headword":"حفيد","definition":"ابن الابن أو ابن البنت","kind":"word","entries":[
-  {"dialect":"egyptian","form":"حفيد","examples":[{"text":"جدي بيدلع حفيده الصغير","gloss":"جدي يدلل حفيده الصغير"}]},
-  {"dialect":"levantine","form":"حفيد"},{"dialect":"palestinian","form":"حفيد"},
-  {"dialect":"gulf","form":"يهال الولد"},{"dialect":"najdi","form":"حفيد"},{"dialect":"hejazi","form":"حفيد"},
-  {"dialect":"iraqi","form":"حفيد"},{"dialect":"yemeni","form":"حفيد"},{"dialect":"sudanese","form":"حفيد"},
-  {"dialect":"moroccan","form":"الحفيد"},{"dialect":"algerian","form":"الحفيد"},{"dialect":"tunisian","form":"الحفيد"},{"dialect":"libyan","form":"حفيد"},
-  {"dialect":"hassaniya","form":"الحفيد"}]},
-
- {"headword":"ابن العم","definition":"ابن أخي الأب","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"ابن عمي"},{"dialect":"levantine","form":"ابن عمي"},{"dialect":"palestinian","form":"ابن عمي"},
-  {"dialect":"gulf","form":"ولد عمي"},{"dialect":"najdi","form":"ولد عمي"},{"dialect":"hejazi","form":"ابن عمي"},
-  {"dialect":"iraqi","form":"ابن عمي"},{"dialect":"yemeni","form":"ابن عمي"},{"dialect":"sudanese","form":"ود عمي"},
-  {"dialect":"moroccan","form":"ولد عمي"},{"dialect":"algerian","form":"ولد عمي"},{"dialect":"tunisian","form":"ولد عمي"},{"dialect":"libyan","form":"ولد عمي"},
-  {"dialect":"hassaniya","form":"ولد عمي"}]},
-
- {"headword":"صهر","definition":"زوج الابنة أو الأخت","kind":"word","entries":[
-  {"dialect":"egyptian","form":"جوز البنت"},{"dialect":"levantine","form":"صهر"},{"dialect":"palestinian","form":"نسيب"},
-  {"dialect":"gulf","form":"نسيب"},{"dialect":"najdi","form":"نسيب"},{"dialect":"hejazi","form":"نسيب"},
-  {"dialect":"iraqi","form":"نسيب"},{"dialect":"yemeni","form":"صهر"},{"dialect":"sudanese","form":"نسيب"},
-  {"dialect":"moroccan","form":"النسيب"},{"dialect":"algerian","form":"النسيب"},{"dialect":"tunisian","form":"النسيب"},{"dialect":"libyan","form":"نسيب"},
-  {"dialect":"hassaniya","form":"النسيب"}]},
-
- {"headword":"كنة","definition":"زوجة الابن","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مرات الابن"},{"dialect":"levantine","form":"كنة"},{"dialect":"palestinian","form":"كنة"},
-  {"dialect":"gulf","form":"كنة"},{"dialect":"najdi","form":"كنة"},{"dialect":"hejazi","form":"كنة"},
-  {"dialect":"iraqi","form":"كنة"},{"dialect":"yemeni","form":"كنة"},{"dialect":"sudanese","form":"مرة الولد"},
-  {"dialect":"moroccan","form":"العروسة"},{"dialect":"algerian","form":"الكنة"},{"dialect":"tunisian","form":"الكنة"},{"dialect":"libyan","form":"كنة"},
-  {"dialect":"hassaniya","form":"الكنه"}]},
-
- {"headword":"توأم","definition":"مولودان في بطن واحد","kind":"word","entries":[
-  {"dialect":"egyptian","form":"توأم","examples":[{"text":"خلفت توأم ولد وبنت","gloss":"أنجبت توأماً، ولداً وبنتاً"}]},
-  {"dialect":"levantine","form":"توأم"},{"dialect":"palestinian","form":"توأم"},
-  {"dialect":"gulf","form":"توأم"},{"dialect":"najdi","form":"توأم"},{"dialect":"hejazi","form":"توأم"},
-  {"dialect":"iraqi","form":"توأم"},{"dialect":"yemeni","form":"توأم"},{"dialect":"sudanese","form":"توأم"},
-  {"dialect":"moroccan","form":"التوام"},{"dialect":"algerian","form":"التوام"},{"dialect":"tunisian","form":"التوام"},{"dialect":"libyan","form":"توأم"},
-  {"dialect":"hassaniya","form":"التوام"}]},
-
- {"headword":"يتيم","definition":"من مات أبوه وهو صغير","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يتيم"},{"dialect":"levantine","form":"يتيم"},{"dialect":"palestinian","form":"يتيم"},
-  {"dialect":"gulf","form":"يتيم"},{"dialect":"najdi","form":"يتيم"},{"dialect":"hejazi","form":"يتيم"},
-  {"dialect":"iraqi","form":"يتيم"},{"dialect":"yemeni","form":"يتيم"},{"dialect":"sudanese","form":"يتيم"},
-  {"dialect":"moroccan","form":"اليتيم"},{"dialect":"algerian","form":"اليتيم"},{"dialect":"tunisian","form":"اليتيم"},{"dialect":"libyan","form":"يتيم"},
-  {"dialect":"hassaniya","form":"اليتيم"}]},
-
- {"headword":"أرملة","definition":"من مات زوجها","kind":"word","entries":[
-  {"dialect":"egyptian","form":"أرملة"},{"dialect":"levantine","form":"أرملة"},{"dialect":"palestinian","form":"أرملة"},
-  {"dialect":"gulf","form":"أرملة"},{"dialect":"najdi","form":"أرملة"},{"dialect":"hejazi","form":"أرملة"},
-  {"dialect":"iraqi","form":"أرملة"},{"dialect":"yemeni","form":"أرملة"},{"dialect":"sudanese","form":"أرملة"},
-  {"dialect":"moroccan","form":"الهجالة"},{"dialect":"algerian","form":"الأرملة"},{"dialect":"tunisian","form":"الأرملة"},{"dialect":"libyan","form":"أرملة"},
-  {"dialect":"hassaniya","form":"الأرمله"}]},
-
- {"headword":"مطلق","definition":"من انفصل عن زوجه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مطلق"},{"dialect":"levantine","form":"مطلق"},{"dialect":"palestinian","form":"مطلق"},
-  {"dialect":"gulf","form":"مطلق"},{"dialect":"najdi","form":"مطلق"},{"dialect":"hejazi","form":"مطلق"},
-  {"dialect":"iraqi","form":"مطلق"},{"dialect":"yemeni","form":"مطلق"},{"dialect":"sudanese","form":"مطلق"},
-  {"dialect":"moroccan","form":"المطلق"},{"dialect":"algerian","form":"المطلق"},{"dialect":"tunisian","form":"المطلق"},{"dialect":"libyan","form":"مطلق"},
-  {"dialect":"hassaniya","form":"المطلق"}]},
-
- {"headword":"مخبز","definition":"مكان يُخبز فيه الخبز ويباع","kind":"word","entries":[
-  {"dialect":"egyptian","form":"فرن","examples":[{"text":"جبت عيش من الفرن","gloss":"أحضرت خبزاً من المخبز"}]},
-  {"dialect":"levantine","form":"فرن"},{"dialect":"palestinian","form":"فرن"},
-  {"dialect":"gulf","form":"مخبز"},{"dialect":"najdi","form":"مخبز"},{"dialect":"hejazi","form":"مخبز"},
-  {"dialect":"iraqi","form":"صمونجي"},{"dialect":"yemeni","form":"مخبز"},{"dialect":"sudanese","form":"مخبز"},
-  {"dialect":"moroccan","form":"الفران"},{"dialect":"algerian","form":"البولانجري","notes":"من الفرنسية"},{"dialect":"tunisian","form":"البولانجري"},{"dialect":"libyan","form":"مخبزة"},
-  {"dialect":"hassaniya","form":"المخبز"}]},
-
- {"headword":"زبادي","definition":"لبن رائب يؤكل","kind":"word","entries":[
-  {"dialect":"egyptian","form":"زبادي","examples":[{"text":"باكل زبادي بعد الأكل","gloss":"آكل الزبادي بعد الطعام"}]},
-  {"dialect":"levantine","form":"لبن"},{"dialect":"palestinian","form":"لبن"},
-  {"dialect":"gulf","form":"روب"},{"dialect":"najdi","form":"روب"},{"dialect":"hejazi","form":"زبادي"},
-  {"dialect":"iraqi","form":"لبن"},{"dialect":"yemeni","form":"لبن"},{"dialect":"sudanese","form":"زبادي"},
-  {"dialect":"moroccan","form":"الرايب"},{"dialect":"algerian","form":"الرايب"},{"dialect":"tunisian","form":"الرايب"},{"dialect":"libyan","form":"رايب"},
-  {"dialect":"hassaniya","form":"الزبادي"}]},
-
- {"headword":"عسل","definition":"ما يصنعه النحل ويؤكل حلواً","kind":"word","entries":[
-  {"dialect":"egyptian","form":"عسل"},{"dialect":"levantine","form":"عسل"},{"dialect":"palestinian","form":"عسل"},
-  {"dialect":"gulf","form":"عسل"},{"dialect":"najdi","form":"عسل"},{"dialect":"hejazi","form":"عسل"},
-  {"dialect":"iraqi","form":"عسل"},{"dialect":"yemeni","form":"عسل"},{"dialect":"sudanese","form":"عسل"},
-  {"dialect":"moroccan","form":"العسل"},{"dialect":"algerian","form":"العسل"},{"dialect":"tunisian","form":"العسل"},{"dialect":"libyan","form":"عسل"},
-  {"dialect":"hassaniya","form":"العسل"}]},
-
- {"headword":"مربى","definition":"فاكهة مطبوخة بالسكر تؤكل مع الخبز","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مربى"},{"dialect":"levantine","form":"مربى"},{"dialect":"palestinian","form":"مربى"},
-  {"dialect":"gulf","form":"مربى"},{"dialect":"najdi","form":"مربى"},{"dialect":"hejazi","form":"مربى"},
-  {"dialect":"iraqi","form":"مربى"},{"dialect":"yemeni","form":"مربى"},{"dialect":"sudanese","form":"مربى"},
-  {"dialect":"moroccan","form":"الكونفيتير","notes":"من الفرنسية"},{"dialect":"algerian","form":"الكونفيتير"},{"dialect":"tunisian","form":"الكونفيتير"},{"dialect":"libyan","form":"مربى"},
-  {"dialect":"hassaniya","form":"المربى"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "حفيد",
+   "definition": "ابن الابن أو ابن البنت",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حفيد",
+     "examples": [
+      {
+       "text": "جدي بيدلع حفيده الصغير",
+       "gloss": "جدي يدلل حفيده الصغير"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يهال الولد"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الحفيد"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الحفيد"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الحفيد"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حفيد"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحفيد"
+    }
+   ]
+  },
+  {
+   "headword": "ابن العم",
+   "definition": "ابن أخي الأب",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ابن عمي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "ابن عمي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ابن عمي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ولد عمي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ولد عمي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ابن عمي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ابن عمي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ابن عمي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ود عمي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "ولد عمي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "ولد عمي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "ولد عمي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ولد عمي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ولد عمي"
+    }
+   ]
+  },
+  {
+   "headword": "صهر",
+   "definition": "زوج الابنة أو الأخت",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "جوز البنت"
+    },
+    {
+     "dialect": "levantine",
+     "form": "صهر"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "صهر"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "النسيب"
+    },
+    {
+     "dialect": "algerian",
+     "form": "النسيب"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "النسيب"
+    },
+    {
+     "dialect": "libyan",
+     "form": "نسيب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "النسيب"
+    }
+   ]
+  },
+  {
+   "headword": "كنة",
+   "definition": "زوجة الابن",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مرات الابن"
+    },
+    {
+     "dialect": "levantine",
+     "form": "كنة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "كنة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "كنة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "كنة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "كنة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "كنة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "كنة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مرة الولد"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "العروسة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكنة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكنة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كنة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الكنه"
+    }
+   ]
+  },
+  {
+   "headword": "أرملة",
+   "definition": "من مات زوجها",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الهجالة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الأرملة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الأرملة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "أرملة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الأرمله"
+    }
+   ]
+  },
+  {
+   "headword": "مخبز",
+   "definition": "مكان يُخبز فيه الخبز ويباع",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فرن",
+     "examples": [
+      {
+       "text": "جبت عيش من الفرن",
+       "gloss": "أحضرت خبزاً من المخبز"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "فرن"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "فرن"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مخبز"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مخبز"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مخبز"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "صمونجي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مخبز"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مخبز"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الفران"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البولانجري",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البولانجري"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مخبزة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المخبز"
+    }
+   ]
+  },
+  {
+   "headword": "زبادي",
+   "definition": "لبن رائب يؤكل",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "زبادي",
+     "examples": [
+      {
+       "text": "باكل زبادي بعد الأكل",
+       "gloss": "آكل الزبادي بعد الطعام"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "لبن"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "لبن"
+    },
+    {
+     "dialect": "gulf",
+     "form": "روب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "روب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "زبادي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "لبن"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "لبن"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "زبادي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الرايب"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الرايب"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الرايب"
+    },
+    {
+     "dialect": "libyan",
+     "form": "رايب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الزبادي"
+    }
+   ]
+  },
+  {
+   "headword": "مربى",
+   "definition": "فاكهة مطبوخة بالسكر تؤكل مع الخبز",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مربى"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مربى"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مربى"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مربى"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مربى"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مربى"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مربى"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مربى"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مربى"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكونفيتير",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكونفيتير"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكونفيتير"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مربى"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المربى"
+    }
+   ]
+  }
+ ]
+}

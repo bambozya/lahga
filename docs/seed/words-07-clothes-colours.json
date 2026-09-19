@@ -847,43 +847,6 @@
    ]
   },
   {
-   "headword": "لون",
-   "definition": "اللون",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "لون",
-     "meaning": "لون"
-    },
-    {
-     "dialect": "levantine",
-     "form": "لون",
-     "meaning": "لون"
-    },
-    {
-     "dialect": "gulf",
-     "form": "لون",
-     "meaning": "لون"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "لون",
-     "meaning": "لون"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "لون",
-     "meaning": "لون"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "لون",
-     "meaning": "لون"
-    }
-   ]
-  },
-  {
    "headword": "أحمر",
    "definition": "لون الدم",
    "kind": "word",

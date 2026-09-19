@@ -308,43 +308,6 @@
    ]
   },
   {
-   "headword": "باب",
-   "definition": "الباب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "باب",
-     "meaning": "باب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "باب",
-     "meaning": "باب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "باب",
-     "meaning": "باب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "باب",
-     "meaning": "باب"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "باب",
-     "meaning": "باب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "باب",
-     "meaning": "باب"
-    }
-   ]
-  },
-  {
    "headword": "نافذة",
    "definition": "الشبّاك",
    "kind": "word",
@@ -1540,80 +1503,6 @@
    ]
   },
   {
-   "headword": "كتاب",
-   "definition": "الكتاب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "كتاب",
-     "meaning": "كتاب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "كتاب",
-     "meaning": "كتاب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "كتاب",
-     "meaning": "كتاب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "كتاب",
-     "meaning": "كتاب"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "كتاب",
-     "meaning": "كتاب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "كتاب",
-     "meaning": "كتاب"
-    }
-   ]
-  },
-  {
-   "headword": "سرّ",
-   "definition": "ما يُخفى",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "سرّ",
-     "meaning": "سرّ"
-    },
-    {
-     "dialect": "levantine",
-     "form": "سرّ",
-     "meaning": "سرّ"
-    },
-    {
-     "dialect": "gulf",
-     "form": "سرّ",
-     "meaning": "سرّ"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "سرّ",
-     "meaning": "سرّ"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "سرّ",
-     "meaning": "سرّ"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "سرّ",
-     "meaning": "سرّ"
-    }
-   ]
-  },
-  {
    "headword": "شيء صغير",
    "definition": "الأغراض الصغيرة",
    "kind": "phrase",
@@ -2234,43 +2123,6 @@
      "dialect": "hassaniya",
      "form": "كليماتيزور",
      "meaning": "مكيّف"
-    }
-   ]
-  },
-  {
-   "headword": "صابون",
-   "definition": "الصابون",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "صابون",
-     "meaning": "صابون"
-    },
-    {
-     "dialect": "levantine",
-     "form": "صابون",
-     "meaning": "صابون"
-    },
-    {
-     "dialect": "gulf",
-     "form": "صابون",
-     "meaning": "صابون"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "صابون",
-     "meaning": "صابون"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "صابون",
-     "meaning": "صابون"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "صابون",
-     "meaning": "صابون"
     }
    ]
   },

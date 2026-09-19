@@ -1,91 +1,666 @@
-{"words":[
- {"headword":"كرة","definition":"ما يُلعب به من جسم مستدير","kind":"word","entries":[
-  {"dialect":"egyptian","form":"كورة","examples":[{"text":"العيال بيلعبوا كورة في الشارع","gloss":"الأولاد يلعبون كرة في الشارع"}]},
-  {"dialect":"levantine","form":"طابة"},{"dialect":"palestinian","form":"طابة"},
-  {"dialect":"gulf","form":"طابة"},{"dialect":"najdi","form":"كرة"},{"dialect":"hejazi","form":"كورة"},
-  {"dialect":"iraqi","form":"طوبة"},{"dialect":"yemeni","form":"كرة"},{"dialect":"sudanese","form":"كورة"},
-  {"dialect":"moroccan","form":"الكورة"},{"dialect":"algerian","form":"البالون"},{"dialect":"tunisian","form":"البالون"},{"dialect":"libyan","form":"كورة"},
-  {"dialect":"hassaniya","form":"الكره"}]},
-
- {"headword":"ملعب","definition":"مكان تُلعب فيه الرياضة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"ملعب"},{"dialect":"levantine","form":"ملعب"},{"dialect":"palestinian","form":"ملعب"},
-  {"dialect":"gulf","form":"ملعب"},{"dialect":"najdi","form":"ملعب"},{"dialect":"hejazi","form":"ملعب"},
-  {"dialect":"iraqi","form":"ملعب"},{"dialect":"yemeni","form":"ملعب"},{"dialect":"sudanese","form":"ملعب"},
-  {"dialect":"moroccan","form":"الطيران"},{"dialect":"algerian","form":"الستاد"},{"dialect":"tunisian","form":"الستاد"},{"dialect":"libyan","form":"ملعب"},
-  {"dialect":"hassaniya","form":"الملعب"}]},
-
- {"headword":"هدف","definition":"إصابة الكرة في المرمى","kind":"word","entries":[
-  {"dialect":"egyptian","form":"جون","examples":[{"text":"جاب جون في الدقيقة الأخيرة","gloss":"سجل هدفاً في الدقيقة الأخيرة"}]},
-  {"dialect":"levantine","form":"هدف"},{"dialect":"palestinian","form":"جول"},
-  {"dialect":"gulf","form":"هدف"},{"dialect":"najdi","form":"هدف"},{"dialect":"hejazi","form":"جون"},
-  {"dialect":"iraqi","form":"هدف"},{"dialect":"yemeni","form":"هدف"},{"dialect":"sudanese","form":"قول"},
-  {"dialect":"moroccan","form":"البوط"},{"dialect":"algerian","form":"البو"},{"dialect":"tunisian","form":"البوط"},{"dialect":"libyan","form":"جون"},
-  {"dialect":"hassaniya","form":"هدف"}]},
-
- {"headword":"حارس المرمى","definition":"من يحمي المرمى من الكرة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"حارس المرمى"},{"dialect":"levantine","form":"حارس المرمى"},{"dialect":"palestinian","form":"حارس"},
-  {"dialect":"gulf","form":"حارس"},{"dialect":"najdi","form":"حارس"},{"dialect":"hejazi","form":"حارس"},
-  {"dialect":"iraqi","form":"حارس"},{"dialect":"yemeni","form":"حارس"},{"dialect":"sudanese","form":"قولي"},
-  {"dialect":"moroccan","form":"الغاردیان","notes":"من الفرنسية"},{"dialect":"algerian","form":"الغارديان"},{"dialect":"tunisian","form":"الغارديان"},{"dialect":"libyan","form":"حارس"},
-  {"dialect":"hassaniya","form":"الحارس"}]},
-
- {"headword":"مباراة","definition":"لقاء بين فريقين في اللعب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"ماتش","examples":[{"text":"الماتش بيبدأ الساعة تسعة","gloss":"تبدأ المباراة في التاسعة"}]},
-  {"dialect":"levantine","form":"مباراة"},{"dialect":"palestinian","form":"ماتش"},
-  {"dialect":"gulf","form":"مباراة"},{"dialect":"najdi","form":"مباراة"},{"dialect":"hejazi","form":"ماتش"},
-  {"dialect":"iraqi","form":"مباراة"},{"dialect":"yemeni","form":"مباراة"},{"dialect":"sudanese","form":"ماتش"},
-  {"dialect":"moroccan","form":"الماتش"},{"dialect":"algerian","form":"الماتش"},{"dialect":"tunisian","form":"الماتش"},{"dialect":"libyan","form":"ماتش"},
-  {"dialect":"hassaniya","form":"المباراه"}]},
-
- {"headword":"يسبح","definition":"يعوم في الماء","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يعوم","examples":[{"text":"بيعوم كويس في البحر","gloss":"يسبح جيداً في البحر"}]},
-  {"dialect":"levantine","form":"يسبح"},{"dialect":"palestinian","form":"يسبح"},
-  {"dialect":"gulf","form":"يسبح"},{"dialect":"najdi","form":"يسبح"},{"dialect":"hejazi","form":"يسبح"},
-  {"dialect":"iraqi","form":"يسبح"},{"dialect":"yemeni","form":"يسبح"},{"dialect":"sudanese","form":"يعوم"},
-  {"dialect":"moroccan","form":"يعوم"},{"dialect":"algerian","form":"يعوم"},{"dialect":"tunisian","form":"يعوم"},{"dialect":"libyan","form":"يعوم"},
-  {"dialect":"hassaniya","form":"يعوم"}]},
-
- {"headword":"فوز","definition":"الغلبة في اللعب أو المنافسة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"فوز"},{"dialect":"levantine","form":"فوز"},{"dialect":"palestinian","form":"فوز"},
-  {"dialect":"gulf","form":"فوز"},{"dialect":"najdi","form":"فوز"},{"dialect":"hejazi","form":"فوز"},
-  {"dialect":"iraqi","form":"فوز"},{"dialect":"yemeni","form":"فوز"},{"dialect":"sudanese","form":"فوز"},
-  {"dialect":"moroccan","form":"الربح"},{"dialect":"algerian","form":"الربح"},{"dialect":"tunisian","form":"الربح"},{"dialect":"libyan","form":"فوز"},
-  {"dialect":"hassaniya","form":"الفوز"}]},
-
- {"headword":"خسارة","definition":"الهزيمة في اللعب أو المنافسة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"خسارة"},{"dialect":"levantine","form":"خسارة"},{"dialect":"palestinian","form":"خسارة"},
-  {"dialect":"gulf","form":"خسارة"},{"dialect":"najdi","form":"خسارة"},{"dialect":"hejazi","form":"خسارة"},
-  {"dialect":"iraqi","form":"خسارة"},{"dialect":"yemeni","form":"خسارة"},{"dialect":"sudanese","form":"خسارة"},
-  {"dialect":"moroccan","form":"الخسارة"},{"dialect":"algerian","form":"الخسارة"},{"dialect":"tunisian","form":"الخسارة"},{"dialect":"libyan","form":"خسارة"},
-  {"dialect":"hassaniya","form":"الخساره"}]},
-
- {"headword":"مشجع","definition":"من يناصر فريقاً ويهتف له","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مشجع"},{"dialect":"levantine","form":"مشجع"},{"dialect":"palestinian","form":"مشجع"},
-  {"dialect":"gulf","form":"مشجع"},{"dialect":"najdi","form":"مشجع"},{"dialect":"hejazi","form":"مشجع"},
-  {"dialect":"iraqi","form":"مشجع"},{"dialect":"yemeni","form":"مشجع"},{"dialect":"sudanese","form":"مشجع"},
-  {"dialect":"moroccan","form":"المشجع"},{"dialect":"algerian","form":"السوبورتور"},{"dialect":"tunisian","form":"السوبورتور"},{"dialect":"libyan","form":"مشجع"},
-  {"dialect":"hassaniya","form":"المشجع"}]},
-
- {"headword":"لعبة","definition":"ما يُلعب به أو يُلعب فيه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"لعبة"},{"dialect":"levantine","form":"لعبة"},{"dialect":"palestinian","form":"لعبة"},
-  {"dialect":"gulf","form":"لعبة"},{"dialect":"najdi","form":"لعبة"},{"dialect":"hejazi","form":"لعبة"},
-  {"dialect":"iraqi","form":"لعبة"},{"dialect":"yemeni","form":"لعبة"},{"dialect":"sudanese","form":"لعبة"},
-  {"dialect":"moroccan","form":"اللعبة"},{"dialect":"algerian","form":"اللعبة"},{"dialect":"tunisian","form":"اللعبة"},{"dialect":"libyan","form":"لعبة"},
-  {"dialect":"hassaniya","form":"اللعبه"}]},
-
- {"headword":"يلعب الورق","definition":"يلعب بورق اللعب","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"يلعب كوتشينة","examples":[{"text":"قاعدين يلعبوا كوتشينة عالقهوة","gloss":"يلعبون الورق في المقهى"}]},
-  {"dialect":"levantine","form":"يلعب ورق"},{"dialect":"palestinian","form":"يلعب شدة"},
-  {"dialect":"gulf","form":"يلعب بلوت","notes":"البلوت لعبة ورق مشهورة في الخليج"},
-  {"dialect":"najdi","form":"يلعب بلوت"},{"dialect":"hejazi","form":"يلعب بلوت"},
-  {"dialect":"iraqi","form":"يلعب ورق"},{"dialect":"yemeni","form":"يلعب ورق"},{"dialect":"sudanese","form":"يلعب كوتشينة"},
-  {"dialect":"moroccan","form":"يلعب الكارطة"},{"dialect":"algerian","form":"يلعب الكارطة"},{"dialect":"tunisian","form":"يلعب الكارطة"},{"dialect":"libyan","form":"يلعب ورق"},
-  {"dialect":"hassaniya","form":"يلعب الورق"}]},
-
- {"headword":"بطولة","definition":"منافسة بين فرق حتى يُعرف الأول","kind":"word","entries":[
-  {"dialect":"egyptian","form":"بطولة"},{"dialect":"levantine","form":"بطولة"},{"dialect":"palestinian","form":"بطولة"},
-  {"dialect":"gulf","form":"بطولة"},{"dialect":"najdi","form":"بطولة"},{"dialect":"hejazi","form":"بطولة"},
-  {"dialect":"iraqi","form":"بطولة"},{"dialect":"yemeni","form":"بطولة"},{"dialect":"sudanese","form":"بطولة"},
-  {"dialect":"moroccan","form":"البطولة"},{"dialect":"algerian","form":"الشامبيونا"},{"dialect":"tunisian","form":"الشامبيونا"},{"dialect":"libyan","form":"بطولة"},
-  {"dialect":"hassaniya","form":"البطوله"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "كرة",
+   "definition": "ما يُلعب به من جسم مستدير",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كورة",
+     "examples": [
+      {
+       "text": "العيال بيلعبوا كورة في الشارع",
+       "gloss": "الأولاد يلعبون كرة في الشارع"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "طابة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "طابة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "طابة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "كرة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "كورة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "طوبة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "كرة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كورة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكورة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البالون"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البالون"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كورة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الكره"
+    }
+   ]
+  },
+  {
+   "headword": "ملعب",
+   "definition": "مكان تُلعب فيه الرياضة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "levantine",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الطيران"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الستاد"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الستاد"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ملعب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الملعب"
+    }
+   ]
+  },
+  {
+   "headword": "هدف",
+   "definition": "إصابة الكرة في المرمى",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "جون",
+     "examples": [
+      {
+       "text": "جاب جون في الدقيقة الأخيرة",
+       "gloss": "سجل هدفاً في الدقيقة الأخيرة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "هدف"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "جول"
+    },
+    {
+     "dialect": "gulf",
+     "form": "هدف"
+    },
+    {
+     "dialect": "najdi",
+     "form": "هدف"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "جون"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "هدف"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "هدف"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "قول"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البوط"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البو"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البوط"
+    },
+    {
+     "dialect": "libyan",
+     "form": "جون"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "هدف"
+    }
+   ]
+  },
+  {
+   "headword": "حارس المرمى",
+   "definition": "من يحمي المرمى من الكرة",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حارس المرمى"
+    },
+    {
+     "dialect": "levantine",
+     "form": "حارس المرمى"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حارس"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حارس"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حارس"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حارس"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "حارس"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حارس"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "قولي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الغاردیان",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الغارديان"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الغارديان"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حارس"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحارس"
+    }
+   ]
+  },
+  {
+   "headword": "مباراة",
+   "definition": "لقاء بين فريقين في اللعب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ماتش",
+     "examples": [
+      {
+       "text": "الماتش بيبدأ الساعة تسعة",
+       "gloss": "تبدأ المباراة في التاسعة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مباراة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ماتش"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مباراة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مباراة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ماتش"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مباراة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مباراة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ماتش"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الماتش"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الماتش"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الماتش"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ماتش"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المباراه"
+    }
+   ]
+  },
+  {
+   "headword": "يسبح",
+   "definition": "يعوم في الماء",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يعوم",
+     "examples": [
+      {
+       "text": "بيعوم كويس في البحر",
+       "gloss": "يسبح جيداً في البحر"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يسبح"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يعوم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يعوم"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يعوم"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يعوم"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يعوم"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يعوم"
+    }
+   ]
+  },
+  {
+   "headword": "فوز",
+   "definition": "الغلبة في اللعب أو المنافسة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فوز"
+    },
+    {
+     "dialect": "levantine",
+     "form": "فوز"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "فوز"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فوز"
+    },
+    {
+     "dialect": "najdi",
+     "form": "فوز"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "فوز"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "فوز"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "فوز"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "فوز"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الربح"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الربح"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الربح"
+    },
+    {
+     "dialect": "libyan",
+     "form": "فوز"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الفوز"
+    }
+   ]
+  },
+  {
+   "headword": "مشجع",
+   "definition": "من يناصر فريقاً ويهتف له",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "المشجع"
+    },
+    {
+     "dialect": "algerian",
+     "form": "السوبورتور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السوبورتور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مشجع"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المشجع"
+    }
+   ]
+  },
+  {
+   "headword": "يلعب الورق",
+   "definition": "يلعب بورق اللعب",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يلعب كوتشينة",
+     "examples": [
+      {
+       "text": "قاعدين يلعبوا كوتشينة عالقهوة",
+       "gloss": "يلعبون الورق في المقهى"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يلعب ورق"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يلعب شدة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يلعب بلوت",
+     "notes": "البلوت لعبة ورق مشهورة في الخليج"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يلعب بلوت"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يلعب بلوت"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يلعب ورق"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يلعب ورق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يلعب كوتشينة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يلعب الكارطة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يلعب الكارطة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يلعب الكارطة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يلعب ورق"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يلعب الورق"
+    }
+   ]
+  },
+  {
+   "headword": "بطولة",
+   "definition": "منافسة بين فرق حتى يُعرف الأول",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البطولة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الشامبيونا"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الشامبيونا"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بطولة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "البطوله"
+    }
+   ]
+  }
+ ]
+}

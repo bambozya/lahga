@@ -1,93 +1,608 @@
-{"words":[
- {"headword":"خزانة","definition":"ما تُحفظ فيه الثياب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"دولاب","examples":[{"text":"علق الهدوم في الدولاب","gloss":"علق الملابس في الخزانة"}]},
-  {"dialect":"levantine","form":"خزانة"},{"dialect":"palestinian","form":"خزانة"},
-  {"dialect":"gulf","form":"دولاب"},{"dialect":"najdi","form":"دولاب"},{"dialect":"hejazi","form":"دولاب"},
-  {"dialect":"iraqi","form":"قنطرة"},{"dialect":"yemeni","form":"دولاب"},{"dialect":"sudanese","form":"دولاب"},
-  {"dialect":"moroccan","form":"الخزانة"},{"dialect":"algerian","form":"الأرمور"},{"dialect":"tunisian","form":"الأرمور"},{"dialect":"libyan","form":"دولاب"},
-  {"dialect":"hassaniya","form":"الخزانه"}]},
-
- {"headword":"أريكة","definition":"مقعد طويل يجلس عليه أكثر من واحد","kind":"word","entries":[
-  {"dialect":"egyptian","form":"كنبة","examples":[{"text":"قاعد على الكنبة بيتفرج","gloss":"جالس على الأريكة يشاهد"}]},
-  {"dialect":"levantine","form":"كنباية"},{"dialect":"palestinian","form":"كنباية"},
-  {"dialect":"gulf","form":"كنبة"},{"dialect":"najdi","form":"كنبة"},{"dialect":"hejazi","form":"كنبة"},
-  {"dialect":"iraqi","form":"قنفة"},{"dialect":"yemeni","form":"كنبة"},{"dialect":"sudanese","form":"كنبة"},
-  {"dialect":"moroccan","form":"الصالون"},{"dialect":"algerian","form":"الكنابي"},{"dialect":"tunisian","form":"الكنابي"},{"dialect":"libyan","form":"كنبة"},
-  {"dialect":"hassaniya","form":"الكنبه"}]},
-
- {"headword":"مرآة","definition":"زجاج يُرى فيه المرء صورته","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مراية","examples":[{"text":"بص في المراية قبل ما تخرج","gloss":"انظر في المرآة قبل أن تخرج"}]},
-  {"dialect":"levantine","form":"مراية"},{"dialect":"palestinian","form":"مراية"},
-  {"dialect":"gulf","form":"مراية"},{"dialect":"najdi","form":"مراية"},{"dialect":"hejazi","form":"مراية"},
-  {"dialect":"iraqi","form":"مراية"},{"dialect":"yemeni","form":"مراية"},{"dialect":"sudanese","form":"مراية"},
-  {"dialect":"moroccan","form":"المراية"},{"dialect":"algerian","form":"المراية"},{"dialect":"tunisian","form":"المراية"},{"dialect":"libyan","form":"مراية"},
-  {"dialect":"hassaniya","form":"المرايه"}]},
-
- {"headword":"ستارة","definition":"قماش يُسدل على النافذة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"ستارة"},{"dialect":"levantine","form":"برداية"},{"dialect":"palestinian","form":"برداية"},
-  {"dialect":"gulf","form":"ستارة"},{"dialect":"najdi","form":"ستارة"},{"dialect":"hejazi","form":"ستارة"},
-  {"dialect":"iraqi","form":"بردة"},{"dialect":"yemeni","form":"ستارة"},{"dialect":"sudanese","form":"ستارة"},
-  {"dialect":"moroccan","form":"الريدو","notes":"من الفرنسية"},{"dialect":"algerian","form":"الريدو"},{"dialect":"tunisian","form":"الريدو"},{"dialect":"libyan","form":"ستارة"},
-  {"dialect":"hassaniya","form":"الستاره"}]},
-
- {"headword":"سجادة","definition":"ما يُفرش على الأرض","kind":"word","entries":[
-  {"dialect":"egyptian","form":"سجادة"},{"dialect":"levantine","form":"سجادة"},{"dialect":"palestinian","form":"سجادة"},
-  {"dialect":"gulf","form":"سجادة"},{"dialect":"najdi","form":"سجادة"},{"dialect":"hejazi","form":"سجادة"},
-  {"dialect":"iraqi","form":"سجادة"},{"dialect":"yemeni","form":"سجادة"},{"dialect":"sudanese","form":"سجادة"},
-  {"dialect":"moroccan","form":"الزربية"},{"dialect":"algerian","form":"الزربية"},{"dialect":"tunisian","form":"الزربية"},{"dialect":"libyan","form":"زربية"},
-  {"dialect":"hassaniya","form":"الزربيه"}]},
-
- {"headword":"وسادة","definition":"ما يوضع تحت الرأس عند النوم","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مخدة","examples":[{"text":"هات مخدة تانية","gloss":"أحضر وسادة أخرى"}]},
-  {"dialect":"levantine","form":"مخدة"},{"dialect":"palestinian","form":"مخدة"},
-  {"dialect":"gulf","form":"مخدة"},{"dialect":"najdi","form":"مخدة"},{"dialect":"hejazi","form":"مخدة"},
-  {"dialect":"iraqi","form":"مخدة"},{"dialect":"yemeni","form":"مخدة"},{"dialect":"sudanese","form":"مخدة"},
-  {"dialect":"moroccan","form":"المخدة"},{"dialect":"algerian","form":"المخدة"},{"dialect":"tunisian","form":"المخدة"},{"dialect":"libyan","form":"مخدة"},
-  {"dialect":"hassaniya","form":"المخده"}]},
-
- {"headword":"بطانية","definition":"غطاء ثقيل يُتدفأ به","kind":"word","entries":[
-  {"dialect":"egyptian","form":"بطانية","examples":[{"text":"الجو برد، غطي بالبطانية","gloss":"الجو بارد، تغط بالبطانية"}]},
-  {"dialect":"levantine","form":"حرام"},{"dialect":"palestinian","form":"حرام"},
-  {"dialect":"gulf","form":"بطانية"},{"dialect":"najdi","form":"بطانية"},{"dialect":"hejazi","form":"بطانية"},
-  {"dialect":"iraqi","form":"بطانية"},{"dialect":"yemeni","form":"بطانية"},{"dialect":"sudanese","form":"بطانية"},
-  {"dialect":"moroccan","form":"المنطة"},{"dialect":"algerian","form":"الكوفرطة"},{"dialect":"tunisian","form":"الكوفرطة"},{"dialect":"libyan","form":"بطانية"},
-  {"dialect":"hassaniya","form":"البطانيه"}]},
-
- {"headword":"مكيف","definition":"جهاز يبرد الهواء في الغرفة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"تكييف","examples":[{"text":"شغل التكييف، الدنيا حر","gloss":"شغل المكيف، الجو حار"}]},
-  {"dialect":"levantine","form":"مكيف"},{"dialect":"palestinian","form":"مكيف"},
-  {"dialect":"gulf","form":"مكيف"},{"dialect":"najdi","form":"مكيف"},{"dialect":"hejazi","form":"مكيف"},
-  {"dialect":"iraqi","form":"مبردة"},{"dialect":"yemeni","form":"مكيف"},{"dialect":"sudanese","form":"مكيف"},
-  {"dialect":"moroccan","form":"الكليماتيزور"},{"dialect":"algerian","form":"الكليماتيزور"},{"dialect":"tunisian","form":"الكليماتيزور"},{"dialect":"libyan","form":"مكيف"},
-  {"dialect":"hassaniya","form":"المكيف"}]},
-
- {"headword":"مكنسة","definition":"ما يُكنس به البيت","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مقشة","examples":[{"text":"كنست الأوضة بالمقشة","gloss":"كنست الغرفة بالمكنسة"}]},
-  {"dialect":"levantine","form":"مكنسة"},{"dialect":"palestinian","form":"مكنسة"},
-  {"dialect":"gulf","form":"مكنسة"},{"dialect":"najdi","form":"مكنسة"},{"dialect":"hejazi","form":"مكنسة"},
-  {"dialect":"iraqi","form":"مكنسة"},{"dialect":"yemeni","form":"مقشة"},{"dialect":"sudanese","form":"مقشة"},
-  {"dialect":"moroccan","form":"الشطابة"},{"dialect":"algerian","form":"الشطابة"},{"dialect":"tunisian","form":"الشطابة"},{"dialect":"libyan","form":"مقشة"},
-  {"dialect":"hassaniya","form":"المكنسه"}]},
-
- {"headword":"غسالة","definition":"جهاز يغسل الثياب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"غسالة"},{"dialect":"levantine","form":"غسالة"},{"dialect":"palestinian","form":"غسالة"},
-  {"dialect":"gulf","form":"غسالة"},{"dialect":"najdi","form":"غسالة"},{"dialect":"hejazi","form":"غسالة"},
-  {"dialect":"iraqi","form":"غسالة"},{"dialect":"yemeni","form":"غسالة"},{"dialect":"sudanese","form":"غسالة"},
-  {"dialect":"moroccan","form":"الماشينة"},{"dialect":"algerian","form":"الماشينة"},{"dialect":"tunisian","form":"الماشينة"},{"dialect":"libyan","form":"غسالة"},
-  {"dialect":"hassaniya","form":"الغساله"}]},
-
- {"headword":"رف","definition":"لوح يوضع عليه المتاع على الحائط","kind":"word","entries":[
-  {"dialect":"egyptian","form":"رف"},{"dialect":"levantine","form":"رف"},{"dialect":"palestinian","form":"رف"},
-  {"dialect":"gulf","form":"رف"},{"dialect":"najdi","form":"رف"},{"dialect":"hejazi","form":"رف"},
-  {"dialect":"iraqi","form":"رف"},{"dialect":"yemeni","form":"رف"},{"dialect":"sudanese","form":"رف"},
-  {"dialect":"moroccan","form":"الرف"},{"dialect":"algerian","form":"الرف"},{"dialect":"tunisian","form":"الرف"},{"dialect":"libyan","form":"رف"},
-  {"dialect":"hassaniya","form":"الرف"}]},
-
- {"headword":"مروحة","definition":"جهاز يحرك الهواء","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مروحة","examples":[{"text":"شغل المروحة شوية","gloss":"شغل المروحة قليلاً"}]},
-  {"dialect":"levantine","form":"مروحة"},{"dialect":"palestinian","form":"مروحة"},
-  {"dialect":"gulf","form":"مروحة"},{"dialect":"najdi","form":"مروحة"},{"dialect":"hejazi","form":"مروحة"},
-  {"dialect":"iraqi","form":"بنكة"},{"dialect":"yemeni","form":"مروحة"},{"dialect":"sudanese","form":"مروحة"},
-  {"dialect":"moroccan","form":"الفونتيلاتور"},{"dialect":"algerian","form":"الفونتيلاتور"},{"dialect":"tunisian","form":"الفونتيلاتور"},{"dialect":"libyan","form":"مروحة"},
-  {"dialect":"hassaniya","form":"المروحه"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "خزانة",
+   "definition": "ما تُحفظ فيه الثياب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "دولاب",
+     "examples": [
+      {
+       "text": "علق الهدوم في الدولاب",
+       "gloss": "علق الملابس في الخزانة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "خزانة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "خزانة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قنطرة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الخزانة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الأرمور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الأرمور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "دولاب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الخزانه"
+    }
+   ]
+  },
+  {
+   "headword": "أريكة",
+   "definition": "مقعد طويل يجلس عليه أكثر من واحد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كنبة",
+     "examples": [
+      {
+       "text": "قاعد على الكنبة بيتفرج",
+       "gloss": "جالس على الأريكة يشاهد"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "كنباية"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "كنباية"
+    },
+    {
+     "dialect": "gulf",
+     "form": "كنبة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "كنبة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "كنبة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قنفة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "كنبة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كنبة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الصالون"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكنابي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكنابي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كنبة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الكنبه"
+    }
+   ]
+  },
+  {
+   "headword": "ستارة",
+   "definition": "قماش يُسدل على النافذة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "برداية"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "برداية"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بردة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الريدو",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الريدو"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الريدو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ستارة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الستاره"
+    }
+   ]
+  },
+  {
+   "headword": "سجادة",
+   "definition": "ما يُفرش على الأرض",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سجادة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الزربية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الزربية"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الزربية"
+    },
+    {
+     "dialect": "libyan",
+     "form": "زربية"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الزربيه"
+    }
+   ]
+  },
+  {
+   "headword": "بطانية",
+   "definition": "غطاء ثقيل يُتدفأ به",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بطانية",
+     "examples": [
+      {
+       "text": "الجو برد، غطي بالبطانية",
+       "gloss": "الجو بارد، تغط بالبطانية"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حرام"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حرام"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "المنطة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكوفرطة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكوفرطة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بطانية"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "البطانيه"
+    }
+   ]
+  },
+  {
+   "headword": "مكيف",
+   "definition": "جهاز يبرد الهواء في الغرفة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تكييف",
+     "examples": [
+      {
+       "text": "شغل التكييف، الدنيا حر",
+       "gloss": "شغل المكيف، الجو حار"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مبردة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكليماتيزور"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكليماتيزور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكليماتيزور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مكيف"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المكيف"
+    }
+   ]
+  },
+  {
+   "headword": "مكنسة",
+   "definition": "ما يُكنس به البيت",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مقشة",
+     "examples": [
+      {
+       "text": "كنست الأوضة بالمقشة",
+       "gloss": "كنست الغرفة بالمكنسة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مكنسة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مكنسة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مكنسة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مكنسة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مكنسة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مكنسة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مقشة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مقشة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الشطابة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الشطابة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الشطابة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مقشة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المكنسه"
+    }
+   ]
+  },
+  {
+   "headword": "غسالة",
+   "definition": "جهاز يغسل الثياب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الماشينة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الماشينة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الماشينة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "غسالة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الغساله"
+    }
+   ]
+  },
+  {
+   "headword": "مروحة",
+   "definition": "جهاز يحرك الهواء",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مروحة",
+     "examples": [
+      {
+       "text": "شغل المروحة شوية",
+       "gloss": "شغل المروحة قليلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بنكة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الفونتيلاتور"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الفونتيلاتور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الفونتيلاتور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مروحة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المروحه"
+    }
+   ]
+  }
+ ]
+}

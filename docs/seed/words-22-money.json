@@ -1,92 +1,671 @@
-{"words":[
- {"headword":"فكة","definition":"النقود الصغيرة التي تُرد من الثمن","kind":"word","entries":[
-  {"dialect":"egyptian","form":"فكة","examples":[{"text":"معاك فكة عشرين جنيه؟","gloss":"هل لديك فكة عشرين جنيهاً؟"}]},
-  {"dialect":"levantine","form":"فراطة"},{"dialect":"palestinian","form":"فراطة"},
-  {"dialect":"gulf","form":"فكة"},{"dialect":"najdi","form":"فكة"},{"dialect":"hejazi","form":"فكة"},
-  {"dialect":"iraqi","form":"خردة"},{"dialect":"yemeni","form":"فكة"},{"dialect":"sudanese","form":"فكة"},
-  {"dialect":"moroccan","form":"الصرف"},{"dialect":"algerian","form":"الصرف"},{"dialect":"tunisian","form":"الصرف"},{"dialect":"libyan","form":"فكة"},
-  {"dialect":"hassaniya","form":"الفكه"}]},
-
- {"headword":"يساوم","definition":"يجادل البائع في الثمن ليخفضه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يفاصل","examples":[{"text":"فاصلت معاه لحد ما نزل السعر","gloss":"ساومته حتى خفض السعر"}]},
-  {"dialect":"levantine","form":"يفاصل"},{"dialect":"palestinian","form":"يفاصل"},
-  {"dialect":"gulf","form":"يكاسر"},{"dialect":"najdi","form":"يكاسر"},{"dialect":"hejazi","form":"يفاصل"},
-  {"dialect":"iraqi","form":"يفاصل"},{"dialect":"yemeni","form":"يفاصل"},{"dialect":"sudanese","form":"يفاصل"},
-  {"dialect":"moroccan","form":"يتسوم","examples":[{"text":"تسوم معاه شوية","gloss":"ساومه قليلاً"}]},
-  {"dialect":"algerian","form":"يتسوم"},{"dialect":"tunisian","form":"يتفاصل"},{"dialect":"libyan","form":"يفاصل"},
-  {"dialect":"hassaniya","form":"يتسوم"}]},
-
- {"headword":"محفظة","definition":"ما يُحفظ فيه المال والبطاقات","kind":"word","entries":[
-  {"dialect":"egyptian","form":"محفظة"},{"dialect":"levantine","form":"جزدان"},{"dialect":"palestinian","form":"جزدان"},
-  {"dialect":"gulf","form":"محفظة"},{"dialect":"najdi","form":"محفظة"},{"dialect":"hejazi","form":"محفظة"},
-  {"dialect":"iraqi","form":"جزدان"},{"dialect":"yemeni","form":"محفظة"},{"dialect":"sudanese","form":"محفظة"},
-  {"dialect":"moroccan","form":"البزطام"},{"dialect":"algerian","form":"البزطام"},{"dialect":"tunisian","form":"البزطام"},{"dialect":"libyan","form":"محفظة"},
-  {"dialect":"hassaniya","form":"المحفظه"}]},
-
- {"headword":"فاتورة","definition":"ورقة بقيمة ما اشتُري أو استُهلك","kind":"word","entries":[
-  {"dialect":"egyptian","form":"فاتورة","examples":[{"text":"جت فاتورة الكهربا غالية","gloss":"جاءت فاتورة الكهرباء مرتفعة"}]},
-  {"dialect":"levantine","form":"فاتورة"},{"dialect":"palestinian","form":"فاتورة"},
-  {"dialect":"gulf","form":"فاتورة"},{"dialect":"najdi","form":"فاتورة"},{"dialect":"hejazi","form":"فاتورة"},
-  {"dialect":"iraqi","form":"قائمة"},{"dialect":"yemeni","form":"فاتورة"},{"dialect":"sudanese","form":"فاتورة"},
-  {"dialect":"moroccan","form":"الفاكتورة"},{"dialect":"algerian","form":"الفاكتورة"},{"dialect":"tunisian","form":"الفاكتورة"},{"dialect":"libyan","form":"فاتورة"},
-  {"dialect":"hassaniya","form":"الفاتوره"}]},
-
- {"headword":"خصم","definition":"إنقاص من الثمن","kind":"word","entries":[
-  {"dialect":"egyptian","form":"خصم","examples":[{"text":"عمللي خصم عشرة في المية","gloss":"منحني خصماً بعشرة في المئة"}]},
-  {"dialect":"levantine","form":"حسم"},{"dialect":"palestinian","form":"حسم"},
-  {"dialect":"gulf","form":"خصم"},{"dialect":"najdi","form":"تخفيض"},{"dialect":"hejazi","form":"خصم"},
-  {"dialect":"iraqi","form":"خصم"},{"dialect":"yemeni","form":"خصم"},{"dialect":"sudanese","form":"خصم"},
-  {"dialect":"moroccan","form":"الريميز"},{"dialect":"algerian","form":"الريميز"},{"dialect":"tunisian","form":"التخفيض"},{"dialect":"libyan","form":"خصم"},
-  {"dialect":"hassaniya","form":"الخصم"}]},
-
- {"headword":"دين","definition":"مال في ذمة المرء لغيره","kind":"word","entries":[
-  {"dialect":"egyptian","form":"دين"},{"dialect":"levantine","form":"دين"},{"dialect":"palestinian","form":"دين"},
-  {"dialect":"gulf","form":"دين"},{"dialect":"najdi","form":"دين"},{"dialect":"hejazi","form":"دين"},
-  {"dialect":"iraqi","form":"دين"},{"dialect":"yemeni","form":"دين"},{"dialect":"sudanese","form":"دين"},
-  {"dialect":"moroccan","form":"التسليف"},{"dialect":"algerian","form":"الدين"},{"dialect":"tunisian","form":"الدين"},{"dialect":"libyan","form":"دين"},
-  {"dialect":"hassaniya","form":"الدين"}]},
-
- {"headword":"مصروف","definition":"ما يُنفق من المال في الحاجات","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مصروف","examples":[{"text":"المصروف خلص قبل آخر الشهر","gloss":"نفد المصروف قبل نهاية الشهر"}]},
-  {"dialect":"levantine","form":"مصروف"},{"dialect":"palestinian","form":"مصروف"},
-  {"dialect":"gulf","form":"مصروف"},{"dialect":"najdi","form":"مصروف"},{"dialect":"hejazi","form":"مصروف"},
-  {"dialect":"iraqi","form":"مصروف"},{"dialect":"yemeni","form":"مصروف"},{"dialect":"sudanese","form":"مصروف"},
-  {"dialect":"moroccan","form":"المصروف"},{"dialect":"algerian","form":"المصروف"},{"dialect":"tunisian","form":"المصروف"},{"dialect":"libyan","form":"مصروف"},
-  {"dialect":"hassaniya","form":"المصروف"}]},
-
- {"headword":"صراف آلي","definition":"جهاز يُسحب منه المال بالبطاقة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"ماكينة الصراف"},{"dialect":"levantine","form":"صراف آلي"},{"dialect":"palestinian","form":"صراف آلي"},
-  {"dialect":"gulf","form":"صراف"},{"dialect":"najdi","form":"صراف"},{"dialect":"hejazi","form":"صراف"},
-  {"dialect":"iraqi","form":"صراف آلي"},{"dialect":"yemeni","form":"صراف آلي"},{"dialect":"sudanese","form":"صراف آلي"},
-  {"dialect":"moroccan","form":"الغيشي","notes":"من الفرنسية"},{"dialect":"algerian","form":"الديستريبيتور"},{"dialect":"tunisian","form":"الديستريبيتور"},{"dialect":"libyan","form":"صراف آلي"},
-  {"dialect":"hassaniya","form":"الصراف"}]},
-
- {"headword":"بطاقة بنكية","definition":"بطاقة يُدفع بها أو يُسحب بها المال","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"كارت"},{"dialect":"levantine","form":"بطاقة"},{"dialect":"palestinian","form":"بطاقة"},
-  {"dialect":"gulf","form":"بطاقة"},{"dialect":"najdi","form":"بطاقة"},{"dialect":"hejazi","form":"بطاقة"},
-  {"dialect":"iraqi","form":"كارت"},{"dialect":"yemeni","form":"بطاقة"},{"dialect":"sudanese","form":"كرت"},
-  {"dialect":"moroccan","form":"الكارط"},{"dialect":"algerian","form":"الكارط"},{"dialect":"tunisian","form":"الكارط"},{"dialect":"libyan","form":"كارت"},
-  {"dialect":"hassaniya","form":"البطاقه"}]},
-
- {"headword":"يوفر","definition":"يدخر المال ولا ينفقه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"يوفر","examples":[{"text":"بيوفر من مرتبه كل شهر","gloss":"يدخر من راتبه كل شهر"}]},
-  {"dialect":"levantine","form":"يوفر"},{"dialect":"palestinian","form":"يوفر"},
-  {"dialect":"gulf","form":"يوفر"},{"dialect":"najdi","form":"يوفر"},{"dialect":"hejazi","form":"يوفر"},
-  {"dialect":"iraqi","form":"يخزن"},{"dialect":"yemeni","form":"يوفر"},{"dialect":"sudanese","form":"يوفر"},
-  {"dialect":"moroccan","form":"يقتصد"},{"dialect":"algerian","form":"يوفر"},{"dialect":"tunisian","form":"يوفر"},{"dialect":"libyan","form":"يوفر"},
-  {"dialect":"hassaniya","form":"يوفر"}]},
-
- {"headword":"عملة","definition":"نقد البلد الذي يُتعامل به","kind":"word","entries":[
-  {"dialect":"egyptian","form":"عملة"},{"dialect":"levantine","form":"عملة"},{"dialect":"palestinian","form":"عملة"},
-  {"dialect":"gulf","form":"عملة"},{"dialect":"najdi","form":"عملة"},{"dialect":"hejazi","form":"عملة"},
-  {"dialect":"iraqi","form":"عملة"},{"dialect":"yemeni","form":"عملة"},{"dialect":"sudanese","form":"عملة"},
-  {"dialect":"moroccan","form":"العملة"},{"dialect":"algerian","form":"العملة"},{"dialect":"tunisian","form":"العملة"},{"dialect":"libyan","form":"عملة"},
-  {"dialect":"hassaniya","form":"العمله"}]},
-
- {"headword":"ضريبة","definition":"ما تأخذه الدولة من المال","kind":"word","entries":[
-  {"dialect":"egyptian","form":"ضرايب"},{"dialect":"levantine","form":"ضريبة"},{"dialect":"palestinian","form":"ضريبة"},
-  {"dialect":"gulf","form":"ضريبة"},{"dialect":"najdi","form":"ضريبة"},{"dialect":"hejazi","form":"ضريبة"},
-  {"dialect":"iraqi","form":"ضريبة"},{"dialect":"yemeni","form":"ضريبة"},{"dialect":"sudanese","form":"ضريبة"},
-  {"dialect":"moroccan","form":"الضريبة"},{"dialect":"algerian","form":"الضريبة"},{"dialect":"tunisian","form":"الأداء"},{"dialect":"libyan","form":"ضريبة"},
-  {"dialect":"hassaniya","form":"الضريبه"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "فكة",
+   "definition": "النقود الصغيرة التي تُرد من الثمن",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فكة",
+     "examples": [
+      {
+       "text": "معاك فكة عشرين جنيه؟",
+       "gloss": "هل لديك فكة عشرين جنيهاً؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "فراطة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "فراطة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فكة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "فكة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "فكة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "خردة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "فكة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "فكة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الصرف"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الصرف"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الصرف"
+    },
+    {
+     "dialect": "libyan",
+     "form": "فكة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الفكه"
+    }
+   ]
+  },
+  {
+   "headword": "يساوم",
+   "definition": "يجادل البائع في الثمن ليخفضه",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يفاصل",
+     "examples": [
+      {
+       "text": "فاصلت معاه لحد ما نزل السعر",
+       "gloss": "ساومته حتى خفض السعر"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يكاسر"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يكاسر"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يتسوم",
+     "examples": [
+      {
+       "text": "تسوم معاه شوية",
+       "gloss": "ساومه قليلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "يتسوم"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يتفاصل"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يفاصل"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يتسوم"
+    }
+   ]
+  },
+  {
+   "headword": "محفظة",
+   "definition": "ما يُحفظ فيه المال والبطاقات",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "جزدان"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "جزدان"
+    },
+    {
+     "dialect": "gulf",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جزدان"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البزطام"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البزطام"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البزطام"
+    },
+    {
+     "dialect": "libyan",
+     "form": "محفظة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المحفظه"
+    }
+   ]
+  },
+  {
+   "headword": "فاتورة",
+   "definition": "ورقة بقيمة ما اشتُري أو استُهلك",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فاتورة",
+     "examples": [
+      {
+       "text": "جت فاتورة الكهربا غالية",
+       "gloss": "جاءت فاتورة الكهرباء مرتفعة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "قائمة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الفاكتورة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الفاكتورة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الفاكتورة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "فاتورة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الفاتوره"
+    }
+   ]
+  },
+  {
+   "headword": "خصم",
+   "definition": "إنقاص من الثمن",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "خصم",
+     "examples": [
+      {
+       "text": "عمللي خصم عشرة في المية",
+       "gloss": "منحني خصماً بعشرة في المئة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حسم"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حسم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "خصم"
+    },
+    {
+     "dialect": "najdi",
+     "form": "تخفيض"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "خصم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "خصم"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "خصم"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "خصم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الريميز"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الريميز"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "التخفيض"
+    },
+    {
+     "dialect": "libyan",
+     "form": "خصم"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الخصم"
+    }
+   ]
+  },
+  {
+   "headword": "دين",
+   "definition": "مال في ذمة المرء لغيره",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "دين"
+    },
+    {
+     "dialect": "levantine",
+     "form": "دين"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "دين"
+    },
+    {
+     "dialect": "gulf",
+     "form": "دين"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دين"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دين"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "دين"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دين"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "دين"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "التسليف"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الدين"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الدين"
+    },
+    {
+     "dialect": "libyan",
+     "form": "دين"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الدين"
+    }
+   ]
+  },
+  {
+   "headword": "صراف آلي",
+   "definition": "جهاز يُسحب منه المال بالبطاقة",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ماكينة الصراف"
+    },
+    {
+     "dialect": "levantine",
+     "form": "صراف آلي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "صراف آلي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "صراف"
+    },
+    {
+     "dialect": "najdi",
+     "form": "صراف"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "صراف"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "صراف آلي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "صراف آلي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "صراف آلي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الغيشي",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الديستريبيتور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الديستريبيتور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "صراف آلي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الصراف"
+    }
+   ]
+  },
+  {
+   "headword": "بطاقة بنكية",
+   "definition": "بطاقة يُدفع بها أو يُسحب بها المال",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كارت"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "كارت"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بطاقة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "كرت"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكارط"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكارط"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الكارط"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كارت"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "البطاقه"
+    }
+   ]
+  },
+  {
+   "headword": "يوفر",
+   "definition": "يدخر المال ولا ينفقه",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يوفر",
+     "examples": [
+      {
+       "text": "بيوفر من مرتبه كل شهر",
+       "gloss": "يدخر من راتبه كل شهر"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يخزن"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "يقتصد"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يوفر"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يوفر"
+    }
+   ]
+  },
+  {
+   "headword": "ضريبة",
+   "definition": "ما تأخذه الدولة من المال",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ضرايب"
+    },
+    {
+     "dialect": "levantine",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الضريبة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الضريبة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الأداء"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ضريبة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الضريبه"
+    }
+   ]
+  }
+ ]
+}

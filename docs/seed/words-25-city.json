@@ -1,92 +1,604 @@
-{"words":[
- {"headword":"حي","definition":"جزء من المدينة يسكنه الناس","kind":"word","entries":[
-  {"dialect":"egyptian","form":"حتة","examples":[{"text":"ساكن في حتة بعيدة شوية","gloss":"أسكن في حي بعيد قليلاً"}]},
-  {"dialect":"levantine","form":"حارة"},{"dialect":"palestinian","form":"حارة"},
-  {"dialect":"gulf","form":"فريج","examples":[{"text":"كلنا من نفس الفريج","gloss":"كلنا من الحي نفسه"}]},
-  {"dialect":"najdi","form":"حي"},{"dialect":"hejazi","form":"حارة"},
-  {"dialect":"iraqi","form":"محلة"},{"dialect":"yemeni","form":"حارة"},{"dialect":"sudanese","form":"حلة"},
-  {"dialect":"moroccan","form":"الحومة"},{"dialect":"algerian","form":"الحومة"},{"dialect":"tunisian","form":"الحومة"},{"dialect":"libyan","form":"حومة"},
-  {"dialect":"hassaniya","form":"الحي"}]},
-
- {"headword":"ساحة","definition":"مكان واسع مكشوف وسط المدينة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"ميدان","examples":[{"text":"اتقابلنا في الميدان","gloss":"التقينا في الساحة"}]},
-  {"dialect":"levantine","form":"ساحة"},{"dialect":"palestinian","form":"ساحة"},
-  {"dialect":"gulf","form":"ساحة"},{"dialect":"najdi","form":"ساحة"},{"dialect":"hejazi","form":"ميدان"},
-  {"dialect":"iraqi","form":"ساحة"},{"dialect":"yemeni","form":"ميدان"},{"dialect":"sudanese","form":"ميدان"},
-  {"dialect":"moroccan","form":"الساحة"},{"dialect":"algerian","form":"الساحة"},{"dialect":"tunisian","form":"الساحة"},{"dialect":"libyan","form":"ميدان"},
-  {"dialect":"hassaniya","form":"الساحه"}]},
-
- {"headword":"دوار","definition":"دائرة في الطريق تدور حولها السيارات","kind":"word","entries":[
-  {"dialect":"egyptian","form":"دوران"},{"dialect":"levantine","form":"دوار"},{"dialect":"palestinian","form":"دوار"},
-  {"dialect":"gulf","form":"دوار"},{"dialect":"najdi","form":"دوار"},{"dialect":"hejazi","form":"دوار"},
-  {"dialect":"iraqi","form":"دوار"},{"dialect":"yemeni","form":"دوار"},{"dialect":"sudanese","form":"دوار"},
-  {"dialect":"moroccan","form":"الروند","notes":"من الفرنسية"},{"dialect":"algerian","form":"الروبوان"},{"dialect":"tunisian","form":"الروبوان"},{"dialect":"libyan","form":"دوار"},
-  {"dialect":"hassaniya","form":"الدوار"}]},
-
- {"headword":"مفترق طرق","definition":"موضع تلتقي فيه الطرق","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"تقاطع"},{"dialect":"levantine","form":"مفرق"},{"dialect":"palestinian","form":"مفرق"},
-  {"dialect":"gulf","form":"تقاطع"},{"dialect":"najdi","form":"تقاطع"},{"dialect":"hejazi","form":"تقاطع"},
-  {"dialect":"iraqi","form":"مفرق"},{"dialect":"yemeni","form":"مفرق"},{"dialect":"sudanese","form":"تقاطع"},
-  {"dialect":"moroccan","form":"الكروازمان","notes":"من الفرنسية"},{"dialect":"algerian","form":"الكروازمان"},{"dialect":"tunisian","form":"التقاطع"},{"dialect":"libyan","form":"تقاطع"},
-  {"dialect":"hassaniya","form":"التقاطع"}]},
-
- {"headword":"المصعد","definition":"ما يصعد بالناس بين الطوابق","kind":"word","entries":[
-  {"dialect":"egyptian","form":"الأسانسير","examples":[{"text":"الأسانسير عطلان، اطلع بالسلم","gloss":"المصعد معطل، اصعد بالدرج"}]},
-  {"dialect":"levantine","form":"المصعد"},{"dialect":"palestinian","form":"الأسانسير"},
-  {"dialect":"gulf","form":"المصعد"},{"dialect":"najdi","form":"المصعد"},{"dialect":"hejazi","form":"المصعد"},
-  {"dialect":"iraqi","form":"المصعد"},{"dialect":"yemeni","form":"المصعد"},{"dialect":"sudanese","form":"المصعد"},
-  {"dialect":"moroccan","form":"الأسانسور"},{"dialect":"algerian","form":"الأسانسور"},{"dialect":"tunisian","form":"الأسانسور"},{"dialect":"libyan","form":"أسانسير"},
-  {"dialect":"hassaniya","form":"المصعد"}]},
-
- {"headword":"درج","definition":"ما يُصعد عليه بين الطوابق","kind":"word","entries":[
-  {"dialect":"egyptian","form":"سلم"},{"dialect":"levantine","form":"درج"},{"dialect":"palestinian","form":"درج"},
-  {"dialect":"gulf","form":"درج"},{"dialect":"najdi","form":"درج"},{"dialect":"hejazi","form":"درج"},
-  {"dialect":"iraqi","form":"درج"},{"dialect":"yemeni","form":"درج"},{"dialect":"sudanese","form":"سلم"},
-  {"dialect":"moroccan","form":"الدروج"},{"dialect":"algerian","form":"الدروج"},{"dialect":"tunisian","form":"الدرج"},{"dialect":"libyan","form":"درج"},
-  {"dialect":"hassaniya","form":"الدرج"}]},
-
- {"headword":"الطابق","definition":"دور من أدوار البناء","kind":"word","entries":[
-  {"dialect":"egyptian","form":"الدور","examples":[{"text":"ساكن في الدور التالت","gloss":"أسكن في الطابق الثالث"}]},
-  {"dialect":"levantine","form":"الطابق"},{"dialect":"palestinian","form":"الطابق"},
-  {"dialect":"gulf","form":"الدور"},{"dialect":"najdi","form":"الدور"},{"dialect":"hejazi","form":"الدور"},
-  {"dialect":"iraqi","form":"الطابق"},{"dialect":"yemeni","form":"الدور"},{"dialect":"sudanese","form":"الدور"},
-  {"dialect":"moroccan","form":"الطابق"},{"dialect":"algerian","form":"الطابق"},{"dialect":"tunisian","form":"الطابق"},{"dialect":"libyan","form":"الدور"},
-  {"dialect":"hassaniya","form":"الطابق"}]},
-
- {"headword":"سطح المنزل","definition":"أعلى البيت المكشوف","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"السطح"},{"dialect":"levantine","form":"السطح"},{"dialect":"palestinian","form":"السطح"},
-  {"dialect":"gulf","form":"السطح"},{"dialect":"najdi","form":"السطح"},{"dialect":"hejazi","form":"السطح"},
-  {"dialect":"iraqi","form":"السطح"},{"dialect":"yemeni","form":"السطح"},{"dialect":"sudanese","form":"السطح"},
-  {"dialect":"moroccan","form":"السطح"},{"dialect":"algerian","form":"السطح"},{"dialect":"tunisian","form":"السطح"},{"dialect":"libyan","form":"سطح"},
-  {"dialect":"hassaniya","form":"السطح"}]},
-
- {"headword":"جار","definition":"من يسكن بجوارك","kind":"word","entries":[
-  {"dialect":"egyptian","form":"جار","examples":[{"text":"جارنا راجل محترم","gloss":"جارنا رجل محترم"}]},
-  {"dialect":"levantine","form":"جار"},{"dialect":"palestinian","form":"جار"},
-  {"dialect":"gulf","form":"جار"},{"dialect":"najdi","form":"جار"},{"dialect":"hejazi","form":"جار"},
-  {"dialect":"iraqi","form":"جار"},{"dialect":"yemeni","form":"جار"},{"dialect":"sudanese","form":"جار"},
-  {"dialect":"moroccan","form":"الجار"},{"dialect":"algerian","form":"الجار"},{"dialect":"tunisian","form":"الجار"},{"dialect":"libyan","form":"جار"},
-  {"dialect":"hassaniya","form":"الجار"}]},
-
- {"headword":"عنوان","definition":"ما يدل على موضع البيت أو المكان","kind":"word","entries":[
-  {"dialect":"egyptian","form":"عنوان","examples":[{"text":"ابعتلي العنوان على الواتس","gloss":"أرسل لي العنوان على واتساب"}]},
-  {"dialect":"levantine","form":"عنوان"},{"dialect":"palestinian","form":"عنوان"},
-  {"dialect":"gulf","form":"عنوان"},{"dialect":"najdi","form":"عنوان"},{"dialect":"hejazi","form":"عنوان"},
-  {"dialect":"iraqi","form":"عنوان"},{"dialect":"yemeni","form":"عنوان"},{"dialect":"sudanese","form":"عنوان"},
-  {"dialect":"moroccan","form":"العنوان"},{"dialect":"algerian","form":"العنوان"},{"dialect":"tunisian","form":"العنوان"},{"dialect":"libyan","form":"عنوان"},
-  {"dialect":"hassaniya","form":"العنوان"}]},
-
- {"headword":"وسط البلد","definition":"قلب المدينة حيث الأسواق والدوائر","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"وسط البلد"},{"dialect":"levantine","form":"وسط البلد"},{"dialect":"palestinian","form":"وسط البلد"},
-  {"dialect":"gulf","form":"وسط المدينة"},{"dialect":"najdi","form":"وسط المدينة"},{"dialect":"hejazi","form":"وسط البلد"},
-  {"dialect":"iraqi","form":"مركز المدينة"},{"dialect":"yemeni","form":"وسط المدينة"},{"dialect":"sudanese","form":"وسط البلد"},
-  {"dialect":"moroccan","form":"السنطر","notes":"من الفرنسية"},{"dialect":"algerian","form":"السنطر"},{"dialect":"tunisian","form":"السنطر"},{"dialect":"libyan","form":"وسط البلاد"},
-  {"dialect":"hassaniya","form":"وسط المدينه"}]},
-
- {"headword":"زقاق","definition":"طريق ضيق بين البيوت","kind":"word","entries":[
-  {"dialect":"egyptian","form":"حارة"},{"dialect":"levantine","form":"زاروب"},{"dialect":"palestinian","form":"زقاق"},
-  {"dialect":"gulf","form":"سكة"},{"dialect":"najdi","form":"سكة"},{"dialect":"hejazi","form":"حارة"},
-  {"dialect":"iraqi","form":"دربونة"},{"dialect":"yemeni","form":"زقاق"},{"dialect":"sudanese","form":"شارع ضيق"},
-  {"dialect":"moroccan","form":"الدرب"},{"dialect":"algerian","form":"الزنقة"},{"dialect":"tunisian","form":"الزنقة"},{"dialect":"libyan","form":"زنقة"},
-  {"dialect":"hassaniya","form":"الزقاق"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "حي",
+   "definition": "جزء من المدينة يسكنه الناس",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حتة",
+     "examples": [
+      {
+       "text": "ساكن في حتة بعيدة شوية",
+       "gloss": "أسكن في حي بعيد قليلاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "حارة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حارة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فريج",
+     "examples": [
+      {
+       "text": "كلنا من نفس الفريج",
+       "gloss": "كلنا من الحي نفسه"
+      }
+     ]
+    },
+    {
+     "dialect": "najdi",
+     "form": "حي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حارة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "محلة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حارة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حلة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الحومة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الحومة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الحومة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حومة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحي"
+    }
+   ]
+  },
+  {
+   "headword": "ساحة",
+   "definition": "مكان واسع مكشوف وسط المدينة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ميدان",
+     "examples": [
+      {
+       "text": "اتقابلنا في الميدان",
+       "gloss": "التقينا في الساحة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ساحة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ساحة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ساحة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ساحة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ميدان"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ساحة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ميدان"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ميدان"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الساحة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الساحة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الساحة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ميدان"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الساحه"
+    }
+   ]
+  },
+  {
+   "headword": "دوار",
+   "definition": "دائرة في الطريق تدور حولها السيارات",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "دوران"
+    },
+    {
+     "dialect": "levantine",
+     "form": "دوار"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "دوار"
+    },
+    {
+     "dialect": "gulf",
+     "form": "دوار"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دوار"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دوار"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "دوار"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دوار"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "دوار"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الروند",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الروبوان"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الروبوان"
+    },
+    {
+     "dialect": "libyan",
+     "form": "دوار"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الدوار"
+    }
+   ]
+  },
+  {
+   "headword": "مفترق طرق",
+   "definition": "موضع تلتقي فيه الطرق",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "تقاطع"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مفرق"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مفرق"
+    },
+    {
+     "dialect": "gulf",
+     "form": "تقاطع"
+    },
+    {
+     "dialect": "najdi",
+     "form": "تقاطع"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "تقاطع"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مفرق"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مفرق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "تقاطع"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الكروازمان",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الكروازمان"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "التقاطع"
+    },
+    {
+     "dialect": "libyan",
+     "form": "تقاطع"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "التقاطع"
+    }
+   ]
+  },
+  {
+   "headword": "المصعد",
+   "definition": "ما يصعد بالناس بين الطوابق",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "الأسانسير",
+     "examples": [
+      {
+       "text": "الأسانسير عطلان، اطلع بالسلم",
+       "gloss": "المصعد معطل، اصعد بالدرج"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "الأسانسير"
+    },
+    {
+     "dialect": "gulf",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "najdi",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "المصعد"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الأسانسور"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الأسانسور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الأسانسور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "أسانسير"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المصعد"
+    }
+   ]
+  },
+  {
+   "headword": "درج",
+   "definition": "ما يُصعد عليه بين الطوابق",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سلم"
+    },
+    {
+     "dialect": "levantine",
+     "form": "درج"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "درج"
+    },
+    {
+     "dialect": "gulf",
+     "form": "درج"
+    },
+    {
+     "dialect": "najdi",
+     "form": "درج"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "درج"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "درج"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "درج"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سلم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الدروج"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الدروج"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الدرج"
+    },
+    {
+     "dialect": "libyan",
+     "form": "درج"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الدرج"
+    }
+   ]
+  },
+  {
+   "headword": "الطابق",
+   "definition": "دور من أدوار البناء",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "الدور",
+     "examples": [
+      {
+       "text": "ساكن في الدور التالت",
+       "gloss": "أسكن في الطابق الثالث"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "الطابق"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "الطابق"
+    },
+    {
+     "dialect": "gulf",
+     "form": "الدور"
+    },
+    {
+     "dialect": "najdi",
+     "form": "الدور"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "الدور"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "الطابق"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "الدور"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "الدور"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الطابق"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الطابق"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الطابق"
+    },
+    {
+     "dialect": "libyan",
+     "form": "الدور"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الطابق"
+    }
+   ]
+  },
+  {
+   "headword": "وسط البلد",
+   "definition": "قلب المدينة حيث الأسواق والدوائر",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "وسط البلد"
+    },
+    {
+     "dialect": "levantine",
+     "form": "وسط البلد"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "وسط البلد"
+    },
+    {
+     "dialect": "gulf",
+     "form": "وسط المدينة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "وسط المدينة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "وسط البلد"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مركز المدينة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "وسط المدينة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "وسط البلد"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "السنطر",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "السنطر"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السنطر"
+    },
+    {
+     "dialect": "libyan",
+     "form": "وسط البلاد"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "وسط المدينه"
+    }
+   ]
+  },
+  {
+   "headword": "زقاق",
+   "definition": "طريق ضيق بين البيوت",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حارة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "زاروب"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "زقاق"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سكة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سكة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حارة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "دربونة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "زقاق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شارع ضيق"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الدرب"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الزنقة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الزنقة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "زنقة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الزقاق"
+    }
+   ]
+  }
+ ]
+}

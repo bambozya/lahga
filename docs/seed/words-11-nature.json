@@ -1,43 +1,6 @@
 {
  "words": [
   {
-   "headword": "شمس",
-   "definition": "الشمس",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "شمس",
-     "meaning": "شمس"
-    },
-    {
-     "dialect": "levantine",
-     "form": "شمس",
-     "meaning": "شمس"
-    },
-    {
-     "dialect": "gulf",
-     "form": "شمس",
-     "meaning": "شمس"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "شمس",
-     "meaning": "شمس"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "شمس",
-     "meaning": "شمس"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "شمس",
-     "meaning": "شمس"
-    }
-   ]
-  },
-  {
    "headword": "مطر",
    "definition": "المطر",
    "kind": "word",
@@ -228,48 +191,6 @@
      "dialect": "hassaniya",
      "form": "حر",
      "meaning": "حر"
-    }
-   ]
-  },
-  {
-   "headword": "برد",
-   "definition": "انخفاض الحرارة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "برد",
-     "meaning": "برد"
-    },
-    {
-     "dialect": "levantine",
-     "form": "برد",
-     "meaning": "برد"
-    },
-    {
-     "dialect": "gulf",
-     "form": "برد",
-     "meaning": "برد"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "برد",
-     "meaning": "برد"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "برد",
-     "meaning": "برد"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "برد",
-     "meaning": "برد"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "برد",
-     "meaning": "برد"
     }
    ]
   },
@@ -500,48 +421,6 @@
    ]
   },
   {
-   "headword": "بحر",
-   "definition": "البحر",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "بحر",
-     "meaning": "بحر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "بحر",
-     "meaning": "بحر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "بحر",
-     "meaning": "بحر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "بحر",
-     "meaning": "بحر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "بحر",
-     "meaning": "بحر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "بحر",
-     "meaning": "بحر"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "بحر",
-     "meaning": "بحر"
-    }
-   ]
-  },
-  {
    "headword": "نهر",
    "definition": "مجرى الماء",
    "kind": "word",
@@ -652,43 +531,6 @@
      "dialect": "hassaniya",
      "form": "واد",
      "meaning": "نهر"
-    }
-   ]
-  },
-  {
-   "headword": "جبل",
-   "definition": "الجبل",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "جبل",
-     "meaning": "جبل"
-    },
-    {
-     "dialect": "levantine",
-     "form": "جبل",
-     "meaning": "جبل"
-    },
-    {
-     "dialect": "gulf",
-     "form": "جبل",
-     "meaning": "جبل"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "جبل",
-     "meaning": "جبل"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "جبل",
-     "meaning": "جبل"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "جبل",
-     "meaning": "جبل"
     }
    ]
   },
@@ -1647,85 +1489,6 @@
      "dialect": "hassaniya",
      "form": "حولي",
      "meaning": "خروف"
-    }
-   ]
-  },
-  {
-   "headword": "سماء",
-   "definition": "السماء",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "سما",
-     "meaning": "سماء"
-    },
-    {
-     "dialect": "levantine",
-     "form": "سما",
-     "meaning": "سماء"
-    },
-    {
-     "dialect": "gulf",
-     "form": "سما",
-     "meaning": "سماء"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "سما",
-     "meaning": "سماء"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "سما",
-     "meaning": "سماء"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "سما",
-     "meaning": "سماء"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "سما",
-     "meaning": "سماء"
-    }
-   ]
-  },
-  {
-   "headword": "نجمة",
-   "definition": "النجم",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "نجمة",
-     "meaning": "نجمة"
-    },
-    {
-     "dialect": "levantine",
-     "form": "نجمة",
-     "meaning": "نجمة"
-    },
-    {
-     "dialect": "gulf",
-     "form": "نجمة",
-     "meaning": "نجمة"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "نجمة",
-     "meaning": "نجمة"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "نجمة",
-     "meaning": "نجمة"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "نجمة",
-     "meaning": "نجمة"
     }
    ]
   },

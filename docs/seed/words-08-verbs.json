@@ -242,110 +242,6 @@
    ]
   },
   {
-   "headword": "يرى",
-   "definition": "يبصر",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "najdi",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "algerian",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "libyan",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يشوف",
-     "meaning": "يرى"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "يشوف",
-     "meaning": "يرى"
-    }
-   ]
-  },
-  {
-   "headword": "يسمع",
-   "definition": "يدرك بالأذن",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يسمع",
-     "meaning": "يسمع"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يسمع",
-     "meaning": "يسمع"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يسمع",
-     "meaning": "يسمع"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يسمع",
-     "meaning": "يسمع"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يسمع",
-     "meaning": "يسمع"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يسمع",
-     "meaning": "يسمع"
-    }
-   ]
-  },
-  {
    "headword": "يقول",
    "definition": "يتكلم بشيء",
    "kind": "word",
@@ -525,43 +421,6 @@
    ]
   },
   {
-   "headword": "يفهم",
-   "definition": "يدرك المعنى",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يفهم",
-     "meaning": "يفهم"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يفهم",
-     "meaning": "يفهم"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يفهم",
-     "meaning": "يفهم"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يفهم",
-     "meaning": "يفهم"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يفهم",
-     "meaning": "يفهم"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يفهم",
-     "meaning": "يفهم"
-    }
-   ]
-  },
-  {
    "headword": "يحب",
    "definition": "يميل إلى",
    "kind": "word",
@@ -636,48 +495,6 @@
      "dialect": "hassaniya",
      "form": "يبغي",
      "meaning": "يحب"
-    }
-   ]
-  },
-  {
-   "headword": "يكره",
-   "definition": "يبغض",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يكره",
-     "meaning": "يكره"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يكره",
-     "meaning": "يكره"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يكره",
-     "meaning": "يكره"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يكره",
-     "meaning": "يكره"
-    },
-    {
-     "dialect": "algerian",
-     "form": "يكره",
-     "meaning": "يكره"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يكره",
-     "meaning": "يكره"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يكره",
-     "meaning": "يكره"
     }
    ]
   },
@@ -1433,43 +1250,6 @@
    ]
   },
   {
-   "headword": "يبيع",
-   "definition": "يعرض للبيع",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يبيع",
-     "meaning": "يبيع"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يبيع",
-     "meaning": "يبيع"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يبيع",
-     "meaning": "يبيع"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يبيع",
-     "meaning": "يبيع"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يبيع",
-     "meaning": "يبيع"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يبيع",
-     "meaning": "يبيع"
-    }
-   ]
-  },
-  {
    "headword": "يدفع",
    "definition": "يعطي المال ثمناً",
    "kind": "word",
@@ -1687,110 +1467,6 @@
      "dialect": "hassaniya",
      "form": "يسدّ",
      "meaning": "يغلق"
-    }
-   ]
-  },
-  {
-   "headword": "يكتب",
-   "definition": "يخطّ",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يكتب",
-     "meaning": "يكتب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يكتب",
-     "meaning": "يكتب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يكتب",
-     "meaning": "يكتب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يكتب",
-     "meaning": "يكتب"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يكتب",
-     "meaning": "يكتب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يكتب",
-     "meaning": "يكتب"
-    }
-   ]
-  },
-  {
-   "headword": "يقرأ",
-   "definition": "يطالع",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "najdi",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "algerian",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "libyan",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يقرا",
-     "meaning": "يقرأ"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "يقرا",
-     "meaning": "يقرأ"
     }
    ]
   },
@@ -2379,43 +2055,6 @@
    ]
   },
   {
-   "headword": "ينسى",
-   "definition": "يغيب عن ذاكرته",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "ينسى",
-     "meaning": "ينسى"
-    },
-    {
-     "dialect": "levantine",
-     "form": "ينسى",
-     "meaning": "ينسى"
-    },
-    {
-     "dialect": "gulf",
-     "form": "ينسى",
-     "meaning": "ينسى"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "ينسى",
-     "meaning": "ينسى"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "ينسى",
-     "meaning": "ينسى"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "ينسى",
-     "meaning": "ينسى"
-    }
-   ]
-  },
-  {
    "headword": "يتذكر",
    "definition": "يستحضر في الذاكرة",
    "kind": "word",
@@ -2489,43 +2128,6 @@
      "dialect": "hassaniya",
      "form": "يعگل",
      "meaning": "يتذكر"
-    }
-   ]
-  },
-  {
-   "headword": "يضحك",
-   "definition": "يبتسم بصوت",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يضحك",
-     "meaning": "يضحك"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يضحك",
-     "meaning": "يضحك"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يضحك",
-     "meaning": "يضحك"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يضحك",
-     "meaning": "يضحك"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يضحك",
-     "meaning": "يضحك"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يضحك",
-     "meaning": "يضحك"
     }
    ]
   },
@@ -2699,80 +2301,6 @@
    ]
   },
   {
-   "headword": "يلعب",
-   "definition": "يمارس اللعب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يلعب",
-     "meaning": "يلعب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يلعب",
-     "meaning": "يلعب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يلعب",
-     "meaning": "يلعب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يلعب",
-     "meaning": "يلعب"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يلعب",
-     "meaning": "يلعب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يلعب",
-     "meaning": "يلعب"
-    }
-   ]
-  },
-  {
-   "headword": "يغني",
-   "definition": "يؤدي أغنية",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يغنّي",
-     "meaning": "يغني"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يغنّي",
-     "meaning": "يغني"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يغنّي",
-     "meaning": "يغني"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يغنّي",
-     "meaning": "يغني"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يغنّي",
-     "meaning": "يغني"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يغنّي",
-     "meaning": "يغني"
-    }
-   ]
-  },
-  {
    "headword": "يرقص",
    "definition": "يتحرك على إيقاع",
    "kind": "word",
@@ -2826,43 +2354,6 @@
      "dialect": "hassaniya",
      "form": "يشطح",
      "meaning": "يرقص"
-    }
-   ]
-  },
-  {
-   "headword": "يسافر",
-   "definition": "يرحل بعيداً",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يسافر",
-     "meaning": "يسافر"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يسافر",
-     "meaning": "يسافر"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يسافر",
-     "meaning": "يسافر"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يسافر",
-     "meaning": "يسافر"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يسافر",
-     "meaning": "يسافر"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يسافر",
-     "meaning": "يسافر"
     }
    ]
   },
@@ -3779,80 +3270,6 @@
    ]
   },
   {
-   "headword": "يجرّب",
-   "definition": "يحاول",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يجرّب",
-     "meaning": "يجرّب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يجرّب",
-     "meaning": "يجرّب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يجرّب",
-     "meaning": "يجرّب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يجرّب",
-     "meaning": "يجرّب"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يجرّب",
-     "meaning": "يجرّب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يجرّب",
-     "meaning": "يجرّب"
-    }
-   ]
-  },
-  {
-   "headword": "يخاف",
-   "definition": "يفزع",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يخاف",
-     "meaning": "يخاف"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يخاف",
-     "meaning": "يخاف"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يخاف",
-     "meaning": "يخاف"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يخاف",
-     "meaning": "يخاف"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يخاف",
-     "meaning": "يخاف"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يخاف",
-     "meaning": "يخاف"
-    }
-   ]
-  },
-  {
    "headword": "يغضب",
    "definition": "يزعل",
    "kind": "word",
@@ -4119,43 +3536,6 @@
    ]
   },
   {
-   "headword": "يضرب",
-   "definition": "يصفع أو يلكم",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يضرب",
-     "meaning": "يضرب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يضرب",
-     "meaning": "يضرب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يضرب",
-     "meaning": "يضرب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يضرب",
-     "meaning": "يضرب"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يضرب",
-     "meaning": "يضرب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يضرب",
-     "meaning": "يضرب"
-    }
-   ]
-  },
-  {
    "headword": "يغسل",
    "definition": "ينظف بالماء",
    "kind": "word",
@@ -4220,43 +3600,6 @@
      "dialect": "hassaniya",
      "form": "يغسل",
      "meaning": "يغسل"
-    }
-   ]
-  },
-  {
-   "headword": "يلبس",
-   "definition": "يرتدي",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "يلبس",
-     "meaning": "يلبس"
-    },
-    {
-     "dialect": "levantine",
-     "form": "يلبس",
-     "meaning": "يلبس"
-    },
-    {
-     "dialect": "gulf",
-     "form": "يلبس",
-     "meaning": "يلبس"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "يلبس",
-     "meaning": "يلبس"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "يلبس",
-     "meaning": "يلبس"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "يلبس",
-     "meaning": "يلبس"
     }
    ]
   },

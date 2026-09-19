@@ -323,90 +323,6 @@
    ]
   },
   {
-   "headword": "طويل",
-   "definition": "ضد قصير",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "طويل",
-     "meaning": "طويل"
-    },
-    {
-     "dialect": "levantine",
-     "form": "طويل",
-     "meaning": "طويل"
-    },
-    {
-     "dialect": "gulf",
-     "form": "طويل",
-     "meaning": "طويل"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "طويل",
-     "meaning": "طويل"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "طويل",
-     "meaning": "طويل"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "طويل",
-     "meaning": "طويل"
-    }
-   ]
-  },
-  {
-   "headword": "قصير",
-   "definition": "ضد طويل",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "قصيّر",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "levantine",
-     "form": "قصير",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "gulf",
-     "form": "قصير",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "قصير",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "algerian",
-     "form": "قصير",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "قصير",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "قصيّر",
-     "meaning": "قصير"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "قصير",
-     "meaning": "قصير"
-    }
-   ]
-  },
-  {
    "headword": "سمين",
    "definition": "بدين",
    "kind": "word",
@@ -718,43 +634,6 @@
    ]
   },
   {
-   "headword": "ضعيف",
-   "definition": "قليل القوة",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "ضعيف",
-     "meaning": "ضعيف"
-    },
-    {
-     "dialect": "levantine",
-     "form": "ضعيف",
-     "meaning": "ضعيف"
-    },
-    {
-     "dialect": "gulf",
-     "form": "ضعيف",
-     "meaning": "ضعيف"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "ضعيف",
-     "meaning": "ضعيف"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "ضعيف",
-     "meaning": "ضعيف"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "ضعيف",
-     "meaning": "ضعيف"
-    }
-   ]
-  },
-  {
    "headword": "سهل",
    "definition": "غير صعب",
    "kind": "word",
@@ -905,110 +784,6 @@
      "dialect": "hassaniya",
      "form": "صعيب",
      "meaning": "صعب"
-    }
-   ]
-  },
-  {
-   "headword": "غالٍ",
-   "definition": "مرتفع الثمن",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "levantine",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "gulf",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "najdi",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "algerian",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "libyan",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "غالي",
-     "meaning": "غالٍ"
-    }
-   ]
-  },
-  {
-   "headword": "رخيص",
-   "definition": "قليل الثمن",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "رخيص",
-     "meaning": "رخيص"
-    },
-    {
-     "dialect": "levantine",
-     "form": "رخيص",
-     "meaning": "رخيص"
-    },
-    {
-     "dialect": "gulf",
-     "form": "رخيص",
-     "meaning": "رخيص"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "رخيص",
-     "meaning": "رخيص"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "رخيص",
-     "meaning": "رخيص"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "رخيص",
-     "meaning": "رخيص"
     }
    ]
   },
@@ -1702,43 +1477,6 @@
    ]
   },
   {
-   "headword": "خائف",
-   "definition": "فزع",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "خايف",
-     "meaning": "خائف"
-    },
-    {
-     "dialect": "levantine",
-     "form": "خايف",
-     "meaning": "خائف"
-    },
-    {
-     "dialect": "gulf",
-     "form": "خايف",
-     "meaning": "خائف"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "خايف",
-     "meaning": "خائف"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "خايف",
-     "meaning": "خائف"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "خايف",
-     "meaning": "خائف"
-    }
-   ]
-  },
-  {
    "headword": "ممل",
    "definition": "يبعث على الملل",
    "kind": "word",
@@ -1971,43 +1709,6 @@
      "dialect": "hassaniya",
      "form": "غريب",
      "meaning": "غريب"
-    }
-   ]
-  },
-  {
-   "headword": "مهم",
-   "definition": "ذو أهمية",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "مهم",
-     "meaning": "مهم"
-    },
-    {
-     "dialect": "levantine",
-     "form": "مهم",
-     "meaning": "مهم"
-    },
-    {
-     "dialect": "gulf",
-     "form": "مهم",
-     "meaning": "مهم"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "مهم",
-     "meaning": "مهم"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "مهم",
-     "meaning": "مهم"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "مهم",
-     "meaning": "مهم"
     }
    ]
   },
@@ -2509,80 +2210,6 @@
    ]
   },
   {
-   "headword": "بعيد",
-   "definition": "غير قريب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "بعيد",
-     "meaning": "بعيد"
-    },
-    {
-     "dialect": "levantine",
-     "form": "بعيد",
-     "meaning": "بعيد"
-    },
-    {
-     "dialect": "gulf",
-     "form": "بعيد",
-     "meaning": "بعيد"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "بعيد",
-     "meaning": "بعيد"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "بعيد",
-     "meaning": "بعيد"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "بعيد",
-     "meaning": "بعيد"
-    }
-   ]
-  },
-  {
-   "headword": "واسع",
-   "definition": "رحب",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "واسع",
-     "meaning": "واسع"
-    },
-    {
-     "dialect": "levantine",
-     "form": "واسع",
-     "meaning": "واسع"
-    },
-    {
-     "dialect": "gulf",
-     "form": "واسع",
-     "meaning": "واسع"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "واسع",
-     "meaning": "واسع"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "واسع",
-     "meaning": "واسع"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "واسع",
-     "meaning": "واسع"
-    }
-   ]
-  },
-  {
    "headword": "ضيّق",
    "definition": "غير واسع",
    "kind": "word",
@@ -2703,43 +2330,6 @@
      "dialect": "hassaniya",
      "form": "ثگيل",
      "meaning": "ثقيل"
-    }
-   ]
-  },
-  {
-   "headword": "خفيف",
-   "definition": "قليل الوزن",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "خفيف",
-     "meaning": "خفيف"
-    },
-    {
-     "dialect": "levantine",
-     "form": "خفيف",
-     "meaning": "خفيف"
-    },
-    {
-     "dialect": "gulf",
-     "form": "خفيف",
-     "meaning": "خفيف"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "خفيف",
-     "meaning": "خفيف"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "خفيف",
-     "meaning": "خفيف"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "خفيف",
-     "meaning": "خفيف"
     }
    ]
   },
@@ -2869,43 +2459,6 @@
      "dialect": "hassaniya",
      "form": "حرش",
      "meaning": "خشن"
-    }
-   ]
-  },
-  {
-   "headword": "عالٍ",
-   "definition": "مرتفع",
-   "kind": "word",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "عالي",
-     "meaning": "عالٍ"
-    },
-    {
-     "dialect": "levantine",
-     "form": "عالي",
-     "meaning": "عالٍ"
-    },
-    {
-     "dialect": "gulf",
-     "form": "عالي",
-     "meaning": "عالٍ"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "عالي",
-     "meaning": "عالٍ"
-    },
-    {
-     "dialect": "tunisian",
-     "form": "عالي",
-     "meaning": "عالٍ"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "عالي",
-     "meaning": "عالٍ"
     }
    ]
   },

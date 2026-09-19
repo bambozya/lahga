@@ -1089,57 +1089,6 @@
      "form": "ملخص"
     }
    ]
-  },
-  {
-   "headword": "عقاب مدرسي",
-   "definition": "ما يُعاقب به التلميذ المقصر",
-   "kind": "phrase",
-   "entries": [
-    {
-     "dialect": "egyptian",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "levantine",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "gulf",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "najdi",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "hejazi",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "iraqi",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "yemeni",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "sudanese",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "moroccan",
-     "form": "العقاب"
-    },
-    {
-     "dialect": "libyan",
-     "form": "عقاب"
-    },
-    {
-     "dialect": "hassaniya",
-     "form": "عقاب"
-    }
-   ]
   }
  ]
 }

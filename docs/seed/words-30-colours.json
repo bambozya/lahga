@@ -1,89 +1,660 @@
-{"words":[
- {"headword":"رمادي","definition":"لون بين الأبيض والأسود","kind":"word","entries":[
-  {"dialect":"egyptian","form":"رمادي","examples":[{"text":"لابس قميص رمادي","gloss":"يرتدي قميصاً رمادياً"}]},
-  {"dialect":"levantine","form":"رمادي"},{"dialect":"palestinian","form":"رمادي"},
-  {"dialect":"gulf","form":"رمادي"},{"dialect":"najdi","form":"سكني"},{"dialect":"hejazi","form":"رمادي"},
-  {"dialect":"iraqi","form":"رمادي"},{"dialect":"yemeni","form":"رمادي"},{"dialect":"sudanese","form":"رمادي"},
-  {"dialect":"moroccan","form":"الگري","notes":"من الفرنسية"},{"dialect":"algerian","form":"الگري"},{"dialect":"tunisian","form":"الگري"},{"dialect":"libyan","form":"رمادي"},
-  {"dialect":"hassaniya","form":"رمادي"}]},
-
- {"headword":"بني","definition":"لون التراب والخشب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"بني"},{"dialect":"levantine","form":"بني"},{"dialect":"palestinian","form":"بني"},
-  {"dialect":"gulf","form":"بني"},{"dialect":"najdi","form":"بني"},{"dialect":"hejazi","form":"بني"},
-  {"dialect":"iraqi","form":"بني"},{"dialect":"yemeni","form":"بني"},{"dialect":"sudanese","form":"بني"},
-  {"dialect":"moroccan","form":"القهوي"},{"dialect":"algerian","form":"القهوي"},{"dialect":"tunisian","form":"البني"},{"dialect":"libyan","form":"بني"},
-  {"dialect":"hassaniya","form":"بني"}]},
-
- {"headword":"وردي","definition":"لون بين الأحمر والأبيض","kind":"word","entries":[
-  {"dialect":"egyptian","form":"بمبي","examples":[{"text":"اشترت فستان بمبي","gloss":"اشترت فستاناً وردياً"}]},
-  {"dialect":"levantine","form":"زهري"},{"dialect":"palestinian","form":"زهري"},
-  {"dialect":"gulf","form":"وردي"},{"dialect":"najdi","form":"وردي"},{"dialect":"hejazi","form":"وردي"},
-  {"dialect":"iraqi","form":"وردي"},{"dialect":"yemeni","form":"وردي"},{"dialect":"sudanese","form":"بمبي"},
-  {"dialect":"moroccan","form":"الروز","notes":"من الفرنسية"},{"dialect":"algerian","form":"الروز"},{"dialect":"tunisian","form":"الروز"},{"dialect":"libyan","form":"وردي"},
-  {"dialect":"hassaniya","form":"وردي"}]},
-
- {"headword":"برتقالي","definition":"لون البرتقال","kind":"word","entries":[
-  {"dialect":"egyptian","form":"برتقاني"},{"dialect":"levantine","form":"برتقالي"},{"dialect":"palestinian","form":"برتقالي"},
-  {"dialect":"gulf","form":"برتقالي"},{"dialect":"najdi","form":"برتقالي"},{"dialect":"hejazi","form":"برتقالي"},
-  {"dialect":"iraqi","form":"برتقالي"},{"dialect":"yemeni","form":"برتقالي"},{"dialect":"sudanese","form":"برتقالي"},
-  {"dialect":"moroccan","form":"الأورونج"},{"dialect":"algerian","form":"الأورونج"},{"dialect":"tunisian","form":"الأورونج"},{"dialect":"libyan","form":"برتقالي"},
-  {"dialect":"hassaniya","form":"برتقالي"}]},
-
- {"headword":"بنفسجي","definition":"لون بين الأزرق والأحمر","kind":"word","entries":[
-  {"dialect":"egyptian","form":"بنفسجي"},{"dialect":"levantine","form":"بنفسجي"},{"dialect":"palestinian","form":"بنفسجي"},
-  {"dialect":"gulf","form":"بنفسجي"},{"dialect":"najdi","form":"بنفسجي"},{"dialect":"hejazi","form":"بنفسجي"},
-  {"dialect":"iraqi","form":"بنفسجي"},{"dialect":"yemeni","form":"بنفسجي"},{"dialect":"sudanese","form":"بنفسجي"},
-  {"dialect":"moroccan","form":"الفيوليت"},{"dialect":"algerian","form":"الفيوليت"},{"dialect":"tunisian","form":"الفيوليت"},{"dialect":"libyan","form":"بنفسجي"},
-  {"dialect":"hassaniya","form":"بنفسجي"}]},
-
- {"headword":"فاتح","definition":"وصف للون المائل إلى البياض","kind":"word","entries":[
-  {"dialect":"egyptian","form":"فاتح","examples":[{"text":"عايز أزرق فاتح مش غامق","gloss":"أريد أزرق فاتحاً لا غامقاً"}]},
-  {"dialect":"levantine","form":"فاتح"},{"dialect":"palestinian","form":"فاتح"},
-  {"dialect":"gulf","form":"فاتح"},{"dialect":"najdi","form":"فاتح"},{"dialect":"hejazi","form":"فاتح"},
-  {"dialect":"iraqi","form":"فاتح"},{"dialect":"yemeni","form":"فاتح"},{"dialect":"sudanese","form":"فاتح"},
-  {"dialect":"moroccan","form":"مفتوح"},{"dialect":"algerian","form":"فاتح"},{"dialect":"tunisian","form":"فاتح"},{"dialect":"libyan","form":"فاتح"},
-  {"dialect":"hassaniya","form":"فاتح"}]},
-
- {"headword":"غامق","definition":"وصف للون المائل إلى السواد","kind":"word","entries":[
-  {"dialect":"egyptian","form":"غامق"},{"dialect":"levantine","form":"غامق"},{"dialect":"palestinian","form":"غامق"},
-  {"dialect":"gulf","form":"غامق"},{"dialect":"najdi","form":"غامق"},{"dialect":"hejazi","form":"غامق"},
-  {"dialect":"iraqi","form":"غامج"},{"dialect":"yemeni","form":"غامق"},{"dialect":"sudanese","form":"غامق"},
-  {"dialect":"moroccan","form":"مغلوق"},{"dialect":"algerian","form":"غامق"},{"dialect":"tunisian","form":"غامق"},{"dialect":"libyan","form":"غامق"},
-  {"dialect":"hassaniya","form":"غامق"}]},
-
- {"headword":"ذهبي","definition":"لون الذهب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"دهبي"},{"dialect":"levantine","form":"ذهبي"},{"dialect":"palestinian","form":"ذهبي"},
-  {"dialect":"gulf","form":"ذهبي"},{"dialect":"najdi","form":"ذهبي"},{"dialect":"hejazi","form":"ذهبي"},
-  {"dialect":"iraqi","form":"ذهبي"},{"dialect":"yemeni","form":"ذهبي"},{"dialect":"sudanese","form":"ذهبي"},
-  {"dialect":"moroccan","form":"الدهبي"},{"dialect":"algerian","form":"الدهبي"},{"dialect":"tunisian","form":"الدهبي"},{"dialect":"libyan","form":"ذهبي"},
-  {"dialect":"hassaniya","form":"ذهبي"}]},
-
- {"headword":"فضي","definition":"لون الفضة","kind":"word","entries":[
-  {"dialect":"egyptian","form":"فضي"},{"dialect":"levantine","form":"فضي"},{"dialect":"palestinian","form":"فضي"},
-  {"dialect":"gulf","form":"فضي"},{"dialect":"najdi","form":"فضي"},{"dialect":"hejazi","form":"فضي"},
-  {"dialect":"iraqi","form":"فضي"},{"dialect":"yemeni","form":"فضي"},{"dialect":"sudanese","form":"فضي"},
-  {"dialect":"moroccan","form":"النقري"},{"dialect":"algerian","form":"الفضي"},{"dialect":"tunisian","form":"الفضي"},{"dialect":"libyan","form":"فضي"},
-  {"dialect":"hassaniya","form":"فضي"}]},
-
- {"headword":"شفاف","definition":"ما يُرى ما خلفه","kind":"word","entries":[
-  {"dialect":"egyptian","form":"شفاف"},{"dialect":"levantine","form":"شفاف"},{"dialect":"palestinian","form":"شفاف"},
-  {"dialect":"gulf","form":"شفاف"},{"dialect":"najdi","form":"شفاف"},{"dialect":"hejazi","form":"شفاف"},
-  {"dialect":"iraqi","form":"شفاف"},{"dialect":"yemeni","form":"شفاف"},{"dialect":"sudanese","form":"شفاف"},
-  {"dialect":"moroccan","form":"شفاف"},{"dialect":"algerian","form":"شفاف"},{"dialect":"tunisian","form":"شفاف"},{"dialect":"libyan","form":"شفاف"},
-  {"dialect":"hassaniya","form":"شفاف"}]},
-
- {"headword":"مخطط","definition":"ما فيه خطوط من لونين","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مقلم","examples":[{"text":"لابس قميص مقلم","gloss":"يرتدي قميصاً مخططاً"}]},
-  {"dialect":"levantine","form":"مقلم"},{"dialect":"palestinian","form":"مقلم"},
-  {"dialect":"gulf","form":"مخطط"},{"dialect":"najdi","form":"مخطط"},{"dialect":"hejazi","form":"مقلم"},
-  {"dialect":"iraqi","form":"مخطط"},{"dialect":"yemeni","form":"مخطط"},{"dialect":"sudanese","form":"مخطط"},
-  {"dialect":"moroccan","form":"مخطط"},{"dialect":"algerian","form":"مخطط"},{"dialect":"tunisian","form":"مقلم"},{"dialect":"libyan","form":"مقلم"},
-  {"dialect":"hassaniya","form":"مخطط"}]},
-
- {"headword":"منقط","definition":"ما فيه نقط من لون آخر","kind":"word","entries":[
-  {"dialect":"egyptian","form":"منقط"},{"dialect":"levantine","form":"منقط"},{"dialect":"palestinian","form":"منقط"},
-  {"dialect":"gulf","form":"منقط"},{"dialect":"najdi","form":"منقط"},{"dialect":"hejazi","form":"منقط"},
-  {"dialect":"iraqi","form":"منقط"},{"dialect":"yemeni","form":"منقط"},{"dialect":"sudanese","form":"منقط"},
-  {"dialect":"moroccan","form":"منقط"},{"dialect":"algerian","form":"منقط"},{"dialect":"tunisian","form":"منقط"},{"dialect":"libyan","form":"منقط"},
-  {"dialect":"hassaniya","form":"منقط"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "رمادي",
+   "definition": "لون بين الأبيض والأسود",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "رمادي",
+     "examples": [
+      {
+       "text": "لابس قميص رمادي",
+       "gloss": "يرتدي قميصاً رمادياً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سكني"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الگري",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الگري"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الگري"
+    },
+    {
+     "dialect": "libyan",
+     "form": "رمادي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "رمادي"
+    }
+   ]
+  },
+  {
+   "headword": "بني",
+   "definition": "لون التراب والخشب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بني"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بني"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "بني"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بني"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بني"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بني"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بني"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بني"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بني"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "القهوي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "القهوي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البني"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بني"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "بني"
+    }
+   ]
+  },
+  {
+   "headword": "وردي",
+   "definition": "لون بين الأحمر والأبيض",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بمبي",
+     "examples": [
+      {
+       "text": "اشترت فستان بمبي",
+       "gloss": "اشترت فستاناً وردياً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "زهري"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "زهري"
+    },
+    {
+     "dialect": "gulf",
+     "form": "وردي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "وردي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "وردي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "وردي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "وردي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بمبي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الروز",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الروز"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الروز"
+    },
+    {
+     "dialect": "libyan",
+     "form": "وردي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "وردي"
+    }
+   ]
+  },
+  {
+   "headword": "برتقالي",
+   "definition": "لون البرتقال",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "برتقاني"
+    },
+    {
+     "dialect": "levantine",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الأورونج"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الأورونج"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الأورونج"
+    },
+    {
+     "dialect": "libyan",
+     "form": "برتقالي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "برتقالي"
+    }
+   ]
+  },
+  {
+   "headword": "بنفسجي",
+   "definition": "لون بين الأزرق والأحمر",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الفيوليت"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الفيوليت"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الفيوليت"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بنفسجي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "بنفسجي"
+    }
+   ]
+  },
+  {
+   "headword": "فاتح",
+   "definition": "وصف للون المائل إلى البياض",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فاتح",
+     "examples": [
+      {
+       "text": "عايز أزرق فاتح مش غامق",
+       "gloss": "أريد أزرق فاتحاً لا غامقاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "najdi",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "مفتوح"
+    },
+    {
+     "dialect": "algerian",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "libyan",
+     "form": "فاتح"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "فاتح"
+    }
+   ]
+  },
+  {
+   "headword": "غامق",
+   "definition": "وصف للون المائل إلى السواد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "غامق"
+    },
+    {
+     "dialect": "levantine",
+     "form": "غامق"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "غامق"
+    },
+    {
+     "dialect": "gulf",
+     "form": "غامق"
+    },
+    {
+     "dialect": "najdi",
+     "form": "غامق"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "غامق"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "غامج"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "غامق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "غامق"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "مغلوق"
+    },
+    {
+     "dialect": "algerian",
+     "form": "غامق"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "غامق"
+    },
+    {
+     "dialect": "libyan",
+     "form": "غامق"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "غامق"
+    }
+   ]
+  },
+  {
+   "headword": "ذهبي",
+   "definition": "لون الذهب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "دهبي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الدهبي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الدهبي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الدهبي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ذهبي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ذهبي"
+    }
+   ]
+  },
+  {
+   "headword": "فضي",
+   "definition": "لون الفضة",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "فضي"
+    },
+    {
+     "dialect": "levantine",
+     "form": "فضي"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "فضي"
+    },
+    {
+     "dialect": "gulf",
+     "form": "فضي"
+    },
+    {
+     "dialect": "najdi",
+     "form": "فضي"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "فضي"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "فضي"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "فضي"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "فضي"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "النقري"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الفضي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الفضي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "فضي"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "فضي"
+    }
+   ]
+  },
+  {
+   "headword": "مخطط",
+   "definition": "ما فيه خطوط من لونين",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مقلم",
+     "examples": [
+      {
+       "text": "لابس قميص مقلم",
+       "gloss": "يرتدي قميصاً مخططاً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مقلم"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مقلم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مقلم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "algerian",
+     "form": "مخطط"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "مقلم"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مقلم"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مخطط"
+    }
+   ]
+  }
+ ]
+}

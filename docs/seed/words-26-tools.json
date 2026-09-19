@@ -1,91 +1,603 @@
-{"words":[
- {"headword":"مطرقة","definition":"أداة يُدق بها المسمار","kind":"word","entries":[
-  {"dialect":"egyptian","form":"شاكوش","examples":[{"text":"هات الشاكوش أدق المسمار","gloss":"أحضر المطرقة لأدق المسمار"}]},
-  {"dialect":"levantine","form":"شاكوش"},{"dialect":"palestinian","form":"شاكوش"},
-  {"dialect":"gulf","form":"جاكوج"},{"dialect":"najdi","form":"مطرقة"},{"dialect":"hejazi","form":"شاكوش"},
-  {"dialect":"iraqi","form":"جاكوج"},{"dialect":"yemeni","form":"مطرقة"},{"dialect":"sudanese","form":"شاكوش"},
-  {"dialect":"moroccan","form":"المرتيلو"},{"dialect":"algerian","form":"المرتو"},{"dialect":"tunisian","form":"المرتلو"},{"dialect":"libyan","form":"شاكوش"},
-  {"dialect":"hassaniya","form":"مطرقه"}]},
-
- {"headword":"مسمار","definition":"قطعة حديد مدببة تُدق في الخشب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مسمار"},{"dialect":"levantine","form":"مسمار"},{"dialect":"palestinian","form":"مسمار"},
-  {"dialect":"gulf","form":"مسمار"},{"dialect":"najdi","form":"مسمار"},{"dialect":"hejazi","form":"مسمار"},
-  {"dialect":"iraqi","form":"بسمار"},{"dialect":"yemeni","form":"مسمار"},{"dialect":"sudanese","form":"مسمار"},
-  {"dialect":"moroccan","form":"المسمار"},{"dialect":"algerian","form":"المسمار"},{"dialect":"tunisian","form":"المسمار"},{"dialect":"libyan","form":"مسمار"},
-  {"dialect":"hassaniya","form":"المسمار"}]},
-
- {"headword":"مفك","definition":"أداة تُبرم بها البراغي","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مفك","examples":[{"text":"جيب المفك أفك المسمار ده","gloss":"أحضر المفك لأفك هذا البرغي"}]},
-  {"dialect":"levantine","form":"مفك"},{"dialect":"palestinian","form":"درنفيس"},
-  {"dialect":"gulf","form":"درنفيس"},{"dialect":"najdi","form":"مفك"},{"dialect":"hejazi","form":"مفك"},
-  {"dialect":"iraqi","form":"درنفيس"},{"dialect":"yemeni","form":"مفك"},{"dialect":"sudanese","form":"مفك"},
-  {"dialect":"moroccan","form":"التورنوفيس","notes":"من الفرنسية"},{"dialect":"algerian","form":"التورنوفيس"},{"dialect":"tunisian","form":"التورنوفيس"},{"dialect":"libyan","form":"مفك"},
-  {"dialect":"hassaniya","form":"مفك"}]},
-
- {"headword":"منشار","definition":"أداة مسننة يُقطع بها الخشب","kind":"word","entries":[
-  {"dialect":"egyptian","form":"منشار"},{"dialect":"levantine","form":"منشار"},{"dialect":"palestinian","form":"منشار"},
-  {"dialect":"gulf","form":"منشار"},{"dialect":"najdi","form":"منشار"},{"dialect":"hejazi","form":"منشار"},
-  {"dialect":"iraqi","form":"منشار"},{"dialect":"yemeni","form":"منشار"},{"dialect":"sudanese","form":"منشار"},
-  {"dialect":"moroccan","form":"المنشار"},{"dialect":"algerian","form":"المنشار"},{"dialect":"tunisian","form":"المنشار"},{"dialect":"libyan","form":"منشار"},
-  {"dialect":"hassaniya","form":"المنشار"}]},
-
- {"headword":"سلم","definition":"ما يُصعد عليه إلى مكان عالٍ","kind":"word","entries":[
-  {"dialect":"egyptian","form":"سلم","examples":[{"text":"اطلع على السلم وغير اللمبة","gloss":"اصعد على السلم وغير المصباح"}]},
-  {"dialect":"levantine","form":"سلم"},{"dialect":"palestinian","form":"سلم"},
-  {"dialect":"gulf","form":"سلم"},{"dialect":"najdi","form":"سلم"},{"dialect":"hejazi","form":"سلم"},
-  {"dialect":"iraqi","form":"سلم"},{"dialect":"yemeni","form":"سلم"},{"dialect":"sudanese","form":"سلم"},
-  {"dialect":"moroccan","form":"السلوم"},{"dialect":"algerian","form":"السلوم"},{"dialect":"tunisian","form":"السلوم"},{"dialect":"libyan","form":"سلم"},
-  {"dialect":"hassaniya","form":"السلم"}]},
-
- {"headword":"حبل","definition":"ما يُربط به ويُشد","kind":"word","entries":[
-  {"dialect":"egyptian","form":"حبل"},{"dialect":"levantine","form":"حبل"},{"dialect":"palestinian","form":"حبل"},
-  {"dialect":"gulf","form":"حبل"},{"dialect":"najdi","form":"حبل"},{"dialect":"hejazi","form":"حبل"},
-  {"dialect":"iraqi","form":"حبل"},{"dialect":"yemeni","form":"حبل"},{"dialect":"sudanese","form":"حبل"},
-  {"dialect":"moroccan","form":"القنب"},{"dialect":"algerian","form":"الحبل"},{"dialect":"tunisian","form":"الحبل"},{"dialect":"libyan","form":"حبل"},
-  {"dialect":"hassaniya","form":"الحبل"}]},
-
- {"headword":"مقص","definition":"أداة ذات شفرتين يُقص بها","kind":"word","entries":[
-  {"dialect":"egyptian","form":"مقص","examples":[{"text":"هاتي المقص أقص الورق","gloss":"أحضري المقص لأقص الورق"}]},
-  {"dialect":"levantine","form":"مقص"},{"dialect":"palestinian","form":"مقص"},
-  {"dialect":"gulf","form":"مقص"},{"dialect":"najdi","form":"مقص"},{"dialect":"hejazi","form":"مقص"},
-  {"dialect":"iraqi","form":"مقص"},{"dialect":"yemeni","form":"مقص"},{"dialect":"sudanese","form":"مقص"},
-  {"dialect":"moroccan","form":"المقص"},{"dialect":"algerian","form":"المقص"},{"dialect":"tunisian","form":"المقص"},{"dialect":"libyan","form":"مقص"},
-  {"dialect":"hassaniya","form":"المقص"}]},
-
- {"headword":"خيط","definition":"ما يُخاط به أو يُربط","kind":"word","entries":[
-  {"dialect":"egyptian","form":"خيط"},{"dialect":"levantine","form":"خيط"},{"dialect":"palestinian","form":"خيط"},
-  {"dialect":"gulf","form":"خيط"},{"dialect":"najdi","form":"خيط"},{"dialect":"hejazi","form":"خيط"},
-  {"dialect":"iraqi","form":"خيط"},{"dialect":"yemeni","form":"خيط"},{"dialect":"sudanese","form":"خيط"},
-  {"dialect":"moroccan","form":"الخيط"},{"dialect":"algerian","form":"الخيط"},{"dialect":"tunisian","form":"الخيط"},{"dialect":"libyan","form":"خيط"},
-  {"dialect":"hassaniya","form":"الخيط"}]},
-
- {"headword":"مصباح يدوي","definition":"ضوء صغير يُحمل باليد","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"كشاف","examples":[{"text":"نور بالكشاف، الكهربا قاطعة","gloss":"أضئ بالمصباح، الكهرباء منقطعة"}]},
-  {"dialect":"levantine","form":"كشاف"},{"dialect":"palestinian","form":"كشاف"},
-  {"dialect":"gulf","form":"كشاف"},{"dialect":"najdi","form":"كشاف"},{"dialect":"hejazi","form":"كشاف"},
-  {"dialect":"iraqi","form":"باتري"},{"dialect":"yemeni","form":"كشاف"},{"dialect":"sudanese","form":"بطارية"},
-  {"dialect":"moroccan","form":"البيل"},{"dialect":"algerian","form":"البيل"},{"dialect":"tunisian","form":"البيل"},{"dialect":"libyan","form":"كشاف"},
-  {"dialect":"hassaniya","form":"كشاف"}]},
-
- {"headword":"دلو","definition":"إناء يُحمل فيه الماء","kind":"word","entries":[
-  {"dialect":"egyptian","form":"جردل","examples":[{"text":"املا الجردل مية","gloss":"املأ الدلو ماءً"}]},
-  {"dialect":"levantine","form":"سطل"},{"dialect":"palestinian","form":"سطل"},
-  {"dialect":"gulf","form":"سطل"},{"dialect":"najdi","form":"دلو"},{"dialect":"hejazi","form":"سطل"},
-  {"dialect":"iraqi","form":"سطل"},{"dialect":"yemeni","form":"دلو"},{"dialect":"sudanese","form":"جردل"},
-  {"dialect":"moroccan","form":"السطل"},{"dialect":"algerian","form":"السطل"},{"dialect":"tunisian","form":"السطل"},{"dialect":"libyan","form":"سطل"},
-  {"dialect":"hassaniya","form":"الدلو"}]},
-
- {"headword":"خرطوم الماء","definition":"أنبوب لين يمر فيه الماء","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"خرطوم"},{"dialect":"levantine","form":"خرطوم"},{"dialect":"palestinian","form":"خرطوم"},
-  {"dialect":"gulf","form":"خرطوم"},{"dialect":"najdi","form":"خرطوم"},{"dialect":"hejazi","form":"خرطوم"},
-  {"dialect":"iraqi","form":"خرطوم"},{"dialect":"yemeni","form":"خرطوم"},{"dialect":"sudanese","form":"خرطوم"},
-  {"dialect":"moroccan","form":"التيو","notes":"من الفرنسية"},{"dialect":"algerian","form":"التيو"},{"dialect":"tunisian","form":"التيو"},{"dialect":"libyan","form":"خرطوم"},
-  {"dialect":"hassaniya","form":"الخرطوم"}]},
-
- {"headword":"لاصق","definition":"ما يُلصق به الورق أو غيره","kind":"word","entries":[
-  {"dialect":"egyptian","form":"شريط لاصق"},{"dialect":"levantine","form":"لزقة"},{"dialect":"palestinian","form":"لزقة"},
-  {"dialect":"gulf","form":"لاصق"},{"dialect":"najdi","form":"لاصق"},{"dialect":"hejazi","form":"لاصق"},
-  {"dialect":"iraqi","form":"لاصق"},{"dialect":"yemeni","form":"لاصق"},{"dialect":"sudanese","form":"لاصق"},
-  {"dialect":"moroccan","form":"السكوتش"},{"dialect":"algerian","form":"السكوتش"},{"dialect":"tunisian","form":"السكوتش"},{"dialect":"libyan","form":"سكوتش"},
-  {"dialect":"hassaniya","form":"لاصق"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "مطرقة",
+   "definition": "أداة يُدق بها المسمار",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شاكوش",
+     "examples": [
+      {
+       "text": "هات الشاكوش أدق المسمار",
+       "gloss": "أحضر المطرقة لأدق المسمار"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شاكوش"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "شاكوش"
+    },
+    {
+     "dialect": "gulf",
+     "form": "جاكوج"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مطرقة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "شاكوش"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جاكوج"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مطرقة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شاكوش"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "المرتيلو"
+    },
+    {
+     "dialect": "algerian",
+     "form": "المرتو"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "المرتلو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "شاكوش"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مطرقه"
+    }
+   ]
+  },
+  {
+   "headword": "مسمار",
+   "definition": "قطعة حديد مدببة تُدق في الخشب",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "بسمار"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "المسمار"
+    },
+    {
+     "dialect": "algerian",
+     "form": "المسمار"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "المسمار"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مسمار"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المسمار"
+    }
+   ]
+  },
+  {
+   "headword": "مفك",
+   "definition": "أداة تُبرم بها البراغي",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مفك",
+     "examples": [
+      {
+       "text": "جيب المفك أفك المسمار ده",
+       "gloss": "أحضر المفك لأفك هذا البرغي"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مفك"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "درنفيس"
+    },
+    {
+     "dialect": "gulf",
+     "form": "درنفيس"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مفك"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مفك"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "درنفيس"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مفك"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مفك"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "التورنوفيس",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "التورنوفيس"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "التورنوفيس"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مفك"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مفك"
+    }
+   ]
+  },
+  {
+   "headword": "سلم",
+   "definition": "ما يُصعد عليه إلى مكان عالٍ",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سلم",
+     "examples": [
+      {
+       "text": "اطلع على السلم وغير اللمبة",
+       "gloss": "اصعد على السلم وغير المصباح"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "سلم"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "سلم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سلم"
+    },
+    {
+     "dialect": "najdi",
+     "form": "سلم"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سلم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سلم"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سلم"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سلم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "السلوم"
+    },
+    {
+     "dialect": "algerian",
+     "form": "السلوم"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السلوم"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سلم"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "السلم"
+    }
+   ]
+  },
+  {
+   "headword": "حبل",
+   "definition": "ما يُربط به ويُشد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حبل"
+    },
+    {
+     "dialect": "levantine",
+     "form": "حبل"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "حبل"
+    },
+    {
+     "dialect": "gulf",
+     "form": "حبل"
+    },
+    {
+     "dialect": "najdi",
+     "form": "حبل"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "حبل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "حبل"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "حبل"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حبل"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "القنب"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الحبل"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الحبل"
+    },
+    {
+     "dialect": "libyan",
+     "form": "حبل"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الحبل"
+    }
+   ]
+  },
+  {
+   "headword": "مصباح يدوي",
+   "definition": "ضوء صغير يُحمل باليد",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "كشاف",
+     "examples": [
+      {
+       "text": "نور بالكشاف، الكهربا قاطعة",
+       "gloss": "أضئ بالمصباح، الكهرباء منقطعة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "gulf",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "najdi",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "باتري"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بطارية"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البيل"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البيل"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البيل"
+    },
+    {
+     "dialect": "libyan",
+     "form": "كشاف"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "كشاف"
+    }
+   ]
+  },
+  {
+   "headword": "دلو",
+   "definition": "إناء يُحمل فيه الماء",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "جردل",
+     "examples": [
+      {
+       "text": "املا الجردل مية",
+       "gloss": "املأ الدلو ماءً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "سطل"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "سطل"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سطل"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دلو"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سطل"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سطل"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دلو"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "جردل"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "السطل"
+    },
+    {
+     "dialect": "algerian",
+     "form": "السطل"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السطل"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سطل"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الدلو"
+    }
+   ]
+  },
+  {
+   "headword": "خرطوم الماء",
+   "definition": "أنبوب لين يمر فيه الماء",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "levantine",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "najdi",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "التيو",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "التيو"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "التيو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "خرطوم"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الخرطوم"
+    }
+   ]
+  },
+  {
+   "headword": "لاصق",
+   "definition": "ما يُلصق به الورق أو غيره",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شريط لاصق"
+    },
+    {
+     "dialect": "levantine",
+     "form": "لزقة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "لزقة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "لاصق"
+    },
+    {
+     "dialect": "najdi",
+     "form": "لاصق"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "لاصق"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "لاصق"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "لاصق"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "لاصق"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "السكوتش"
+    },
+    {
+     "dialect": "algerian",
+     "form": "السكوتش"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السكوتش"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سكوتش"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "لاصق"
+    }
+   ]
+  }
+ ]
+}

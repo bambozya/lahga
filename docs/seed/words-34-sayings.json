@@ -1,83 +1,430 @@
-{"words":[
- {"headword":"ما شاء الله","definition":"عبارة تقال عند الإعجاب اتقاءً للحسد","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"ما شاء الله","examples":[{"text":"ما شاء الله عليك، كبرت","gloss":"ما شاء الله، لقد كبرت"}]},
-  {"dialect":"levantine","form":"ما شاء الله"},{"dialect":"palestinian","form":"ما شاء الله"},
-  {"dialect":"gulf","form":"ما شاء الله"},{"dialect":"najdi","form":"ما شاء الله"},{"dialect":"hejazi","form":"ما شاء الله"},
-  {"dialect":"iraqi","form":"ما شاء الله"},{"dialect":"yemeni","form":"ما شاء الله"},{"dialect":"sudanese","form":"ما شاء الله"},
-  {"dialect":"moroccan","form":"تبارك الله","examples":[{"text":"تبارك الله عليك","gloss":"ما شاء الله عليك"}]},
-  {"dialect":"algerian","form":"تبارك الله"},{"dialect":"tunisian","form":"تبارك الله"},{"dialect":"libyan","form":"ما شاء الله"},
-  {"dialect":"hassaniya","form":"ما شاء الله"}]},
-
- {"headword":"الحمد لله","definition":"عبارة شكر على النعمة أو السلامة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"الحمد لله","examples":[{"text":"الحمد لله على السلامة","gloss":"الحمد لله على سلامتك"}]},
-  {"dialect":"levantine","form":"الحمد لله"},{"dialect":"palestinian","form":"الحمد لله"},
-  {"dialect":"gulf","form":"الحمد لله"},{"dialect":"najdi","form":"الحمد لله"},{"dialect":"hejazi","form":"الحمد لله"},
-  {"dialect":"iraqi","form":"الحمد لله"},{"dialect":"yemeni","form":"الحمد لله"},{"dialect":"sudanese","form":"الحمد لله"},
-  {"dialect":"moroccan","form":"الحمد لله"},{"dialect":"algerian","form":"الحمد لله"},{"dialect":"tunisian","form":"الحمد لله"},{"dialect":"libyan","form":"الحمد لله"},
-  {"dialect":"hassaniya","form":"الحمد لله"}]},
-
- {"headword":"بالعافية","definition":"عبارة تقال لمن يأكل أو يشرب","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"بالهنا والشفا","examples":[{"text":"بالهنا والشفا يا جماعة","gloss":"بالهناء والشفاء أيها الجماعة"}]},
-  {"dialect":"levantine","form":"صحتين"},{"dialect":"palestinian","form":"صحتين"},
-  {"dialect":"gulf","form":"بالعافية"},{"dialect":"najdi","form":"بالعافية"},{"dialect":"hejazi","form":"بالعافية"},
-  {"dialect":"iraqi","form":"عافية"},{"dialect":"yemeni","form":"بالعافية"},{"dialect":"sudanese","form":"بالعافية"},
-  {"dialect":"moroccan","form":"بالصحة","examples":[{"text":"بالصحة والراحة","gloss":"بالهناء والعافية"}]},
-  {"dialect":"algerian","form":"بالصحة"},{"dialect":"tunisian","form":"بالصحة"},{"dialect":"libyan","form":"بالعافية"},
-  {"dialect":"hassaniya","form":"بالعافيه"}]},
-
- {"headword":"نعيماً","definition":"عبارة تقال لمن حلق شعره أو استحم","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"نعيماً","examples":[{"text":"نعيماً، شعرك حلو كده","gloss":"نعيماً، شعرك جميل هكذا"}]},
-  {"dialect":"levantine","form":"نعيماً"},{"dialect":"palestinian","form":"نعيماً"},
-  {"dialect":"gulf","form":"نعيماً"},{"dialect":"najdi","form":"نعيماً"},{"dialect":"hejazi","form":"نعيماً"},
-  {"dialect":"iraqi","form":"نعيماً"},{"dialect":"yemeni","form":"نعيماً"},{"dialect":"sudanese","form":"نعيماً"},
-  {"dialect":"moroccan","form":"بالصحة"},{"dialect":"algerian","form":"بالصحة"},{"dialect":"tunisian","form":"بالصحة"},{"dialect":"libyan","form":"نعيماً"},
-  {"dialect":"hassaniya","form":"نعيما"}]},
-
- {"headword":"يا رب","definition":"دعاء ورجاء من الله","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"يا رب","examples":[{"text":"يا رب تعدي على خير","gloss":"اللهم اجعلها تمر بخير"}]},
-  {"dialect":"levantine","form":"يا رب"},{"dialect":"palestinian","form":"يا رب"},
-  {"dialect":"gulf","form":"يا رب"},{"dialect":"najdi","form":"يا رب"},{"dialect":"hejazi","form":"يا رب"},
-  {"dialect":"iraqi","form":"يا رب"},{"dialect":"yemeni","form":"يا رب"},{"dialect":"sudanese","form":"يا رب"},
-  {"dialect":"moroccan","form":"آ ربي"},{"dialect":"algerian","form":"يا ربي"},{"dialect":"tunisian","form":"يا ربي"},{"dialect":"libyan","form":"يا رب"},
-  {"dialect":"hassaniya","form":"يا رب"}]},
-
- {"headword":"الله أعلم","definition":"عبارة تقال عند عدم المعرفة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"الله أعلم","examples":[{"text":"الله أعلم هييجي ولا لأ","gloss":"الله أعلم أسيأتي أم لا"}]},
-  {"dialect":"levantine","form":"الله أعلم"},{"dialect":"palestinian","form":"الله أعلم"},
-  {"dialect":"gulf","form":"الله أعلم"},{"dialect":"najdi","form":"الله أعلم"},{"dialect":"hejazi","form":"الله أعلم"},
-  {"dialect":"iraqi","form":"الله أعلم"},{"dialect":"yemeni","form":"الله أعلم"},{"dialect":"sudanese","form":"الله أعلم"},
-  {"dialect":"moroccan","form":"الله أعلم"},{"dialect":"algerian","form":"الله أعلم"},{"dialect":"tunisian","form":"الله أعلم"},{"dialect":"libyan","form":"الله أعلم"},
-  {"dialect":"hassaniya","form":"الله أعلم"}]},
-
- {"headword":"طبعاً","definition":"كلمة تأكيد بمعنى بالتأكيد","kind":"word","entries":[
-  {"dialect":"egyptian","form":"طبعاً","examples":[{"text":"طبعاً هاجي معاك","gloss":"بالتأكيد سآتي معك"}]},
-  {"dialect":"levantine","form":"طبعاً"},{"dialect":"palestinian","form":"طبعاً"},
-  {"dialect":"gulf","form":"أكيد"},{"dialect":"najdi","form":"أكيد"},{"dialect":"hejazi","form":"طبعاً"},
-  {"dialect":"iraqi","form":"أكيد"},{"dialect":"yemeni","form":"طبعاً"},{"dialect":"sudanese","form":"طبعاً"},
-  {"dialect":"moroccan","form":"إيوا"},{"dialect":"algerian","form":"بصح"},{"dialect":"tunisian","form":"أكيد"},{"dialect":"libyan","form":"أكيد"},
-  {"dialect":"hassaniya","form":"أكيد"}]},
-
- {"headword":"على فكرة","definition":"عبارة تمهد لملاحظة عارضة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"على فكرة","examples":[{"text":"على فكرة، هو سأل عليك","gloss":"بالمناسبة، لقد سأل عنك"}]},
-  {"dialect":"levantine","form":"عالفكرة"},{"dialect":"palestinian","form":"عالفكرة"},
-  {"dialect":"gulf","form":"على فكرة"},{"dialect":"najdi","form":"على فكرة"},{"dialect":"hejazi","form":"على فكرة"},
-  {"dialect":"iraqi","form":"على فكرة"},{"dialect":"yemeni","form":"على فكرة"},{"dialect":"sudanese","form":"على فكرة"},
-  {"dialect":"moroccan","form":"على فكرة"},{"dialect":"algerian","form":"على فكرة"},{"dialect":"tunisian","form":"على فكرة"},{"dialect":"libyan","form":"على فكرة"},
-  {"dialect":"hassaniya","form":"على فكره"}]},
-
- {"headword":"الله يرحمه","definition":"دعاء للميت بالرحمة","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"الله يرحمه","examples":[{"text":"جدي الله يرحمه كان طيب","gloss":"جدي رحمه الله كان طيباً"}]},
-  {"dialect":"levantine","form":"الله يرحمه"},{"dialect":"palestinian","form":"الله يرحمه"},
-  {"dialect":"gulf","form":"الله يرحمه"},{"dialect":"najdi","form":"الله يرحمه"},{"dialect":"hejazi","form":"الله يرحمه"},
-  {"dialect":"iraqi","form":"الله يرحمه"},{"dialect":"yemeni","form":"الله يرحمه"},{"dialect":"sudanese","form":"الله يرحمه"},
-  {"dialect":"moroccan","form":"الله يرحمو"},{"dialect":"algerian","form":"الله يرحمو"},{"dialect":"tunisian","form":"الله يرحمو"},{"dialect":"libyan","form":"الله يرحمه"},
-  {"dialect":"hassaniya","form":"الله يرحمو"}]},
-
- {"headword":"بسم الله","definition":"عبارة تقال عند بدء العمل أو الأكل","kind":"phrase","entries":[
-  {"dialect":"egyptian","form":"بسم الله","examples":[{"text":"بسم الله، نبدأ","gloss":"بسم الله، نبدأ"}]},
-  {"dialect":"levantine","form":"بسم الله"},{"dialect":"palestinian","form":"بسم الله"},
-  {"dialect":"gulf","form":"بسم الله"},{"dialect":"najdi","form":"بسم الله"},{"dialect":"hejazi","form":"بسم الله"},
-  {"dialect":"iraqi","form":"بسم الله"},{"dialect":"yemeni","form":"بسم الله"},{"dialect":"sudanese","form":"بسم الله"},
-  {"dialect":"moroccan","form":"بسم الله"},{"dialect":"algerian","form":"بسم الله"},{"dialect":"tunisian","form":"بسم الله"},{"dialect":"libyan","form":"بسم الله"},
-  {"dialect":"hassaniya","form":"بسم الله"}]}
-]}
+{
+ "words": [
+  {
+   "headword": "ما شاء الله",
+   "definition": "عبارة تقال عند الإعجاب اتقاءً للحسد",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ما شاء الله",
+     "examples": [
+      {
+       "text": "ما شاء الله عليك، كبرت",
+       "gloss": "ما شاء الله، لقد كبرت"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "gulf",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "تبارك الله",
+     "examples": [
+      {
+       "text": "تبارك الله عليك",
+       "gloss": "ما شاء الله عليك"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "تبارك الله"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "تبارك الله"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ما شاء الله"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "ما شاء الله"
+    }
+   ]
+  },
+  {
+   "headword": "بالعافية",
+   "definition": "عبارة تقال لمن يأكل أو يشرب",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بالهنا والشفا",
+     "examples": [
+      {
+       "text": "بالهنا والشفا يا جماعة",
+       "gloss": "بالهناء والشفاء أيها الجماعة"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "صحتين"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "صحتين"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بالعافية"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بالعافية"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بالعافية"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "عافية"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بالعافية"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بالعافية"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بالصحة",
+     "examples": [
+      {
+       "text": "بالصحة والراحة",
+       "gloss": "بالهناء والعافية"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "بالصحة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "بالصحة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "بالعافية"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "بالعافيه"
+    }
+   ]
+  },
+  {
+   "headword": "نعيماً",
+   "definition": "عبارة تقال لمن حلق شعره أو استحم",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "نعيماً",
+     "examples": [
+      {
+       "text": "نعيماً، شعرك حلو كده",
+       "gloss": "نعيماً، شعرك جميل هكذا"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "gulf",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "najdi",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بالصحة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "بالصحة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "بالصحة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "نعيماً"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "نعيما"
+    }
+   ]
+  },
+  {
+   "headword": "يا رب",
+   "definition": "دعاء ورجاء من الله",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "يا رب",
+     "examples": [
+      {
+       "text": "يا رب تعدي على خير",
+       "gloss": "اللهم اجعلها تمر بخير"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "gulf",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "najdi",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "آ ربي"
+    },
+    {
+     "dialect": "algerian",
+     "form": "يا ربي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "يا ربي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "يا رب"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "يا رب"
+    }
+   ]
+  },
+  {
+   "headword": "طبعاً",
+   "definition": "كلمة تأكيد بمعنى بالتأكيد",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "طبعاً",
+     "examples": [
+      {
+       "text": "طبعاً هاجي معاك",
+       "gloss": "بالتأكيد سآتي معك"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "طبعاً"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "طبعاً"
+    },
+    {
+     "dialect": "gulf",
+     "form": "أكيد"
+    },
+    {
+     "dialect": "najdi",
+     "form": "أكيد"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "طبعاً"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "أكيد"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "طبعاً"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "طبعاً"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "إيوا"
+    },
+    {
+     "dialect": "algerian",
+     "form": "بصح"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "أكيد"
+    },
+    {
+     "dialect": "libyan",
+     "form": "أكيد"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "أكيد"
+    }
+   ]
+  },
+  {
+   "headword": "على فكرة",
+   "definition": "عبارة تمهد لملاحظة عارضة",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "على فكرة",
+     "examples": [
+      {
+       "text": "على فكرة، هو سأل عليك",
+       "gloss": "بالمناسبة، لقد سأل عنك"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "عالفكرة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "عالفكرة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "algerian",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "libyan",
+     "form": "على فكرة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "على فكره"
+    }
+   ]
+  }
+ ]
+}
