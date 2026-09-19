@@ -1,0 +1,97 @@
+{"words":[
+ {"headword":"مطر","definition":"الماء النازل من السحاب","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مطرة","examples":[{"text":"نزلت مطرة قوية امبارح بالليل","gloss":"نزل مطر غزير ليلة أمس"}]},
+  {"dialect":"levantine","form":"شتي","examples":[{"text":"عم بشتي برا، خود شمسية","gloss":"إنها تمطر في الخارج، خذ مظلة"}]},
+  {"dialect":"palestinian","form":"شتا"},
+  {"dialect":"gulf","form":"مطر"},{"dialect":"najdi","form":"مطر"},{"dialect":"hejazi","form":"مطر"},
+  {"dialect":"iraqi","form":"مطر"},{"dialect":"yemeni","form":"مطر"},{"dialect":"sudanese","form":"مطر"},
+  {"dialect":"moroccan","form":"الشتا","examples":[{"text":"كاتشتي بزاف هاد الأيام","gloss":"تمطر كثيراً هذه الأيام"}]},
+  {"dialect":"algerian","form":"الشتا"},{"dialect":"tunisian","form":"المطر"},{"dialect":"libyan","form":"مطر"},
+  {"dialect":"hassaniya","form":"المطر"}]},
+
+ {"headword":"ثلج","definition":"الماء المتجمد النازل أو المجمد","kind":"word","entries":[
+  {"dialect":"egyptian","form":"تلج"},{"dialect":"levantine","form":"تلج"},{"dialect":"palestinian","form":"تلج"},
+  {"dialect":"gulf","form":"ثلج"},{"dialect":"najdi","form":"ثلج"},{"dialect":"hejazi","form":"ثلج"},
+  {"dialect":"iraqi","form":"ثلج"},{"dialect":"yemeni","form":"ثلج"},{"dialect":"sudanese","form":"تلج"},
+  {"dialect":"moroccan","form":"التلج"},{"dialect":"algerian","form":"التلج"},{"dialect":"tunisian","form":"التلج"},{"dialect":"libyan","form":"تلج"},
+  {"dialect":"hassaniya","form":"ثلج"}]},
+
+ {"headword":"ريح","definition":"الهواء المتحرك","kind":"word","entries":[
+  {"dialect":"egyptian","form":"هوا","examples":[{"text":"الهوا شديد النهارده","gloss":"الريح قوية اليوم"}]},
+  {"dialect":"levantine","form":"هوا"},{"dialect":"palestinian","form":"هوا"},
+  {"dialect":"gulf","form":"هوا"},{"dialect":"najdi","form":"هوا"},{"dialect":"hejazi","form":"هوا"},
+  {"dialect":"iraqi","form":"هوا"},{"dialect":"yemeni","form":"ريح"},{"dialect":"sudanese","form":"ريح"},
+  {"dialect":"moroccan","form":"الريح"},{"dialect":"algerian","form":"الريح"},{"dialect":"tunisian","form":"الريح"},{"dialect":"libyan","form":"ريح"},
+  {"dialect":"hassaniya","form":"الريح"}]},
+
+ {"headword":"غيوم","definition":"ما يحجب السماء من السحاب","kind":"word","entries":[
+  {"dialect":"egyptian","form":"غيم"},{"dialect":"levantine","form":"غيم"},{"dialect":"palestinian","form":"غيم"},
+  {"dialect":"gulf","form":"غيوم"},{"dialect":"najdi","form":"غيوم"},{"dialect":"hejazi","form":"غيوم"},
+  {"dialect":"iraqi","form":"غيوم"},{"dialect":"yemeni","form":"غيوم"},{"dialect":"sudanese","form":"سحاب"},
+  {"dialect":"moroccan","form":"السحاب"},{"dialect":"algerian","form":"السحاب"},{"dialect":"tunisian","form":"السحاب"},{"dialect":"libyan","form":"غيم"},
+  {"dialect":"hassaniya","form":"السحاب"}]},
+
+ {"headword":"ضباب","definition":"بخار كثيف قريب من الأرض يحجب الرؤية","kind":"word","entries":[
+  {"dialect":"egyptian","form":"شبورة","examples":[{"text":"الشبورة غطت الطريق الصبح","gloss":"غطى الضباب الطريق صباحاً"}]},
+  {"dialect":"levantine","form":"ضباب"},{"dialect":"palestinian","form":"ضباب"},
+  {"dialect":"gulf","form":"ضباب"},{"dialect":"najdi","form":"ضباب"},{"dialect":"hejazi","form":"ضباب"},
+  {"dialect":"iraqi","form":"ضباب"},{"dialect":"yemeni","form":"ضباب"},{"dialect":"sudanese","form":"ضباب"},
+  {"dialect":"moroccan","form":"الضباب"},{"dialect":"algerian","form":"الضباب"},{"dialect":"tunisian","form":"الضباب"},{"dialect":"libyan","form":"ضباب"},
+  {"dialect":"hassaniya","form":"الضباب"}]},
+
+ {"headword":"حر","definition":"شدة الحرارة في الجو","kind":"word","entries":[
+  {"dialect":"egyptian","form":"حر","examples":[{"text":"الحر النهارده مش طبيعي","gloss":"الحر اليوم شديد جداً"}]},
+  {"dialect":"levantine","form":"شوب","examples":[{"text":"في شوب كتير اليوم","gloss":"الجو حار جداً اليوم"}]},
+  {"dialect":"palestinian","form":"شوب"},
+  {"dialect":"gulf","form":"حر"},{"dialect":"najdi","form":"حر"},{"dialect":"hejazi","form":"حر"},
+  {"dialect":"iraqi","form":"حر"},{"dialect":"yemeni","form":"حر"},{"dialect":"sudanese","form":"حر"},
+  {"dialect":"moroccan","form":"الصهد"},{"dialect":"algerian","form":"الصهد"},{"dialect":"tunisian","form":"السخانة"},{"dialect":"libyan","form":"حر"},
+  {"dialect":"hassaniya","form":"الحر"}]},
+
+ {"headword":"عاصفة ترابية","definition":"ريح شديدة تحمل التراب فتحجب الرؤية","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"عاصفة ترابية"},{"dialect":"levantine","form":"عجاج"},{"dialect":"palestinian","form":"عجاج"},
+  {"dialect":"gulf","form":"طوز","examples":[{"text":"اليوم طوز، لا تطلع","gloss":"اليوم عاصفة ترابية، لا تخرج"}]},
+  {"dialect":"najdi","form":"طوز"},{"dialect":"hejazi","form":"عجاج"},
+  {"dialect":"iraqi","form":"عجاج"},{"dialect":"yemeni","form":"عجاج"},
+  {"dialect":"sudanese","form":"هبوب","examples":[{"text":"الهبوب جا قبل المطر","gloss":"جاءت العاصفة الترابية قبل المطر"}]},
+  {"dialect":"moroccan","form":"الغبرة"},{"dialect":"algerian","form":"الغبرة"},{"dialect":"tunisian","form":"الغبار"},{"dialect":"libyan","form":"غبار"},
+  {"dialect":"hassaniya","form":"العجاج"}]},
+
+ {"headword":"ظل","definition":"موضع لا تصله الشمس","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ضل","examples":[{"text":"اقعد في الضل أحسن","gloss":"اجلس في الظل فهو أفضل"}]},
+  {"dialect":"levantine","form":"في","notes":"يقال: اقعد بالفيّ"},{"dialect":"palestinian","form":"ظل"},
+  {"dialect":"gulf","form":"ظل"},{"dialect":"najdi","form":"ظل"},{"dialect":"hejazi","form":"ظل"},
+  {"dialect":"iraqi","form":"ظل"},{"dialect":"yemeni","form":"ظل"},{"dialect":"sudanese","form":"ضل"},
+  {"dialect":"moroccan","form":"الضل"},{"dialect":"algerian","form":"الضل"},{"dialect":"tunisian","form":"الضل"},{"dialect":"libyan","form":"ضل"},
+  {"dialect":"hassaniya","form":"الظل"}]},
+
+ {"headword":"برق","definition":"الضوء الذي يلمع في السماء قبل الرعد","kind":"word","entries":[
+  {"dialect":"egyptian","form":"برق"},{"dialect":"levantine","form":"برق"},{"dialect":"palestinian","form":"برق"},
+  {"dialect":"gulf","form":"برق"},{"dialect":"najdi","form":"برق"},{"dialect":"hejazi","form":"برق"},
+  {"dialect":"iraqi","form":"برق"},{"dialect":"yemeni","form":"برق"},{"dialect":"sudanese","form":"برق"},
+  {"dialect":"moroccan","form":"البرق"},{"dialect":"algerian","form":"البرق"},{"dialect":"tunisian","form":"البرق"},{"dialect":"libyan","form":"برق"},
+  {"dialect":"hassaniya","form":"البرق"}]},
+
+ {"headword":"رعد","definition":"الصوت الذي يتبع البرق","kind":"word","entries":[
+  {"dialect":"egyptian","form":"رعد"},{"dialect":"levantine","form":"رعد"},{"dialect":"palestinian","form":"رعد"},
+  {"dialect":"gulf","form":"رعد"},{"dialect":"najdi","form":"رعد"},{"dialect":"hejazi","form":"رعد"},
+  {"dialect":"iraqi","form":"رعد"},{"dialect":"yemeni","form":"رعد"},{"dialect":"sudanese","form":"رعد"},
+  {"dialect":"moroccan","form":"الرعد"},{"dialect":"algerian","form":"الرعد"},{"dialect":"tunisian","form":"الرعد"},{"dialect":"libyan","form":"رعد"},
+  {"dialect":"hassaniya","form":"الرعد"}]},
+
+ {"headword":"رطوبة","definition":"كثرة بخار الماء في الجو","kind":"word","entries":[
+  {"dialect":"egyptian","form":"رطوبة","examples":[{"text":"الرطوبة في الإسكندرية عالية","gloss":"الرطوبة في الإسكندرية مرتفعة"}]},
+  {"dialect":"levantine","form":"رطوبة"},{"dialect":"palestinian","form":"رطوبة"},
+  {"dialect":"gulf","form":"رطوبة"},{"dialect":"najdi","form":"رطوبة"},{"dialect":"hejazi","form":"رطوبة"},
+  {"dialect":"iraqi","form":"رطوبة"},{"dialect":"yemeni","form":"رطوبة"},{"dialect":"sudanese","form":"رطوبة"},
+  {"dialect":"moroccan","form":"الرطوبة"},{"dialect":"algerian","form":"الرطوبة"},{"dialect":"tunisian","form":"الرطوبة"},{"dialect":"libyan","form":"رطوبة"},
+  {"dialect":"hassaniya","form":"الرطوبه"}]},
+
+ {"headword":"الجو","definition":"حال الطقس في يومه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"الجو","examples":[{"text":"الجو حلو النهارده","gloss":"الطقس جميل اليوم"}]},
+  {"dialect":"levantine","form":"الطقس"},{"dialect":"palestinian","form":"الجو"},
+  {"dialect":"gulf","form":"الجو"},{"dialect":"najdi","form":"الجو"},{"dialect":"hejazi","form":"الجو"},
+  {"dialect":"iraqi","form":"الجو"},{"dialect":"yemeni","form":"الجو"},{"dialect":"sudanese","form":"الجو"},
+  {"dialect":"moroccan","form":"الجو"},{"dialect":"algerian","form":"الجو"},{"dialect":"tunisian","form":"الطقس"},{"dialect":"libyan","form":"الجو"},
+  {"dialect":"hassaniya","form":"الجو"}]}
+]}

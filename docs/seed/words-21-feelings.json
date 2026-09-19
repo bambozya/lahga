@@ -1,0 +1,97 @@
+{"words":[
+ {"headword":"زعلان","definition":"من أصابه ضيق أو غضب من أحد","kind":"word","entries":[
+  {"dialect":"egyptian","form":"زعلان","examples":[{"text":"هو زعلان مني ليه؟","gloss":"لماذا هو غاضب مني؟"}]},
+  {"dialect":"levantine","form":"زعلان"},{"dialect":"palestinian","form":"زعلان"},
+  {"dialect":"gulf","form":"زعلان"},{"dialect":"najdi","form":"زعلان"},{"dialect":"hejazi","form":"زعلان"},
+  {"dialect":"iraqi","form":"زعلان"},{"dialect":"yemeni","form":"زعلان"},{"dialect":"sudanese","form":"زعلان"},
+  {"dialect":"moroccan","form":"مقلق"},{"dialect":"algerian","form":"زعفان"},{"dialect":"tunisian","form":"متغشش"},{"dialect":"libyan","form":"زعلان"},
+  {"dialect":"hassaniya","form":"زعلان"}]},
+
+ {"headword":"مشتاق","definition":"من طال شوقه إلى غائب","kind":"word","entries":[
+  {"dialect":"egyptian","form":"وحشتني","notes":"تقال للمخاطب: اشتقت إليك","examples":[{"text":"وحشتني والله يا صاحبي","gloss":"اشتقت إليك يا صديقي"}]},
+  {"dialect":"levantine","form":"اشتقتلك"},{"dialect":"palestinian","form":"اشتقتلك"},
+  {"dialect":"gulf","form":"مشتاق لك"},{"dialect":"najdi","form":"مشتاق"},{"dialect":"hejazi","form":"مشتاق"},
+  {"dialect":"iraqi","form":"اشتقتلك"},{"dialect":"yemeni","form":"مشتاق"},{"dialect":"sudanese","form":"مشتاق"},
+  {"dialect":"moroccan","form":"توحشتك","examples":[{"text":"توحشتك بزاف","gloss":"اشتقت إليك كثيراً"}]},
+  {"dialect":"algerian","form":"توحشتك"},{"dialect":"tunisian","form":"توحشتك"},{"dialect":"libyan","form":"توحشتك"},
+  {"dialect":"hassaniya","form":"مشتاق"}]},
+
+ {"headword":"ملول","definition":"من سئم وضجر من طول الانتظار أو تكرار الشيء","kind":"word","entries":[
+  {"dialect":"egyptian","form":"زهقان","examples":[{"text":"زهقت من القعدة في البيت","gloss":"سئمت من البقاء في البيت"}]},
+  {"dialect":"levantine","form":"ملّان"},{"dialect":"palestinian","form":"ملّان"},
+  {"dialect":"gulf","form":"طفشان","examples":[{"text":"طفشت من الدوام","gloss":"سئمت من العمل"}]},
+  {"dialect":"najdi","form":"طفشان"},{"dialect":"hejazi","form":"زهقان"},
+  {"dialect":"iraqi","form":"زهگان"},{"dialect":"yemeni","form":"ملول"},{"dialect":"sudanese","form":"زهجان"},
+  {"dialect":"moroccan","form":"مملل"},{"dialect":"algerian","form":"مملل"},{"dialect":"tunisian","form":"مملول"},{"dialect":"libyan","form":"زهقان"},
+  {"dialect":"hassaniya","form":"ملول"}]},
+
+ {"headword":"خجول","definition":"من يستحي ولا يجرؤ على الكلام","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مكسوف","examples":[{"text":"الواد مكسوف يتكلم قدام الناس","gloss":"الولد يخجل من الكلام أمام الناس"}]},
+  {"dialect":"levantine","form":"خجول"},{"dialect":"palestinian","form":"مستحي"},
+  {"dialect":"gulf","form":"مستحي"},{"dialect":"najdi","form":"مستحي"},{"dialect":"hejazi","form":"مستحي"},
+  {"dialect":"iraqi","form":"مستحي"},{"dialect":"yemeni","form":"خجول"},{"dialect":"sudanese","form":"مكسوف"},
+  {"dialect":"moroccan","form":"محشوم"},{"dialect":"algerian","form":"محشوم"},{"dialect":"tunisian","form":"محشوم"},{"dialect":"libyan","form":"مستحي"},
+  {"dialect":"hassaniya","form":"خجول"}]},
+
+ {"headword":"حائر","definition":"من لا يدري أي الأمرين يختار","kind":"word","entries":[
+  {"dialect":"egyptian","form":"متلخبط","examples":[{"text":"أنا متلخبط، مش عارف أعمل إيه","gloss":"أنا حائر، لا أعرف ماذا أفعل"}]},
+  {"dialect":"levantine","form":"محتار"},{"dialect":"palestinian","form":"محتار"},
+  {"dialect":"gulf","form":"محتار"},{"dialect":"najdi","form":"محتار"},{"dialect":"hejazi","form":"محتار"},
+  {"dialect":"iraqi","form":"محتار"},{"dialect":"yemeni","form":"محتار"},{"dialect":"sudanese","form":"محتار"},
+  {"dialect":"moroccan","form":"محتار"},{"dialect":"algerian","form":"محتار"},{"dialect":"tunisian","form":"محتار"},{"dialect":"libyan","form":"محتار"},
+  {"dialect":"hassaniya","form":"محتار"}]},
+
+ {"headword":"قلقان","definition":"من شغل باله أمر يخافه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"قلقان","examples":[{"text":"قلقان على ابني اللي مسافر","gloss":"قلق على ابني المسافر"}]},
+  {"dialect":"levantine","form":"قلقان"},{"dialect":"palestinian","form":"قلقان"},
+  {"dialect":"gulf","form":"قلقان"},{"dialect":"najdi","form":"قلقان"},{"dialect":"hejazi","form":"قلقان"},
+  {"dialect":"iraqi","form":"قلقان"},{"dialect":"yemeni","form":"قلقان"},{"dialect":"sudanese","form":"قلقان"},
+  {"dialect":"moroccan","form":"قلقان"},{"dialect":"algerian","form":"قلقان"},{"dialect":"tunisian","form":"قلقان"},{"dialect":"libyan","form":"قلقان"},
+  {"dialect":"hassaniya","form":"قلقان"}]},
+
+ {"headword":"متحمس","definition":"من اشتدت رغبته في أمر مقبل","kind":"word","entries":[
+  {"dialect":"egyptian","form":"متحمس"},{"dialect":"levantine","form":"متحمس"},{"dialect":"palestinian","form":"متحمس"},
+  {"dialect":"gulf","form":"متحمس"},{"dialect":"najdi","form":"متحمس"},{"dialect":"hejazi","form":"متحمس"},
+  {"dialect":"iraqi","form":"متحمس"},{"dialect":"yemeni","form":"متحمس"},{"dialect":"sudanese","form":"متحمس"},
+  {"dialect":"moroccan","form":"متحمس"},{"dialect":"algerian","form":"متحمس"},{"dialect":"tunisian","form":"متحمس"},{"dialect":"libyan","form":"متحمس"},
+  {"dialect":"hassaniya","form":"متحمس"}]},
+
+ {"headword":"مندهش","definition":"من فاجأه أمر لم يتوقعه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مستغرب","examples":[{"text":"مستغرب إنه ما جاش","gloss":"مندهش لأنه لم يأت"}]},
+  {"dialect":"levantine","form":"مستغرب"},{"dialect":"palestinian","form":"مستغرب"},
+  {"dialect":"gulf","form":"مستغرب"},{"dialect":"najdi","form":"مستغرب"},{"dialect":"hejazi","form":"مستغرب"},
+  {"dialect":"iraqi","form":"مستغرب"},{"dialect":"yemeni","form":"مستغرب"},{"dialect":"sudanese","form":"مستغرب"},
+  {"dialect":"moroccan","form":"مستغرب"},{"dialect":"algerian","form":"مستغرب"},{"dialect":"tunisian","form":"مستغرب"},{"dialect":"libyan","form":"مستغرب"},
+  {"dialect":"hassaniya","form":"مستغرب"}]},
+
+ {"headword":"غيور","definition":"من يغار على من يحب أو ممن هو أحسن حالاً","kind":"word","entries":[
+  {"dialect":"egyptian","form":"غيران"},{"dialect":"levantine","form":"غيور"},{"dialect":"palestinian","form":"غيور"},
+  {"dialect":"gulf","form":"غيور"},{"dialect":"najdi","form":"غيور"},{"dialect":"hejazi","form":"غيور"},
+  {"dialect":"iraqi","form":"غيور"},{"dialect":"yemeni","form":"غيور"},{"dialect":"sudanese","form":"غيران"},
+  {"dialect":"moroccan","form":"غيور"},{"dialect":"algerian","form":"غيور"},{"dialect":"tunisian","form":"غيور"},{"dialect":"libyan","form":"غيور"},
+  {"dialect":"hassaniya","form":"غيور"}]},
+
+ {"headword":"عصبي","definition":"سريع الغضب لأقل سبب","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عصبي","examples":[{"text":"هو عصبي شوية بس قلبه طيب","gloss":"هو سريع الغضب لكنه طيب القلب"}]},
+  {"dialect":"levantine","form":"عصبي"},{"dialect":"palestinian","form":"عصبي"},
+  {"dialect":"gulf","form":"عصبي"},{"dialect":"najdi","form":"عصبي"},{"dialect":"hejazi","form":"عصبي"},
+  {"dialect":"iraqi","form":"عصبي"},{"dialect":"yemeni","form":"عصبي"},{"dialect":"sudanese","form":"عصبي"},
+  {"dialect":"moroccan","form":"عصبي"},{"dialect":"algerian","form":"عصبي"},{"dialect":"tunisian","form":"عصبي"},{"dialect":"libyan","form":"عصبي"},
+  {"dialect":"hassaniya","form":"عصبي"}]},
+
+ {"headword":"مهموم","definition":"من أثقله الهم والتفكير","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مهموم"},{"dialect":"levantine","form":"مهموم"},{"dialect":"palestinian","form":"مهموم"},
+  {"dialect":"gulf","form":"مهموم"},{"dialect":"najdi","form":"مهموم"},{"dialect":"hejazi","form":"مهموم"},
+  {"dialect":"iraqi","form":"مهموم"},{"dialect":"yemeni","form":"مهموم"},{"dialect":"sudanese","form":"مهموم"},
+  {"dialect":"moroccan","form":"مهموم"},{"dialect":"algerian","form":"مهموم"},{"dialect":"tunisian","form":"مهموم"},{"dialect":"libyan","form":"مهموم"},
+  {"dialect":"hassaniya","form":"مهموم"}]},
+
+ {"headword":"مبسوط","definition":"من ارتاح باله وسُرّ","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مبسوط","examples":[{"text":"أنا مبسوط إنك جيت","gloss":"سعدت بمجيئك"}]},
+  {"dialect":"levantine","form":"مبسوط"},{"dialect":"palestinian","form":"مبسوط"},
+  {"dialect":"gulf","form":"مبسوط"},{"dialect":"najdi","form":"مستانس","examples":[{"text":"مستانس من قلبي","gloss":"سعيد من قلبي"}]},
+  {"dialect":"hejazi","form":"مبسوط"},
+  {"dialect":"iraqi","form":"مبسوط"},{"dialect":"yemeni","form":"مبسوط"},{"dialect":"sudanese","form":"مبسوط"},
+  {"dialect":"moroccan","form":"فرحان"},{"dialect":"algerian","form":"فرحان"},{"dialect":"tunisian","form":"فرحان"},{"dialect":"libyan","form":"مبسوط"},
+  {"dialect":"hassaniya","form":"مبسوط"}]}
+]}

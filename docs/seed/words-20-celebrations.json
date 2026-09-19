@@ -1,0 +1,95 @@
+{"words":[
+ {"headword":"عرس","definition":"حفل الزواج","kind":"word","entries":[
+  {"dialect":"egyptian","form":"فرح","examples":[{"text":"رايحين فرح بنت عمي","gloss":"ذاهبون إلى عرس ابنة عمي"}]},
+  {"dialect":"levantine","form":"عرس"},{"dialect":"palestinian","form":"عرس"},
+  {"dialect":"gulf","form":"عرس"},{"dialect":"najdi","form":"زواج"},{"dialect":"hejazi","form":"عرس"},
+  {"dialect":"iraqi","form":"عرس"},{"dialect":"yemeni","form":"عرس"},{"dialect":"sudanese","form":"عرس"},
+  {"dialect":"moroccan","form":"العرس"},{"dialect":"algerian","form":"العرس"},{"dialect":"tunisian","form":"العرس"},{"dialect":"libyan","form":"عرس"},
+  {"dialect":"hassaniya","form":"العرس"}]},
+
+ {"headword":"عريس","definition":"الرجل يوم زواجه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عريس"},{"dialect":"levantine","form":"عريس"},{"dialect":"palestinian","form":"عريس"},
+  {"dialect":"gulf","form":"معرس"},{"dialect":"najdi","form":"معرس"},{"dialect":"hejazi","form":"عريس"},
+  {"dialect":"iraqi","form":"عريس"},{"dialect":"yemeni","form":"عريس"},{"dialect":"sudanese","form":"عريس"},
+  {"dialect":"moroccan","form":"العريس"},{"dialect":"algerian","form":"العريس"},{"dialect":"tunisian","form":"العريس"},{"dialect":"libyan","form":"عريس"},
+  {"dialect":"hassaniya","form":"العريس"}]},
+
+ {"headword":"عروس","definition":"المرأة يوم زواجها","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عروسة"},{"dialect":"levantine","form":"عروس"},{"dialect":"palestinian","form":"عروس"},
+  {"dialect":"gulf","form":"عروس"},{"dialect":"najdi","form":"معرسة"},{"dialect":"hejazi","form":"عروسة"},
+  {"dialect":"iraqi","form":"عروس"},{"dialect":"yemeni","form":"عروس"},{"dialect":"sudanese","form":"عروس"},
+  {"dialect":"moroccan","form":"العروسة"},{"dialect":"algerian","form":"العروسة"},{"dialect":"tunisian","form":"العروسة"},{"dialect":"libyan","form":"عروسة"},
+  {"dialect":"hassaniya","form":"العروس"}]},
+
+ {"headword":"مهر","definition":"ما يدفعه العريس لأهل العروس","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مهر"},{"dialect":"levantine","form":"مهر"},{"dialect":"palestinian","form":"مهر"},
+  {"dialect":"gulf","form":"مهر"},{"dialect":"najdi","form":"مهر"},{"dialect":"hejazi","form":"مهر"},
+  {"dialect":"iraqi","form":"مهر"},{"dialect":"yemeni","form":"مهر"},{"dialect":"sudanese","form":"مهر"},
+  {"dialect":"moroccan","form":"الصداق","examples":[{"text":"تفاهموا على الصداق","gloss":"اتفقوا على المهر"}]},
+  {"dialect":"algerian","form":"الصداق"},{"dialect":"tunisian","form":"الصداق"},{"dialect":"libyan","form":"صداق"},
+  {"dialect":"hassaniya","form":"الصداق"}]},
+
+ {"headword":"خطوبة","definition":"الاتفاق على الزواج قبل عقده","kind":"word","entries":[
+  {"dialect":"egyptian","form":"خطوبة","examples":[{"text":"خطوبتهم كانت الأسبوع اللي فات","gloss":"كانت خطوبتهم الأسبوع الماضي"}]},
+  {"dialect":"levantine","form":"خطبة"},{"dialect":"palestinian","form":"خطبة"},
+  {"dialect":"gulf","form":"ملچة"},{"dialect":"najdi","form":"ملكة"},{"dialect":"hejazi","form":"ملكة"},
+  {"dialect":"iraqi","form":"خطوبة"},{"dialect":"yemeni","form":"خطوبة"},{"dialect":"sudanese","form":"خطوبة"},
+  {"dialect":"moroccan","form":"الخطوبة"},{"dialect":"algerian","form":"الخطوبة"},{"dialect":"tunisian","form":"الخطوبة"},{"dialect":"libyan","form":"خطوبة"},
+  {"dialect":"hassaniya","form":"الخطوبه"}]},
+
+ {"headword":"عزاء","definition":"مواساة أهل الميت","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عزا","examples":[{"text":"رحنا العزا امبارح","gloss":"ذهبنا إلى العزاء أمس"}]},
+  {"dialect":"levantine","form":"عزا"},{"dialect":"palestinian","form":"عزا"},
+  {"dialect":"gulf","form":"عزا"},{"dialect":"najdi","form":"عزا"},{"dialect":"hejazi","form":"عزا"},
+  {"dialect":"iraqi","form":"فاتحة"},{"dialect":"yemeni","form":"عزا"},{"dialect":"sudanese","form":"بكا"},
+  {"dialect":"moroccan","form":"التعزية"},{"dialect":"algerian","form":"التعزية"},{"dialect":"tunisian","form":"التعزية"},{"dialect":"libyan","form":"عزا"},
+  {"dialect":"hassaniya","form":"التعزيه"}]},
+
+ {"headword":"جنازة","definition":"تشييع الميت إلى قبره","kind":"word","entries":[
+  {"dialect":"egyptian","form":"جنازة"},{"dialect":"levantine","form":"جنازة"},{"dialect":"palestinian","form":"جنازة"},
+  {"dialect":"gulf","form":"جنازة"},{"dialect":"najdi","form":"جنازة"},{"dialect":"hejazi","form":"جنازة"},
+  {"dialect":"iraqi","form":"جنازة"},{"dialect":"yemeni","form":"جنازة"},{"dialect":"sudanese","form":"جنازة"},
+  {"dialect":"moroccan","form":"الجنازة"},{"dialect":"algerian","form":"الجنازة"},{"dialect":"tunisian","form":"الجنازة"},{"dialect":"libyan","form":"جنازة"},
+  {"dialect":"hassaniya","form":"الجنازه"}]},
+
+ {"headword":"مولود","definition":"الطفل حديث الولادة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مولود","examples":[{"text":"جالهم مولود من أسبوع","gloss":"رُزقوا بمولود منذ أسبوع"}]},
+  {"dialect":"levantine","form":"مولود"},{"dialect":"palestinian","form":"مولود"},
+  {"dialect":"gulf","form":"مولود"},{"dialect":"najdi","form":"مولود"},{"dialect":"hejazi","form":"مولود"},
+  {"dialect":"iraqi","form":"مولود"},{"dialect":"yemeni","form":"مولود"},{"dialect":"sudanese","form":"مولود"},
+  {"dialect":"moroccan","form":"المولود"},{"dialect":"algerian","form":"المولود"},{"dialect":"tunisian","form":"المولود"},{"dialect":"libyan","form":"مولود"},
+  {"dialect":"hassaniya","form":"المولود"}]},
+
+ {"headword":"حفل المولود","definition":"ما يقام بعد الولادة بأيام احتفاء بالمولود","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"سبوع","examples":[{"text":"عملوا سبوع للبيبي","gloss":"أقاموا حفل السبوع للمولود"}]},
+  {"dialect":"levantine","form":"سبوع"},{"dialect":"palestinian","form":"سبوع"},
+  {"dialect":"gulf","form":"عقيقة"},{"dialect":"najdi","form":"عقيقة"},{"dialect":"hejazi","form":"عقيقة"},
+  {"dialect":"iraqi","form":"عقيقة"},{"dialect":"yemeni","form":"عقيقة"},{"dialect":"sudanese","form":"سمّاية"},
+  {"dialect":"moroccan","form":"السبوع"},{"dialect":"algerian","form":"السبوع"},{"dialect":"tunisian","form":"العقيقة"},{"dialect":"libyan","form":"سبوع"},
+  {"dialect":"hassaniya","form":"العقيقه"}]},
+
+ {"headword":"هدية","definition":"ما يُعطى إكراماً بلا مقابل","kind":"word","entries":[
+  {"dialect":"egyptian","form":"هدية","examples":[{"text":"جبتلها هدية في عيد ميلادها","gloss":"أحضرت لها هدية في عيد ميلادها"}]},
+  {"dialect":"levantine","form":"هدية"},{"dialect":"palestinian","form":"هدية"},
+  {"dialect":"gulf","form":"هدية"},{"dialect":"najdi","form":"هدية"},{"dialect":"hejazi","form":"هدية"},
+  {"dialect":"iraqi","form":"هدية"},{"dialect":"yemeni","form":"هدية"},{"dialect":"sudanese","form":"هدية"},
+  {"dialect":"moroccan","form":"الكادو","notes":"من الفرنسية","examples":[{"text":"جاب ليها كادو زوين","gloss":"أحضر لها هدية جميلة"}]},
+  {"dialect":"algerian","form":"الكادو"},{"dialect":"tunisian","form":"الكادو"},{"dialect":"libyan","form":"هدية"},
+  {"dialect":"hassaniya","form":"الهديه"}]},
+
+ {"headword":"وليمة","definition":"طعام يُصنع لدعوة الناس","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عزومة","examples":[{"text":"عندنا عزومة الجمعة","gloss":"لدينا وليمة يوم الجمعة"}]},
+  {"dialect":"levantine","form":"عزيمة"},{"dialect":"palestinian","form":"عزيمة"},
+  {"dialect":"gulf","form":"عزيمة"},{"dialect":"najdi","form":"عزيمة"},{"dialect":"hejazi","form":"عزيمة"},
+  {"dialect":"iraqi","form":"عزيمة"},{"dialect":"yemeni","form":"وليمة"},{"dialect":"sudanese","form":"وليمة"},
+  {"dialect":"moroccan","form":"الوليمة"},{"dialect":"algerian","form":"الوليمة"},{"dialect":"tunisian","form":"الوليمة"},{"dialect":"libyan","form":"وليمة"},
+  {"dialect":"hassaniya","form":"الوليمه"}]},
+
+ {"headword":"مبروك","definition":"كلمة تهنئة بما سُر به المرء","kind":"word","entries":[
+  {"dialect":"egyptian","form":"مبروك","examples":[{"text":"مبروك على الشقة الجديدة","gloss":"تهانينا على الشقة الجديدة"}]},
+  {"dialect":"levantine","form":"مبروك"},{"dialect":"palestinian","form":"مبروك"},
+  {"dialect":"gulf","form":"ألف مبروك"},{"dialect":"najdi","form":"مبروك"},{"dialect":"hejazi","form":"مبروك"},
+  {"dialect":"iraqi","form":"مبروك"},{"dialect":"yemeni","form":"مبروك"},{"dialect":"sudanese","form":"مبروك"},
+  {"dialect":"moroccan","form":"مبروك"},{"dialect":"algerian","form":"مبروك"},{"dialect":"tunisian","form":"مبروك"},{"dialect":"libyan","form":"مبروك"},
+  {"dialect":"hassaniya","form":"مبروك"}]}
+]}
