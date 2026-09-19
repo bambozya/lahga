@@ -900,133 +900,289 @@
     {
      "dialect": "egyptian",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، نشوفك بكرة",
+       "gloss": "مع السلامة، نراك غداً"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "سلام",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "سلام يا جماعة، أنا ماشي",
+       "gloss": "وداعاً جميعاً، أنا ذاهب"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، دير بالك عحالك",
+       "gloss": "مع السلامة، اعتن بنفسك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "بخاطرك",
      "meaning": "مع السلامة",
-     "notes": "يقولها المغادر"
+     "notes": "يقولها المغادر",
+     "examples": [
+      {
+       "text": "بخاطرك، بشوفك بكرا",
+       "gloss": "أستأذن منك، أراك غداً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "يلا باي",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "يلا باي، تأخرت عليي",
+       "gloss": "إلى اللقاء، لقد تأخرت"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، الله يحفظك",
+       "gloss": "مع السلامة، الله يحفظك"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "في أمان الله",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "في أمان الله، ترى ننتظرك",
+       "gloss": "في أمان الله، نحن في انتظارك"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "في أمان الله",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "في أمان الله يا بو خالد",
+       "gloss": "في أمان الله يا أبا خالد"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، توصل بالسلامة",
+       "gloss": "مع السلامة، تصل سالماً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، تواصينا",
+       "gloss": "مع السلامة، تواصلنا"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "في أمان الله",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "في أمان الله يا غالي",
+       "gloss": "في أمان الله يا عزيزي"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، دير بالك",
+       "gloss": "مع السلامة، انتبه لنفسك"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بأمان الله",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "بأمان الله، نلتقي باچر",
+       "gloss": "في أمان الله، نلتقي غداً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، الله معك",
+       "gloss": "مع السلامة، الله معك"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "في أمان الله",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "في أمان الله يا ولدي",
+       "gloss": "في أمان الله يا بني"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "بسلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "بسلامة، تهلا فراسك",
+       "gloss": "مع السلامة، اعتن بنفسك"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "الله يعاون",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "الله يعاون، بسلامة",
+       "gloss": "الله يعينك، مع السلامة"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بسلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "بسلامة، نتلاقاو غدوة",
+       "gloss": "مع السلامة، نلتقي غداً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بالسلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "روح بالسلامة",
+       "gloss": "اذهب بسلام"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بسلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "بسلامة، ثنيها مرة أخرى",
+       "gloss": "مع السلامة، كررها مرة أخرى"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بالسلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "أمشي بالسلامة",
+       "gloss": "اذهب بسلام"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، نتلاقو",
+       "gloss": "مع السلامة، نلتقي"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "بسلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "روح بسلامة",
+       "gloss": "اذهب بسلام"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، تصل بالسلامة",
+       "gloss": "مع السلامة، تصل سالماً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "سلام",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "سلام يا زول، نتقابل",
+       "gloss": "وداعاً يا رجل، نتقابل"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "مع السلامة",
-     "meaning": "مع السلامة"
+     "meaning": "مع السلامة",
+     "examples": [
+      {
+       "text": "مع السلامة، الله يسلمك",
+       "gloss": "مع السلامة، الله يسلمك"
+      }
+     ]
     }
    ]
   },
@@ -1180,167 +1336,365 @@
     {
      "dialect": "egyptian",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، ممكن تقفل الشباك؟",
+       "gloss": "من فضلك، هل يمكنك إغلاق النافذة؟"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، فين محطة المترو؟",
+       "gloss": "لو سمحت، أين محطة المترو؟"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "بعد إذنك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "بعد إذنك، عايز أعدي",
+       "gloss": "عن إذنك، أريد أن أمر"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، عطيني هالكتاب",
+       "gloss": "من فضلك، أعطني هذا الكتاب"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، وين الصيدلية؟",
+       "gloss": "لو سمحت، أين الصيدلية؟"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "إذا بتريد",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "إذا بتريد، ساعدني شوي",
+       "gloss": "إن أردت، ساعدني قليلاً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، وين الطريق للمستشفى؟",
+       "gloss": "لو سمحت، أين الطريق إلى المستشفى؟"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، انتظر شوي",
+       "gloss": "من فضلك، انتظر قليلاً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "الله يخليك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "الله يخليك، ساعدني",
+       "gloss": "أرجوك، ساعدني"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، عطني الملف",
+       "gloss": "لو سمحت، أعطني الملف"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "الله يخليك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "الله يخليك، لا تتأخر",
+       "gloss": "أرجوك، لا تتأخر"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، كم الساعة؟",
+       "gloss": "لو سمحت، كم الساعة؟"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، افتح الباب",
+       "gloss": "من فضلك، افتح الباب"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "رجاءً",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "رجاءً، انطيني الدفتر",
+       "gloss": "من فضلك، أعطني الدفتر"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، وين الصيدلية؟",
+       "gloss": "لو سمحت، أين الصيدلية؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بالله عليك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "بالله عليك، ساعدني بهاي",
+       "gloss": "أرجوك، ساعدني في هذه"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، اكتب لي العنوان",
+       "gloss": "من فضلك، اكتب لي العنوان"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، وين السوق؟",
+       "gloss": "لو سمحت، أين السوق؟"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "عافاك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "عافاك، عاونّي شوية",
+       "gloss": "من فضلك، ساعدني قليلاً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "الله يخليك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "الله يخليك، ما تنساش",
+       "gloss": "أرجوك، لا تنس"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، فين الطريق؟",
+       "gloss": "من فضلك، أين الطريق؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، وين الحمام؟",
+       "gloss": "من فضلك، أين الحمام؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "الله يخليك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "الله يخليك، ديرها ليا",
+       "gloss": "أرجوك، افعلها لي"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "يعطيك الصحة",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "يعطيك الصحة على المساعدة",
+       "gloss": "شكراً لك على المساعدة"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "يعيشك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "يعيشك، عاوني في هاذي",
+       "gloss": "من فضلك، ساعدني في هذه"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، وين البوسطة؟",
+       "gloss": "من فضلك، أين مكتب البريد؟"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بربّي",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "بربّي، أستنى شوية",
+       "gloss": "أرجوك، انتظر قليلاً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، وين الشارع هذا؟",
+       "gloss": "لو سمحت، أين هذا الشارع؟"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، اقفل الباب",
+       "gloss": "من فضلك، أغلق الباب"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "الله يخليك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "الله يخليك، ساعدني",
+       "gloss": "أرجوك، ساعدني"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "لو سمحت",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "لو سمحت، وين المحطة؟",
+       "gloss": "لو سمحت، أين المحطة؟"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، انتظر شوية",
+       "gloss": "من فضلك، انتظر قليلاً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "من فضلك",
-     "meaning": "من فضلك"
+     "meaning": "من فضلك",
+     "examples": [
+      {
+       "text": "من فضلك، عاوني",
+       "gloss": "من فضلك، ساعدني"
+      }
+     ]
     }
    ]
   },
@@ -1489,153 +1843,333 @@
     {
      "dialect": "egyptian",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف، أنا اللي غلطت",
+       "gloss": "آسف، أنا المخطئ"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "معلش",
      "meaning": "آسف",
-     "notes": "للتخفيف والاعتذار معاً"
+     "notes": "للتخفيف والاعتذار معاً",
+     "examples": [
+      {
+       "text": "معلش، مكنتش قاصد",
+       "gloss": "عذراً، لم أقصد"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف عالتأخير",
+       "gloss": "آسف على التأخير"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "بعتذر",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "بعتذر منك كتير",
+       "gloss": "أعتذر منك كثيراً"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ما تواخذني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "ما تواخذني، نسيت",
+       "gloss": "لا تؤاخذني، نسيت"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف، ما انتبهت",
+       "gloss": "آسف، لم أنتبه"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "أعتذر",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "أعتذر عن التأخير",
+       "gloss": "أعتذر عن التأخير"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "لا تواخذني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "لا تواخذني، كنت مشغول",
+       "gloss": "لا تؤاخذني، كنت مشغولاً"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف يا الغالي",
+       "gloss": "آسف يا عزيزي"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "أعتذر",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "أعتذر لك عن اللي صار",
+       "gloss": "أعتذر إليك عما حدث"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف، ما كان قصدي",
+       "gloss": "آسف، لم يكن قصدي"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "معليش",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "معليش، سامحني",
+       "gloss": "عذراً، سامحني"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف، ما گصدت",
+       "gloss": "آسف، لم أقصد"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "أعتذر",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "أعتذر إلك هواية",
+       "gloss": "أعتذر إليك كثيراً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "لا تواخذني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "لا تواخذني، نسيت أخابرك",
+       "gloss": "لا تؤاخذني، نسيت أن أتصل بك"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف على الإزعاج",
+       "gloss": "آسف على الإزعاج"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "معليش",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "معليش، ما قصدت",
+       "gloss": "عذراً، لم أقصد"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "سمح ليا",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "سمح ليا، ما كنتش عارف",
+       "gloss": "سامحني، لم أكن أعرف"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "عفواً",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "عفواً على التأخير",
+       "gloss": "المعذرة على التأخير"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "سامحني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "سامحني، غلطت عليك",
+       "gloss": "سامحني، أخطأت في حقك"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف على كلشي",
+       "gloss": "آسف على كل شيء"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "سامحني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "سامحني، ما نجمتش نجي",
+       "gloss": "سامحني، لم أستطع المجيء"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف على التعطيلة",
+       "gloss": "آسف على التأخير"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "معليش",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "معليش، ما عملتش عمد",
+       "gloss": "عذراً، لم أفعلها عمداً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف، ما نتبهتش",
+       "gloss": "آسف، لم أنتبه"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "معليش",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "معليش يا صاحبي",
+       "gloss": "عذراً يا صديقي"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "سامحني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "سامحني على اللي صار",
+       "gloss": "سامحني على ما حدث"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "آسف",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "آسف يا زول، غلطت",
+       "gloss": "آسف يا رجل، أخطأت"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "معليش",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "معليش، ما قصدت",
+       "gloss": "عذراً، لم أقصد"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "سامحني",
-     "meaning": "آسف"
+     "meaning": "آسف",
+     "examples": [
+      {
+       "text": "سامحني، ما عرفت",
+       "gloss": "سامحني، لم أعرف"
+      }
+     ]
     }
    ]
   },
