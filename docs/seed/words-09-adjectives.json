@@ -3501,127 +3501,277 @@
     {
      "dialect": "egyptian",
      "form": "وحش",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الجو وحش النهارده",
+       "gloss": "الطقس سيئ اليوم"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "بايظ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "التلفزيون بايظ من زمان",
+       "gloss": "التلفاز معطل منذ زمن"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الوضع سيّئ هالأيام",
+       "gloss": "الوضع سيئ هذه الأيام"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "عاطل",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "التلفون عاطل",
+       "gloss": "الهاتف معطل"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الخط سيّئ، ما أسمعك",
+       "gloss": "الاتصال سيئ، لا أسمعك"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "خايس",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الأكل خايس، لا تاكله",
+       "gloss": "الطعام فاسد، لا تأكله"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الطريق سيّئ في الشتا",
+       "gloss": "الطريق سيئ في الشتاء"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "خايس",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "اللحم خايس، ارمه",
+       "gloss": "اللحم فاسد، ارمه"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "وحش",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الجو وحش اليوم",
+       "gloss": "الطقس سيئ اليوم"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الوضع سيّئ شوي",
+       "gloss": "الوضع سيئ قليلاً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الوضع سيّئ هالفترة",
+       "gloss": "الوضع سيئ هذه الفترة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "خايس",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الحليب خايس",
+       "gloss": "الحليب فاسد"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الطريق سيّئ",
+       "gloss": "الطريق سيئ"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "خايس",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الأكل خايس",
+       "gloss": "الطعام فاسد"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "خايب",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الجو خايب اليوم",
+       "gloss": "الطقس سيئ اليوم"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "قبيح",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "هاد الشي قبيح بزاف",
+       "gloss": "هذا سيئ جداً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "خايب",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الحال خايب",
+       "gloss": "الحال سيئ"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "قبيح",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "التصرف هذا قبيح",
+       "gloss": "هذا التصرف سيئ"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "خايب",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الطقس خايب اليوم",
+       "gloss": "الطقس سيئ اليوم"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "دوني",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "السلعة دونية",
+       "gloss": "البضاعة رديئة"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "خايب",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الجو خايب",
+       "gloss": "الطقس سيئ"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الوضع سيّئ",
+       "gloss": "الوضع سيئ"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "بطّال",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الشغل بطّال",
+       "gloss": "العمل سيئ"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "سيّئ",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الحال سيّئ شديد",
+       "gloss": "الحال سيئ جداً"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "خايب",
-     "meaning": "سيّئ"
+     "meaning": "سيّئ",
+     "examples": [
+      {
+       "text": "الحال خايب",
+       "gloss": "الحال سيئ"
+      }
+     ]
     }
    ]
   }

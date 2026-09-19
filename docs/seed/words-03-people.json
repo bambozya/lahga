@@ -453,127 +453,277 @@
     {
      "dialect": "egyptian",
      "form": "جوز",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "جوز أختي مهندس",
+       "gloss": "زوج أختي مهندس"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "جوزي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "جوزي في الشغل دلوقتي",
+       "gloss": "زوجي في العمل الآن"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "زوج",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوج جارتنا دكتور",
+       "gloss": "زوج جارتنا طبيب"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "جوزي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "جوزي رجع من السفر",
+       "gloss": "عاد زوجي من السفر"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "رجّال",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "رجّالها يشتغل بالشركة",
+       "gloss": "زوجها يعمل في الشركة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "زوجي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوجي مسافر هالأسبوع",
+       "gloss": "زوجي مسافر هذا الأسبوع"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "زوج",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوج بنتي من حائل",
+       "gloss": "زوج ابنتي من حائل"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "رجلي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "رجلي ما جا بعد",
+       "gloss": "زوجي لم يأت بعد"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "زوج",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوج أختي من مكة",
+       "gloss": "زوج أختي من مكة"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "جوزي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "جوزي راح الشغل",
+       "gloss": "ذهب زوجي إلى العمل"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "زوج",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوج أختي طبيب",
+       "gloss": "زوج أختي طبيب"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "رجلي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "رجلي دايجي هسة",
+       "gloss": "زوجي قادم الآن"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "زوج",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوج بنتي من صنعاء",
+       "gloss": "زوج ابنتي من صنعاء"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "رجّالي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "رجّالي في السوق",
+       "gloss": "زوجي في السوق"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "راجل",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجل ختي خدام",
+       "gloss": "زوج أختي يعمل"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "راجلي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجلي مشا للخدمة",
+       "gloss": "ذهب زوجي إلى العمل"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "راجل",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجل جارتنا طبيب",
+       "gloss": "زوج جارتنا طبيب"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "راجلي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجلي راه في الخدمة",
+       "gloss": "زوجي في العمل"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "راجل",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجل ختي من سوسة",
+       "gloss": "زوج أختي من سوسة"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "راجلي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجلي مشا يخدم",
+       "gloss": "ذهب زوجي ليعمل"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "راجل",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجل ختي مهندس",
+       "gloss": "زوج أختي مهندس"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "زوج",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوج بنتي من طرابلس",
+       "gloss": "زوج ابنتي من طرابلس"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "راجل",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجل أختي مدرس",
+       "gloss": "زوج أختي معلم"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "زوجي",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "زوجي ماشي الشغل",
+       "gloss": "زوجي ذاهب إلى العمل"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "راجل",
-     "meaning": "زوج"
+     "meaning": "زوج",
+     "examples": [
+      {
+       "text": "راجل ختي",
+       "gloss": "زوج أختي"
+      }
+     ]
     }
    ]
   },
@@ -1063,128 +1213,278 @@
     {
      "dialect": "egyptian",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي عايشة معانا",
+       "gloss": "جدتي تعيش معنا"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "تيتة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "تيتة بتعمل أحلى أكل",
+       "gloss": "جدتي تطبخ ألذ طعام"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "نينة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "نينة بتحكيلنا حواديت",
+       "gloss": "جدتي تحكي لنا الحكايات"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي من حلب",
+       "gloss": "جدتي من حلب"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "تيتا",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "تيتا عم تطبخ",
+       "gloss": "جدتي تطبخ"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ستّي",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "ستّي بتحبني كتير",
+       "gloss": "جدتي تحبني كثيراً"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي عمرها تسعين",
+       "gloss": "جدتي عمرها تسعون"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "يدّه",
      "meaning": "جدة",
-     "notes": "بمعنى الجدة أيضاً في مناطق"
+     "notes": "بمعنى الجدة أيضاً في مناطق",
+     "examples": [
+      {
+       "text": "يدّتي تسولف وياي",
+       "gloss": "جدتي تتحدث معي"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي في البيت",
+       "gloss": "جدتي في البيت"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي من المدينة",
+       "gloss": "جدتي من المدينة"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "ستي",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "ستي تسوي معمول",
+       "gloss": "جدتي تصنع المعمول"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي كبيرة بالعمر",
+       "gloss": "جدتي كبيرة في السن"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بيبي",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "بيبي تحبني هواية",
+       "gloss": "جدتي تحبني كثيراً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي من إب",
+       "gloss": "جدتي من إب"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي كتسكن معانا",
+       "gloss": "جدتي تسكن معنا"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "مّي حنّا",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "مّي حنّا كتحكي لنا",
+       "gloss": "جدتي تحكي لنا"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي راهي في الدار",
+       "gloss": "جدتي في البيت"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "مّا",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "مّا تحكي القصص",
+       "gloss": "جدتي تحكي القصص"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي من القيروان",
+       "gloss": "جدتي من القيروان"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "منّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "منّة تعمل الكسكسي",
+       "gloss": "جدتي تصنع الكسكس"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي في الحوش",
+       "gloss": "جدتي في البيت"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "حنّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "حنّة تحب العيال",
+       "gloss": "جدتي تحب الأطفال"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي كبيرة",
+       "gloss": "جدتي كبيرة في السن"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "حبّوبة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "حبّوبة بتحكي لينا",
+       "gloss": "جدتي تحكي لنا"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "جدّة",
-     "meaning": "جدة"
+     "meaning": "جدة",
+     "examples": [
+      {
+       "text": "جدّتي عندنا",
+       "gloss": "جدتي عندنا"
+      }
+     ]
     }
    ]
   },
