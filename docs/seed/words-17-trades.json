@@ -1,0 +1,117 @@
+{"words":[
+ {"headword":"نجار","definition":"من يصنع الخشب ويصلحه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"نجار","examples":[{"text":"النجار جه يصلح الدولاب","gloss":"جاء النجار ليصلح الخزانة"}]},
+  {"dialect":"levantine","form":"نجار"},{"dialect":"palestinian","form":"نجار"},
+  {"dialect":"gulf","form":"نجار"},{"dialect":"kuwaiti","form":"نجار"},{"dialect":"najdi","form":"نجار"},{"dialect":"hejazi","form":"نجار"},
+  {"dialect":"iraqi","form":"نجار"},{"dialect":"yemeni","form":"نجار"},{"dialect":"sudanese","form":"نجار"},
+  {"dialect":"moroccan","form":"نجار"},{"dialect":"algerian","form":"نجار"},{"dialect":"tunisian","form":"نجار"},{"dialect":"libyan","form":"نجار"},
+  {"dialect":"hassaniya","form":"نجار"}]},
+
+ {"headword":"حداد","definition":"من يشتغل بالحديد ويصنع منه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"حداد"},{"dialect":"levantine","form":"حداد"},{"dialect":"palestinian","form":"حداد"},
+  {"dialect":"gulf","form":"حداد"},{"dialect":"najdi","form":"حداد"},{"dialect":"hejazi","form":"حداد"},
+  {"dialect":"iraqi","form":"حداد"},{"dialect":"yemeni","form":"حداد"},{"dialect":"sudanese","form":"حداد"},
+  {"dialect":"moroccan","form":"حداد"},{"dialect":"algerian","form":"حداد"},{"dialect":"tunisian","form":"حداد"},{"dialect":"libyan","form":"حداد"},
+  {"dialect":"hassaniya","form":"حداد"}]},
+
+ {"headword":"خباز","definition":"من يخبز الخبز ويبيعه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"فران","examples":[{"text":"روح للفران وهات عيش سخن","gloss":"اذهب إلى الخباز وأحضر خبزاً ساخناً"}]},
+  {"dialect":"levantine","form":"فران"},{"dialect":"palestinian","form":"فران"},
+  {"dialect":"gulf","form":"خباز"},{"dialect":"najdi","form":"خباز"},{"dialect":"hejazi","form":"خباز"},
+  {"dialect":"iraqi","form":"خباز"},{"dialect":"yemeni","form":"خباز"},{"dialect":"sudanese","form":"خباز"},
+  {"dialect":"moroccan","form":"الفران"},{"dialect":"algerian","form":"خباز"},{"dialect":"tunisian","form":"خباز"},{"dialect":"libyan","form":"خباز"},
+  {"dialect":"hassaniya","form":"خباز"}]},
+
+ {"headword":"جزار","definition":"من يذبح اللحم ويبيعه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"جزار","examples":[{"text":"اشتريت اللحمة من الجزار","gloss":"اشتريت اللحم من الجزار"}]},
+  {"dialect":"levantine","form":"لحام"},{"dialect":"palestinian","form":"لحام"},
+  {"dialect":"gulf","form":"قصاب"},{"dialect":"najdi","form":"قصاب"},{"dialect":"hejazi","form":"لحام"},
+  {"dialect":"iraqi","form":"قصاب"},{"dialect":"yemeni","form":"جزار"},{"dialect":"sudanese","form":"جزار"},
+  {"dialect":"moroccan","form":"الكزار"},{"dialect":"algerian","form":"القصاب"},{"dialect":"tunisian","form":"القصاب"},{"dialect":"libyan","form":"قصاب"},
+  {"dialect":"hassaniya","form":"جزار"}]},
+
+ {"headword":"حلاق","definition":"من يقص الشعر ويحلق","kind":"word","entries":[
+  {"dialect":"egyptian","form":"حلاق","examples":[{"text":"رحت الحلاق قصيت شعري","gloss":"ذهبت إلى الحلاق فقصصت شعري"}]},
+  {"dialect":"levantine","form":"حلاق"},{"dialect":"palestinian","form":"حلاق"},
+  {"dialect":"gulf","form":"حلاق"},{"dialect":"najdi","form":"مزين"},{"dialect":"hejazi","form":"حلاق"},
+  {"dialect":"iraqi","form":"حلاق"},{"dialect":"yemeni","form":"مزين"},{"dialect":"sudanese","form":"حلاق"},
+  {"dialect":"moroccan","form":"الحجام"},{"dialect":"algerian","form":"الحجام"},{"dialect":"tunisian","form":"الحجام"},{"dialect":"libyan","form":"حلاق"},
+  {"dialect":"hassaniya","form":"حلاق"}]},
+
+ {"headword":"سباك","definition":"من يصلح المواسير والحنفيات","kind":"word","entries":[
+  {"dialect":"egyptian","form":"سباك","examples":[{"text":"السباك صلح الحنفية","gloss":"أصلح السباك الصنبور"}]},
+  {"dialect":"levantine","form":"مواسرجي"},{"dialect":"palestinian","form":"سمكري"},
+  {"dialect":"gulf","form":"سباك"},{"dialect":"najdi","form":"سباك"},{"dialect":"hejazi","form":"سباك"},
+  {"dialect":"iraqi","form":"مواسرجي"},{"dialect":"yemeni","form":"سباك"},{"dialect":"sudanese","form":"سباك"},
+  {"dialect":"moroccan","form":"البلومبي","notes":"من الفرنسية"},{"dialect":"algerian","form":"البلومبي"},{"dialect":"tunisian","form":"البلومبي"},{"dialect":"libyan","form":"سباك"},
+  {"dialect":"hassaniya","form":"سباك"}]},
+
+ {"headword":"كهربائي","definition":"من يمد الكهرباء ويصلح أعطالها","kind":"word","entries":[
+  {"dialect":"egyptian","form":"كهربائي"},{"dialect":"levantine","form":"كهربجي"},{"dialect":"palestinian","form":"كهربجي"},
+  {"dialect":"gulf","form":"كهربائي"},{"dialect":"najdi","form":"كهربائي"},{"dialect":"hejazi","form":"كهربائي"},
+  {"dialect":"iraqi","form":"كهربائي"},{"dialect":"yemeni","form":"كهربائي"},{"dialect":"sudanese","form":"كهربائي"},
+  {"dialect":"moroccan","form":"الليكتريسيان","notes":"من الفرنسية"},{"dialect":"algerian","form":"الليكتريسيان"},{"dialect":"tunisian","form":"الليكتريسيان"},{"dialect":"libyan","form":"كهربائي"},
+  {"dialect":"hassaniya","form":"كهربائي"}]},
+
+ {"headword":"ميكانيكي","definition":"من يصلح محركات السيارات","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ميكانيكي","examples":[{"text":"ودي العربية للميكانيكي","gloss":"خذ السيارة إلى الميكانيكي"}]},
+  {"dialect":"levantine","form":"ميكانيكي"},{"dialect":"palestinian","form":"ميكانيكي"},
+  {"dialect":"gulf","form":"ميكانيكي"},{"dialect":"najdi","form":"ميكانيكي"},{"dialect":"hejazi","form":"ميكانيكي"},
+  {"dialect":"iraqi","form":"ميكانيكي"},{"dialect":"yemeni","form":"ميكانيكي"},{"dialect":"sudanese","form":"ميكانيكي"},
+  {"dialect":"moroccan","form":"الميكانيسيان","notes":"من الفرنسية"},{"dialect":"algerian","form":"الميكانيسيان"},{"dialect":"tunisian","form":"الميكانيسيان"},{"dialect":"libyan","form":"ميكانيكي"},
+  {"dialect":"hassaniya","form":"ميكانيكي"}]},
+
+ {"headword":"خياط","definition":"من يفصل الثياب ويخيطها","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ترزي","examples":[{"text":"الترزي فصل لي بدلة","gloss":"فصل لي الخياط بدلة"}]},
+  {"dialect":"levantine","form":"خياط"},{"dialect":"palestinian","form":"خياط"},
+  {"dialect":"gulf","form":"خياط"},{"dialect":"najdi","form":"خياط"},{"dialect":"hejazi","form":"خياط"},
+  {"dialect":"iraqi","form":"خياط"},{"dialect":"yemeni","form":"خياط"},{"dialect":"sudanese","form":"ترزي"},
+  {"dialect":"moroccan","form":"الخياط"},{"dialect":"algerian","form":"الخياط"},{"dialect":"tunisian","form":"الخياط"},{"dialect":"libyan","form":"خياط"},
+  {"dialect":"hassaniya","form":"خياط"}]},
+
+ {"headword":"بقال","definition":"صاحب دكان البقالة","kind":"word","entries":[
+  {"dialect":"egyptian","form":"بقال","examples":[{"text":"نزلت للبقال أجيب عيش ولبن","gloss":"نزلت إلى البقال لأحضر خبزاً ولبناً"}]},
+  {"dialect":"levantine","form":"بقال"},{"dialect":"palestinian","form":"بقال"},
+  {"dialect":"gulf","form":"بقالة"},{"dialect":"najdi","form":"بقالة"},{"dialect":"hejazi","form":"بقالة"},
+  {"dialect":"iraqi","form":"بقال"},{"dialect":"yemeni","form":"بقالة"},{"dialect":"sudanese","form":"بقال"},
+  {"dialect":"moroccan","form":"مول الحانوت"},{"dialect":"algerian","form":"الحانوتي"},{"dialect":"tunisian","form":"العطار"},{"dialect":"libyan","form":"بقال"},
+  {"dialect":"hassaniya","form":"بقال"}]},
+
+ {"headword":"مزارع","definition":"من يزرع الأرض ويعمل فيها","kind":"word","entries":[
+  {"dialect":"egyptian","form":"فلاح","examples":[{"text":"الفلاح نزل الغيط بدري","gloss":"نزل المزارع إلى الحقل مبكراً"}]},
+  {"dialect":"levantine","form":"فلاح"},{"dialect":"palestinian","form":"فلاح"},
+  {"dialect":"gulf","form":"مزارع"},{"dialect":"najdi","form":"مزارع"},{"dialect":"hejazi","form":"مزارع"},
+  {"dialect":"iraqi","form":"فلاح"},{"dialect":"yemeni","form":"مزارع"},{"dialect":"sudanese","form":"مزارع"},
+  {"dialect":"moroccan","form":"الفلاح"},{"dialect":"algerian","form":"الفلاح"},{"dialect":"tunisian","form":"الفلاح"},{"dialect":"libyan","form":"فلاح"},
+  {"dialect":"hassaniya","form":"فلاح"}]},
+
+ {"headword":"صياد","definition":"من يصطاد السمك أو الطير","kind":"word","entries":[
+  {"dialect":"egyptian","form":"صياد"},{"dialect":"levantine","form":"صياد"},{"dialect":"palestinian","form":"صياد"},
+  {"dialect":"gulf","form":"صياد"},{"dialect":"kuwaiti","form":"طواش","notes":"بائع السمك خاصة"},{"dialect":"najdi","form":"صياد"},{"dialect":"hejazi","form":"صياد"},
+  {"dialect":"iraqi","form":"صياد"},{"dialect":"yemeni","form":"صياد"},{"dialect":"sudanese","form":"صياد"},
+  {"dialect":"moroccan","form":"الصياد"},{"dialect":"algerian","form":"الصياد"},{"dialect":"tunisian","form":"الصياد"},{"dialect":"libyan","form":"صياد"},
+  {"dialect":"hassaniya","form":"صياد"}]},
+
+ {"headword":"موظف","definition":"من يعمل في وظيفة براتب","kind":"word","entries":[
+  {"dialect":"egyptian","form":"موظف","examples":[{"text":"موظف في مصلحة حكومية","gloss":"موظف في دائرة حكومية"}]},
+  {"dialect":"levantine","form":"موظف"},{"dialect":"palestinian","form":"موظف"},
+  {"dialect":"gulf","form":"موظف"},{"dialect":"najdi","form":"موظف"},{"dialect":"hejazi","form":"موظف"},
+  {"dialect":"iraqi","form":"موظف"},{"dialect":"yemeni","form":"موظف"},{"dialect":"sudanese","form":"موظف"},
+  {"dialect":"moroccan","form":"موظف"},{"dialect":"algerian","form":"موظف"},{"dialect":"tunisian","form":"موظف"},{"dialect":"libyan","form":"موظف"},
+  {"dialect":"hassaniya","form":"موظف"}]},
+
+ {"headword":"عامل","definition":"من يشتغل بيده بأجر","kind":"word","entries":[
+  {"dialect":"egyptian","form":"عامل"},{"dialect":"levantine","form":"عامل"},{"dialect":"palestinian","form":"عامل"},
+  {"dialect":"gulf","form":"عامل"},{"dialect":"najdi","form":"عامل"},{"dialect":"hejazi","form":"عامل"},
+  {"dialect":"iraqi","form":"عامل"},{"dialect":"yemeni","form":"عامل"},{"dialect":"sudanese","form":"عامل"},
+  {"dialect":"moroccan","form":"الخدام"},{"dialect":"algerian","form":"الخدام"},{"dialect":"tunisian","form":"الخدام"},{"dialect":"libyan","form":"عامل"},
+  {"dialect":"hassaniya","form":"عامل"}]},
+
+ {"headword":"رئيس العمل","definition":"من يرأس العاملين ويشرف عليهم","kind":"phrase","entries":[
+  {"dialect":"egyptian","form":"المعلم","examples":[{"text":"المعلم بتاع الورشة طيب","gloss":"صاحب الورشة رجل طيب"}]},
+  {"dialect":"levantine","form":"المعلم"},{"dialect":"palestinian","form":"المعلم"},
+  {"dialect":"gulf","form":"المدير"},{"dialect":"najdi","form":"المدير"},{"dialect":"hejazi","form":"المدير"},
+  {"dialect":"iraqi","form":"الأسطة"},{"dialect":"yemeni","form":"المدير"},{"dialect":"sudanese","form":"المدير"},
+  {"dialect":"moroccan","form":"الباطرون","notes":"من الفرنسية"},{"dialect":"algerian","form":"الباطرون"},{"dialect":"tunisian","form":"الباطرون"},{"dialect":"libyan","form":"المعلم"},
+  {"dialect":"hassaniya","form":"المدير"}]}
+]}
