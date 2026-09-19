@@ -5,9 +5,11 @@ import { normalizeArabic } from '../../../shared/utils/arabic'
 /**
  * List words, newest first, or search them.
  * ?q= matches the MSA headword or any linked dialect form (normalised, prefix + substring).
+ * ?fuzzy=1 answers a search that found nothing with the nearest words instead
+ * (trigram similarity), so the empty result can still offer a way forward.
  */
 export default defineEventHandler(async (event) => {
-  const { q, limit } = getQuery(event)
+  const { q, limit, fuzzy } = getQuery(event)
   const db = await useDb()
   const max = Math.min(Number(limit) || 20, 50)
 
@@ -23,7 +25,9 @@ export default defineEventHandler(async (event) => {
 
   // Substring match on the trigram-indexed columns (migration 0005), best matches first:
   // an exact headword, then a headword starting with the term, then by trigram similarity.
-  const pattern = `%${term}%`
+  // % and _ are wildcards in LIKE, so a search for them is a search for those
+  // characters, not for everything.
+  const pattern = `%${likeEscape(term)}%`
   const matchedEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
     .from(schema.entries)
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
@@ -48,7 +52,7 @@ export default defineEventHandler(async (event) => {
       desc(schema.words.score),
     )
     .limit(max)
-  if (!ids.length) return []
+  if (!ids.length) return fuzzy ? near(db, term, max) : []
 
   const order = new Map(ids.map((r, i) => [r.id, i]))
   const rows = await db.query.words.findMany({
@@ -57,6 +61,44 @@ export default defineEventHandler(async (event) => {
   })
   return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
 })
+
+/**
+ * The nearest words to a term that matched nothing: trigram similarity against
+ * the headwords and the dialect forms, closest first. Used only for suggestions.
+ */
+async function near(db: Awaited<ReturnType<typeof useDb>>, term: string, max: number) {
+  const min = 0.25
+  const headwordSim = sql`similarity(${schema.words.headwordNormalized}, ${term})`
+  const nearEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
+    .from(schema.entries)
+    .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
+    .where(and(
+      sql`similarity(${schema.entries.formNormalized}, ${term}) > ${min}`,
+      eq(schema.entries.status, 'active'),
+      eq(schema.wordEntryLinks.status, 'active'),
+    ))
+
+  const ids = await db.select({ id: schema.words.id }).from(schema.words)
+    .where(and(
+      eq(schema.words.status, 'active'),
+      or(sql`${headwordSim} > ${min}`, sql`${schema.words.id} in ${nearEntryWords}`),
+    ))
+    .orderBy(sql`${headwordSim} desc`, desc(schema.words.score))
+    .limit(Math.min(max, 6))
+  if (!ids.length) return []
+
+  const order = new Map(ids.map((r, i) => [r.id, i]))
+  const rows = await db.query.words.findMany({
+    where: sql`${schema.words.id} in (${sql.join(ids.map(r => sql`${r.id}`), sql`, `)})`,
+    with: { links: { with: { entry: { with: { dialect: true } } } } },
+  })
+  return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
+}
+
+/** Escapes the LIKE wildcards so a typed % or _ matches itself. */
+function likeEscape(term: string) {
+  return term.replace(/[\\%_]/g, c => `\\${c}`)
+}
 
 function shape(rows: any[]) {
   return rows.map(w => ({

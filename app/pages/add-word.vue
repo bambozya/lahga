@@ -2,8 +2,11 @@
 definePageMeta({ middleware: 'auth' })
 useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى قاموس لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
 const { user } = useUserSession()
+// A search that found nothing sends the term along (?headword=…), so the page
+// opens on the word the visitor was already looking for.
+const headword = String(useRoute().query.headword ?? '').trim().slice(0, 80)
 const form = reactive({
-  headword: '', definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
+  headword, definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
   dialect: '', form: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
 })
 const existingId = ref<number | null>(null)

@@ -16,7 +16,7 @@ const handleError = () => clearError({ redirect: '/' })
       <p v-else>{{ error?.statusMessage || 'عذراً، حدث خطأ غير متوقع.' }}</p>
       <p>
         <a href="/" @click.prevent="handleError">العودة إلى الصفحة الرئيسية</a>
-        أو <NuxtLink to="/browse">تصفح الكلمات</NuxtLink>
+        أو <NuxtLink to="/">تصفح الكلمات</NuxtLink>
       </p>
     </article>
   </NuxtLayout>
