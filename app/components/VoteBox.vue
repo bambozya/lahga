@@ -1,5 +1,10 @@
 <script setup lang="ts">
 /**
+ * Hidden for now: nothing mounts this component. To bring voting back, put
+ * <VoteBox target-type="entry" :target-id="e.id" :score="e.score" :my-vote="e.myVote"
+ * :created-by="e.createdBy" /> back on the word page and the dialect page. The
+ * votes API, the stored scores and the ranking they drive are all still live.
+ *
  * The vote control. Logged-in, verified users vote up or down, once per item;
  * pressing the same arrow again removes the vote. Visitors are sent to the login
  * page. Authors cannot vote on their own items (the server refuses; the box is

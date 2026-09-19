@@ -82,7 +82,6 @@ const proposal = useForm(async () => {
             </template>
           </p>
           <p>{{ e.meaning }}</p>
-          <div><VoteBox target-type="entry" :target-id="e.id" :score="e.score" :my-vote="e.myVote" :created-by="e.createdBy" /></div>
         </dd>
       </div>
     </dl>
