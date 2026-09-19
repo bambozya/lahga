@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const route = useRoute()
-const { data: dialect, error } = await useFetch(`/api/dialects/${route.params.slug}`)
+// Five of the dialect's words, drawn at random: the page is a way in, not an
+// inventory, and whoever wants one word in particular searches for it above.
+// The dice below ask for another five.
+const SAMPLE = 5
+const { data: dialect, error, status, refresh } = await useFetch(`/api/dialects/${route.params.slug}`, {
+  query: { random: 1, limit: SAMPLE },
+})
+const shuffling = computed(() => status.value === 'pending')
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'اللهجة غير موجودة', fatal: true })
 // The description is written in paragraphs separated by blank lines; the first one is the summary.
 const paragraphs = computed(() => (dialect.value?.descriptionAr ?? '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean))
@@ -9,7 +16,9 @@ useSeo({
   title: () => dialect.value ? `${dialect.value.nameAr}: قاموس كلمات اللهجة` : '',
   description: () => {
     if (!dialect.value) return ''
-    const words = dialect.value.entries.slice(0, 6).map(e => e.form).join('، ')
+    // The shown words change with every draw; the description quotes the
+    // dialect's best-known forms instead, so it stays the same page to page.
+    const words = dialect.value.topForms.join('، ')
     return words ? `${paragraphs.value[0] ?? ''} من كلماتها: ${words}.` : (paragraphs.value[0] ?? '')
   },
   jsonLd: () => dialect.value ? {
@@ -68,7 +77,8 @@ const proposal = useForm(async () => {
       </template>
     </p>
 
-    <dl v-if="dialect.entries.length">
+    <h2 v-if="dialect.entries.length">من كلماتها</h2>
+    <dl v-if="dialect.entries.length" :aria-busy="shuffling">
       <div v-for="e in dialect.entries" :key="e.id">
         <dt>
           <b>{{ e.form }}</b>
@@ -86,5 +96,6 @@ const proposal = useForm(async () => {
       </div>
     </dl>
     <p v-else>لا توجد كلمات بعد في هذه اللهجة.</p>
+    <ShuffleButton v-if="dialect.entries.length" label="كلمات أخرى" :busy="shuffling" @shuffle="refresh" />
   </article>
 </template>
