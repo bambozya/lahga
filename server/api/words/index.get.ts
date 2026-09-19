@@ -7,17 +7,29 @@ import { normalizeArabic } from '../../../shared/utils/arabic'
  * ?q= matches the MSA headword or any linked dialect form (normalised, prefix + substring).
  * ?fuzzy=1 answers a search that found nothing with the nearest words instead
  * (trigram similarity), so the empty result can still offer a way forward.
+ * ?random=1 draws a handful at random instead of the newest: what the home page
+ * shows when nobody is searching, and what the shuffle button asks for again.
  */
 export default defineEventHandler(async (event) => {
-  const { q, limit, fuzzy } = getQuery(event)
+  const { q, limit, fuzzy, random } = getQuery(event)
   const db = await useDb()
   const max = Math.min(Number(limit) || 20, 50)
 
   const term = typeof q === 'string' ? normalizeArabic(q) : ''
   if (!term) {
+    // A random word with no dialect forms left would be an empty card, and on a
+    // page of five that is a fifth of it: the draw is made among words that
+    // still have something to show.
+    const withEntries = db.select({ id: schema.wordEntryLinks.wordId })
+      .from(schema.wordEntryLinks)
+      .innerJoin(schema.entries, eq(schema.entries.id, schema.wordEntryLinks.entryId))
+      .where(and(eq(schema.wordEntryLinks.status, 'active'), eq(schema.entries.status, 'active')))
+
     return db.query.words.findMany({
-      where: eq(schema.words.status, 'active'),
-      orderBy: desc(schema.words.createdAt),
+      where: random
+        ? and(eq(schema.words.status, 'active'), sql`${schema.words.id} in ${withEntries}`)
+        : eq(schema.words.status, 'active'),
+      orderBy: random ? sql`random()` : desc(schema.words.createdAt),
       limit: max,
       with: { links: { with: { entry: { with: { dialect: true } } } } },
     }).then(shape)

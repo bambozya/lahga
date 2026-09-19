@@ -1,16 +1,23 @@
 <script setup lang="ts">
 // The home page is the dictionary itself: the search results when something is
-// being looked for, the index of the newest words otherwise. Nothing stands
+// being looked for, a handful of words drawn at random otherwise. Nothing stands
 // between the search box in the header and the answer.
+//
+// Five random words rather than the whole index: anyone looking for a word types
+// it in the box above, so the page is free to be an invitation instead of a
+// list — five words to read, and dice to draw five more.
 const route = useRoute()
 const activeQuery = computed(() => String(route.query.q ?? '').trim())
 const LIMIT = 50
+const SAMPLE = 5
 
 type WordList = { id: number, headword: string, definition: string, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
 
-const { data: words, status } = await useFetch<WordList>('/api/words', {
-  query: computed(() => ({ q: activeQuery.value, limit: LIMIT })),
+const { data: words, status, refresh } = await useFetch<WordList>('/api/words', {
+  query: computed(() => activeQuery.value
+    ? { q: activeQuery.value, limit: LIMIT }
+    : { random: 1, limit: SAMPLE }),
 })
 // The dialect tree is for the sidebar, which a search hides: while a query is
 // active it is neither fetched nor shipped to the browser.
@@ -21,6 +28,7 @@ const { data: dialects } = await useAsyncData<DialectTree>('dialects', () => (
 
 const count = computed(() => words.value?.length ?? 0)
 const searching = computed(() => status.value === 'pending')
+const shuffling = computed(() => !activeQuery.value && status.value === 'pending')
 const nothing = computed(() => !!activeQuery.value && !searching.value && count.value === 0)
 
 // A search that found nothing asks once more for the nearest words, so the
@@ -74,8 +82,8 @@ useSeo({
         <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
       </hgroup>
       <hgroup v-else class="head">
-        <h1>كل الكلمات</h1>
-        <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو تصفّح أحدث ما أُضيف.</p>
+        <h1>كلمات من القاموس</h1>
+        <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.</p>
       </hgroup>
 
       <!-- Nothing found: not a line of text like any other, but a door. -->
@@ -91,13 +99,17 @@ useSeo({
         <p>
           <NuxtLink class="cta" :to="{ path: '/add-word', query: { headword: activeQuery } }">أضف «{{ activeQuery }}» إلى القاموس</NuxtLink>
         </p>
-        <p><small><NuxtLink to="/" aria-current-value="false">تصفّح كل الكلمات</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
+        <p><small><NuxtLink to="/" aria-current-value="false">اقرأ كلمات أخرى</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
       </div>
 
-      <dl v-else-if="words?.length">
+      <dl v-else-if="words?.length" :aria-busy="shuffling">
         <WordCard v-for="w in words" :key="w.id" :word="w" />
       </dl>
       <p v-else-if="!searching">لا توجد كلمات بعد.</p>
+
+      <!-- Nothing to shuffle while a search is on screen: the dice belong to
+           the random handful, not to someone's results. -->
+      <ShuffleButton v-if="!activeQuery && words?.length" label="كلمات أخرى" :busy="shuffling" @shuffle="refresh" />
     </section>
 
     <aside v-if="!activeQuery">
