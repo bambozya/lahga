@@ -8,123 +8,267 @@
     {
      "dialect": "egyptian",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً يا أستاذ محمود، اتفضل اقعد",
+       "gloss": "أهلاً يا أستاذ محمود، تفضل بالجلوس"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "إزيك",
      "meaning": "مرحباً",
-     "notes": "تحية وسؤال عن الحال معاً"
+     "notes": "تحية وسؤال عن الحال معاً",
+     "examples": [
+      {
+       "text": "إزيك يا كريم؟ وحشتنا والله",
+       "gloss": "كيف حالك يا كريم؟ اشتقنا إليك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مرحبا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "مرحبا، كيفك اليوم؟",
+       "gloss": "مرحباً، كيف حالك اليوم؟"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "أهلين",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلين فيك، تفضل اقعد",
+       "gloss": "أهلاً بك، تفضل بالجلوس"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "هلا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "هلا والله، وين هالغيبة؟",
+       "gloss": "أهلاً، أين كنت كل هذه المدة؟"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "مرحبا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "مرحبا بالجميع، تفضلوا",
+       "gloss": "مرحباً بالجميع، تفضلوا"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "هلا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "هلا وغلا، حياك الله",
+       "gloss": "أهلاً وسهلاً، حياك الله"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "هلا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "هلا بك يا غالي",
+       "gloss": "أهلاً بك يا عزيزي"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "أهلين",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلين، كيفك؟",
+       "gloss": "أهلاً، كيف حالك؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "هلا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "هلا، شكو ماكو؟",
+       "gloss": "أهلاً، ما الأخبار؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "هلا بيك",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "هلا بيك أخويه، تفضل",
+       "gloss": "أهلاً بك يا أخي، تفضل"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "مرحبا",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "مرحبا بك، تفضل ادخل",
+       "gloss": "مرحباً بك، تفضل بالدخول"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً بك في بيتنا",
+       "gloss": "أهلاً وسهلاً بك في بيتنا"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً بيك فدارنا",
+       "gloss": "أهلاً بك في بيتنا"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "سلام",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "سلام، كيداير؟",
+       "gloss": "مرحباً، كيف حالك؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "سلام",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "سلام، واش راك؟",
+       "gloss": "مرحباً، كيف حالك؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً بيك عندنا",
+       "gloss": "أهلاً بك عندنا"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً بيك، تفضل",
+       "gloss": "أهلاً بك، تفضل"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "عسلامة",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "عسلامة، شنحوالك؟",
+       "gloss": "مرحباً، كيف حالك؟"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً بيك يا صاحبي",
+       "gloss": "أهلاً بك يا صديقي"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "سلام",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "سلام، شن أخبارك؟",
+       "gloss": "مرحباً، ما أخبارك؟"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "سلام",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "سلام، كيفك يا زول؟",
+       "gloss": "مرحباً، كيف حالك يا رجل؟"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "أهلاً",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "أهلاً بيك، اتفضل",
+       "gloss": "أهلاً بك، تفضل"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "سلام",
-     "meaning": "مرحباً"
+     "meaning": "مرحباً",
+     "examples": [
+      {
+       "text": "سلام، اشحالك؟",
+       "gloss": "مرحباً، كيف حالك؟"
+      }
+     ]
     }
    ]
   },
@@ -136,138 +280,300 @@
     {
      "dialect": "egyptian",
      "form": "إزيك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "إزيك؟ عامل إيه من ساعة ما سافرت؟",
+       "gloss": "كيف حالك؟ كيف أحوالك منذ أن سافرت؟"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "عامل إيه؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "عامل إيه يا باشا؟ كله تمام؟",
+       "gloss": "كيف حالك يا سيدي؟ هل كل شيء على ما يرام؟"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "كيفك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيفك اليوم؟ ارتحت شوي؟",
+       "gloss": "كيف حالك اليوم؟ هل ارتحت قليلاً؟"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "شلونك؟",
      "meaning": "كيف حالك؟",
-     "notes": "في الشمال السوري"
+     "notes": "في الشمال السوري",
+     "examples": [
+      {
+       "text": "شلونك يا زلمة؟ من زمان ما شفتك",
+       "gloss": "كيف حالك يا رجل؟ لم أرك منذ زمن"
+      }
+     ]
     },
     {
      "dialect": "palestinian",
      "form": "كيفك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيفك يا خالتي؟ الله يعطيكي العافية",
+       "gloss": "كيف حالك يا خالتي؟ الله يمنحك العافية"
+      }
+     ]
     },
     {
      "dialect": "palestinian",
      "form": "كيف الحال؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيف الحال؟ إن شاء الله منيح",
+       "gloss": "كيف الحال؟ أرجو أن تكون بخير"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "شلونك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شلونك اليوم؟ صحتك زينة؟",
+       "gloss": "كيف حالك اليوم؟ هل صحتك جيدة؟"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "شخبارك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شخبارك؟ شخبار الأهل؟",
+       "gloss": "ما أخبارك؟ وما أخبار الأهل؟"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "كيف حالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيف حالك يا بو سعود؟",
+       "gloss": "كيف حالك يا أبا سعود؟"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "وش لونك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "وش لونك اليوم؟ طيب؟",
+       "gloss": "كيف حالك اليوم؟ هل أنت بخير؟"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "كيفك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيفك يا صاحبي؟ وينك من زمان؟",
+       "gloss": "كيف حالك يا صديقي؟ أين أنت منذ زمن؟"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "إيش أخبارك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "إيش أخبارك؟ إيش سويت اليوم؟",
+       "gloss": "ما أخبارك؟ ماذا فعلت اليوم؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "شلونك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شلونك عمي؟ شلون الأهل؟",
+       "gloss": "كيف حالك يا عمي؟ كيف حال الأهل؟"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "شخبارك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شخبارك؟ من زمان ما شفناك",
+       "gloss": "ما أخبارك؟ لم نرك منذ زمن"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "كيف حالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيف حالك يا ولدي؟",
+       "gloss": "كيف حالك يا بني؟"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "كيف أنت؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيف أنت اليوم؟ طيب؟",
+       "gloss": "كيف حالك اليوم؟ هل أنت بخير؟"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "كيداير؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيداير أخويا؟ لاباس عليك؟",
+       "gloss": "كيف حالك يا أخي؟ هل أنت بخير؟"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "لاباس؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "لاباس عليك؟ صحة وعافية",
+       "gloss": "هل أنت بخير؟ أتمنى لك الصحة والعافية"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "واش راك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "واش راك يا خويا؟ كل شي مليح؟",
+       "gloss": "كيف حالك يا أخي؟ هل كل شيء على ما يرام؟"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "كيراك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيراك اليوم؟ راك شبعت نوم؟",
+       "gloss": "كيف حالك اليوم؟ هل نمت كفايتك؟"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "شنحوالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شنحوالك؟ شنوة أخبارك؟",
+       "gloss": "كيف حالك؟ ما أخبارك؟"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "شنية أحوالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شنية أحوالك مع الخدمة الجديدة؟",
+       "gloss": "كيف أحوالك مع العمل الجديد؟"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "شن حالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "شن حالك اليوم يا جاري؟",
+       "gloss": "كيف حالك اليوم يا جاري؟"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "كيف حالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيف حالك وكيف العيال؟",
+       "gloss": "كيف حالك وكيف حال الأولاد؟"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "كيفك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيفك يا زول؟ الأسرة كيف؟",
+       "gloss": "كيف حالك يا رجل؟ كيف حال الأسرة؟"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "كيف الحال؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "كيف الحال؟ إن شاء الله تمام",
+       "gloss": "كيف الحال؟ أرجو أن يكون كل شيء على ما يرام"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "اشحالك؟",
-     "meaning": "كيف حالك؟"
+     "meaning": "كيف حالك؟",
+     "examples": [
+      {
+       "text": "اشحالك؟ لاباس عليك؟",
+       "gloss": "كيف حالك؟ هل أنت بخير؟"
+      }
+     ]
     }
    ]
   },
@@ -279,142 +585,310 @@
     {
      "dialect": "egyptian",
      "form": "كويس",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "أنا كويس الحمد لله، وإنت؟",
+       "gloss": "أنا بخير والحمد لله، وأنت؟"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "الحمد لله",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "الحمد لله، ماشي الحال",
+       "gloss": "الحمد لله، الأمور تسير على ما يرام"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "منيح",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "أنا منيح، الله يسلمك",
+       "gloss": "أنا بخير، الله يحفظك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "تمام",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "كل شي تمام، لا تشيل هم",
+       "gloss": "كل شيء على ما يرام، لا تقلق"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "الحمد لله",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "الحمد لله، ماشي الحال",
+       "gloss": "الحمد لله، الأمور تسير على ما يرام"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "زين",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "أنا زين والله، مشكور",
+       "gloss": "أنا بخير، شكراً لك"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير والحمد لله",
+       "gloss": "بخير والحمد لله"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "طيب",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "طيب الحمد لله، وانت شلونك؟",
+       "gloss": "بخير والحمد لله، وكيف حالك أنت؟"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير الله يحفظك",
+       "gloss": "بخير، الله يحفظك"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "طيب",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "طيبين والحمد لله",
+       "gloss": "نحن بخير والحمد لله"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير وسلامتك",
+       "gloss": "بخير، ودمت سالماً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "تمام",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "تمام التمام، ما في مشاكل",
+       "gloss": "كل شيء على ما يرام، لا توجد مشاكل"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "زين",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "آني زين، مشكور",
+       "gloss": "أنا بخير، شكراً لك"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير الحمد لله، وانته؟",
+       "gloss": "بخير والحمد لله، وأنت؟"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "طيب",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "طيب الحمد لله",
+       "gloss": "بخير والحمد لله"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير، الله يعافيك",
+       "gloss": "بخير، الله يمنحك العافية"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "لاباس",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "لاباس الحمد لله",
+       "gloss": "بخير والحمد لله"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير، الله يخليك",
+       "gloss": "بخير، الله يبقيك"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "لاباس",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "لاباس، صحة",
+       "gloss": "بخير، شكراً"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "مليح",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "راني مليح، ما تقلقش",
+       "gloss": "أنا بخير، لا تقلق"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "لاباس",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "لاباس، يعيشك",
+       "gloss": "بخير، شكراً لك"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "باهي",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "كل شي باهي، ما تخممش",
+       "gloss": "كل شيء على ما يرام، لا تفكر في الأمر"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير الحمد لله",
+       "gloss": "بخير والحمد لله"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "باهي",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "كل شي باهي، ما فيش مشاكل",
+       "gloss": "كل شيء على ما يرام، لا توجد مشاكل"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "كويس",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "أنا كويس، الله يبارك فيك",
+       "gloss": "أنا بخير، بارك الله فيك"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "بخير",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "بخير والحمد لله يا زول",
+       "gloss": "بخير والحمد لله يا رجل"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "تمام",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "تمام التمام",
+       "gloss": "كل شيء على ما يرام"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "لاباس",
-     "meaning": "بخير"
+     "meaning": "بخير",
+     "examples": [
+      {
+       "text": "لاباس، الحمد لله",
+       "gloss": "بخير والحمد لله"
+      }
+     ]
     }
    ]
   },
