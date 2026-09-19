@@ -1,0 +1,677 @@
+{
+ "words": [
+  {
+   "headword": "سجائر",
+   "definition": "لفائف التبغ التي تُدخَّن",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "سجاير",
+     "examples": [
+      {
+       "text": "بطل السجاير من شهر",
+       "gloss": "ترك التدخين منذ شهر"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "دخان",
+     "examples": [
+      {
+       "text": "جيب علبة دخان",
+       "gloss": "أحضر علبة سجائر"
+      }
+     ]
+    },
+    {
+     "dialect": "palestinian",
+     "form": "دخان"
+    },
+    {
+     "dialect": "gulf",
+     "form": "سجاير"
+    },
+    {
+     "dialect": "najdi",
+     "form": "دخان"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "سجاير"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جكاير"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "سجاير"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "سجاير"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الگارو",
+     "examples": [
+      {
+       "text": "بغا يقلع الگارو",
+       "gloss": "يريد أن يقلع عن التدخين"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "الگارو"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الزقارو"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سجاير"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "السجاير"
+    }
+   ]
+  },
+  {
+   "headword": "ولاعة",
+   "definition": "أداة صغيرة تُشعل بها النار",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "ولاعة",
+     "examples": [
+      {
+       "text": "معاك ولاعة؟",
+       "gloss": "هل معك ولاعة؟"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "قداحة"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "قداحة"
+    },
+    {
+     "dialect": "gulf",
+     "form": "قداحة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "ولاعة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "ولاعة"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جداحة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "قداحة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "ولاعة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البريكي",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "سلفني البريكي",
+       "gloss": "أعرني الولاعة"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "البريكي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البريكي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "ولاعة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الولاعه"
+    }
+   ]
+  },
+  {
+   "headword": "مظلة",
+   "definition": "ما يُتقى به المطر أو الشمس",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "شمسية",
+     "examples": [
+      {
+       "text": "خد الشمسية، الدنيا بتمطر",
+       "gloss": "خذ المظلة، إنها تمطر"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "شمسية"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "شمسية"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مظلة"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مظلة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "شمسية"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "جتر",
+     "examples": [
+      {
+       "text": "جيب الجتر، دتمطر",
+       "gloss": "أحضر المظلة، إنها تمطر"
+      }
+     ]
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مظلة"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "شمسية"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البارابلوي",
+     "notes": "من الفرنسية"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البارابلوي"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البارابلوي"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مضلة"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المضله"
+    }
+   ]
+  },
+  {
+   "headword": "دراجة نارية",
+   "definition": "مركبة بعجلتين تسير بمحرك",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "موتوسيكل",
+     "examples": [
+      {
+       "text": "راكب موتوسيكل في الزحمة",
+       "gloss": "يركب دراجة نارية في الزحام"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "موتور"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "موتور"
+    },
+    {
+     "dialect": "gulf",
+     "form": "دباب",
+     "examples": [
+      {
+       "text": "يسوق دباب بسرعة",
+       "gloss": "يقود دراجة نارية بسرعة"
+      }
+     ]
+    },
+    {
+     "dialect": "najdi",
+     "form": "دباب"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "دباب"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "دراجة"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "دباب"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "موتور"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "الموطور"
+    },
+    {
+     "dialect": "algerian",
+     "form": "الموطور"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "الموطور"
+    },
+    {
+     "dialect": "libyan",
+     "form": "موتور"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الموطور"
+    }
+   ]
+  },
+  {
+   "headword": "شاطئ",
+   "definition": "حافة البحر حيث الرمل والماء",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "البحر",
+     "examples": [
+      {
+       "text": "نازلين البحر بكرة",
+       "gloss": "سنذهب إلى الشاطئ غداً"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "البحر"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "البحر"
+    },
+    {
+     "dialect": "gulf",
+     "form": "الشط"
+    },
+    {
+     "dialect": "najdi",
+     "form": "الشاطئ"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "البحر"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "الشط"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "الساحل"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "الشاطئ"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البلاج",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "مشينا للبلاج",
+       "gloss": "ذهبنا إلى الشاطئ"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "البلاج"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البلاج"
+    },
+    {
+     "dialect": "libyan",
+     "form": "البحر"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "الساحل"
+    }
+   ]
+  },
+  {
+   "headword": "مسبح",
+   "definition": "حوض كبير يُسبح فيه",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "حمام سباحة"
+    },
+    {
+     "dialect": "levantine",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "حمام سباحة"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البيسين",
+     "notes": "من الفرنسية",
+     "examples": [
+      {
+       "text": "عام فالبيسين",
+       "gloss": "سبح في المسبح"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "البيسين"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البيسين"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مسبح"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "المسبح"
+    }
+   ]
+  },
+  {
+   "headword": "سروال",
+   "definition": "لباس يغطي الساقين",
+   "kind": "word",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "بنطلون",
+     "examples": [
+      {
+       "text": "لابس بنطلون أزرق",
+       "gloss": "يرتدي سروالاً أزرق"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "gulf",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "najdi",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "پانتيرون"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "بنطلون"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "السروال",
+     "examples": [
+      {
+       "text": "شريت سروال جديد",
+       "gloss": "اشتريت سروالاً جديداً"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "السروال"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "السروال"
+    },
+    {
+     "dialect": "libyan",
+     "form": "سروال"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "السروال"
+    }
+   ]
+  },
+  {
+   "headword": "مفتاح الكهرباء",
+   "definition": "ما يُشعل به النور ويُطفأ",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "مفتاح النور",
+     "examples": [
+      {
+       "text": "اقفل مفتاح النور",
+       "gloss": "أطفئ الضوء"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "مفتاح الضو"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "مفتاح الكهربا"
+    },
+    {
+     "dialect": "gulf",
+     "form": "مفتاح الضو"
+    },
+    {
+     "dialect": "najdi",
+     "form": "مفتاح اللمبة"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "مفتاح النور"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "سويج"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "مفتاح النور"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "مفتاح النور"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "البوطون"
+    },
+    {
+     "dialect": "algerian",
+     "form": "البوطون"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "البوطون"
+    },
+    {
+     "dialect": "libyan",
+     "form": "مفتاح الضو"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "مفتاح الضو"
+    }
+   ]
+  },
+  {
+   "headword": "غرفة النوم",
+   "definition": "الغرفة التي يُنام فيها",
+   "kind": "phrase",
+   "entries": [
+    {
+     "dialect": "egyptian",
+     "form": "أوضة النوم",
+     "examples": [
+      {
+       "text": "العيال في أوضة النوم",
+       "gloss": "الأولاد في غرفة النوم"
+      }
+     ]
+    },
+    {
+     "dialect": "levantine",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "palestinian",
+     "form": "أوضة النوم"
+    },
+    {
+     "dialect": "gulf",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "najdi",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "hejazi",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "iraqi",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "yemeni",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "sudanese",
+     "form": "أوضة النوم"
+    },
+    {
+     "dialect": "moroccan",
+     "form": "بيت النعاس",
+     "examples": [
+      {
+       "text": "دخل لبيت النعاس",
+       "gloss": "دخل غرفة النوم"
+      }
+     ]
+    },
+    {
+     "dialect": "algerian",
+     "form": "بيت الرقاد"
+    },
+    {
+     "dialect": "tunisian",
+     "form": "بيت الرقاد"
+    },
+    {
+     "dialect": "libyan",
+     "form": "غرفة النوم"
+    },
+    {
+     "dialect": "hassaniya",
+     "form": "بيت النوم"
+    }
+   ]
+  }
+ ]
+}
