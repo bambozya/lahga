@@ -1,6 +1,6 @@
 import { desc, eq } from 'drizzle-orm'
 import { useDb, schema } from '../db'
-import { entryCounts } from '../api/dialects/index.get'
+import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
 
 /**
  * The sitemap, built from the database on request: every public page, every
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
 
   // A sub-dialect with nothing in it has an empty page; crawlers are not sent to it.
   const filled = await entryCounts(db)
-  const listed = dialects.filter(d => d.parentId === null || filled.has(d.id))
+  const listed = dialects.filter(d => d.parentId === null || (filled.get(d.id) ?? 0) >= MIN_ENTRIES)
 
   const day = (d: Date | null) => (d ?? new Date()).toISOString().slice(0, 10)
   const url = (loc: string, lastmod?: string, priority?: string) =>

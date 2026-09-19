@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { entryCounts } from './index.get'
+import { entryCounts, MIN_ENTRIES } from './index.get'
 
 /**
  * One dialect with the entries tagged with it or any of its sub-dialects. The
@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
   // sub-dialects hold — but only the ones that hold something are named on it.
   const dialectIds = [dialect.id, ...dialect.children.map(c => c.id)]
   const filled = await entryCounts(db)
-  const children = dialect.children.filter(c => c.active === 1 && filled.has(c.id))
+  const children = dialect.children.filter(c => c.active === 1 && (filled.get(c.id) ?? 0) >= MIN_ENTRIES)
   const inDialect = and(inArray(schema.entries.dialectId, dialectIds), eq(schema.entries.status, 'active'))
   const entries = await db.query.entries.findMany({
     where: inDialect,
