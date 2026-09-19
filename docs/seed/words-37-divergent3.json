@@ -1,0 +1,215 @@
+{
+ "words": [
+  {
+   "headword": "لا يوجد",
+   "definition": "ليس موجوداً، ليس هناك شيء أو أحد",
+   "kind": "phrase",
+   "entries": [
+    { "dialect": "egyptian", "form": "مفيش", "examples": [{ "text": "مفيش حد في البيت", "gloss": "لا يوجد أحد في البيت" }] },
+    { "dialect": "levantine", "form": "ما في", "examples": [{ "text": "ما في حدا بالبيت", "gloss": "لا يوجد أحد في البيت" }] },
+    { "dialect": "palestinian", "form": "ما فش" },
+    { "dialect": "gulf", "form": "ما فيه" },
+    { "dialect": "najdi", "form": "ما فيه" },
+    { "dialect": "hejazi", "form": "ما فيه" },
+    { "dialect": "iraqi", "form": "ماكو", "examples": [{ "text": "ماكو أحد بالبيت", "gloss": "لا يوجد أحد في البيت" }] },
+    { "dialect": "yemeni", "form": "ما في" },
+    { "dialect": "sudanese", "form": "ما في" },
+    { "dialect": "moroccan", "form": "ما كاينش", "examples": [{ "text": "ما كاينش حتى واحد فالدار", "gloss": "لا يوجد أحد في البيت" }] },
+    { "dialect": "algerian", "form": "ما كاينش" },
+    { "dialect": "tunisian", "form": "ما فماش", "examples": [{ "text": "ما فماش حد فالدار", "gloss": "لا يوجد أحد في البيت" }] },
+    { "dialect": "libyan", "form": "مافيش" },
+    { "dialect": "hassaniya", "form": "ما فيه" }
+   ]
+  },
+  {
+   "headword": "نظارات",
+   "definition": "عدستان في إطار تُلبَسان لتصحيح النظر",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "نضارة", "examples": [{ "text": "نسيت نضارتي في الشغل", "gloss": "نسيت نظارتي في العمل" }] },
+    { "dialect": "levantine", "form": "عوينات", "examples": [{ "text": "حطّ عويناتك تشوف منيح", "gloss": "ضع نظارتك لترى جيداً" }] },
+    { "dialect": "palestinian", "form": "عوينات" },
+    { "dialect": "gulf", "form": "نظارة" },
+    { "dialect": "najdi", "form": "نظارة" },
+    { "dialect": "hejazi", "form": "نضارة" },
+    { "dialect": "iraqi", "form": "منظرة", "examples": [{ "text": "منظرتي انكسرت", "gloss": "انكسرت نظارتي" }] },
+    { "dialect": "yemeni", "form": "نظارة" },
+    { "dialect": "sudanese", "form": "نضارة" },
+    { "dialect": "moroccan", "form": "النضاضر", "examples": [{ "text": "شريت نضاضر جداد", "gloss": "اشتريت نظارة جديدة" }] },
+    { "dialect": "algerian", "form": "لونيت" },
+    { "dialect": "tunisian", "form": "نضاضر" },
+    { "dialect": "libyan", "form": "نضارة" },
+    { "dialect": "hassaniya", "form": "النظارات" }
+   ]
+  },
+  {
+   "headword": "غرفة الجلوس",
+   "definition": "الغرفة التي يجلس فيها أهل البيت ويستقبلون ضيوفهم",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "الصالة", "examples": [{ "text": "قاعدين في الصالة بنتفرج", "gloss": "نجلس في غرفة الجلوس نشاهد" }] },
+    { "dialect": "levantine", "form": "الصالون" },
+    { "dialect": "palestinian", "form": "الصالون" },
+    { "dialect": "gulf", "form": "المجلس", "examples": [{ "text": "الرياييل بالمجلس", "gloss": "الرجال في غرفة الجلوس" }] },
+    { "dialect": "najdi", "form": "المجلس" },
+    { "dialect": "hejazi", "form": "الصالة" },
+    { "dialect": "iraqi", "form": "الهول", "examples": [{ "text": "اقعدوا بالهول", "gloss": "اجلسوا في غرفة الجلوس" }] },
+    { "dialect": "yemeni", "form": "الديوان" },
+    { "dialect": "sudanese", "form": "الصالون" },
+    { "dialect": "moroccan", "form": "الصالون", "examples": [{ "text": "الضياف فالصالون", "gloss": "الضيوف في غرفة الجلوس" }] },
+    { "dialect": "algerian", "form": "الصالون" },
+    { "dialect": "tunisian", "form": "الصالون" },
+    { "dialect": "libyan", "form": "الصالة" },
+    { "dialect": "hassaniya", "form": "الصالون" }
+   ]
+  },
+  {
+   "headword": "علكة",
+   "definition": "مادة تُمضَغ ولا تُبلَع",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "لبانة", "examples": [{ "text": "بيمضغ لبانة طول اليوم", "gloss": "يمضغ علكة طوال اليوم" }] },
+    { "dialect": "levantine", "form": "علكة" },
+    { "dialect": "palestinian", "form": "علكة" },
+    { "dialect": "gulf", "form": "علچ" },
+    { "dialect": "najdi", "form": "علك" },
+    { "dialect": "hejazi", "form": "علكة" },
+    { "dialect": "iraqi", "form": "علج", "examples": [{ "text": "جيب لي علج", "gloss": "أحضر لي علكة" }] },
+    { "dialect": "yemeni", "form": "علكة" },
+    { "dialect": "sudanese", "form": "لبان" },
+    { "dialect": "moroccan", "form": "المسكة", "examples": [{ "text": "كيمضغ المسكة", "gloss": "يمضغ علكة" }] },
+    { "dialect": "algerian", "form": "المسكة" },
+    { "dialect": "tunisian", "form": "المسكة" },
+    { "dialect": "libyan", "form": "علكة" },
+    { "dialect": "hassaniya", "form": "العلك" }
+   ]
+  },
+  {
+   "headword": "شوكة",
+   "definition": "أداة الأكل ذات الأسنان",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "شوكة", "examples": [{ "text": "هات شوكة وسكينة", "gloss": "أحضر شوكة وسكيناً" }] },
+    { "dialect": "levantine", "form": "شوكة" },
+    { "dialect": "palestinian", "form": "شوكة" },
+    { "dialect": "gulf", "form": "شوكة" },
+    { "dialect": "najdi", "form": "شوكة" },
+    { "dialect": "hejazi", "form": "شوكة" },
+    { "dialect": "iraqi", "form": "چنگال", "examples": [{ "text": "وين الچنگال؟", "gloss": "أين الشوكة؟" }] },
+    { "dialect": "yemeni", "form": "شوكة" },
+    { "dialect": "sudanese", "form": "شوكة" },
+    { "dialect": "moroccan", "form": "الفرشيطة", "examples": [{ "text": "عطيني الفرشيطة", "gloss": "أعطني الشوكة" }] },
+    { "dialect": "algerian", "form": "الفرشيطة" },
+    { "dialect": "tunisian", "form": "الفرشيطة" },
+    { "dialect": "libyan", "form": "شوكة" },
+    { "dialect": "hassaniya", "form": "الفرشيطة" }
+   ]
+  },
+  {
+   "headword": "نادل",
+   "definition": "من يقدّم الطعام للزبائن في المطعم أو المقهى",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "جرسون", "examples": [{ "text": "نادى الجرسون وطلب الحساب", "gloss": "نادى النادل وطلب الفاتورة" }] },
+    { "dialect": "levantine", "form": "جرسون" },
+    { "dialect": "palestinian", "form": "ويتر" },
+    { "dialect": "gulf", "form": "ويتر" },
+    { "dialect": "najdi", "form": "ويتر" },
+    { "dialect": "hejazi", "form": "جرسون" },
+    { "dialect": "iraqi", "form": "قارصون" },
+    { "dialect": "yemeni", "form": "نادل" },
+    { "dialect": "sudanese", "form": "جرسون" },
+    { "dialect": "moroccan", "form": "الگارسون", "examples": [{ "text": "عيّط للگارسون", "gloss": "نادِ النادل" }] },
+    { "dialect": "algerian", "form": "الگارسون" },
+    { "dialect": "tunisian", "form": "القارسون" },
+    { "dialect": "libyan", "form": "جرسون" },
+    { "dialect": "hassaniya", "form": "النادل" }
+   ]
+  },
+  {
+   "headword": "قائمة الطعام",
+   "definition": "الورقة التي فيها أصناف المطعم وأسعارها",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "المنيو", "examples": [{ "text": "شوف المنيو واطلب", "gloss": "انظر في قائمة الطعام واطلب" }] },
+    { "dialect": "levantine", "form": "المنيو" },
+    { "dialect": "palestinian", "form": "لستة الأكل" },
+    { "dialect": "gulf", "form": "المنيو" },
+    { "dialect": "najdi", "form": "القائمة" },
+    { "dialect": "hejazi", "form": "المنيو" },
+    { "dialect": "iraqi", "form": "المنيو" },
+    { "dialect": "yemeni", "form": "القائمة" },
+    { "dialect": "sudanese", "form": "المنيو" },
+    { "dialect": "moroccan", "form": "الكارط", "examples": [{ "text": "جيب لينا الكارط", "gloss": "أحضر لنا قائمة الطعام" }] },
+    { "dialect": "algerian", "form": "الكارط" },
+    { "dialect": "tunisian", "form": "الكارط" },
+    { "dialect": "libyan", "form": "المنيو" },
+    { "dialect": "hassaniya", "form": "القائمة" }
+   ]
+  },
+  {
+   "headword": "كنزة",
+   "definition": "لباس صوفي يُلبَس فوق القميص في البرد",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "بلوفر", "examples": [{ "text": "البس البلوفر الدنيا برد", "gloss": "ارتدِ الكنزة فالجو بارد" }] },
+    { "dialect": "levantine", "form": "كنزة", "examples": [{ "text": "لبس الكنزة الصوف", "gloss": "ارتدى الكنزة الصوفية" }] },
+    { "dialect": "palestinian", "form": "كنزة" },
+    { "dialect": "gulf", "form": "بلوفر" },
+    { "dialect": "najdi", "form": "بلوفر" },
+    { "dialect": "hejazi", "form": "بلوفر" },
+    { "dialect": "iraqi", "form": "بلوزة" },
+    { "dialect": "yemeni", "form": "بلوفر" },
+    { "dialect": "sudanese", "form": "بلوفر" },
+    { "dialect": "moroccan", "form": "التريكو", "examples": [{ "text": "لبس التريكو ديالك", "gloss": "ارتدِ كنزتك" }] },
+    { "dialect": "algerian", "form": "التريكو" },
+    { "dialect": "tunisian", "form": "التريكو" },
+    { "dialect": "libyan", "form": "بلوفر" },
+    { "dialect": "hassaniya", "form": "التريكو" }
+   ]
+  },
+  {
+   "headword": "خاتم",
+   "definition": "حلية دائرية تُلبَس في الإصبع",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "خاتم" },
+    { "dialect": "cairene", "form": "دبلة", "notes": "خاتم الزواج بالذات", "examples": [{ "text": "لابسة الدبلة في إيدها الشمال", "gloss": "ترتدي خاتم الزواج في يدها اليسرى" }] },
+    { "dialect": "levantine", "form": "محبس", "examples": [{ "text": "ضيّع المحبس", "gloss": "أضاع الخاتم" }] },
+    { "dialect": "palestinian", "form": "محبس" },
+    { "dialect": "gulf", "form": "خاتم" },
+    { "dialect": "najdi", "form": "محبس" },
+    { "dialect": "hejazi", "form": "خاتم" },
+    { "dialect": "iraqi", "form": "محبس" },
+    { "dialect": "yemeni", "form": "خاتم" },
+    { "dialect": "sudanese", "form": "خاتم" },
+    { "dialect": "moroccan", "form": "الخاتم" },
+    { "dialect": "algerian", "form": "الخاتم" },
+    { "dialect": "tunisian", "form": "الخاتم" },
+    { "dialect": "libyan", "form": "خاتم" },
+    { "dialect": "hassaniya", "form": "الخاتم" }
+   ]
+  },
+  {
+   "headword": "وشاح",
+   "definition": "قطعة قماش طويلة تُلَفّ حول العنق",
+   "kind": "word",
+   "entries": [
+    { "dialect": "egyptian", "form": "إيشارب", "examples": [{ "text": "لفّي الإيشارب على رقبتك", "gloss": "لفّي الوشاح حول عنقك" }] },
+    { "dialect": "levantine", "form": "شال" },
+    { "dialect": "palestinian", "form": "شال" },
+    { "dialect": "gulf", "form": "شال" },
+    { "dialect": "najdi", "form": "شال" },
+    { "dialect": "hejazi", "form": "شال" },
+    { "dialect": "iraqi", "form": "شال" },
+    { "dialect": "yemeni", "form": "شال" },
+    { "dialect": "sudanese", "form": "شال" },
+    { "dialect": "moroccan", "form": "الفولار", "examples": [{ "text": "حط الفولار ديالك", "gloss": "ضع وشاحك" }] },
+    { "dialect": "algerian", "form": "الفولار" },
+    { "dialect": "tunisian", "form": "الفولار" },
+    { "dialect": "libyan", "form": "شال" },
+    { "dialect": "hassaniya", "form": "الشال" }
+   ]
+  }
+ ]
+}
