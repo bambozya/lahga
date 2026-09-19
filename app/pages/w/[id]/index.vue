@@ -5,15 +5,17 @@ const { loggedIn, user } = useUserSession()
 const { data: word, error, refresh } = await useFetch(`/api/words/${route.params.id}` as `/api/words/${number}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
 // One line per distinct form, with every dialect that uses it: «الحين (خليجي، نجدي)».
+// The first entry that says it is where the line points, so the summary doubles
+// as the table of contents for the detail below.
 const forms = computed(() => {
-  const byForm = new Map<string, string[]>()
+  const byForm = new Map<string, { entryId: number, dialects: string[] }>()
   for (const g of word.value?.groups ?? []) {
     for (const e of g.entries) {
-      const list = byForm.get(e.form) ?? byForm.set(e.form, []).get(e.form)!
-      if (!list.includes(e.dialect.nameAr)) list.push(e.dialect.nameAr)
+      const seen = byForm.get(e.form) ?? byForm.set(e.form, { entryId: e.id, dialects: [] }).get(e.form)!
+      if (!seen.dialects.includes(e.dialect.nameAr)) seen.dialects.push(e.dialect.nameAr)
     }
   }
-  return [...byForm].map(([form, dialects]) => ({ form, dialects }))
+  return [...byForm].map(([form, v]) => ({ form, ...v }))
 })
 const kindWord = computed(() => ({ word: 'كلمة', phrase: 'عبارة', proverb: 'مثل' })[word.value?.kind ?? 'word'])
 useSeo({
@@ -44,9 +46,8 @@ useSeo({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://lahga.fyi/' },
-        { '@type': 'ListItem', position: 2, name: 'الفهرس', item: 'https://lahga.fyi/browse' },
-        { '@type': 'ListItem', position: 3, name: word.value.headword },
+        { '@type': 'ListItem', position: 1, name: 'كل الكلمات', item: 'https://lahga.fyi/' },
+        { '@type': 'ListItem', position: 2, name: word.value.headword },
       ],
     }]
   },
@@ -81,12 +82,22 @@ const removeWord = async () => {
     <p role="status" v-if="notice">{{ notice }}</p>
     <p role="alert" v-if="failure">{{ failure }}</p>
 
-    <hgroup>
+    <!-- The pivot: the word itself, what it means, and nothing competing with it. -->
+    <hgroup class="pivot">
       <p><b>بالفصحى</b><template v-if="kindLabel[word.kind]"> · {{ kindLabel[word.kind] }}</template></p>
       <h1><dfn>{{ word.headword }}</dfn></h1>
-      <p>{{ word.definition }}</p>
+      <p class="definition">{{ word.definition }}</p>
     </hgroup>
-    <p>
+
+    <!-- Every dialect form at a glance; the detail waits below. -->
+    <p v-if="forms.length" class="glance">
+      <span>تُقال:</span>
+      <template v-for="(f, i) in forms" :key="f.form">
+        <template v-if="i">، </template><a :href="`#entry-${f.entryId}`"><b>{{ f.form }}</b></a> <small>{{ f.dialects.join('، ') }}</small>
+      </template>
+    </p>
+
+    <p class="tools">
       <small v-if="mine(word.createdBy)"><NuxtLink :to="`/w/${word.id}/edit`">تعديل الكلمة</NuxtLink> · <a href="#" @click.prevent="removeWord">حذف</a> · </small>
       <FlagButton target-type="word" :target-id="word.id" />
     </p>
@@ -94,7 +105,7 @@ const removeWord = async () => {
     <section v-for="g in word.groups" :key="g.slug">
       <h2><NuxtLink :to="`/d/${g.slug}`">{{ g.nameAr }}</NuxtLink></h2>
       <dl>
-        <div v-for="e in g.entries" :key="e.id">
+        <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
           <dt>
             <b>{{ e.form }}</b>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
@@ -124,16 +135,16 @@ const removeWord = async () => {
                 <template v-if="loggedIn && user?.emailVerified"> · <a href="#" @click.prevent="toggle(`add-example-${e.id}`)">أضف مثالاً</a></template>
               </small></p>
               <ExampleForm v-if="open === `add-example-${e.id}`" :entry-id="e.id" @done="done" @cancel="open = null" />
-              <div><VoteBox target-type="entry" :target-id="e.id" :score="e.score" :my-vote="e.myVote" :created-by="e.createdBy" /> <FlagButton target-type="entry" :target-id="e.id" /></div>
+              <FlagButton target-type="entry" :target-id="e.id" />
             </template>
           </dd>
         </div>
       </dl>
     </section>
 
-    <p v-if="!word.groups.length">لم تُضف بعد كلمات من اللهجات لهذه الكلمة.</p>
+    <p v-if="!word.groups.length">لم تُضف بعد أشكال هذه {{ kindWord }} في اللهجات.</p>
 
-    <section>
+    <section class="contribute">
       <h2>كيف تُقال في لهجتك؟</h2>
       <ContributeGate>
         <EntryForm v-if="open === 'add-entry'" :word-id="word.id" @done="done" @cancel="open = null" />
@@ -143,3 +154,34 @@ const removeWord = async () => {
     </section>
   </article>
 </template>
+
+<style scoped>
+/* The headword is the page. Everything under it is evidence, set quieter. */
+.pivot { border-block-end: var(--rule); padding-block-end: var(--space-s); }
+.pivot > h1 { font-size: var(--step-5); line-height: 1.2; margin-block-start: var(--space-3xs); }
+.pivot > .definition { font-size: var(--step-1); margin-block-start: var(--space-2xs); }
+
+/* The forms at a glance: one line of the dictionary's voice, links into the detail. */
+.glance { max-width: none; margin-block-start: var(--space-s); line-height: 2; }
+.glance > span { color: var(--muted); font-size: var(--step--1); margin-inline-end: 0.3em; }
+.glance a { text-decoration-color: transparent; }
+.glance a:hover, .glance a:focus-visible { text-decoration-color: var(--accent); }
+.glance b { font-family: var(--naskh); font-size: var(--step-1); }
+.glance small { margin-inline-start: 0.25em; }
+
+.tools { margin-block-start: var(--space-xs); }
+
+/* A region is a label over its entries, not a headline. */
+section > h2 { font: 700 var(--step-0)/1.6 var(--naskh); color: var(--muted); }
+section > h2 a { text-decoration-color: var(--hair); }
+/* The invitation to contribute is not a label: it keeps its voice. */
+.contribute > h2 { font: 700 var(--step-2)/1.45 var(--naskh); color: var(--ink); }
+
+/* Each form: named, explained, evidenced — but never louder than the headword.
+   No rule under a dialect's name: inside one dialect the forms are kin, held
+   apart by space alone. The fine line belongs between one dialect and the next. */
+section + section { border-block-start: var(--thin); padding-block-start: var(--space-m); }
+dl > div { border-block-start: 0; padding-block: 0; scroll-margin-block-start: var(--space-s); }
+dl > div + div { margin-block-start: var(--space-m); }
+dt { font: 700 var(--step-1)/1.5 var(--naskh); }
+</style>
