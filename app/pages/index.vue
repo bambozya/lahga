@@ -26,6 +26,13 @@ const searching = computed(() => status.value === 'pending')
 const shuffling = computed(() => !activeQuery.value && status.value === 'pending')
 const nothing = computed(() => !!activeQuery.value && !searching.value && count.value === 0)
 
+// Aggregate count in the analytics dashboard; the actual missed terms are logged
+// server-side (see logSearchMiss in the /api/words handler) and read at
+// /admin/search-misses — kept out of this event so a search term is never a
+// public-analytics prop.
+const { trackEvent } = useAnalytics()
+watch(nothing, v => { if (v) trackEvent('search-empty') })
+
 // A search that found nothing asks once more for the nearest words, so the
 // empty answer can still point somewhere («هل تقصد…»).
 const { data: suggestions } = await useAsyncData<WordList>('near', () => (

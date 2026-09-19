@@ -64,6 +64,13 @@
       "when": 1789828144126,
       "tag": "0008_optional_word_definition",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1789841399743,
+      "tag": "0009_certain_mastermind",
+      "breakpoints": true
     }
   ]
 }

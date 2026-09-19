@@ -64,7 +64,10 @@ export default defineEventHandler(async (event) => {
       desc(schema.words.score),
     )
     .limit(max)
-  if (!ids.length) return fuzzy ? near(db, term, max) : []
+  if (!ids.length) {
+    await logSearchMiss(db, q as string, term)
+    return fuzzy ? near(db, term, max) : []
+  }
 
   const order = new Map(ids.map((r, i) => [r.id, i]))
   const rows = await db.query.words.findMany({
@@ -105,6 +108,24 @@ async function near(db: Awaited<ReturnType<typeof useDb>>, term: string, max: nu
     with: { links: { with: { entry: { with: { dialect: { with: { parent: true } } } } } } },
   })
   return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
+}
+
+/**
+ * Records a search that matched nothing, upserted by normalised term so this
+ * stays a ranked list of missing words (docs/REACH.md, Phase R1) rather than a
+ * per-visit log. Skipped for very short terms, which are mostly a typo still
+ * being typed. Never lets a logging failure break the search itself.
+ */
+async function logSearchMiss(db: Awaited<ReturnType<typeof useDb>>, raw: string, term: string) {
+  if (term.length < 2) return
+  try {
+    await db.insert(schema.searchMisses)
+      .values({ term: raw.slice(0, 200), termNormalized: term })
+      .onConflictDoUpdate({
+        target: schema.searchMisses.termNormalized,
+        set: { count: sql`${schema.searchMisses.count} + 1`, lastSearchedAt: new Date() },
+      })
+  } catch { /* best effort */ }
 }
 
 /** Escapes the LIKE wildcards so a typed % or _ matches itself. */

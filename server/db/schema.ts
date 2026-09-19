@@ -257,6 +257,20 @@ export const moderationLogRelations = relations(moderationLog, ({ one }) => ({
   actor: one(users, { fields: [moderationLog.actorId], references: [users.id] }),
 }))
 
+// ---------- search misses: what people typed and found nothing for ----------
+// One row per distinct normalised term, counted up on every miss instead of
+// logged per-visit, so this stays small and reads as a ranked list of what to
+// seed next (see docs/REACH.md, Phase R1).
+
+export const searchMisses = pgTable('search_misses', {
+  id: serial('id').primaryKey(),
+  term: text('term').notNull(), // as typed, for display
+  termNormalized: text('term_normalized').notNull().unique(),
+  count: integer('count').notNull().default(1),
+  lastSearchedAt: timestamp('last_searched_at', { withTimezone: true }).notNull().defaultNow(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+})
+
 // ---------- relations (for db.query.* helpers) ----------
 
 export const dialectsRelations = relations(dialects, ({ one, many }) => ({
