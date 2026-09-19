@@ -1194,137 +1194,299 @@
     {
      "dialect": "egyptian",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً، اتفضل جوه",
+       "gloss": "أهلاً وسهلاً، تفضل بالدخول"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "نورت",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "نورت البيت يا أستاذ",
+       "gloss": "أضأت البيت بقدومك يا أستاذ"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً فيك",
+       "gloss": "أهلاً وسهلاً بك"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "أهلين",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلين، تفضل اقعد",
+       "gloss": "أهلاً، تفضل بالجلوس"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "يا هلا",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "يا هلا فيك يا غالي",
+       "gloss": "أهلاً بك يا عزيزي"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "يا هلا",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "يا هلا والله، تفضل",
+       "gloss": "أهلاً وسهلاً، تفضل"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "هلا والله",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "هلا والله بالضيف",
+       "gloss": "أهلاً بالضيف"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "حياك الله",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "حياك الله، البيت بيتك",
+       "gloss": "حياك الله، البيت بيتك"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "حياك الله",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "حياك الله يا بو فهد",
+       "gloss": "حياك الله يا أبا فهد"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "يا هلا والله",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "يا هلا والله، نورت",
+       "gloss": "أهلاً وسهلاً، نورت المكان"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "يا هلا",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "يا هلا بك، تفضل",
+       "gloss": "أهلاً بك، تفضل"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "حياك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "حياك الله في بيتنا",
+       "gloss": "حياك الله في بيتنا"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "هلا بيك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "هلا بيك، تفضل استريح",
+       "gloss": "أهلاً بك، تفضل واسترح"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "تفضل",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "تفضل، البيت بيتك",
+       "gloss": "تفضل، البيت بيتك"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً بالضيوف",
+       "gloss": "أهلاً وسهلاً بالضيوف"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "حياك الله",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "حياك الله، تفضل",
+       "gloss": "حياك الله، تفضل"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "مرحبا بيك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "مرحبا بيك فدارنا",
+       "gloss": "مرحباً بك في بيتنا"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "أهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً، دخل الله يخليك",
+       "gloss": "أهلاً، ادخل من فضلك"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "مرحبا بيك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "مرحبا بيك عندنا",
+       "gloss": "مرحباً بك عندنا"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً، دخل",
+       "gloss": "أهلاً وسهلاً، ادخل"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "مرحبا بيك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "مرحبا بيك في دارنا",
+       "gloss": "مرحباً بك في بيتنا"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً، أقعد",
+       "gloss": "أهلاً وسهلاً، اجلس"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً بيك",
+       "gloss": "أهلاً وسهلاً بك"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مرحباً بيك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "مرحباً بيك في الحوش",
+       "gloss": "مرحباً بك في البيت"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "أهلاً وسهلاً",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "أهلاً وسهلاً يا زول",
+       "gloss": "أهلاً وسهلاً يا رجل"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "مرحب",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "مرحب بيك، اتفضل",
+       "gloss": "مرحباً بك، تفضل"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "مرحبا بيك",
-     "meaning": "أهلاً وسهلاً"
+     "meaning": "أهلاً وسهلاً",
+     "examples": [
+      {
+       "text": "مرحبا بيك عندنا",
+       "gloss": "مرحباً بك عندنا"
+      }
+     ]
     }
    ]
   },
@@ -1706,132 +1868,288 @@
     {
      "dialect": "egyptian",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، ده واجب",
+       "gloss": "عفواً، هذا واجب"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "ولا يهمك",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "ولا يهمك، أي وقت",
+       "gloss": "لا عليك، في أي وقت"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "عفواً",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "عفواً، ما في داعي للشكر",
+       "gloss": "عفواً، لا داعي للشكر"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "أهلا وسهلا",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "أهلا وسهلا، تكرم عينك",
+       "gloss": "عفواً، على الرحب والسعة"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ولا يهمك",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "ولا يهمك، بخدمتك",
+       "gloss": "لا عليك، في خدمتك"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، هذا من واجبنا",
+       "gloss": "عفواً، هذا من واجبنا"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "ولا يهمك",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "ولا يهمك، تؤمر",
+       "gloss": "لا عليك، مُرني"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو يا الغالي",
+       "gloss": "عفواً يا عزيزي"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "لا شكر على واجب",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "لا شكر على واجب",
+       "gloss": "لا شكر على واجب"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، أي خدمة",
+       "gloss": "عفواً، أي خدمة"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "ولا يهمك",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "ولا يهمك أبداً",
+       "gloss": "لا عليك أبداً"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، هذا واجبنا",
+       "gloss": "عفواً، هذا واجبنا"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "ما سويت شي",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "ما سويت شي، عادي",
+       "gloss": "لم أفعل شيئاً، عادي"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، ما عملت شي",
+       "gloss": "عفواً، لم أفعل شيئاً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "لا شكر على واجب",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "لا شكر على واجب يا أخي",
+       "gloss": "لا شكر على واجب يا أخي"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "بلا جميل",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "بلا جميل، هادشي واجب",
+       "gloss": "عفواً، هذا واجب"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو أخويا",
+       "gloss": "عفواً يا أخي"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بلا جميل",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "بلا جميل، ماشي مشكل",
+       "gloss": "عفواً، لا مشكلة"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو خويا",
+       "gloss": "عفواً يا أخي"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بلا جميل",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "بلا جميل، عادي",
+       "gloss": "عفواً، عادي"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "لا شكر على واجب",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "لا شكر على واجب",
+       "gloss": "لا شكر على واجب"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، أي وقت",
+       "gloss": "عفواً، في أي وقت"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "بلا جميل",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "بلا جميل يا صاحبي",
+       "gloss": "عفواً يا صديقي"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو يا زول",
+       "gloss": "عفواً يا رجل"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "ما في شكر على واجب",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "ما في شكر على واجب",
+       "gloss": "لا شكر على واجب"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "العفو",
-     "meaning": "عفواً"
+     "meaning": "عفواً",
+     "examples": [
+      {
+       "text": "العفو، ذا واجب",
+       "gloss": "عفواً، هذا واجب"
+      }
+     ]
     }
    ]
   },

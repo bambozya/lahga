@@ -4622,127 +4622,277 @@
     {
      "dialect": "egyptian",
      "form": "مش مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مش مهم، نعملها بكرة",
+       "gloss": "لا يهم، سنفعلها غداً"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "ولا يهمك",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "ولا يهمك، الموضوع بسيط",
+       "gloss": "لا عليك، الأمر بسيط"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مش مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مش مهم، خلص",
+       "gloss": "لا يهم، انتهى الأمر"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "ما بيهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "ما بيهم، الأهم إنك منيح",
+       "gloss": "لا يهم، المهم أنك بخير"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "مو مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مو مهم، خلها علينا",
+       "gloss": "لا يهم، دعها علينا"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما صار شي",
+       "gloss": "لا بأس، لم يحدث شيء"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "مو مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مو مهم، نشوف غيرها",
+       "gloss": "لا يهم، نجد غيرها"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي ما عليه",
+       "gloss": "لا بأس، لا عليه"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "مش مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مش مهم، سيبها",
+       "gloss": "لا يهم، اتركها"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما في مشكلة",
+       "gloss": "لا بأس، لا توجد مشكلة"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "مو مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مو مهم، خليها",
+       "gloss": "لا يهم، اتركها"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ماكو مشكلة",
+       "gloss": "عادي، لا توجد مشكلة"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "مش مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مش مهم، نكمل بعدين",
+       "gloss": "لا يهم، نكمل لاحقاً"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما فيش مشكلة",
+       "gloss": "عادي، لا توجد مشكلة"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "ما مهمش",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "ما مهمش، غدا نديروها",
+       "gloss": "لا يهم، سنفعلها غداً"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما كاين باس",
+       "gloss": "عادي، لا بأس"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "ما مهمش",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "ما مهمش، ماشي مشكل",
+       "gloss": "لا يهم، لا مشكلة"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "نورمال",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "نورمال، ما صرا والو",
+       "gloss": "عادي، لم يحدث شيء"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "موش مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "موش مهم، نعاودوها",
+       "gloss": "لا يهم، سنعيدها"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما فماش مشكل",
+       "gloss": "عادي، لا توجد مشكلة"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مش مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "مش مهم، نديروها بعدين",
+       "gloss": "لا يهم، سنفعلها لاحقاً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما فيش مشكلة",
+       "gloss": "عادي، لا توجد مشكلة"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "ما مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "ما مهم، نعملو بكرة",
+       "gloss": "لا يهم، نفعله غداً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "عادي",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "عادي، ما في مشكلة",
+       "gloss": "عادي، لا توجد مشكلة"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "ما مهم",
-     "meaning": "لا يهم"
+     "meaning": "لا يهم",
+     "examples": [
+      {
+       "text": "ما مهم، نديرو غدا",
+       "gloss": "لا يهم، نفعله غداً"
+      }
+     ]
     }
    ]
   },
