@@ -561,132 +561,288 @@
     {
      "dialect": "egyptian",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لابسة حجاب من سنة",
+       "gloss": "ترتدي الحجاب منذ سنة"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "طرحة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "اشترت طرحة سودا",
+       "gloss": "اشترت حجاباً أسود"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب لونه بيجي مع الفستان",
+       "gloss": "لون الحجاب يناسب الفستان"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "منديل",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "حطت المنديل عراسها",
+       "gloss": "وضعت الحجاب على رأسها"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب جزء من لبسها",
+       "gloss": "الحجاب جزء من لباسها"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "شيلة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لبست الشيلة وطلعت",
+       "gloss": "لبست الحجاب وخرجت"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب لونه أسود",
+       "gloss": "لون الحجاب أسود"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "شيلة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "عدلت الشيلة على راسها",
+       "gloss": "عدلت الحجاب على رأسها"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "طرحة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الطرحة طويلة شوي",
+       "gloss": "الحجاب طويل قليلاً"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "طرحة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لبست الطرحة قبل ما تطلع",
+       "gloss": "لبست الحجاب قبل أن تخرج"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب يناسب اللبس",
+       "gloss": "الحجاب يناسب الملابس"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب عليها حلو",
+       "gloss": "الحجاب يليق بها"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "فوطة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "ربطت الفوطة على راسها",
+       "gloss": "ربطت الحجاب على رأسها"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب من عاداتنا",
+       "gloss": "الحجاب من عاداتنا"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "لثمة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لبست اللثمة",
+       "gloss": "لبست غطاء الوجه"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لابسة الحجاب",
+       "gloss": "ترتدي الحجاب"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "زيف",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "شدات الزيف على راسها",
+       "gloss": "ربطت الحجاب على رأسها"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب ديالها زوين",
+       "gloss": "حجابها جميل"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "خمار",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لابسة الخمار",
+       "gloss": "ترتدي الخمار"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب متاعها جديد",
+       "gloss": "حجابها جديد"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "خمار",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لابسة خمار طويل",
+       "gloss": "ترتدي خماراً طويلاً"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب لونه أزرق",
+       "gloss": "لون الحجاب أزرق"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "طرحة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لبست الطرحة",
+       "gloss": "لبست الحجاب"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "طرحة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لفت الطرحة كويس",
+       "gloss": "لفت الحجاب جيداً"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "حجاب",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "الحجاب دا جميل",
+       "gloss": "هذا الحجاب جميل"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "ملحفة",
-     "meaning": "حجاب"
+     "meaning": "حجاب",
+     "examples": [
+      {
+       "text": "لابسة الملحفة",
+       "gloss": "ترتدي الملحفة"
+      }
+     ]
     }
    ]
   },

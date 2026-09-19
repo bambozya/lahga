@@ -6053,132 +6053,288 @@
     {
      "dialect": "egyptian",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك على النجاح",
+       "gloss": "تهانينا على النجاح"
+      }
+     ]
     },
     {
      "dialect": "egyptian",
      "form": "ألف مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "ألف مبروك يا عريس",
+       "gloss": "ألف مبارك أيها العريس"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك البيت الجديد",
+       "gloss": "مبارك البيت الجديد"
+      }
+     ]
     },
     {
      "dialect": "levantine",
      "form": "مبارك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبارك عليك السيارة",
+       "gloss": "مباركة لك السيارة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك الوظيفة",
+       "gloss": "مباركة الوظيفة"
+      }
+     ]
     },
     {
      "dialect": "gulf",
      "form": "مبارك عليك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبارك عليك الشهر",
+       "gloss": "مبارك عليك الشهر"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك يا بو سعد",
+       "gloss": "مبارك يا أبا سعد"
+      }
+     ]
     },
     {
      "dialect": "najdi",
      "form": "الله يبارك لك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "الله يبارك لك في ولدك",
+       "gloss": "بارك الله لك في ولدك"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك التخرج",
+       "gloss": "مبارك التخرج"
+      }
+     ]
     },
     {
      "dialect": "hejazi",
      "form": "ألف مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "ألف مبروك يا غالي",
+       "gloss": "ألف مبارك يا عزيزي"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك البيت الجديد",
+       "gloss": "مبارك البيت الجديد"
+      }
+     ]
     },
     {
      "dialect": "iraqi",
      "form": "مبارك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبارك عليك العيد",
+       "gloss": "مبارك عليك العيد"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك على المولود",
+       "gloss": "مبارك على المولود"
+      }
+     ]
     },
     {
      "dialect": "yemeni",
      "form": "مبارك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبارك عليكم الشهر",
+       "gloss": "مبارك عليكم الشهر"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك عليك الخدمة الجديدة",
+       "gloss": "مبارك عليك العمل الجديد"
+      }
+     ]
     },
     {
      "dialect": "moroccan",
      "form": "بالصحة",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "بالصحة والراحة",
+       "gloss": "بالهناء والعافية"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك عليك العرس",
+       "gloss": "مبارك عليك العرس"
+      }
+     ]
     },
     {
      "dialect": "algerian",
      "form": "بالصحة",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "بالصحة على الحمام",
+       "gloss": "بالعافية بعد الحمام"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك الدار الجديدة",
+       "gloss": "مبارك البيت الجديد"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "بالصحة",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "بالصحة ليك",
+       "gloss": "بالعافية لك"
+      }
+     ]
     },
     {
      "dialect": "tunisian",
      "form": "عسلامة",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "عسلامة بالمولود",
+       "gloss": "مبارك بالمولود"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك النجاح",
+       "gloss": "مبارك النجاح"
+      }
+     ]
     },
     {
      "dialect": "libyan",
      "form": "مبارك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبارك عليك",
+       "gloss": "مبارك عليك"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك يا زول",
+       "gloss": "مبارك يا رجل"
+      }
+     ]
     },
     {
      "dialect": "sudanese",
      "form": "ألف مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "ألف مبروك على الشهادة",
+       "gloss": "ألف مبارك على الشهادة"
+      }
+     ]
     },
     {
      "dialect": "hassaniya",
      "form": "مبروك",
-     "meaning": "مبروك"
+     "meaning": "مبروك",
+     "examples": [
+      {
+       "text": "مبروك عليك",
+       "gloss": "مبارك عليك"
+      }
+     ]
     }
    ]
   },

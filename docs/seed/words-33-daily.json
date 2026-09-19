@@ -1,0 +1,98 @@
+{"words":[
+ {"headword":"يستيقظ","definition":"يقوم من النوم","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يصحى","examples":[{"text":"بصحى الساعة ستة كل يوم","gloss":"أستيقظ في السادسة كل يوم"}]},
+  {"dialect":"levantine","form":"يفيق"},{"dialect":"palestinian","form":"يفيق"},
+  {"dialect":"gulf","form":"يصحى"},{"dialect":"najdi","form":"يصحى"},{"dialect":"hejazi","form":"يصحى"},
+  {"dialect":"iraqi","form":"يفيق"},{"dialect":"yemeni","form":"يصحى"},{"dialect":"sudanese","form":"يصحى"},
+  {"dialect":"moroccan","form":"يفيق","examples":[{"text":"كنفيق بكري","gloss":"أستيقظ مبكراً"}]},
+  {"dialect":"algerian","form":"يفيق"},{"dialect":"tunisian","form":"يفيق"},{"dialect":"libyan","form":"يقوم"},
+  {"dialect":"hassaniya","form":"يفيق"}]},
+
+ {"headword":"يغتسل","definition":"يغسل جسده بالماء","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يستحمى","examples":[{"text":"هستحمى وأنزل","gloss":"سأغتسل ثم أنزل"}]},
+  {"dialect":"levantine","form":"يستحم"},{"dialect":"palestinian","form":"يستحم"},
+  {"dialect":"gulf","form":"يستحم"},{"dialect":"najdi","form":"يستحم"},{"dialect":"hejazi","form":"يستحم"},
+  {"dialect":"iraqi","form":"يتحمم"},{"dialect":"yemeni","form":"يستحم"},{"dialect":"sudanese","form":"يتحمم"},
+  {"dialect":"moroccan","form":"يتحمم"},{"dialect":"algerian","form":"يتحمم"},{"dialect":"tunisian","form":"يتحمم"},{"dialect":"libyan","form":"يتحمم"},
+  {"dialect":"hassaniya","form":"يغتسل"}]},
+
+ {"headword":"ينام","definition":"يذهب إلى النوم","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ينام","examples":[{"text":"بينام بدري كل يوم","gloss":"ينام مبكراً كل يوم"}]},
+  {"dialect":"levantine","form":"ينام"},{"dialect":"palestinian","form":"ينام"},
+  {"dialect":"gulf","form":"ينام"},{"dialect":"najdi","form":"ينام"},{"dialect":"hejazi","form":"ينام"},
+  {"dialect":"iraqi","form":"ينام"},{"dialect":"yemeni","form":"ينام"},{"dialect":"sudanese","form":"ينوم"},
+  {"dialect":"moroccan","form":"ينعس"},{"dialect":"algerian","form":"يرقد"},{"dialect":"tunisian","form":"يرقد"},{"dialect":"libyan","form":"يرقد"},
+  {"dialect":"hassaniya","form":"يرقد"}]},
+
+ {"headword":"يتأخر","definition":"يصل بعد وقته","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يتأخر","examples":[{"text":"اتأخرت على الشغل","gloss":"تأخرت عن العمل"}]},
+  {"dialect":"levantine","form":"يتأخر"},{"dialect":"palestinian","form":"يتأخر"},
+  {"dialect":"gulf","form":"يتأخر"},{"dialect":"najdi","form":"يتأخر"},{"dialect":"hejazi","form":"يتأخر"},
+  {"dialect":"iraqi","form":"يتأخر"},{"dialect":"yemeni","form":"يتأخر"},{"dialect":"sudanese","form":"يتأخر"},
+  {"dialect":"moroccan","form":"يتعطل"},{"dialect":"algerian","form":"يتعطل"},{"dialect":"tunisian","form":"يتعطل"},{"dialect":"libyan","form":"يتأخر"},
+  {"dialect":"hassaniya","form":"يتأخر"}]},
+
+ {"headword":"يستعجل","definition":"يسرع في أمره","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يستعجل","examples":[{"text":"استعجل، الميعاد قرب","gloss":"أسرع، اقترب الموعد"}]},
+  {"dialect":"levantine","form":"يستعجل"},{"dialect":"palestinian","form":"يستعجل"},
+  {"dialect":"gulf","form":"يستعيل"},{"dialect":"najdi","form":"يستعجل"},{"dialect":"hejazi","form":"يستعجل"},
+  {"dialect":"iraqi","form":"يستعجل"},{"dialect":"yemeni","form":"يستعجل"},{"dialect":"sudanese","form":"يستعجل"},
+  {"dialect":"moroccan","form":"يتزرب"},{"dialect":"algerian","form":"يزرب"},{"dialect":"tunisian","form":"يزرب"},{"dialect":"libyan","form":"يستعجل"},
+  {"dialect":"hassaniya","form":"يستعجل"}]},
+
+ {"headword":"ينتظر","definition":"يبقى حتى يأتي ما ينتظره","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يستنى","examples":[{"text":"استناني خمس دقايق","gloss":"انتظرني خمس دقائق"}]},
+  {"dialect":"levantine","form":"يستنى"},{"dialect":"palestinian","form":"يستنى"},
+  {"dialect":"gulf","form":"ينتظر"},{"dialect":"najdi","form":"ينتظر"},{"dialect":"hejazi","form":"يستنى"},
+  {"dialect":"iraqi","form":"ينتظر"},{"dialect":"yemeni","form":"ينتظر"},{"dialect":"sudanese","form":"يستنى"},
+  {"dialect":"moroccan","form":"يتسنا"},{"dialect":"algerian","form":"يستنى"},{"dialect":"tunisian","form":"يستنى"},{"dialect":"libyan","form":"يستنى"},
+  {"dialect":"hassaniya","form":"ينتظر"}]},
+
+ {"headword":"يتصل","definition":"يكلم غيره في الهاتف","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يتصل","examples":[{"text":"اتصل بيا بالليل","gloss":"اتصل بي مساءً"}]},
+  {"dialect":"levantine","form":"يتصل"},{"dialect":"palestinian","form":"يرن"},
+  {"dialect":"gulf","form":"يتصل"},{"dialect":"najdi","form":"يتصل"},{"dialect":"hejazi","form":"يتصل"},
+  {"dialect":"iraqi","form":"يخابر"},{"dialect":"yemeni","form":"يتصل"},{"dialect":"sudanese","form":"يضرب تلفون"},
+  {"dialect":"moroccan","form":"يعيط"},{"dialect":"algerian","form":"يعيط"},{"dialect":"tunisian","form":"يكلم"},{"dialect":"libyan","form":"يتصل"},
+  {"dialect":"hassaniya","form":"يتصل"}]},
+
+ {"headword":"يجلس","definition":"يقعد في مكانه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يقعد","examples":[{"text":"اقعد هنا شوية","gloss":"اجلس هنا قليلاً"}]},
+  {"dialect":"levantine","form":"يقعد"},{"dialect":"palestinian","form":"يقعد"},
+  {"dialect":"gulf","form":"يقعد"},{"dialect":"najdi","form":"يجلس"},{"dialect":"hejazi","form":"يقعد"},
+  {"dialect":"iraqi","form":"يكعد"},{"dialect":"yemeni","form":"يقعد"},{"dialect":"sudanese","form":"يقعد"},
+  {"dialect":"moroccan","form":"يگلس"},{"dialect":"algerian","form":"يقعد"},{"dialect":"tunisian","form":"يقعد"},{"dialect":"libyan","form":"يقعد"},
+  {"dialect":"hassaniya","form":"يقعد"}]},
+
+ {"headword":"يخرج","definition":"يغادر المكان إلى خارجه","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يخرج","examples":[{"text":"هخرج مع أصحابي","gloss":"سأخرج مع أصدقائي"}]},
+  {"dialect":"levantine","form":"يطلع"},{"dialect":"palestinian","form":"يطلع"},
+  {"dialect":"gulf","form":"يطلع"},{"dialect":"najdi","form":"يطلع"},{"dialect":"hejazi","form":"يطلع"},
+  {"dialect":"iraqi","form":"يطلع"},{"dialect":"yemeni","form":"يطلع"},{"dialect":"sudanese","form":"يمرق"},
+  {"dialect":"moroccan","form":"يخرج"},{"dialect":"algerian","form":"يخرج"},{"dialect":"tunisian","form":"يخرج"},{"dialect":"libyan","form":"يخرج"},
+  {"dialect":"hassaniya","form":"يخرج"}]},
+
+ {"headword":"يرجع","definition":"يعود إلى حيث كان","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يرجع","examples":[{"text":"بيرجع البيت بالليل","gloss":"يعود إلى البيت ليلاً"}]},
+  {"dialect":"levantine","form":"يرجع"},{"dialect":"palestinian","form":"يرجع"},
+  {"dialect":"gulf","form":"يرجع"},{"dialect":"najdi","form":"يرجع"},{"dialect":"hejazi","form":"يرجع"},
+  {"dialect":"iraqi","form":"يرجع"},{"dialect":"yemeni","form":"يرجع"},{"dialect":"sudanese","form":"يرجع"},
+  {"dialect":"moroccan","form":"يرجع"},{"dialect":"algerian","form":"يولي"},{"dialect":"tunisian","form":"يولي"},{"dialect":"libyan","form":"يرجع"},
+  {"dialect":"hassaniya","form":"يرجع"}]},
+
+ {"headword":"يتعب","definition":"يذهب نشاطه من الجهد","kind":"word","entries":[
+  {"dialect":"egyptian","form":"يتعب","examples":[{"text":"تعبت من المشي","gloss":"تعبت من المشي"}]},
+  {"dialect":"levantine","form":"يتعب"},{"dialect":"palestinian","form":"يتعب"},
+  {"dialect":"gulf","form":"يتعب"},{"dialect":"najdi","form":"يتعب"},{"dialect":"hejazi","form":"يتعب"},
+  {"dialect":"iraqi","form":"يتعب"},{"dialect":"yemeni","form":"يتعب"},{"dialect":"sudanese","form":"يتعب"},
+  {"dialect":"moroccan","form":"يعيا"},{"dialect":"algerian","form":"يعيا"},{"dialect":"tunisian","form":"يعيا"},{"dialect":"libyan","form":"يتعب"},
+  {"dialect":"hassaniya","form":"يعيا"}]},
+
+ {"headword":"ينسى","definition":"يذهب الشيء من ذاكرته","kind":"word","entries":[
+  {"dialect":"egyptian","form":"ينسى","examples":[{"text":"نسيت المفتاح في البيت","gloss":"نسيت المفتاح في البيت"}]},
+  {"dialect":"levantine","form":"ينسى"},{"dialect":"palestinian","form":"ينسى"},
+  {"dialect":"gulf","form":"ينسى"},{"dialect":"najdi","form":"ينسى"},{"dialect":"hejazi","form":"ينسى"},
+  {"dialect":"iraqi","form":"ينسى"},{"dialect":"yemeni","form":"ينسى"},{"dialect":"sudanese","form":"ينسى"},
+  {"dialect":"moroccan","form":"ينسا"},{"dialect":"algerian","form":"ينسى"},{"dialect":"tunisian","form":"ينسى"},{"dialect":"libyan","form":"ينسى"},
+  {"dialect":"hassaniya","form":"ينسا"}]}
+]}
