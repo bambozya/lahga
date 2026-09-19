@@ -1,7 +1,9 @@
 <script setup lang="ts">
-definePageMeta({ middleware: 'auth' })
+// Adding a word needs a verified account, but a visitor who lands here from a
+// search that found nothing is told so on the page rather than bounced to the
+// login form and left to find the way back: ContributeGate carries ?headword=
+// into the link, so the form is waiting, filled in, when they return.
 useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى قاموس لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
-const { user } = useUserSession()
 // A search that found nothing sends the term along (?headword=…), so the page
 // opens on the word the visitor was already looking for.
 const headword = String(useRoute().query.headword ?? '').trim().slice(0, 80)
@@ -29,11 +31,8 @@ const { busy, error, run } = useForm(async () => {
 <template>
   <article>
     <h1>أضف كلمة</h1>
-    <template v-if="!user?.emailVerified">
-      <p>أكّد بريدك الإلكتروني أولاً؛ تجد رابط التأكيد في بريدك أو في <NuxtLink to="/settings">الإعدادات</NuxtLink>.</p>
-    </template>
-    <template v-else>
-      <p>كل كلمة تُربط بمعناها بالفصحى، ثم يُضاف الشكل الذي تُقال به في لهجتك مع مثال. هكذا تظهر الكلمة نفسها بجانب مرادفاتها في اللهجات الأخرى.</p>
+    <p>كل كلمة تُربط بمعناها بالفصحى، ثم يُضاف الشكل الذي تُقال به في لهجتك مع مثال. هكذا تظهر الكلمة نفسها بجانب مرادفاتها في اللهجات الأخرى.</p>
+    <ContributeGate>
       <p role="alert" v-if="error">
         {{ error }}
         <template v-if="existingId"> <NuxtLink :to="`/w/${existingId}`">افتح صفحة الكلمة</NuxtLink>.</template>
@@ -47,8 +46,9 @@ const { busy, error, run } = useForm(async () => {
             <small>المعنى المشترك الذي تلتقي عنده اللهجات، مثل «سيارة» أو «كثيراً».</small>
           </p>
           <p>
-            <label for="definition">التعريف</label>
-            <textarea id="definition" v-model="form.definition" required maxlength="600" rows="3"></textarea>
+            <label for="definition">التعريف <small>(اختياري)</small></label>
+            <textarea id="definition" v-model="form.definition" maxlength="600" rows="3"></textarea>
+            <small>اتركه فارغاً إذا كانت الكلمة تشرح نفسها، مثل «ماء» أو «باب».</small>
           </p>
           <p>
             <label for="kind">النوع</label>
@@ -90,6 +90,28 @@ const { busy, error, run } = useForm(async () => {
         </fieldset>
         <p><button type="submit">أضف الكلمة</button></p>
       </form>
-    </template>
+    </ContributeGate>
+
+    <!-- Someone who came to add a word can usually do something smaller and
+         more useful instead, and rarely knows it. Every line here is a door
+         that already exists somewhere on the site. -->
+    <section class="more">
+      <h2>وللقاموس أبواب أخرى</h2>
+      <p>الإضافة ليست الطريق الوحيد؛ من صفحة أي كلمة أو لهجة يمكنك:</p>
+      <ul>
+        <li>أن تضيف شكل الكلمة في لهجتك إلى كلمة موجودة، أو مثالاً على استعمالها.</li>
+        <li>أن تقترح وصفاً أدق للهجة من <NuxtLink to="/dialects">صفحتها</NuxtLink>، فيُراجَع ويُنشر باسمك.</li>
+        <li>أن تُبلغ عن خطأ: لهجة غير صحيحة، أو ربط خاطئ بالفصحى، أو محتوى مسيء.</li>
+        <li>أن تعدّل أو تحذف ما أضفته أنت، متى شئت.</li>
+      </ul>
+    </section>
   </article>
 </template>
+
+<style scoped>
+/* The other doors are an afterword, not a second invitation: ruled off, and
+   quieter than the form above them. */
+.more { border-block-start: var(--rule); padding-block-start: var(--space-s); }
+.more > h2 { font-size: var(--step-1); }
+.more :is(p, li) { color: var(--muted); }
+</style>
