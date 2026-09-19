@@ -32,6 +32,20 @@ export function assertOwner(row: { createdBy: number | null }, user: User) {
   }
 }
 
+/**
+ * Does a line say nothing but the word it hangs under? «أخ» defined as «الأخ»,
+ * or the Egyptian form «عربية» glossed «السيارة» on the page of سيارة: text that
+ * repeats its own heading is furniture, not a definition. Both fields are
+ * optional, so the honest thing is to leave them empty. The definite article,
+ * the usual spelling drift and a trailing stop do not count as a difference.
+ */
+export function echoesWord(text: string | null | undefined, ...words: (string | null | undefined)[]) {
+  if (!text) return false
+  const bare = (s: string) => normalizeArabic(s).replace(/[.،؛:!؟\s]+$/g, '').replace(/^(ال|لل)/, '').replace(/\s+/g, ' ').trim()
+  const t = bare(text)
+  return !!t && words.some(w => w && bare(w) === t)
+}
+
 /** Writes the next revision for a row. `data` is the content after the change. */
 export async function recordRevision(tx: Tx, targetType: Target, targetId: number, data: Record<string, unknown>, authorId: number, reason?: string | null) {
   const [row] = await tx.select({ n: sql<number>`coalesce(max(${schema.revisions.revisionNo}), 0)` })

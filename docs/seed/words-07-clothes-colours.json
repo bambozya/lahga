@@ -2,74 +2,60 @@
  "words": [
   {
    "headword": "قميص",
-   "definition": "القميص",
    "kind": "word",
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "levantine",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "gulf",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "najdi",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "iraqi",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "yemeni",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "moroccan",
-     "form": "قميجة",
-     "meaning": "قميص"
+     "form": "قميجة"
     },
     {
      "dialect": "algerian",
-     "form": "قميجة",
-     "meaning": "قميص"
+     "form": "قميجة"
     },
     {
      "dialect": "algerian",
-     "form": "شوميز",
-     "meaning": "قميص"
+     "form": "شوميز"
     },
     {
      "dialect": "tunisian",
      "form": "سورية",
-     "meaning": "قميص",
      "notes": "القميص"
     },
     {
      "dialect": "libyan",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "sudanese",
-     "form": "قميص",
-     "meaning": "قميص"
+     "form": "قميص"
     },
     {
      "dialect": "hassaniya",
-     "form": "قميجة",
-     "meaning": "قميص"
+     "form": "قميجة"
     }
    ]
   },
@@ -80,73 +66,59 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "levantine",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "gulf",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "najdi",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "iraqi",
-     "form": "پنطرون",
-     "meaning": "بنطال"
+     "form": "پنطرون"
     },
     {
      "dialect": "iraqi",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "yemeni",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "moroccan",
-     "form": "سروال",
-     "meaning": "بنطال"
+     "form": "سروال"
     },
     {
      "dialect": "algerian",
-     "form": "سروال",
-     "meaning": "بنطال"
+     "form": "سروال"
     },
     {
      "dialect": "tunisian",
-     "form": "سروال",
-     "meaning": "بنطال"
+     "form": "سروال"
     },
     {
      "dialect": "libyan",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "libyan",
-     "form": "سروال",
-     "meaning": "بنطال"
+     "form": "سروال"
     },
     {
      "dialect": "sudanese",
-     "form": "بنطلون",
-     "meaning": "بنطال"
+     "form": "بنطلون"
     },
     {
      "dialect": "hassaniya",
-     "form": "سروال",
-     "meaning": "بنطال"
+     "form": "سروال"
     }
    ]
   },
@@ -157,98 +129,79 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "جلابية",
-     "meaning": "ثوب"
+     "form": "جلابية"
     },
     {
      "dialect": "levantine",
-     "form": "دشداشة",
-     "meaning": "ثوب"
+     "form": "دشداشة"
     },
     {
      "dialect": "levantine",
-     "form": "جلابية",
-     "meaning": "ثوب"
+     "form": "جلابية"
     },
     {
      "dialect": "gulf",
-     "form": "كندورة",
-     "meaning": "ثوب"
+     "form": "كندورة"
     },
     {
      "dialect": "gulf",
-     "form": "دشداشة",
-     "meaning": "ثوب"
+     "form": "دشداشة"
     },
     {
      "dialect": "najdi",
-     "form": "ثوب",
-     "meaning": "ثوب"
+     "form": "ثوب"
     },
     {
      "dialect": "hejazi",
-     "form": "ثوب",
-     "meaning": "ثوب"
+     "form": "ثوب"
     },
     {
      "dialect": "iraqi",
-     "form": "دشداشة",
-     "meaning": "ثوب"
+     "form": "دشداشة"
     },
     {
      "dialect": "yemeni",
-     "form": "ثوب",
-     "meaning": "ثوب"
+     "form": "ثوب"
     },
     {
      "dialect": "yemeni",
-     "form": "زنّة",
-     "meaning": "ثوب"
+     "form": "زنّة"
     },
     {
      "dialect": "moroccan",
-     "form": "جلابة",
-     "meaning": "ثوب"
+     "form": "جلابة"
     },
     {
      "dialect": "moroccan",
-     "form": "قندورة",
-     "meaning": "ثوب"
+     "form": "قندورة"
     },
     {
      "dialect": "algerian",
-     "form": "قندورة",
-     "meaning": "ثوب"
+     "form": "قندورة"
     },
     {
      "dialect": "algerian",
-     "form": "جلابة",
-     "meaning": "ثوب"
+     "form": "جلابة"
     },
     {
      "dialect": "tunisian",
-     "form": "جبّة",
-     "meaning": "ثوب"
+     "form": "جبّة"
     },
     {
      "dialect": "libyan",
-     "form": "جلابية",
-     "meaning": "ثوب"
+     "form": "جلابية"
     },
     {
      "dialect": "libyan",
-     "form": "جرد",
-     "meaning": "ثوب"
+     "form": "جرد"
     },
     {
      "dialect": "sudanese",
-     "form": "جلابية",
-     "meaning": "ثوب"
+     "form": "جلابية"
     },
     {
      "dialect": "hassaniya",
-     "form": "دراعة",
-     "meaning": "ثوب"
+     "form": "دراعة"
     }
    ]
   },
@@ -259,88 +212,71 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "levantine",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "gulf",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "najdi",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "iraqi",
-     "form": "نفنوف",
-     "meaning": "فستان"
+     "form": "نفنوف"
     },
     {
      "dialect": "iraqi",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "yemeni",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "moroccan",
-     "form": "كسوة",
-     "meaning": "فستان"
+     "form": "كسوة"
     },
     {
      "dialect": "moroccan",
-     "form": "روبة",
-     "meaning": "فستان"
+     "form": "روبة"
     },
     {
      "dialect": "algerian",
-     "form": "روبة",
-     "meaning": "فستان"
+     "form": "روبة"
     },
     {
      "dialect": "algerian",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "tunisian",
-     "form": "روبة",
-     "meaning": "فستان"
+     "form": "روبة"
     },
     {
      "dialect": "tunisian",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "libyan",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "libyan",
-     "form": "روبة",
-     "meaning": "فستان"
+     "form": "روبة"
     },
     {
      "dialect": "sudanese",
-     "form": "فستان",
-     "meaning": "فستان"
+     "form": "فستان"
     },
     {
      "dialect": "hassaniya",
-     "form": "روبة",
-     "meaning": "فستان"
+     "form": "روبة"
     }
    ]
   },
@@ -351,98 +287,79 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "جاكت",
-     "meaning": "معطف"
+     "form": "جاكت"
     },
     {
      "dialect": "egyptian",
-     "form": "بالطو",
-     "meaning": "معطف"
+     "form": "بالطو"
     },
     {
      "dialect": "levantine",
-     "form": "جاكيت",
-     "meaning": "معطف"
+     "form": "جاكيت"
     },
     {
      "dialect": "levantine",
-     "form": "كبّوت",
-     "meaning": "معطف"
+     "form": "كبّوت"
     },
     {
      "dialect": "gulf",
-     "form": "جاكيت",
-     "meaning": "معطف"
+     "form": "جاكيت"
     },
     {
      "dialect": "najdi",
-     "form": "جاكيت",
-     "meaning": "معطف"
+     "form": "جاكيت"
     },
     {
      "dialect": "iraqi",
-     "form": "جاكيت",
-     "meaning": "معطف"
+     "form": "جاكيت"
     },
     {
      "dialect": "iraqi",
-     "form": "قاپوت",
-     "meaning": "معطف"
+     "form": "قاپوت"
     },
     {
      "dialect": "yemeni",
-     "form": "جاكيت",
-     "meaning": "معطف"
+     "form": "جاكيت"
     },
     {
      "dialect": "moroccan",
-     "form": "كبّوط",
-     "meaning": "معطف"
+     "form": "كبّوط"
     },
     {
      "dialect": "moroccan",
-     "form": "جاكيطة",
-     "meaning": "معطف"
+     "form": "جاكيطة"
     },
     {
      "dialect": "algerian",
-     "form": "كبّوط",
-     "meaning": "معطف"
+     "form": "كبّوط"
     },
     {
      "dialect": "algerian",
-     "form": "فيستة",
-     "meaning": "معطف"
+     "form": "فيستة"
     },
     {
      "dialect": "tunisian",
-     "form": "كبّوط",
-     "meaning": "معطف"
+     "form": "كبّوط"
     },
     {
      "dialect": "tunisian",
-     "form": "فيستة",
-     "meaning": "معطف"
+     "form": "فيستة"
     },
     {
      "dialect": "libyan",
-     "form": "جاكيت",
-     "meaning": "معطف"
+     "form": "جاكيت"
     },
     {
      "dialect": "libyan",
-     "form": "كبّوط",
-     "meaning": "معطف"
+     "form": "كبّوط"
     },
     {
      "dialect": "sudanese",
-     "form": "جاكت",
-     "meaning": "معطف"
+     "form": "جاكت"
     },
     {
      "dialect": "hassaniya",
-     "form": "كبّوط",
-     "meaning": "معطف"
+     "form": "كبّوط"
     }
    ]
   },
@@ -453,103 +370,83 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "شراب",
-     "meaning": "جورب"
+     "form": "شراب"
     },
     {
      "dialect": "levantine",
-     "form": "كلسة",
-     "meaning": "جورب"
+     "form": "كلسة"
     },
     {
      "dialect": "levantine",
-     "form": "جرابات",
-     "meaning": "جورب"
+     "form": "جرابات"
     },
     {
      "dialect": "gulf",
-     "form": "جوارب",
-     "meaning": "جورب"
+     "form": "جوارب"
     },
     {
      "dialect": "gulf",
-     "form": "شرّاب",
-     "meaning": "جورب"
+     "form": "شرّاب"
     },
     {
      "dialect": "najdi",
-     "form": "جوارب",
-     "meaning": "جورب"
+     "form": "جوارب"
     },
     {
      "dialect": "iraqi",
-     "form": "جوارب",
-     "meaning": "جورب"
+     "form": "جوارب"
     },
     {
      "dialect": "iraqi",
-     "form": "كلسات",
-     "meaning": "جورب"
+     "form": "كلسات"
     },
     {
      "dialect": "yemeni",
-     "form": "شراب",
-     "meaning": "جورب"
+     "form": "شراب"
     },
     {
      "dialect": "yemeni",
-     "form": "جوارب",
-     "meaning": "جورب"
+     "form": "جوارب"
     },
     {
      "dialect": "moroccan",
-     "form": "تقاشر",
-     "meaning": "جورب"
+     "form": "تقاشر"
     },
     {
      "dialect": "algerian",
-     "form": "تقاشر",
-     "meaning": "جورب"
+     "form": "تقاشر"
     },
     {
      "dialect": "algerian",
-     "form": "شوسات",
-     "meaning": "جورب"
+     "form": "شوسات"
     },
     {
      "dialect": "tunisian",
-     "form": "كلاصط",
-     "meaning": "جورب"
+     "form": "كلاصط"
     },
     {
      "dialect": "tunisian",
-     "form": "تقاشر",
-     "meaning": "جورب"
+     "form": "تقاشر"
     },
     {
      "dialect": "libyan",
-     "form": "شرّاب",
-     "meaning": "جورب"
+     "form": "شرّاب"
     },
     {
      "dialect": "libyan",
-     "form": "جوارب",
-     "meaning": "جورب"
+     "form": "جوارب"
     },
     {
      "dialect": "sudanese",
-     "form": "شراب",
-     "meaning": "جورب"
+     "form": "شراب"
     },
     {
      "dialect": "sudanese",
-     "form": "جوارب",
-     "meaning": "جورب"
+     "form": "جوارب"
     },
     {
      "dialect": "hassaniya",
-     "form": "تقاشر",
-     "meaning": "جورب"
+     "form": "تقاشر"
     }
    ]
   },
@@ -561,7 +458,6 @@
     {
      "dialect": "egyptian",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لابسة حجاب من سنة",
@@ -572,7 +468,6 @@
     {
      "dialect": "egyptian",
      "form": "طرحة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "اشترت طرحة سودا",
@@ -583,7 +478,6 @@
     {
      "dialect": "levantine",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب لونه بيجي مع الفستان",
@@ -594,7 +488,6 @@
     {
      "dialect": "levantine",
      "form": "منديل",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "حطت المنديل عراسها",
@@ -605,7 +498,6 @@
     {
      "dialect": "gulf",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب جزء من لبسها",
@@ -616,7 +508,6 @@
     {
      "dialect": "gulf",
      "form": "شيلة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لبست الشيلة وطلعت",
@@ -627,7 +518,6 @@
     {
      "dialect": "najdi",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب لونه أسود",
@@ -638,7 +528,6 @@
     {
      "dialect": "najdi",
      "form": "شيلة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "عدلت الشيلة على راسها",
@@ -649,7 +538,6 @@
     {
      "dialect": "najdi",
      "form": "طرحة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الطرحة طويلة شوي",
@@ -660,7 +548,6 @@
     {
      "dialect": "hejazi",
      "form": "طرحة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لبست الطرحة قبل ما تطلع",
@@ -671,7 +558,6 @@
     {
      "dialect": "hejazi",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب يناسب اللبس",
@@ -682,7 +568,6 @@
     {
      "dialect": "iraqi",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب عليها حلو",
@@ -693,7 +578,6 @@
     {
      "dialect": "iraqi",
      "form": "فوطة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "ربطت الفوطة على راسها",
@@ -704,7 +588,6 @@
     {
      "dialect": "yemeni",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب من عاداتنا",
@@ -715,7 +598,6 @@
     {
      "dialect": "yemeni",
      "form": "لثمة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لبست اللثمة",
@@ -726,7 +608,6 @@
     {
      "dialect": "moroccan",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لابسة الحجاب",
@@ -737,7 +618,6 @@
     {
      "dialect": "moroccan",
      "form": "زيف",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "شدات الزيف على راسها",
@@ -748,7 +628,6 @@
     {
      "dialect": "algerian",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب ديالها زوين",
@@ -759,7 +638,6 @@
     {
      "dialect": "algerian",
      "form": "خمار",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لابسة الخمار",
@@ -770,7 +648,6 @@
     {
      "dialect": "tunisian",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب متاعها جديد",
@@ -781,7 +658,6 @@
     {
      "dialect": "tunisian",
      "form": "خمار",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لابسة خمار طويل",
@@ -792,7 +668,6 @@
     {
      "dialect": "libyan",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب لونه أزرق",
@@ -803,7 +678,6 @@
     {
      "dialect": "libyan",
      "form": "طرحة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لبست الطرحة",
@@ -814,7 +688,6 @@
     {
      "dialect": "sudanese",
      "form": "طرحة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لفت الطرحة كويس",
@@ -825,7 +698,6 @@
     {
      "dialect": "sudanese",
      "form": "حجاب",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "الحجاب دا جميل",
@@ -836,7 +708,6 @@
     {
      "dialect": "hassaniya",
      "form": "ملحفة",
-     "meaning": "حجاب",
      "examples": [
       {
        "text": "لابسة الملحفة",
@@ -853,53 +724,43 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "إسود",
-     "meaning": "أسود"
+     "form": "إسود"
     },
     {
      "dialect": "levantine",
-     "form": "أسود",
-     "meaning": "أسود"
+     "form": "أسود"
     },
     {
      "dialect": "gulf",
-     "form": "أسود",
-     "meaning": "أسود"
+     "form": "أسود"
     },
     {
      "dialect": "moroccan",
-     "form": "كحل",
-     "meaning": "أسود"
+     "form": "كحل"
     },
     {
      "dialect": "algerian",
-     "form": "كحل",
-     "meaning": "أسود"
+     "form": "كحل"
     },
     {
      "dialect": "tunisian",
-     "form": "أكحل",
-     "meaning": "أسود"
+     "form": "أكحل"
     },
     {
      "dialect": "libyan",
-     "form": "أكحل",
-     "meaning": "أسود"
+     "form": "أكحل"
     },
     {
      "dialect": "libyan",
-     "form": "أسود",
-     "meaning": "أسود"
+     "form": "أسود"
     },
     {
      "dialect": "sudanese",
-     "form": "أسود",
-     "meaning": "أسود"
+     "form": "أسود"
     },
     {
      "dialect": "hassaniya",
-     "form": "كحل",
-     "meaning": "أسود"
+     "form": "كحل"
     }
    ]
   },
@@ -910,83 +771,67 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "levantine",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "gulf",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "najdi",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "iraqi",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "iraqi",
-     "form": "قهوائي",
-     "meaning": "بنّي"
+     "form": "قهوائي"
     },
     {
      "dialect": "yemeni",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "moroccan",
-     "form": "قهوي",
-     "meaning": "بنّي"
+     "form": "قهوي"
     },
     {
      "dialect": "algerian",
-     "form": "قهوي",
-     "meaning": "بنّي"
+     "form": "قهوي"
     },
     {
      "dialect": "algerian",
-     "form": "مارون",
-     "meaning": "بنّي"
+     "form": "مارون"
     },
     {
      "dialect": "tunisian",
-     "form": "قهوي",
-     "meaning": "بنّي"
+     "form": "قهوي"
     },
     {
      "dialect": "tunisian",
-     "form": "مارون",
-     "meaning": "بنّي"
+     "form": "مارون"
     },
     {
      "dialect": "libyan",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "libyan",
-     "form": "قهوي",
-     "meaning": "بنّي"
+     "form": "قهوي"
     },
     {
      "dialect": "sudanese",
-     "form": "بنّي",
-     "meaning": "بنّي"
+     "form": "بنّي"
     },
     {
      "dialect": "hassaniya",
-     "form": "قهوي",
-     "meaning": "بنّي"
+     "form": "قهوي"
     }
    ]
   },
@@ -997,88 +842,71 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "levantine",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "gulf",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "gulf",
-     "form": "رصاصي",
-     "meaning": "رمادي"
+     "form": "رصاصي"
     },
     {
      "dialect": "najdi",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "iraqi",
-     "form": "رصاصي",
-     "meaning": "رمادي"
+     "form": "رصاصي"
     },
     {
      "dialect": "iraqi",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "yemeni",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "moroccan",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "moroccan",
-     "form": "كري",
-     "meaning": "رمادي"
+     "form": "كري"
     },
     {
      "dialect": "algerian",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "algerian",
-     "form": "كري",
-     "meaning": "رمادي"
+     "form": "كري"
     },
     {
      "dialect": "tunisian",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "tunisian",
-     "form": "كري",
-     "meaning": "رمادي"
+     "form": "كري"
     },
     {
      "dialect": "libyan",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "sudanese",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     },
     {
      "dialect": "hassaniya",
-     "form": "رمادي",
-     "meaning": "رمادي"
+     "form": "رمادي"
     }
    ]
   },
@@ -1089,98 +917,79 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "levantine",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "gulf",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "gulf",
-     "form": "عتيج",
-     "meaning": "قديم"
+     "form": "عتيج"
     },
     {
      "dialect": "najdi",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "najdi",
-     "form": "عتيق",
-     "meaning": "قديم"
+     "form": "عتيق"
     },
     {
      "dialect": "iraqi",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "iraqi",
-     "form": "عتيگ",
-     "meaning": "قديم"
+     "form": "عتيگ"
     },
     {
      "dialect": "yemeni",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "moroccan",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "moroccan",
-     "form": "بالي",
-     "meaning": "قديم"
+     "form": "بالي"
     },
     {
      "dialect": "algerian",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "algerian",
-     "form": "بالي",
-     "meaning": "قديم"
+     "form": "بالي"
     },
     {
      "dialect": "tunisian",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "tunisian",
-     "form": "بالي",
-     "meaning": "قديم"
+     "form": "بالي"
     },
     {
      "dialect": "libyan",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "libyan",
-     "form": "بالي",
-     "meaning": "قديم"
+     "form": "بالي"
     },
     {
      "dialect": "sudanese",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     },
     {
      "dialect": "hassaniya",
-     "form": "قديم",
-     "meaning": "قديم"
+     "form": "قديم"
     }
    ]
   },
@@ -1191,68 +1000,55 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "نضيف",
-     "meaning": "نظيف"
+     "form": "نضيف"
     },
     {
      "dialect": "levantine",
-     "form": "نضيف",
-     "meaning": "نظيف"
+     "form": "نضيف"
     },
     {
      "dialect": "gulf",
-     "form": "نظيف",
-     "meaning": "نظيف"
+     "form": "نظيف"
     },
     {
      "dialect": "najdi",
-     "form": "نظيف",
-     "meaning": "نظيف"
+     "form": "نظيف"
     },
     {
      "dialect": "iraqi",
-     "form": "نظيف",
-     "meaning": "نظيف"
+     "form": "نظيف"
     },
     {
      "dialect": "yemeni",
-     "form": "نظيف",
-     "meaning": "نظيف"
+     "form": "نظيف"
     },
     {
      "dialect": "moroccan",
-     "form": "نقي",
-     "meaning": "نظيف"
+     "form": "نقي"
     },
     {
      "dialect": "algerian",
-     "form": "نقي",
-     "meaning": "نظيف"
+     "form": "نقي"
     },
     {
      "dialect": "tunisian",
-     "form": "نظيف",
-     "meaning": "نظيف"
+     "form": "نظيف"
     },
     {
      "dialect": "tunisian",
-     "form": "نقي",
-     "meaning": "نظيف"
+     "form": "نقي"
     },
     {
      "dialect": "libyan",
-     "form": "نظيف",
-     "meaning": "نظيف"
+     "form": "نظيف"
     },
     {
      "dialect": "sudanese",
-     "form": "نضيف",
-     "meaning": "نظيف"
+     "form": "نضيف"
     },
     {
      "dialect": "hassaniya",
-     "form": "نقي",
-     "meaning": "نظيف"
+     "form": "نقي"
     }
    ]
   },
@@ -1263,88 +1059,71 @@
    "entries": [
     {
      "dialect": "egyptian",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "egyptian",
-     "form": "مطيّن",
-     "meaning": "وسخ"
+     "form": "مطيّن"
     },
     {
      "dialect": "levantine",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "gulf",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "najdi",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "iraqi",
-     "form": "وصخ",
-     "meaning": "وسخ"
+     "form": "وصخ"
     },
     {
      "dialect": "iraqi",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "yemeni",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "moroccan",
-     "form": "موسّخ",
-     "meaning": "وسخ"
+     "form": "موسّخ"
     },
     {
      "dialect": "algerian",
-     "form": "موسّخ",
-     "meaning": "وسخ"
+     "form": "موسّخ"
     },
     {
      "dialect": "algerian",
-     "form": "مخمّج",
-     "meaning": "وسخ"
+     "form": "مخمّج"
     },
     {
      "dialect": "tunisian",
-     "form": "موسّخ",
-     "meaning": "وسخ"
+     "form": "موسّخ"
     },
     {
      "dialect": "tunisian",
-     "form": "مخمّج",
-     "meaning": "وسخ"
+     "form": "مخمّج"
     },
     {
      "dialect": "libyan",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "libyan",
-     "form": "موسّخ",
-     "meaning": "وسخ"
+     "form": "موسّخ"
     },
     {
      "dialect": "sudanese",
-     "form": "وسخ",
-     "meaning": "وسخ"
+     "form": "وسخ"
     },
     {
      "dialect": "hassaniya",
-     "form": "موسّخ",
-     "meaning": "وسخ"
+     "form": "موسّخ"
     }
    ]
   }

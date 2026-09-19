@@ -8,7 +8,9 @@ import { fields, normalizeArabic } from '../../utils/contribute'
  * Bulk import of seed content (admin only). The body is a list of words, each
  * with its dialect entries and examples; see docs/seed/FORMAT.md. Each word is
  * validated on its own, so one bad item does not stop the rest. A headword
- * that already exists gets the new entries merged in; an entry that already
+ * that already exists gets the new entries merged in; a definition or meaning
+ * that only repeats the word it hangs under is dropped on the way in (see
+ * echoesWord); an entry that already
  * exists in the same dialect is merged, never skipped: the entry that is there keeps what it has
  * and gains what the file brings (examples, a meaning or notes it was missing).
  * A form that already exists in the same dialect under another headword is
@@ -46,7 +48,8 @@ export default defineEventHandler(async (event) => {
       if (word) {
         report.wordsMerged++
       } else {
-        const [created] = await tx.insert(schema.words).values({ headword: w.headword, headwordNormalized, definition: w.definition || null, kind: w.kind, createdBy: authorId }).returning()
+        const definition = echoesWord(w.definition, w.headword) ? null : (w.definition || null)
+        const [created] = await tx.insert(schema.words).values({ headword: w.headword, headwordNormalized, definition, kind: w.kind, createdBy: authorId }).returning()
         await recordRevision(tx, 'word', created!.id, { headword: created!.headword, definition: created!.definition, kind: created!.kind }, authorId, 'استيراد')
         word = { ...created!, links: [] }
         report.wordsCreated++
@@ -64,9 +67,9 @@ export default defineEventHandler(async (event) => {
       }
 
       /** Fills the blanks on an entry that is already there. What it has, it keeps. */
-      const fillGaps = async (entry: { id: number, meaning: string | null, notes: string | null, dialectId: number }, e: { meaning?: string, notes?: string }) => {
+      const fillGaps = async (entry: { id: number, meaning: string | null, notes: string | null, dialectId: number, form: string }, e: { meaning?: string, notes?: string }) => {
         const patch: { meaning?: string, notes?: string } = {}
-        if (!entry.meaning && e.meaning) patch.meaning = e.meaning
+        if (!entry.meaning && e.meaning && !echoesWord(e.meaning, entry.form, w.headword)) patch.meaning = e.meaning
         if (!entry.notes && e.notes) patch.notes = e.notes
         if (!Object.keys(patch).length) return
         await tx.update(schema.entries).set({ ...patch, updatedAt: new Date() }).where(eq(schema.entries.id, entry.id))
@@ -109,7 +112,8 @@ export default defineEventHandler(async (event) => {
           word.links.push({ ...(link ?? { id: 0 }), status: 'active', entry: { ...shared, examples: shared.examples } } as typeof word.links[number])
           continue
         }
-        const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning: e.meaning || null, notes: e.notes || null, createdBy: authorId }).returning()
+        const meaning = echoesWord(e.meaning, e.form, w.headword) ? null : (e.meaning || null)
+        const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning, notes: e.notes || null, createdBy: authorId }).returning()
         await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
         const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId }).returning()
         await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, authorId, 'استيراد')

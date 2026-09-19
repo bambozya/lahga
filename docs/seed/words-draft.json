@@ -8,7 +8,6 @@
     {
      "dialect": "cairene",
      "form": "عربية",
-     "meaning": "السيارة",
      "notes": "الأكثر شيوعاً في مصر",
      "examples": [
       {
@@ -20,7 +19,6 @@
     {
      "dialect": "levantine",
      "form": "سيارة",
-     "meaning": "السيارة",
      "examples": [
       {
        "text": "جبت سيارة جديدة",
@@ -31,7 +29,6 @@
     {
      "dialect": "emirati",
      "form": "موتر",
-     "meaning": "السيارة",
      "notes": "من الإنجليزية «موتور»",
      "examples": [
       {
@@ -42,13 +39,11 @@
     },
     {
      "dialect": "iraqi",
-     "form": "سيارة",
-     "meaning": "السيارة"
+     "form": "سيارة"
     },
     {
      "dialect": "moroccan",
      "form": "طوموبيل",
-     "meaning": "السيارة",
      "notes": "من الفرنسية «أوتوموبيل»",
      "examples": [
       {
@@ -60,7 +55,6 @@
     {
      "dialect": "tunisian",
      "form": "كرهبة",
-     "meaning": "السيارة",
      "examples": [
       {
        "text": "الكرهبة مرتبة قدام الدار",
@@ -71,13 +65,11 @@
     {
      "dialect": "algerian",
      "form": "طونوبيل",
-     "meaning": "السيارة",
      "notes": "من الفرنسية «أوتوموبيل»"
     },
     {
      "dialect": "sudanese",
-     "form": "عربية",
-     "meaning": "السيارة"
+     "form": "عربية"
     }
    ]
   },
@@ -89,7 +81,6 @@
     {
      "dialect": "cairene",
      "form": "دلوقتي",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "أنا جاي دلوقتي",
@@ -100,7 +91,6 @@
     {
      "dialect": "syrian",
      "form": "هلّق",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "هلّق بجي",
@@ -110,13 +100,11 @@
     },
     {
      "dialect": "lebanese",
-     "form": "هلّق",
-     "meaning": "الآن"
+     "form": "هلّق"
     },
     {
      "dialect": "palestinian",
      "form": "هسّا",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "هسا بطلع",
@@ -126,13 +114,11 @@
     },
     {
      "dialect": "jordanian",
-     "form": "هسّا",
-     "meaning": "الآن"
+     "form": "هسّا"
     },
     {
      "dialect": "gulf",
      "form": "الحين",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "الحين أروح",
@@ -143,7 +129,6 @@
     {
      "dialect": "iraqi",
      "form": "هسّة",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "هسة أجي",
@@ -154,7 +139,6 @@
     {
      "dialect": "moroccan",
      "form": "دابا",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "دابا نمشي",
@@ -165,7 +149,6 @@
     {
      "dialect": "tunisian",
      "form": "توّا",
-     "meaning": "الآن",
      "examples": [
       {
        "text": "توا نجي",
@@ -176,18 +159,15 @@
     {
      "dialect": "algerian",
      "form": "ضرك",
-     "meaning": "الآن",
      "notes": "وتُنطق «دروك» في بعض المناطق"
     },
     {
      "dialect": "libyan",
-     "form": "توا",
-     "meaning": "الآن"
+     "form": "توا"
     },
     {
      "dialect": "sudanese",
-     "form": "هسّع",
-     "meaning": "الآن"
+     "form": "هسّع"
     }
    ]
   },
@@ -199,7 +179,6 @@
     {
      "dialect": "cairene",
      "form": "إيه",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "إيه ده؟",
@@ -210,7 +189,6 @@
     {
      "dialect": "levantine",
      "form": "شو",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "شو بدك؟",
@@ -221,7 +199,6 @@
     {
      "dialect": "kuwaiti",
      "form": "شنو",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "شنو تبي؟",
@@ -232,7 +209,6 @@
     {
      "dialect": "najdi",
      "form": "وش",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "وش تبغى؟",
@@ -243,7 +219,6 @@
     {
      "dialect": "hejazi",
      "form": "إيش",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "إيش تبغى؟",
@@ -254,7 +229,6 @@
     {
      "dialect": "iraqi",
      "form": "شنو",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "شنو تريد؟",
@@ -265,7 +239,6 @@
     {
      "dialect": "moroccan",
      "form": "آش",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "آش بغيتي؟",
@@ -275,13 +248,11 @@
     },
     {
      "dialect": "moroccan",
-     "form": "شنو",
-     "meaning": "ماذا"
+     "form": "شنو"
     },
     {
      "dialect": "tunisian",
      "form": "شنوّة",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "شنوة تحب؟",
@@ -292,7 +263,6 @@
     {
      "dialect": "algerian",
      "form": "واش",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "واش راك تدير؟",
@@ -303,7 +273,6 @@
     {
      "dialect": "libyan",
      "form": "شن",
-     "meaning": "ماذا",
      "examples": [
       {
        "text": "شن تبي؟",
@@ -313,8 +282,7 @@
     },
     {
      "dialect": "sudanese",
-     "form": "شنو",
-     "meaning": "ماذا"
+     "form": "شنو"
     }
    ]
   },
@@ -326,7 +294,6 @@
     {
      "dialect": "cairene",
      "form": "كويّس",
-     "meaning": "جيد",
      "examples": [
       {
        "text": "الأكل كويس",
@@ -337,7 +304,6 @@
     {
      "dialect": "levantine",
      "form": "منيح",
-     "meaning": "جيد",
      "examples": [
       {
        "text": "الجو منيح اليوم",
@@ -348,7 +314,6 @@
     {
      "dialect": "gulf",
      "form": "زين",
-     "meaning": "جيد",
      "examples": [
       {
        "text": "الوضع زين",
@@ -358,18 +323,15 @@
     },
     {
      "dialect": "najdi",
-     "form": "زين",
-     "meaning": "جيد"
+     "form": "زين"
     },
     {
      "dialect": "iraqi",
-     "form": "زين",
-     "meaning": "جيد"
+     "form": "زين"
     },
     {
      "dialect": "moroccan",
      "form": "مزيان",
-     "meaning": "جيد",
      "examples": [
       {
        "text": "هاد الشي مزيان",
@@ -380,7 +342,6 @@
     {
      "dialect": "tunisian",
      "form": "باهي",
-     "meaning": "جيد",
      "examples": [
       {
        "text": "الأكل باهي",
@@ -391,7 +352,6 @@
     {
      "dialect": "algerian",
      "form": "مليح",
-     "meaning": "جيد",
      "examples": [
       {
        "text": "راك مليح؟",
@@ -401,8 +361,7 @@
     },
     {
      "dialect": "libyan",
-     "form": "باهي",
-     "meaning": "جيد"
+     "form": "باهي"
     },
     {
      "dialect": "sudanese",
@@ -431,7 +390,6 @@
     {
      "dialect": "levantine",
      "form": "كتير",
-     "meaning": "كثيراً",
      "examples": [
       {
        "text": "بحبك كتير",
@@ -469,7 +427,6 @@
     {
      "dialect": "iraqi",
      "form": "هوايه",
-     "meaning": "كثيراً",
      "examples": [
       {
        "text": "أكلت هوايه",
@@ -491,7 +448,6 @@
     {
      "dialect": "moroccan",
      "form": "بزّاف",
-     "meaning": "كثيراً",
      "examples": [
       {
        "text": "كاين بزاف ديال الناس",
@@ -502,7 +458,6 @@
     {
      "dialect": "tunisian",
      "form": "برشا",
-     "meaning": "كثيراً",
      "examples": [
       {
        "text": "عندي برشا خدمة",
@@ -512,13 +467,11 @@
     },
     {
      "dialect": "algerian",
-     "form": "بزّاف",
-     "meaning": "كثيراً"
+     "form": "بزّاف"
     },
     {
      "dialect": "libyan",
      "form": "هلبة",
-     "meaning": "كثيراً",
      "examples": [
       {
        "text": "الناس هلبة",
@@ -547,7 +500,6 @@
     {
      "dialect": "cairene",
      "form": "عيّل",
-     "meaning": "طفل",
      "notes": "والجمع عيال",
      "examples": [
       {
@@ -564,18 +516,15 @@
     {
      "dialect": "kuwaiti",
      "form": "ياهل",
-     "meaning": "طفل",
      "notes": "والجمع يهّال"
     },
     {
      "dialect": "emirati",
-     "form": "ياهل",
-     "meaning": "طفل"
+     "form": "ياهل"
     },
     {
      "dialect": "iraqi",
      "form": "جاهل",
-     "meaning": "طفل",
      "notes": "والجمع جهّال",
      "examples": [
       {
@@ -592,8 +541,7 @@
     },
     {
      "dialect": "tunisian",
-     "form": "صغيّر",
-     "meaning": "طفل"
+     "form": "صغيّر"
     }
    ]
   },
@@ -605,7 +553,6 @@
     {
      "dialect": "cairene",
      "form": "عيش",
-     "meaning": "الخبز",
      "notes": "لأنه أساس العيش",
      "examples": [
       {
@@ -616,13 +563,11 @@
     },
     {
      "dialect": "levantine",
-     "form": "خبز",
-     "meaning": "الخبز"
+     "form": "خبز"
     },
     {
      "dialect": "gulf",
-     "form": "خبز",
-     "meaning": "الخبز"
+     "form": "خبز"
     },
     {
      "dialect": "iraqi",
@@ -637,8 +582,7 @@
     },
     {
      "dialect": "maghrebi",
-     "form": "خبز",
-     "meaning": "الخبز"
+     "form": "خبز"
     }
    ]
   },
@@ -649,13 +593,11 @@
    "entries": [
     {
      "dialect": "cairene",
-     "form": "أيوة",
-     "meaning": "نعم"
+     "form": "أيوة"
     },
     {
      "dialect": "levantine",
      "form": "إي",
-     "meaning": "نعم",
      "examples": [
       {
        "text": "إي، أكيد",
@@ -665,58 +607,47 @@
     },
     {
      "dialect": "levantine",
-     "form": "أيوا",
-     "meaning": "نعم"
+     "form": "أيوا"
     },
     {
      "dialect": "gulf",
-     "form": "إي",
-     "meaning": "نعم"
+     "form": "إي"
     },
     {
      "dialect": "kuwaiti",
-     "form": "هيه",
-     "meaning": "نعم"
+     "form": "هيه"
     },
     {
      "dialect": "iraqi",
-     "form": "إي",
-     "meaning": "نعم"
+     "form": "إي"
     },
     {
      "dialect": "iraqi",
-     "form": "بلي",
-     "meaning": "نعم"
+     "form": "بلي"
     },
     {
      "dialect": "moroccan",
-     "form": "إيه",
-     "meaning": "نعم"
+     "form": "إيه"
     },
     {
      "dialect": "moroccan",
-     "form": "واه",
-     "meaning": "نعم"
+     "form": "واه"
     },
     {
      "dialect": "tunisian",
-     "form": "إي",
-     "meaning": "نعم"
+     "form": "إي"
     },
     {
      "dialect": "algerian",
-     "form": "إيه",
-     "meaning": "نعم"
+     "form": "إيه"
     },
     {
      "dialect": "sudanese",
-     "form": "أيوة",
-     "meaning": "نعم"
+     "form": "أيوة"
     },
     {
      "dialect": "yemeni",
-     "form": "إيوه",
-     "meaning": "نعم"
+     "form": "إيوه"
     }
    ]
   },
@@ -728,7 +659,6 @@
     {
      "dialect": "cairene",
      "form": "ليه",
-     "meaning": "لماذا",
      "examples": [
       {
        "text": "ليه ما جيتش؟",
@@ -739,7 +669,6 @@
     {
      "dialect": "levantine",
      "form": "ليش",
-     "meaning": "لماذا",
      "examples": [
       {
        "text": "ليش ما إجيت؟",
@@ -749,18 +678,15 @@
     },
     {
      "dialect": "gulf",
-     "form": "ليش",
-     "meaning": "لماذا"
+     "form": "ليش"
     },
     {
      "dialect": "iraqi",
-     "form": "ليش",
-     "meaning": "لماذا"
+     "form": "ليش"
     },
     {
      "dialect": "moroccan",
      "form": "علاش",
-     "meaning": "لماذا",
      "examples": [
       {
        "text": "علاش ما جيتيش؟",
@@ -770,23 +696,19 @@
     },
     {
      "dialect": "tunisian",
-     "form": "علاش",
-     "meaning": "لماذا"
+     "form": "علاش"
     },
     {
      "dialect": "algerian",
-     "form": "علاش",
-     "meaning": "لماذا"
+     "form": "علاش"
     },
     {
      "dialect": "libyan",
-     "form": "علاش",
-     "meaning": "لماذا"
+     "form": "علاش"
     },
     {
      "dialect": "sudanese",
-     "form": "ليه",
-     "meaning": "لماذا"
+     "form": "ليه"
     }
    ]
   },
@@ -798,7 +720,6 @@
     {
      "dialect": "cairene",
      "form": "إزّاي",
-     "meaning": "كيف",
      "examples": [
       {
        "text": "إزاي عملت كده؟",
@@ -809,7 +730,6 @@
     {
      "dialect": "levantine",
      "form": "كيف",
-     "meaning": "كيف",
      "examples": [
       {
        "text": "كيفك؟",
@@ -820,7 +740,6 @@
     {
      "dialect": "gulf",
      "form": "شلون",
-     "meaning": "كيف",
      "examples": [
       {
        "text": "شلونك؟",
@@ -831,7 +750,6 @@
     {
      "dialect": "iraqi",
      "form": "شلون",
-     "meaning": "كيف",
      "examples": [
       {
        "text": "شلونك؟",
@@ -842,7 +760,6 @@
     {
      "dialect": "moroccan",
      "form": "كيفاش",
-     "meaning": "كيف",
      "examples": [
       {
        "text": "كيفاش داير؟",
@@ -852,18 +769,15 @@
     },
     {
      "dialect": "tunisian",
-     "form": "كيفاش",
-     "meaning": "كيف"
+     "form": "كيفاش"
     },
     {
      "dialect": "algerian",
-     "form": "كيفاش",
-     "meaning": "كيف"
+     "form": "كيفاش"
     },
     {
      "dialect": "sudanese",
-     "form": "كيف",
-     "meaning": "كيف"
+     "form": "كيف"
     }
    ]
   },
@@ -875,7 +789,6 @@
     {
      "dialect": "cairene",
      "form": "مين",
-     "meaning": "من",
      "examples": [
       {
        "text": "مين ده؟",
@@ -885,13 +798,11 @@
     },
     {
      "dialect": "levantine",
-     "form": "مين",
-     "meaning": "من"
+     "form": "مين"
     },
     {
      "dialect": "gulf",
      "form": "منو",
-     "meaning": "من",
      "examples": [
       {
        "text": "منو هذا؟",
@@ -901,13 +812,11 @@
     },
     {
      "dialect": "iraqi",
-     "form": "منو",
-     "meaning": "من"
+     "form": "منو"
     },
     {
      "dialect": "moroccan",
      "form": "شكون",
-     "meaning": "من",
      "examples": [
       {
        "text": "شكون هادا؟",
@@ -917,18 +826,15 @@
     },
     {
      "dialect": "tunisian",
-     "form": "شكون",
-     "meaning": "من"
+     "form": "شكون"
     },
     {
      "dialect": "algerian",
-     "form": "شكون",
-     "meaning": "من"
+     "form": "شكون"
     },
     {
      "dialect": "sudanese",
-     "form": "منو",
-     "meaning": "من"
+     "form": "منو"
     }
    ]
   },
@@ -940,7 +846,6 @@
     {
      "dialect": "cairene",
      "form": "إمتى",
-     "meaning": "متى",
      "examples": [
       {
        "text": "إمتى هتيجي؟",
@@ -950,18 +855,15 @@
     },
     {
      "dialect": "levantine",
-     "form": "إيمتى",
-     "meaning": "متى"
+     "form": "إيمتى"
     },
     {
      "dialect": "gulf",
-     "form": "متى",
-     "meaning": "متى"
+     "form": "متى"
     },
     {
      "dialect": "iraqi",
      "form": "شوكت",
-     "meaning": "متى",
      "examples": [
       {
        "text": "شوكت تجي؟",
@@ -972,7 +874,6 @@
     {
      "dialect": "moroccan",
      "form": "فوقاش",
-     "meaning": "متى",
      "examples": [
       {
        "text": "فوقاش غادي تجي؟",
@@ -982,18 +883,15 @@
     },
     {
      "dialect": "tunisian",
-     "form": "وقتاش",
-     "meaning": "متى"
+     "form": "وقتاش"
     },
     {
      "dialect": "algerian",
-     "form": "وقتاش",
-     "meaning": "متى"
+     "form": "وقتاش"
     },
     {
      "dialect": "sudanese",
-     "form": "متين",
-     "meaning": "متى"
+     "form": "متين"
     }
    ]
   },
@@ -1005,7 +903,6 @@
     {
      "dialect": "cairene",
      "form": "عايز",
-     "meaning": "يريد",
      "notes": "وتُقال أيضاً «عاوز»",
      "examples": [
       {
@@ -1017,7 +914,6 @@
     {
      "dialect": "levantine",
      "form": "بدّو",
-     "meaning": "يريد",
      "notes": "بدّي، بدّك، بدّو…",
      "examples": [
       {
@@ -1029,7 +925,6 @@
     {
      "dialect": "gulf",
      "form": "يبي",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "أبي أروح",
@@ -1040,7 +935,6 @@
     {
      "dialect": "najdi",
      "form": "يبغى",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "وش تبغى؟",
@@ -1050,13 +944,11 @@
     },
     {
      "dialect": "hejazi",
-     "form": "يبغى",
-     "meaning": "يريد"
+     "form": "يبغى"
     },
     {
      "dialect": "iraqi",
      "form": "يريد",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "أريد أروح",
@@ -1067,7 +959,6 @@
     {
      "dialect": "moroccan",
      "form": "بغا",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "بغيت نمشي",
@@ -1078,7 +969,6 @@
     {
      "dialect": "tunisian",
      "form": "يحب",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "نحب نمشي",
@@ -1088,18 +978,15 @@
     },
     {
      "dialect": "algerian",
-     "form": "يحب",
-     "meaning": "يريد"
+     "form": "يحب"
     },
     {
      "dialect": "libyan",
-     "form": "يبي",
-     "meaning": "يريد"
+     "form": "يبي"
     },
     {
      "dialect": "sudanese",
      "form": "داير",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "أنا داير أمشي",
@@ -1110,7 +997,6 @@
     {
      "dialect": "yemeni",
      "form": "يشتي",
-     "meaning": "يريد",
      "examples": [
       {
        "text": "أشتي أروح",
@@ -1127,13 +1013,11 @@
    "entries": [
     {
      "dialect": "cairene",
-     "form": "يتكلم",
-     "meaning": "يتكلم"
+     "form": "يتكلم"
     },
     {
      "dialect": "levantine",
      "form": "يحكي",
-     "meaning": "يتكلم",
      "examples": [
       {
        "text": "عم يحكي بالتلفون",
@@ -1155,7 +1039,6 @@
     {
      "dialect": "iraqi",
      "form": "يحچي",
-     "meaning": "يتكلم",
      "examples": [
       {
        "text": "شنو دتحچي؟",
@@ -1166,7 +1049,6 @@
     {
      "dialect": "moroccan",
      "form": "يهضر",
-     "meaning": "يتكلم",
      "examples": [
       {
        "text": "كيهضر بزاف",
@@ -1176,13 +1058,11 @@
     },
     {
      "dialect": "algerian",
-     "form": "يهدر",
-     "meaning": "يتكلم"
+     "form": "يهدر"
     },
     {
      "dialect": "tunisian",
-     "form": "يحكي",
-     "meaning": "يتكلم"
+     "form": "يحكي"
     }
    ]
   },
@@ -1194,7 +1074,6 @@
     {
      "dialect": "cairene",
      "form": "يبصّ",
-     "meaning": "ينظر",
      "examples": [
       {
        "text": "بص هنا",
@@ -1205,7 +1084,6 @@
     {
      "dialect": "levantine",
      "form": "يطّلع",
-     "meaning": "ينظر",
      "examples": [
       {
        "text": "طلّع لهون",
@@ -1216,7 +1094,6 @@
     {
      "dialect": "gulf",
      "form": "يطالع",
-     "meaning": "ينظر",
      "examples": [
       {
        "text": "طالع هناك",
@@ -1227,7 +1104,6 @@
     {
      "dialect": "iraqi",
      "form": "يباوع",
-     "meaning": "ينظر",
      "examples": [
       {
        "text": "باوع هنا",
@@ -1243,7 +1119,6 @@
     {
      "dialect": "sudanese",
      "form": "يعاين",
-     "meaning": "ينظر",
      "examples": [
       {
        "text": "عاين هنا",
@@ -1271,28 +1146,23 @@
     },
     {
      "dialect": "cairene",
-     "form": "طيب",
-     "meaning": "حسناً"
+     "form": "طيب"
     },
     {
      "dialect": "levantine",
-     "form": "ماشي",
-     "meaning": "حسناً"
+     "form": "ماشي"
     },
     {
      "dialect": "levantine",
-     "form": "تمام",
-     "meaning": "حسناً"
+     "form": "تمام"
     },
     {
      "dialect": "gulf",
-     "form": "زين",
-     "meaning": "حسناً"
+     "form": "زين"
     },
     {
      "dialect": "iraqi",
-     "form": "زين",
-     "meaning": "حسناً"
+     "form": "زين"
     },
     {
      "dialect": "moroccan",
@@ -1307,18 +1177,15 @@
     },
     {
      "dialect": "tunisian",
-     "form": "باهي",
-     "meaning": "حسناً"
+     "form": "باهي"
     },
     {
      "dialect": "algerian",
-     "form": "واخّا",
-     "meaning": "حسناً"
+     "form": "واخّا"
     },
     {
      "dialect": "libyan",
-     "form": "باهي",
-     "meaning": "حسناً"
+     "form": "باهي"
     }
    ]
   },
@@ -1330,13 +1197,11 @@
     {
      "dialect": "cairene",
      "form": "متشكّر",
-     "meaning": "شكراً",
      "notes": "والأنثى متشكرة"
     },
     {
      "dialect": "levantine",
      "form": "يسلمو",
-     "meaning": "شكراً",
      "notes": "من «يسلمو إيديك»",
      "examples": [
       {
@@ -1347,8 +1212,7 @@
     },
     {
      "dialect": "gulf",
-     "form": "مشكور",
-     "meaning": "شكراً"
+     "form": "مشكور"
     },
     {
      "dialect": "iraqi",
@@ -1358,7 +1222,6 @@
     {
      "dialect": "algerian",
      "form": "صحّيت",
-     "meaning": "شكراً",
      "examples": [
       {
        "text": "صحيت خويا",
@@ -1369,7 +1232,6 @@
     {
      "dialect": "tunisian",
      "form": "يعيّشك",
-     "meaning": "شكراً",
      "examples": [
       {
        "text": "يعيشك برشا",
@@ -1379,13 +1241,11 @@
     },
     {
      "dialect": "moroccan",
-     "form": "بارك الله فيك",
-     "meaning": "شكراً"
+     "form": "بارك الله فيك"
     },
     {
      "dialect": "sudanese",
-     "form": "كتّر خيرك",
-     "meaning": "شكراً"
+     "form": "كتّر خيرك"
     }
    ]
   },
@@ -1397,7 +1257,6 @@
     {
      "dialect": "cairene",
      "form": "جزمة",
-     "meaning": "حذاء",
      "examples": [
       {
        "text": "الجزمة دي غالية",
@@ -1407,18 +1266,15 @@
     },
     {
      "dialect": "levantine",
-     "form": "صبّاط",
-     "meaning": "حذاء"
+     "form": "صبّاط"
     },
     {
      "dialect": "levantine",
-     "form": "كندرة",
-     "meaning": "حذاء"
+     "form": "كندرة"
     },
     {
      "dialect": "gulf",
      "form": "جوتي",
-     "meaning": "حذاء",
      "examples": [
       {
        "text": "اشتريت جوتي جديد",
@@ -1428,23 +1284,19 @@
     },
     {
      "dialect": "iraqi",
-     "form": "قندرة",
-     "meaning": "حذاء"
+     "form": "قندرة"
     },
     {
      "dialect": "maghrebi",
-     "form": "صبّاط",
-     "meaning": "حذاء"
+     "form": "صبّاط"
     },
     {
      "dialect": "sudanese",
-     "form": "جزمة",
-     "meaning": "حذاء"
+     "form": "جزمة"
     },
     {
      "dialect": "hejazi",
-     "form": "جزمة",
-     "meaning": "حذاء"
+     "form": "جزمة"
     }
    ]
   },
@@ -1456,7 +1308,6 @@
     {
      "dialect": "cairene",
      "form": "هدوم",
-     "meaning": "ملابس",
      "examples": [
       {
        "text": "غسلت الهدوم",
@@ -1466,23 +1317,19 @@
     },
     {
      "dialect": "levantine",
-     "form": "أواعي",
-     "meaning": "ملابس"
+     "form": "أواعي"
     },
     {
      "dialect": "levantine",
-     "form": "تياب",
-     "meaning": "ملابس"
+     "form": "تياب"
     },
     {
      "dialect": "iraqi",
-     "form": "هدوم",
-     "meaning": "ملابس"
+     "form": "هدوم"
     },
     {
      "dialect": "moroccan",
      "form": "حوايج",
-     "meaning": "ملابس",
      "examples": [
       {
        "text": "شريت حوايج جداد",
@@ -1492,18 +1339,15 @@
     },
     {
      "dialect": "tunisian",
-     "form": "دبش",
-     "meaning": "ملابس"
+     "form": "دبش"
     },
     {
      "dialect": "algerian",
-     "form": "قشّ",
-     "meaning": "ملابس"
+     "form": "قشّ"
     },
     {
      "dialect": "sudanese",
-     "form": "هدوم",
-     "meaning": "ملابس"
+     "form": "هدوم"
     }
    ]
   },
@@ -1515,7 +1359,6 @@
     {
      "dialect": "cairene",
      "form": "فلوس",
-     "meaning": "نقود",
      "examples": [
       {
        "text": "معيش فلوس",
@@ -1526,7 +1369,6 @@
     {
      "dialect": "levantine",
      "form": "مصاري",
-     "meaning": "نقود",
      "examples": [
       {
        "text": "ما معي مصاري",
@@ -1536,33 +1378,27 @@
     },
     {
      "dialect": "gulf",
-     "form": "فلوس",
-     "meaning": "نقود"
+     "form": "فلوس"
     },
     {
      "dialect": "kuwaiti",
-     "form": "بيزات",
-     "meaning": "نقود"
+     "form": "بيزات"
     },
     {
      "dialect": "iraqi",
-     "form": "فلوس",
-     "meaning": "نقود"
+     "form": "فلوس"
     },
     {
      "dialect": "moroccan",
-     "form": "فلوس",
-     "meaning": "نقود"
+     "form": "فلوس"
     },
     {
      "dialect": "tunisian",
-     "form": "فلوس",
-     "meaning": "نقود"
+     "form": "فلوس"
     },
     {
      "dialect": "algerian",
      "form": "دراهم",
-     "meaning": "نقود",
      "examples": [
       {
        "text": "ما عنديش دراهم",
@@ -1572,8 +1408,7 @@
     },
     {
      "dialect": "sudanese",
-     "form": "قروش",
-     "meaning": "نقود"
+     "form": "قروش"
     }
    ]
   },
@@ -1584,23 +1419,19 @@
    "entries": [
     {
      "dialect": "cairene",
-     "form": "حلو",
-     "meaning": "جميل"
+     "form": "حلو"
     },
     {
      "dialect": "levantine",
-     "form": "حلو",
-     "meaning": "جميل"
+     "form": "حلو"
     },
     {
      "dialect": "gulf",
-     "form": "حلو",
-     "meaning": "جميل"
+     "form": "حلو"
     },
     {
      "dialect": "moroccan",
      "form": "زوين",
-     "meaning": "جميل",
      "notes": "والأنثى زوينة",
      "examples": [
       {
@@ -1612,7 +1443,6 @@
     {
      "dialect": "algerian",
      "form": "شباب",
-     "meaning": "جميل",
      "notes": "بمعنى الجمال لا الشباب",
      "examples": [
       {
@@ -1624,7 +1454,6 @@
     {
      "dialect": "sudanese",
      "form": "سمح",
-     "meaning": "جميل",
      "examples": [
       {
        "text": "بيت سمح",
@@ -1634,8 +1463,7 @@
     },
     {
      "dialect": "iraqi",
-     "form": "حلو",
-     "meaning": "جميل"
+     "form": "حلو"
     }
    ]
   },
@@ -1703,8 +1531,7 @@
     },
     {
      "dialect": "levantine",
-     "form": "إمّي",
-     "meaning": "أمي"
+     "form": "إمّي"
     },
     {
      "dialect": "gulf",
@@ -1728,8 +1555,7 @@
     },
     {
      "dialect": "sudanese",
-     "form": "أمي",
-     "meaning": "أمي"
+     "form": "أمي"
     }
    ]
   },
@@ -1741,7 +1567,6 @@
     {
      "dialect": "cairene",
      "form": "صاحب",
-     "meaning": "صديق",
      "examples": [
       {
        "text": "ده صاحبي",
@@ -1751,13 +1576,11 @@
     },
     {
      "dialect": "levantine",
-     "form": "رفيق",
-     "meaning": "صديق"
+     "form": "رفيق"
     },
     {
      "dialect": "levantine",
-     "form": "صاحب",
-     "meaning": "صديق"
+     "form": "صاحب"
     },
     {
      "dialect": "gulf",
@@ -1773,18 +1596,15 @@
     },
     {
      "dialect": "iraqi",
-     "form": "صديق",
-     "meaning": "صديق"
+     "form": "صديق"
     },
     {
      "dialect": "maghrebi",
-     "form": "صاحب",
-     "meaning": "صديق"
+     "form": "صاحب"
     },
     {
      "dialect": "sudanese",
-     "form": "صاحب",
-     "meaning": "صديق"
+     "form": "صاحب"
     }
    ]
   },
@@ -1796,7 +1616,6 @@
     {
      "dialect": "cairene",
      "form": "بكرة",
-     "meaning": "غداً",
      "examples": [
       {
        "text": "أشوفك بكرة",
@@ -1806,39 +1625,32 @@
     },
     {
      "dialect": "levantine",
-     "form": "بكرا",
-     "meaning": "غداً"
+     "form": "بكرا"
     },
     {
      "dialect": "gulf",
      "form": "باچر",
-     "meaning": "غداً",
      "notes": "وتُنطق «باكر» في نجد والحجاز"
     },
     {
      "dialect": "najdi",
-     "form": "باكر",
-     "meaning": "غداً"
+     "form": "باكر"
     },
     {
      "dialect": "hejazi",
-     "form": "بكرة",
-     "meaning": "غداً"
+     "form": "بكرة"
     },
     {
      "dialect": "iraqi",
-     "form": "باچر",
-     "meaning": "غداً"
+     "form": "باچر"
     },
     {
      "dialect": "moroccan",
-     "form": "غدّا",
-     "meaning": "غداً"
+     "form": "غدّا"
     },
     {
      "dialect": "tunisian",
      "form": "غدوة",
-     "meaning": "غداً",
      "examples": [
       {
        "text": "نتقابلوا غدوة",
@@ -1848,18 +1660,15 @@
     },
     {
      "dialect": "algerian",
-     "form": "غدوة",
-     "meaning": "غداً"
+     "form": "غدوة"
     },
     {
      "dialect": "libyan",
-     "form": "غدوة",
-     "meaning": "غداً"
+     "form": "غدوة"
     },
     {
      "dialect": "sudanese",
-     "form": "بكرة",
-     "meaning": "غداً"
+     "form": "بكرة"
     }
    ]
   },
@@ -1871,7 +1680,6 @@
     {
      "dialect": "cairene",
      "form": "النهارده",
-     "meaning": "اليوم",
      "examples": [
       {
        "text": "النهارده الجو حلو",
@@ -1881,23 +1689,19 @@
     },
     {
      "dialect": "levantine",
-     "form": "اليوم",
-     "meaning": "اليوم"
+     "form": "اليوم"
     },
     {
      "dialect": "gulf",
-     "form": "اليوم",
-     "meaning": "اليوم"
+     "form": "اليوم"
     },
     {
      "dialect": "iraqi",
-     "form": "اليوم",
-     "meaning": "اليوم"
+     "form": "اليوم"
     },
     {
      "dialect": "maghrebi",
-     "form": "اليوم",
-     "meaning": "اليوم"
+     "form": "اليوم"
     },
     {
      "dialect": "sudanese",
@@ -1921,7 +1725,6 @@
     {
      "dialect": "cairene",
      "form": "حاجة",
-     "meaning": "شيء",
      "examples": [
       {
        "text": "عايز حاجة؟",
@@ -1931,13 +1734,11 @@
     },
     {
      "dialect": "levantine",
-     "form": "شي",
-     "meaning": "شيء"
+     "form": "شي"
     },
     {
      "dialect": "palestinian",
      "form": "إشي",
-     "meaning": "شيء",
      "examples": [
       {
        "text": "بدك إشي؟",
@@ -1947,33 +1748,27 @@
     },
     {
      "dialect": "gulf",
-     "form": "شي",
-     "meaning": "شيء"
+     "form": "شي"
     },
     {
      "dialect": "iraqi",
-     "form": "شي",
-     "meaning": "شيء"
+     "form": "شي"
     },
     {
      "dialect": "moroccan",
-     "form": "حاجة",
-     "meaning": "شيء"
+     "form": "حاجة"
     },
     {
      "dialect": "tunisian",
-     "form": "حاجة",
-     "meaning": "شيء"
+     "form": "حاجة"
     },
     {
      "dialect": "algerian",
-     "form": "حاجة",
-     "meaning": "شيء"
+     "form": "حاجة"
     },
     {
      "dialect": "sudanese",
-     "form": "حاجة",
-     "meaning": "شيء"
+     "form": "حاجة"
     }
    ]
   },
@@ -1985,7 +1780,6 @@
     {
      "dialect": "cairene",
      "form": "جامد",
-     "meaning": "رائع",
      "notes": "عامية شبابية",
      "examples": [
       {
@@ -1996,13 +1790,11 @@
     },
     {
      "dialect": "levantine",
-     "form": "رهيب",
-     "meaning": "رائع"
+     "form": "رهيب"
     },
     {
      "dialect": "gulf",
-     "form": "رهيب",
-     "meaning": "رائع"
+     "form": "رهيب"
     },
     {
      "dialect": "iraqi",
@@ -2019,7 +1811,6 @@
     {
      "dialect": "moroccan",
      "form": "واعر",
-     "meaning": "رائع",
      "notes": "عامية شبابية"
     },
     {
@@ -2038,7 +1829,6 @@
     {
      "dialect": "cairene",
      "form": "تعالى",
-     "meaning": "تعال",
      "examples": [
       {
        "text": "تعالى هنا",
@@ -2049,7 +1839,6 @@
     {
      "dialect": "levantine",
      "form": "تعا",
-     "meaning": "تعال",
      "examples": [
       {
        "text": "تعا لهون",
@@ -2059,18 +1848,15 @@
     },
     {
      "dialect": "gulf",
-     "form": "تعال",
-     "meaning": "تعال"
+     "form": "تعال"
     },
     {
      "dialect": "iraqi",
-     "form": "تعال",
-     "meaning": "تعال"
+     "form": "تعال"
     },
     {
      "dialect": "moroccan",
      "form": "أجي",
-     "meaning": "تعال",
      "examples": [
       {
        "text": "أجي لهنا",
@@ -2080,13 +1866,11 @@
     },
     {
      "dialect": "tunisian",
-     "form": "أرواح",
-     "meaning": "تعال"
+     "form": "أرواح"
     },
     {
      "dialect": "algerian",
      "form": "أرواح",
-     "meaning": "تعال",
      "examples": [
       {
        "text": "أرواح لهنا",
@@ -2096,8 +1880,7 @@
     },
     {
      "dialect": "sudanese",
-     "form": "تعال",
-     "meaning": "تعال"
+     "form": "تعال"
     }
    ]
   },
@@ -2109,7 +1892,6 @@
     {
      "dialect": "cairene",
      "form": "إدّيني",
-     "meaning": "أعطني",
      "examples": [
       {
        "text": "إديني كوباية مية",
@@ -2124,18 +1906,15 @@
     },
     {
      "dialect": "levantine",
-     "form": "عطيني",
-     "meaning": "أعطني"
+     "form": "عطيني"
     },
     {
      "dialect": "gulf",
-     "form": "عطني",
-     "meaning": "أعطني"
+     "form": "عطني"
     },
     {
      "dialect": "iraqi",
      "form": "انطيني",
-     "meaning": "أعطني",
      "examples": [
       {
        "text": "انطيني ماي",
@@ -2145,18 +1924,15 @@
     },
     {
      "dialect": "moroccan",
-     "form": "عطيني",
-     "meaning": "أعطني"
+     "form": "عطيني"
     },
     {
      "dialect": "tunisian",
-     "form": "عطيني",
-     "meaning": "أعطني"
+     "form": "عطيني"
     },
     {
      "dialect": "sudanese",
-     "form": "أدّيني",
-     "meaning": "أعطني"
+     "form": "أدّيني"
     }
    ]
   },
@@ -2167,13 +1943,11 @@
    "entries": [
     {
      "dialect": "cairene",
-     "form": "حلو",
-     "meaning": "لذيذ"
+     "form": "حلو"
     },
     {
      "dialect": "levantine",
      "form": "طيّب",
-     "meaning": "لذيذ",
      "examples": [
       {
        "text": "الأكل طيب كتير",
@@ -2183,23 +1957,19 @@
     },
     {
      "dialect": "levantine",
-     "form": "زاكي",
-     "meaning": "لذيذ"
+     "form": "زاكي"
     },
     {
      "dialect": "gulf",
-     "form": "لذيذ",
-     "meaning": "لذيذ"
+     "form": "لذيذ"
     },
     {
      "dialect": "iraqi",
-     "form": "طيّب",
-     "meaning": "لذيذ"
+     "form": "طيّب"
     },
     {
      "dialect": "moroccan",
      "form": "بنين",
-     "meaning": "لذيذ",
      "examples": [
       {
        "text": "الطاجين بنين",
@@ -2209,13 +1979,11 @@
     },
     {
      "dialect": "tunisian",
-     "form": "بنين",
-     "meaning": "لذيذ"
+     "form": "بنين"
     },
     {
      "dialect": "algerian",
-     "form": "بنين",
-     "meaning": "لذيذ"
+     "form": "بنين"
     }
    ]
   },
@@ -2226,13 +1994,11 @@
    "entries": [
     {
      "dialect": "cairene",
-     "form": "بسرعة",
-     "meaning": "بسرعة"
+     "form": "بسرعة"
     },
     {
      "dialect": "levantine",
      "form": "قوام",
-     "meaning": "بسرعة",
      "examples": [
       {
        "text": "تعا قوام",
@@ -2243,7 +2009,6 @@
     {
      "dialect": "gulf",
      "form": "عجل",
-     "meaning": "بسرعة",
      "examples": [
       {
        "text": "تعال عجل",
@@ -2254,7 +2019,6 @@
     {
      "dialect": "moroccan",
      "form": "دغيا",
-     "meaning": "بسرعة",
      "examples": [
       {
        "text": "أجي دغيا",
@@ -2265,7 +2029,6 @@
     {
      "dialect": "tunisian",
      "form": "فيسع",
-     "meaning": "بسرعة",
      "examples": [
       {
        "text": "أرواح فيسع",
@@ -2275,8 +2038,7 @@
     },
     {
      "dialect": "algerian",
-     "form": "بالزربة",
-     "meaning": "بسرعة"
+     "form": "بالزربة"
     }
    ]
   },
@@ -2298,18 +2060,15 @@
     },
     {
      "dialect": "levantine",
-     "form": "ولا يهمّك",
-     "meaning": "لا بأس"
+     "form": "ولا يهمّك"
     },
     {
      "dialect": "levantine",
-     "form": "مافي مشكلة",
-     "meaning": "لا بأس"
+     "form": "مافي مشكلة"
     },
     {
      "dialect": "gulf",
      "form": "ما عليه",
-     "meaning": "لا بأس",
      "examples": [
       {
        "text": "ما عليه، خلاص",
@@ -2319,23 +2078,19 @@
     },
     {
      "dialect": "iraqi",
-     "form": "ما يخالف",
-     "meaning": "لا بأس"
+     "form": "ما يخالف"
     },
     {
      "dialect": "moroccan",
-     "form": "ما كاين مشكل",
-     "meaning": "لا بأس"
+     "form": "ما كاين مشكل"
     },
     {
      "dialect": "tunisian",
-     "form": "ما فماش مشكل",
-     "meaning": "لا بأس"
+     "form": "ما فماش مشكل"
     },
     {
      "dialect": "algerian",
-     "form": "ما كانش مشكل",
-     "meaning": "لا بأس"
+     "form": "ما كانش مشكل"
     }
    ]
   }
