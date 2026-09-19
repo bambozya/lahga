@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
       case 'entry': {
         const dialect = d.dialect ? await tx.query.dialects.findFirst({ where: and(eq(schema.dialects.slug, d.dialect)) }) : null
         const [e] = await tx.update(schema.entries).set({
-          ...(dialect && { dialectId: dialect.id }), form: d.form, formNormalized: normalizeArabic(d.form), meaning: d.meaning, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
+          ...(dialect && { dialectId: dialect.id }), form: d.form, formNormalized: normalizeArabic(d.form), meaning: d.meaning ?? null, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
         }).where(eq(schema.entries.id, rev.targetId)).returning()
         if (!e) throw createError({ statusCode: 404, statusMessage: 'المدخل غير موجود' })
         await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, meaning: e.meaning, notes: e.notes }, admin.id, reason)

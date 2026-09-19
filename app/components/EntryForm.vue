@@ -5,7 +5,7 @@
  */
 const props = defineProps<{
   wordId: number
-  entry?: { id: number, form: string, meaning: string, notes?: string | null, dialect: { slug: string } }
+  entry?: { id: number, form: string, meaning?: string | null, notes?: string | null, dialect: { slug: string } }
 }>()
 const emit = defineEmits<{ done: [], cancel: [] }>()
 const uid = useId()
@@ -45,8 +45,9 @@ const { busy, error, run } = useForm(async () => {
         <input :id="`${uid}-form`" v-model="form.form" required maxlength="80" />
       </p>
       <p>
-        <label :for="`${uid}-meaning`">المعنى</label>
-        <textarea :id="`${uid}-meaning`" v-model="form.meaning" required maxlength="400" rows="2"></textarea>
+        <label :for="`${uid}-meaning`">المعنى <small>(اختياري)</small></label>
+        <textarea :id="`${uid}-meaning`" v-model="form.meaning" maxlength="400" rows="2"></textarea>
+        <small>تعريف الكلمة بالفصحى يغني عنه غالباً؛ اكتبه إن كان لها في لهجتك معنى أخص أو استعمال مختلف.</small>
       </p>
       <p>
         <label :for="`${uid}-notes`">ملاحظات <small>(اختيارية)</small></label>

@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
 
   const id = await db.transaction(async (tx) => {
     const [entry] = await tx.insert(schema.entries).values({
-      dialectId: dialect.id, form: body.form, formNormalized, meaning: body.meaning, notes: body.notes || null, createdBy: user.id,
+      dialectId: dialect.id, form: body.form, formNormalized, meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
     await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, user.id)
     const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: user.id }).returning()

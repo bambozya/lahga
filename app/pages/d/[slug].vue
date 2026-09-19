@@ -81,7 +81,7 @@ const proposal = useForm(async () => {
               <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
             </template>
           </p>
-          <p>{{ e.meaning }}</p>
+          <p v-if="e.meaning">{{ e.meaning }}</p>
         </dd>
       </div>
     </dl>

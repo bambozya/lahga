@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
     const [updated] = await tx.update(schema.entries).set({
       ...(dialect && { dialectId: dialect.id }),
       ...(body.form !== undefined && { form: body.form, formNormalized: normalizeArabic(body.form) }),
-      ...(body.meaning !== undefined && { meaning: body.meaning }),
+      ...(body.meaning !== undefined && { meaning: body.meaning || null }),
       ...(body.notes !== undefined && { notes: body.notes || null }),
       updatedAt: new Date(),
     }).where(eq(schema.entries.id, id)).returning()
