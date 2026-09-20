@@ -22,10 +22,11 @@ const resolve = async (id: number, resolution: 'dismissed' | 'hidden' | 'deleted
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>{{ showResolved ? 'البلاغات المحسومة' : 'البلاغات المفتوحة' }}</h2>
-    <p><small><NuxtLink v-if="showResolved" to="/admin">عرض المفتوحة</NuxtLink><NuxtLink v-else to="/admin?status=resolved">عرض المحسومة</NuxtLink></small></p>
+    <p><small><NuxtLink v-if="showResolved" to="/settings/admin">عرض المفتوحة</NuxtLink><NuxtLink v-else to="/settings/admin?status=resolved">عرض المحسومة</NuxtLink></small></p>
     <p role="alert" v-if="error">{{ error }}</p>
     <p v-if="!flags?.length">لا شيء هنا.</p>
     <dl v-else>

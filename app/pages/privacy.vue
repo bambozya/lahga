@@ -4,6 +4,7 @@ useSeo({ title: 'سياسة الخصوصية', description: 'ما تجمعه ل�
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'سياسة الخصوصية' }]" />
   <h1>سياسة الخصوصية</h1>
   <section>
   <h2>مقدمة</h2>

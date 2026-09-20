@@ -20,6 +20,7 @@ const reset = useForm(async () => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'إعادة تعيين كلمة المرور' }]" />
     <h1>إعادة تعيين كلمة المرور</h1>
 
     <template v-if="token">

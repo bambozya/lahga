@@ -4,6 +4,7 @@ useSeo({ title: 'شروط الاستخدام', description: 'شروط استخد
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'شروط الاستخدام' }]" />
   <h1>شروط الاستخدام</h1>
   <section>
   <h2>مقدمة</h2>

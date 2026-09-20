@@ -23,6 +23,7 @@ const { busy, error, run: resend } = useForm(async () => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'تأكيد البريد' }]" />
     <h1>تأكيد البريد الإلكتروني</h1>
     <p v-if="state === 'checking'">جارٍ التحقق…</p>
     <template v-else-if="state === 'ok'">

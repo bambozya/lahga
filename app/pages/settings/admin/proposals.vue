@@ -18,10 +18,11 @@ const decide = async (id: number, decision: 'approved' | 'rejected') => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'الاقتراحات' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>الاقتراحات: {{ { pending: 'قيد المراجعة', approved: 'المقبولة', rejected: 'المرفوضة' }[status] }}</h2>
-    <p><small><NuxtLink to="/admin/proposals">قيد المراجعة</NuxtLink> · <NuxtLink to="/admin/proposals?status=approved">المقبولة</NuxtLink> · <NuxtLink to="/admin/proposals?status=rejected">المرفوضة</NuxtLink></small></p>
+    <p><small><NuxtLink to="/settings/admin/proposals">قيد المراجعة</NuxtLink> · <NuxtLink to="/settings/admin/proposals?status=approved">المقبولة</NuxtLink> · <NuxtLink to="/settings/admin/proposals?status=rejected">المرفوضة</NuxtLink></small></p>
     <p role="alert" v-if="error">{{ error }}</p>
     <p v-if="!proposals?.length">لا شيء هنا.</p>
     <dl v-else>

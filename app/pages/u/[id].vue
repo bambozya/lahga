@@ -14,6 +14,7 @@ const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as cons
 
 <template>
   <article v-if="profile">
+    <BreadCrumbs :trail="[{ label: profile.displayName }]" />
     <hgroup>
       <h1>{{ profile.displayName }}</h1>
       <p v-if="roleLabel[profile.role]">{{ roleLabel[profile.role] }}</p>

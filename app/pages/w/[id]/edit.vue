@@ -17,6 +17,7 @@ const { busy, error: failure, run } = useForm(async () => {
 
 <template>
   <article>
+    <BreadCrumbs v-if="word" :trail="[{ label: word.headword, to: `/w/${word.id}` }, { label: 'تعديل' }]" />
     <h1>تعديل الكلمة</h1>
     <p role="alert" v-if="failure">{{ failure }}</p>
     <form @submit.prevent="run">

@@ -25,7 +25,9 @@ const { loggedIn, user } = useUserSession()
           <li><NuxtLink to="/">الكلمات</NuxtLink></li>
           <li><NuxtLink to="/dialects">اللهجات</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
-          <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
+          <!-- Moderation lives inside the account now (/settings/admin), so it
+               is reached from there rather than sitting in the main navigation
+               where it is only ever useful to one person. -->
           <!-- Icon: Material Symbols (Apache 2.0): person. -->
           <li v-if="loggedIn"><NuxtLink to="/settings"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" /></svg>{{ user?.displayName }}</NuxtLink></li>
           <!-- Icon: Material Symbols (Apache 2.0): login. -->

@@ -18,6 +18,7 @@ const { busy, error, run } = useForm(async () => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'إنشاء حساب' }]" />
     <h1>إنشاء حساب</h1>
     <template v-if="done">
       <p role="status">تم إنشاء حسابك. أرسلنا رابط تأكيد إلى بريدك الإلكتروني؛ افتحه لتتمكن من إضافة الكلمات.</p>

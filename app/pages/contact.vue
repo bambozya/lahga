@@ -10,6 +10,7 @@ const { busy, error, run } = useForm(async () => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'اتصل بنا' }]" />
     <h1>اتصل بنا</h1>
     <p>نرحب بأسئلتكم واقتراحاتكم وملاحظاتكم. يمكنكم التواصل معنا من خلال النموذج أو عبر البريد.</p>
     <address>البريد الإلكتروني: <a href="mailto:info@lahga.fyi">info@lahga.fyi</a></address>

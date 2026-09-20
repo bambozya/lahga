@@ -31,14 +31,10 @@ useSeo({
       url: `https://lahga.fyi/w/${word.value.id}`,
       inLanguage: 'ar',
       ...(forms.value.length ? { alternateName: forms.value.map(f => f.form) } : {}),
-    }, {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'كل الكلمات', item: 'https://lahga.fyi/' },
-        { '@type': 'ListItem', position: 2, name: word.value.headword },
-      ],
     }]
+    // The BreadcrumbList that used to be declared here now comes from the
+    // BreadCrumbs component, so the trail search engines read is the same one
+    // the page shows rather than a second copy kept in step by hand.
   },
   image: () => word.value ? `/og/w/${word.value.id}.png` : undefined,
 })
@@ -69,6 +65,7 @@ const removeWord = async () => {
 
 <template>
   <article v-if="word">
+    <BreadCrumbs :trail="[{ label: word.headword }]" />
     <p role="status" v-if="notice">{{ notice }}</p>
     <p role="alert" v-if="failure">{{ failure }}</p>
 

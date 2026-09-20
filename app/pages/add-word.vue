@@ -34,6 +34,7 @@ const { busy, error, run } = useForm(async () => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'أضف كلمة' }]" />
     <h1>أضف كلمة</h1>
     <p>كل كلمة تُربط بمعناها بالفصحى، ثم يُضاف الشكل الذي تُقال به في لهجتك مع مثال. هكذا تظهر الكلمة نفسها بجانب مرادفاتها في اللهجات الأخرى.</p>
     <ContributeGate>

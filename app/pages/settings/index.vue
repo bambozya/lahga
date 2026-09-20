@@ -43,9 +43,13 @@ const remove = useForm(async () => {
 
 <template>
   <article v-if="me">
+    <BreadCrumbs :trail="[{ label: 'الإعدادات' }]" />
     <h1>الإعدادات</h1>
     <p role="status" v-if="route.query.welcome">أهلاً بك! اختر اسماً بالحروف العربية يظهر بجانب مساهماتك.</p>
     <p role="status" v-else-if="route.query.reset">تم تغيير كلمة المرور وتسجيل دخولك.</p>
+
+    <!-- Moderation is part of this account, not of the site's own navigation. -->
+    <p v-if="user?.role === 'admin'"><NuxtLink to="/settings/admin">الإدارة</NuxtLink></p>
 
     <section>
       <h2>الحساب</h2>

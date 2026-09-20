@@ -20,6 +20,7 @@ const setBan = async (id: number, banned: boolean) => {
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'الأعضاء' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>الأعضاء</h2>

@@ -36,6 +36,7 @@ useSeo({
 
 <template>
   <article v-if="cmp">
+    <BreadCrumbs :trail="[{ label: 'اللهجات', to: '/dialects' }, { label: cmp.a.nameAr, to: `/d/${cmp.a.slug}` }, { label: `مقارنة ب${cmp.b.nameAr}` }]" />
     <hgroup class="head">
       <p><NuxtLink :to="`/d/${cmp.a.slug}`">{{ cmp.a.nameAr }}</NuxtLink> · <NuxtLink :to="`/d/${cmp.b.slug}`">{{ cmp.b.nameAr }}</NuxtLink></p>
       <h1>الفرق بين {{ cmp.a.nameAr }} و{{ cmp.b.nameAr }}</h1>

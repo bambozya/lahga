@@ -9,6 +9,7 @@ const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'me
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'آخر الإضافات' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>آخر الإضافات</h2>

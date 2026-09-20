@@ -19,6 +19,7 @@ const urlError = computed(() => ({
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'تسجيل الدخول' }]" />
     <h1>تسجيل الدخول</h1>
     <p role="alert" v-if="error || urlError">{{ error || urlError }}</p>
     <form @submit.prevent="run">

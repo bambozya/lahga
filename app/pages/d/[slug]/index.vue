@@ -43,6 +43,7 @@ const proposal = useForm(async () => {
 
 <template>
   <article v-if="dialect">
+    <BreadCrumbs :trail="[{ label: 'اللهجات', to: '/dialects' }, { label: dialect.nameAr }]" />
     <hgroup>
       <p v-if="dialect.parent">ضمن <NuxtLink :to="`/d/${dialect.parent.slug}`">{{ dialect.parent.nameAr }}</NuxtLink></p>
       <h1>{{ dialect.nameAr }}</h1>

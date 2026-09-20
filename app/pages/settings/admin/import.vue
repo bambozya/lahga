@@ -22,6 +22,7 @@ const doImport = () => { if (confirm('استيراد الكلمات إلى ال�
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'استيراد' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>استيراد كلمات</h2>

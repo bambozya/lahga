@@ -4,6 +4,7 @@ useSeo({ title: 'عن الموقع', description: 'لهجة قاموس تشار�
 
 <template>
   <article>
+    <BreadCrumbs :trail="[{ label: 'عن الموقع' }]" />
     <h1>عن موقع لهجة</h1>
 
     <section>

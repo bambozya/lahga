@@ -20,6 +20,7 @@ const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'me
 
 <template>
   <article v-if="data">
+    <BreadCrumbs :trail="[{ label: data.word.headword, to: `/w/${data.word.id}` }, { label: 'سجل التعديلات' }]" />
     <h1>سجل التعديلات: <NuxtLink :to="`/w/${data.word.id}`">{{ data.word.headword }}</NuxtLink></h1>
     <p>كل إضافة أو تعديل يُحفظ هنا. الإصدار الأول لكل عنصر هو إضافته.</p>
     <p role="alert" v-if="failure">{{ failure }}</p>

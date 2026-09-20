@@ -10,8 +10,7 @@ export default defineEventHandler((event) => {
   return [
     'User-agent: *',
     'Allow: /',
-    'Disallow: /admin',
-    'Disallow: /settings',
+        'Disallow: /settings',
     'Disallow: /login',
     'Disallow: /register',
     'Disallow: /reset',
