@@ -178,10 +178,10 @@ dl > div:has(> dt > a:first-child:focus-visible) { outline: 3px solid var(--acce
    result card as at the top of the word's own page — each form said once,
    followed quietly by everyone who says it. */
 main p.glance { max-width: none; line-height: 2; }
-.glance > span { color: var(--muted); font-size: var(--step--1); margin-inline-end: 0.3em; }
+.glance > span { color: var(--muted); font-size: var(--step--1); }
 .glance a { text-decoration-color: transparent; }
 .glance a:hover, .glance a:focus-visible { text-decoration-color: var(--accent); }
-.glance b { font-family: var(--naskh); font-size: var(--step-1); }
+.glance b { font-family: var(--naskh); font-size: var(--step-1); margin-inline-start: 0.3em; white-space: nowrap; }
 .glance small { margin-inline-start: 0.25em; }
 
 /* ---------- Tables: a wide table scrolls inside its own focusable region, never the page ---------- */
