@@ -431,7 +431,7 @@ export async function divergentCardSvg(opts: { words: { headword: string, forms:
  * reached.
  */
 export async function dailyResultCardSvg(opts: { number: number, guesses: number, correct: boolean, total: number }) {
-  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">لهجة اليومية</text>`
+  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">لهجة اليوم</text>`
 
   // "#" and the number as two elements, not one string: glued directly onto
   // Arabic digits it hits the same mixed-script mis-shaping resvg/rustybuzz
@@ -462,6 +462,32 @@ export async function dailyResultCardSvg(opts: { number: number, guesses: number
     const landed = opts.correct && i === opts.guesses
     const fill = landed ? ACCENT : used ? INK : PAPER
     body += `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="18" fill="${fill}" stroke="${used ? fill : HAIR}" stroke-width="6"/>`
+    x += size + gap
+  }
+  return frame(body)
+}
+
+/**
+ * «من أي لهجة؟»'s result card (docs/REACH.md, Phase R3): three squares, ink
+ * for a wrong round and the accent for a right one — no unused/hollow state
+ * the way لهجة اليوم's card has, since every round here is always answered.
+ * Spoiler-free the same way: nothing naming a word or a dialect is ever read
+ * here, only the score.
+ */
+export async function dialectQuizResultCardSvg(opts: { correct: number, total: number }) {
+  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">من أي لهجة؟</text>`
+  body += `<text x="${CONTENT_RIGHT}" y="${HEADWORD_Y}" text-anchor="end" font-family="${NASKH}" font-size="96" font-weight="700" fill="${INK}">${esc(`${arabicDigits(opts.correct)} من ${arabicDigits(opts.total)}`)}</text>`
+  body += `<text x="${CONTENT_RIGHT}" y="${DEFINITION_Y}" text-anchor="end" font-family="${SANS}" font-size="44" fill="${MUTED}">إجابات صحيحة اليوم</text>`
+  body += `<line x1="${PAD}" y1="${RULE1_Y}" x2="${CONTENT_RIGHT}" y2="${RULE1_Y}" stroke="${HAIR}" stroke-width="4"/>`
+
+  const n = Math.max(1, opts.total)
+  const size = 140
+  const gap = 32
+  let x = (CARD_WIDTH - (n * size + (n - 1) * gap)) / 2
+  const y = (RULE1_Y + RULE2_Y) / 2 - size / 2
+  for (let i = 1; i <= n; i++) {
+    const fill = i <= opts.correct ? ACCENT : INK
+    body += `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="20" fill="${fill}"/>`
     x += size + gap
   }
   return frame(body)

@@ -287,6 +287,36 @@ export const dailyPuzzlesRelations = relations(dailyPuzzles, ({ one }) => ({
   word: one(words, { fields: [dailyPuzzles.wordId], references: [words.id] }),
 }))
 
+// ---------- dialect quiz: «من أي لهجة؟» — three multiple-choice rounds a day ----------
+// One row per (date, slot 1-3): a dialect form to show and the four dialect
+// groups offered for it, chosen and fixed at creation so every player that
+// day sees the same round and a page reload does not reshuffle the choices.
+// The correct answer is a dialect *group*, never a specific sub-dialect —
+// neighbouring sub-dialects say too much the same way for that to be a fair
+// single answer (the reason /daily guesses the word, not the dialect, in the
+// first place; see docs/REACH.md, Phase R3's own note on this).
+
+export const dialectQuizRounds = pgTable('dialect_quiz_rounds', {
+  id: serial('id').primaryKey(),
+  date: text('date').notNull(),
+  slot: smallint('slot').notNull(), // 1, 2 or 3
+  entryId: integer('entry_id').notNull().references(() => entries.id),
+  wordId: integer('word_id').notNull().references(() => words.id),
+  correctGroupId: integer('correct_group_id').notNull().references(() => dialects.id),
+  // Four dialect ids, the correct one among them, in the order shown — fixed
+  // here rather than reshuffled per request for the same reason revealOrder is.
+  choiceGroupIds: jsonb('choice_group_ids').notNull().$type<number[]>(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  uniqueIndex('dialect_quiz_rounds_date_slot_unique').on(t.date, t.slot),
+])
+
+export const dialectQuizRoundsRelations = relations(dialectQuizRounds, ({ one }) => ({
+  entry: one(entries, { fields: [dialectQuizRounds.entryId], references: [entries.id] }),
+  word: one(words, { fields: [dialectQuizRounds.wordId], references: [words.id] }),
+  correctGroup: one(dialects, { fields: [dialectQuizRounds.correctGroupId], references: [dialects.id] }),
+}))
+
 // ---------- search misses: what people typed and found nothing for ----------
 // One row per distinct normalised term, counted up on every miss instead of
 // logged per-visit, so this stays small and reads as a ranked list of what to

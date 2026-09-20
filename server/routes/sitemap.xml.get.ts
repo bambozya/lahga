@@ -9,7 +9,7 @@ import { todayDate } from '../../shared/utils/daily'
  * dialect and every active word. Cached for an hour, since the set changes
  * slowly and crawlers fetch it often.
  */
-const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', '/contact', '/daily']
+const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', '/contact', '/games', '/daily', '/which-dialect']
 
 export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')

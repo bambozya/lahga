@@ -16,16 +16,16 @@ const { resultFor } = useDailyProgress()
 const mine = computed(() => data.value ? resultFor(data.value.date) : null)
 
 useSeo({
-  title: () => data.value ? `لهجة اليومية #${arabicDigits(data.value.number)}: ${data.value.word.headword}` : '',
-  description: () => data.value ? `لغز لهجة اليومية: «${data.value.word.headword}» كما تُقال في ${data.value.forms.length} لهجات.` : '',
+  title: () => data.value ? `لهجة اليوم #${arabicDigits(data.value.number)}: ${data.value.word.headword}` : '',
+  description: () => data.value ? `لغز لهجة اليوم: «${data.value.word.headword}» كما تُقال في ${data.value.forms.length} لهجات.` : '',
 })
 </script>
 
 <template>
   <article v-if="data">
-    <BreadCrumbs :trail="[{ label: 'لهجة اليومية', to: '/daily' }, { label: `#${arabicDigits(data.number)}` }]" />
+    <BreadCrumbs :trail="[{ label: 'لهجة اليوم', to: '/daily' }, { label: `#${arabicDigits(data.number)}` }]" />
     <hgroup class="head">
-      <h1>لهجة اليومية <small>#{{ arabicDigits(data.number) }}</small></h1>
+      <h1>لهجة اليوم <small>#{{ arabicDigits(data.number) }}</small></h1>
       <p v-if="mine">خمّنتها من {{ arabicDigits(mine.guesses) }} كشوف.</p>
     </hgroup>
 

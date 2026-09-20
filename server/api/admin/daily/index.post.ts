@@ -6,7 +6,7 @@ import { normalizeArabic } from '../../../utils/contribute'
 import { MIN_GROUPS, revealOrderFor, todayDate } from '../../../utils/daily'
 
 /**
- * Sets (or swaps) the word for a future day of لهجة اليومية (docs/REACH.md,
+ * Sets (or swaps) the word for a future day of لهجة اليوم (docs/REACH.md,
  * Phase R3): curating a queue ahead of time, the way the plan asks for, so a
  * dud word can be replaced before it ever goes live. Only a date after today
  * — today's round may already be in progress for someone, and the day is

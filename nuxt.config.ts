@@ -104,6 +104,9 @@ export default defineNuxtConfig({
     // changes again, so it is cached far longer.
     '/daily': { swr: 300 },
     '/daily/*': { swr: 86400 },
+    // من أي لهجة؟ has the same no-per-viewer-data shape as لهجة اليوم above.
+    '/games': { swr: 3600 },
+    '/which-dialect': { swr: 300 },
   },
   nitro: {
     // PGlite ships WASM assets, and @resvg/resvg-js (the card renderer, docs/REACH.md
