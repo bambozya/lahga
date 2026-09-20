@@ -1,14 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-// Self-hosted Umami (docs/REACH.md, Phase R1): cookie-free, served from our own
-// domain so ad/tracker blockers that key on a third-party hostname do not strip
-// it. Read directly from the environment (not runtimeConfig) so the <script>
-// tag itself is only emitted once an id is actually configured; unset in dev
-// and on any deploy that hasn't been given one, the site ships with no
-// analytics call at all rather than one pointed at an empty id.
-const umamiWebsiteId = process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID ?? ''
-const umamiScriptUrl = process.env.NUXT_PUBLIC_UMAMI_SCRIPT_URL ?? 'https://analytics.lahga.fyi/script.js'
-
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -28,27 +19,27 @@ export default defineNuxtConfig({
       turnstileSiteKey: '',
       // Set to '1' when NUXT_OAUTH_GOOGLE_CLIENT_ID is configured, so the pages show the Google button.
       googleLogin: '',
-      // Empty unless NUXT_PUBLIC_UMAMI_WEBSITE_ID is set; read by useAnalytics() to
-      // know whether window.umami exists, so custom events no-op safely without it.
-      umamiWebsiteId,
+      // Self-hosted Umami (docs/REACH.md, Phase R1): cookie-free, and served from
+      // our own domain so blockers keyed on a vendor hostname do not strip it.
+      // Both are empty/default here and filled from NUXT_PUBLIC_UMAMI_* at run
+      // time, so the id can change without rebuilding the image — and with no id
+      // the site serves no analytics tag at all rather than one pointed at
+      // nothing. Read by app/plugins/analytics.ts and by useAnalytics().
+      umamiWebsiteId: '',
+      umamiScriptUrl: 'https://analytics.lahga.fyi/script.js',
     },
   },
   app: {
     head: {
       htmlAttrs: { lang: 'ar', dir: 'rtl' },
       // Apply the saved theme before the first paint (see app/components/ThemeSwitch.vue).
-      script: [
-        {
-          innerHTML: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
-        },
-        // Umami's own script tracks pageviews (and referrers) automatically;
-        // useAnalytics() adds custom events (share, game finished, …) on top.
-        // data-domains scopes it to the real domain so a stray env var never
-        // counts dev or preview traffic.
-        ...(umamiWebsiteId
-          ? [{ src: umamiScriptUrl, defer: true, 'data-website-id': umamiWebsiteId, 'data-domains': 'lahga.fyi' }]
-          : []),
-      ],
+      // The analytics tag is not here: anything in app.head is baked in at build
+      // time, and the build runs inside Docker without the site's environment,
+      // so the tag would be compiled out for good. It is added at runtime
+      // instead — see app/plugins/analytics.ts.
+      script: [{
+        innerHTML: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
+      }],
       title: 'لهجة - قاموس اللهجات العربية',
       meta: [
         { name: 'description', content: 'لهجة - قاموس اللهجات العربية. اكتشف وشارك كلمات ومصطلحات من مختلف اللهجات العربية.' },
