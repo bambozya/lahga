@@ -87,6 +87,12 @@ useSeo({
       <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.</p>
     </hgroup>
 
+    <!-- Another way to read the same list, offered where the choice is made:
+         the ranking belongs to the words, not beside them in the header. -->
+    <p v-if="!activeQuery" class="ranking">
+      <NuxtLink to="/divergent">أو اقرأ الكلمات التي تختلف عليها اللهجات أكثر</NuxtLink>
+    </p>
+
     <!-- Nothing found: not a line of text like any other, but a door. -->
     <div v-if="nothing" class="empty">
       <h2>لم نجد «{{ activeQuery }}»</h2>
@@ -118,6 +124,8 @@ useSeo({
 /* The search state wastes no height: the query is a line, not a banner. */
 .head > h1 { font-size: var(--step-2); }
 .head > p { margin-block-start: var(--space-3xs); }
+/* An aside, not a heading: the other way to read the list, offered quietly. */
+.ranking { margin-block-start: var(--space-2xs); font-size: var(--step--1); }
 /* The result count is a whisper; only the empty state raises its voice. */
 .head > p[role="status"] {
   background: none; border: 0; padding: 0;
