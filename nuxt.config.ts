@@ -70,6 +70,33 @@ export default defineNuxtConfig({
         'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
       },
     },
+    // Surviving the arrival (docs/REACH.md, Phase R6): nothing was cached
+    // before this, so every page view — including every one in a spike — was
+    // a database query on one small VPS. stale-while-revalidate serves the
+    // last render instantly and refreshes it in the background, so the
+    // database sees at most one request per route per window, however many
+    // visitors arrive in it.
+    //
+    // The edit and delete buttons a signed-in author sees are not a problem
+    // this has to solve by hand: nuxt-auth-utils already skips folding the
+    // session into a response Nitro is caching (it checks the same
+    // event.context.cache this relies on) and instead re-fetches it client
+    // side right after the cached HTML hydrates, so the buttons still appear
+    // a moment later for their owner — verified by reading the module's own
+    // session plugins, not assumed. The one thing that module does not cover
+    // is application data that itself depends on who is asking — a viewer's
+    // own vote, on /api/words/[id] and /api/dialects/[slug] — which is why
+    // those two skip that lookup for a cache-warming request instead of
+    // baking one visitor's vote into what everyone else is served.
+    //
+    // /w/* and not /w/**: the edit and history pages live one segment deeper
+    // (/w/[id]/edit, /w/[id]/history) and must not be swept in — history
+    // shows every past revision and an admin's revert button, and caching
+    // either would serve a stale form or a stale moderation view.
+    '/': { swr: 60 },
+    '/w/*': { swr: 300 },
+    '/d/**': { swr: 300 },
+    '/divergent': { swr: 900 },
   },
   nitro: {
     // PGlite ships WASM assets, and @resvg/resvg-js (the card renderer, docs/REACH.md

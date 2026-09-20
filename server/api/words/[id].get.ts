@@ -19,7 +19,10 @@ export default defineEventHandler(async (event) => {
   })
   if (!word || word.status !== 'active') throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة' })
 
-  const { user } = await getUserSession(event)
+  // A cache-warming request (docs/REACH.md, Phase R6) has no one real viewer:
+  // the session is skipped rather than baked into a response every later
+  // visitor will be served, and every myVote below is left at its 0 default.
+  const { user } = event.context.cache ? { user: undefined } : await getUserSession(event)
   const activeLinks = word.links.filter(l => l.status === 'active' && l.entry.status === 'active')
   const [entryVotes, exampleVotes] = await Promise.all([
     myVotes(db, user?.id, 'entry', activeLinks.map(l => l.entry.id)),

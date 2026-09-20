@@ -41,7 +41,8 @@ export default defineEventHandler(async (event) => {
   const topForms = await db.select({ form: schema.entries.form }).from(schema.entries)
     .where(inDialect).orderBy(desc(schema.entries.score), schema.entries.id).limit(6)
 
-  const { user } = await getUserSession(event)
+  // A cache-warming request (docs/REACH.md, Phase R6) has no one real viewer.
+  const { user } = event.context.cache ? { user: undefined } : await getUserSession(event)
   const mine = await myVotes(db, user?.id, 'entry', entries.map(e => e.id))
   const lastApproved = await db.query.proposals.findFirst({
     where: and(eq(schema.proposals.kind, 'dialect_description'), eq(schema.proposals.targetId, dialect.id), eq(schema.proposals.status, 'approved')),
