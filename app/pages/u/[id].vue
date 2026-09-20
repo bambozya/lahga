@@ -26,7 +26,7 @@ const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as cons
       <h2>كلمات أضافها</h2>
       <ul>
         <li v-for="w in contributions.words" :key="w.id">
-          <NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink><small v-if="kindLabel[w.kind]"> ({{ kindLabel[w.kind] }})</small>
+          <NuxtLink :to="`/w/${w.slug}`">{{ w.headword }}</NuxtLink><small v-if="kindLabel[w.kind]"> ({{ kindLabel[w.kind] }})</small>
         </li>
       </ul>
     </section>
@@ -35,7 +35,7 @@ const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as cons
       <ul>
         <li v-for="e in contributions.entries" :key="e.id">
           <b>{{ e.form }}</b> <NuxtLink :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
-          <template v-if="e.word"> بمعنى <NuxtLink :to="`/w/${e.word.id}`">{{ e.word.headword }}</NuxtLink></template>
+          <template v-if="e.word"> بمعنى <NuxtLink :to="`/w/${e.word.slug}`">{{ e.word.headword }}</NuxtLink></template>
         </li>
       </ul>
     </section>

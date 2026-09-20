@@ -1,9 +1,20 @@
 <script setup lang="ts">
 const route = useRoute()
 const { loggedIn, user } = useUserSession()
-// The literal type narrows the URL to the [id] route for typing.
-const { data: word, error, refresh } = await useFetch(`/api/words/${route.params.id}` as `/api/words/${number}`)
+// The param is an id or a slug (docs/REACH.md, Phase R5) — the API resolves
+// either. route.params.slug can arrive still percent-encoded (SSR does not
+// always decode it the way the browser does), so it is decoded once here and
+// used everywhere below instead of the raw route value.
+const param = decodeURIComponent(String(route.params.slug))
+const { data: word, error, refresh } = await useFetch(`/api/words/${encodeURIComponent(param)}`)
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
+// Reached by the word's own slug, this is a no-op: the param already equals
+// word.value.slug. Reached by its old numeric id, or by a stale link, this is
+// the redirect that makes /w/123 land forever — a real 301, since it runs
+// during the initial render before anything is returned to the browser.
+if (word.value && word.value.slug !== param) {
+  await navigateTo(`/w/${word.value.slug}`, { redirectCode: 301 })
+}
 // The same glance a result card shows: each form once, with everyone who says it.
 const forms = computed(() => formsOf(word.value?.groups.flatMap(g => g.entries) ?? []))
 const kindWord = computed(() => ({ word: 'كلمة', phrase: 'عبارة', proverb: 'مثل' })[word.value?.kind ?? 'word'])
@@ -28,7 +39,7 @@ useSeo({
       name: word.value.headword,
       description: word.value.definition,
       inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'لهجة، قاموس اللهجات العربية', url: 'https://lahga.fyi' },
-      url: `https://lahga.fyi/w/${word.value.id}`,
+      url: `https://lahga.fyi/w/${word.value.slug}`,
       inLanguage: 'ar',
       ...(forms.value.length ? { alternateName: forms.value.map(f => f.form) } : {}),
     }]
@@ -37,6 +48,10 @@ useSeo({
     // the page shows rather than a second copy kept in step by hand.
   },
   image: () => word.value ? `/og/w/${word.value.id}.png` : undefined,
+  // The canonical path is the slug even before the redirect above has run —
+  // useSeo would otherwise read route.path, which for a request that arrived
+  // on the old numeric URL is still that URL for this one render.
+  path: () => word.value ? `/w/${word.value.slug}` : undefined,
 })
 
 const kindLabel = { word: '', phrase: 'عبارة', proverb: 'مثل شعبي' } as const
@@ -85,7 +100,7 @@ const removeWord = async () => {
     </p>
 
     <p class="tools">
-      <small v-if="mine(word.createdBy)"><NuxtLink :to="`/w/${word.id}/edit`">تعديل الكلمة</NuxtLink> · <a href="#" @click.prevent="removeWord">حذف</a> · </small>
+      <small v-if="mine(word.createdBy)"><NuxtLink :to="`/w/${word.slug}/edit`">تعديل الكلمة</NuxtLink> · <a href="#" @click.prevent="removeWord">حذف</a> · </small>
       <FlagButton target-type="word" :target-id="word.id" />
     </p>
 
@@ -137,7 +152,7 @@ const removeWord = async () => {
         <EntryForm v-if="open === 'add-entry'" :word-id="word.id" @done="done" @cancel="open = null" />
         <p v-else><button type="button" @click="toggle('add-entry')">أضف شكلها في لهجتك</button></p>
       </ContributeGate>
-      <p><small><NuxtLink :to="`/w/${word.id}/history`">سجل التعديلات</NuxtLink></small></p>
+      <p><small><NuxtLink :to="`/w/${word.slug}/history`">سجل التعديلات</NuxtLink></small></p>
     </section>
   </article>
 </template>

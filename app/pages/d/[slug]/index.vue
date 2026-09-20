@@ -90,7 +90,7 @@ const proposal = useForm(async () => {
           <p v-if="e.words.length">
             بالفصحى:
             <template v-for="(w, i) in e.words" :key="w.id">
-              <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
+              <template v-if="i">، </template><NuxtLink :to="`/w/${w.slug}`">{{ w.headword }}</NuxtLink>
             </template>
           </p>
           <p v-if="e.meaning">{{ e.meaning }}</p>

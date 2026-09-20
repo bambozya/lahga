@@ -32,14 +32,15 @@ export default defineEventHandler(async (event) => {
     throw createError({
       statusCode: 409,
       statusMessage: 'هذه الكلمة موجودة بالفعل؛ أضف شكلها في لهجتك إلى صفحتها',
-      data: { wordId: existing.id },
+      data: { wordId: existing.id, wordSlug: existing.slug },
     })
   }
 
   const dialect = await findDialect(db, body.dialect)
-  const id = await db.transaction(async (tx) => {
+  const created = await db.transaction(async (tx) => {
+    const slug = await uniqueSlug(tx, body.headword)
     const [word] = await tx.insert(schema.words).values({
-      headword: body.headword, headwordNormalized, definition: body.definition || null, kind: body.kind, createdBy: user.id,
+      headword: body.headword, headwordNormalized, slug, definition: body.definition || null, kind: body.kind, createdBy: user.id,
     }).returning()
     await recordRevision(tx, 'word', word!.id, { headword: word!.headword, definition: word!.definition, kind: word!.kind }, user.id)
 
@@ -58,7 +59,7 @@ export default defineEventHandler(async (event) => {
       }).returning()
       await recordRevision(tx, 'example', ex!.id, { text: ex!.text, gloss: ex!.gloss }, user.id)
     }
-    return word!.id
+    return { id: word!.id, slug: word!.slug! }
   })
-  return { id }
+  return created
 })

@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
   const db = await useDb()
   const [words, dialects] = await Promise.all([
-    db.select({ id: schema.words.id, updatedAt: schema.words.updatedAt }).from(schema.words)
+    db.select({ id: schema.words.id, slug: schema.words.slug, updatedAt: schema.words.updatedAt }).from(schema.words)
       .where(eq(schema.words.status, 'active')).orderBy(desc(schema.words.updatedAt)).limit(45000),
     db.select({ id: schema.dialects.id, slug: schema.dialects.slug, parentId: schema.dialects.parentId })
       .from(schema.dialects).where(eq(schema.dialects.active, 1)),
@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
     ...STATIC.map(p => url(p, undefined, p === '/' ? '1.0' : '0.7')),
     ...listed.map(d => url(`/d/${d.slug}`, undefined, '0.8')),
     ...pairs.map((p: { a: { slug: string }, b: { slug: string } }) => url(`/d/${p.a.slug}/vs/${p.b.slug}`, undefined, '0.5')),
-    ...words.map(w => url(`/w/${w.id}`, day(w.updatedAt), '0.6')),
+    ...words.map(w => url(`/w/${w.slug}`, day(w.updatedAt), '0.6')),
     '</urlset>',
   ].join('\n')
 

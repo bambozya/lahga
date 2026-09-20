@@ -15,18 +15,18 @@ const form = reactive({
   headword, definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
   dialect, form: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
 })
-const existingId = ref<number | null>(null)
+const existingSlug = ref<string | null>(null)
 const { busy, error, run } = useForm(async () => {
-  existingId.value = null
+  existingSlug.value = null
   try {
-    const { id } = await $fetch('/api/words', { method: 'POST', body: {
+    const { slug } = await $fetch('/api/words', { method: 'POST', body: {
       headword: form.headword, definition: form.definition, kind: form.kind,
       dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
-    await navigateTo(`/w/${id}?added=1`)
+    await navigateTo(`/w/${slug}?added=1`)
   } catch (e: any) {
-    if (e?.statusCode === 409 && e?.data?.data?.wordId) existingId.value = e.data.data.wordId
+    if (e?.statusCode === 409 && e?.data?.data?.wordSlug) existingSlug.value = e.data.data.wordSlug
     throw e
   }
 })
@@ -40,7 +40,7 @@ const { busy, error, run } = useForm(async () => {
     <ContributeGate>
       <p role="alert" v-if="error">
         {{ error }}
-        <template v-if="existingId"> <NuxtLink :to="`/w/${existingId}`">افتح صفحة الكلمة</NuxtLink>.</template>
+        <template v-if="existingSlug"> <NuxtLink :to="`/w/${existingSlug}`">افتح صفحة الكلمة</NuxtLink>.</template>
       </p>
       <form @submit.prevent="run">
         <fieldset :disabled="busy">

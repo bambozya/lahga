@@ -49,7 +49,8 @@ export default defineEventHandler(async (event) => {
         report.wordsMerged++
       } else {
         const definition = echoesWord(w.definition, w.headword) ? null : (w.definition || null)
-        const [created] = await tx.insert(schema.words).values({ headword: w.headword, headwordNormalized, definition, kind: w.kind, createdBy: authorId }).returning()
+        const slug = await uniqueSlug(tx, w.headword)
+        const [created] = await tx.insert(schema.words).values({ headword: w.headword, headwordNormalized, slug, definition, kind: w.kind, createdBy: authorId }).returning()
         await recordRevision(tx, 'word', created!.id, { headword: created!.headword, definition: created!.definition, kind: created!.kind }, authorId, 'استيراد')
         word = { ...created!, links: [] }
         report.wordsCreated++

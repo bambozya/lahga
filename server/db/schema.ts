@@ -82,6 +82,12 @@ export const words = pgTable('words', {
   id: serial('id').primaryKey(),
   headword: text('headword').notNull(),
   headwordNormalized: text('headword_normalized').notNull(),
+  // The headword itself, made fit for a URL (docs/REACH.md, Phase R5) — set
+  // once at creation and never regenerated on a later edit, so a link already
+  // shared keeps working. Nullable at the schema level only because existing
+  // rows need a startup backfill (server/db/index.ts) before every row has
+  // one; every code path that creates a word sets it, without exception.
+  slug: text('slug').unique(),
   // Optional: a headword like «ماء» defines itself, and a definition nobody
   // needs is a field that keeps a word out of the dictionary (see entries.meaning).
   definition: text('definition'),

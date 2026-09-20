@@ -9,7 +9,7 @@
 // single word. That is the point: it is meant to be read, and screenshotted,
 // as it stands.
 type Divergent = {
-  id: number, headword: string, definition: string | null,
+  id: number, slug: string, headword: string, definition: string | null,
   forms: number, groups: number, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[]
 }[]

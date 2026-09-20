@@ -56,7 +56,7 @@ export default defineEventHandler(async (event) => {
     entries: entries.map(e => ({
       id: e.id, form: e.form, meaning: e.meaning, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },
-      words: e.links.filter(l => l.status === 'active').map(l => ({ id: l.word.id, headword: l.word.headword })),
+      words: e.links.filter(l => l.status === 'active').map(l => ({ id: l.word.id, slug: l.word.slug, headword: l.word.headword })),
     })),
   }
 })

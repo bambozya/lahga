@@ -135,7 +135,7 @@ function likeEscape(term: string) {
 
 function shape(rows: any[]) {
   return rows.map(w => ({
-    id: w.id, headword: w.headword, definition: w.definition, score: w.score,
+    id: w.id, slug: w.slug, headword: w.headword, definition: w.definition, score: w.score,
     entries: cardEntries(w.links),
   }))
 }

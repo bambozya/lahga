@@ -76,6 +76,7 @@ export default defineEventHandler(async (event) => {
       const stat = ranked[order.get(w.id)!]!
       return {
         id: w.id,
+        slug: w.slug,
         headword: w.headword,
         definition: w.definition,
         forms: stat.forms,

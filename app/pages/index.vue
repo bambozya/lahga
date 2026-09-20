@@ -12,7 +12,7 @@ const activeQuery = computed(() => String(route.query.q ?? '').trim())
 const LIMIT = 50
 const SAMPLE = 5
 
-type WordList = { id: number, headword: string, definition: string | null, score: number,
+type WordList = { id: number, slug: string, headword: string, definition: string | null, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
 
 const { data: words, status, refresh } = await useFetch<WordList>('/api/words', {
@@ -100,7 +100,7 @@ useSeo({
       <p v-if="suggestions?.length" class="near">
         هل تقصد:
         <template v-for="(w, i) in suggestions" :key="w.id">
-          <template v-if="i">، </template><NuxtLink :to="`/w/${w.id}`">{{ w.headword }}</NuxtLink>
+          <template v-if="i">، </template><NuxtLink :to="`/w/${w.slug}`">{{ w.headword }}</NuxtLink>
         </template>
       </p>
       <p>

@@ -71,6 +71,13 @@
       "when": 1789841399743,
       "tag": "0009_certain_mastermind",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1789923335450,
+      "tag": "0010_gigantic_kid_colt",
+      "breakpoints": true
     }
   ]
 }

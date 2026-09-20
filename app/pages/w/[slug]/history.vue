@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const { user } = useUserSession()
-const { data, error, refresh } = await useFetch(`/api/words/${route.params.id}/history` as `/api/words/${number}/history`)
+const { data, error, refresh } = await useFetch(`/api/words/${route.params.slug}/history`)
 const busy = ref<number | null>(null)
 const failure = ref('')
 const revert = async (id: number) => {
@@ -43,8 +43,8 @@ const displayValue = (key: string, val: unknown) => {
 
 <template>
   <article v-if="data">
-    <BreadCrumbs :trail="[{ label: data.word.headword, to: `/w/${data.word.id}` }, { label: 'سجل التعديلات' }]" />
-    <h1>سجل التعديلات: <NuxtLink :to="`/w/${data.word.id}`">{{ data.word.headword }}</NuxtLink></h1>
+    <BreadCrumbs :trail="[{ label: data.word.headword, to: `/w/${data.word.slug}` }, { label: 'سجل التعديلات' }]" />
+    <h1>سجل التعديلات: <NuxtLink :to="`/w/${data.word.slug}`">{{ data.word.headword }}</NuxtLink></h1>
     <p>كل إضافة أو تعديل يُحفظ هنا. الإصدار الأول لكل عنصر هو إضافته.</p>
     <p role="alert" v-if="failure">{{ failure }}</p>
     <ol>

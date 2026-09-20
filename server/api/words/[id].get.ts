@@ -1,14 +1,19 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 
-/** A word page: the MSA hub plus its linked entries grouped by dialect, with examples. */
+/**
+ * A word page: the MSA hub plus its linked entries grouped by dialect, with
+ * examples. Reached by id or by slug (docs/REACH.md, Phase R5) — a
+ * numbers-only param is looked up by id so /w/123 keeps answering forever,
+ * anything else by slug; the page itself is what turns a match found by the
+ * old id into a redirect to the slug it returns.
+ */
 export default defineEventHandler(async (event) => {
-  const id = Number(getRouterParam(event, 'id'))
-  if (!Number.isInteger(id)) throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة' })
+  const param = getRouterParam(event, 'id')!
   const db = await useDb()
 
   const word = await db.query.words.findFirst({
-    where: eq(schema.words.id, id),
+    where: /^\d+$/.test(param) ? eq(schema.words.id, Number(param)) : eq(schema.words.slug, param),
     with: {
       links: {
         with: {
@@ -56,7 +61,7 @@ export default defineEventHandler(async (event) => {
   // One block per region, in the order the result cards read them too.
   const groupList = groupByRegion(entries)
   return {
-    id: word.id, headword: word.headword, definition: word.definition, kind: word.kind, score: word.score,
+    id: word.id, slug: word.slug, headword: word.headword, definition: word.definition, kind: word.kind, score: word.score,
     createdAt: word.createdAt, createdBy: word.createdBy,
     groups: groupList,
   }

@@ -17,11 +17,11 @@ export default defineEventHandler(async (event) => {
     }),
   ])
   return {
-    words: words.map(w => ({ id: w.id, headword: w.headword, kind: w.kind, createdAt: w.createdAt })),
+    words: words.map(w => ({ id: w.id, slug: w.slug, headword: w.headword, kind: w.kind, createdAt: w.createdAt })),
     entries: entries.map(e => ({
       id: e.id, form: e.form, createdAt: e.createdAt,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },
-      word: e.links.filter(l => l.status === 'active' && l.word.status === 'active').map(l => ({ id: l.word.id, headword: l.word.headword }))[0] ?? null,
+      word: e.links.filter(l => l.status === 'active' && l.word.status === 'active').map(l => ({ id: l.word.id, slug: l.word.slug, headword: l.word.headword }))[0] ?? null,
     })),
   }
 })
