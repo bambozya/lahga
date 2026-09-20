@@ -24,6 +24,7 @@ const { loggedIn, user } = useUserSession()
         <ul>
           <li><NuxtLink to="/">الكلمات</NuxtLink></li>
           <li><NuxtLink to="/dialects">اللهجات</NuxtLink></li>
+          <li><NuxtLink to="/divergent">الأكثر اختلافاً</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
           <li v-if="loggedIn && user?.role === 'admin'"><NuxtLink to="/admin">الإدارة</NuxtLink></li>
           <!-- Icon: Material Symbols (Apache 2.0): person. -->

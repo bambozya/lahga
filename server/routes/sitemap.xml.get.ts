@@ -1,13 +1,14 @@
 import { desc, eq } from 'drizzle-orm'
 import { useDb, schema } from '../db'
 import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
+import { topPairs } from '../api/dialect-pairs.get'
 
 /**
  * The sitemap, built from the database on request: every public page, every
  * dialect and every active word. Cached for an hour, since the set changes
  * slowly and crawlers fetch it often.
  */
-const STATIC = ['/', '/dialects', '/about', '/terms', '/privacy', '/contact']
+const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', '/contact']
 
 export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
@@ -20,6 +21,9 @@ export default defineEventHandler(async (event) => {
   ])
 
   // A sub-dialect with nothing in it has an empty page; crawlers are not sent to it.
+  // Only pairs with enough in common are listed; the thin ones ask not to be
+  // indexed (see app/pages/d/[slug]/vs/[b].vue), so they must not appear here.
+  const pairs = await topPairs(db, 40)
   const filled = await entryCounts(db)
   const listed = dialects.filter(d => d.parentId === null || (filled.get(d.id) ?? 0) >= MIN_ENTRIES)
 
@@ -32,6 +36,7 @@ export default defineEventHandler(async (event) => {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...STATIC.map(p => url(p, undefined, p === '/' ? '1.0' : '0.7')),
     ...listed.map(d => url(`/d/${d.slug}`, undefined, '0.8')),
+    ...pairs.map((p: { a: { slug: string }, b: { slug: string } }) => url(`/d/${p.a.slug}/vs/${p.b.slug}`, undefined, '0.5')),
     ...words.map(w => url(`/w/${w.id}`, day(w.updatedAt), '0.6')),
     '</urlset>',
   ].join('\n')

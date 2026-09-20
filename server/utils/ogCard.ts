@@ -394,6 +394,34 @@ export async function dialectCardSvg(opts: { nameAr: string, description: string
 }
 
 /**
+ * The divergence ranking's own card (docs/REACH.md, Phase R4): the top words
+ * as a scoreboard, word on one side and how many ways it is said on the other.
+ * The page is meant to be screenshotted, and this is what a link to it should
+ * look like when it is not.
+ */
+export async function divergentCardSvg(opts: { words: { headword: string, forms: number, groups: number }[] }) {
+  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">ترتيب</text>`
+  body += `<text x="${CONTENT_RIGHT}" y="${HEADWORD_Y}" text-anchor="end" font-family="${NASKH}" font-size="96" font-weight="700" fill="${INK}">الأكثر اختلافاً</text>`
+  body += `<text x="${CONTENT_RIGHT}" y="${DEFINITION_Y}" text-anchor="end" font-family="${SANS}" font-size="44" fill="${INK}">كلمات لكل لهجة فيها كلمة أخرى</text>`
+  body += `<line x1="${PAD}" y1="${RULE1_Y}" x2="${CONTENT_RIGHT}" y2="${RULE1_Y}" stroke="${HAIR}" stroke-width="4"/>`
+
+  const rows = opts.words.slice(0, 5)
+  if (rows.length) {
+    const rowHeight = 104
+    // Centred in the band between the two rules, like the dialect line is.
+    let y = (RULE1_Y + RULE2_Y) / 2 - ((rows.length - 1) * rowHeight) / 2 + 20
+    for (const w of rows) {
+      const headword = clamp(w.headword, 24)
+      const size = await fittedSize(headword, NASKH, '700', [60, 52, 44, 38], CONTENT_WIDTH * 0.62)
+      body += `<text x="${CONTENT_RIGHT}" y="${y}" text-anchor="end" font-family="${NASKH}" font-size="${size}" font-weight="700" fill="${INK}">${esc(headword)}</text>`
+      body += `<text x="${PAD}" y="${y}" font-family="${SANS}" font-size="34" fill="${ACCENT}">${esc(`${arabicDigits(w.forms)} صيغة`)}</text>`
+      y += rowHeight
+    }
+  }
+  return frame(body)
+}
+
+/**
  * Rasterises an SVG string built above into a PNG buffer at exactly the card's
  * 1080×1350 — Instagram's own feed-post maximum, which is the ceiling the card
  * is designed against, so it is not rendered at 2x "for crispness": that only

@@ -8,6 +8,8 @@ const props = defineProps<{
     definition: string | null
     entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[]
   }
+  /** A word's evidence where a list is ranked by something — /divergent says how many forms across how many dialects. */
+  note?: string
 }>()
 
 // The same glance the word's own page opens with, in the same order: the form
@@ -19,7 +21,7 @@ const forms = computed(() => formsOf(props.word.entries))
 
 <template>
   <div>
-    <dt><NuxtLink :to="`/w/${word.id}`">{{ word.headword }}</NuxtLink> <small>بالفصحى</small></dt>
+    <dt><NuxtLink :to="`/w/${word.id}`">{{ word.headword }}</NuxtLink> <small>{{ note ?? 'بالفصحى' }}</small></dt>
     <dd>
       <p v-if="word.definition">{{ word.definition }}</p>
       <p v-if="forms.length" class="glance">
