@@ -39,6 +39,13 @@ export function assertArabic(field: string, value: string | null | undefined): v
   }
 }
 
+const ARABIC_DIGITS = '٠١٢٣٤٥٦٧٨٩'
+
+/** Renders a number with Arabic-Indic digits: «١٨», not «18». */
+export function arabicDigits(n: number): string {
+  return String(n).replace(/[0-9]/g, d => ARABIC_DIGITS[+d]!)
+}
+
 /**
  * A word's slug (docs/REACH.md, Phase R5): the headword itself, made fit for
  * a URL path segment — `/w/سيارة` rather than `/w/123`. Browsers and WhatsApp

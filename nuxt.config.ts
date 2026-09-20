@@ -97,6 +97,13 @@ export default defineNuxtConfig({
     '/w/*': { swr: 300 },
     '/d/**': { swr: 300 },
     '/divergent': { swr: 900 },
+    // The daily game (docs/REACH.md, Phase R3) has no per-viewer server data —
+    // progress and the streak live in the browser, not in the page's own
+    // response — so it is as cacheable as any other page here. Today's puzzle
+    // is unchanged for a whole day; a solved day at /daily/[date] never
+    // changes again, so it is cached far longer.
+    '/daily': { swr: 300 },
+    '/daily/*': { swr: 86400 },
   },
   nitro: {
     // PGlite ships WASM assets, and @resvg/resvg-js (the card renderer, docs/REACH.md

@@ -263,6 +263,30 @@ export const moderationLogRelations = relations(moderationLog, ({ one }) => ({
   actor: one(users, { fields: [moderationLog.actorId], references: [users.id] }),
 }))
 
+// ---------- daily puzzles: one word a day, revealed one dialect at a time ----------
+// Curated by an admin screen a few weeks ahead so a dud word can be swapped and
+// a word never repeats; a fallback picks the most divergent unused word when
+// the queue runs dry (server/utils/daily.ts). date is 'YYYY-MM-DD', the
+// calendar day the puzzle is live — a plain string rather than a date column,
+// since the app always reads and writes it in that one format and a string
+// sorts and compares chronologically without a timezone to get wrong.
+
+export const dailyPuzzles = pgTable('daily_puzzles', {
+  id: serial('id').primaryKey(),
+  date: text('date').notNull().unique(),
+  wordId: integer('word_id').notNull().references(() => words.id),
+  // Entry ids, most-divergent-from-the-headword first: the reveal order
+  // (docs/REACH.md, Phase R3). One entry per dialect group, up to six.
+  revealOrder: jsonb('reveal_order').notNull().$type<number[]>(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  index('daily_puzzles_word_idx').on(t.wordId),
+])
+
+export const dailyPuzzlesRelations = relations(dailyPuzzles, ({ one }) => ({
+  word: one(words, { fields: [dailyPuzzles.wordId], references: [words.id] }),
+}))
+
 // ---------- search misses: what people typed and found nothing for ----------
 // One row per distinct normalised term, counted up on every miss instead of
 // logged per-visit, so this stays small and reads as a ranked list of what to

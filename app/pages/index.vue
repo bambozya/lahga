@@ -90,7 +90,8 @@ useSeo({
     <!-- Another way to read the same list, offered where the choice is made:
          the ranking belongs to the words, not beside them in the header. -->
     <p v-if="!activeQuery" class="ranking">
-      <NuxtLink to="/divergent">أو اقرأ الكلمات التي تختلف عليها اللهجات أكثر</NuxtLink>
+      <NuxtLink to="/daily">أو العب لهجة اليومية</NuxtLink> ·
+      <NuxtLink to="/divergent">اقرأ الكلمات التي تختلف عليها اللهجات أكثر</NuxtLink>
     </p>
 
     <!-- Nothing found: not a line of text like any other, but a door. -->

@@ -21,7 +21,6 @@ const [{ data: words }, { data: pairs }] = await Promise.all([
   useFetch<Pairs>('/api/dialect-pairs', { query: { limit: 10 } }),
 ])
 
-const arabicDigits = (n: number) => String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[+d]!)
 // «١٨ صيغة في ١٠ لهجات» — the evidence behind a word's place in the ranking.
 const note = (w: Divergent[number]) =>
   `${arabicDigits(w.forms)} صيغة في ${arabicDigits(w.groups)} لهجات`
