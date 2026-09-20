@@ -119,7 +119,7 @@ useSeo({
 
 <template>
   <article>
-    <BreadCrumbs :trail="[{ label: 'ألعاب', to: '/games' }, { label: 'كلمة اليوم' }]" />
+    <BreadCrumbs :trail="[{ label: 'ألغاز', to: '/games' }, { label: 'كلمة اليوم' }]" />
     <hgroup class="head">
       <h1>كلمة اليوم <small v-if="number">#{{ arabicDigits(number) }}</small></h1>
       <p>كلمة واحدة بالفصحى، تُكشف لهجة بعد لهجة. خمّنها بأقل عدد من الكشوف.</p>

@@ -107,7 +107,7 @@ useSeo({
 
 <template>
   <article>
-    <BreadCrumbs :trail="[{ label: 'ألعاب', to: '/games' }, { label: 'من أي لهجة؟' }]" />
+    <BreadCrumbs :trail="[{ label: 'ألغاز', to: '/games' }, { label: 'من أي لهجة؟' }]" />
     <hgroup class="head">
       <h1>من أي لهجة؟</h1>
       <p>كلمة كما تُقال في لهجة ما — أيّ لهجة تكون؟</p>
