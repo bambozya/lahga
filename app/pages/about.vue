@@ -47,6 +47,12 @@ useSeo({ title: 'عن الموقع', description: 'لهجة قاموس تشار�
         <li>أمثلة مكتوبة بنفس لهجة الكلمة</li>
         <li>شرح لأصل الكلمة إن عُرف (عربية أو أعجمية)، ويكون الشرح بالعربية الفصحى</li>
       </ul>
+      <p>
+        بعض الكلمات الفلسطينية مأخوذة من معجم
+        <a href="https://sites.google.com/nyu.edu/palestine-lexicon" rel="noopener">Maknuune</a>
+        المفتوح لجامعة نيويورك أبوظبي، المرخّص برخصة
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">Creative Commons BY-SA 4.0</a>.
+      </p>
     </section>
 
     <section id="how-it-works">

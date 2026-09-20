@@ -14,7 +14,8 @@
     "typecheck": "nuxt typecheck",
     "import": "tsx scripts/import.ts",
     "add-examples": "tsx scripts/add-examples.ts",
-    "check-variety": "tsx scripts/check-variety.ts"
+    "check-variety": "tsx scripts/check-variety.ts",
+    "seed:maknuune": "tsx scripts/import-sources/maknuune.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",
