@@ -9,6 +9,7 @@ const { data: stats } = await useFetch('/api/admin')
       <li><NuxtLink to="/settings/admin/proposals">الاقتراحات<template v-if="stats?.pendingProposals"> ({{ stats.pendingProposals }})</template></NuxtLink></li>
       <li><NuxtLink to="/settings/admin/recent">آخر الإضافات</NuxtLink></li>
       <li><NuxtLink to="/settings/admin/search-misses">بحث بلا نتيجة</NuxtLink></li>
+      <li><NuxtLink to="/settings/admin/daily">لهجة اليومية</NuxtLink></li>
       <li><NuxtLink to="/settings/admin/users">الأعضاء<template v-if="stats?.users"> ({{ stats.users }})</template></NuxtLink></li>
       <li><NuxtLink to="/settings/admin/import">استيراد</NuxtLink></li>
     </ul>

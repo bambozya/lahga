@@ -422,6 +422,52 @@ export async function divergentCardSvg(opts: { words: { headword: string, forms:
 }
 
 /**
+ * The daily game's result card (docs/REACH.md, Phase R3): spoiler-free — no
+ * headword, no dialect form, nothing that gives the answer away — so today's
+ * result can be shared by someone who has not played yet without ruining it
+ * for them. The palette stays inside the site's own ink/paper/one-accent
+ * system rather than borrowing Wordle's green: a square is ink once used, the
+ * accent on the one that landed, hollow if the round ended before it was
+ * reached.
+ */
+export async function dailyResultCardSvg(opts: { number: number, guesses: number, correct: boolean, total: number }) {
+  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">لهجة اليومية</text>`
+
+  // "#" and the number as two elements, not one string: glued directly onto
+  // Arabic digits it hits the same mixed-script mis-shaping resvg/rustybuzz
+  // gives trailing Latin punctuation (TRAILING_COMMON_SCRIPT above) — an
+  // oversized, wrong-looking gap, confirmed by rendering it as one string
+  // first. Two single-script runs, placed by hand, shape correctly.
+  const numText = arabicDigits(opts.number)
+  const hashSize = 84
+  const numSize = 112
+  const hashWidth = (await measureWidth('#', SANS, '700')) * (hashSize / REF_SIZE)
+  body += `<text x="${CONTENT_RIGHT}" y="${HEADWORD_Y}" text-anchor="end" font-family="${SANS}" font-weight="700" font-size="${hashSize}" fill="${INK}">#</text>`
+  body += `<text x="${CONTENT_RIGHT - hashWidth - numSize * 0.05}" y="${HEADWORD_Y}" text-anchor="end" font-family="${NASKH}" font-weight="700" font-size="${numSize}" fill="${INK}">${esc(numText)}</text>`
+
+  const status = opts.correct ? `حلّها من ${arabicDigits(opts.guesses)} كشوف` : 'لم تُحل اليوم'
+  body += `<text x="${CONTENT_RIGHT}" y="${DEFINITION_Y}" text-anchor="end" font-family="${SANS}" font-size="44" fill="${opts.correct ? ACCENT : MUTED}">${esc(status)}</text>`
+  body += `<line x1="${PAD}" y1="${RULE1_Y}" x2="${CONTENT_RIGHT}" y2="${RULE1_Y}" stroke="${HAIR}" stroke-width="4"/>`
+
+  // Left to right, oldest attempt first: a sequence of attempts over time
+  // reads the way the page itself sets it (see app/pages/daily/index.vue),
+  // not by the text direction around it.
+  const n = Math.max(1, Math.min(opts.total, 6))
+  const size = 116
+  const gap = 24
+  let x = (CARD_WIDTH - (n * size + (n - 1) * gap)) / 2
+  const y = (RULE1_Y + RULE2_Y) / 2 - size / 2
+  for (let i = 1; i <= n; i++) {
+    const used = i <= opts.guesses
+    const landed = opts.correct && i === opts.guesses
+    const fill = landed ? ACCENT : used ? INK : PAPER
+    body += `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="18" fill="${fill}" stroke="${used ? fill : HAIR}" stroke-width="6"/>`
+    x += size + gap
+  }
+  return frame(body)
+}
+
+/**
  * Rasterises an SVG string built above into a PNG buffer at exactly the card's
  * 1080×1350 — Instagram's own feed-post maximum, which is the ceiling the card
  * is designed against, so it is not rendered at 2x "for crispness": that only

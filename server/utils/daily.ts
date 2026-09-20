@@ -1,9 +1,11 @@
-import { eq, sql } from 'drizzle-orm'
+import { and, eq, ne, sql } from 'drizzle-orm'
 import { schema, type Db } from '../db'
 import { normalizeArabic } from '../../shared/utils/arabic'
 import { REVEALS } from '../../shared/utils/daily'
 import { MIN_GROUPS } from '../api/divergent.get'
 import type { Tx } from './contribute'
+
+export { MIN_GROUPS }
 
 /**
  * The daily game (docs/REACH.md, Phase R3): one word, revealed one dialect
@@ -30,7 +32,7 @@ export async function ensurePuzzle(db: Db, date: string): Promise<PuzzleRow> {
  * never opens a puzzle that a better-known form of the same word would have
  * made easier to read.
  */
-async function buildRevealOrder(tx: Tx, word: { id: number, headwordNormalized: string }): Promise<number[]> {
+export async function revealOrderFor(tx: Tx, word: { id: number, headwordNormalized: string }): Promise<number[]> {
   const result: any = await tx.execute(sql`
     with group_entries as (
       select
@@ -98,7 +100,7 @@ async function createFallbackPuzzle(tx: Tx, date: string): Promise<PuzzleRow> {
 
   const word = await pickUnusedWord(tx)
   if (!word) throw createError({ statusCode: 503, statusMessage: 'لا توجد كلمة صالحة للعبة اليوم' })
-  const revealOrder = await buildRevealOrder(tx, word)
+  const revealOrder = await revealOrderFor(tx, word)
   try {
     const [row] = await tx.insert(schema.dailyPuzzles).values({ date, wordId: word.id, revealOrder }).returning()
     return row!

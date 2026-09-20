@@ -76,9 +76,34 @@ const shareText = computed(() => {
   const score = result.value.correct ? arabicDigits(result.value.guesses) : '✗'
   return `لهجة اليومية ${arabicDigits(number.value)} · ${score}/${arabicDigits(total.value)}\n${arSquares.value}\nlahga.fyi/daily`
 })
+// Spoiler-free (docs/REACH.md, Phase R3): built from the score alone, so it
+// carries nothing that would give the word away to someone who has not
+// played yet. Shown inline and offered as a real image, not only as text,
+// since WhatsApp — where this is actually going to move — moves pictures.
+const cardUrl = computed(() => {
+  if (!date.value || !result.value) return ''
+  const q = new URLSearchParams({
+    date: date.value, guesses: String(result.value.guesses),
+    correct: result.value.correct ? '1' : '0', total: String(total.value),
+  })
+  return `/og/daily-result.png?${q}`
+})
 const shared = ref(false)
 const share = async () => {
   try {
+    // A real share sheet with the image attached where the browser supports
+    // sharing files; otherwise the result line, copied, is the fallback —
+    // the image stays visible on the page either way, for a manual save.
+    const canShareFiles = typeof navigator.canShare === 'function'
+    if (canShareFiles && cardUrl.value) {
+      const blob = await $fetch<Blob>(cardUrl.value, { responseType: 'blob' })
+      const file = new File([blob], 'lahga-daily.png', { type: 'image/png' })
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], text: shareText.value })
+        shared.value = true
+        return
+      }
+    }
     if (navigator.share) await navigator.share({ text: shareText.value })
     else await navigator.clipboard.writeText(shareText.value)
     shared.value = true
@@ -115,8 +140,12 @@ useSeo({
           <template v-if="result.word.definition"> — {{ result.word.definition }}</template>
         </p>
         <p class="squares" dir="ltr">{{ arSquares }}</p>
+        <p v-if="cardUrl" class="card">
+          <img :src="cardUrl" alt="بطاقة نتيجة لهجة اليومية" width="270" height="338" loading="lazy" />
+        </p>
         <p>
-          <button type="button" @click="share">{{ shared ? 'تم النسخ' : 'شارك النتيجة' }}</button>
+          <button type="button" @click="share">{{ shared ? 'تم' : 'شارك النتيجة' }}</button>
+          <a v-if="cardUrl" :href="cardUrl" download="lahga-daily.png" class="cta">نزّل الصورة</a>
           <NuxtLink :to="`/w/${result.word.slug}`" class="cta">افتح صفحة الكلمة</NuxtLink>
         </p>
       </div>
@@ -156,6 +185,7 @@ useSeo({
 .end { margin-block-start: var(--space-m); padding: var(--space-m); background: var(--surface, transparent); border: var(--thin); border-inline-start: 6px solid var(--accent); border-radius: var(--radius); }
 .end .answer { font-size: var(--step-1); }
 .end .squares { font-size: var(--step-2); letter-spacing: 0.15em; }
+.end .card img { display: block; margin-block-start: var(--space-s); border: var(--thin); border-radius: var(--radius); }
 .end .cta { margin-inline-start: var(--space-s); }
 
 .archive { margin-block-start: var(--space-l); border-block-start: var(--rule); padding-block-start: var(--space-s); }
