@@ -16,6 +16,29 @@ useSeo({ title: () => `سجل التعديلات: ${data.value?.word.headword ??
 const typeLabel = { word: 'الكلمة', entry: 'مدخل', link: 'ربط', example: 'مثال' } as const
 const fieldLabel: Record<string, string> = { headword: 'الكلمة', definition: 'التعريف', kind: 'النوع', dialect: 'اللهجة', form: 'الشكل', meaning: 'المعنى', notes: 'ملاحظات', text: 'المثال', gloss: 'الشرح', status: 'الحالة' }
 const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(d))
+
+// Three of the stored fields are English by nature — a dialect's slug, and the
+// two enums — and a revision is exactly where a contributor comes to check
+// what changed, so they cannot stay English here the way they might in a URL.
+const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } })
+const dialectName = computed(() => {
+  const map: Record<string, string> = {}
+  for (const g of dialects.value ?? []) {
+    map[g.slug] = g.nameAr
+    for (const c of g.children) map[c.slug] = c.nameAr
+  }
+  return map
+})
+const kindLabel: Record<string, string> = { word: 'كلمة', phrase: 'عبارة', proverb: 'مثل شعبي' }
+const statusLabel: Record<string, string> = { active: 'ظاهر', hidden: 'مخفي', deleted: 'محذوف' }
+/** A revision field's stored value, translated where the field is one of the three English-by-nature ones above. */
+const displayValue = (key: string, val: unknown) => {
+  if (val === null || val === '') return val
+  if (key === 'dialect') return dialectName.value[String(val)] ?? val
+  if (key === 'kind') return kindLabel[String(val)] ?? val
+  if (key === 'status') return statusLabel[String(val)] ?? val
+  return val
+}
 </script>
 
 <template>
@@ -37,7 +60,7 @@ const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'me
           <template v-for="(val, key) in r.data" :key="key">
             <div v-if="val !== null && val !== '' && fieldLabel[String(key)]">
               <dt><small>{{ fieldLabel[String(key)] }}</small></dt>
-              <dd>{{ val === 'deleted' ? 'محذوف' : val }}</dd>
+              <dd>{{ displayValue(String(key), val) }}</dd>
             </div>
           </template>
         </dl>
