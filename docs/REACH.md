@@ -102,7 +102,7 @@ forms, and the first paste is not slower than the second.
 
 ## Phase R3: the daily game (1–2 weeks)
 
-**«لهجة اليوم»** — one word a day, revealed one dialect at a time.
+**«كلمة اليوم»** — one word a day, revealed one dialect at a time.
 
 The shape, borrowed from Heardle and Framed because it is proven and because it
 happens to fit the data exactly: the puzzle opens with the word as one dialect
@@ -140,7 +140,7 @@ App:
 - The end screen is the funnel: the answer, its dialect forms, and a link
   through to the word page. A player who finishes has just learned six dialect
   words and is one click from the dictionary.
-- The share: the emoji grid, spoiler-free, in Arabic — `لهجة اليوم ٢٥ · ٣/٦`
+- The share: the emoji grid, spoiler-free, in Arabic — `كلمة اليوم ٢٥ · ٣/٦`
   and the squares — copied to the clipboard, plus a rendered card image from
   the Phase R2 renderer for people who post pictures rather than text.
 - A link in the header, and a line on the home page under the shuffled words.

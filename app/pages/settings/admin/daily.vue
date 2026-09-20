@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
-useSeo({ title: 'الإدارة: لهجة اليوم', noindex: true })
+useSeo({ title: 'الإدارة: كلمة اليوم', noindex: true })
 const { data, refresh } = await useFetch('/api/admin/daily')
 
 const date = ref('')
@@ -19,10 +19,10 @@ const fmt = (d: string) => new Intl.DateTimeFormat('ar', { weekday: 'short', day
 
 <template>
   <article>
-    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'لهجة اليوم' }]" />
+    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'كلمة اليوم' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
-    <h2>لهجة اليوم</h2>
+    <h2>كلمة اليوم</h2>
     <p><small>
       كل يوم قادم بلا كلمة مُحدَّدة يُملأ تلقائياً، عند وصوله، بأكثر كلمة مختلف عليها لم تُستعمل بعد. حدِّد كلمة هنا
       فقط لتستبدل ذلك الاختيار التلقائي ليوم قادم — لا يمكن تغيير كلمة اليوم أو الأيام السابقة.

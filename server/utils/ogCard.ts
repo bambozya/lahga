@@ -431,7 +431,7 @@ export async function divergentCardSvg(opts: { words: { headword: string, forms:
  * reached.
  */
 export async function dailyResultCardSvg(opts: { number: number, guesses: number, correct: boolean, total: number }) {
-  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">لهجة اليوم</text>`
+  let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">كلمة اليوم</text>`
 
   // "#" and the number as two elements, not one string: glued directly onto
   // Arabic digits it hits the same mixed-script mis-shaping resvg/rustybuzz
@@ -470,7 +470,7 @@ export async function dailyResultCardSvg(opts: { number: number, guesses: number
 /**
  * «من أي لهجة؟»'s result card (docs/REACH.md, Phase R3): three squares, ink
  * for a wrong round and the accent for a right one — no unused/hollow state
- * the way لهجة اليوم's card has, since every round here is always answered.
+ * the way كلمة اليوم's card has, since every round here is always answered.
  * Spoiler-free the same way: nothing naming a word or a dialect is ever read
  * here, only the score.
  */

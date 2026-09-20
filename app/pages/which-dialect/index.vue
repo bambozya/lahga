@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // «من أي لهجة؟» (docs/REACH.md, Phase R3): three multiple-choice rounds a day,
-// each asking which dialect group says a given form. Unlike لهجة اليوم there is
+// each asking which dialect group says a given form. Unlike كلمة اليوم there is
 // nothing to reveal gradually — one guess ends a round either way — so the
 // game is just three quick questions and a score out of three.
 type Choice = { id: number, nameAr: string }
@@ -122,7 +122,7 @@ useSeo({
         <p>
           <button type="button" @click="share">{{ shared ? 'تم' : 'شارك النتيجة' }}</button>
           <a v-if="cardUrl" :href="cardUrl" download="lahga-which-dialect.png" class="cta">نزّل الصورة</a>
-          <NuxtLink to="/daily" class="cta">العب لهجة اليوم</NuxtLink>
+          <NuxtLink to="/daily" class="cta">العب كلمة اليوم</NuxtLink>
         </p>
       </div>
     </template>
@@ -177,6 +177,6 @@ useSeo({
 .feedback { margin-block-start: var(--space-m); }
 
 .end { margin-block-start: var(--space-m); padding: var(--space-m); border: var(--thin); border-inline-start: 6px solid var(--accent); border-radius: var(--radius); }
-.end .card img { display: block; margin-block-start: var(--space-s); border: var(--thin); border-radius: var(--radius); }
+.end .card img { display: block; margin-block: var(--space-s); border: var(--thin); border-radius: var(--radius); }
 .end .cta { margin-inline-start: var(--space-s); }
 </style>

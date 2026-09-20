@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// «لهجة اليوم» (docs/REACH.md, Phase R3): one word, revealed one dialect at a
+// «كلمة اليوم» (docs/REACH.md, Phase R3): one word, revealed one dialect at a
 // time, hardest form first. No account, no server-side session — progress and
 // the streak live in the browser (useDailyProgress), and the answer is never
 // in the page payload until the round is over: it is checked by
@@ -74,7 +74,7 @@ const arSquares = computed(() => {
 const shareText = computed(() => {
   if (!result.value) return ''
   const score = result.value.correct ? arabicDigits(result.value.guesses) : '✗'
-  return `لهجة اليوم ${arabicDigits(number.value)} · ${score}/${arabicDigits(total.value)}\n${arSquares.value}\nlahga.fyi/daily`
+  return `كلمة اليوم ${arabicDigits(number.value)} · ${score}/${arabicDigits(total.value)}\n${arSquares.value}\nlahga.fyi/daily`
 })
 // Spoiler-free (docs/REACH.md, Phase R3): built from the score alone, so it
 // carries nothing that would give the word away to someone who has not
@@ -111,7 +111,7 @@ const share = async () => {
 }
 
 useSeo({
-  title: 'لهجة اليوم',
+  title: 'كلمة اليوم',
   description: 'خمّن الكلمة بالفصحى من ستة أشكال لهجية، لهجة واحدة تُكشف في كل مرة. لعبة يومية جديدة كل يوم، بلا حساب.',
   path: '/daily',
 })
@@ -119,9 +119,9 @@ useSeo({
 
 <template>
   <article>
-    <BreadCrumbs :trail="[{ label: 'ألعاب', to: '/games' }, { label: 'لهجة اليوم' }]" />
+    <BreadCrumbs :trail="[{ label: 'ألعاب', to: '/games' }, { label: 'كلمة اليوم' }]" />
     <hgroup class="head">
-      <h1>لهجة اليوم <small v-if="number">#{{ arabicDigits(number) }}</small></h1>
+      <h1>كلمة اليوم <small v-if="number">#{{ arabicDigits(number) }}</small></h1>
       <p>كلمة واحدة بالفصحى، تُكشف لهجة بعد لهجة. خمّنها بأقل عدد من الكشوف.</p>
     </hgroup>
 
@@ -141,7 +141,7 @@ useSeo({
         </p>
         <p class="squares" dir="ltr">{{ arSquares }}</p>
         <p v-if="cardUrl" class="card">
-          <img :src="cardUrl" alt="بطاقة نتيجة لهجة اليوم" width="270" height="338" loading="lazy" />
+          <img :src="cardUrl" alt="بطاقة نتيجة كلمة اليوم" width="270" height="338" loading="lazy" />
         </p>
         <p>
           <button type="button" @click="share">{{ shared ? 'تم' : 'شارك النتيجة' }}</button>
@@ -185,7 +185,7 @@ useSeo({
 .end { margin-block-start: var(--space-m); padding: var(--space-m); background: var(--surface, transparent); border: var(--thin); border-inline-start: 6px solid var(--accent); border-radius: var(--radius); }
 .end .answer { font-size: var(--step-1); }
 .end .squares { font-size: var(--step-2); letter-spacing: 0.15em; }
-.end .card img { display: block; margin-block-start: var(--space-s); border: var(--thin); border-radius: var(--radius); }
+.end .card img { display: block; margin-block: var(--space-s); border: var(--thin); border-radius: var(--radius); }
 .end .cta { margin-inline-start: var(--space-s); }
 
 .archive { margin-block-start: var(--space-l); border-block-start: var(--rule); padding-block-start: var(--space-s); }

@@ -18,7 +18,7 @@ useSeo({
 
     <dl>
       <div>
-        <dt><NuxtLink to="/daily">لهجة اليوم</NuxtLink></dt>
+        <dt><NuxtLink to="/daily">كلمة اليوم</NuxtLink></dt>
         <dd>
           <p>كلمة واحدة بالفصحى، تُكشف لهجة بعد لهجة. خمّنها بأقل عدد من الكشوف.</p>
         </dd>
