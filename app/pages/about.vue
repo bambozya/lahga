@@ -51,7 +51,10 @@ useSeo({ title: 'عن الموقع', description: 'لهجة قاموس تشار�
         بعض الكلمات الفلسطينية مأخوذة من معجم
         <a href="https://sites.google.com/nyu.edu/palestine-lexicon" rel="noopener">Maknuune</a>
         المفتوح لجامعة نيويورك أبوظبي، المرخّص برخصة
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">Creative Commons BY-SA 4.0</a>.
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">Creative Commons BY-SA 4.0</a>،
+        وبعض الكلمات الأردنية من مواد
+        <a href="https://files.peacecorps.gov/uploads/wws/lesson-plans/files/JO_Arabic_Language_Lessons.pdf" rel="noopener">Peace Corps</a>
+        التعليمية، وهي في الملكية العامة.
       </p>
     </section>
 

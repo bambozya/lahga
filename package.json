@@ -15,7 +15,8 @@
     "import": "tsx scripts/import.ts",
     "add-examples": "tsx scripts/add-examples.ts",
     "check-variety": "tsx scripts/check-variety.ts",
-    "seed:maknuune": "tsx scripts/import-sources/maknuune.ts"
+    "seed:maknuune": "tsx scripts/import-sources/maknuune.ts",
+    "seed:peace-corps-jordan": "tsx scripts/import-sources/peace-corps-jordan.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",
