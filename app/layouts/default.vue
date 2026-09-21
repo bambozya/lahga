@@ -24,7 +24,7 @@ const { loggedIn, user } = useUserSession()
         <ul>
           <li><NuxtLink to="/">الكلمات</NuxtLink></li>
           <li><NuxtLink to="/dialects">اللهجات</NuxtLink></li>
-          <li><NuxtLink to="/games">ألغاز</NuxtLink></li>
+          <li><NuxtLink to="/games">الألغاز</NuxtLink></li>
           <li><NuxtLink to="/add-word">أضف كلمة</NuxtLink></li>
           <!-- Moderation lives inside the account now (/settings/admin), so it
                is reached from there rather than sitting in the main navigation

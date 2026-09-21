@@ -2,17 +2,17 @@
 // The games hub: one nav entry for both, so the header does not grow a new
 // top-level link every time another one is added.
 useSeo({
-  title: 'ألغاز',
-  description: 'ألغاز يومية من قاموس لهجة: خمّن الكلمة بالفصحى من أشكالها في اللهجات، أو خمّن اللهجة من شكل الكلمة.',
+  title: 'الألغاز',
+  description: 'الألغاز اليومية من قاموس لهجة: خمّن الكلمة بالفصحى من أشكالها في اللهجات، أو خمّن اللهجة من شكل الكلمة.',
   path: '/games',
 })
 </script>
 
 <template>
   <article>
-    <BreadCrumbs :trail="[{ label: 'ألغاز' }]" />
+    <BreadCrumbs :trail="[{ label: 'الألغاز' }]" />
     <hgroup class="head">
-      <h1>ألغاز</h1>
+      <h1>الألغاز</h1>
       <p>لعبة جديدة كل يوم، بلا حساب. النتيجة تُشارك، الإجابة لا تُكشف قبل انتهاء الجولة.</p>
     </hgroup>
 
