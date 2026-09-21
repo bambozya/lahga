@@ -8,9 +8,11 @@ if (siteKey) useHead({ script: [{ src: 'https://challenges.cloudflare.com/turnst
 const formEl = ref<HTMLFormElement>()
 const form = reactive({ displayName: '', email: '', password: '' })
 const done = ref(false)
+const mailSent = ref(true)
 const { busy, error, run } = useForm(async () => {
   const turnstile = (formEl.value?.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement | null)?.value
-  await $fetch('/api/auth/register', { method: 'POST', body: { ...form, turnstile } })
+  const res = await $fetch('/api/auth/register', { method: 'POST', body: { ...form, turnstile } })
+  mailSent.value = res.mailSent
   await refresh()
   done.value = true
 })
@@ -21,7 +23,8 @@ const { busy, error, run } = useForm(async () => {
     <BreadCrumbs :trail="[{ label: 'إنشاء حساب' }]" />
     <h1>إنشاء حساب</h1>
     <template v-if="done">
-      <p role="status">تم إنشاء حسابك. أرسلنا رابط تأكيد إلى بريدك الإلكتروني؛ افتحه لتتمكن من إضافة الكلمات.</p>
+      <p v-if="mailSent" role="status">تم إنشاء حسابك. أرسلنا رابط تأكيد إلى بريدك الإلكتروني؛ افتحه لتتمكن من إضافة الكلمات.</p>
+      <p v-else role="status">تم إنشاء حسابك، لكن تعذر إرسال رابط التأكيد الآن. <NuxtLink to="/verify">اطلب رابطاً جديداً</NuxtLink> بعد قليل لتتمكن من إضافة الكلمات.</p>
       <p><NuxtLink to="/">إلى الصفحة الرئيسية</NuxtLink></p>
     </template>
     <template v-else>

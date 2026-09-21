@@ -22,7 +22,13 @@ export default defineEventHandler(async (event) => {
     passwordHash: await hashPassword(body.password),
   }).returning()
 
-  await sendVerificationEmail(user!)
+  // The account exists from here on. If the mail cannot go out, the visitor is still
+  // logged in and can ask for a new link at /verify; failing here would leave them
+  // with an error now and «مسجل بالفعل» on the second try.
+  const mailSent = await sendVerificationEmail(user!).then(() => true, (e) => {
+    console.error('[lahga] verification email failed at registration', e)
+    return false
+  })
   await login(event, user!)
-  return { ok: true }
+  return { ok: true, mailSent }
 })

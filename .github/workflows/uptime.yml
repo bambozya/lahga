@@ -1,0 +1,27 @@
+# Looks at the live site from outside the server, because a check that runs on the
+# same machine goes down with it. When this job fails, GitHub emails the repository
+# owner (Settings → Notifications → Actions → "failed workflows only").
+#
+# Two things to know: GitHub often starts scheduled jobs 5 to 15 minutes late, and it
+# switches schedules off after 60 days without a commit. Good enough to start with;
+# a dedicated monitor can replace it later (docs/ROADMAP.md, A3).
+name: uptime
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # /api/health answers 200 only when the database responds too.
+      # Three tries, 30 seconds apart, so a deploy in progress is not an alarm.
+      - name: Database and app
+        run: curl --fail --silent --show-error --max-time 20 --retry 3 --retry-delay 30 --retry-all-errors https://lahga.fyi/api/health
+      - name: Home page
+        run: curl --fail --silent --show-error --max-time 20 --retry 3 --retry-delay 30 --retry-all-errors --output /dev/null https://lahga.fyi/
