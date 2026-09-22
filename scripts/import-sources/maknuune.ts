@@ -27,6 +27,7 @@ import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'node:fs/promises'
 import { normalizeArabic } from '../../shared/utils/arabic'
+import { capImportedForms, MAX_IMPORTED_FORMS_PER_DIALECT } from './cap'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(HERE, '../..')
@@ -131,6 +132,18 @@ async function main() {
     }
   }
 
+  // At most MAX_IMPORTED_FORMS_PER_DIALECT Palestinian forms from Maknuune per
+  // word. The entries carried over from lahga's own files come first in the
+  // list and are hand-written; everything after them is Maknuune's.
+  let capped = 0
+  for (const [key, word] of enriched) {
+    const own = known.get(key)!.word.entries.length
+    const handwritten = word.entries.slice(0, own).filter(e => e.dialect === 'palestinian').length
+    const { keep, drop } = capImportedForms(word.headword, handwritten, word.entries.slice(own))
+    capped += drop.length
+    word.entries = [...word.entries.slice(0, own), ...keep]
+  }
+
   await mkdir(dirname(OUT_ENRICH), { recursive: true })
   await mkdir(dirname(OUT_CANDIDATES), { recursive: true })
   await writeFile(OUT_ENRICH, JSON.stringify({ words: [...enriched.values()] }, null, 2) + '\n')
@@ -142,6 +155,7 @@ async function main() {
   console.log(`skipped, duplicate new headword (kept first): ${skippedDuplicateHeadword}`)
   console.log(`skipped, short-word homograph guard: ${skippedHomographGuard}`)
   console.log(`words enriched (already in lahga, gained a Palestinian entry): ${enriched.size}`)
+  console.log(`Palestinian forms dropped, over ${MAX_IMPORTED_FORMS_PER_DIALECT} per word: ${capped}`)
   console.log(`candidates held back (new to lahga, Palestinian-only so far): ${candidates.size}`)
   console.log(`→ ${OUT_ENRICH}`)
   console.log(`→ ${OUT_CANDIDATES}`)

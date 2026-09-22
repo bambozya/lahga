@@ -16,6 +16,7 @@
     "add-examples": "tsx scripts/add-examples.ts",
     "check-variety": "tsx scripts/check-variety.ts",
     "seed:maknuune": "tsx scripts/import-sources/maknuune.ts",
+    "retire-extra": "tsx scripts/retire-extra-forms.ts",
     "seed:peace-corps-jordan": "tsx scripts/import-sources/peace-corps-jordan.ts"
   },
   "dependencies": {
