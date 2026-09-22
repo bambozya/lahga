@@ -43,3 +43,34 @@ export const bio = v.pipe(
 )
 
 export const token = v.pipe(v.string('الرابط غير صالح'), v.regex(/^[a-f0-9]{64}$/, 'الرابط غير صالح'))
+
+/**
+ * A `?limit=` from the query: a whole number between 1 and `max`, or `fallback`
+ * when it is absent.
+ *
+ * `Math.min(Number(limit) || 20, 50)` reads like a clamp and is not one. A
+ * negative number is truthy and smaller than the cap, so it passed straight
+ * through, and Drizzle leaves a negative LIMIT out of the SQL altogether —
+ * `?limit=-5` answered with every row in the table instead of five.
+ */
+export function limitParam(raw: unknown, fallback: number, max: number): number {
+  if (raw === undefined || raw === null || raw === '') return fallback
+  const n = Number(raw)
+  if (!Number.isInteger(n) || n < 1) {
+    throw createError({ statusCode: 400, statusMessage: 'قيمة limit غير صالحة' })
+  }
+  return Math.min(n, max)
+}
+
+/**
+ * A `?q=` from the query. Long terms are refused rather than trimmed: every
+ * character costs trigram work on three indexes, and nobody searches for a
+ * paragraph.
+ */
+export function searchTerm(raw: unknown, max = 100): string {
+  if (typeof raw !== 'string') return ''
+  if (raw.length > max) {
+    throw createError({ statusCode: 400, statusMessage: 'نص البحث طويل جداً' })
+  }
+  return raw.trim()
+}

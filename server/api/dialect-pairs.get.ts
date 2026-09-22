@@ -12,7 +12,7 @@ import { MIN_SHARED } from './compare/[a]/[b].get'
  */
 export default defineEventHandler(async (event) => {
   const { limit } = getQuery(event)
-  return topPairs(await useDb(), Math.min(Number(limit) || 10, 40))
+  return topPairs(await useDb(), limitParam(limit, 10, 40))
 })
 
 /** Shared by the handler and the sitemap, so the pages offered and the pages listed can never drift apart. */

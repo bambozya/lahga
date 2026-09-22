@@ -23,7 +23,7 @@ export const MIN_GROUPS = 4
 
 export default defineEventHandler(async (event) => {
   const { limit } = getQuery(event)
-  const max = Math.min(Number(limit) || 50, 100)
+  const max = limitParam(limit, 50, 100)
   const db = await useDb()
 
   type Ranked = { wordId: number, forms: number, groups: number, score: number }

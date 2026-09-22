@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
   const entries = await db.query.entries.findMany({
     where: inDialect,
     orderBy: random ? sql`random()` : desc(schema.entries.score),
-    limit: Math.min(Number(limit) || 100, 100),
+    limit: limitParam(limit, 100, 100),
     with: {
       dialect: true,
       links: { with: { word: true } },

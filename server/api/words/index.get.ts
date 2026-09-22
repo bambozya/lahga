@@ -12,10 +12,22 @@ import { normalizeArabic } from '../../../shared/utils/arabic'
  */
 export default defineEventHandler(async (event) => {
   const { q, limit, fuzzy, random } = getQuery(event)
-  const db = await useDb()
-  const max = Math.min(Number(limit) || 20, 50)
+  const max = limitParam(limit, 20, 50)
+  const raw = searchTerm(q)
+  const term = normalizeArabic(raw)
 
-  const term = typeof q === 'string' ? normalizeArabic(q) : ''
+  // Two limits, because the two halves of this route cost very different things.
+  // Both are also spent by the home page rendering on the server — that render
+  // calls this handler, and an empty search calls it twice, once for the results
+  // and once for the «هل تقصد» suggestions — which is the point: a search costs
+  // the database the same whether a browser or our own renderer asked for it.
+  const ip = clientIp(event)
+  assertRateLimit(`words:${ip}`, 240, 60 * 1000)
+  // Trigram matching across every headword and every dialect form, twice over
+  // when nothing is found. The only public route that does real work per request.
+  if (term) assertRateLimit(`words-search:${ip}`, 90, 60 * 1000)
+
+  const db = await useDb()
   if (!term) {
     // A random word with no dialect forms left would be an empty card, and on a
     // page of five that is a fifth of it: the draw is made among words that
@@ -65,7 +77,7 @@ export default defineEventHandler(async (event) => {
     )
     .limit(max)
   if (!ids.length) {
-    await logSearchMiss(db, q as string, term)
+    await logSearchMiss(db, raw, term)
     return fuzzy ? near(db, term, max) : []
   }
 

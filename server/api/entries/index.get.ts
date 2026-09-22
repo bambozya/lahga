@@ -13,7 +13,7 @@ import { useDb, schema } from '../../db'
 export default defineEventHandler(async (event) => {
   const { limit } = getQuery(event)
   const db = await useDb()
-  const max = Math.min(Number(limit) || 20, 50)
+  const max = limitParam(limit, 20, 50)
 
   const rows = await db.query.entries.findMany({
     where: eq(schema.entries.status, 'active'),
