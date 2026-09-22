@@ -84,12 +84,18 @@ async function connect(): Promise<Db> {
   mkdirSync(dataDir, { recursive: true })
   // pg_trgm backs the search index (migration 0005); PGlite needs the extension handed in.
   const client = new PGlite(dataDir, { extensions: { pg_trgm } })
-  const db = drizzlePglite(client, { schema }) as unknown as Db
-  await migratePglite(db as any, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
-  await seedIfEmpty(db)
-  await backfillWordSlugs(db)
-  await ensureDevAdmin(db)
-  return db
+  try {
+    const db = drizzlePglite(client, { schema }) as unknown as Db
+    await migratePglite(db as any, { migrationsFolder: resolve(process.cwd(), 'drizzle') })
+    await seedIfEmpty(db)
+    await backfillWordSlugs(db)
+    await ensureDevAdmin(db)
+    return db
+  } catch (e) {
+    // Release the folder, or the retry in server/plugins/seed.ts opens a second instance on it.
+    await client.close().catch(() => {})
+    throw e
+  }
 }
 
 export { schema }
