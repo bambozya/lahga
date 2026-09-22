@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
   const othersBuiltOnIt = entry.examples.some(x => x.status === 'active' && x.createdBy !== entry.createdBy)
     || entry.links.some(l => l.status === 'active' && l.createdBy !== entry.createdBy)
   if (user.role !== 'admin' && (othersBuiltOnIt || await voteCount(db, 'entry', id) > 0)) {
-    throw createError({ statusCode: 409, statusMessage: 'لا يمكن حذف المدخل بعد أن أضاف إليه آخرون أو صوّتوا عليه' })
+    throw createError({ statusCode: 409, statusMessage: 'لا يمكن حذف المدخل بعد أن بنى عليه آخرون' })
   }
   await db.transaction(async (tx) => {
     await tx.update(schema.entries).set({ status: 'deleted', updatedAt: new Date() }).where(eq(schema.entries.id, id))

@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   if (!ex || ex.status !== 'active') throw createError({ statusCode: 404, statusMessage: 'المثال غير موجود' })
   assertOwner(ex, user)
   if (user.role !== 'admin' && await voteCount(db, 'example', id) > 0) {
-    throw createError({ statusCode: 409, statusMessage: 'لا يمكن حذف المثال بعد أن صوّت عليه آخرون' })
+    throw createError({ statusCode: 409, statusMessage: 'لا يمكن حذف المثال بعد أن بنى عليه آخرون' })
   }
   await db.transaction(async (tx) => {
     await tx.update(schema.examples).set({ status: 'deleted', updatedAt: new Date() }).where(eq(schema.examples.id, id))

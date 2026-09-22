@@ -51,7 +51,13 @@ const { loggedIn, user } = useUserSession()
       <AppLogo />
       <p>
         لهجة هو قاموس إلكتروني للمصطلحات اليومية المستخدمة في اللهجات العربية المختلفة في أنحاء الوطن العربي.
-        هذه الصفحة تتيح الفرصة للجمهور بإضافة المزيد من المواد والتصويت على ما هو موجود.
+        هذا الموقع يتيح الفرصة للجمهور بإضافة المزيد من المواد وتصحيح ما هو موجود.
+      </p>
+      <!-- rel="license" says to a crawler what the sentence says to a reader. -->
+      <p>
+        <small>محتوى القاموس متاح برخصة المشاع الإبداعي
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ar" rel="license noopener">CC BY-SA 4.0</a>:
+        انسخه وابنِ عليه، مع نسبته إلى «لهجة» وبالرخصة نفسها.</small>
       </p>
       <nav aria-label="عن الموقع">
         <ul>

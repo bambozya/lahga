@@ -11,20 +11,20 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
   <article>
     <BreadCrumbs :trail="[{ label: 'عن الموقع' }]" />
     <h1>عن موقع لهجة</h1>
+    <p>قاموس إلكتروني عربي بين اللغة العربية الفصحى ولهجاتها الدارجة.</p>
+    <p>
+      هذا الموقع للاحتفاء بالثقافات العربية المتعددة وللتبادل الإيجابي البناء
+      بين هذه الثقافات.
+    </p>
+    <p>
+      هذا الموقع لا يمجد القومية ويرفض العنصرية أو التمييز على أساس عرقي أو
+      ثقافي.
+    </p>
 
-    <section id="definition">
-      <h2>تعريف</h2>
-      <p>قاموس إلكتروني عربي بين اللغة العربية الفصحى ولهجاتها الدارجة.</p>
-      <p>
-        هذا الموقع للاحتفاء بالثقافات العربية المتعددة وللتبادل الإيجابي البناء
-        بين هذه الثقافات.
-      </p>
-      <p>
-        هذا الموقع لا يمجد القومية ويرفض العنصرية أو التمييز على أساس عرقي أو
-        ثقافي.
-      </p>
-    </section>
-
+    <!-- Six parts, each an <h2> under the one heavy rule the stylesheet below
+         draws; what belongs to a part sits inside it under an <h3>. No <hr>
+         anywhere: a line typed by hand is a line that ends up in the wrong
+         place the next time a section moves. -->
     <section id="vision">
       <h2>رؤيتنا</h2>
       <p>
@@ -38,10 +38,10 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
       </p>
     </section>
 
-    <hr>
+    <section id="dictionary">
+      <h2>القاموس</h2>
 
-    <section id="content">
-      <h2>المحتوى</h2>
+      <h3 id="content">المحتوى</h3>
       <p>
         كل صفحة في القاموس تبدأ من معنى بالعربية الفصحى: كلمة أو عبارة قصيرة أو
         مثل شعبي. وتحت هذا المعنى تجتمع الأشكال التي يُقال بها في اللهجات، كل
@@ -57,49 +57,8 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         ولا تستحق الكلمة صفحة إلا إذا اختلفت اللهجات في قولها؛ فما يقوله العرب
         جميعاً بلفظ واحد لا يحتاج إلى قاموس.
       </p>
-      <p>
-        بعض الكلمات الفلسطينية مأخوذة من معجم
-        <a href="https://sites.google.com/nyu.edu/palestine-lexicon" rel="noopener">Maknuune</a>
-        المفتوح لجامعة نيويورك أبوظبي، المرخّص برخصة
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">Creative Commons BY-SA 4.0</a>،
-        وبعض الكلمات الأردنية من مواد
-        <a href="https://files.peacecorps.gov/uploads/wws/lesson-plans/files/JO_Arabic_Language_Lessons.pdf" rel="noopener">Peace Corps</a>
-        التعليمية، وهي في الملكية العامة.
-      </p>
-    </section>
 
-    <section id="how-it-works">
-      <h2>كيف يعمل الموقع؟</h2>
-      <dl>
-        <div>
-          <dt>إضافة الكلمات</dt>
-          <dd>يمكن لكل من له حساب مؤكَّد البريد أن يضيف كلمة جديدة، أو شكلاً من لهجته لكلمة موجودة، أو مثالاً على الاستعمال. ولكل صفحة سجلّ يحفظ تعديلاتها.</dd>
-        </div>
-        <div>
-          <dt>البحث والتصفح</dt>
-          <dd>خانة البحث في أعلى كل صفحة تقبل الكلمة بالفصحى أو بأي لهجة، وتقترح الأقرب إن لم تجد ما كُتب. ولكل لهجة صفحة تعرض كلماتها، والصفحة الرئيسية تسحب كلمات عشوائية لمن جاء يتصفح.</dd>
-        </div>
-        <div>
-          <dt>ربط اللهجات</dt>
-          <dd>يتم ربط الكلمات التي تحمل نفس المعنى في لهجات مختلفة، مما يسهل فهم التنوع اللغوي بين اللهجات العربية. ويمكن وضع لهجتين جنباً إلى جنب لرؤية الكلمات التي تختلفان فيها.</dd>
-        </div>
-        <div>
-          <dt>الإبلاغ عن الأخطاء</dt>
-          <dd>من رأى خطأً (لهجة غير صحيحة أو ربطاً خاطئاً بالفصحى أو محتوى مسيئاً) أبلغ عنه من صفحة الكلمة نفسها، فيُراجَع.</dd>
-        </div>
-      </dl>
-    </section>
-
-    <section id="more">
-      <h2>أكثر من قاموس</h2>
-      <ul>
-        <li><NuxtLink to="/games">الألغاز</NuxtLink>: لعبتان جديدتان كل يوم، بلا حساب: خمّن الكلمة من أشكالها في اللهجات، أو خمّن اللهجة من شكل الكلمة.</li>
-        <li><NuxtLink to="/divergent">الكلمات التي تختلف عليها اللهجات أكثر</NuxtLink>: القاموس مرتباً بحسب اختلاف اللهجات على كل كلمة.</li>
-      </ul>
-    </section>
-
-    <section id="dialects">
-      <h2>اللهجات المدعومة</h2>
+      <h3 id="dialects">اللهجات المدعومة</h3>
       <p>حالياً، يدعم موقع «لهجة» المجموعات التالية وما يتفرع عنها:</p>
       <ul>
         <li v-for="d in dialects" :key="d.id">
@@ -114,9 +73,51 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         <NuxtLink to="/dialects">صفحة اللهجات</NuxtLink> تبيّن أيها، مع وصف لكل
         مجموعة. ونخطط لإضافة المزيد من اللهجات في المستقبل.
       </p>
+
+      <h3 id="sources">المصادر</h3>
+      <p>
+        بعض الكلمات الفلسطينية مأخوذة من معجم
+        <a href="https://sites.google.com/nyu.edu/palestine-lexicon" rel="noopener">Maknuune</a>
+        المفتوح لجامعة نيويورك أبوظبي، المرخّص برخصة
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">Creative Commons BY-SA 4.0</a>،
+        وبعض الكلمات الأردنية من مواد
+        <a href="https://files.peacecorps.gov/uploads/wws/lesson-plans/files/JO_Arabic_Language_Lessons.pdf" rel="noopener">Peace Corps</a>
+        التعليمية، وهي في الملكية العامة.
+      </p>
+
+      <h3 id="license">الرخصة</h3>
+      <p>
+        القاموس ملك لمن يتكلمون هذه اللهجات، فمحتواه كله متاح برخصة
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ar" rel="license noopener">المشاع الإبداعي: نَسب المُصنَّف - الترخيص بالمثل 4.0 (CC BY-SA 4.0)</a>.
+        يحق لك أن تنسخه وتوزعه وتبني عليه لأي غرض، بشرطين: أن تنسبه إلى «لهجة»
+        مع رابط إلى الموقع، وأن تنشر ما تبنيه عليه بالرخصة نفسها. والتفاصيل في
+        <NuxtLink to="/terms#license">شروط الاستخدام</NuxtLink>.
+      </p>
     </section>
 
-    <hr>
+    <section id="how-it-works">
+      <h2>كيف يعمل الموقع؟</h2>
+
+      <h3>البحث والتصفح</h3>
+      <p>
+        خانة البحث في أعلى كل صفحة تقبل الكلمة بالفصحى أو بأي لهجة، وتقترح
+        الأقرب إن لم تجد ما كُتب. ولكل لهجة صفحة تعرض كلماتها، والصفحة
+        الرئيسية تسحب كلمات عشوائية لمن جاء يتصفح.
+      </p>
+
+      <h3>ربط اللهجات</h3>
+      <p>
+        يتم ربط الكلمات التي تحمل نفس المعنى في لهجات مختلفة، مما يسهل فهم
+        التنوع اللغوي بين اللهجات العربية. ويمكن وضع لهجتين جنباً إلى جنب
+        لرؤية الكلمات التي تختلفان فيها.
+      </p>
+
+      <h3 id="more">أكثر من قاموس</h3>
+      <ul>
+        <li><NuxtLink to="/games">الألغاز</NuxtLink>: لعبتان جديدتان كل يوم، بلا حساب: خمّن الكلمة من أشكالها في اللهجات، أو خمّن اللهجة من شكل الكلمة.</li>
+        <li><NuxtLink to="/divergent">الكلمات التي تختلف عليها اللهجات أكثر</NuxtLink>: القاموس مرتباً بحسب اختلاف اللهجات على كل كلمة.</li>
+      </ul>
+    </section>
 
     <section id="join">
       <h2>انضم إلينا</h2>
@@ -124,10 +125,22 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         نرحب بمساهماتكم في إثراء قاموس «لهجة» بالكلمات والتعبيرات من لهجاتكم
         المحلية. كلما زادت المساهمات، أصبح القاموس أكثر شمولاً وفائدة للجميع.
       </p>
+
+      <h3>إضافة الكلمات</h3>
+      <p>
+        يمكن لكل من له حساب مؤكَّد البريد أن يضيف كلمة جديدة، أو شكلاً من لهجته
+        لكلمة موجودة، أو مثالاً على الاستعمال. ولكل صفحة سجلّ يحفظ تعديلاتها،
+        وما يُضاف يُنشر باسم صاحبه وبرخصة القاموس نفسها.
+      </p>
+
+      <h3>الإبلاغ عن الأخطاء</h3>
+      <p>
+        من رأى خطأً (لهجة غير صحيحة أو ربطاً خاطئاً بالفصحى أو محتوى مسيئاً)
+        أبلغ عنه من صفحة الكلمة نفسها، فيُراجَع.
+      </p>
+
       <p><NuxtLink to="/">تصفح الكلمات</NuxtLink> أو <NuxtLink to="/add-word">اقترح كلمة</NuxtLink>.</p>
     </section>
-
-    <hr>
 
     <section id="story">
       <h2>قصة الفكرة</h2>
@@ -157,8 +170,6 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
       </p>
     </section>
 
-    <hr>
-
     <section id="contact">
       <h2>تواصل معنا</h2>
       <p>
@@ -172,3 +183,16 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
     </section>
   </article>
 </template>
+
+<style scoped>
+/* The page's whole outline, said once. A part opens under the heavy rule with
+   room above it; an <h3> gets more air than a paragraph and less than a part,
+   so the three levels can be told apart by the space around them alone. */
+section { margin-block-start: var(--space-l); padding-block-start: var(--space-m); border-block-start: var(--rule); }
+* + h3 { margin-block-start: var(--space-m); }
+/* The sentence under the title is the site's definition of itself: it is read
+   as the standfirst, a step above the running text. */
+h1 + p { font-size: var(--step-1); line-height: 1.7; }
+/* The closing invitation of «انضم إلينا» stands apart from the paragraph before it. */
+#join > p:last-child { margin-block-start: var(--space-m); }
+</style>

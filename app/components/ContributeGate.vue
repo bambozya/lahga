@@ -2,13 +2,20 @@
 /**
  * Wraps anything that needs a verified account. Shows the content to verified
  * users and a short explanation with the right link to everyone else.
+ *
+ * Every door into the dictionary passes through here, so this is also where a
+ * contributor is told, once and in one place, what licence their words go out
+ * under (the full text is on /terms).
  */
 const { loggedIn, user } = useUserSession()
 const route = useRoute()
 </script>
 
 <template>
-  <slot v-if="loggedIn && user?.emailVerified" />
+  <template v-if="loggedIn && user?.emailVerified">
+    <slot />
+    <p><small>ما تضيفه يُنشر برخصة المشاع الإبداعي <NuxtLink to="/terms#license">CC BY-SA 4.0</NuxtLink>: يحق للجميع نسخه والبناء عليه، مع النسبة وبالرخصة نفسها.</small></p>
+  </template>
   <p v-else-if="loggedIn">
     <NuxtLink class="cta" to="/settings">أكّد بريدك الإلكتروني</NuxtLink>
     <small>خطوة واحدة قبل الإضافة؛ الرابط في بريدك أو في الإعدادات.</small>

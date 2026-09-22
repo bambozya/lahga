@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'guest' })
-useSeo({ title: 'إنشاء حساب', description: 'أنشئ حساباً في لهجة لتضيف كلمات لهجتك وتصوّت على ما يضيفه غيرك.', noindex: true })
+useSeo({ title: 'إنشاء حساب', description: 'أنشئ حساباً في لهجة لتضيف كلمات لهجتك وأمثلة على استعمالها.', noindex: true })
 const { fetch: refresh } = useUserSession()
 const siteKey = useRuntimeConfig().public.turnstileSiteKey
 // Turnstile renders into the div and writes its token into a hidden input named cf-turnstile-response.
@@ -28,7 +28,7 @@ const { busy, error, run } = useForm(async () => {
       <p><NuxtLink to="/">إلى الصفحة الرئيسية</NuxtLink></p>
     </template>
     <template v-else>
-      <p>بحساب واحد يمكنك إضافة الكلمات والأمثلة والتصويت عليها. الاسم يظهر للجميع بجانب ما تضيفه.</p>
+      <p>بحساب واحد يمكنك إضافة الكلمات والأمثلة وتعديل ما أضفته. الاسم يظهر للجميع بجانب ما تضيفه.</p>
       <p role="alert" v-if="error">{{ error }}</p>
       <form ref="formEl" @submit.prevent="run">
         <fieldset :disabled="busy">

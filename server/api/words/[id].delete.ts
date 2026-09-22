@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
     || l.entry.createdBy !== word.createdBy
     || l.entry.examples.some(x => x.status === 'active' && x.createdBy !== word.createdBy))
   if (!isAdmin && (othersBuiltOnIt || await voteCount(db, 'word', id) > 0)) {
-    throw createError({ statusCode: 409, statusMessage: 'لا يمكن حذف الكلمة بعد أن أضاف إليها آخرون أو صوّتوا عليها' })
+    throw createError({ statusCode: 409, statusMessage: 'لا يمكن حذف الكلمة بعد أن بنى عليها آخرون' })
   }
 
   await db.transaction(async (tx) => {

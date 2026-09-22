@@ -28,6 +28,7 @@ useSeo({
     description: paragraphs.value[0],
     url: `https://lahga.fyi/d/${dialect.value.slug}`,
     inLanguage: 'ar',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/',
   } : undefined,
   image: () => dialect.value ? `/og/d/${dialect.value.slug}.png` : undefined,
 })

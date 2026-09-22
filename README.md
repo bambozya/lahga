@@ -14,8 +14,9 @@ across the Arab world.
 
 ## Status
 
-The site is live with accounts, contributions, votes, flags and an admin area
-(phases 1 to 4 of the plan). Phase 5, launch, is in progress: seed content,
+The site is live with accounts, contributions, flags and an admin area
+(phases 1 to 4 of the plan). Voting is built (API, scores, `VoteBox`) but hidden:
+nothing mounts the component and no page mentions it, until it is a feature again. Phase 5, launch, is in progress: seed content,
 legal pages, offsite backups.
 
 ## Run it locally
@@ -130,6 +131,16 @@ Google login, Turnstile, contact form address.
   letters; see `shared/utils/arabic.ts`.
 - Nothing user-generated is edited in place. Corrections are new rows that
   compete on votes.
+
+## Licence
+
+The dictionary's content (words, dialect forms, definitions, notes, examples,
+dialect descriptions) is published under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). That choice is
+not free: part of the seed comes from Maknuune, which is BY-SA, and share-alike
+material can only be passed on under the same licence. Contributors agree to it
+on /terms, and ContributeGate says so next to every form. The name, the logo,
+the design and this code are not covered.
 
 ## Roadmap
 
