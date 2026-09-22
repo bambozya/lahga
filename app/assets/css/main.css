@@ -126,6 +126,10 @@ nav a { display: inline-block; padding-block: 0.4em; font-weight: 600; text-deco
 nav a:hover, nav a[aria-current="page"] { text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
 nav a[aria-current="page"] { color: inherit; }
 nav a svg { width: 1.2em; height: 1.2em; vertical-align: -0.25em; margin-inline-end: 0.3em; }
+/* Top bar above the masthead: account link at the inline start (top right),
+   theme switch at the inline end, both centred on one line. */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-m); padding: var(--space-2xs) var(--gutter); }
+.topbar nav a { display: inline-flex; align-items: center; min-height: 2.25rem; padding-block: 0; }
 /* The login link is an icon on its own, kept quiet: no label, muted until touched. */
 .login-link { color: var(--muted); font-weight: 400; }
 .login-link svg { margin-inline-end: 0; }
@@ -201,7 +205,6 @@ button {
   min-height: 2.25rem; min-width: 2.25rem; padding: 0 1.1em; font-weight: 600; cursor: pointer;
   background: var(--ink); color: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
 }
-.switch { padding:var(--space-2xs) var(--gutter); justify-content: end;}
 button:hover { background: var(--accent); border-color: var(--accent); }
 button:disabled { cursor: not-allowed; opacity: 0.5; }
 button svg { width: 1.3em; height: 1.3em; flex: none; }
