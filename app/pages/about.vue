@@ -189,7 +189,7 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
    room above it; an <h3> gets more air than a paragraph and less than a part,
    so the three levels can be told apart by the space around them alone. */
 section { margin-block-start: var(--space-l); padding-block-start: var(--space-m); border-block-start: var(--rule); }
-* + h3 { margin-block-start: var(--space-m); }
+h3:not(:first-child) { margin-block-start: var(--space-m); }
 /* The sentence under the title is the site's definition of itself: it is read
    as the standfirst, a step above the running text. */
 h1 + p { font-size: var(--step-1); line-height: 1.7; }
