@@ -17,7 +17,8 @@ export default defineNuxtConfig({
       siteUrl: 'https://lahga.fyi',
       // Cloudflare Turnstile site key for the registration form; empty disables the widget.
       turnstileSiteKey: '',
-      // Set to '1' when NUXT_OAUTH_GOOGLE_CLIENT_ID is configured, so the pages show the Google button.
+      // '1' shows the Google button. Set per request by server/middleware/google-login.ts
+      // whenever NUXT_OAUTH_GOOGLE_CLIENT_ID is configured; no need to set it by hand.
       googleLogin: '',
       // Self-hosted Umami (docs/REACH.md, Phase R1): cookie-free, and served from
       // our own domain so blockers keyed on a vendor hostname do not strip it.
