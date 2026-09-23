@@ -1,0 +1,27 @@
+# Uptime monitor for lahga.fyi, run by Cloudflare on a timer (docs/ROADMAP.md, A3).
+# It lives outside the netcup server on purpose: a monitor on the same machine
+# dies with it. See README.md in this folder for the four commands to deploy it.
+name = "lahga-uptime"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Remembers whether the site was up or down last time, so one outage sends one
+# email, not one every five minutes. Create it with:
+#   npx wrangler kv namespace create STATE
+# and paste the id it prints below.
+[[kv_namespaces]]
+binding = "STATE"
+id = "REPLACE_WITH_ID_FROM_kv_namespace_create"
+
+[vars]
+# Comma-separated. /api/health answers 200 only when the database responds too.
+TARGETS = "https://lahga.fyi/api/health,https://lahga.fyi/"
+# Where alerts go. info@lahga.fyi is forwarded by Cloudflare Email Routing.
+ALERT_TO = "info@lahga.fyi"
+EMAIL_FROM = "لهجة <no-reply@lahga.fyi>"
+
+# Secrets (never in this file):
+#   npx wrangler secret put BREVO_API_KEY   # the same key Coolify has

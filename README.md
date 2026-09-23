@@ -110,9 +110,12 @@ serves its DNS.
 - **Database.** PostgreSQL 17 runs in its own container next to the app and is
   not reachable from the internet. The app gets its address through the
   `DATABASE_URL` variable, set in Coolify.
-- **Backups.** Coolify dumps the database every night at 03:00 and keeps the
-  last 14 dumps under `/data/coolify/backups` on the server. There is no
-  offsite copy yet.
+- **Backups.** Coolify dumps the database every night at 03:00, keeps the
+  last 14 dumps under `/data/coolify/backups` on the server, and uploads each
+  one to a Scaleway bucket in Paris. `scripts/restore-drill.sh` proves a dump
+  restores; run it now and then.
+- **Uptime.** A Cloudflare Worker in `ops/uptime/` checks the site every five
+  minutes from outside and emails info@lahga.fyi when it goes down or comes back.
 - **HTTPS.** Coolify's proxy (Traefik) obtains and renews Let's Encrypt
   certificates on its own. `http://` and `www.` redirect to `https://lahga.fyi`.
 - **Server access.** SSH with a key only; password login is disabled. Security
