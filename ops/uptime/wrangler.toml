@@ -14,7 +14,7 @@ crons = ["*/5 * * * *"]
 # and paste the id it prints below.
 [[kv_namespaces]]
 binding = "STATE"
-id = "REPLACE_WITH_ID_FROM_kv_namespace_create"
+id = "ce32737aba4d4816af42d5e731335a8a"
 
 [vars]
 # Comma-separated. /api/health answers 200 only when the database responds too.

@@ -5,9 +5,8 @@ netcup server and emails info@lahga.fyi once when the site stops answering, and
 once when it is back. Free tier, no new account: it runs in the Cloudflare
 account that already holds the domain.
 
-Why not the GitHub Actions cron in `.github/workflows/uptime.yml`? GitHub runs
-it only a few times a day in practice, so an outage could go unnoticed for
-hours. That workflow can be deleted once this is live.
+It replaced a GitHub Actions cron, which GitHub ran only a few times a day in
+practice, so an outage could have gone unnoticed for hours.
 
 ## Deploy (once)
 
