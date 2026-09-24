@@ -137,13 +137,24 @@ Google login, Turnstile, contact form address.
 
 ## Licence
 
-The dictionary's content (words, dialect forms, definitions, notes, examples,
-dialect descriptions) is published under
+Two licences, because the code and the content are different things.
+
+**The code**, everything in this repository except `docs/seed/`, is under the
+[GNU Affero General Public License v3.0](LICENSE). Run it, change it, host it.
+If you host a changed copy, publish your changes under the same licence and
+give its users a way to the source, as the site's footer does for this one.
+Copyright (C) 2026 Yasser Maslout-Siegfried.
+
+**The content** (words, dialect forms, definitions, notes, examples, dialect
+descriptions, including the seed files in `docs/seed/`) is published under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). That choice is
 not free: part of the seed comes from Maknuune, which is BY-SA, and share-alike
 material can only be passed on under the same licence. Contributors agree to it
-on /terms, and ContributeGate says so next to every form. The name, the logo,
-the design and this code are not covered.
+on /terms, and ContributeGate says so next to every form.
+
+**Neither licence covers** the name «لهجة» or the jeem-dot logo. The fonts in
+`public/fonts/` (Amiri, IBM Plex Sans Arabic) keep their own SIL Open Font
+License.
 
 ## Roadmap
 

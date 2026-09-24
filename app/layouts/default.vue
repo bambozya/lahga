@@ -63,6 +63,11 @@ const { loggedIn, user } = useUserSession()
         <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ar" rel="license noopener">CC BY-SA 4.0</a>:
         انسخه وابنِ عليه، مع نسبته إلى «لهجة» وبالرخصة نفسها.</small>
       </p>
+      <p>
+        <small>وبرمجيات الموقع مفتوحة المصدر برخصة
+        <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="license noopener">AGPL-3.0</a>،
+        وشيفرتها على <a href="https://github.com/bambozya/lahga" rel="noopener">GitHub</a>.</small>
+      </p>
       <nav aria-label="عن الموقع">
         <ul>
           <li><NuxtLink to="/about">عن الموقع</NuxtLink></li>

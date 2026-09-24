@@ -180,6 +180,11 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         البريد الإلكتروني: <a href="mailto:info@lahga.fyi">info@lahga.fyi</a><br />
         أو من خلال <NuxtLink to="/contact">نموذج الاتصال</NuxtLink>
       </address>
+      <p>
+        والشيفرة المصدرية للموقع مفتوحة على
+        <a href="https://github.com/bambozya/lahga" rel="noopener">GitHub</a>
+        برخصة AGPL-3.0، لمن أراد أن يقرأها أو يصلح فيها شيئاً.
+      </p>
     </section>
   </article>
 </template>
