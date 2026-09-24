@@ -181,9 +181,9 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         أو من خلال <NuxtLink to="/contact">نموذج الاتصال</NuxtLink>
       </address>
       <p>
-        والشيفرة المصدرية للموقع مفتوحة على
+        الكود المصدري للموقع متاح للعامة على
         <a href="https://github.com/bambozya/lahga" rel="noopener">GitHub</a>
-        برخصة AGPL-3.0، لمن أراد أن يقرأها أو يصلح فيها شيئاً.
+        برخصة AGPL-3.0.
       </p>
     </section>
   </article>

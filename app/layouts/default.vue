@@ -66,7 +66,7 @@ const { loggedIn, user } = useUserSession()
       <p>
         <small>وبرمجيات الموقع مفتوحة المصدر برخصة
         <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="license noopener">AGPL-3.0</a>،
-        وشيفرتها على <a href="https://github.com/bambozya/lahga" rel="noopener">GitHub</a>.</small>
+        وكودها المصدري على <a href="https://github.com/bambozya/lahga" rel="noopener">GitHub</a>.</small>
       </p>
       <nav aria-label="عن الموقع">
         <ul>
