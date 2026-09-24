@@ -1,7 +1,19 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
 useSeo({ title: 'الإدارة: عمليات بحث بلا نتيجة', noindex: true })
-const { data: misses, refresh } = await useFetch('/api/admin/search-misses')
+type SortKey = 'date' | 'count'
+const sort = ref<SortKey>('date')
+const dir = ref<'desc' | 'asc'>('desc')
+const { data: misses, refresh } = await useFetch('/api/admin/search-misses', {
+  query: computed(() => ({ sort: sort.value, dir: dir.value })),
+})
+// A click on the sorted column turns it round; a click on the other one sorts by it, largest or newest first.
+const sortBy = (key: SortKey) => {
+  if (sort.value === key) dir.value = dir.value === 'desc' ? 'asc' : 'desc'
+  else { sort.value = key; dir.value = 'desc' }
+}
+const ariaSort = (key: SortKey) => sort.value !== key ? 'none' : dir.value === 'desc' ? 'descending' : 'ascending'
+const arrow = (key: SortKey) => sort.value !== key ? '' : dir.value === 'desc' ? '▼' : '▲'
 const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(d))
 const busy = ref<number | null>(null)
 const error = ref('')
@@ -20,12 +32,17 @@ const remove = async (id: number, term: string) => {
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>عمليات بحث بلا نتيجة</h2>
-    <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأكثر تكراراً أولاً. هذه قائمة بما يُضاف بعده من كلمات.</small></p>
+    <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأحدث أولاً. هذه قائمة بما يُضاف بعده من كلمات. اضغط على عنوان العمود لترتيبه.</small></p>
     <p role="alert" v-if="error">{{ error }}</p>
     <p v-if="!misses?.length">لا شيء بعد.</p>
     <table v-else class="misses">
       <thead>
-        <tr><th>الكلمة المكتوبة</th><th>عدد المرات</th><th>آخر مرة</th><th></th></tr>
+        <tr>
+          <th>الكلمة المكتوبة</th>
+          <th :aria-sort="ariaSort('count')"><button type="button" class="sort" @click="sortBy('count')">عدد المرات <span aria-hidden="true">{{ arrow('count') }}</span></button></th>
+          <th :aria-sort="ariaSort('date')"><button type="button" class="sort" @click="sortBy('date')">آخر مرة <span aria-hidden="true">{{ arrow('date') }}</span></button></th>
+          <th></th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="m in misses" :key="m.id">
@@ -57,6 +74,23 @@ const remove = async (id: number, term: string) => {
 }
 .misses th:last-child {
   width: 8.5em;
+}
+/* The sort control is the heading itself, not a button beside it: same face as
+   the other headings, the arrow the only sign it does something. */
+.sort {
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  font: inherit;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  text-align: inherit;
+}
+.sort:hover {
+  background: transparent;
+  color: var(--accent);
 }
 .actions {
   display: flex;

@@ -77,7 +77,9 @@ export default defineEventHandler(async (event) => {
     )
     .limit(max)
   if (!ids.length) {
-    await logSearchMiss(db, raw, term)
+    // The fuzzy call is the home page asking a second time about a term it
+    // has just been told is missing; logging it too would count every miss twice.
+    if (!fuzzy) await logSearchMiss(db, raw, term)
     return fuzzy ? near(db, term, max) : []
   }
 
