@@ -34,9 +34,13 @@
   "devDependencies": {
     "@types/node": "^26.6.1",
     "drizzle-kit": "^0.31.10",
-    "esbuild": ">=0.25.0",
     "tsx": "^4.23.13",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.3.11"
+  },
+  "overrides": {
+    "@esbuild-kit/core-utils": {
+      "esbuild": "^0.25.0"
+    }
   }
 }
