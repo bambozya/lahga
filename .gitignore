@@ -26,7 +26,7 @@ logs
 # Cloudflare wrangler working files (ops/uptime)
 .wrangler/
 
-# The dictionary's seed data is content, not code, and stays out of the
-# repository: only the notes in docs/seed (FORMAT, SOURCES, README) are tracked.
-docs/seed/**/*.json
-docs/seed/**/*.txt
+# The dictionary's seed data and its working notes are content, not code, and
+# stay out of the repository altogether; they live on the maintainer's machine
+# and in the live database.
+docs/seed/
