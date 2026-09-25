@@ -66,7 +66,7 @@ drizzle/            generated SQL migrations, committed
 public/             favicons, robots.txt, self-hosted fonts
 docs/               product and data-model docs
 Dockerfile          the production image
-docs/seed/          seed content format and the draft word list (import at /admin/import)
+docs/seed/          seed content format and sources; the data files themselves are kept out of the repository
 ```
 
 ## Design
@@ -139,14 +139,14 @@ Google login, Turnstile, contact form address.
 
 Two licences, because the code and the content are different things.
 
-**The code**, everything in this repository except `docs/seed/`, is under the
+**The code**, everything in this repository, is under the
 [GNU Affero General Public License v3.0](LICENSE). Run it, change it, host it.
 If you host a changed copy, publish your changes under the same licence and
 give its users a way to the source, as the site's footer does for this one.
 Copyright (C) 2026 Yasser Maslout-Siegfried.
 
 **The content** (words, dialect forms, definitions, notes, examples, dialect
-descriptions, including the seed files in `docs/seed/`) is published under
+descriptions, and the seed files that are kept outside this repository) is published under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). That choice is
 not free: part of the seed comes from Maknuune, which is BY-SA, and share-alike
 material can only be passed on under the same licence. Contributors agree to it
