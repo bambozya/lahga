@@ -393,7 +393,8 @@ numbers from D1, and this file.
 
 ## What is deliberately not planned
 
-A mobile app, a public API, AI-written content, paid acquisition, a
+A mobile app, a public API (the bulk files under /data are a download, not
+an API — docs/DISCOVERY.md), AI-written content, paid acquisition, a
 newsletter, Redis or any second service in front of the app, a rewrite of the
 classless CSS into a component library, component tests, and an i18n layer.
 The site is Arabic only, and inline Arabic strings are the right amount of

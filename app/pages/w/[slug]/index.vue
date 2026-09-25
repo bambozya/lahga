@@ -17,6 +17,18 @@ if (word.value && word.value.slug !== param) {
 }
 // The same glance a result card shows: each form once, with everyone who says it.
 const forms = computed(() => formsOf(word.value?.groups.flatMap(g => g.entries) ?? []))
+const tagged = computed(() => {
+  const seen = new Set<string>()
+  const out: { '@value': string, '@language': string }[] = []
+  for (const e of word.value?.groups.flatMap(g => g.entries) ?? []) {
+    const lang = dialectTag(e.dialect.slug)
+    const key = `${lang}\u0000${e.form}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({ '@value': e.form, '@language': lang })
+  }
+  return out
+})
 const kindWord = computed(() => ({ word: 'كلمة', phrase: 'عبارة', proverb: 'مثل' })[word.value?.kind ?? 'word'])
 useSeo({
   // The title carries the dialect forms, because that is what people type into a search box.
@@ -41,7 +53,10 @@ useSeo({
       inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'لهجة، معجم اللهجات العربية', url: 'https://lahga.fyi', license: 'https://creativecommons.org/licenses/by-sa/4.0/' },
       url: `https://lahga.fyi/w/${word.value.slug}`,
       inLanguage: 'ar',
-      ...(forms.value.length ? { alternateName: forms.value.map(f => f.form) } : {}),
+      // Each form once per dialect, tagged with that dialect's BCP-47 code
+      // (shared/utils/dialectTags.ts), so a machine reading this knows إزيك
+      // is Egyptian without parsing the Arabic name next to it.
+      ...(tagged.value.length ? { alternateName: tagged.value } : {}),
     }]
     // The BreadcrumbList that used to be declared here now comes from the
     // BreadCrumbs component, so the trail search engines read is the same one
@@ -109,7 +124,7 @@ const removeWord = async () => {
       <dl>
         <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
           <dt>
-            <b>{{ e.form }}</b>
+            <b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
           <dd>
@@ -125,7 +140,7 @@ const removeWord = async () => {
                     <ExampleForm :entry-id="e.id" :example="x" @done="done" @cancel="open = null" />
                   </template>
                   <template v-else>
-                    <q>{{ x.text }}</q>
+                    <q :lang="dialectTag(e.dialect.slug)">{{ x.text }}</q>
                     <small v-if="x.gloss"> {{ x.gloss }}</small>
                     <small v-if="mine(x.createdBy)"> · <a href="#" @click.prevent="toggle(`example-${x.id}`)">تعديل</a> · <a href="#" @click.prevent="remove('examples', x.id, 'المثال')">حذف</a></small>
                   </template>

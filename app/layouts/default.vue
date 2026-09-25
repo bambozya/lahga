@@ -74,6 +74,7 @@ const { loggedIn, user } = useUserSession()
           <li><NuxtLink to="/about">عن الموقع</NuxtLink></li>
           <li><NuxtLink to="/privacy">سياسة الخصوصية</NuxtLink></li>
           <li><NuxtLink to="/terms">شروط الاستخدام</NuxtLink></li>
+          <li><NuxtLink to="/data">البيانات المفتوحة</NuxtLink></li>
           <li><NuxtLink to="/contact">اتصل بنا</NuxtLink></li>
         </ul>
       </nav>

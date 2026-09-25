@@ -143,7 +143,8 @@ serves its DNS.
 Secrets live in Coolify's environment variables, never in the repository. See
 `.env.example` for the full list: database, site URL, session secret, Brevo
 (email), Google login, Turnstile, contact form address, the import token for
-scripts, the local dev admin, and the Umami analytics id.
+scripts, the local dev admin, the Umami analytics id, and the IndexNow key
+(`docs/DISCOVERY.md`).
 
 ## Rules
 

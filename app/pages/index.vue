@@ -62,7 +62,7 @@ useSeo({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'لهجة',
-    alternateName: 'لهجة، معجم اللهجات العربية',
+    alternateName: ['لهجة، معجم اللهجات العربية', 'lahga.fyi', 'Lahga'],
     url: 'https://lahga.fyi/',
     inLanguage: 'ar',
     description: 'معجم تشاركي يربط كلمات اللهجات العربية بمعانيها بالفصحى.',

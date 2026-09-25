@@ -1,4 +1,6 @@
 import { purgePageCache } from '../utils/pageCache'
+import { invalidateExport } from '../utils/exportData'
+import { scheduleIndexNow } from '../utils/indexnow'
 
 /**
  * Forgets the cached pages after anything that changes what they show.
@@ -10,8 +12,13 @@ import { purgePageCache } from '../utils/pageCache'
  * Votes are deliberately not here. They only reorder forms within a page, they
  * are the most frequent write the site has, and clearing on each one would keep
  * the cache empty exactly when it is busy.
+ *
+ * The same moment is the right one for two more things (docs/DISCOVERY.md):
+ * forgetting the built data export, and telling the search engines which
+ * pages changed. Both are no-ops when nothing is configured or nothing is
+ * cached.
  */
-const CHANGES_CONTENT = /^\/api\/(words|entries|examples|admin\/(content|revisions|import|prune|tidy|retire-entries|merge-words|proposals))/
+const CHANGES_CONTENT = /^\/api\/(words|entries|examples|admin\/(content|revisions|import|prune|tidy|retire-entries|merge-words|reset-slug|proposals))/
 
 export default defineNitroPlugin((nitro) => {
   nitro.hooks.hook('afterResponse', (event) => {
@@ -19,5 +26,7 @@ export default defineNitroPlugin((nitro) => {
     if (event.node.res.statusCode >= 400) return
     if (!CHANGES_CONTENT.test(event.path)) return
     purgePageCache().catch(() => {})
+    invalidateExport()
+    scheduleIndexNow()
   })
 })

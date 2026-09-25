@@ -97,6 +97,7 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         يحق لك أن تنسخه وتوزعه وتبني عليه لأي غرض، بشرطين: أن تنسبه إلى «لهجة»
         مع رابط إلى الموقع، وأن تنشر ما تبنيه عليه بالرخصة نفسها. والتفاصيل في
         <NuxtLink to="/terms#license">شروط الاستخدام</NuxtLink>.
+        والمعجم كله للتنزيل في صفحة <NuxtLink to="/data">البيانات المفتوحة</NuxtLink>.
       </p>
     </section>
 

@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     // Secrets come from the environment (NUXT_SESSION_PASSWORD, NUXT_OAUTH_GOOGLE_CLIENT_ID, …);
     // see .env.example. Empty here on purpose.
     session: { maxAge: 60 * 60 * 24 * 30 }, // 30 days
+    // IndexNow key (docs/DISCOVERY.md); empty means no pings are sent. Set
+    // NUXT_INDEXNOW_KEY to any 8–128 character hex string; the site serves it
+    // back at /indexnow/<key>.txt as the proof of ownership the protocol wants.
+    indexnowKey: '',
     public: {
       // Canonical origin of the live site; override with NUXT_PUBLIC_SITE_URL.
       siteUrl: 'https://lahga.fyi',
@@ -108,6 +112,8 @@ export default defineNuxtConfig({
     // من أي لهجة؟ has the same no-per-viewer-data shape as لهجة اليوم above.
     '/games': { swr: 3600 },
     '/which-dialect': { swr: 300 },
+    // The open-data page shows counts from a build that is itself an hour old.
+    '/data': { swr: 3600 },
   },
   nitro: {
     // PGlite ships WASM assets, and @resvg/resvg-js (the card renderer, docs/REACH.md
