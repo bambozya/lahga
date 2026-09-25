@@ -3,7 +3,7 @@
 // search that found nothing is told so on the page rather than bounced to the
 // login form and left to find the way back: ContributeGate carries ?headword=
 // into the link, so the form is waiting, filled in, when they return.
-useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى قاموس لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
+useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى معجم لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
 // A search that found nothing sends the term along (?headword=…), so the page
 // opens on the word the visitor was already looking for.
 const route = useRoute()
@@ -101,7 +101,7 @@ const { busy, error, run } = useForm(async () => {
          more useful instead, and rarely knows it. Every line here is a door
          that already exists somewhere on the site. -->
     <section class="more">
-      <h2>وللقاموس أبواب أخرى</h2>
+      <h2>وللمعجم أبواب أخرى</h2>
       <p>الإضافة ليست الطريق الوحيد؛ من صفحة أي كلمة أو لهجة يمكنك:</p>
       <ul>
         <li>أن تضيف شكل الكلمة في لهجتك إلى كلمة موجودة، أو مثالاً على استعمالها.</li>

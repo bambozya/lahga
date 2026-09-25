@@ -52,20 +52,20 @@ const countLabel = computed(() => {
 })
 
 useSeo({
-  title: () => activeQuery.value ? `بحث: ${activeQuery.value}` : 'قاموس اللهجات العربية',
+  title: () => activeQuery.value ? `بحث: ${activeQuery.value}` : 'معجم اللهجات العربية',
   path: '/',
   description: () => activeQuery.value
-    ? `نتائج البحث عن «${activeQuery.value}» في قاموس اللهجات العربية.`
-    : 'قاموس تشاركي للهجات العربية: ابحث عن كلمة بالفصحى أو بأي لهجة وشاهد كيف تُقال في مصر والشام والخليج والعراق واليمن والمغرب والسودان.',
+    ? `نتائج البحث عن «${activeQuery.value}» في معجم اللهجات العربية.`
+    : 'معجم تشاركي للهجات العربية: ابحث عن كلمة بالفصحى أو بأي لهجة وشاهد كيف تُقال في مصر والشام والخليج والعراق واليمن والمغرب والسودان.',
   noindex: () => !!activeQuery.value,
   jsonLd: [{
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'لهجة',
-    alternateName: 'لهجة، قاموس اللهجات العربية',
+    alternateName: 'لهجة، معجم اللهجات العربية',
     url: 'https://lahga.fyi/',
     inLanguage: 'ar',
-    description: 'قاموس تشاركي يربط كلمات اللهجات العربية بمعانيها بالفصحى.',
+    description: 'معجم تشاركي يربط كلمات اللهجات العربية بمعانيها بالفصحى.',
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: 'https://lahga.fyi/?q={search_term_string}' },
@@ -83,7 +83,7 @@ useSeo({
       <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
     </hgroup>
     <hgroup v-else class="head">
-      <h1>كلمات من القاموس</h1>
+      <h1>كلمات من المعجم</h1>
       <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.</p>
     </hgroup>
 
@@ -105,7 +105,7 @@ useSeo({
         </template>
       </p>
       <p>
-        <NuxtLink class="cta" :to="{ path: '/add-word', query: { headword: activeQuery } }">أضف «{{ activeQuery }}» إلى القاموس</NuxtLink>
+        <NuxtLink class="cta" :to="{ path: '/add-word', query: { headword: activeQuery } }">أضف «{{ activeQuery }}» إلى المعجم</NuxtLink>
       </p>
       <p><small><NuxtLink to="/" aria-current-value="false">اقرأ كلمات أخرى</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
     </div>

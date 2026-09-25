@@ -1,6 +1,6 @@
 # لهجة — Lahga
 
-قاموس اللهجات العربية بمشاركة المستخدمين.
+معجم اللهجات العربية بمشاركة المستخدمين.
 
 A user-driven dictionary of Arabic dialects. Every dialect word is linked to a
 Modern Standard Arabic headword, so the site can show how the same idea is said
@@ -14,10 +14,14 @@ across the Arab world.
 
 ## Status
 
-The site is live with accounts, contributions, flags and an admin area
-(phases 1 to 4 of the plan). Voting is built (API, scores, `VoteBox`) but hidden:
-nothing mounts the component and no page mentions it, until it is a feature again. Phase 5, launch, is in progress: seed content,
-legal pages, offsite backups.
+The site is live and the two plans behind it, [PLAN.md](docs/PLAN.md) and
+[REACH.md](docs/REACH.md), are shipped: accounts, contribution with revision
+history, flags, moderation and proposals, an admin area, trigram search, share
+cards, two daily games, the divergence ranking, dialect-versus-dialect pages,
+offsite backups and an outside uptime check. Voting is built (API, scores,
+`VoteBox`) but hidden: nothing mounts the component and no page mentions it,
+until it is a feature again. What comes next is in
+[ROADMAP.md](docs/ROADMAP.md), mirrored as the repository's GitHub issues.
 
 ## Run it locally
 
@@ -45,28 +49,40 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 | `npm run db:generate` | Create a migration from schema changes |
 | `npm run db:migrate` | Apply migrations to the database in `DATABASE_URL` |
 | `npm run db:studio` | Browser UI over the database |
+| `npm run typecheck` | Type-check the whole project (nothing runs it automatically yet) |
+| `npm run import -- <file.json>` | Validate a seed file; `--commit` saves it, `--url` targets a server (see `docs/seed/FORMAT.md`) |
+| `npm run check-variety -- <file.json>` | Fail on words whose dialects do not differ enough to earn a page |
+| `npm run add-examples`, `retire-extra`, `seed:*` | Seed maintenance scripts; each explains itself in its header under `scripts/` |
 
 ## Project layout
 
 ```
 app/                Vue side (Nuxt 4)
-  layouts/          header, nav, footer
-  pages/            one file per route: /, /browse, /dialects, /w/[id], /d/[slug], account, admin, static pages
-  components/       AppLogo, WordCard, EntryCard, VoteBox, FlagButton, forms, admin pieces
+  layouts/          top bar, footer
+  pages/            one file per route: / (search and random words), /w/[slug] with edit and
+                    history, /d/[slug] and /d/[slug]/vs/[b], /dialects, /divergent, the games
+                    (/games, /daily, /which-dialect), account pages, /settings/admin/*, static pages
+  components/       AppLogo, WordCard, VoteBox, FlagButton, ContributeGate, the forms, ThemeSwitch,
+                    BreadCrumbs, admin pieces
+  composables/      useSeo, useForm, useAnalytics, the two games' local progress
   middleware/       auth, guest, admin route guards
   assets/css/       main.css (the design), scale.css (fluid type and space), fonts.css
   error.vue         the error page
-shared/utils/       code used by both client and server (Arabic normalisation)
+shared/             code used by both client and server: Arabic normalisation, the daily date helpers, types
 server/
   api/              HTTP endpoints, one file per route; /api/admin/* for admins; /api/health for the container
-  db/               Drizzle schema, connection, migrations on startup, seed data
-  utils/            session, validation, rate limits, email, tokens, contribution and admin helpers
-  plugins/          runs at startup (opens the database; drops the session cookie for anonymous visitors)
+  routes/           non-API routes: Google login callback, share-card images (/og/*), sitemap, robots, old /browse redirect
+  middleware/       page cache, share-card rate limit, Google login redirect
+  db/               Drizzle schema, connection with retry and migration lock, seed data (dialect tree, a few words)
+  utils/            session, validation, rate limits, page cache, email, tokens, games, contribution and admin helpers
+  plugins/          startup: warm the database with retries, purge the page cache after edits, drop the session cookie for anonymous visitors
 drizzle/            generated SQL migrations, committed
+scripts/            seed tooling (import, check-variety, source converters) and the backup restore drill
+ops/uptime/         the Cloudflare Worker that watches the site from outside
 public/             favicons, robots.txt, self-hosted fonts
-docs/               product and data-model docs
-Dockerfile          the production image
+docs/               product, data model, plans, roadmap
 docs/seed/          seed content format and sources; the data files themselves are kept out of the repository
+Dockerfile          the production image
 ```
 
 ## Design
@@ -125,15 +141,20 @@ serves its DNS.
 ### Configuration
 
 Secrets live in Coolify's environment variables, never in the repository. See
-`.env.example` for the full list: database, session secret, Brevo (email),
-Google login, Turnstile, contact form address.
+`.env.example` for the full list: database, site URL, session secret, Brevo
+(email), Google login, Turnstile, contact form address, the import token for
+scripts, the local dev admin, and the Umami analytics id.
 
 ## Rules
 
 - The site and its content are Arabic script only. Content fields reject Latin
   letters; see `shared/utils/arabic.ts`.
-- Nothing user-generated is edited in place. Corrections are new rows that
-  compete on votes.
+- Nothing is lost. Authors may edit and delete their own rows, but every
+  create and edit writes a revision (visible at `/w/[slug]/history`), and a
+  delete only changes the status. See `docs/DATA_MODEL.md`.
+- A word earns a page only if the dialects say it differently, and no
+  definition may just repeat the word it hangs under. `npm run check-variety`
+  and the importer enforce it.
 
 ## Licence
 
@@ -158,7 +179,8 @@ License.
 
 ## Roadmap
 
-The phases, with schema changes and endpoints, are in [docs/PLAN.md](docs/PLAN.md):
-accounts, contribution with revision history, votes and flags, moderation and
-proposals, seed content and launch, then audio, images, dialect suggestions,
-phrases and reputation.
+[docs/ROADMAP.md](docs/ROADMAP.md) is the plan from here: five tracks
+(foundation, cheap to change, content, community, product), each with Now,
+Next and Later. Every item is also a GitHub issue, grouped by milestone.
+[docs/PLAN.md](docs/PLAN.md) and [docs/REACH.md](docs/REACH.md) are the two
+earlier plans, kept as a record of what was built and why.

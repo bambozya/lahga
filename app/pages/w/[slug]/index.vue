@@ -38,7 +38,7 @@ useSeo({
       '@type': 'DefinedTerm',
       name: word.value.headword,
       description: word.value.definition,
-      inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'لهجة، قاموس اللهجات العربية', url: 'https://lahga.fyi', license: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+      inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'لهجة، معجم اللهجات العربية', url: 'https://lahga.fyi', license: 'https://creativecommons.org/licenses/by-sa/4.0/' },
       url: `https://lahga.fyi/w/${word.value.slug}`,
       inLanguage: 'ar',
       ...(forms.value.length ? { alternateName: forms.value.map(f => f.form) } : {}),

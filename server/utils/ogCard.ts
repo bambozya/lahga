@@ -324,7 +324,7 @@ const LOGO_HEIGHT = 152
  */
 function frame(body: string) {
   const logo = logoMark(CONTENT_RIGHT, LOGO_TOP, LOGO_HEIGHT)
-  const tagline = 'قاموس اللهجات العربية'
+  const tagline = 'معجم اللهجات العربية'
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" viewBox="0 0 ${CARD_WIDTH} ${CARD_HEIGHT}">
     <rect width="${CARD_WIDTH}" height="${CARD_HEIGHT}" fill="${PAPER}"/>
     ${body}

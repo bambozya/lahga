@@ -10,7 +10,7 @@ export async function systemUserId(db: Awaited<ReturnType<typeof useDb>>) {
   if (existing) return existing.id
   const [u] = await db.insert(schema.users).values({
     email: SYSTEM_EMAIL, displayName: 'لهجة', emailVerifiedAt: new Date(),
-    bio: 'حساب الموقع: المحتوى الأول الذي بدأ به القاموس.',
+    bio: 'حساب الموقع: المحتوى الأول الذي بدأ به المعجم.',
   }).returning()
   return u!.id
 }

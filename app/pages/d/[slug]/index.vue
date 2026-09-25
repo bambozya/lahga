@@ -13,7 +13,7 @@ if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, 
 const paragraphs = computed(() => (dialect.value?.descriptionAr ?? '').split(/\n\s*\n/).map(t => t.trim()).filter(Boolean))
 useSeo({
   // The dialect name stays a label, so the title reads correctly for every name.
-  title: () => dialect.value ? `${dialect.value.nameAr}: قاموس كلمات اللهجة` : '',
+  title: () => dialect.value ? `${dialect.value.nameAr}: معجم كلمات اللهجة` : '',
   description: () => {
     if (!dialect.value) return ''
     // The shown words change with every draw; the description quotes the

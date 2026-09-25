@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeo({ title: 'اتصل بنا', description: 'راسل فريق لهجة باقتراحاتك وملاحظاتك على قاموس اللهجات العربية.' })
+useSeo({ title: 'اتصل بنا', description: 'راسل فريق لهجة باقتراحاتك وملاحظاتك على معجم اللهجات العربية.' })
 const form = reactive({ name: '', email: '', subject: '', message: '', website: '' })
 const sent = ref(false)
 const { busy, error, run } = useForm(async () => {

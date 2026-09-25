@@ -15,8 +15,10 @@ Reference data, seeded, editable by admins only.
 | id         | int pk    |                                        |
 | slug       | text uniq | latin, for URLs only (e.g. `egyptian`) |
 | name_ar    | text      | displayed name, Arabic                 |
+| description_ar | text null | changed through `proposals`        |
 | parent_id  | int null  | null for top-level groups              |
 | sort_order | int       |                                        |
+| active     | smallint  | 0 hides a dialect (the historical ones) |
 
 ### words
 The MSA hub. One row per concept.
@@ -26,7 +28,9 @@ The MSA hub. One row per concept.
 | id                  | int pk     |                                           |
 | headword            | text       | MSA form as written, with optional tashkeel |
 | headword_normalized | text idx   | see normalisation rules in PROJECT.md     |
-| definition          | text       | MSA definition                            |
+| slug                | text uniq  | the headword made URL-safe, set once at creation, never regenerated |
+| definition          | text null  | MSA definition; empty when the headword defines itself |
+| kind                | enum       | word, phrase, proverb                     |
 | created_by          | int fk users |                                         |
 | created_at          | timestamptz |                                          |
 | score               | int        | denormalised vote total, recomputed       |
@@ -44,7 +48,7 @@ A dialect's word for a concept.
 | dialect_id       | int fk       | may point at a group or a sub-dialect   |
 | form             | text         | the dialect word, Arabic script         |
 | form_normalized  | text idx     |                                         |
-| meaning          | text         | explanation in Arabic                   |
+| meaning          | text null    | only when the dialect word means something narrower than the headword |
 | notes            | text null    | register, connotation, origin           |
 | created_by       | int fk users |                                         |
 | created_at       | timestamptz  |                                         |
@@ -69,8 +73,9 @@ The cross-dialect graph.
 | status      | enum         |                                       |
 | unique (word_id, entry_id) |
 
-A word page shows the entries whose link score is above a threshold, grouped
-by dialect. Links below the threshold are shown collapsed as "suggested".
+A word page shows the entries of its active links, grouped by top-level
+dialect and ordered as described under Ranking. A score threshold with a
+collapsed "suggested" section was planned and is not built.
 
 ### examples
 
@@ -219,12 +224,59 @@ dialect page credits the author of the latest approved description.
 Every admin action, on record: actor, action (hide, restore, delete, revert,
 resolve_flag, approve, reject, ban, unban), target type and id, reason, time.
 
+### daily_puzzles
+
+One row per day for the daily game «خمّن الكلمة». Created on first request for
+that day, from the most divergent unused word unless an admin picked one.
+
+| column       | type        | notes                                          |
+|--------------|-------------|------------------------------------------------|
+| id           | int pk      |                                                |
+| date         | text uniq   | YYYY-MM-DD                                     |
+| word_id      | int fk      |                                                |
+| reveal_order | jsonb       | entry ids, most divergent first, one per group, up to six |
+| created_at   | timestamptz |                                                |
+
+### dialect_quiz_rounds
+
+Three rounds a day for «من أي لهجة؟». Fixed at creation so every player sees
+the same round and a reload does not reshuffle the choices. The answer is a
+dialect group, never a sub-dialect.
+
+| column           | type        | notes                                      |
+|------------------|-------------|--------------------------------------------|
+| id               | int pk      |                                            |
+| date             | text        | unique with slot                           |
+| slot             | smallint    | 1, 2 or 3                                  |
+| entry_id         | int fk      | the form shown                             |
+| word_id          | int fk      |                                            |
+| correct_group_id | int fk dialects |                                        |
+| choice_group_ids | jsonb       | four dialect ids in the order shown        |
+| created_at       | timestamptz |                                            |
+
+### search_misses
+
+What people searched for and found nothing. One row per normalised term,
+counted up on every miss, so it reads as the list of what to seed next. Read
+at `/settings/admin/search-misses`.
+
+| column           | type        | notes                                  |
+|------------------|-------------|----------------------------------------|
+| id               | int pk      |                                        |
+| term             | text        | as typed, for display                  |
+| term_normalized  | text uniq   |                                        |
+| count            | int         |                                        |
+| last_searched_at | timestamptz |                                        |
+| created_at       | timestamptz |                                        |
+
 ## Ranking
 
 Entries inside a word page are ordered by the Wilson lower bound of their
 votes, so a new, well-received entry can overtake an old one with many mixed
-votes; regions are ordered by their best entry. The front page is newest
-first.
+votes; regions are ordered by their best entry (`server/utils/ordering.ts`).
+The front page shows a random handful of words that have forms; a search
+orders exact headword matches first, then prefix matches, then by trigram
+similarity, then by score.
 
 ## Input validation
 

@@ -403,5 +403,18 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-09-25. Seed data files leave the repository and its history; only the
+  notes under docs/seed stay tracked. The seed lives on the maintainer's
+  machine and in the live database.
+- 2026-09-24. Roadmap mirrored as GitHub issues #1 to #41, one per item,
+  milestones Now / Next / Later, one label per track.
+- 2026-09-24. Code licensed AGPL-3.0; content stays CC BY-SA 4.0.
+- 2026-09-24. Language-model drafts allowed for the seed, under conditions
+  (seed/SOURCES.md): the maintainer reads every draft, check-variety passes,
+  no example is ever invented. Amends "nothing is AI-written" under Track C.
+- 2026-09-23. The two questions under "Needs from you" that gate A1 and A3
+  are answered: backups go to a Scaleway bucket in Paris (2026-09-22), the
+  uptime check is a Cloudflare Worker in ops/uptime (2026-09-23). A1, A2, A4
+  and A5 shipped on 2026-09-22; A3's error emails are still open.
 - 2026-09-21. Roadmap written. Tracks replace phases; foundation before
   growth; sub-dialects left to the community; game self-cheating accepted.

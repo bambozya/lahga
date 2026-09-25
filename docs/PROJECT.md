@@ -53,6 +53,8 @@ contributor is sure of. Launch set, following the main groups on Wikipedia's
 | حساني (Hassaniya)      | —                                                    |
 
 The list is data, not code. Adding or splitting a dialect is a content change.
+Three historical varieties (أندلسي، صقلي، مالطي) are seeded as inactive rows so
+they have a place if the dictionary ever reaches back that far.
 
 ## Search
 
@@ -63,15 +65,23 @@ matching a query, text is normalised:
 - أ إ آ ٱ → ا
 - ة → ه
 - ى → ي
-- ؤ → و and ئ → ي (configurable; may be too aggressive)
+- ؤ → و and ئ → ي
 
 The original spelling is always stored and displayed; only the index is
-normalised. Search covers MSA headwords, dialect forms, and example text.
+normalised. Search covers MSA headwords and dialect forms, by substring first
+and by trigram similarity when nothing matches (the «هل تقصد» suggestions).
+Example text is not searched.
 
 ## Out of scope for the first version
 
-Mobile app, public API, audio pronunciations, AI-generated content, and the
-reputation system. The data model leaves room for all of them.
+Mobile app, public API, audio pronunciations, and the reputation system. The
+data model leaves room for all of them.
+
+AI-generated content was out of scope until 2026-09-24. Since then a language
+model may draft forms, definitions and notes for the seed, under conditions
+recorded in `seed/SOURCES.md`: the maintainer reads every draft, each file
+passes `check-variety`, and no example sentence is ever invented. Examples are
+what real people say, or nothing.
 
 ## Stack
 
@@ -79,10 +89,11 @@ Nuxt 4 (Vue 3, RTL layout from day one) with its built-in Nitro server for
 the API, Drizzle ORM over PostgreSQL. Locally the database is PGlite, an
 embedded Postgres stored under `.data/`, so nothing needs installing. In
 production `DATABASE_URL` points at a PostgreSQL container on the same
-server. Search uses normalised text columns in Postgres; a trigram index is
-the next step and Meilisearch the upgrade path. Auth (planned) via
-nuxt-auth-utils: email and password plus Google. Hosting on a netcup server in
-Nuremberg, deployed with Coolify (see the README's Production section).
+server. Search uses normalised text columns in Postgres with a trigram index
+(`pg_trgm`, migration 0005); Meilisearch is the upgrade path, with a trigger in
+ROADMAP.md. Auth via nuxt-auth-utils: email and password with verification,
+plus Google. Hosting on a netcup server in Nuremberg, deployed with Coolify
+(see the README's Production section).
 
 ## Order of work
 
@@ -93,6 +104,7 @@ The detailed plan with schema changes and endpoints per phase is in
 2. Seed the dialect tree (done) and a few hundred words with entries in three
    or four dialects. An empty dictionary has no reason to exist.
 3. ~~Read-only site: word page, dialect page, search.~~ done (first cut)
-4. Voting (anonymous and logged in).
-5. Accounts and contribution: add word, add entry, add example, propose link.
-6. Flagging and a minimal moderation queue.
+4. ~~Voting.~~ built for logged-in users, then hidden from the pages until it
+   is a feature again (see the README's Status).
+5. ~~Accounts and contribution: add word, add entry, add example, propose link.~~ done
+6. ~~Flagging and a minimal moderation queue.~~ done

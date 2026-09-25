@@ -28,7 +28,7 @@ const { loggedIn, user } = useUserSession()
     </div>
 
     <header>
-      <NuxtLink to="/" aria-label="لهجة، قاموس اللهجات العربية: الصفحة الرئيسية">
+      <NuxtLink to="/" aria-label="لهجة، معجم اللهجات العربية: الصفحة الرئيسية">
         <AppLogo />
       </NuxtLink>
       <nav aria-label="الرئيسي">
@@ -55,12 +55,12 @@ const { loggedIn, user } = useUserSession()
     <footer>
       <AppLogo />
       <p>
-        لهجة هو قاموس إلكتروني للمصطلحات اليومية المستخدمة في اللهجات العربية المختلفة في أنحاء الوطن العربي.
+        لهجة هو معجم إلكتروني للمصطلحات اليومية المستخدمة في اللهجات العربية المختلفة في أنحاء الوطن العربي.
         هذا الموقع يتيح الفرصة للجمهور بإضافة المزيد من المواد وتصحيح ما هو موجود.
       </p>
       <!-- rel="license" says to a crawler what the sentence says to a reader. -->
       <p>
-        <small>محتوى القاموس متاح برخصة المشاع الإبداعي
+        <small>محتوى المعجم متاح برخصة المشاع الإبداعي
         <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ar" rel="license noopener">CC BY-SA 4.0</a>:
         انسخه وابنِ عليه، مع نسبته إلى «لهجة» وبالرخصة نفسها.</small>
       </p>

@@ -6,7 +6,7 @@ const { data: contributions } = await useFetch(`/api/users/${route.params.id}/co
 const kindLabel = { word: '', phrase: 'عبارة', proverb: 'مثل' } as const
 useSeo({
   title: () => profile.value?.displayName ?? '',
-  description: () => profile.value ? `صفحة ${profile.value.displayName} في لهجة: الكلمات التي أضافها إلى قاموس اللهجات العربية.` : '',
+  description: () => profile.value ? `صفحة ${profile.value.displayName} في لهجة: الكلمات التي أضافها إلى معجم اللهجات العربية.` : '',
 })
 const since = computed(() => profile.value ? new Intl.DateTimeFormat('ar', { year: 'numeric', month: 'long' }).format(new Date(profile.value.createdAt)) : '')
 const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as const
