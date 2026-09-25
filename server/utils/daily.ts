@@ -13,8 +13,6 @@ export { MIN_GROUPS }
  * a guess against it; server/api/daily/* is the thin HTTP layer on top.
  */
 
-export { REVEALS, todayDate } from '../../shared/utils/daily'
-
 type PuzzleRow = typeof schema.dailyPuzzles.$inferSelect
 
 /** Today's puzzle if one is curated for the date already, or a freshly picked and stored one. */

@@ -1,6 +1,7 @@
 import { inArray } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { ensurePuzzle, REVEALS, todayDate } from '../../utils/daily'
+import { ensurePuzzle } from '../../utils/daily'
+import { REVEALS, todayDate } from '../../../shared/utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
 
 /**

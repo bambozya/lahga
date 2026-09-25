@@ -2,7 +2,7 @@ import { and, eq, inArray } from 'drizzle-orm'
 import * as v from 'valibot'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { normalizeArabic } from '../../utils/contribute'
+import { normalizeArabic } from '../../../shared/utils/arabic'
 
 /**
  * Retires words by headword (admin, or the IMPORT_TOKEN bearer that the importer

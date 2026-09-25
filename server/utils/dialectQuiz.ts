@@ -11,8 +11,6 @@ import type { Tx } from './contribute'
 export const SLOTS = 3
 export const CHOICES = 4
 
-export { todayDate } from '../../shared/utils/daily'
-
 type RoundRow = typeof schema.dialectQuizRounds.$inferSelect
 
 /** A day's round at this slot (1–3), curated ahead or picked fresh the first time it is asked for. */

@@ -2,7 +2,8 @@ import * as v from 'valibot'
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { fields, normalizeArabic } from '../../utils/contribute'
+import { fields } from '../../utils/contribute'
+import { normalizeArabic } from '../../../shared/utils/arabic'
 
 /** Adds how a dialect says an existing word: a new entry linked to that word. */
 const Body = v.object({

@@ -1,6 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { ensureRound, groupNames, SLOTS, todayDate } from '../../utils/dialectQuiz'
+import { ensureRound, groupNames, SLOTS } from '../../utils/dialectQuiz'
+import { todayDate } from '../../../shared/utils/daily'
 
 /**
  * One of today's three rounds of «من أي لهجة؟»: the form and its MSA word

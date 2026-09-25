@@ -2,8 +2,9 @@ import * as v from 'valibot'
 import { and, eq, ne } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
 import { readBody$ } from '../../../utils/validate'
-import { normalizeArabic } from '../../../utils/contribute'
-import { MIN_GROUPS, revealOrderFor, todayDate } from '../../../utils/daily'
+import { normalizeArabic } from '../../../../shared/utils/arabic'
+import { MIN_GROUPS, revealOrderFor } from '../../../utils/daily'
+import { todayDate } from '../../../../shared/utils/daily'
 
 /**
  * Sets (or swaps) the word for a future day of كلمة اليوم (docs/REACH.md,

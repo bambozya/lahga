@@ -2,7 +2,7 @@ import { and, eq } from 'drizzle-orm'
 import * as v from 'valibot'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { normalizeArabic } from '../../utils/contribute'
+import { normalizeArabic } from '../../../shared/utils/arabic'
 
 /**
  * Retires single dialect forms from a word (admin, or the IMPORT_TOKEN bearer

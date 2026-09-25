@@ -1,6 +1,6 @@
 import { eq, inArray } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { todayDate } from '../../utils/daily'
+import { todayDate } from '../../../shared/utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
 
 /**

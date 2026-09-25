@@ -2,7 +2,8 @@ import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { ensureRound, groupNames, SLOTS, todayDate } from '../../utils/dialectQuiz'
+import { ensureRound, groupNames, SLOTS } from '../../utils/dialectQuiz'
+import { todayDate } from '../../../shared/utils/daily'
 import { assertRateLimit, clientIp } from '../../utils/rateLimit'
 
 /**

@@ -2,7 +2,8 @@ import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { fields, normalizeArabic } from '../../utils/contribute'
+import { fields } from '../../utils/contribute'
+import { normalizeArabic } from '../../../shared/utils/arabic'
 
 const Body = v.object({
   headword: v.optional(fields.headword),

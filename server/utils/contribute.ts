@@ -68,8 +68,6 @@ export async function findDialect(tx: Tx, slug: string) {
   return dialect
 }
 
-export { normalizeArabic }
-
 // ---------- field validators (all Arabic script) ----------
 
 const arabic = (label: string, min: number, max: number) => v.pipe(
