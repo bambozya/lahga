@@ -83,6 +83,11 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
         وبعض الكلمات الأردنية من مواد
         <a href="https://files.peacecorps.gov/uploads/wws/lesson-plans/files/JO_Arabic_Language_Lessons.pdf" rel="noopener">Peace Corps</a>
         التعليمية، وهي في الملكية العامة.
+        وكلمات من لهجات مصر والشام والحجاز والخليج والمغرب وتونس مأخوذة من
+        <a href="https://en.wiktionary.org/" rel="noopener">ويكاموس</a>
+        (Wiktionary)، عبر مستخرجات
+        <a href="https://kaikki.org/dictionary/" rel="noopener">kaikki.org</a>،
+        وهي مرخّصة برخصة Creative Commons BY-SA نفسها.
       </p>
 
       <h3 id="license">الرخصة</h3>

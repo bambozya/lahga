@@ -30,3 +30,7 @@ logs
 # stay out of the repository altogether; they live on the maintainer's machine
 # and in the live database.
 docs/seed/
+
+# Raw Wiktionary extracts from kaikki.org (hundreds of MB); re-download with
+# scripts/import-sources/wiktionary.ts, see docs/seed/SOURCES.md.
+scripts/import-sources/.wiktionary/
