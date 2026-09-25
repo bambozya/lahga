@@ -11,7 +11,7 @@ import { purgePageCache } from '../utils/pageCache'
  * are the most frequent write the site has, and clearing on each one would keep
  * the cache empty exactly when it is busy.
  */
-const CHANGES_CONTENT = /^\/api\/(words|entries|examples|admin\/(content|revisions|import|prune|tidy|retire-entries|proposals))/
+const CHANGES_CONTENT = /^\/api\/(words|entries|examples|admin\/(content|revisions|import|prune|tidy|retire-entries|merge-words|proposals))/
 
 export default defineNitroPlugin((nitro) => {
   nitro.hooks.hook('afterResponse', (event) => {
