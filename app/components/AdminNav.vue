@@ -12,6 +12,7 @@ const { data: stats } = await useFetch('/api/admin')
       <li><NuxtLink to="/settings/admin/daily">كلمة اليوم</NuxtLink></li>
       <li><NuxtLink to="/settings/admin/users">الأعضاء<template v-if="stats?.users"> ({{ stats.users }})</template></NuxtLink></li>
       <li><NuxtLink to="/settings/admin/import">استيراد</NuxtLink></li>
+      <li><NuxtLink to="/settings/admin/stats">الأرقام</NuxtLink></li>
     </ul>
   </nav>
 </template>

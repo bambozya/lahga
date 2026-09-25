@@ -308,6 +308,12 @@ nav a svg {
   gap: var(--space-m);
   padding: var(--space-2xs) var(--gutter);
 }
+/* The account nav holds the name and, for an admin, the link to the admin area. */
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+}
 .topbar nav a {
   display: inline-flex;
   align-items: center;
