@@ -1,31 +1,44 @@
-import { and, eq, like, sql } from 'drizzle-orm'
+import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
+import { slugify } from '../../../shared/utils/arabic'
 
 /**
- * Live words whose address carries a number — /w/أين-2 — because another row
- * already held the plain slug when they were created. That other row is
- * nearly always a retired twin: a word pruned for having too few forms
- * (scripts/check-variety.ts) keeps its row and its slug, so the same headword
- * imported again later lands one step over. This lists every such pair, with
- * what the holder still has on it, for /settings/admin/slugs to decide on:
- * merge the two (POST /api/admin/merge-words) or leave them.
+ * The two ways a live word's address can drift from its headword, for
+ * /settings/admin/slugs:
+ *
+ * - `suffixed`: the slug carries a number — /w/أين-2 — because another row
+ *   already held the plain slug when the word was created. That other row is
+ *   nearly always a retired twin: a word pruned for having too few forms
+ *   (scripts/check-variety.ts) keeps its row and its slug, so the same
+ *   headword imported again later lands one step over. Each pair comes with
+ *   what the holder still has on it, to merge (POST /api/admin/merge-words)
+ *   or leave.
+ * - `mismatched`: the slug is not what the headword would give today, because
+ *   the headword was edited after creation and a slug is never regenerated
+ *   (server/utils/slug.ts). To reset: POST /api/admin/reset-slug.
  */
 export default defineEventHandler(async (event) => {
   await requireAdmin(event)
   const db = await useDb()
-  const suffixed = await db.query.words.findMany({
-    where: and(eq(schema.words.status, 'active'), like(schema.words.slug, '%-_%'), sql`${schema.words.slug} ~ '-[0-9]+$'`),
+  const live = await db.query.words.findMany({
+    where: eq(schema.words.status, 'active'),
+    columns: { id: true, headword: true, headwordNormalized: true, slug: true },
     with: { links: { columns: { status: true } } },
     orderBy: schema.words.headword,
   })
-  const out = []
-  for (const w of suffixed) {
+  const plain = (slug: string) => slug.replace(/-\d+$/, '')
+  const mismatched = live
+    .filter(w => w.slug && plain(w.slug) !== (slugify(w.headword) || 'كلمة'))
+    .map(w => ({ id: w.id, headword: w.headword, slug: w.slug, expected: slugify(w.headword) || 'كلمة', entries: w.links.filter(l => l.status === 'active').length }))
+
+  const suffixed = []
+  for (const w of live.filter(w => w.slug && /-\d+$/.test(w.slug))) {
     const base = w.slug!.replace(/-\d+$/, '')
     const holder = await db.query.words.findFirst({
       where: eq(schema.words.slug, base),
       with: { links: { columns: { status: true }, with: { entry: { columns: { status: true } } } } },
     })
-    out.push({
+    suffixed.push({
       word: { id: w.id, headword: w.headword, slug: w.slug, entries: w.links.filter(l => l.status === 'active').length },
       base,
       holder: holder
@@ -38,5 +51,5 @@ export default defineEventHandler(async (event) => {
         : null,
     })
   }
-  return out
+  return { suffixed, mismatched }
 })
