@@ -40,12 +40,19 @@ const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
  */
 async function lookup(headword: string): Promise<{ headword: string, slug: string }[] | null> {
   for (let attempt = 0; attempt < 6; attempt++) {
-    const res = await fetch(`${url}/api/words?q=${encodeURIComponent(headword)}&limit=10`)
+    let res: Response
+    try { res = await fetch(`${url}/api/words?q=${encodeURIComponent(headword)}&limit=10`) }
+    catch (e) {
+      // A dropped connection or a DNS blip mid-run is not a verdict on the word: wait and ask again.
+      console.error(`  ~ ${headword}: ${(e as Error).message}, retrying`)
+      await sleep(10_000)
+      continue
+    }
     if (res.ok) return await res.json()
     if (res.status !== 429) { console.error(`  ! ${headword}: ${res.status} from the site`); return null }
     await sleep(15_000)
   }
-  console.error(`  ! ${headword}: still rate-limited after six tries`)
+  console.error(`  ! ${headword}: no answer after six tries`)
   return null
 }
 
