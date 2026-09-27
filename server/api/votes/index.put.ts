@@ -19,5 +19,9 @@ export default defineEventHandler(async (event) => {
   const target = await findTarget(db, body.targetType, body.targetId)
   if (!target) throw createError({ statusCode: 404, statusMessage: 'العنصر غير موجود' })
   if (target.createdBy === user.id) throw createError({ statusCode: 400, statusMessage: 'لا يمكنك التصويت على ما أضفته أنت' })
-  return db.transaction(tx => applyVote(tx, user.id, body.targetType, body.targetId, body.value))
+  const result = await db.transaction(tx => applyVote(tx, user.id, body.targetType, body.targetId, body.value))
+  // The vote that confirms a draft changes the page (its open nuqta goes), so
+  // this one vote, unlike the rest, clears the cache (server/plugins/page-cache-purge.ts).
+  if (result.confirmed) { purgePageCache().catch(() => {}); invalidateExport() }
+  return result
 })

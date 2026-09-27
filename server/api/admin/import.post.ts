@@ -19,7 +19,10 @@ import { normalizeArabic } from '../../../shared/utils/arabic'
  * system account «لهجة» unless `authorId` is given. `dryRun` validates only.
  */
 const Example = v.object({ text: fields.text, gloss: fields.gloss })
-const Entry = v.object({ dialect: fields.dialect, form: fields.form, meaning: fields.meaning, notes: fields.notes, examples: v.optional(v.array(Example), []) })
+// `review: true` marks a language-model draft: the link lands on the review
+// list (schema.wordEntryLinks.needsReview). The import only ever sets the mark,
+// never clears it — a checked form stays checked when a draft file repeats it.
+const Entry = v.object({ dialect: fields.dialect, form: fields.form, meaning: fields.meaning, notes: fields.notes, examples: v.optional(v.array(Example), []), review: v.optional(v.boolean(), false) })
 const Word = v.object({ headword: fields.headword, definition: fields.definition, kind: fields.kind, entries: v.pipe(v.array(Entry), v.minLength(1, 'كل كلمة تحتاج إلى مدخل واحد على الأقل')) })
 const Body = v.object({ words: v.pipe(v.array(v.unknown()), v.minLength(1, 'القائمة فارغة'), v.maxLength(500, '500 كلمة كحد أقصى في المرة الواحدة')), dryRun: v.optional(v.boolean(), false), authorId: v.optional(v.number()) })
 
@@ -92,6 +95,7 @@ export default defineEventHandler(async (event) => {
           && l.entry.dialectId === dialect.id && l.entry.formNormalized === formNormalized)
         if (dup) {
           report.entriesMerged++
+          if (e.review && !dup.needsReview) await tx.update(schema.wordEntryLinks).set({ needsReview: true }).where(eq(schema.wordEntryLinks.id, dup.id))
           await fillGaps(dup.entry, e)
           if (e.examples.length) await addExamples(dup.entry.id, e.examples, dup.entry.examples)
           continue
@@ -105,7 +109,7 @@ export default defineEventHandler(async (event) => {
           with: { examples: true },
         })
         if (shared) {
-          const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: shared.id, createdBy: authorId })
+          const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: shared.id, createdBy: authorId, needsReview: e.review })
             .onConflictDoNothing().returning()
           if (link) await recordRevision(tx, 'link', link.id, { wordId: word.id, entryId: shared.id }, authorId, 'استيراد')
           report.entriesLinked++
@@ -117,7 +121,7 @@ export default defineEventHandler(async (event) => {
         const meaning = echoesWord(e.meaning, e.form, w.headword) ? null : (e.meaning || null)
         const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning, notes: e.notes || null, createdBy: authorId }).returning()
         await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
-        const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId }).returning()
+        const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId, needsReview: e.review }).returning()
         await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, authorId, 'استيراد')
         report.entriesCreated++
         // Keep the in-memory picture current, so a form repeated later in the same
