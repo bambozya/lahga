@@ -34,6 +34,8 @@
   --page: 60rem;
   --gutter: max(var(--space-s-m), (100% - var(--page)) / 2);
   --nuqta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M35.4 5.1Q39.5 -0.3 46.9 1.7Q60.5 6.5 73.1 13.9Q85.7 21.4 96.6 31Q102 36.4 98.6 43.2L66 94.9Q61.2 101.7 53.7 96.3Q46.9 90.8 4.8 65.6Q-2.7 60.9 2 54.1L35.4 5.1Z'/%3E%3C/svg%3E");
+  /* The same dot, drawn as an outline: a form nobody has confirmed yet (needsReview). */
+  --nuqta-open: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 120 120'%3E%3Cpath fill='none' stroke='black' stroke-width='12' d='M35.4 5.1Q39.5 -0.3 46.9 1.7Q60.5 6.5 73.1 13.9Q85.7 21.4 96.6 31Q102 36.4 98.6 43.2L66 94.9Q61.2 101.7 53.7 96.3Q46.9 90.8 4.8 65.6Q-2.7 60.9 2 54.1L35.4 5.1Z'/%3E%3C/svg%3E");
   --sans: "IBM Plex Sans Arabic", "Geeza Pro", system-ui, sans-serif;
   --naskh: "Noto Naskh Arabic", "Geeza Pro", serif;
 }
@@ -181,6 +183,20 @@ a:visited {
 a:hover {
   color: var(--accent);
   text-decoration-color: currentColor;
+}
+
+/* A draft (a form no speaker has confirmed yet): the nuqta left open after
+   the form, and nothing else. Wherever a dialect form is written — the glance
+   line, the entry's own heading — [data-draft] on it is the whole signal. */
+[data-draft]::after {
+  content: "";
+  display: inline-block;
+  width: 0.42em;
+  aspect-ratio: 1;
+  margin-inline-start: 0.3em;
+  vertical-align: 0.35em;
+  background: var(--accent);
+  mask: var(--nuqta-open) center / contain no-repeat;
 }
 
 /* Dialect tag: the nuqta, then the name in the small sans voice. No box around it. */

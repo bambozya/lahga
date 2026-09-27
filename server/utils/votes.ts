@@ -1,6 +1,9 @@
 import { and, eq, inArray, sql } from 'drizzle-orm'
 import { schema } from '../db'
-import type { Tx } from './contribute'
+import { recordRevision, type Tx } from './contribute'
+
+/** Net upvotes on a link that take a draft off the review list. */
+export const CONFIRM_SCORE = 2
 
 export type VoteTarget = 'word' | 'entry' | 'link' | 'example'
 
@@ -38,7 +41,17 @@ export async function applyVote(tx: Tx, userId: number, targetType: VoteTarget, 
   const upvotes = Number(counts?.up ?? 0), downvotes = Number(counts?.down ?? 0)
   const table = tables[targetType]
   await tx.update(table).set({ upvotes, downvotes, score: upvotes - downvotes }).where(eq(table.id, targetId))
-  return { upvotes, downvotes, score: upvotes - downvotes, mine: value }
+  // Two speakers more saying «yes, we say that» than «no» is what checks a
+  // draft (schema.wordEntryLinks.needsReview). Only ever cleared here, never
+  // set back: a form that later draws downvotes is a matter for flags.
+  let confirmed = false
+  if (targetType === 'link' && upvotes - downvotes >= CONFIRM_SCORE) {
+    const [cleared] = await tx.update(schema.wordEntryLinks).set({ needsReview: false })
+      .where(and(eq(schema.wordEntryLinks.id, targetId), eq(schema.wordEntryLinks.needsReview, true))).returning({ id: schema.wordEntryLinks.id })
+    if (cleared) await recordRevision(tx, 'link', targetId, { needsReview: false }, userId, 'تأكيد بالتصويت')
+    confirmed = !!cleared
+  }
+  return { upvotes, downvotes, score: upvotes - downvotes, mine: value, confirmed }
 }
 
 /** The user's votes on a set of targets of one type: id -> +1 | -1. */

@@ -110,7 +110,7 @@ const removeWord = async () => {
     <p v-if="forms.length" class="glance">
       <span>تُقال:</span>
       <template v-for="(f, i) in forms" :key="f.form">
-        <template v-if="i">، </template><a :href="`#entry-${f.entryId}`"><b>{{ f.form }}</b></a> <small>{{ f.dialects.join('، ') }}</small>
+        <template v-if="i">، </template><a :href="`#entry-${f.entryId}`"><b :data-draft="f.draft || undefined" :title="f.draft ? 'لم يتحقق منها متحدّث بعد' : undefined">{{ f.form }}</b></a> <small>{{ f.dialects.join('، ') }}</small>
       </template>
     </p>
 
@@ -124,7 +124,7 @@ const removeWord = async () => {
       <dl>
         <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
           <dt>
-            <b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b>
+            <b :lang="dialectTag(e.dialect.slug)" :data-draft="e.needsReview || undefined" :title="e.needsReview ? 'لم يتحقق منها متحدّث بعد' : undefined">{{ e.form }}</b>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
           <dd>
@@ -132,6 +132,7 @@ const removeWord = async () => {
               <EntryForm :word-id="word.id" :entry="e" @done="done" @cancel="open = null" />
             </template>
             <template v-else>
+              <ReviewMark v-if="e.needsReview" :link-id="e.linkId" :my-vote="e.myLinkVote" :dialect="e.dialect" @confirmed="refresh()" />
               <p v-if="e.meaning">{{ e.meaning }}</p>
               <p v-if="e.notes"><small>{{ e.notes }}</small></p>
               <ul v-if="e.examples.length">

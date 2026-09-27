@@ -1,0 +1,2 @@
+ALTER TABLE "word_entry_links" ADD COLUMN "needs_review" boolean DEFAULT false NOT NULL;--> statement-breakpoint
+CREATE INDEX "word_entry_links_review_idx" ON "word_entry_links" USING btree ("needs_review");

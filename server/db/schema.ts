@@ -142,9 +142,17 @@ export const wordEntryLinks = pgTable('word_entry_links', {
   upvotes: integer('upvotes').notNull().default(0),
   downvotes: integer('downvotes').notNull().default(0),
   status: contentStatus('status').notNull().default('active'),
+  // «This form says this word in this dialect» is unconfirmed: a language-model
+  // draft nobody has checked yet (docs/seed/LLM-REVIEW.md). The claim lives on
+  // the link, not the entry, because the same form can be right under one
+  // headword and a guess under another. Set by the importer or
+  // /api/admin/review-marks; cleared by two net upvotes on the link or by an
+  // admin or moderator (/api/links/[id]/confirm). Everything else counts as checked.
+  needsReview: boolean('needs_review').notNull().default(false),
 }, t => [
   uniqueIndex('word_entry_links_unique').on(t.wordId, t.entryId),
   index('word_entry_links_entry_idx').on(t.entryId),
+  index('word_entry_links_review_idx').on(t.needsReview),
 ])
 
 // ---------- examples ----------

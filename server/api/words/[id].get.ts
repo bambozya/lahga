@@ -29,9 +29,11 @@ export default defineEventHandler(async (event) => {
   // visitor will be served, and every myVote below is left at its 0 default.
   const { user } = event.context.cache ? { user: undefined } : await getUserSession(event)
   const activeLinks = word.links.filter(l => l.status === 'active' && l.entry.status === 'active')
-  const [entryVotes, exampleVotes] = await Promise.all([
+  const [entryVotes, exampleVotes, linkVotes] = await Promise.all([
     myVotes(db, user?.id, 'entry', activeLinks.map(l => l.entry.id)),
     myVotes(db, user?.id, 'example', activeLinks.flatMap(l => l.entry.examples.map(x => x.id))),
+    // Only drafts ask the reader for a vote, so only their links are looked up.
+    myVotes(db, user?.id, 'link', activeLinks.filter(l => l.needsReview).map(l => l.id)),
   ])
 
   const entries = word.links
@@ -39,6 +41,8 @@ export default defineEventHandler(async (event) => {
     .map(l => ({
       linkId: l.id,
       linkScore: l.score,
+      needsReview: l.needsReview,
+      myLinkVote: linkVotes[l.id] ?? 0,
       id: l.entry.id,
       form: l.entry.form,
       meaning: l.entry.meaning,
