@@ -285,6 +285,17 @@ exists as the other way to complete them.
 - **Proverbs as their own list.** Trigger: 50 rows marked `proverb`.
 - **A few thousand words before a push** (REACH.md's target) stays the goal.
   It is reached through C2, C4 and Track D, not through a seeding sprint.
+- **Core words that every dialect says alike.** About 300 everyday Standard
+  Arabic words are ready but not on the site: شمس، كلب، باب، يكتب، أحمر, the
+  numbers, most days of the week. They were retired (2026-09) or never added
+  because the content rule gives a page only to a word the dialects say
+  differently. They sit, with their forms and examples, in the local seed
+  files `docs/seed/retired/one-form.json` (129 words, one form everywhere) and
+  `retired/two-form.json` (170 words, exactly two, some of them real splits
+  like لبن / حليب). A gap check on 2026-09-27 found no other core word
+  missing that the dialects say differently. Trigger: a decision to make the
+  site a full Standard Arabic dictionary rather than a comparison of
+  differences. Then: one import command per file, two-form first.
 
 ## Track D: the community loop
 
@@ -404,9 +415,11 @@ machinery for that.
 
 Newest first. One line each.
 
-- 2026-09-25. Seed data files leave the repository and its history; only the
-  notes under docs/seed stay tracked. The seed lives on the maintainer's
-  machine and in the live database.
+- 2026-09-27. Core words identical across dialects stay off the site for
+  now; they are kept ready in the retired seed files (Track C, Later).
+- 2026-09-25. Seed data files leave the repository and its history, and the
+  same day the notes under docs/seed follow them. The seed lives on the
+  maintainer's machine and in the live database.
 - 2026-09-24. Roadmap mirrored as GitHub issues #1 to #41, one per item,
   milestones Now / Next / Later, one label per track.
 - 2026-09-24. Code licensed AGPL-3.0; content stays CC BY-SA 4.0.
