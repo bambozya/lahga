@@ -1,3 +1,4 @@
+import type { H3Event } from 'h3'
 import { and, desc, eq, ilike, or, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { normalizeArabic } from '../../../shared/utils/arabic'
@@ -79,7 +80,7 @@ export default defineEventHandler(async (event) => {
   if (!ids.length) {
     // The fuzzy call is the home page asking a second time about a term it
     // has just been told is missing; logging it too would count every miss twice.
-    if (!fuzzy) await logSearchMiss(db, raw, term)
+    if (!fuzzy) await logSearchMiss(event, db, raw, term)
     return fuzzy ? near(db, term, max) : []
   }
 
@@ -126,20 +127,24 @@ async function near(db: Awaited<ReturnType<typeof useDb>>, term: string, max: nu
 
 /**
  * Records a search that matched nothing, upserted by normalised term so this
- * stays a ranked list of missing words (docs/REACH.md, Phase R1) rather than a
- * per-visit log. Skipped for very short terms, which are mostly a typo still
- * being typed. Never lets a logging failure break the search itself.
+ * stays a ranked list of missing words (docs/REACH.md, Phase R1), plus one
+ * event row with coarse facts about who searched (server/utils/searchVisitor.ts).
+ * Skipped for very short terms, which are mostly a typo still being typed.
+ * Never lets a logging failure break the search itself.
  */
-async function logSearchMiss(db: Awaited<ReturnType<typeof useDb>>, raw: string, term: string) {
+async function logSearchMiss(event: H3Event, db: Awaited<ReturnType<typeof useDb>>, raw: string, term: string) {
   if (term.length < 2) return
   try {
-    await db.insert(schema.searchMisses)
+    const [miss] = await db.insert(schema.searchMisses)
       .values({ term: raw.slice(0, 200), termNormalized: term })
       .onConflictDoUpdate({
         target: schema.searchMisses.termNormalized,
         set: { count: sql`${schema.searchMisses.count} + 1`, lastSearchedAt: new Date() },
       })
-  } catch { /* best effort */ }
+      .returning({ id: schema.searchMisses.id })
+    await db.insert(schema.searchMissEvents).values({ missId: miss!.id, ...describeSearcher(event) })
+    await pruneSearchMissEvents(db)
+  } catch (e) { console.error('[lahga] search miss not logged', e) }
 }
 
 /** Escapes the LIKE wildcards so a typed % or _ matches itself. */

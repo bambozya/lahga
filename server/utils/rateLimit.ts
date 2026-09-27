@@ -19,7 +19,10 @@ function sweep(now: number) {
 }
 
 export function clientIp(event: H3Event): string {
-  return getRequestIP(event, { xForwardedFor: true }) || 'unknown'
+  // A search the server renders into a /?q= page arrives with no headers of the
+  // visitor's (the page cache strips them), so without this every such render
+  // would share one bucket under the proxy's address. See searchVisitor.ts.
+  return pageVisitIp(event) || getRequestIP(event, { xForwardedFor: true }) || 'unknown'
 }
 
 /** Throws 429 when `key` was seen more than `limit` times in the last `windowMs`. */

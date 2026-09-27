@@ -1,5 +1,5 @@
 import {
-  pgTable, pgEnum, serial, bigserial, integer, smallint, text, timestamp, jsonb, uniqueIndex, index,
+  pgTable, pgEnum, serial, bigserial, integer, smallint, text, boolean, timestamp, jsonb, uniqueIndex, index,
 } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm'
 
@@ -331,6 +331,34 @@ export const searchMisses = pgTable('search_misses', {
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
 
+// Each miss once more, as it happened: coarse facts about who searched, so the
+// list above can tell a person in Cairo from a crawler in a data centre. Never
+// the IP address and never an account: the country and network are looked up
+// from the IP and the IP is dropped, and `visitor` is a hash that changes every
+// day, so it counts distinct people within a day and follows nobody past it.
+// Kept for 90 days (server/utils/searchVisitor.ts); the counter above stays.
+export const searchMissEvents = pgTable('search_miss_events', {
+  id: bigserial('id', { mode: 'number' }).primaryKey(),
+  missId: integer('miss_id').notNull().references(() => searchMisses.id, { onDelete: 'cascade' }),
+  at: timestamp('at', { withTimezone: true }).notNull().defaultNow(),
+  country: text('country'), // ISO 3166 code, e.g. EG
+  asn: integer('asn'),
+  network: text('network'), // who owns the IP range: an ISP, or a cloud provider
+  visitor: text('visitor'), // daily-rotating hash of IP + browser
+  device: text('device'), // mobile | tablet | desktop
+  os: text('os'),
+  browser: text('browser'),
+  lang: text('lang'), // the browser's first language, e.g. ar-EG
+  timezone: text('timezone'), // sent by the page's own script, so only from a browser running it
+  referrer: text('referrer'), // the site they arrived from, host only
+  via: text('via').notNull(), // app: typed into the running page | page: a /?q= URL loaded | api: neither
+  signedIn: boolean('signed_in').notNull().default(false),
+  bot: text('bot'), // why this looks automated, or null when it looks like a person
+}, t => [
+  index('search_miss_events_miss_idx').on(t.missId, t.at),
+  index('search_miss_events_at_idx').on(t.at),
+])
+
 // ---------- relations (for db.query.* helpers) ----------
 
 export const dialectsRelations = relations(dialects, ({ one, many }) => ({
@@ -345,6 +373,14 @@ export const usersRelations = relations(users, ({ many }) => ({
 
 export const oauthAccountsRelations = relations(oauthAccounts, ({ one }) => ({
   user: one(users, { fields: [oauthAccounts.userId], references: [users.id] }),
+}))
+
+export const searchMissesRelations = relations(searchMisses, ({ many }) => ({
+  events: many(searchMissEvents),
+}))
+
+export const searchMissEventsRelations = relations(searchMissEvents, ({ one }) => ({
+  miss: one(searchMisses, { fields: [searchMissEvents.missId], references: [searchMisses.id] }),
 }))
 
 export const wordsRelations = relations(words, ({ one, many }) => ({

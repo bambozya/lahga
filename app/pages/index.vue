@@ -15,7 +15,9 @@ const SAMPLE = 5
 type WordList = { id: number, slug: string, headword: string, definition: string | null, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
 
+const searchHeaders = useSearchHeaders()
 const { data: words, status, refresh } = await useFetch<WordList>('/api/words', {
+  headers: searchHeaders,
   query: computed(() => activeQuery.value
     ? { q: activeQuery.value, limit: LIMIT }
     : { random: 1, limit: SAMPLE }),
@@ -37,7 +39,7 @@ watch(nothing, v => { if (v) trackEvent('search-empty') })
 // empty answer can still point somewhere («هل تقصد…»).
 const { data: suggestions } = await useAsyncData<WordList>('near', () => (
   activeQuery.value && !count.value
-    ? $fetch<WordList>('/api/words', { query: { q: activeQuery.value, limit: 6, fuzzy: 1 } })
+    ? $fetch<WordList>('/api/words', { query: { q: activeQuery.value, limit: 6, fuzzy: 1 }, headers: searchHeaders })
     : Promise.resolve([])
 ), { watch: [words] })
 

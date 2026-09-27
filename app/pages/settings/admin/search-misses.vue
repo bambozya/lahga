@@ -4,8 +4,9 @@ useSeo({ title: 'الإدارة: عمليات بحث بلا نتيجة', noindex
 type SortKey = 'date' | 'count'
 const sort = ref<SortKey>('date')
 const dir = ref<'desc' | 'asc'>('desc')
+const hideBots = ref(false)
 const { data: misses, refresh } = await useFetch('/api/admin/search-misses', {
-  query: computed(() => ({ sort: sort.value, dir: dir.value })),
+  query: computed(() => ({ sort: sort.value, dir: dir.value, bots: hideBots.value ? '0' : undefined })),
 })
 // A click on the sorted column turns it round; a click on the other one sorts by it, largest or newest first.
 const sortBy = (key: SortKey) => {
@@ -23,6 +24,48 @@ const fmt = (d: string | Date) => {
   const text = new Intl.DateTimeFormat('ar', { dateStyle: 'medium', timeStyle: 'short', timeZone: local.value ? undefined : 'UTC' }).format(new Date(d))
   return local.value ? text : `${text} UTC`
 }
+// Country codes to their Arabic names; the same ICU data on the server and in
+// the browser, so the hydrated text matches.
+const regionNames = new Intl.DisplayNames(['ar'], { type: 'region' })
+const countryName = (code: string) => { try { return regionNames.of(code) ?? code } catch { return code } }
+
+// The logged searches behind one term, fetched when its row is opened.
+type MissEvent = {
+  id: number, at: string, country: string | null, asn: number | null, network: string | null,
+  visitor: string | null, device: string | null, os: string | null, browser: string | null,
+  lang: string | null, timezone: string | null, referrer: string | null, via: string,
+  signedIn: boolean, bot: string | null,
+}
+const open = ref<number | null>(null)
+const events = ref<MissEvent[]>([])
+const loadingEvents = ref(false)
+const toggle = async (id: number) => {
+  if (open.value === id) { open.value = null; return }
+  open.value = id; events.value = []; loadingEvents.value = true; error.value = ''
+  try { events.value = await $fetch<MissEvent[]>(`/api/admin/search-misses/${id}`) }
+  catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر جلب التفاصيل' }
+  finally { loadingEvents.value = false }
+}
+const VIA: Record<string, string> = { app: 'كتبها في الموقع', page: 'فتح رابط بحث', api: 'طلب مباشر للواجهة' }
+const BOT: Record<string, string> = {
+  'declared': 'يعرّف نفسه روبوتاً',
+  'no-ua': 'بلا اسم متصفح',
+  'no-browser': 'تنقصه ترويسات يرسلها كل متصفح',
+  'datacenter': 'من شبكة خوادم',
+  'burst': 'بحث متلاحق كثير',
+}
+const DEVICE: Record<string, string> = { mobile: 'جوال', tablet: 'لوحي', desktop: 'حاسوب' }
+const describe = (ev: MissEvent) => [
+  ev.country ? countryName(ev.country) : null,
+  ev.network,
+  [ev.device ? DEVICE[ev.device] ?? ev.device : null, ev.os, ev.browser].filter(Boolean).join('، ') || null,
+  ev.lang,
+  ev.timezone,
+  ev.referrer ? `جاء من ${ev.referrer}` : null,
+  VIA[ev.via] ?? ev.via,
+  ev.signedIn ? 'مسجّل الدخول' : null,
+].filter(Boolean).join(' · ')
+
 const busy = ref<number | null>(null)
 const error = ref('')
 const remove = async (id: number, term: string) => {
@@ -40,7 +83,8 @@ const remove = async (id: number, term: string) => {
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>عمليات بحث بلا نتيجة</h2>
-    <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأحدث أولاً. هذه قائمة بما يُضاف بعده من كلمات. اضغط على عنوان العمود لترتيبه.</small></p>
+    <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأحدث أولاً. هذه قائمة بما يُضاف بعده من كلمات. اضغط على عنوان العمود لترتيبه. «أشخاص» و«آلي» والبلدان عن آخر ٩٠ يوماً؛ «زوار» عدد الأشخاص المختلفين، ولا يُعرف الزائر نفسه إلا في يومه.</small></p>
+    <label class="hide-bots"><input v-model="hideBots" type="checkbox"> إخفاء ما لم يبحث عنه إلا الآلي</label>
     <p role="alert" v-if="error">{{ error }}</p>
     <p v-if="!misses?.length">لا شيء بعد.</p>
     <table v-else class="misses">
@@ -48,20 +92,50 @@ const remove = async (id: number, term: string) => {
         <tr>
           <th class="term-head">الكلمة المكتوبة</th>
           <th :aria-sort="ariaSort('count')"><button type="button" class="sort" @click="sortBy('count')">عدد المرات <span aria-hidden="true">{{ arrow('count') }}</span></button></th>
+          <th class="who-head">أشخاص · آلي</th>
           <th :aria-sort="ariaSort('date')"><button type="button" class="sort" @click="sortBy('date')">آخر مرة <span aria-hidden="true">{{ arrow('date') }}</span></button></th>
           <th class="actions-head"></th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="m in misses" :key="m.id">
-          <td class="term">{{ m.term }}</td>
+        <template v-for="m in misses" :key="m.id">
+        <tr>
+          <td class="term">
+            {{ m.term }}
+            <small v-if="m.countries.length" class="countries">{{ m.countries.map(c => `${countryName(c.code)} ${c.n}`).join('، ') }}</small>
+          </td>
           <td class="count" data-label="عدد المرات">{{ m.count }}</td>
+          <td class="who" data-label="أشخاص · آلي">
+            <template v-if="m.people || m.bots">
+              {{ m.people }} · {{ m.bots }}
+              <small v-if="m.visitors" class="visitors">{{ m.visitors }} زوار</small>
+            </template>
+            <small v-else>—</small>
+          </td>
           <td class="date" data-label="آخر مرة"><small><time :datetime="String(m.lastSearchedAt)">{{ fmt(m.lastSearchedAt) }}</time></small></td>
           <td class="actions">
             <NuxtLink :to="`/add-word?headword=${encodeURIComponent(m.term)}`">إضافة</NuxtLink>
+            <button type="button" :aria-expanded="open === m.id" @click="toggle(m.id)">تفاصيل</button>
             <button type="button" :disabled="busy === m.id" @click="remove(m.id, m.term)">حذف</button>
           </td>
         </tr>
+        <tr v-if="open === m.id" class="details">
+          <td colspan="5">
+            <p v-if="loadingEvents"><small>…</small></p>
+            <p v-else-if="!events.length"><small>لا تفاصيل: سُجّلت هذه الكلمة قبل أن نحفظ التفاصيل، أو مضى عليها أكثر من ٩٠ يوماً.</small></p>
+            <ol v-else class="events">
+              <li v-for="ev in events" :key="ev.id" :class="{ bot: ev.bot }">
+                <small>
+                  <time :datetime="ev.at">{{ fmt(ev.at) }}</time> ·
+                  {{ describe(ev) }}
+                  <span v-if="ev.visitor" class="visitor" dir="ltr">#{{ ev.visitor.slice(0, 6) }}</span>
+                  <strong v-if="ev.bot"> · آلي: {{ BOT[ev.bot] ?? ev.bot }}</strong>
+                </small>
+              </li>
+            </ol>
+          </td>
+        </tr>
+        </template>
       </tbody>
     </table>
   </article>
@@ -80,10 +154,38 @@ const remove = async (id: number, term: string) => {
   width: 6em;
 }
 .misses th:nth-child(3) {
+  width: 7em;
+}
+.misses th:nth-child(4) {
   width: 8em;
 }
 .misses th:last-child {
-  width: 8.5em;
+  width: 12em;
+}
+.countries,
+.visitors {
+  display: block;
+  color: var(--muted);
+}
+.hide-bots {
+  display: inline-flex;
+  gap: var(--space-2xs);
+  align-items: center;
+}
+.events {
+  margin: 0;
+  padding-inline-start: 0;
+  list-style: none;
+}
+.events li {
+  padding-block: var(--space-3xs);
+  overflow-wrap: anywhere;
+}
+.events li.bot {
+  color: var(--muted);
+}
+.visitor {
+  font-family: monospace;
 }
 /* The sort control is the heading itself, not a button beside it: same face as
    the other headings, the arrow the only sign it does something. */
@@ -130,6 +232,7 @@ const remove = async (id: number, term: string) => {
     padding-inline: 0;
   }
   .misses .term-head,
+  .misses .who-head,
   .misses .actions-head {
     display: none;
   }
@@ -149,12 +252,21 @@ const remove = async (id: number, term: string) => {
     font-weight: 600;
   }
   .misses .count::before,
+  .misses .who::before,
   .misses .date::before {
     content: attr(data-label) ': ';
     font-size: var(--step--1);
     color: var(--muted);
   }
-  .misses .actions {
+  .misses .who {
+    grid-column: 1 / -1;
+  }
+  .misses .who .visitors {
+    display: inline;
+    margin-inline-start: var(--space-xs);
+  }
+  .misses .actions,
+  .misses .details td {
     grid-column: 1 / -1;
     padding-block-start: var(--space-2xs);
   }
