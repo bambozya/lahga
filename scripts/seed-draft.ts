@@ -94,6 +94,28 @@ const takenLoose = new Map([...taken].map(([k, why]) => [looseKey(k), why]))
 // Live single-word headwords, to notice a draft that is one of them plus a
 // qualifier (غلاية → غلاية كهربائية): often the same thing, sometimes not.
 const liveSingles = new Set(live.words.map(w => looseKey(w.headword)).filter(k => !k.includes(' ')))
+// Every live form, to catch a synonym of an existing page: a draft whose
+// forms are mostly already there under one word is that word again
+// (طبشورة → طباشير, لوح الكتابة → سبورة), whatever its headword says.
+const formOwners = new Map<string, Set<string>>()
+for (const w of live.words) for (const e of w.entries) {
+  const k = `${e.dialect}\u0000${varietyKey(e.form)}`
+  if (!formOwners.has(k)) formOwners.set(k, new Set())
+  formOwners.get(k)!.add(w.headword)
+}
+// Retired words count too: a word taken off the site on purpose should not
+// come back under a synonym (قلم حبر is the retired قلم).
+try {
+  for (const n of readdirSync(resolve(seedDir, 'retired')).filter(n => n.endsWith('.json'))) {
+    const doc: { words: { headword: string, entries: { dialect: string, form: string }[] }[] } = JSON.parse(await readFile(resolve(seedDir, 'retired', n), 'utf8'))
+    for (const w of doc.words) for (const e of w.entries) {
+      const k = `${e.dialect}\u0000${varietyKey(e.form)}`
+      if (!formOwners.has(k)) formOwners.set(k, new Set())
+      formOwners.get(k)!.add(`${w.headword} (retired)`)
+    }
+  }
+}
+catch { /* no retired folder */ }
 // Forms that carry a meaning or examples under another word (see the header).
 const richForms = new Map<string, string[]>()
 for (const w of live.words) for (const e of w.entries) {
@@ -109,6 +131,7 @@ const unsure = new Map<string, string[]>()
 const dropped: string[] = []
 const links: string[] = []
 const builtOn: string[] = []
+const overlaps: string[] = []
 const seen = new Set<string>()
 let current = ''
 
@@ -129,7 +152,7 @@ for (const file of files) {
     if (taken.has(k)) { dropped.push(`${where}  ${headword}: already taken (${taken.get(k)})`); return }
     if (takenLoose.has(looseKey(headword))) { dropped.push(`${where}  ${headword}: already taken, spelt with or without ال (${takenLoose.get(looseKey(headword))})`); return }
     const base = looseKey(headword).split(' ').find(w => liveSingles.has(w))
-    if (base && looseKey(headword).includes(' ')) builtOn.push(`${headword}  →  built on «${base}», which has a page: keep only if it is a different thing`)
+    if (base && !phrase && looseKey(headword).includes(' ')) builtOn.push(`${headword}  →  built on «${base}», which has a page: keep only if it is a different thing`)
     if (seen.has(k)) { dropped.push(`${where}  ${headword}: twice in this draft`); return }
     if (!isArabicOnly(headword) || !isArabicOnly(definition)) { dropped.push(`${where}  ${headword}: Latin letters in the headword or definition`); return }
 
@@ -143,7 +166,9 @@ for (const file of files) {
       const list = value.split('/').map(s => s.trim()).filter(Boolean)
       if (list.length > 2) { bad = `more than two forms for ${dialect}`; break }
       for (let f of list) {
-        const doubt = f.endsWith('?')
+        // The doubt mark is «?». Models also write the Arabic «؟» for it, which
+        // can only mean doubt when the headword itself is not a question.
+        const doubt = f.endsWith('?') || (f.endsWith('؟') && !/[؟?]$/.test(headword))
         if (doubt) f = f.slice(0, -1).trim()
         if (!isArabicOnly(f)) { bad = `Latin letters in «${f}»`; break }
         entries.push(doubt || reviewAll ? { dialect, form: f, review: true } : { dialect, form: f })
@@ -155,6 +180,11 @@ for (const file of files) {
       if (bad) break
     }
     if (bad) { dropped.push(`${where}  ${headword}: ${bad}`); return }
+    const shared = new Map<string, number>()
+    for (const e of entries) for (const owner of formOwners.get(`${e.dialect}\u0000${varietyKey(e.form)}`) ?? []) shared.set(owner, (shared.get(owner) ?? 0) + 1)
+    const [twin, count = 0] = [...shared].sort((a, b) => b[1] - a[1])[0] ?? []
+    if (twin && count * 2 >= entries.length) { dropped.push(`${where}  ${headword}: same concept as «${twin}» (${count} of ${entries.length} forms already there)`); return }
+    if (twin && count >= 2) overlaps.push(`${headword}  →  shares ${count} forms with «${twin}»: make sure it is a different thing`)
     const distinct = new Set(entries.map(e => varietyKey(e.form)))
     if (distinct.size < 3) { dropped.push(`${where}  ${headword}: only ${distinct.size} different form(s): ${[...distinct].join(' / ')}`); return }
 
@@ -179,6 +209,7 @@ for (const [name, list] of out) {
 }
 console.log(`\n  ${words} words, ${forms} forms ready; ${dropped.length} lines dropped${reviewAll ? '; every form marked for review' : ''}`)
 if (dropped.length) console.log(`\n  Dropped:\n${dropped.map(d => `    ${d}`).join('\n')}`)
+if (overlaps.length) console.log(`\n  Shares forms with a page that already exists:\n${overlaps.map(l => `    ${l}`).join('\n')}`)
 if (builtOn.length) console.log(`\n  Built on a word that already has a page — read these first:\n${builtOn.map(l => `    ${l}`).join('\n')}`)
 if (links.length) console.log(`\n  Would share an entry that already has a meaning or examples — drop the ones whose meaning differs:\n${links.map(l => `    ${l}`).join('\n')}`)
 if (review.length) {
