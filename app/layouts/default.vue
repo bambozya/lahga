@@ -8,6 +8,20 @@ watch(() => route.query.q, v => { q.value = String(v ?? '') })
 const search = () => router.push({ path: '/', query: q.value.trim() ? { q: q.value.trim() } : {} })
 // Account link in the top bar: the person icon and the name. Logging out lives on the settings page.
 const { loggedIn, user } = useUserSession()
+
+// The search placeholder carries the dictionary's size, rounded down to two
+// significant figures so it reads "more than 1,700" rather than an exact
+// count. The counts come from the hourly-cached export; if they are not
+// there, or too small to round (a fresh local database), the plain
+// placeholder stands.
+const { data: size } = await useFetch('/api/data-meta', { key: 'data-meta-size', pick: ['words', 'entries'] })
+const roughly = (n: number) => {
+  const step = 10 ** Math.max(0, Math.floor(Math.log10(n)) - 1)
+  return new Intl.NumberFormat('ar').format(Math.floor(n / step) * step)
+}
+const placeholder = computed(() => (size.value?.words ?? 0) >= 100 && size.value?.entries
+  ? `ابحث في أكثر من ${roughly(size.value.words)} كلمة و${roughly(size.value.entries)} مرادف…`
+  : 'ابحث عن كلمة…')
 </script>
 
 <template>
@@ -42,7 +56,7 @@ const { loggedIn, user } = useUserSession()
       </nav>
       <search>
         <form action="/" method="get" @submit.prevent="search">
-          <label><input v-model="q" type="search" name="q" aria-label="ابحث عن كلمة بالفصحى أو بأي لهجة" placeholder="ابحث عن كلمة…" /></label>
+          <label><input v-model="q" type="search" name="q" aria-label="ابحث عن كلمة بالفصحى أو بأي لهجة" :placeholder="placeholder" /></label>
           <button type="submit" title="بحث"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" /></svg></button>
         </form>
       </search>
