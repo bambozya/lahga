@@ -16,6 +16,7 @@
     "typecheck": "nuxt typecheck",
     "import": "tsx scripts/import.ts",
     "mark-review": "tsx scripts/mark-review.ts",
+    "review:batch": "tsx scripts/review-batch.ts",
     "add-examples": "tsx scripts/add-examples.ts",
     "check-variety": "tsx scripts/check-variety.ts",
     "check-collisions": "tsx scripts/check-collisions.ts",
