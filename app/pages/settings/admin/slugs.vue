@@ -7,7 +7,7 @@ const busy = ref<number | null>(null)
 const error = ref('')
 const run = async (id: number, action: () => Promise<any>) => {
   busy.value = id; error.value = ''
-  try { await action(); await refresh() }
+  try { await action(); await Promise.all([refresh(), refreshNuxtData('admin-stats')]) }
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر التنفيذ' }
   finally { busy.value = null }
 }

@@ -16,7 +16,7 @@ import type { Tx } from './contribute'
  * rather than an empty path segment.
  */
 export async function uniqueSlug(db: Tx, headword: string): Promise<string> {
-  const base = slugify(headword) || 'كلمة'
+  const base = expectedSlug(headword)
   let candidate = base
   let n = 2
   // A handful of collisions is the realistic ceiling; guarded so a schema bug
@@ -28,4 +28,21 @@ export async function uniqueSlug(db: Tx, headword: string): Promise<string> {
     n++
   }
   throw new Error(`uniqueSlug: could not find a free slug for "${headword}" after 1000 tries`)
+}
+
+/** The slug a headword would get today, before any -2, -3 suffix. */
+export function expectedSlug(headword: string) {
+  return slugify(headword) || 'كلمة'
+}
+
+/**
+ * The two ways a live word's slug can drift from its headword, as
+ * /settings/admin/slugs lists them: it carries a number, or, number aside, it
+ * is not what the headword would give today.
+ */
+export function slugDrift(slug: string, headword: string) {
+  return {
+    suffixed: /-\d+$/.test(slug),
+    mismatched: slug.replace(/-\d+$/, '') !== expectedSlug(headword),
+  }
 }

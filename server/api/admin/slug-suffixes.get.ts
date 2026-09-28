@@ -1,6 +1,5 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { slugify } from '../../../shared/utils/arabic'
 
 /**
  * The two ways a live word's address can drift from its headword, for
@@ -26,13 +25,12 @@ export default defineEventHandler(async (event) => {
     with: { links: { columns: { status: true } } },
     orderBy: schema.words.headword,
   })
-  const plain = (slug: string) => slug.replace(/-\d+$/, '')
   const mismatched = live
-    .filter(w => w.slug && plain(w.slug) !== (slugify(w.headword) || 'كلمة'))
-    .map(w => ({ id: w.id, headword: w.headword, slug: w.slug, expected: slugify(w.headword) || 'كلمة', entries: w.links.filter(l => l.status === 'active').length }))
+    .filter(w => w.slug && slugDrift(w.slug, w.headword).mismatched)
+    .map(w => ({ id: w.id, headword: w.headword, slug: w.slug, expected: expectedSlug(w.headword), entries: w.links.filter(l => l.status === 'active').length }))
 
   const suffixed = []
-  for (const w of live.filter(w => w.slug && /-\d+$/.test(w.slug))) {
+  for (const w of live.filter(w => w.slug && slugDrift(w.slug, w.headword).suffixed)) {
     const base = w.slug!.replace(/-\d+$/, '')
     const holder = await db.query.words.findFirst({
       where: eq(schema.words.slug, base),

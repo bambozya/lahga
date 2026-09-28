@@ -10,7 +10,7 @@ const error = ref('')
 const decide = async (id: number, decision: 'approved' | 'rejected') => {
   const note = prompt(decision === 'approved' ? 'كلمة للمقترح (اختيارية):' : 'سبب الرفض (يظهر للمقترح):') ?? ''
   busy.value = id; error.value = ''
-  try { await $fetch(`/api/admin/proposals/${id}`, { method: 'POST', body: { status: decision, note } }); await refresh() }
+  try { await $fetch(`/api/admin/proposals/${id}`, { method: 'POST', body: { status: decision, note } }); await Promise.all([refresh(), refreshNuxtData('admin-stats')]) }
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر التنفيذ' }
   finally { busy.value = null }
 }

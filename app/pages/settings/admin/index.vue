@@ -14,7 +14,7 @@ const error = ref('')
 const resolve = async (id: number, resolution: 'dismissed' | 'hidden' | 'deleted') => {
   const note = resolution === 'dismissed' ? '' : (prompt('ملاحظة (اختيارية):') ?? '')
   busy.value = id; error.value = ''
-  try { await $fetch(`/api/admin/flags/${id}`, { method: 'POST', body: { resolution, note } }); await refresh() }
+  try { await $fetch(`/api/admin/flags/${id}`, { method: 'POST', body: { resolution, note } }); await Promise.all([refresh(), refreshNuxtData('admin-stats')]) }
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر التنفيذ' }
   finally { busy.value = null }
 }

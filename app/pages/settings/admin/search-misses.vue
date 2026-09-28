@@ -71,7 +71,7 @@ const error = ref('')
 const remove = async (id: number, term: string) => {
   if (!confirm(`حذف «${term.slice(0, 40)}» من القائمة؟`)) return
   busy.value = id; error.value = ''
-  try { await $fetch(`/api/admin/search-misses/${id}`, { method: 'DELETE' }); await refresh() }
+  try { await $fetch(`/api/admin/search-misses/${id}`, { method: 'DELETE' }); await Promise.all([refresh(), refreshNuxtData('admin-stats')]) }
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر الحذف' }
   finally { busy.value = null }
 }
@@ -85,7 +85,7 @@ const clearFound = async () => {
   try {
     const { deleted } = await $fetch<{ deleted: number }>('/api/admin/search-misses/found', { method: 'DELETE' })
     cleared.value = deleted ? `حُذف ${deleted.toLocaleString('ar')} من القائمة.` : 'لا شيء مما في القائمة أُضيف بعد.'
-    await refresh()
+    await Promise.all([refresh(), refreshNuxtData('admin-stats')])
   }
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر الحذف' }
   finally { clearing.value = false }
@@ -94,11 +94,14 @@ const clearFound = async () => {
 
 <template>
   <article>
-    <BreadCrumbs :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'بحث بلا نتيجة' }]" />
+    <BreadCrumbs
+      :trail="[{ label: 'الإعدادات', to: '/settings' }, { label: 'الإدارة', to: '/settings/admin' }, { label: 'بحث بلا نتيجة' }]" />
     <h1>الإدارة</h1>
     <AdminNav />
     <h2>عمليات بحث بلا نتيجة</h2>
-    <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأحدث أولاً. هذه قائمة بما يُضاف بعده من كلمات. اضغط على عنوان العمود لترتيبه. «أشخاص» و«آلي» والبلدان عن آخر ٩٠ يوماً؛ «زوار» عدد الأشخاص المختلفين، ولا يُعرف الزائر نفسه إلا في يومه.</small></p>
+    <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأحدث أولاً. هذه قائمة بما يُضاف بعده من كلمات. اضغط على عنوان العمود
+        لترتيبه. «أشخاص» و«آلي» والبلدان عن آخر ٩٠ يوماً؛ «زوار» عدد الأشخاص المختلفين، ولا يُعرف الزائر نفسه إلا في
+        يومه.</small></p>
     <div class="tools">
       <label class="hide-bots"><input v-model="hideBots" type="checkbox"> إخفاء ما لم يبحث عنه إلا الآلي</label>
       <button type="button" :disabled="clearing" @click="clearFound">حذف ما أُضيف بعد</button>
@@ -110,50 +113,57 @@ const clearFound = async () => {
       <thead>
         <tr>
           <th class="term-head">الكلمة المكتوبة</th>
-          <th :aria-sort="ariaSort('count')"><button type="button" class="sort" @click="sortBy('count')">عدد المرات <span aria-hidden="true">{{ arrow('count') }}</span></button></th>
+          <th :aria-sort="ariaSort('count')"><button type="button" class="sort" @click="sortBy('count')">عدد المرات
+              <span aria-hidden="true">{{ arrow('count') }}</span></button></th>
           <th class="who-head">أشخاص · آلي</th>
-          <th :aria-sort="ariaSort('date')"><button type="button" class="sort" @click="sortBy('date')">آخر مرة <span aria-hidden="true">{{ arrow('date') }}</span></button></th>
+          <th :aria-sort="ariaSort('date')"><button type="button" class="sort" @click="sortBy('date')">آخر مرة <span
+                aria-hidden="true">{{ arrow('date') }}</span></button></th>
           <th class="actions-head"></th>
         </tr>
       </thead>
       <tbody>
         <template v-for="m in misses" :key="m.id">
-        <tr>
-          <td class="term">
-            {{ m.term }}
-            <small v-if="m.countries.length" class="countries">{{ m.countries.map(c => `${countryName(c.code)} ${c.n}`).join('، ') }}</small>
-          </td>
-          <td class="count" data-label="عدد المرات">{{ m.count }}</td>
-          <td class="who" data-label="أشخاص · آلي">
-            <template v-if="m.people || m.bots">
-              {{ m.people }} · {{ m.bots }}
-              <small v-if="m.visitors" class="visitors">{{ m.visitors }} زوار</small>
-            </template>
-            <small v-else>—</small>
-          </td>
-          <td class="date" data-label="آخر مرة"><small><time :datetime="String(m.lastSearchedAt)">{{ fmt(m.lastSearchedAt) }}</time></small></td>
-          <td class="actions">
-            <NuxtLink :to="`/add-word?headword=${encodeURIComponent(m.term)}`">إضافة</NuxtLink>
-            <button type="button" :aria-expanded="open === m.id" @click="toggle(m.id)">تفاصيل</button>
-            <button type="button" :disabled="busy === m.id" @click="remove(m.id, m.term)">حذف</button>
-          </td>
-        </tr>
-        <tr v-if="open === m.id" class="details">
-          <td colspan="5">
-            <p v-if="loadingEvents"><small>…</small></p>
-            <p v-else-if="!events.length"><small>لا تفاصيل: سُجّلت هذه الكلمة قبل أن نحفظ التفاصيل، أو مضى عليها أكثر من ٩٠ يوماً.</small></p>
-            <ol v-else class="events">
-              <li v-for="ev in events" :key="ev.id" :class="{ bot: ev.bot }">
-                <small>
-                  <time :datetime="ev.at">{{ fmt(ev.at) }}</time> ·
-                  {{ describe(ev) }}
-                  <span v-if="ev.visitor" class="visitor" dir="ltr">#{{ ev.visitor.slice(0, 6) }}</span>
-                  <strong v-if="ev.bot"> · آلي: {{ BOT[ev.bot] ?? ev.bot }}</strong>
-                </small>
-              </li>
-            </ol>
-          </td>
-        </tr>
+          <tr>
+            <td class="term">
+              {{ m.term }}
+              <small v-if="m.countries.length" class="countries">{{m.countries.map(c => `${countryName(c.code)}
+                ${c.n}`).join('، ') }}</small>
+            </td>
+            <td class="count" data-label="عدد المرات">{{ m.count }}</td>
+            <td class="who" data-label="أشخاص · آلي">
+              <template v-if="m.people || m.bots">
+                {{ m.people }} · {{ m.bots }}
+                <small v-if="m.visitors" class="visitors">{{ m.visitors }} زوار</small>
+              </template>
+              <small v-else>—</small>
+            </td>
+            <td class="date" data-label="آخر مرة"><small><time :datetime="String(m.lastSearchedAt)">{{
+              fmt(m.lastSearchedAt)
+                  }}</time></small></td>
+            <td class="actions">
+              <NuxtLink :to="`/add-word?headword=${encodeURIComponent(m.term)}`">إضافة</NuxtLink>
+              <button type="button" :aria-expanded="open === m.id" @click="toggle(m.id)">تفاصيل</button>
+              <button type="button" :disabled="busy === m.id" @click="remove(m.id, m.term)">حذف</button>
+            </td>
+          </tr>
+          <tr v-if="open === m.id" class="details">
+            <td colspan="5">
+              <p v-if="loadingEvents"><small>…</small></p>
+              <p v-else-if="!events.length"><small>لا تفاصيل: سُجّلت هذه الكلمة قبل أن نحفظ التفاصيل، أو مضى عليها أكثر
+                  من ٩٠
+                  يوماً.</small></p>
+              <ol v-else class="events">
+                <li v-for="ev in events" :key="ev.id" :class="{ bot: ev.bot }">
+                  <small>
+                    <time :datetime="ev.at">{{ fmt(ev.at) }}</time> ·
+                    {{ describe(ev) }}
+                    <span v-if="ev.visitor" class="visitor" dir="ltr">#{{ ev.visitor.slice(0, 6) }}</span>
+                    <strong v-if="ev.bot"> · آلي: {{ BOT[ev.bot] ?? ev.bot }}</strong>
+                  </small>
+                </li>
+              </ol>
+            </td>
+          </tr>
         </template>
       </tbody>
     </table>
@@ -165,53 +175,66 @@ const clearFound = async () => {
 .misses {
   table-layout: fixed;
 }
+
 .misses .term {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
 .misses th:nth-child(2) {
   width: 6em;
 }
+
 .misses th:nth-child(3) {
   width: 7em;
 }
+
 .misses th:nth-child(4) {
   width: 8em;
 }
+
 .misses th:last-child {
   width: 12em;
 }
+
 .countries,
 .visitors {
   display: block;
   color: var(--muted);
 }
+
 .tools {
   display: flex;
   gap: var(--space-s);
   align-items: center;
   flex-wrap: wrap;
 }
+
 .hide-bots {
   display: inline-flex;
   gap: var(--space-2xs);
   align-items: center;
 }
+
 .events {
   margin: 0;
   padding-inline-start: 0;
   list-style: none;
 }
+
 .events li {
   padding-block: var(--space-3xs);
   overflow-wrap: anywhere;
 }
+
 .events li.bot {
   color: var(--muted);
 }
+
 .visitor {
   font-family: monospace;
 }
+
 /* The sort control is the heading itself, not a button beside it: same face as
    the other headings, the arrow the only sign it does something. */
 .sort {
@@ -225,10 +248,12 @@ const clearFound = async () => {
   border-radius: 0;
   text-align: inherit;
 }
+
 .sort:hover {
   background: transparent;
   color: var(--accent);
 }
+
 .actions {
   display: flex;
   gap: var(--space-xs);
@@ -236,31 +261,40 @@ const clearFound = async () => {
   flex-wrap: wrap;
 }
 
+input[type="checkbox"] {
+  flex: 0;
+}
+
 /* Phones: four columns leave the term no room, so each row becomes a small
    card. The term takes the full width, count and date share one line under
    it with their own labels, and the actions sit at the end. The heading row
    stays as the two sort controls side by side. */
 @media (max-width: 36rem) {
+
   .misses,
   .misses thead,
   .misses tbody {
     display: block;
   }
+
   .misses thead tr {
     display: flex;
     gap: var(--space-m);
     border-block-end: var(--rule);
   }
+
   .misses thead th {
     width: auto;
     border: 0;
     padding-inline: 0;
   }
+
   .misses .term-head,
   .misses .who-head,
   .misses .actions-head {
     display: none;
   }
+
   .misses tbody tr {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -268,14 +302,17 @@ const clearFound = async () => {
     padding-block: var(--space-xs);
     border-block-end: var(--thin);
   }
+
   .misses tbody td {
     border: 0;
     padding: 0;
   }
+
   .misses .term {
     grid-column: 1 / -1;
     font-weight: 600;
   }
+
   .misses .count::before,
   .misses .who::before,
   .misses .date::before {
@@ -283,13 +320,16 @@ const clearFound = async () => {
     font-size: var(--step--1);
     color: var(--muted);
   }
+
   .misses .who {
     grid-column: 1 / -1;
   }
+
   .misses .who .visitors {
     display: inline;
     margin-inline-start: var(--space-xs);
   }
+
   .misses .actions,
   .misses .details td {
     grid-column: 1 / -1;
