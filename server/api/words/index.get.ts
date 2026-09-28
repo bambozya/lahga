@@ -1,11 +1,13 @@
 import type { H3Event } from 'h3'
 import { and, desc, eq, ilike, or, sql } from 'drizzle-orm'
+import type { AnyColumn, SQL } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { normalizeArabic } from '../../../shared/utils/arabic'
+import { looseArabicPattern, normalizeArabic } from '../../../shared/utils/arabic'
 
 /**
  * List words, newest first, or search them.
- * ?q= matches the MSA headword or any linked dialect form (normalised, prefix + substring).
+ * ?q= matches the MSA headword or any linked dialect form (normalised, prefix + substring);
+ * if that finds nothing, once more with looser spelling (looseArabicPattern).
  * ?fuzzy=1 answers a search that found nothing with the nearest words instead
  * (trigram similarity), so the empty result can still offer a way forward.
  * ?random=1 draws a handful at random instead of the newest: what the home page
@@ -53,30 +55,12 @@ export default defineEventHandler(async (event) => {
   // % and _ are wildcards in LIKE, so a search for them is a search for those
   // characters, not for everything.
   const pattern = `%${likeEscape(term)}%`
-  const matchedEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
-    .from(schema.entries)
-    .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
-    .where(and(
-      ilike(schema.entries.formNormalized, pattern),
-      eq(schema.entries.status, 'active'),
-      eq(schema.wordEntryLinks.status, 'active'),
-    ))
-
-  const ids = await db.select({ id: schema.words.id }).from(schema.words)
-    .where(and(
-      eq(schema.words.status, 'active'),
-      or(
-        ilike(schema.words.headwordNormalized, pattern),
-        sql`${schema.words.id} in ${matchedEntryWords}`,
-      ),
-    ))
-    .orderBy(
-      sql`(${schema.words.headwordNormalized} = ${term}) desc`,
-      sql`(${schema.words.headwordNormalized} like ${term + '%'}) desc`,
-      sql`similarity(${schema.words.headwordNormalized}, ${term}) desc`,
-      desc(schema.words.score),
-    )
-    .limit(max)
+  let ids = await matchingIds(db, col => ilike(col, pattern), term, max)
+  // Nothing: try once more with the looser spelling (optional ال, ت/ث and the
+  // like, a final ا/ى/ة). Only now, so an exact hit is never crowded out by
+  // near-spellings, and a term only counts as missing if both tries fail.
+  const loose = ids.length ? null : looseArabicPattern(term)
+  if (loose) ids = await matchingIds(db, col => sql`${col} ~ ${loose}`, term, max)
   if (!ids.length) {
     // The fuzzy call is the home page asking a second time about a term it
     // has just been told is missing; logging it too would count every miss twice.
@@ -91,6 +75,38 @@ export default defineEventHandler(async (event) => {
   })
   return shape(rows.sort((a, b) => order.get(a.id)! - order.get(b.id)!))
 })
+
+/**
+ * Ids of the active words whose headword or an active linked dialect form
+ * satisfies `match`, best first: an exact headword, then one starting with
+ * the term, then by trigram similarity, then by score.
+ */
+async function matchingIds(db: Awaited<ReturnType<typeof useDb>>, match: (col: AnyColumn) => SQL, term: string, max: number) {
+  const matchedEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
+    .from(schema.entries)
+    .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
+    .where(and(
+      match(schema.entries.formNormalized),
+      eq(schema.entries.status, 'active'),
+      eq(schema.wordEntryLinks.status, 'active'),
+    ))
+
+  return db.select({ id: schema.words.id }).from(schema.words)
+    .where(and(
+      eq(schema.words.status, 'active'),
+      or(
+        match(schema.words.headwordNormalized),
+        sql`${schema.words.id} in ${matchedEntryWords}`,
+      ),
+    ))
+    .orderBy(
+      sql`(${schema.words.headwordNormalized} = ${term}) desc`,
+      sql`(${schema.words.headwordNormalized} like ${term + '%'}) desc`,
+      sql`similarity(${schema.words.headwordNormalized}, ${term}) desc`,
+      desc(schema.words.score),
+    )
+    .limit(max)
+}
 
 /**
  * The nearest words to a term that matched nothing: trigram similarity against

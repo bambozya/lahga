@@ -23,6 +23,35 @@ export function normalizeArabic(input: string): string {
 }
 
 /**
+ * A forgiving second try for a search that found nothing (server/api/words).
+ * Turns a normalised term into a regular expression that also accepts the
+ * spellings people drift between when they write a dialect word:
+ *
+ *   - a leading ال (or وال، بال، فال، كال، لل) is dropped from each word, so
+ *     «الغريب» finds «غريب»; the substring match already covers the reverse;
+ *   - ت/ث, د/ذ, ض/ظ and ق/گ count as one letter: كمترة is how Cairo spells كمثرة,
+ *     گريب how Baghdad spells قريب;
+ *   - a word-final ا، ي، ه count as one letter (normalizeArabic has already made
+ *     ى into ي and ة into ه), so كمترا، كمترى and كمترة meet.
+ *
+ * Returns null when a word is left with under two letters, or when the loose
+ * form is no different from the term (the first search already tried it).
+ */
+export function looseArabicPattern(term: string): string | null {
+  // ال comes off only if three letters stay: «الله» is not «ال» + «له».
+  const words = term.split(' ').map(w => w.replace(/^(?:[وفبك]?ال|لل)(?=...)/, ''))
+  if (!words.every(w => w.length >= 2)) return null
+  const letter: Record<string, string> = { ت: '[تث]', ث: '[تث]', د: '[دذ]', ذ: '[دذ]', ض: '[ضظ]', ظ: '[ضظ]', ق: '[قگ]', گ: '[قگ]' }
+  const escape = (c: string) => /[\\^$.|?*+()[\]{}-]/.test(c) ? `\\${c}` : c
+  const pattern = words.map(w => [...w].map((c, i) => {
+    // A two-letter word keeps its last letter: «لا» and «له» are different words.
+    if (w.length >= 3 && i === w.length - 1 && 'ايه'.includes(c)) return '[ايه]'
+    return letter[c] ?? escape(c)
+  }).join('')).join(' ')
+  return pattern === term ? null : pattern
+}
+
+/**
  * The "Arabic script only" rule. Allows Arabic blocks, digits (both kinds),
  * whitespace and common punctuation. Any Latin letter fails.
  */

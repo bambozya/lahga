@@ -34,7 +34,7 @@ type MissEvent = {
   id: number, at: string, country: string | null, asn: number | null, network: string | null,
   visitor: string | null, device: string | null, os: string | null, browser: string | null,
   lang: string | null, timezone: string | null, referrer: string | null, via: string,
-  signedIn: boolean, bot: string | null,
+  signedIn: boolean, bot: string | null, kind: string,
 }
 const open = ref<number | null>(null)
 const events = ref<MissEvent[]>([])
@@ -126,6 +126,7 @@ const clearFound = async () => {
           <tr>
             <td class="term">
               {{ m.term }}
+              <strong v-if="m.reports" class="reported" title="وجد البحث كلمات، وقال الباحث إنها ليست ما يقصد">أُبلغ عنها {{ m.reports }}</strong>
               <small v-if="m.countries.length" class="countries">{{m.countries.map(c => `${countryName(c.code)}
                 ${c.n}`).join('، ') }}</small>
             </td>
@@ -156,6 +157,7 @@ const clearFound = async () => {
                 <li v-for="ev in events" :key="ev.id" :class="{ bot: ev.bot }">
                   <small>
                     <time :datetime="ev.at">{{ fmt(ev.at) }}</time> ·
+                    <strong v-if="ev.kind === 'report'">بلاغ: ليست الكلمة المقصودة ·</strong>
                     {{ describe(ev) }}
                     <span v-if="ev.visitor" class="visitor" dir="ltr">#{{ ev.visitor.slice(0, 6) }}</span>
                     <strong v-if="ev.bot"> · آلي: {{ BOT[ev.bot] ?? ev.bot }}</strong>
@@ -201,6 +203,13 @@ const clearFound = async () => {
 .visitors {
   display: block;
   color: var(--muted);
+}
+
+/* A report outranks a plain miss: someone saw the results and said no. */
+.reported {
+  display: block;
+  font-size: var(--step--1);
+  color: var(--accent);
 }
 
 .tools {

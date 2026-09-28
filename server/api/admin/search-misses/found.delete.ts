@@ -1,4 +1,4 @@
-import { sql } from 'drizzle-orm'
+import { and, eq, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
 
 /**
@@ -7,6 +7,8 @@ import { useDb, schema } from '../../../db'
  * search's own rule (server/api/words/index.get.ts): the normalised term found
  * anywhere inside an active headword, or inside an active form actively linked
  * to an active word. Works on the whole table, not only the rows the page shows.
+ * A term someone reported (POST /api/search-misses) stays: they saw what the
+ * search found and said it was not their word, so «found» does not settle it.
  */
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
@@ -29,7 +31,7 @@ export default defineEventHandler(async (event) => {
     )`
 
   const rows = await db.transaction(async (tx) => {
-    const rows = await tx.delete(m).where(found).returning({ id: m.id, term: m.term })
+    const rows = await tx.delete(m).where(and(eq(m.reports, 0), found)).returning({ id: m.id, term: m.term })
     for (const row of rows) await logModeration(tx, admin.id, 'delete_search_miss', 'search_miss', row.id, row.term.slice(0, 300))
     return rows
   })

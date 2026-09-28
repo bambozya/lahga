@@ -43,6 +43,32 @@ const { data: suggestions } = await useAsyncData<WordList>('near', () => (
     : Promise.resolve([])
 ), { watch: [words] })
 
+// Results the looser second search found (optional ال, ت/ث and the like, see
+// looseArabicPattern): none of them holds the term as it was typed. Said so,
+// so a near-spelling is never passed off as the word itself.
+const loose = computed(() => {
+  if (!activeQuery.value || !count.value) return false
+  const t = normalizeArabic(activeQuery.value)
+  const has = (s: string) => normalizeArabic(s).includes(t)
+  return !words.value!.some(w => has(w.headword) || w.entries.some(e => has(e.form)))
+})
+
+// «ليست الكلمة التي أبحث عنها»: the search found words, but not the one meant.
+// Only the searcher can tell a near-spelling from a word we lack, so they say
+// so, and the term joins the missing words (POST /api/search-misses).
+const reportedFor = ref<string | null>(null)
+const reporting = ref(false)
+const reportFailed = ref(false)
+const report = async () => {
+  reporting.value = true; reportFailed.value = false
+  try {
+    await $fetch('/api/search-misses', { method: 'POST', body: { q: activeQuery.value }, headers: searchHeaders })
+    reportedFor.value = activeQuery.value
+  }
+  catch { reportFailed.value = true }
+  finally { reporting.value = false }
+}
+
 // Arabic counts the way Arabic counts: one, two, a few, many.
 const countLabel = computed(() => {
   const n = count.value
@@ -112,9 +138,26 @@ useSeo({
       <p><small><NuxtLink to="/" aria-current-value="false">اقرأ كلمات أخرى</NuxtLink> · <NuxtLink to="/dialects">تصفّح اللهجات</NuxtLink></small></p>
     </div>
 
-    <dl v-else-if="words?.length" :aria-busy="shuffling">
-      <WordCard v-for="w in words" :key="w.id" :word="w" />
-    </dl>
+    <template v-else-if="words?.length">
+      <p v-if="loose" class="loose">لم نجد «{{ activeQuery }}» بهذا الإملاء، فهذه أقرب الكلمات إليها.</p>
+      <dl :aria-busy="shuffling">
+        <WordCard v-for="w in words" :key="w.id" :word="w" />
+      </dl>
+      <!-- A result is not always the word: a near-spelling or a homograph can
+           stand in for one we lack. The searcher gets the last word. -->
+      <p v-if="activeQuery && !searching" class="not-it">
+        <small v-if="reportedFor === activeQuery">
+          شكراً، سجّلنا «{{ activeQuery }}» كلمةً ناقصة.
+          <NuxtLink :to="{ path: '/add-word', query: { headword: activeQuery } }">أو أضفها بنفسك</NuxtLink>
+        </small>
+        <small v-else>
+          ليست الكلمة التي تبحث عنها؟
+          <button type="button" class="as-link" :disabled="reporting" @click="report">أخبرنا أنها ناقصة</button>
+          · <NuxtLink :to="{ path: '/add-word', query: { headword: activeQuery } }">أضفها بنفسك</NuxtLink>
+          <template v-if="reportFailed"> · تعذّر الإرسال، حاول مرة أخرى.</template>
+        </small>
+      </p>
+    </template>
     <p v-else-if="!searching">لا توجد كلمات بعد.</p>
 
     <!-- Nothing to shuffle while a search is on screen: the dice belong to
@@ -145,4 +188,14 @@ useSeo({
 .empty > * + * { margin-block-start: var(--space-s); }
 .empty h2 { font-size: var(--step-1); }
 .near { color: var(--muted); }
+
+/* Found by the looser spelling: a note above the results, not a warning. */
+.loose { margin-block-start: var(--space-s); color: var(--muted); font-size: var(--step--1); }
+/* Below the results, quiet: most searches find their word and never need it. */
+.not-it { margin-block-start: var(--space-m); color: var(--muted); }
+.as-link {
+  background: none; border: 0; padding: 0; font: inherit; color: var(--accent);
+  text-decoration: underline; cursor: pointer;
+}
+.as-link:disabled { opacity: .6; cursor: default; }
 </style>

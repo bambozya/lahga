@@ -327,6 +327,10 @@ export const searchMisses = pgTable('search_misses', {
   term: text('term').notNull(), // as typed, for display
   termNormalized: text('term_normalized').notNull().unique(),
   count: integer('count').notNull().default(1),
+  // How often someone got results but said they were not the word they meant
+  // (POST /api/search-misses): a near-spelling or a homograph standing in for
+  // a word we do not have. A stronger signal than a plain miss.
+  reports: integer('reports').notNull().default(0),
   lastSearchedAt: timestamp('last_searched_at', { withTimezone: true }).notNull().defaultNow(),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })
@@ -354,6 +358,7 @@ export const searchMissEvents = pgTable('search_miss_events', {
   via: text('via').notNull(), // app: typed into the running page | page: a /?q= URL loaded | api: neither
   signedIn: boolean('signed_in').notNull().default(false),
   bot: text('bot'), // why this looks automated, or null when it looks like a person
+  kind: text('kind').notNull().default('miss'), // miss: the search found nothing | report: it found words, and the searcher said none was the one
 }, t => [
   index('search_miss_events_miss_idx').on(t.missId, t.at),
   index('search_miss_events_at_idx').on(t.at),
