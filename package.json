@@ -21,6 +21,7 @@
     "check-collisions": "tsx scripts/check-collisions.ts",
     "seed:maknuune": "tsx scripts/import-sources/maknuune.ts",
     "seed:wiktionary": "tsx scripts/import-sources/wiktionary.ts",
+    "seed:draft": "tsx scripts/seed-draft.ts",
     "retire-extra": "tsx scripts/retire-extra-forms.ts",
     "seed:peace-corps-jordan": "tsx scripts/import-sources/peace-corps-jordan.ts"
   },
