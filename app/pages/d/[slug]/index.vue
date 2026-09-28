@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const route = useRoute()
-// Three of the dialect's words, drawn at random: the page is a way in, not an
+// Five of the dialect's words, drawn at random: the page is a way in, not an
 // inventory, and whoever wants one word in particular searches for it above.
 // The dice below ask for another five.
-const SAMPLE = 3
+const SAMPLE = 5
 const { data: dialect, error, status, refresh } = await useFetch(`/api/dialects/${route.params.slug}`, {
   query: { random: 1, limit: SAMPLE },
 })
