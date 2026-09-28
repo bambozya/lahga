@@ -75,6 +75,21 @@ const remove = async (id: number, term: string) => {
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر الحذف' }
   finally { busy.value = null }
 }
+
+// Clears every term a search would now find, the word having been added since.
+const clearing = ref(false)
+const cleared = ref('')
+const clearFound = async () => {
+  if (!confirm('حذف كل كلمة صار البحث عنها يجد نتيجة؟ يشمل ذلك ما لا يظهر في الصفحة.')) return
+  clearing.value = true; error.value = ''; cleared.value = ''
+  try {
+    const { deleted } = await $fetch<{ deleted: number }>('/api/admin/search-misses/found', { method: 'DELETE' })
+    cleared.value = deleted ? `حُذف ${deleted.toLocaleString('ar')} من القائمة.` : 'لا شيء مما في القائمة أُضيف بعد.'
+    await refresh()
+  }
+  catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر الحذف' }
+  finally { clearing.value = false }
+}
 </script>
 
 <template>
@@ -84,7 +99,11 @@ const remove = async (id: number, term: string) => {
     <AdminNav />
     <h2>عمليات بحث بلا نتيجة</h2>
     <p><small>ما كتبه الزوار ولم يجدوا له شيئاً، الأحدث أولاً. هذه قائمة بما يُضاف بعده من كلمات. اضغط على عنوان العمود لترتيبه. «أشخاص» و«آلي» والبلدان عن آخر ٩٠ يوماً؛ «زوار» عدد الأشخاص المختلفين، ولا يُعرف الزائر نفسه إلا في يومه.</small></p>
-    <label class="hide-bots"><input v-model="hideBots" type="checkbox"> إخفاء ما لم يبحث عنه إلا الآلي</label>
+    <div class="tools">
+      <label class="hide-bots"><input v-model="hideBots" type="checkbox"> إخفاء ما لم يبحث عنه إلا الآلي</label>
+      <button type="button" :disabled="clearing" @click="clearFound">حذف ما أُضيف بعد</button>
+    </div>
+    <p role="status" v-if="cleared">{{ cleared }}</p>
     <p role="alert" v-if="error">{{ error }}</p>
     <p v-if="!misses?.length">لا شيء بعد.</p>
     <table v-else class="misses">
@@ -166,6 +185,12 @@ const remove = async (id: number, term: string) => {
 .visitors {
   display: block;
   color: var(--muted);
+}
+.tools {
+  display: flex;
+  gap: var(--space-s);
+  align-items: center;
+  flex-wrap: wrap;
 }
 .hide-bots {
   display: inline-flex;
