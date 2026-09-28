@@ -15,8 +15,26 @@ if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, 
 if (word.value && word.value.slug !== param) {
   await navigateTo(`/w/${word.value.slug}`, { redirectCode: 301 })
 }
+// Drafts — forms a language model wrote and nobody has confirmed yet — are
+// shown to staff only for now. This page is cached for everyone, so the marks
+// are never part of it: staff ask for them once it has loaded
+// (/api/words/[id]/drafts), and nobody else ever does.
+const staff = computed(() => user.value?.role === 'admin' || user.value?.role === 'moderator')
+const drafts = ref(new Map<number, number>()) // linkId -> the viewer's vote on it
+const loadDrafts = async () => {
+  if (!staff.value || !word.value) { drafts.value = new Map(); return }
+  try {
+    const rows = await $fetch<{ linkId: number, myVote: number }[]>(`/api/words/${word.value.id}/drafts`)
+    drafts.value = new Map(rows.map(r => [r.linkId, r.myVote]))
+  }
+  catch { drafts.value = new Map() }
+}
+onMounted(loadDrafts)
+watch(staff, loadDrafts)
+const isDraft = (e: { linkId: number }) => drafts.value.has(e.linkId)
+
 // The same glance a result card shows: each form once, with everyone who says it.
-const forms = computed(() => formsOf(word.value?.groups.flatMap(g => g.entries) ?? []))
+const forms = computed(() => formsOf((word.value?.groups.flatMap(g => g.entries) ?? []).map(e => ({ ...e, needsReview: isDraft(e) }))))
 const tagged = computed(() => {
   const seen = new Set<string>()
   const out: { '@value': string, '@language': string }[] = []
@@ -124,7 +142,7 @@ const removeWord = async () => {
       <dl>
         <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
           <dt>
-            <b :lang="dialectTag(e.dialect.slug)" :data-draft="e.needsReview || undefined" :title="e.needsReview ? 'لم يتحقق منها متحدّث بعد' : undefined">{{ e.form }}</b>
+            <b :lang="dialectTag(e.dialect.slug)" :data-draft="isDraft(e) || undefined" :title="isDraft(e) ? 'لم يتحقق منها متحدّث بعد' : undefined">{{ e.form }}</b>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
           <dd>
@@ -132,7 +150,7 @@ const removeWord = async () => {
               <EntryForm :word-id="word.id" :entry="e" @done="done" @cancel="open = null" />
             </template>
             <template v-else>
-              <ReviewMark v-if="e.needsReview" :link-id="e.linkId" :my-vote="e.myLinkVote" :dialect="e.dialect" @confirmed="refresh()" />
+              <ReviewMark v-if="isDraft(e)" :link-id="e.linkId" :my-vote="drafts.get(e.linkId) ?? 0" :dialect="e.dialect" @confirmed="loadDrafts()" />
               <p v-if="e.meaning">{{ e.meaning }}</p>
               <p v-if="e.notes"><small>{{ e.notes }}</small></p>
               <ul v-if="e.examples.length">

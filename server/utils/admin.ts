@@ -10,6 +10,18 @@ export async function requireAdmin(event: H3Event) {
   return user
 }
 
+/** Admins and moderators: the people who see and settle the review marks for now. */
+export function isStaff(user: { role?: string | null } | null | undefined) {
+  return user?.role === 'admin' || user?.role === 'moderator'
+}
+
+/** The logged-in admin or moderator, or a 403. */
+export async function requireStaff(event: H3Event) {
+  const user = await requireUser(event)
+  if (!isStaff(user)) throw createError({ statusCode: 403, statusMessage: 'هذه الصفحة للمشرفين فقط' })
+  return user
+}
+
 export async function logModeration(tx: Tx, actorId: number, action: string, targetType: string, targetId: number, reason?: string | null) {
   await tx.insert(schema.moderationLog).values({ actorId, action, targetType, targetId, reason: reason || null })
 }

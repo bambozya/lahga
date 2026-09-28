@@ -16,8 +16,7 @@ import { dialectTag } from '../../shared/utils/dialectTags'
  */
 export interface ExportDialect { id: number, slug: string, name: string, language: string, parent: string | null, description: string | null, url: string }
 export interface ExportExample { id: number, text: string, gloss: string | null }
-/** `unconfirmed`: a language-model draft no speaker has checked yet (word_entry_links.needs_review). */
-export interface ExportEntry { id: number, form: string, dialect: string, language: string, meaning: string | null, notes: string | null, unconfirmed: boolean, examples: ExportExample[] }
+export interface ExportEntry { id: number, form: string, dialect: string, language: string, meaning: string | null, notes: string | null, examples: ExportExample[] }
 export interface ExportWord { id: number, slug: string, headword: string, kind: 'word' | 'phrase' | 'proverb', definition: string | null, source: string, updated: string, entries: ExportEntry[] }
 export interface ExportData {
   meta: {
@@ -57,11 +56,11 @@ export async function loadExport(): Promise<ExportData> {
   const words: ExportWord[] = wordRows.map((w) => {
     const entries: ExportEntry[] = w.links
       .filter(l => l.status === 'active' && l.entry.status === 'active')
-      .map((l) => {
-        const e = l.entry
+      .map(l => l.entry)
+      .map((e) => {
         const examples = e.examples.filter(x => x.status === 'active').map(x => ({ id: x.id, text: x.text, gloss: x.gloss }))
         exampleCount += examples.length
-        return { id: e.id, form: e.form, dialect: e.dialect.slug, language: dialectTag(e.dialect.slug), meaning: e.meaning, notes: e.notes, unconfirmed: l.needsReview, examples }
+        return { id: e.id, form: e.form, dialect: e.dialect.slug, language: dialectTag(e.dialect.slug), meaning: e.meaning, notes: e.notes, examples }
       })
     entryCount += entries.length
     return {
@@ -96,12 +95,11 @@ export function entriesCsv(data: ExportData): string {
     const s = v == null ? '' : String(v)
     return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
   }
-  // `unconfirmed` came last so the older columns keep their positions for anyone reading them by index.
-  const header = ['headword', 'kind', 'definition', 'form', 'dialect', 'dialect_name', 'language', 'meaning', 'notes', 'entry_id', 'word_id', 'source', 'license', 'unconfirmed']
+  const header = ['headword', 'kind', 'definition', 'form', 'dialect', 'dialect_name', 'language', 'meaning', 'notes', 'entry_id', 'word_id', 'source', 'license']
   const lines = [header.join(',')]
   for (const w of data.words) {
     for (const e of w.entries) {
-      lines.push([w.headword, w.kind, w.definition, e.form, e.dialect, names.get(e.dialect) ?? '', e.language, e.meaning, e.notes, e.id, w.id, w.source, 'CC BY-SA 4.0', e.unconfirmed].map(cell).join(','))
+      lines.push([w.headword, w.kind, w.definition, e.form, e.dialect, names.get(e.dialect) ?? '', e.language, e.meaning, e.notes, e.id, w.id, w.source, 'CC BY-SA 4.0'].map(cell).join(','))
     }
   }
   // A byte-order mark, so a spreadsheet opened by double-click reads the Arabic.

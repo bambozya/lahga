@@ -11,6 +11,8 @@ import { useDb, schema } from '../db'
 const PAGE = 200
 
 export default defineEventHandler(async (event) => {
+  // Staff only for now: ordinary readers are not shown which forms are drafts.
+  await requireStaff(event)
   const query = getQuery(event)
   const slug = typeof query.dialect === 'string' ? query.dialect : ''
   const page = Math.max(1, Number(query.page) || 1)

@@ -9,6 +9,7 @@ const { data: stats } = await useFetch('/api/admin', { key: 'admin-stats' })
       <li><NuxtLink to="/settings/admin">البلاغات<template v-if="stats"> ({{ stats.openFlags }})</template></NuxtLink></li>
       <li><NuxtLink to="/settings/admin/proposals">الاقتراحات<template v-if="stats"> ({{ stats.pendingProposals }})</template></NuxtLink></li>
       <li><NuxtLink to="/settings/admin/recent">آخر الإضافات</NuxtLink></li>
+      <li><NuxtLink to="/review">بحاجة إلى تحقق</NuxtLink></li>
       <li><NuxtLink to="/settings/admin/search-misses">بحث بلا نتيجة<template v-if="stats"> ({{ stats.searchMisses }})</template></NuxtLink></li>
       <li><NuxtLink to="/settings/admin/daily">كلمة اليوم</NuxtLink></li>
       <li><NuxtLink to="/settings/admin/users">الأعضاء<template v-if="stats?.users"> ({{ stats.users }})</template></NuxtLink></li>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 // The review list: forms a language model drafted and no speaker has confirmed
 // yet (schema.wordEntryLinks.needsReview), one dialect at a time. Meant to be
-// sent as a link — /review?dialect=libyan — to someone who speaks it.
+// sent as a link — /review?dialect=libyan — to someone who speaks it. Staff
+// only for now: ordinary readers are not shown which forms are drafts.
+definePageMeta({ middleware: 'staff' })
 const route = useRoute()
 const dialect = computed(() => typeof route.query.dialect === 'string' ? route.query.dialect : '')
 const page = computed(() => Math.max(1, Number(route.query.page) || 1))
@@ -22,9 +24,9 @@ useSeo({
     <BreadCrumbs :trail="current ? [{ label: 'بحاجة إلى تحقق', to: '/review' }, { label: current.nameAr }] : [{ label: 'بحاجة إلى تحقق' }]" />
     <h1>بحاجة إلى تحقق</h1>
     <p>
-      بعض الأشكال في المعجم مسودات لم يؤكّدها متحدّث بعد، وتظهر في صفحاتها بنقطة
-      مفرغة بعد الكلمة. إن كانت هذه لهجتك فافتح الكلمة وأجب: هل تُقال هكذا؟
-      جوابان بـ«نعم» يكفيان لتصير الكلمة مؤكّدة، وإن كانت خطأ فصحّحها أو أبلغ عنها.
+      بعض الأشكال في المعجم مسودات لم يؤكّدها متحدّث بعد. يراها المشرفون وحدهم الآن
+      بنقطة مفرغة بعد الكلمة في صفحتها. افتح الكلمة وأكّدها إن كانت صحيحة، أو صحّحها
+      أو احذفها إن كانت خطأ. جوابان بـ«نعم» من المشرفين يكفيان أيضاً.
     </p>
 
     <p v-if="!total">لا شيء ينتظر التحقق الآن.</p>

@@ -1,11 +1,10 @@
 <script setup lang="ts">
 /**
- * The one quiet line under a draft form (schema.wordEntryLinks.needsReview):
- * everyone reads that no speaker has confirmed it yet; a verified reader is
- * asked whether their dialect says it so, and the answer is an ordinary vote on
- * the link — two net «yes» take the mark off (server/utils/votes.ts). Admins
- * and moderators may simply confirm it. Everything else about voting stays
- * hidden (see VoteBox.vue); this is the only place a reader is asked.
+ * The one quiet line under a draft form (schema.wordEntryLinks.needsReview).
+ * For now only admins and moderators ever see it: the word page asks for the
+ * drafts only when the viewer is staff (/api/words/[id]/drafts). They can
+ * answer whether the dialect says it so — an ordinary vote on the link, two
+ * net «yes» take the mark off (server/utils/votes.ts) — or simply confirm it.
  */
 const props = defineProps<{ linkId: number, myVote: number, dialect: { slug: string, nameAr: string } }>()
 const emit = defineEmits<{ confirmed: [] }>()
