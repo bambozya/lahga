@@ -120,6 +120,13 @@
       "when": 1790661243606,
       "tag": "0016_guest_votes",
       "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1790684101650,
+      "tag": "0017_dialect_experts",
+      "breakpoints": true
     }
   ]
 }

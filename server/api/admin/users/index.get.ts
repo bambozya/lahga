@@ -10,9 +10,11 @@ export default defineEventHandler(async (event) => {
     where: q ? or(ilike(schema.users.displayName, `%${q}%`), ilike(schema.users.email, `%${q}%`)) : undefined,
     orderBy: desc(schema.users.createdAt),
     limit: 100,
+    with: { expertIn: { with: { dialect: true } } },
   })
   return rows.map(u => ({
     id: u.id, displayName: u.displayName, email: u.email, role: u.role, verified: !!u.emailVerifiedAt,
     createdAt: u.createdAt, lastSeenAt: u.lastSeenAt, deleted: !!u.deletedAt, bannedAt: u.bannedAt, banReason: u.banReason,
+    expertIn: u.expertIn.map(x => ({ slug: x.dialect.slug, nameAr: x.dialect.nameAr })),
   }))
 })

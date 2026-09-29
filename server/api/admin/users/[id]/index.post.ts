@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
-import { useDb, schema } from '../../../db'
-import { readBody$ } from '../../../utils/validate'
+import { useDb, schema } from '../../../../db'
+import { readBody$ } from '../../../../utils/validate'
 
 /** Bans or unbans a user. A banned user cannot log in or act; their content stays. */
 const Body = v.object({

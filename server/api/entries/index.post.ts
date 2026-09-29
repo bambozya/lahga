@@ -37,8 +37,8 @@ export default defineEventHandler(async (event) => {
       dialectId: dialect.id, form: body.form, formNormalized, meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
     await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, user.id)
-    const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: user.id }).returning()
-    await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, user.id)
+    const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: user.id, needsReview: await startsUnchecked(tx, user, dialect.id) }).returning()
+    await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id, needsReview: link!.needsReview }, user.id)
     if (body.example) {
       const [ex] = await tx.insert(schema.examples).values({ entryId: entry!.id, text: body.example.text, gloss: body.example.gloss || null, createdBy: user.id }).returning()
       await recordRevision(tx, 'example', ex!.id, { text: ex!.text, gloss: ex!.gloss }, user.id)

@@ -8,7 +8,9 @@ import { readBody$ } from '../../../utils/validate'
  * answered by anyone reading the word page: 1 (yes), -1 (no) or 0 (take it
  * back). A member with a verified email votes on the link like anywhere else;
  * everyone else — not signed in, or not verified yet — gives a guest answer
- * that counts half (GUEST_WEIGHT in server/utils/votes.ts). Either way the
+ * that counts half (GUEST_WEIGHT in server/utils/votes.ts). A «yes» from
+ * someone who speaks for the draft's dialect — an admin, a moderator, or an
+ * expert in it (server/utils/experts.ts) — checks it on its own. Either way the
  * draft is settled here, and `confirmed` says whether this answer checked it.
  */
 const Body = v.object({ value: v.picklist([1, -1, 0], 'قيمة التصويت غير صالحة') })
@@ -25,7 +27,8 @@ export default defineEventHandler(async (event) => {
 
   const db = await useDb()
   const l = schema.wordEntryLinks
-  const [link] = await db.select({ createdBy: l.createdBy }).from(l)
+  const [link] = await db.select({ createdBy: l.createdBy, dialectId: schema.entries.dialectId }).from(l)
+    .innerJoin(schema.entries, eq(schema.entries.id, l.entryId))
     .where(and(eq(l.id, id), eq(l.needsReview, true), eq(l.status, 'active')))
   if (!link) throw createError({ statusCode: 404, statusMessage: 'ليس بحاجة إلى تحقق' })
 
@@ -33,7 +36,8 @@ export default defineEventHandler(async (event) => {
     if (link.createdBy === member.id) throw createError({ statusCode: 400, statusMessage: 'لا يمكنك التصويت على ما أضفته أنت' })
     return db.transaction(async (tx) => {
       const { mine, confirmed } = await applyVote(tx, member.id, 'link', id, value)
-      return { mine, confirmed }
+      if (confirmed || value !== 1 || !await speaksFor(tx, member, link.dialectId)) return { mine, confirmed }
+      return { mine, confirmed: await confirmDraft(tx, id, member.id, 'تأكيد من متحدّث موثوق') }
     })
   }
   return db.transaction(tx => applyGuestVote(tx, id, guestVoter(event, id), value))

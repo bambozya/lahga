@@ -224,6 +224,20 @@ export const guestVotes = pgTable('guest_votes', {
   uniqueIndex('guest_votes_unique').on(t.linkId, t.voter),
 ])
 
+// A member an admin trusts to speak for a dialect. Their «yes» under a draft
+// in that dialect checks it on its own, as an admin's or moderator's does, and
+// a form they add in it starts out checked (server/utils/experts.ts). Expertise
+// in a region (مصري) covers the cities inside it (قاهري), not the other way round.
+export const dialectExperts = pgTable('dialect_experts', {
+  id: serial('id').primaryKey(),
+  userId: integer('user_id').notNull().references(() => users.id),
+  dialectId: integer('dialect_id').notNull().references(() => dialects.id),
+  grantedBy: integer('granted_by').references(() => users.id),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  uniqueIndex('dialect_experts_unique').on(t.userId, t.dialectId),
+])
+
 // ---------- flags ----------
 
 export const flags = pgTable('flags', {
@@ -275,7 +289,7 @@ export const proposalsRelations = relations(proposals, ({ one }) => ({
 export const moderationLog = pgTable('moderation_log', {
   id: serial('id').primaryKey(),
   actorId: integer('actor_id').notNull().references(() => users.id),
-  action: text('action').notNull(), // hide, restore, delete, revert, resolve_flag, approve, reject, ban, unban
+  action: text('action').notNull(), // hide, restore, delete, revert, resolve_flag, approve, reject, ban, unban, confirm, grant_expert, revoke_expert
   targetType: text('target_type').notNull(), // word, entry, link, example, user, flag, proposal
   targetId: integer('target_id').notNull(),
   reason: text('reason'),
@@ -399,6 +413,12 @@ export const dialectsRelations = relations(dialects, ({ one, many }) => ({
 
 export const usersRelations = relations(users, ({ many }) => ({
   oauthAccounts: many(oauthAccounts),
+  expertIn: many(dialectExperts),
+}))
+
+export const dialectExpertsRelations = relations(dialectExperts, ({ one }) => ({
+  user: one(users, { fields: [dialectExperts.userId], references: [users.id] }),
+  dialect: one(dialects, { fields: [dialectExperts.dialectId], references: [dialects.id] }),
 }))
 
 export const oauthAccountsRelations = relations(oauthAccounts, ({ one }) => ({

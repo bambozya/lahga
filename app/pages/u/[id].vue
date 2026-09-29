@@ -18,6 +18,12 @@ const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as cons
     <hgroup>
       <h1>{{ profile.displayName }}</h1>
       <p v-if="roleLabel[profile.role]">{{ roleLabel[profile.role] }}</p>
+      <p v-if="profile.expertIn.length">
+        خبير في:
+        <template v-for="(d, i) in profile.expertIn" :key="d.slug">
+          <template v-if="i">، </template><NuxtLink :to="`/d/${d.slug}`" rel="tag">{{ d.nameAr }}</NuxtLink>
+        </template>
+      </p>
     </hgroup>
     <p><small>عضو منذ <time :datetime="profile.createdAt">{{ since }}</time></small></p>
     <p v-if="profile.bio">{{ profile.bio }}</p>

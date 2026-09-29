@@ -18,9 +18,15 @@ The site is live and the two plans behind it, [PLAN.md](docs/PLAN.md) and
 [REACH.md](docs/REACH.md), are shipped: accounts, contribution with revision
 history, flags, moderation and proposals, an admin area, trigram search, share
 cards, two daily games, the divergence ranking, dialect-versus-dialect pages,
-offsite backups and an outside uptime check. Voting is built (API, scores,
-`VoteBox`) but hidden: nothing mounts the component and no page mentions it,
-until it is a feature again. What comes next is in
+a page per dialect form (`/f/دلوقتي`, «what does this word mean?»), open data
+exports and `llms.txt` ([DISCOVERY.md](docs/DISCOVERY.md)), offsite backups
+and an outside uptime check.
+
+Forms drafted by a language model carry a «needs checking» mark until speakers
+confirm them: every reader, signed in or not, can answer under the form
+(`ReviewMark`), and a guest's answer counts half. General voting on words and
+entries is built (API, scores, `VoteBox`) but hidden: nothing mounts the
+component, until it is a feature again. What comes next is in
 [ROADMAP.md](docs/ROADMAP.md), mirrored as the repository's GitHub issues.
 
 ## Run it locally
@@ -50,9 +56,12 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 | `npm run db:migrate` | Apply migrations to the database in `DATABASE_URL` |
 | `npm run db:studio` | Browser UI over the database |
 | `npm run typecheck` | Type-check the whole project (nothing runs it automatically yet) |
-| `npm run import -- <file.json>` | Validate a seed file; `--commit` saves it, `--url` targets a server (see `docs/seed/FORMAT.md`) |
+| `npm run import -- <file.json>` | Validate a seed file; `--commit` saves it, `--url` targets a server |
 | `npm run check-variety -- <file.json>` | Fail on words whose dialects do not differ enough to earn a page |
-| `npm run add-examples`, `retire-extra`, `seed:*` | Seed maintenance scripts; each explains itself in its header under `scripts/` |
+| `npm run check-collisions -- <file.json>` | Warn about headwords that would silently merge into a different word already on the site |
+| `npm run mark-review`, `review:batch` | Mark language-model drafts as «needs checking»; cut them into batches for a second model to review |
+| `npm run geo` | Download the IP-to-country data the search-miss log uses (the Docker build does it on every deploy) |
+| `npm run add-examples`, `retire-extra`, `seed:*` | Seed maintenance and source converters; each explains itself in its header under `scripts/` |
 
 ## Project layout
 
@@ -60,28 +69,30 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 app/                Vue side (Nuxt 4)
   layouts/          top bar, footer
   pages/            one file per route: / (search and random words), /w/[slug] with edit and
-                    history, /d/[slug] and /d/[slug]/vs/[b], /dialects, /divergent, the games
-                    (/games, /daily, /which-dialect), account pages, /settings/admin/*, static pages
-  components/       AppLogo, WordCard, VoteBox, FlagButton, ContributeGate, the forms, ThemeSwitch,
-                    BreadCrumbs, admin pieces
-  composables/      useSeo, useForm, useAnalytics, the two games' local progress
-  middleware/       auth, guest, admin route guards
+                    history, /f/[slug] (a dialect form), /d/[slug] and /d/[slug]/vs/[b], /dialects,
+                    /divergent, the games (/games, /daily, /which-dialect), /data, /u/[id],
+                    account pages, /review and /settings/admin/* for staff, static pages
+  components/       AppLogo, WordCard and FormCard (search results), ReviewMark, VoteBox, FlagButton,
+                    ContributeGate, the forms, ShuffleButton, ThemeSwitch, BreadCrumbs, admin pieces
+  composables/      useSeo, useForm, useAnalytics, useSearchHeaders, the two games' local progress
+  middleware/       auth, guest, staff, admin route guards
   assets/css/       main.css (the design), scale.css (fluid type and space), fonts.css
   error.vue         the error page
-shared/             code used by both client and server: Arabic normalisation, the daily date helpers, types
+shared/             code used by both client and server: Arabic normalisation and slugs, dialect language tags, the daily date helpers
 server/
   api/              HTTP endpoints, one file per route; /api/admin/* for admins; /api/health for the container
-  routes/           non-API routes: Google login callback, share-card images (/og/*), sitemap, robots, old /browse redirect
-  middleware/       page cache, share-card rate limit, Google login redirect
+  routes/           non-API routes: Google login callback, share-card images (/og/*), sitemap, robots, llms.txt,
+                    the data exports (/data/lahga.json, /data/entries.csv), the IndexNow key, old /browse redirect
+  middleware/       page cache, share-card rate limit, Google login redirect, search-visit (who searched, for the miss log)
   db/               Drizzle schema, connection with retry and migration lock, seed data (dialect tree, a few words)
-  utils/            session, validation, rate limits, page cache, email, tokens, games, contribution and admin helpers
-  plugins/          startup: warm the database with retries, purge the page cache after edits, drop the session cookie for anonymous visitors
+  utils/            session, validation, rate limits, page cache, email, tokens, games, form pages, contribution and admin helpers
+  plugins/          startup: warm the database and seed it, purge the page cache after edits, drop the session cookie for anonymous visitors
 drizzle/            generated SQL migrations, committed
-scripts/            seed tooling (import, check-variety, source converters) and the backup restore drill
+scripts/            seed tooling (import, checks, review marks, source converters), the geo download and the backup restore drill
 ops/uptime/         the Cloudflare Worker that watches the site from outside
-public/             favicons, robots.txt, self-hosted fonts
-docs/               product, data model, plans, roadmap
-docs/seed/          seed content format and sources; the data files themselves are kept out of the repository
+public/             favicons, the default share image, self-hosted fonts
+docs/               product, data model, plans, roadmap, discovery
+docs/seed/          seed data and its working notes; kept out of the repository entirely (.gitignore)
 Dockerfile          the production image
 ```
 
@@ -155,7 +166,10 @@ scripts, the local dev admin, the Umami analytics id, and the IndexNow key
   delete only changes the status. See `docs/DATA_MODEL.md`.
 - A word earns a page only if the dialects say it differently, and no
   definition may just repeat the word it hangs under. `npm run check-variety`
-  and the importer enforce it.
+  flags the first before an import; the importer refuses the second
+  (`echoesWord` in `server/utils/contribute.ts`). A dialect form's page is
+  offered to search engines only if it says something its MSA word does not
+  and a speaker has checked it (`server/utils/forms.ts`).
 
 ## Licence
 
@@ -170,13 +184,14 @@ Copyright (C) 2026 Yasser Maslout-Siegfried.
 **The content** (words, dialect forms, definitions, notes, examples, dialect
 descriptions, and the seed files that are kept outside this repository) is published under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). That choice is
-not free: part of the seed comes from Maknuune, which is BY-SA, and share-alike
-material can only be passed on under the same licence. Contributors agree to it
+not free: parts of the seed come from Maknuune and Wiktionary, both BY-SA, and
+share-alike material can only be passed on under the same licence. The sources
+are credited on /about. Contributors agree to it
 on /terms, and ContributeGate says so next to every form.
 
 **Neither licence covers** the name «لهجة» or the jeem-dot logo. The fonts in
-`public/fonts/` (Amiri, IBM Plex Sans Arabic) keep their own SIL Open Font
-License.
+`public/fonts/` (Amiri, IBM Plex Sans Arabic, Noto Naskh Arabic) keep their
+own SIL Open Font License.
 
 ## Roadmap
 
