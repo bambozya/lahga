@@ -1,29 +1,28 @@
 <script setup lang="ts">
 /**
- * The one quiet line under a draft form (schema.wordEntryLinks.needsReview).
- * For now only admins and moderators ever see it: the word page asks for the
- * drafts only when the viewer is staff (/api/words/[id]/drafts). They can
- * answer whether the dialect says it so — an ordinary vote on the link, two
- * net «yes» take the mark off (server/utils/votes.ts) — or simply confirm it.
+ * The one quiet line under a draft form (schema.wordEntryLinks.needsReview),
+ * shown to every reader. Anyone can answer whether the dialect says it so,
+ * signed in or not: a verified member's answer is an ordinary vote on the
+ * link, anyone else's counts half, and two net «yes» take the mark off
+ * (PUT /api/links/[id]/answer). Admins and moderators can also simply confirm it.
  */
 const props = defineProps<{ linkId: number, myVote: number, dialect: { slug: string, nameAr: string } }>()
 const emit = defineEmits<{ confirmed: [] }>()
-const { loggedIn, user } = useUserSession()
-const route = useRoute()
+const { user } = useUserSession()
 const mine = ref(props.myVote)
 const busy = ref(false)
 const error = ref('')
 const moderator = computed(() => user.value?.role === 'admin' || user.value?.role === 'moderator')
+watch(() => props.myVote, v => { mine.value = v })
 
 const answer = async (value: 1 | -1) => {
-  if (!loggedIn.value) return navigateTo({ path: '/login', query: { next: route.fullPath } })
   if (busy.value) return
   const next = mine.value === value ? 0 : value
   busy.value = true; error.value = ''
   try {
-    const res = await $fetch<{ score: number }>('/api/votes', { method: 'PUT', body: { targetType: 'link', targetId: props.linkId, value: next } })
-    mine.value = next
-    if (res.score >= 2) emit('confirmed')
+    const res = await $fetch<{ mine: number, confirmed: boolean }>(`/api/links/${props.linkId}/answer`, { method: 'PUT', body: { value: next } })
+    mine.value = res.mine
+    if (res.confirmed) emit('confirmed')
   }
   catch (e: any) { error.value = e?.data?.statusMessage || 'تعذر التصويت' }
   finally { busy.value = false }
@@ -38,12 +37,11 @@ const confirmIt = async () => {
 
 <template>
   <p class="review"><small>
-    <NuxtLink :to="{ path: '/review', query: { dialect: dialect.slug } }">لم يتحقق منها متحدّث بعد</NuxtLink>
-    <template v-if="loggedIn && user?.emailVerified">
-      · هل تُقال هكذا في {{ dialect.nameAr }}؟
-      <button type="button" :aria-pressed="mine === 1" :disabled="busy" @click="answer(1)">نعم</button>
-      <button type="button" :aria-pressed="mine === -1" :disabled="busy" @click="answer(-1)">لا</button>
-    </template>
+    <NuxtLink v-if="moderator" :to="{ path: '/review', query: { dialect: dialect.slug } }">لم يتحقق منها متحدّث بعد</NuxtLink>
+    <template v-else>لم يتحقق منها متحدّث بعد</template>
+    · هل تُقال هكذا في {{ dialect.nameAr }}؟
+    <button type="button" :aria-pressed="mine === 1" :disabled="busy" @click="answer(1)">نعم</button>/
+    <button type="button" :aria-pressed="mine === -1" :disabled="busy" @click="answer(-1)">لا</button>
     <template v-if="moderator"> · <button type="button" :disabled="busy" @click="confirmIt">تأكيد</button></template>
     <span v-if="error" role="alert"> · {{ error }}</span>
   </small></p>

@@ -186,8 +186,9 @@ a:hover {
 }
 
 /* A draft (a form no speaker has confirmed yet): the nuqta left open after
-   the form, and nothing else. Wherever a dialect form is written — the glance
-   line, the entry's own heading — [data-draft] on it is the whole signal. */
+   the form and its dialect name, and nothing else. [data-draft] goes on what
+   holds the two — the glance line's form-and-name, the entry's own heading —
+   so the mark closes the pair instead of cutting between them. */
 [data-draft]::after {
   content: "";
   display: inline-block;

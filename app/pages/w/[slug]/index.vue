@@ -16,13 +16,13 @@ if (word.value && word.value.slug !== param) {
   await navigateTo(`/w/${word.value.slug}`, { redirectCode: 301 })
 }
 // Drafts — forms a language model wrote and nobody has confirmed yet — are
-// shown to staff only for now. This page is cached for everyone, so the marks
-// are never part of it: staff ask for them once it has loaded
-// (/api/words/[id]/drafts), and nobody else ever does.
-const staff = computed(() => user.value?.role === 'admin' || user.value?.role === 'moderator')
-const drafts = ref(new Map<number, number>()) // linkId -> the viewer's vote on it
+// shown to every reader, who can answer whether the dialect says it so. This
+// page is cached for everyone and each reader's own answer is theirs alone, so
+// the marks are never part of it: the page asks for them once it has loaded
+// (/api/words/[id]/drafts), and again when the reader signs in or out.
+const drafts = ref(new Map<number, number>()) // linkId -> the viewer's answer on it
 const loadDrafts = async () => {
-  if (!staff.value || !word.value) { drafts.value = new Map(); return }
+  if (!word.value) { drafts.value = new Map(); return }
   try {
     const rows = await $fetch<{ linkId: number, myVote: number }[]>(`/api/words/${word.value.id}/drafts`)
     drafts.value = new Map(rows.map(r => [r.linkId, r.myVote]))
@@ -30,7 +30,7 @@ const loadDrafts = async () => {
   catch { drafts.value = new Map() }
 }
 onMounted(loadDrafts)
-watch(staff, loadDrafts)
+watch(() => user.value?.id, loadDrafts)
 const isDraft = (e: { linkId: number }) => drafts.value.has(e.linkId)
 
 // The same glance a result card shows: each form once, with everyone who says it.
@@ -128,7 +128,7 @@ const removeWord = async () => {
     <p v-if="forms.length" class="glance">
       <span>تُقال:</span>
       <template v-for="(f, i) in forms" :key="f.form">
-        <template v-if="i">، </template><a :href="`#entry-${f.entryId}`"><b :data-draft="f.draft || undefined" :title="f.draft ? 'لم يتحقق منها متحدّث بعد' : undefined">{{ f.form }}</b></a> <small>{{ f.dialects.join('، ') }}</small>
+        <template v-if="i">، </template><span :data-draft="f.draft || undefined" :title="f.draft ? 'لم يتحقق منها متحدّث بعد' : undefined"><a :href="`#entry-${f.entryId}`"><b>{{ f.form }}</b></a> <small>{{ f.dialects.join('، ') }}</small></span>
       </template>
     </p>
 
@@ -141,8 +141,8 @@ const removeWord = async () => {
       <h2><NuxtLink :to="`/d/${g.slug}`">{{ g.nameAr }}</NuxtLink></h2>
       <dl>
         <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
-          <dt>
-            <b :lang="dialectTag(e.dialect.slug)" :data-draft="isDraft(e) || undefined" :title="isDraft(e) ? 'لم يتحقق منها متحدّث بعد' : undefined">{{ e.form }}</b>
+          <dt :data-draft="isDraft(e) || undefined" :title="isDraft(e) ? 'لم يتحقق منها متحدّث بعد' : undefined">
+            <b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
           <dd>

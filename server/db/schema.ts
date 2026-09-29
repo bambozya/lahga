@@ -146,8 +146,9 @@ export const wordEntryLinks = pgTable('word_entry_links', {
   // draft nobody has checked yet (docs/seed/LLM-REVIEW.md). The claim lives on
   // the link, not the entry, because the same form can be right under one
   // headword and a guess under another. Set by the importer or
-  // /api/admin/review-marks; cleared by two net upvotes on the link or by an
-  // admin or moderator (/api/links/[id]/confirm). Everything else counts as checked.
+  // /api/admin/review-marks; cleared by two net upvotes on the link (a guest's
+  // counting half, guestVotes) or by an admin or moderator
+  // (/api/links/[id]/confirm). Everything else counts as checked.
   needsReview: boolean('needs_review').notNull().default(false),
 }, t => [
   uniqueIndex('word_entry_links_unique').on(t.wordId, t.entryId),
@@ -205,6 +206,22 @@ export const votes = pgTable('votes', {
 }, t => [
   uniqueIndex('votes_unique_per_user').on(t.targetType, t.targetId, t.userId),
   index('votes_target_idx').on(t.targetType, t.targetId),
+])
+
+// A vote on a draft (wordEntryLinks.needsReview) from someone without a
+// verified account, which counts half a member's (server/utils/votes.ts). No
+// cookie and no address is kept: `voter` is a keyed hash of the IP address and
+// this one link (guestVoter), enough to stop the same visitor answering the
+// same draft twice, and nothing that ties their answers on two drafts together.
+export const guestVotes = pgTable('guest_votes', {
+  id: serial('id').primaryKey(),
+  linkId: integer('link_id').notNull().references(() => wordEntryLinks.id, { onDelete: 'cascade' }),
+  voter: text('voter').notNull(),
+  value: smallint('value').notNull(), // +1 or -1
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [
+  uniqueIndex('guest_votes_unique').on(t.linkId, t.voter),
 ])
 
 // ---------- flags ----------

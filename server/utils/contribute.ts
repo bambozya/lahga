@@ -47,7 +47,7 @@ export function echoesWord(text: string | null | undefined, ...words: (string | 
 }
 
 /** Writes the next revision for a row. `data` is the content after the change. */
-export async function recordRevision(tx: Tx, targetType: Target, targetId: number, data: Record<string, unknown>, authorId: number, reason?: string | null) {
+export async function recordRevision(tx: Tx, targetType: Target, targetId: number, data: Record<string, unknown>, authorId: number | null, reason?: string | null) {
   const [row] = await tx.select({ n: sql<number>`coalesce(max(${schema.revisions.revisionNo}), 0)` })
     .from(schema.revisions)
     .where(and(eq(schema.revisions.targetType, targetType), eq(schema.revisions.targetId, targetId)))
