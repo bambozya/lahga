@@ -67,6 +67,19 @@ export function looseArabicKey(normalized: string): string {
     .join(' ')
 }
 
+/** What slugify() strips, and so what a form page's key must ignore too. */
+export const SLUG_PUNCTUATION = '.,;:!?()-«»"\'…؟،؛'
+
+/**
+ * The key a dialect form's own page (/f/…) is found by: the normalised form
+ * without punctuation, so that «نعمل إيه دلوقتي؟», its slug
+ * «نعمل-إيه-دلوقتي» and «هلّق» beside «هلق» each land on one page. The SQL in
+ * server/utils/forms.ts computes the same thing from entries.form_normalized.
+ */
+export function formKey(input: string): string {
+  return normalizeArabic([...input].filter(c => !SLUG_PUNCTUATION.includes(c)).join(''))
+}
+
 /**
  * The "Arabic script only" rule. Allows Arabic blocks, digits (both kinds),
  * whitespace and common punctuation. Any Latin letter fails.
@@ -106,10 +119,9 @@ export function arabicDigits(n: number): string {
  * this size — so the caller appends -2, -3, … on collision.
  */
 export function slugify(headword: string): string {
-  return headword
-    .normalize('NFKC')
-    .replace(DIACRITICS, '')
-    .replace(/[.,;:!?()\-«»"'…؟،؛]/g, '')
+  return [...headword.normalize('NFKC').replace(DIACRITICS, '')]
+    .filter(c => !SLUG_PUNCTUATION.includes(c))
+    .join('')
     .trim()
     .replace(/\s+/g, '-')
 }

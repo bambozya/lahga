@@ -101,6 +101,7 @@ export default defineNuxtConfig({
     '/': { swr: 60 },
     '/w/*': { swr: 300 },
     '/d/**': { swr: 300 },
+    '/f/*': { swr: 300 },
     '/divergent': { swr: 900 },
     // The daily game (docs/REACH.md, Phase R3) has no per-viewer server data —
     // progress and the streak live in the browser, not in the page's own

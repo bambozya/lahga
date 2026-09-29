@@ -38,6 +38,7 @@ const CACHED_PATHS: { test: (path: string) => boolean, params: string[] }[] = [
   // without the notice and then fight the client over it during hydration.
   { test: p => p.startsWith('/w/') && p.indexOf('/', 3) === -1, params: ['added'] },
   { test: p => p.startsWith('/d/'), params: [] },
+  { test: p => p.startsWith('/f/'), params: [] },
   { test: p => p === '/divergent', params: [] },
   { test: p => p === '/daily' || p.startsWith('/daily/'), params: [] },
   { test: p => p === '/games', params: [] },

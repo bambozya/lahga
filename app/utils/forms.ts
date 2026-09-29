@@ -17,3 +17,6 @@ export function formsOf(entries: { id: number, form: string, dialect: { nameAr: 
   }
   return [...byForm.values()]
 }
+
+/** A dialect form's own page (/f/…, server/utils/forms.ts). */
+export const formPath = (form: string) => `/f/${slugify(form)}`

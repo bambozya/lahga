@@ -3,10 +3,12 @@ import { useDb, schema } from '../db'
 import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
 import { topPairs } from '../api/dialect-pairs.get'
 import { todayDate } from '../../shared/utils/daily'
+import { indexableForms } from '../utils/forms'
 
 /**
  * The sitemap, built from the database on request: every public page, every
- * dialect and every active word. Cached for an hour, since the set changes
+ * dialect, every active word, and every dialect form with a page worth
+ * indexing (server/utils/forms.ts). Cached for an hour, since the set changes
  * slowly and crawlers fetch it often.
  */
 const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', '/contact', '/games', '/daily', '/which-dialect', '/data']
@@ -14,7 +16,7 @@ const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', 
 export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
   const db = await useDb()
-  const [words, dialects, pastPuzzles] = await Promise.all([
+  const [words, dialects, pastPuzzles, forms] = await Promise.all([
     db.select({ id: schema.words.id, slug: schema.words.slug, updatedAt: schema.words.updatedAt }).from(schema.words)
       .where(eq(schema.words.status, 'active')).orderBy(desc(schema.words.updatedAt)).limit(45000),
     db.select({ id: schema.dialects.id, slug: schema.dialects.slug, parentId: schema.dialects.parentId })
@@ -23,6 +25,7 @@ export default defineEventHandler(async (event) => {
     // listed, since its answer is not public yet.
     db.select({ date: schema.dailyPuzzles.date }).from(schema.dailyPuzzles)
       .where(lt(schema.dailyPuzzles.date, todayDate())),
+    indexableForms(db),
   ])
 
   // A sub-dialect with nothing in it has an empty page; crawlers are not sent to it.
@@ -43,6 +46,7 @@ export default defineEventHandler(async (event) => {
     ...listed.map(d => url(`/d/${d.slug}`, undefined, '0.8')),
     ...pairs.map((p: { a: { slug: string }, b: { slug: string } }) => url(`/d/${p.a.slug}/vs/${p.b.slug}`, undefined, '0.5')),
     ...words.map(w => url(`/w/${w.slug}`, day(w.updatedAt), '0.6')),
+    ...forms.map(slug => url(`/f/${slug}`, undefined, '0.5')),
     ...pastPuzzles.map(p => url(`/daily/${p.date}`, undefined, '0.4')),
     '</urlset>',
   ].join('\n')

@@ -84,7 +84,7 @@ const proposal = useForm(async () => {
     <dl v-if="dialect.entries.length" :aria-busy="shuffling">
       <div v-for="e in dialect.entries" :key="e.id">
         <dt>
-          <b>{{ e.form }}</b>
+          <NuxtLink :to="formPath(e.form)"><b>{{ e.form }}</b></NuxtLink>
           <NuxtLink v-if="e.dialect.slug !== dialect.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
         </dt>
         <dd>

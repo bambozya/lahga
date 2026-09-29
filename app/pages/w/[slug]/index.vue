@@ -142,7 +142,7 @@ const removeWord = async () => {
       <dl>
         <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
           <dt :data-draft="isDraft(e) || undefined" :title="isDraft(e) ? 'لم يتحقق منها متحدّث بعد' : undefined">
-            <b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b>
+            <NuxtLink :to="formPath(e.form)"><b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b></NuxtLink>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
           <dd>

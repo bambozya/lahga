@@ -28,7 +28,7 @@ const forms = computed(() => formsOf(props.word.entries))
       <p v-if="forms.length" class="glance">
         <span>تُقال:</span>
         <template v-for="(f, i) in forms" :key="f.form">
-          <template v-if="i">، </template><b>{{ f.form }}</b> <small>{{ f.dialects.join('، ') }}</small>
+          <template v-if="i">، </template><NuxtLink :to="formPath(f.form)"><b>{{ f.form }}</b></NuxtLink> <small>{{ f.dialects.join('، ') }}</small>
         </template>
       </p>
     </dd>
