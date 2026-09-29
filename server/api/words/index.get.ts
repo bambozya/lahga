@@ -78,8 +78,10 @@ export default defineEventHandler(async (event) => {
 
 /**
  * Ids of the active words whose headword or an active linked dialect form
- * satisfies `match`, best first: an exact headword, then one starting with
- * the term, then by trigram similarity, then by score.
+ * satisfies `match`, best first: an exact headword, then a word the term is
+ * a dialect form of (عيش finds خبز and أرز before «ما عندي نقود», which only
+ * holds it inside معيش), then a headword starting with the term, then by
+ * trigram similarity, then by score.
  */
 async function matchingIds(db: Awaited<ReturnType<typeof useDb>>, match: (col: AnyColumn) => SQL, term: string, max: number) {
   const matchedEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
@@ -87,6 +89,15 @@ async function matchingIds(db: Awaited<ReturnType<typeof useDb>>, match: (col: A
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
     .where(and(
       match(schema.entries.formNormalized),
+      eq(schema.entries.status, 'active'),
+      eq(schema.wordEntryLinks.status, 'active'),
+    ))
+
+  const exactFormWords = db.select({ id: schema.wordEntryLinks.wordId })
+    .from(schema.entries)
+    .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
+    .where(and(
+      eq(schema.entries.formNormalized, term),
       eq(schema.entries.status, 'active'),
       eq(schema.wordEntryLinks.status, 'active'),
     ))
@@ -101,6 +112,7 @@ async function matchingIds(db: Awaited<ReturnType<typeof useDb>>, match: (col: A
     ))
     .orderBy(
       sql`(${schema.words.headwordNormalized} = ${term}) desc`,
+      sql`(${schema.words.id} in ${exactFormWords}) desc`,
       sql`(${schema.words.headwordNormalized} like ${term + '%'}) desc`,
       sql`similarity(${schema.words.headwordNormalized}, ${term}) desc`,
       desc(schema.words.score),
