@@ -13,20 +13,10 @@ if (page.value && page.value.slug !== param) {
   await navigateTo(`/f/${page.value.slug}`, { redirectCode: 301 })
 }
 
-const unique = (list: string[]) => [...new Set(list)]
-type Said = { entries: { dialect: { nameAr: string, top: boolean } }[] }
-// Regions before the cities inside them: «مصري، قاهري», not the other way round.
-const namesOf = (senses: Said[]) => unique(senses.flatMap(s => s.entries.map(e => e.dialect))
-  .sort((a, b) => Number(b.top) - Number(a.top)).map(d => d.nameAr))
 const dialects = computed(() => namesOf(page.value?.senses ?? []))
 const heads = computed(() => page.value?.senses.map(s => s.word.headword) ?? [])
-// With two meanings or more, each names who means it: «أرز (خليجي) · خبز (مصري)».
-// Two dialects at most, so the line stays one line.
+// With two meanings or more, each names who means it (whoSays, app/utils/forms.ts).
 const multi = computed(() => (page.value?.senses.length ?? 0) > 1)
-const whoSays = (s: Said) => {
-  const names = namesOf([s])
-  return names.slice(0, 2).join('، ') + (names.length > 2 ? '…' : '')
-}
 const lang = computed(() => dialectTag(page.value?.senses[0]?.entries[0]?.dialect.slug))
 const draftTitle = 'لم يتحقق منها متحدّث بعد'
 
@@ -114,7 +104,7 @@ useSeo({
       <h2>عبارات فيها «{{ page.form }}»</h2>
       <ul class="phrases">
         <li v-for="p in page.phrases" :key="p.form">
-          <span :data-draft="p.draft || undefined" :title="p.draft ? draftTitle : undefined"><NuxtLink :to="formPath(p.form)"><b>{{ p.form }}</b></NuxtLink></span>
+          <span :data-draft="p.draft || undefined" :title="p.draft ? draftTitle : undefined"><NuxtLink :to="formPath(p.form)"><b>{{ p.form }}</b></NuxtLink></span>&nbsp;
           <small>{{ p.dialects.join('، ') }}</small>
           · <NuxtLink :to="`/w/${p.wordSlug}`">{{ p.headword }}</NuxtLink>
         </li>

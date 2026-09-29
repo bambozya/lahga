@@ -23,6 +23,17 @@ const { data: words, status, refresh } = await useFetch<WordList>('/api/words', 
     : { random: 1, limit: SAMPLE }),
 })
 
+// The term as a dialect word in its own right (/f/…): «عيش» is answered first
+// as what it means, then by the MSA words below. A form spelled like its MSA
+// word (أرجوحة) would only repeat the first result, so it is left out.
+const { data: formHit } = await useAsyncData('form-hit', async () => {
+  const slug = activeQuery.value ? slugify(activeQuery.value) : ''
+  if (!slug) return null
+  const hit = await $fetch(`/api/forms/${encodeURIComponent(slug)}`).catch(() => null)
+  const key = hit && formKey(hit.form)
+  return hit?.senses.some(s => formKey(s.word.headword) !== key) ? hit : null
+}, { watch: [activeQuery] })
+
 const count = computed(() => words.value?.length ?? 0)
 const searching = computed(() => status.value === 'pending')
 const shuffling = computed(() => !activeQuery.value && status.value === 'pending')
@@ -141,6 +152,7 @@ useSeo({
     <template v-else-if="words?.length">
       <p v-if="loose" class="loose">لم نجد «{{ activeQuery }}» بهذا الإملاء، فهذه أقرب الكلمات إليها.</p>
       <dl :aria-busy="shuffling">
+        <FormCard v-if="formHit && activeQuery" :form="formHit" />
         <WordCard v-for="w in words" :key="w.id" :word="w" />
       </dl>
       <!-- A result is not always the word: a near-spelling or a homograph can
