@@ -52,6 +52,22 @@ export function looseArabicPattern(term: string): string | null {
 }
 
 /**
+ * A normalised form folded by the same equivalences as looseArabicPattern():
+ * two forms with the same key are one word spelled two ways, not two words.
+ * «كمترة» and «كمثرى» share a key; «بندورة» and «طماطم» do not.
+ */
+export function looseArabicKey(normalized: string): string {
+  const letter: Record<string, string> = { ث: 'ت', ذ: 'د', ظ: 'ض', گ: 'ق' }
+  return normalized.split(' ')
+    .map(w => w.replace(/^(?:[وفبك]?ال|لل)(?=...)/, ''))
+    .map(w => [...w].map((c, i) => {
+      if (w.length >= 3 && i === w.length - 1 && 'ايه'.includes(c)) return 'ا'
+      return letter[c] ?? c
+    }).join(''))
+    .join(' ')
+}
+
+/**
  * The "Arabic script only" rule. Allows Arabic blocks, digits (both kinds),
  * whitespace and common punctuation. Any Latin letter fails.
  */

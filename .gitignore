@@ -34,3 +34,4 @@ docs/seed/
 # Raw Wiktionary extracts from kaikki.org (hundreds of MB); re-download with
 # scripts/import-sources/wiktionary.ts, see docs/seed/SOURCES.md.
 scripts/import-sources/.wiktionary/
+docs/launch
