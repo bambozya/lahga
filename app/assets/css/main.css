@@ -282,10 +282,22 @@ search label {
   min-width: 0;
   display: flex;
 }
+/* The placeholder carries a whole sentence with the dictionary's size in it.
+   When the box is narrower than the sentence, cut it with an ellipsis instead
+   of letting the browser clip it mid-word. Browsers disagree on where the
+   property has to sit: Chrome and Safari take text-overflow from the input
+   itself and pass it on to the placeholder (and to a typed value while the
+   box is not focused), Firefox only honours it on ::placeholder. Set both. */
 search input {
   flex: 1;
   min-width: 0;
   font-size: var(--step-1);
+  text-overflow: ellipsis;
+}
+search input::placeholder {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 nav ul {
