@@ -9,18 +9,12 @@ const search = () => router.push({ path: '/', query: q.value.trim() ? { q: q.val
 // Account link in the top bar: the person icon and the name. Logging out lives on the settings page.
 const { loggedIn, user } = useUserSession()
 
-// The search placeholder carries the dictionary's size, rounded down to two
-// significant figures so it reads "more than 1,700" rather than an exact
-// count. The counts come from the hourly-cached export; if they are not
-// there, or too small to round (a fresh local database), the plain
-// placeholder stands.
-const { data: size } = await useFetch('/api/data-meta', { key: 'data-meta-size', pick: ['words', 'entries'] })
-const roughly = (n: number) => {
-  const step = 10 ** Math.max(0, Math.floor(Math.log10(n)) - 1)
-  return new Intl.NumberFormat('ar').format(Math.floor(n / step) * step)
-}
-const placeholder = computed(() => (size.value?.words ?? 0) >= 100 && size.value?.entries
-  ? `ابحث في أكثر من ${roughly(size.value.words)} كلمة و${roughly(size.value.entries)} مرادف…`
+// The search placeholder carries the dictionary's size ("more than 1,700"
+// rather than an exact count, see useDictionarySize); without counts the
+// plain placeholder stands.
+const size = useDictionarySize()
+const placeholder = computed(() => size.ready.value
+  ? `ابحث في أكثر من ${size.words.value} كلمة و${size.entries.value} مرادف…`
   : 'ابحث عن كلمة…')
 </script>
 

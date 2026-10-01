@@ -62,6 +62,40 @@ distribution, and this file says which is which.
    to tools they actually use; the divergence pages (`/divergent`, `/d/a/vs/b`)
    are the pages nobody else has.
 
+## Where it stood on 2026-10-01
+
+Checked against the live site, for the query «معجم اللهجات العربية».
+
+- **Not in the results at all**, two weeks after launch. The first page is
+  almaany.com, a waqfeya.net book, a blogspot blog, a forum thread and the
+  landing page of the Facebook group of the same name. None of them is a
+  dictionary one can search, so the query is winnable, but only with links.
+- **Indexed by Bing** (DuckDuckGo, which reads Bing's index, lists the home
+  page, the dialect pages and word pages). Google cannot be checked from
+  outside; Search Console says.
+- **No link points at the site from anywhere a search engine reads.** The
+  GitHub repository, which does rank for the name, has an empty description
+  and no website set.
+- **The home page did not say what it is**: its heading was «كلمات من المعجم»
+  and the rest was five random words, different on every crawl. The heading
+  is now the phrase itself, over one stable sentence with the counts
+  (`useDictionarySize`).
+- **`/login` was indexed** because robots.txt barred it, so its noindex tag
+  was never read. The account pages are now crawlable and keep the tag.
+- **`/llms.txt` said no content was written by AI**, which stopped being true
+  with the drafted forms. It now says what the site says: drafted, marked,
+  waiting for a speaker. It also carries the exact counts.
+- **`http://` and `www.` redirect with a 302**, not a 301 (Traefik's default
+  in Coolify). A temporary redirect passes on less than a permanent one;
+  `permanent=true` on both redirect middlewares in the app's labels fixes it.
+
+A Wikipedia article about the site is not the way: with no independent
+coverage it is deleted for notability, and written by the site's owner it is
+a conflict of interest. Its links are nofollow besides. It becomes possible
+after the press or a paper has written about the site, and then someone else
+writes it. Until then the same effort goes further on item 4 above, on a
+Wikidata item, and on the Masader catalogue of Arabic datasets.
+
 ## What actually decides it
 
 None of the above makes a page rank above a forum thread. Being the only

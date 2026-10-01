@@ -5,6 +5,7 @@ useSeo({ title: 'عن الموقع', description: 'لهجة معجم تشارك�
 // their own. ?all=1 as on /dialects — a dialect is supported from the moment a
 // word can be filed under it, not from the moment someone has done so.
 const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } })
+const size = useDictionarySize()
 </script>
 
 <template>
@@ -56,6 +57,10 @@ const { data: dialects } = await useFetch('/api/dialects', { query: { all: 1 } }
       <p>
         ولا تستحق الكلمة صفحة إلا إذا اختلفت اللهجات في قولها؛ فما يقوله العرب
         جميعاً بلفظ واحد لا يحتاج إلى معجم.
+      </p>
+      <p v-if="size.ready.value">
+        وفي المعجم اليوم أكثر من {{ size.words.value }} كلمة بالفصحى
+        و{{ size.entries.value }} مرادف لها في {{ size.dialects.value }} لهجة.
       </p>
 
       <h3 id="dialects">اللهجات المدعومة</h3>

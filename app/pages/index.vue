@@ -90,6 +90,12 @@ const countLabel = computed(() => {
   return n <= 10 ? `${n} نتائج` : `${n} نتيجة`
 })
 
+// The page's own name for itself, in words a stranger would search for: the
+// heading says what the site is, and the line under it carries the numbers
+// (docs/DISCOVERY.md). The random words below change on every load, so this
+// is the only text on the page a crawler finds the same twice.
+const size = useDictionarySize()
+
 useSeo({
   title: () => activeQuery.value ? `بحث: ${activeQuery.value}` : 'معجم اللهجات العربية',
   path: '/',
@@ -101,10 +107,20 @@ useSeo({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'لهجة',
-    alternateName: ['لهجة، معجم اللهجات العربية', 'lahga.fyi', 'Lahga'],
+    // The English name is for answer engines asked in English; the site
+    // itself stays Arabic only.
+    alternateName: ['لهجة، معجم اللهجات العربية', 'معجم لهجة', 'lahga.fyi', 'Lahga', 'Lahga, a dictionary of Arabic dialects'],
     url: 'https://lahga.fyi/',
     inLanguage: 'ar',
-    description: 'معجم تشاركي يربط كلمات اللهجات العربية بمعانيها بالفصحى.',
+    description: 'معجم تشاركي مفتوح للهجات العربية، يربط كلمات كل لهجة بمعانيها بالفصحى.',
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    isAccessibleForFree: true,
+    about: {
+      '@type': 'Thing',
+      name: 'اللهجات العربية',
+      sameAs: ['https://ar.wikipedia.org/wiki/لهجات_عربية', 'https://en.wikipedia.org/wiki/Varieties_of_Arabic'],
+    },
+    sameAs: ['https://github.com/bambozya/lahga'],
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: 'https://lahga.fyi/?q={search_term_string}' },
@@ -122,8 +138,16 @@ useSeo({
       <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
     </hgroup>
     <hgroup v-else class="head">
-      <h1>كلمات من المعجم</h1>
-      <p>ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.</p>
+      <h1>معجم اللهجات العربية</h1>
+      <p v-if="size.ready.value">
+        «لهجة» معجم تشاركي مفتوح: أكثر من {{ size.words.value }} كلمة بالفصحى
+        و{{ size.entries.value }} مرادف لها في {{ size.dialects.value }} لهجة عربية.
+        ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.
+      </p>
+      <p v-else>
+        «لهجة» معجم تشاركي مفتوح يجمع كيف تُقال الكلمة الواحدة في اللهجات العربية.
+        ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.
+      </p>
     </hgroup>
 
     <!-- Another way to read the same list, offered where the choice is made:

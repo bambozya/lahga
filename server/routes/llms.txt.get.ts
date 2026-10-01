@@ -1,6 +1,7 @@
 import { eq, isNull } from 'drizzle-orm'
 import { useDb, schema } from '../db'
 import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
+import { loadExport } from '../utils/exportData'
 
 /**
  * /llms.txt (https://llmstxt.org): a short, plain-text map of the site for
@@ -12,11 +13,12 @@ import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
 export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
   const db = await useDb()
-  const [groups, subs, filled] = await Promise.all([
+  const [groups, subs, filled, { meta }] = await Promise.all([
     db.query.dialects.findMany({ where: isNull(schema.dialects.parentId), orderBy: schema.dialects.sortOrder }),
     db.select({ id: schema.dialects.id, slug: schema.dialects.slug, nameAr: schema.dialects.nameAr, parentId: schema.dialects.parentId })
       .from(schema.dialects).where(eq(schema.dialects.active, 1)),
     entryCounts(db),
+    loadExport(),
   ])
   const first = (t: string | null) => (t ?? '').split(/\n\s*\n/)[0]?.trim().replace(/\s+/g, ' ') ?? ''
 
@@ -25,10 +27,12 @@ export default defineEventHandler(async (event) => {
     '',
     '> معجم تشاركي للهجات العربية: كل صفحة تبدأ من معنى بالفصحى، وتحتها الأشكال التي يُقال بها في اللهجات، كل شكل منسوب إلى لهجته، مع ملاحظات وأمثلة. Lahga is a crowd-sourced dictionary of spoken Arabic dialects, pivoted on Modern Standard Arabic; every page answers "how is this said in each dialect?".',
     '',
-    '- اللغة: العربية فقط. الروابط ثابتة: /w/<الكلمة> لصفحة كلمة، /d/<اللهجة> لصفحة لهجة، /d/<أ>/vs/<ب> لمقارنة لهجتين.',
+    // Exact counts with their date: a number is what an answer engine quotes.
+    `- الحجم: ${meta.words} كلمة بالفصحى، ${meta.entries} شكلاً دارجاً، ${meta.examples} مثالاً، ${meta.dialects} لهجة (بتاريخ ${meta.generated.slice(0, 10)}).`,
+    '- اللغة: العربية فقط. الروابط ثابتة: /w/<الكلمة> لصفحة كلمة، /f/<الشكل> لصفحة كلمة دارجة، /d/<اللهجة> لصفحة لهجة، /d/<أ>/vs/<ب> لمقارنة لهجتين.',
     `- الرخصة: المحتوى كله برخصة CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). الاستشهاد: «لهجة، معجم اللهجات العربية» مع رابط الصفحة، مثلاً ${site}/w/…`,
     '- الصفحات تحمل بيانات منظمة (schema.org DefinedTerm / DefinedTermSet) ووسم لغة BCP-47 لكل شكل (arz، apc، afb، ary…).',
-    '- المحتوى من أناس يتكلمون هذه اللهجات ومن مصادر مفتوحة مذكورة في صفحة «عن الموقع»؛ لا محتوى مكتوباً بالذكاء الاصطناعي.',
+    '- المحتوى من أناس يتكلمون هذه اللهجات ومن مصادر مفتوحة مذكورة في صفحة «عن الموقع». وبعض الأشكال صاغتها نماذج لغوية ولم يتحقق منها متحدّث بعد؛ هذه موسومة بذلك في صفحاتها إلى أن يؤكدها من يتكلم اللهجة.',
     '',
     '## البيانات المفتوحة',
     '',
