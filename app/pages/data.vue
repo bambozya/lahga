@@ -17,7 +17,7 @@ useSeo({
     alternateName: 'Lahga Arabic dialects dictionary',
     description: 'كلمات وعبارات وأمثال من اللهجات العربية، كل منها مربوط بمعناه بالفصحى ومنسوب إلى لهجته، مع وسم لغة BCP-47 لكل شكل. Crowd-sourced dictionary of spoken Arabic dialects pivoted on Modern Standard Arabic.',
     url: `${site}/data`,
-    sameAs: site,
+    sameAs: [site, 'https://huggingface.co/datasets/lahga/arabic-dialects'],
     license: 'https://creativecommons.org/licenses/by-sa/4.0/',
     isAccessibleForFree: true,
     inLanguage: ['ar', 'arz', 'apc', 'acm', 'afb', 'ary', 'aeb', 'arq', 'ayl', 'apd', 'ars', 'acw'],

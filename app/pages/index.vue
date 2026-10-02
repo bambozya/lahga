@@ -120,7 +120,9 @@ useSeo({
       name: 'اللهجات العربية',
       sameAs: ['https://ar.wikipedia.org/wiki/لهجات_عربية', 'https://en.wikipedia.org/wiki/Varieties_of_Arabic'],
     },
-    sameAs: ['https://github.com/bambozya/lahga'],
+    // The same thing under its other names: the Wikidata item is what ties
+    // the site to one entity for a search engine; the rest are where it lives.
+    sameAs: ['https://www.wikidata.org/wiki/Q141621164', 'https://github.com/bambozya/lahga', 'https://huggingface.co/lahga'],
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: 'https://lahga.fyi/?q={search_term_string}' },
