@@ -7,7 +7,10 @@ import { dialectTag } from '../../shared/utils/dialectTags'
  * /data/lahga.json and /data/entries.csv serve, and what a dataset card on
  * Hugging Face or GitHub is built from. Active rows only; no accounts, votes
  * or revision history. Every word carries its own URL as `source`, so a row
- * copied out of the file still says where it came from.
+ * copied out of the file still says where it came from. Every form carries
+ * `needs_review`, the site's own «لم يتحقق منها متحدّث بعد» mark
+ * (schema.wordEntryLinks.needsReview): a form drafted by a language model that
+ * no speaker has confirmed yet. Whoever builds on the file can leave those out.
  *
  * Built once and kept in memory for an hour, or until content changes
  * (server/plugins/page-cache-purge.ts calls invalidateExport). At the site's
@@ -16,12 +19,16 @@ import { dialectTag } from '../../shared/utils/dialectTags'
  */
 export interface ExportDialect { id: number, slug: string, name: string, language: string, parent: string | null, description: string | null, url: string }
 export interface ExportExample { id: number, text: string, gloss: string | null }
-export interface ExportEntry { id: number, form: string, dialect: string, language: string, meaning: string | null, notes: string | null, examples: ExportExample[] }
+export interface ExportEntry { id: number, form: string, dialect: string, language: string, meaning: string | null, notes: string | null, needs_review: boolean, examples: ExportExample[] }
 export interface ExportWord { id: number, slug: string, headword: string, kind: 'word' | 'phrase' | 'proverb', definition: string | null, source: string, updated: string, entries: ExportEntry[] }
 export interface ExportData {
   meta: {
     name: string, url: string, description: string, license: string, attribution: string,
     generated: string, words: number, entries: number, examples: number, dialects: number,
+    /** How many of `entries` carry `needs_review`. */
+    needs_review: number,
+    /** How many of `dialects` have at least one form; the rest are listed and still empty. */
+    dialects_with_forms: number,
   }
   dialects: ExportDialect[]
   words: ExportWord[]
@@ -53,14 +60,20 @@ export async function loadExport(): Promise<ExportData> {
 
   let entryCount = 0
   let exampleCount = 0
+  let reviewCount = 0
+  const filled = new Set<string>()
   const words: ExportWord[] = wordRows.map((w) => {
     const entries: ExportEntry[] = w.links
       .filter(l => l.status === 'active' && l.entry.status === 'active')
-      .map(l => l.entry)
-      .map((e) => {
+      .map((l) => {
+        // The mark sits on the link, not the entry: a form is drafted as the
+        // way to say this word, and may be long confirmed under another.
+        const e = l.entry
         const examples = e.examples.filter(x => x.status === 'active').map(x => ({ id: x.id, text: x.text, gloss: x.gloss }))
         exampleCount += examples.length
-        return { id: e.id, form: e.form, dialect: e.dialect.slug, language: dialectTag(e.dialect.slug), meaning: e.meaning, notes: e.notes, examples }
+        if (l.needsReview) reviewCount++
+        filled.add(e.dialect.slug)
+        return { id: e.id, form: e.form, dialect: e.dialect.slug, language: dialectTag(e.dialect.slug), meaning: e.meaning, notes: e.notes, needs_review: l.needsReview, examples }
       })
     entryCount += entries.length
     return {
@@ -80,6 +93,7 @@ export async function loadExport(): Promise<ExportData> {
       attribution: `لهجة، معجم اللهجات العربية (${site})، برخصة CC BY-SA 4.0`,
       generated: new Date().toISOString(),
       words: words.length, entries: entryCount, examples: exampleCount, dialects: dialects.length,
+      needs_review: reviewCount, dialects_with_forms: filled.size,
     },
     dialects,
     words,
@@ -95,11 +109,11 @@ export function entriesCsv(data: ExportData): string {
     const s = v == null ? '' : String(v)
     return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
   }
-  const header = ['headword', 'kind', 'definition', 'form', 'dialect', 'dialect_name', 'language', 'meaning', 'notes', 'entry_id', 'word_id', 'source', 'license']
+  const header = ['headword', 'kind', 'definition', 'form', 'dialect', 'dialect_name', 'language', 'meaning', 'notes', 'entry_id', 'word_id', 'source', 'license', 'needs_review']
   const lines = [header.join(',')]
   for (const w of data.words) {
     for (const e of w.entries) {
-      lines.push([w.headword, w.kind, w.definition, e.form, e.dialect, names.get(e.dialect) ?? '', e.language, e.meaning, e.notes, e.id, w.id, w.source, 'CC BY-SA 4.0'].map(cell).join(','))
+      lines.push([w.headword, w.kind, w.definition, e.form, e.dialect, names.get(e.dialect) ?? '', e.language, e.meaning, e.notes, e.id, w.id, w.source, 'CC BY-SA 4.0', e.needs_review].map(cell).join(','))
     }
   }
   // A byte-order mark, so a spreadsheet opened by double-click reads the Arabic.

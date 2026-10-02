@@ -56,7 +56,7 @@ useSeo({
     </dl>
     <p v-if="meta">
       <small>
-        الآن: {{ meta.words }} كلمة، {{ meta.entries }} شكلاً، {{ meta.examples }} مثالاً، في {{ meta.dialects }} لهجة.
+        الآن: {{ meta.words }} كلمة، {{ meta.entries }} شكلاً، {{ meta.examples }} مثالاً، في {{ meta.dialects_with_forms }} لهجة.
         آخر بناء: <time :datetime="meta.generated">{{ updated }}</time>.
       </small>
     </p>
@@ -68,6 +68,13 @@ useSeo({
       (<code>arz</code> للمصرية، <code>apc</code> للشامية، <code>afb</code>
       للخليجية، <code>ary</code> للمغربية…) ليفرّق البرنامج بين اللهجات دون
       أن يقرأ أسماءها.
+    </p>
+    <p>
+      وبعض الأشكال صاغها نموذج لغوي ولم يتحقق منها متحدّث بعد؛ هذه تحمل في
+      الملفين الحقل <code>needs_review</code> بقيمة <code>true</code>، وهي
+      العلامة نفسها التي تراها في صفحة الكلمة<template v-if="meta?.needs_review">،
+      وعددها الآن {{ meta.needs_review }} من {{ meta.entries }}</template>.
+      من يبني على البيانات شيئاً يحتاج إلى اليقين فليتركها حتى تُؤكَّد.
     </p>
 
     <h2 id="license">الرخصة والنسبة</h2>

@@ -60,6 +60,7 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 | `npm run check-variety -- <file.json>` | Fail on words whose dialects do not differ enough to earn a page |
 | `npm run check-collisions -- <file.json>` | Warn about headwords that would silently merge into a different word already on the site |
 | `npm run mark-review`, `review:batch` | Mark language-model drafts as «needs checking»; cut them into batches for a second model to review |
+| `npm run hf:build` | Build the folder that goes to Hugging Face as a dataset, from the site's own export (`.data/hf-dataset/`; nothing is uploaded) |
 | `npm run geo` | Download the IP-to-country data the search-miss log uses (the Docker build does it on every deploy) |
 | `npm run add-examples`, `retire-extra`, `seed:*` | Seed maintenance and source converters; each explains itself in its header under `scripts/` |
 

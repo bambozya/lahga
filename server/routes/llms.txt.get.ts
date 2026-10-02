@@ -28,11 +28,11 @@ export default defineEventHandler(async (event) => {
     '> معجم تشاركي للهجات العربية: كل صفحة تبدأ من معنى بالفصحى، وتحتها الأشكال التي يُقال بها في اللهجات، كل شكل منسوب إلى لهجته، مع ملاحظات وأمثلة. Lahga is a crowd-sourced dictionary of spoken Arabic dialects, pivoted on Modern Standard Arabic; every page answers "how is this said in each dialect?".',
     '',
     // Exact counts with their date: a number is what an answer engine quotes.
-    `- الحجم: ${meta.words} كلمة بالفصحى، ${meta.entries} شكلاً دارجاً، ${meta.examples} مثالاً، ${meta.dialects} لهجة (بتاريخ ${meta.generated.slice(0, 10)}).`,
+    `- الحجم: ${meta.words} كلمة بالفصحى، ${meta.entries} شكلاً دارجاً، ${meta.examples} مثالاً، في ${meta.dialects_with_forms} لهجة (بتاريخ ${meta.generated.slice(0, 10)}). من الأشكال ${meta.needs_review} لم يتحقق منها متحدّث بعد.`,
     '- اللغة: العربية فقط. الروابط ثابتة: /w/<الكلمة> لصفحة كلمة، /f/<الشكل> لصفحة كلمة دارجة، /d/<اللهجة> لصفحة لهجة، /d/<أ>/vs/<ب> لمقارنة لهجتين.',
     `- الرخصة: المحتوى كله برخصة CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). الاستشهاد: «لهجة، معجم اللهجات العربية» مع رابط الصفحة، مثلاً ${site}/w/…`,
     '- الصفحات تحمل بيانات منظمة (schema.org DefinedTerm / DefinedTermSet) ووسم لغة BCP-47 لكل شكل (arz، apc، afb، ary…).',
-    '- المحتوى من أناس يتكلمون هذه اللهجات ومن مصادر مفتوحة مذكورة في صفحة «عن الموقع». وبعض الأشكال صاغتها نماذج لغوية ولم يتحقق منها متحدّث بعد؛ هذه موسومة بذلك في صفحاتها إلى أن يؤكدها من يتكلم اللهجة.',
+    '- المحتوى من أناس يتكلمون هذه اللهجات ومن مصادر مفتوحة مذكورة في صفحة «عن الموقع». وبعض الأشكال صاغتها نماذج لغوية ولم يتحقق منها متحدّث بعد؛ هذه موسومة بذلك في صفحاتها، وبالحقل needs_review في ملفات البيانات، إلى أن يؤكدها من يتكلم اللهجة.',
     '',
     '## البيانات المفتوحة',
     '',

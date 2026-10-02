@@ -28,7 +28,8 @@ distribution, and this file says which is which.
 - **The open data** under `/data` (`server/utils/exportData.ts`):
   `lahga.json` is the whole dictionary, `entries.csv` one form per row.
   Active rows only, no accounts or votes, every word with its own URL as
-  `source`. Built in memory once an hour or after any content change. This is
+  `source`, every form with `needs_review` (drafted by a language model,
+  not yet confirmed by a speaker). Built in memory once an hour or after any content change. This is
   a download, not the public API the roadmap rules out.
 - **IndexNow** (`server/utils/indexnow.ts`): after content changes, the
   changed word and dialect pages are submitted to Bing and to every engine
@@ -50,11 +51,19 @@ distribution, and this file says which is which.
    `NUXT_INDEXNOW_KEY`, redeploy, and confirm
    `https://lahga.fyi/indexnow/<key>.txt` answers with the key.
 4. **Publish the dataset where models are trained from**: a Hugging Face
-   dataset (`lahga/arabic-dialects` or similar) and a GitHub release, both
-   pointing at `/data/lahga.json` as the canonical file. The dataset card
-   states the CC BY-SA licence and the attribution string from the file's
-   `meta.attribution`. A row that reaches a training set carrying the site's
-   URL is the most durable way to get the name into a future model.
+   dataset (`lahga/arabic-dialects` or similar), pointing at `/data` as the
+   canonical files. `npm run hf:build` writes the folder to upload from the
+   site's own export: the card (`scripts/hf-dataset/card.md`, with the counts
+   and the coverage table filled in) and one JSON Lines table each for forms,
+   examples and dialects. The card says plainly how much was drafted by a
+   language model and what `needs_review` does and does not promise; a
+   dataset that hides that is found out by the first researcher who reads
+   twenty rows. A row that reaches a training set carrying the site's URL is
+   the most durable way to get the name into a future model. Rebuild and
+   re-upload after any large import; the card carries its snapshot date.
+   Once it is up: an entry in Masader (github.com/ARBML/masader, one JSON
+   file per dataset, added through their form or a pull request), the
+   catalogue Arabic NLP people actually search, and a Wikidata item.
 5. **References from places models already trust**: Arabic Wiktionary and
    Arabic Wikipedia dialect articles accept a reference when the site adds
    something a reader cannot get elsewhere. One careful reference beats

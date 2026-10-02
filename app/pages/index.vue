@@ -139,7 +139,7 @@ useSeo({
     </hgroup>
     <hgroup v-else class="head">
       <h1>معجم اللهجات العربية</h1>
-      <p v-if="size.ready.value">
+      <p v-if="size.ready.value && size.dialects.value">
         «لهجة» معجم تشاركي مفتوح: أكثر من {{ size.words.value }} كلمة بالفصحى
         و{{ size.entries.value }} مرادف لها في {{ size.dialects.value }} لهجة عربية.
         ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.

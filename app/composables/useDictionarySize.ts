@@ -10,7 +10,7 @@
  * caller shares the one request under the same key.
  */
 export function useDictionarySize() {
-  const { data } = useFetch('/api/data-meta', { key: 'data-meta-size', pick: ['words', 'entries', 'dialects'] })
+  const { data } = useFetch('/api/data-meta', { key: 'data-meta-size', pick: ['words', 'entries', 'dialects_with_forms'] })
   const fmt = new Intl.NumberFormat('ar')
   const roughly = (n: number) => {
     const step = 10 ** Math.max(0, Math.floor(Math.log10(n)) - 1)
@@ -21,7 +21,9 @@ export function useDictionarySize() {
     ready,
     words: computed(() => ready.value ? roughly(data.value!.words) : ''),
     entries: computed(() => ready.value ? roughly(data.value!.entries) : ''),
-    // Dialects are few enough to count exactly.
-    dialects: computed(() => ready.value && data.value!.dialects ? fmt.format(data.value!.dialects) : ''),
+    // Dialects are few enough to count exactly. Only those with a form in
+    // them: a dialect that is listed and still empty is not one the
+    // dictionary can be said to hold words in.
+    dialects: computed(() => ready.value && data.value!.dialects_with_forms ? fmt.format(data.value!.dialects_with_forms) : ''),
   }
 }

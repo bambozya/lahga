@@ -58,7 +58,7 @@ const size = useDictionarySize()
         ولا تستحق الكلمة صفحة إلا إذا اختلفت اللهجات في قولها؛ فما يقوله العرب
         جميعاً بلفظ واحد لا يحتاج إلى معجم.
       </p>
-      <p v-if="size.ready.value">
+      <p v-if="size.ready.value && size.dialects.value">
         وفي المعجم اليوم أكثر من {{ size.words.value }} كلمة بالفصحى
         و{{ size.entries.value }} مرادف لها في {{ size.dialects.value }} لهجة.
       </p>
