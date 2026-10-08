@@ -4,6 +4,7 @@ import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
 import { topPairs } from '../api/dialect-pairs.get'
 import { todayDate } from '../../shared/utils/daily'
 import { indexableForms } from '../utils/forms'
+import { encodePath } from 'ufo'
 
 /**
  * The sitemap, built from the database on request: every public page, every
@@ -36,8 +37,11 @@ export default defineEventHandler(async (event) => {
   const listed = dialects.filter(d => d.parentId === null || (filled.get(d.id) ?? 0) >= MIN_ENTRIES)
 
   const day = (d: Date | null) => (d ?? new Date()).toISOString().slice(0, 10)
+  // The protocol wants <loc> percent-encoded, and it is what Search Console
+  // shows as the page's address anyway: one spelling everywhere, so the raw
+  // and the encoded form of an Arabic path are never read as two pages.
   const url = (loc: string, lastmod?: string, priority?: string) =>
-    `<url><loc>${site}${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}${priority ? `<priority>${priority}</priority>` : ''}</url>`
+    `<url><loc>${site}${encodePath(loc)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}${priority ? `<priority>${priority}</priority>` : ''}</url>`
 
   const body = [
     '<?xml version="1.0" encoding="UTF-8"?>',

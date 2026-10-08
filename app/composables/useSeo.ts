@@ -5,6 +5,8 @@
  * Call it once per page. Values may be refs or getters, so pages that load
  * their data with useFetch can pass `() => word.value?.headword`.
  */
+import { decodePath, encodePath } from 'ufo'
+
 type MaybeGetter<T> = T | (() => T)
 
 export interface SeoOptions {
@@ -44,7 +46,11 @@ export function clampText(text: string | undefined, max = 160): string {
 export function useSeo(options: SeoOptions) {
   const route = useRoute()
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
-  const url = computed(() => site + (read(options.path) ?? route.path))
+  // Percent-encoded, as the sitemap and every Location header spell it, so
+  // search engines see one address for an Arabic path rather than a raw and
+  // an encoded one. Decoded first: route.path can arrive already encoded on
+  // the server, and encoding that twice would be a different URL again.
+  const url = computed(() => site + encodePath(decodePath(read(options.path) ?? route.path)))
   const title = computed(() => {
     const t = read(options.title)
     return t ? `${t} - ${SITE_NAME}` : SITE_NAME
