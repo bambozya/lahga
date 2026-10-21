@@ -426,6 +426,10 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-10-21. D1 (#27), C5 (#44) and A7 (#7) shipped. Also fixed: the
+  stretched card link covered every button and link inside a card for
+  signed-in users (approve and reject on proposals, edit, delete, flag), so
+  controls now sit above it (e33e79d). A3 is down to the error emails.
 - 2026-10-21. Feedback from the AIDA group: C5 (#44) and other spellings
   (#43) added to *Next*; the pronunciation gap is noted on Audio (#38) for
   the next review.
