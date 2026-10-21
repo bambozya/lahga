@@ -1,6 +1,6 @@
 import { inArray } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { ensurePuzzle } from '../../utils/daily'
+import { ensurePuzzle, visibleRevealOrder } from '../../utils/daily'
 import { REVEALS, todayDate } from '../../../shared/utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
 
@@ -18,7 +18,8 @@ export default defineEventHandler(async (event) => {
   const date = todayDate()
   const puzzle = await ensurePuzzle(db, date)
 
-  const entryIds = puzzle.revealOrder.slice(0, n)
+  const order = await visibleRevealOrder(db, puzzle)
+  const entryIds = order.slice(0, n)
   const entries = entryIds.length
     ? await db.query.entries.findMany({ where: inArray(schema.entries.id, entryIds), with: { dialect: true } })
     : []
@@ -28,5 +29,5 @@ export default defineEventHandler(async (event) => {
     .filter((e): e is NonNullable<typeof e> => !!e)
     .map(e => ({ dialect: e.dialect.slug, nameAr: e.dialect.nameAr, form: e.form }))
 
-  return { date, number: puzzleNumber(date), total: puzzle.revealOrder.length, forms }
+  return { date, number: puzzleNumber(date), total: order.length, forms }
 })

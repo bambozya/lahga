@@ -1,18 +1,19 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { ensureRound, groupNames, SLOTS } from '../../utils/dialectQuiz'
-import { todayDate } from '../../../shared/utils/daily'
+import { gameDate } from '../../utils/daily'
 
 /**
  * One of today's three rounds of «من أي لهجة؟»: the form and its MSA word
  * for context, and the four dialect names to choose from — the correct one
- * is never marked, only checked by POST .../guess.
+ * is never marked, only checked by POST .../guess. ?date= keeps the later
+ * rounds on the day the first one was shown (gameDate).
  */
 export default defineEventHandler(async (event) => {
-  const { slot } = getQuery(event)
+  const { slot, date } = getQuery(event)
   const n = Math.min(Math.max(Number(slot) || 1, 1), SLOTS)
   const db = await useDb()
-  const round = await ensureRound(db, todayDate(), n)
+  const round = await ensureRound(db, gameDate(date), n)
 
   const [entry, names] = await Promise.all([
     db.query.entries.findFirst({ where: eq(schema.entries.id, round.entryId) }),

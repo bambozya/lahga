@@ -1,7 +1,7 @@
-import { and, eq, ne, sql } from 'drizzle-orm'
+import { and, eq, inArray, ne, sql } from 'drizzle-orm'
 import { schema, type Db } from '../db'
 import { normalizeArabic } from '../../shared/utils/arabic'
-import { REVEALS } from '../../shared/utils/daily'
+import { REVEALS, dayBefore, todayDate } from '../../shared/utils/daily'
 import { MIN_GROUPS } from '../api/divergent.get'
 import type { Tx } from './contribute'
 
@@ -12,6 +12,35 @@ export { MIN_GROUPS }
  * group at a time, hardest first. This file builds a day's puzzle and checks
  * a guess against it; server/api/daily/* is the thin HTTP layer on top.
  */
+
+/**
+ * The day a game request is about (roadmap A7). The page says which puzzle it
+ * is showing, so a round begun at 23:58 UTC is checked against that day's word
+ * at 00:01, not against the new one. Today and yesterday only: yesterday's
+ * answer is already public in the archive, so accepting it gives nothing away,
+ * and anything older is a stale tab that should reload. No date means today,
+ * which keeps a page cached from before this change working.
+ * Shared by both games (server/api/daily, server/api/dialect-quiz).
+ */
+export function gameDate(input: unknown): string {
+  const today = todayDate()
+  if (input === undefined || input === null || input === '') return today
+  if (input === today || input === dayBefore(today)) return input
+  throw createError({ statusCode: 409, statusMessage: 'انتهى هذا اللغز؛ حدّث الصفحة لتلعب لغز اليوم' })
+}
+
+/**
+ * A puzzle's reveal order without the forms hidden or deleted since it was
+ * picked: a form an admin took down must not come back as a clue. Both the
+ * puzzle and the guess endpoint count reveals on this list, so they agree.
+ */
+export async function visibleRevealOrder(db: Db, puzzle: PuzzleRow): Promise<number[]> {
+  if (!puzzle.revealOrder.length) return []
+  const live = await db.select({ id: schema.entries.id }).from(schema.entries)
+    .where(and(inArray(schema.entries.id, puzzle.revealOrder), eq(schema.entries.status, 'active')))
+  const ids = new Set(live.map(r => r.id))
+  return puzzle.revealOrder.filter(id => ids.has(id))
+}
 
 type PuzzleRow = typeof schema.dailyPuzzles.$inferSelect
 

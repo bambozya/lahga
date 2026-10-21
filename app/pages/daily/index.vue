@@ -45,7 +45,7 @@ const submit = async (skip: boolean) => {
   try {
     const data = await $fetch('/api/daily/guess', {
       method: 'POST',
-      body: { guess: skip ? '' : guess.value, reveal: reveal.value },
+      body: { guess: skip ? '' : guess.value, reveal: reveal.value, date: date.value },
     })
     guess.value = ''
     if ('word' in data) {

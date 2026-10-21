@@ -2,13 +2,13 @@ import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { ensurePuzzle, isCorrectGuess } from '../../utils/daily'
-import { todayDate } from '../../../shared/utils/daily'
+import { ensurePuzzle, gameDate, isCorrectGuess, visibleRevealOrder } from '../../utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
 import { assertRateLimit, clientIp } from '../../utils/rateLimit'
 
 /**
- * A guess against today's puzzle (docs/REACH.md, Phase R3). Right or wrong,
+ * A guess against the day's puzzle (docs/REACH.md, Phase R3) — the day the
+ * page says it is showing, today or yesterday (gameDate). Right or wrong,
  * the response says so; wrong and there is another reveal left says what it
  * is; wrong (or a pass, sent as an empty guess) with nothing left to reveal
  * ends the round and returns the answer, same as a correct guess does.
@@ -16,18 +16,22 @@ import { assertRateLimit, clientIp } from '../../utils/rateLimit'
 const Body = v.object({
   guess: v.pipe(v.string(), v.trim(), v.maxLength(80)),
   reveal: v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(6)),
+  date: v.optional(v.string()),
 })
 
 export default defineEventHandler(async (event) => {
   assertRateLimit(`daily-guess:${clientIp(event)}`, 60, 60 * 60 * 1000)
   const body = await readBody$(event, Body)
   const db = await useDb()
-  const puzzle = await ensurePuzzle(db, todayDate())
-  const word = await db.query.words.findFirst({ where: eq(schema.words.id, puzzle.wordId) })
+  const puzzle = await ensurePuzzle(db, gameDate(body.date))
+  const [word, order] = await Promise.all([
+    db.query.words.findFirst({ where: eq(schema.words.id, puzzle.wordId) }),
+    visibleRevealOrder(db, puzzle),
+  ])
   if (!word) throw createError({ statusCode: 500, statusMessage: 'تعذر تحميل اللغز' })
 
   const correct = body.guess ? await isCorrectGuess(db, body.guess, word.headwordNormalized) : false
-  const exhausted = body.reveal >= puzzle.revealOrder.length
+  const exhausted = body.reveal >= order.length
 
   if (correct || exhausted) {
     return {
@@ -36,7 +40,7 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const nextId = puzzle.revealOrder[body.reveal]!
+  const nextId = order[body.reveal]!
   const nextEntry = await db.query.entries.findFirst({ where: eq(schema.entries.id, nextId), with: { dialect: true } })
   return {
     correct: false,

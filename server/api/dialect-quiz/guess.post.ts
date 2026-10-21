@@ -3,7 +3,7 @@ import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
 import { ensureRound, groupNames, SLOTS } from '../../utils/dialectQuiz'
-import { todayDate } from '../../../shared/utils/daily'
+import { gameDate } from '../../utils/daily'
 import { assertRateLimit, clientIp } from '../../utils/rateLimit'
 
 /**
@@ -14,13 +14,14 @@ import { assertRateLimit, clientIp } from '../../utils/rateLimit'
 const Body = v.object({
   slot: v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(3)),
   groupId: v.pipe(v.number(), v.integer(), v.minValue(1)),
+  date: v.optional(v.string()),
 })
 
 export default defineEventHandler(async (event) => {
   assertRateLimit(`dialect-quiz-guess:${clientIp(event)}`, 60, 60 * 60 * 1000)
   const body = await readBody$(event, Body)
   const db = await useDb()
-  const round = await ensureRound(db, todayDate(), body.slot)
+  const round = await ensureRound(db, gameDate(body.date), body.slot)
 
   const [word, names] = await Promise.all([
     db.query.words.findFirst({ where: eq(schema.words.id, round.wordId) }),

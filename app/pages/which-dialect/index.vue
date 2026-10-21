@@ -35,7 +35,7 @@ const choose = async (groupId: number) => {
   busy.value = true
   failure.value = ''
   try {
-    const data = await $fetch('/api/dialect-quiz/guess', { method: 'POST', body: { slot: round.value.slot, groupId } })
+    const data = await $fetch('/api/dialect-quiz/guess', { method: 'POST', body: { slot: round.value.slot, groupId, date: date.value } })
     selectedId.value = groupId
     feedback.value = data
     answered.value = true
@@ -57,7 +57,7 @@ const next = async () => {
   busy.value = true
   failure.value = ''
   try {
-    round.value = await $fetch<Round>('/api/dialect-quiz', { query: { slot: round.value!.slot + 1 } })
+    round.value = await $fetch<Round>('/api/dialect-quiz', { query: { slot: round.value!.slot + 1, date: date.value } })
     answered.value = false
     selectedId.value = null
     feedback.value = null
