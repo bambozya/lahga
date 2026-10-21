@@ -14,6 +14,8 @@
     "db:studio": "drizzle-kit studio",
     "geo": "node scripts/fetch-geo.mjs",
     "typecheck": "nuxt typecheck",
+    "test": "vitest run tests/unit",
+    "test:smoke": "vitest run tests/smoke",
     "import": "tsx scripts/import.ts",
     "mark-review": "tsx scripts/mark-review.ts",
     "hf:build": "tsx scripts/hf-dataset/build.ts",
@@ -45,6 +47,7 @@
     "drizzle-kit": "^0.31.10",
     "tsx": "^4.23.13",
     "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
     "vue-tsc": "^3.3.11"
   },
   "overrides": {

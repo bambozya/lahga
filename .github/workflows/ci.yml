@@ -1,0 +1,26 @@
+# The safety net (docs/ROADMAP.md A6): every push and pull request is
+# typechecked, unit-tested, built, and the build is booted and its pages
+# fetched. A failure shows on the commit in GitHub before anyone opens the
+# site. It does not block the deploy yet: Coolify deploys from its own webhook,
+# and making it wait for this run is roadmap item #9.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # as in the Dockerfile
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run test:smoke

@@ -55,7 +55,9 @@ Node 22 or newer. Production runs on Node 22 (see the `Dockerfile`).
 | `npm run db:generate` | Create a migration from schema changes |
 | `npm run db:migrate` | Apply migrations to the database in `DATABASE_URL` |
 | `npm run db:studio` | Browser UI over the database |
-| `npm run typecheck` | Type-check the whole project (nothing runs it automatically yet) |
+| `npm run typecheck` | Type-check the whole project |
+| `npm test` | Unit tests of the rules: Arabic normalisation, the content rule, ranking, game dates, rate limits (`tests/unit/`) |
+| `npm run test:smoke` | Boot the build on a fresh database and fetch six pages; run `npm run build` first (`tests/smoke/`) |
 | `npm run import -- <file.json>` | Validate a seed file; `--commit` saves it, `--url` targets a server |
 | `npm run check-variety -- <file.json>` | Fail on words whose dialects do not differ enough to earn a page |
 | `npm run check-collisions -- <file.json>` | Warn about headwords that would silently merge into a different word already on the site |
@@ -134,7 +136,9 @@ serves its DNS.
 - **Deploys.** Every push to `main` triggers a GitHub webhook. Coolify pulls the
   repository, builds the `Dockerfile` on the server, waits for `/api/health` to
   answer, then swaps the running container. A failed build leaves the old
-  version running.
+  version running. In parallel, GitHub Actions (`.github/workflows/ci.yml`)
+  typechecks, tests, builds and smoke-tests every push; a red mark on the
+  commit means something broke. The deploy does not wait for it yet (roadmap #9).
 - **Database.** PostgreSQL 17 runs in its own container next to the app and is
   not reachable from the internet. The app gets its address through the
   `DATABASE_URL` variable, set in Coolify.
