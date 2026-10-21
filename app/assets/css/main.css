@@ -456,8 +456,9 @@ dl > div:has(> dt:not(:has(*))) {
   padding-block: var(--space-s);
 }
 
-/* A result card whose headword is a link: the whole card is the link's target, tags stay on top.
-   (Inclusive Components, "Cards".) */
+/* A result card whose headword is a link: the whole card is the link's target, and every other
+   control in it stays on top — tags, the edit and delete links, vote and decision buttons, form
+   fields. Without the lift the stretched link swallows their clicks. (Inclusive Components, "Cards".) */
 dt > a:first-child {
   text-decoration: none;
 }
@@ -466,7 +467,7 @@ dt > a:first-child::after {
   position: absolute;
   inset: 0;
 }
-dl > div:has(> dt > a:first-child) :is(a[rel="tag"]) {
+dl > div:has(> dt > a:first-child) :is(a[rel="tag"], dd a, button, input, select, textarea, label, summary) {
   position: relative;
   z-index: 1;
 }

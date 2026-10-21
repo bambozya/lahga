@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import divergentPngGet from '~~/server/routes/og/divergent.png.get'
-
 definePageMeta({ middleware: 'admin' })
 useSeo({ title: 'الإدارة: الاقتراحات', noindex: true })
 const route = useRoute()
