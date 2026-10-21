@@ -73,6 +73,7 @@ const { busy, error, run } = useForm(async () => {
           <p>
             <label for="form">الكلمة كما تُقال في لهجتك</label>
             <input id="form" v-model="form.form" required maxlength="80" />
+            <small>اكتبها كما تكتبها في رسالة لأحد من أهل لهجتك. والتشكيل اختياري، يفيد حين يلتبس النطق.</small>
           </p>
           <p>
             <label for="meaning">المعنى <small>(اختياري)</small></label>
