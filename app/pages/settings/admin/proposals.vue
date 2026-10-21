@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import divergentPngGet from '~~/server/routes/og/divergent.png.get'
+
 definePageMeta({ middleware: 'admin' })
 useSeo({ title: 'الإدارة: الاقتراحات', noindex: true })
 const route = useRoute()
@@ -39,10 +41,10 @@ const decide = async (id: number, decision: 'approved' | 'rejected') => {
           <p v-else><small>{{ p.data }}</small></p>
           <p><small>اقترح <NuxtLink v-if="p.author.id" :to="`/u/${p.author.id}`">{{ p.author.displayName }}</NuxtLink><template v-else>{{ p.author.displayName }}</template> · <time :datetime="String(p.createdAt)">{{ fmt(p.createdAt) }}</time></small></p>
           <p v-if="p.status !== 'pending'"><small>{{ p.status === 'approved' ? 'قُبل' : 'رُفض' }}<template v-if="p.decider"> بواسطة {{ p.decider.displayName }}</template><template v-if="p.decidedAt"> · {{ fmt(p.decidedAt) }}</template><template v-if="p.note"> · {{ p.note }}</template></small></p>
-          <p v-else>
+          <div v-else class="flex gap-4"> 
             <button type="button" :disabled="busy === p.id" @click="decide(p.id, 'approved')">قبول</button>
             <button type="button" :disabled="busy === p.id" @click="decide(p.id, 'rejected')">رفض</button>
-          </p>
+          </div>
         </dd>
       </div>
     </dl>

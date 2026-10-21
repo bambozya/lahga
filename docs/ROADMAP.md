@@ -280,6 +280,13 @@ to become pages. Tharwa, DiaLEX and MADAR are ruled out or unconfirmed
 Maghrebi lexicon is a research task with an uncertain result, which is why D3
 exists as the other way to complete them.
 
+**C5. Say what Lahga records** (an hour, #44). A paragraph on the about page:
+Lahga records which word a dialect uses, not exactly how it sounds; forms are
+written the way speakers write them online; pronunciation is the job of audio.
+One line of the same guidance on the add-word page. It answers the first
+objection dialectologists raised (2026-10), that Arabic script cannot show
+dialect pronunciation.
+
 ### Later, with triggers
 
 - **Proverbs as their own list.** Trigger: 50 rows marked `proverb`.
@@ -352,6 +359,10 @@ Nothing here is *Now*. The site has enough features for its content.
   the player's local midnight instead of 02:00 or 03:00 in Cairo and Riyadh.
   The server accepts today's date plus or minus one. A product decision; see
   "Needs from you".
+- **Other spellings of one word** (two or three evenings, #43): an entry can
+  carry the other ways speakers spell it (Darija *had*: هذا، هدا، هاد، هاذ،
+  هد، هذ), and search and the form pages find every one of them. Lahga
+  records spellings; it does not standardise them.
 
 ### Later, with triggers
 
@@ -414,6 +425,10 @@ machinery for that.
 ## Decision log
 
 Newest first. One line each.
+
+- 2026-10-21. Feedback from the AIDA group: C5 (#44) and other spellings
+  (#43) added to *Next*; the pronunciation gap is noted on Audio (#38) for
+  the next review.
 
 - 2026-09-27. Core words identical across dialects stay off the site for
   now; they are kept ready in the retired seed files (Track C, Later).
