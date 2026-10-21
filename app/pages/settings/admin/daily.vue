@@ -9,7 +9,7 @@ const { busy, error, run } = useForm(async () => {
   await $fetch('/api/admin/daily', { method: 'POST', body: { date: date.value, headword: headword.value } })
   date.value = ''
   headword.value = ''
-  await refresh()
+  await Promise.all([refresh(), refreshNuxtData('admin-stats')])
 })
 
 const upcoming = computed(() => data.value ? data.value.puzzles.filter(p => p.date > data.value!.today) : [])

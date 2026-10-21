@@ -412,6 +412,8 @@ numbers from D1, and this file.
 2. Is *Now* empty in a track? Pull from *Next*.
 3. Did something on the list stop mattering? Delete it and say so in the log.
 4. Write one line in the decision log.
+5. Every third review, once a quarter: rotate the credentials listed in
+   README.md, "Rotating credentials".
 
 ## What is deliberately not planned
 

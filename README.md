@@ -144,6 +144,10 @@ serves its DNS.
   restores; run it now and then.
 - **Uptime.** A Cloudflare Worker in `ops/uptime/` checks the site every five
   minutes from outside and emails info@lahga.fyi when it goes down or comes back.
+- **Errors.** A server failure (a 5xx) is emailed to `ERROR_EMAIL`, else
+  `CONTACT_EMAIL`, at most once per distinct error per hour
+  (`server/plugins/error-mail.ts`). Opening `/api/admin/test-error` as an admin
+  fails on purpose, to check the mail arrives.
 - **HTTPS.** Coolify's proxy (Traefik) obtains and renews Let's Encrypt
   certificates on its own. `http://` and `www.` redirect to `https://lahga.fyi`.
 - **Server access.** SSH with a key only; password login is disabled. Security
@@ -157,6 +161,23 @@ Secrets live in Coolify's environment variables, never in the repository. See
 (email), Google login, Turnstile, contact form address, the import token for
 scripts, the local dev admin, the Umami analytics id, and the IndexNow key
 (`docs/DISCOVERY.md`).
+
+### Rotating credentials, once a quarter
+
+Every third roadmap review. Each new value goes into Coolify (or where noted),
+then the app is redeployed.
+
+- **netcup root password** (the server panel; SSH itself uses a key).
+- **Coolify API token** (Coolify, Keys & Tokens), if one is kept for scripts.
+- **`IMPORT_TOKEN`**: Coolify and the local `.env` together.
+- **`BREVO_API_KEY`**: in Coolify and in the uptime Worker
+  (`cd ops/uptime && npx wrangler secret put BREVO_API_KEY`).
+- **Scaleway bucket key** for backups: Coolify's S3 storage settings, then
+  `~/.scaleway-backup` for the restore drill.
+- **Google client secret** and **Turnstile secret**: only if one may have
+  leaked, since rotating them gains little otherwise.
+- **`NUXT_SESSION_PASSWORD`**: only after a leak; changing it signs everyone
+  out.
 
 ## Rules
 
