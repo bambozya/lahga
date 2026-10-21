@@ -1,8 +1,11 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
 useSeo({ title: 'الإدارة: الأرقام', noindex: true })
-const { data: stats } = await useFetch('/api/admin/stats')
+const [{ data: stats }, { data: activity }] = await Promise.all([useFetch('/api/admin/stats'), useFetch('/api/admin/activity')])
 const n = (v: number | undefined) => new Intl.NumberFormat('ar').format(v ?? 0)
+// Row 0 is the last seven days; older rows are labelled by the day they start.
+const day = new Intl.DateTimeFormat('ar', { day: 'numeric', month: 'short' })
+const weekLabel = (ago: number) => ago === 0 ? `آخر ${n(7)} أيام` : `من ${day.format(Date.now() - (ago + 1) * 7 * 864e5)}`
 </script>
 
 <template>
@@ -40,6 +43,34 @@ const n = (v: number | undefined) => new Intl.NumberFormat('ar').format(v ?? 0)
       </tbody>
     </table>
     <p v-if="stats"><small>صف المنطقة يجمع صيغها وصيغ فروعها؛ أما «الكلمات» و«مرادفات» فيه فتخص ما وُسم بالمنطقة نفسها فقط، لأن كلمةً تُقال في المصري والقاهري معاً لا تُحسب مرتين.</small></p>
+
+    <template v-if="activity">
+      <h2>النشاط أسبوعاً بأسبوع</h2>
+      <p><small>«من خارج الإدارة» يعني غير حساب الموقع وغير المديرين. المساهمة إضافة أو تعديل لكلمة أو صيغة أو ربط أو مثال. ساهم من خارج الإدارة منذ البداية: <b>{{ n(activity.contributorsEver) }}</b>.</small></p>
+      <div role="region" tabindex="0" aria-label="النشاط أسبوعاً بأسبوع">
+        <table class="activity">
+          <thead>
+            <tr>
+              <th>الأسبوع</th><th>تسجيلات</th><th>تأكيد بريد</th><th>مساهمون من الخارج</th><th>مساهماتهم</th>
+              <th>أصوات الأعضاء</th><th>أصوات الزوار</th><th>بلاغات</th><th>اقتراحات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="w in activity.weeks" :key="w.ago">
+              <th scope="row">{{ weekLabel(w.ago) }}</th>
+              <td>{{ n(w.registered) }}</td>
+              <td>{{ n(w.verified) }}</td>
+              <td>{{ n(w.contributors) }}</td>
+              <td>{{ n(w.contributions) }}</td>
+              <td>{{ n(w.votes) }}</td>
+              <td>{{ n(w.guestVotes) }}</td>
+              <td>{{ n(w.flags) }}</td>
+              <td>{{ n(w.proposals) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </template>
   </article>
 </template>
 
@@ -50,6 +81,13 @@ const n = (v: number | undefined) => new Intl.NumberFormat('ar').format(v ?? 0)
 .dialects td {
   font-variant-numeric: tabular-nums;
   width: 6em;
+}
+.activity td {
+  font-variant-numeric: tabular-nums;
+}
+.activity th[scope="row"] {
+  font-weight: normal;
+  white-space: nowrap;
 }
 .dialects .child th {
   padding-inline-start: var(--space-m);
