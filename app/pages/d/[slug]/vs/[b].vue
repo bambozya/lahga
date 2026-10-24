@@ -67,9 +67,6 @@ useSeo({
 </template>
 
 <style scoped>
-.head > h1 { font-size: var(--step-3); line-height: 1.25; }
-.head > p { color: var(--muted); font-size: var(--step--1); }
-.head > p:last-child { margin-block-start: var(--space-2xs); }
 /* The two dialects carry equal weight: neither column is the answer. */
 td { font-family: var(--naskh); font-size: var(--step-0); }
 </style>

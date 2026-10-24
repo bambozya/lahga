@@ -1,33 +1,52 @@
 <script setup lang="ts">
+import { QUIZ_ROUNDS } from '~~/shared/config/rules'
 // «من أي لهجة؟» (docs/REACH.md, Phase R3): three multiple-choice rounds a day,
 // each asking which dialect group says a given form. Unlike كلمة اليوم there is
 // nothing to reveal gradually — one guess ends a round either way — so the
 // game is just three quick questions and a score out of three.
 type Choice = { id: number, nameAr: string }
 type Round = { date: string, slot: number, total: number, form: string, word: { headword: string, definition: string | null }, choices: Choice[] }
+type Feedback = { correct: boolean, correctGroupId: number, correctNameAr: string, word: { headword: string, slug: string | null } }
+type QuizResult = { correct: number, total: number }
+/** Everything on screen mid-game, so a refresh puts it all back (game kit, useGameProgress). */
+type QuizRound = { round: Round, scores: boolean[], selectedId: number | null, feedback: Feedback | null }
+
 const { data: initial } = await useFetch<Round>('/api/dialect-quiz', { query: { slot: 1 } })
 
-const { recordResult, playedToday, resultFor } = useDialectQuizProgress()
+const progress = useGameProgress<QuizResult, QuizRound>('lahga-dialect-quiz')
 
 const date = computed(() => initial.value?.date ?? '')
-const total = computed(() => initial.value?.total ?? 3)
+const total = computed(() => initial.value?.total ?? QUIZ_ROUNDS)
 const round = ref<Round | null>(initial.value ?? null)
 const scores = ref<boolean[]>([])
-
-const answered = ref(false)
 const selectedId = ref<number | null>(null)
-type Feedback = { correct: boolean, correctGroupId: number, correctNameAr: string, word: { headword: string, slug: string | null } }
 const feedback = ref<Feedback | null>(null)
+const answered = computed(() => !!feedback.value)
 
 const busy = ref(false)
 const failure = ref('')
+const finalResult = ref<QuizResult | null>(null)
 
-type FinalResult = { correct: number, total: number }
-const finalResult = ref<FinalResult | null>(null)
+const remember = () => {
+  if (round.value) progress.saveRound(date.value, { round: round.value, scores: scores.value, selectedId: selectedId.value, feedback: feedback.value })
+}
 
 onMounted(() => {
   if (!date.value) return
-  if (playedToday(date.value)) finalResult.value = resultFor(date.value)
+  const saved = progress.resultFor(date.value)
+  if (saved) {
+    finalResult.value = saved
+    return
+  }
+  // A refresh mid-game: back to the same round, answers kept, and an answered
+  // round stays answered rather than open for a second try.
+  const resumed = progress.roundFor(date.value)
+  if (resumed) {
+    round.value = resumed.round
+    scores.value = resumed.scores
+    selectedId.value = resumed.selectedId
+    feedback.value = resumed.feedback
+  }
 })
 
 const choose = async (groupId: number) => {
@@ -38,8 +57,8 @@ const choose = async (groupId: number) => {
     const data = await $fetch('/api/dialect-quiz/guess', { method: 'POST', body: { slot: round.value.slot, groupId, date: date.value } })
     selectedId.value = groupId
     feedback.value = data
-    answered.value = true
     scores.value = [...scores.value, data.correct]
+    remember()
   } catch (e: any) {
     failure.value = e?.data?.statusMessage || 'تعذر إرسال الإجابة'
   } finally {
@@ -51,16 +70,16 @@ const next = async () => {
   if (scores.value.length >= total.value) {
     const result = { correct: scores.value.filter(Boolean).length, total: total.value }
     finalResult.value = result
-    recordResult(date.value, result)
+    progress.recordResult(date.value, result)
     return
   }
   busy.value = true
   failure.value = ''
   try {
     round.value = await $fetch<Round>('/api/dialect-quiz', { query: { slot: round.value!.slot + 1, date: date.value } })
-    answered.value = false
     selectedId.value = null
     feedback.value = null
+    remember()
   } catch (e: any) {
     failure.value = e?.data?.statusMessage || 'تعذر تحميل الجولة التالية'
   } finally {
@@ -79,24 +98,6 @@ const shareText = computed(() => {
   const squares = Array.from({ length: t }, (_, i) => i < correct ? '🟩' : '🟥').join('')
   return `من أي لهجة؟ ${arabicDigits(correct)}/${arabicDigits(t)}\n${squares}\nlahga.fyi/which-dialect`
 })
-const shared = ref(false)
-const share = async () => {
-  try {
-    const canShareFiles = typeof navigator.canShare === 'function'
-    if (canShareFiles && cardUrl.value) {
-      const blob = await $fetch<Blob>(cardUrl.value, { responseType: 'blob' })
-      const file = new File([blob], 'lahga-which-dialect.png', { type: 'image/png' })
-      if (navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], text: shareText.value })
-        shared.value = true
-        return
-      }
-    }
-    if (navigator.share) await navigator.share({ text: shareText.value })
-    else await navigator.clipboard.writeText(shareText.value)
-    shared.value = true
-  } catch { /* the visitor cancelled the share sheet — not a failure */ }
-}
 
 useSeo({
   title: 'من أي لهجة؟',
@@ -113,19 +114,16 @@ useSeo({
       <p>كلمة كما تُقال في لهجة ما — أيّ لهجة تكون؟</p>
     </hgroup>
 
-    <template v-if="finalResult">
-      <div class="end" role="status">
-        <p>{{ arabicDigits(finalResult.correct) }}/{{ arabicDigits(finalResult.total) }} إجابات صحيحة اليوم.</p>
-        <p v-if="cardUrl" class="card">
-          <img :src="cardUrl" alt="بطاقة نتيجة من أي لهجة؟" width="270" height="338" loading="lazy" />
-        </p>
-        <p>
-          <button type="button" @click="share">{{ shared ? 'تم' : 'شارك النتيجة' }}</button>
-          <a v-if="cardUrl" :href="cardUrl" download="lahga-which-dialect.png" class="cta">نزّل الصورة</a>
-          <NuxtLink to="/daily" class="cta">العب كلمة اليوم</NuxtLink>
-        </p>
-      </div>
-    </template>
+    <GameResult
+      v-if="finalResult"
+      :card-url="cardUrl" card-alt="بطاقة نتيجة من أي لهجة؟" file-name="lahga-which-dialect.png"
+      :share-text="shareText" :streak="progress.streak(date)"
+    >
+      <p>{{ arabicDigits(finalResult.correct) }}/{{ arabicDigits(finalResult.total) }} إجابات صحيحة اليوم.</p>
+      <template #links>
+        <NuxtLink to="/daily" class="cta">العب كلمة اليوم</NuxtLink>
+      </template>
+    </GameResult>
     <template v-else-if="round">
       <p role="alert" v-if="failure">{{ failure }}</p>
       <p class="progress"><small>جولة {{ arabicDigits(round.slot) }} من {{ arabicDigits(total) }}</small></p>
@@ -160,9 +158,6 @@ useSeo({
 </template>
 
 <style scoped>
-.head > h1 { font-size: var(--step-3); }
-.head > p { margin-block-start: var(--space-2xs); color: var(--muted); font-size: var(--step--1); }
-
 .progress { margin-block-start: var(--space-m); }
 .question { margin-block-start: var(--space-s); border-block-end: var(--rule); padding-block-end: var(--space-m); }
 .question .context { color: var(--muted); font-size: var(--step--1); }
@@ -175,8 +170,4 @@ useSeo({
 .choices button.wrong { text-decoration: line-through; opacity: 0.7; }
 
 .feedback { margin-block-start: var(--space-m); }
-
-.end { margin-block-start: var(--space-m); padding: var(--space-m); border: var(--thin); border-inline-start: 6px solid var(--accent); border-radius: var(--radius); }
-.end .card img { display: block; margin-block: var(--space-s); border: var(--thin); border-radius: var(--radius); }
-.end .cta { margin-inline-start: var(--space-s); }
 </style>

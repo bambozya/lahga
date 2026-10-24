@@ -134,11 +134,11 @@ useSeo({
 <template>
   <article>
     <!-- Searching: one quiet line, then the results. -->
-    <hgroup v-if="activeQuery" class="head">
+    <hgroup v-if="activeQuery" class="intro">
       <h1>«{{ activeQuery }}»</h1>
       <p role="status">{{ searching ? 'جاري البحث…' : countLabel }}</p>
     </hgroup>
-    <hgroup v-else class="head">
+    <hgroup v-else class="intro">
       <h1>معجم اللهجات العربية</h1>
       <p v-if="size.ready.value && size.dialects.value">
         «لهجة» معجم تشاركي مفتوح: أكثر من {{ size.words.value }} كلمة بالفصحى
@@ -204,13 +204,14 @@ useSeo({
 </template>
 
 <style scoped>
-/* The search state wastes no height: the query is a line, not a banner. */
-.head > h1 { font-size: var(--step-2); }
-.head > p { margin-block-start: var(--space-3xs); }
+/* The home page has its own head, smaller than the shared hgroup.head (main.css): the
+   search state wastes no height, the query is a line, not a banner. */
+.intro > h1 { font-size: var(--step-2); }
+.intro > p { margin-block-start: var(--space-3xs); }
 /* An aside, not a heading: the other way to read the list, offered quietly. */
 .ranking { margin-block-start: var(--space-2xs); font-size: var(--step--1); }
 /* The result count is a whisper; only the empty state raises its voice. */
-.head > p[role="status"] {
+.intro > p[role="status"] {
   background: none; border: 0; padding: 0;
   font: 400 var(--step--1)/1.6 var(--sans); color: var(--muted);
 }

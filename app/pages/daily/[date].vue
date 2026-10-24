@@ -12,8 +12,8 @@ const route = useRoute()
 const { data, error } = await useFetch<Puzzle>(`/api/daily/${route.params.date}`)
 if (error.value) throw createError({ statusCode: 404, statusMessage: 'لا يوجد لغز لهذا اليوم', fatal: true })
 
-const { resultFor } = useDailyProgress()
-const mine = computed(() => data.value ? resultFor(data.value.date) : null)
+const progress = useDailyProgress()
+const mine = computed(() => data.value ? progress.resultFor(data.value.date) : null)
 
 useSeo({
   title: () => data.value ? `كلمة اليوم #${arabicDigits(data.value.number)}: ${data.value.word.headword}` : '',
@@ -26,7 +26,8 @@ useSeo({
     <BreadCrumbs :trail="[{ label: 'كلمة اليوم', to: '/daily' }, { label: `#${arabicDigits(data.number)}` }]" />
     <hgroup class="head">
       <h1>كلمة اليوم <small>#{{ arabicDigits(data.number) }}</small></h1>
-      <p v-if="mine">خمّنتها من {{ arabicDigits(mine.guesses) }} كشوف.</p>
+      <p v-if="mine?.correct">خمّنتها من {{ arabicDigits(mine.guesses) }} كشوف.</p>
+      <p v-else-if="mine">لعبتها ولم تخمّنها.</p>
     </hgroup>
 
     <p class="answer">
@@ -45,12 +46,5 @@ useSeo({
 </template>
 
 <style scoped>
-.head > h1 { font-size: var(--step-3); }
-.head > h1 small { font-size: var(--step-0); color: var(--muted); font-weight: 400; }
-.head > p { margin-block-start: var(--space-2xs); color: var(--muted); font-size: var(--step--1); }
 .answer { margin-block-start: var(--space-m); font-size: var(--step-1); }
-.reveals { list-style: none; margin: var(--space-m) 0 0; padding: 0; }
-.reveals li { border-block-start: var(--thin); padding-block: var(--space-xs); }
-.reveals li:first-child { border-block-start: var(--rule); }
-.reveals b { font-family: var(--naskh); font-size: var(--step-1); }
 </style>

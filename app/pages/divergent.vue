@@ -59,9 +59,6 @@ useSeo({
 </template>
 
 <style scoped>
-/* The title carries the page; the line under it explains the ranking once. */
-.head > h1 { font-size: var(--step-3); line-height: 1.25; }
-.head > p { margin-block-start: var(--space-2xs); color: var(--muted); font-size: var(--step--1); max-width: var(--measure); }
 /* The pair list closes the page the way the dice close a list of words. */
 .pairs { border-block-start: var(--rule); padding-block-start: var(--space-m); margin-block-start: var(--space-l); }
 .pairs h2 { font: 700 var(--step-0)/1.6 var(--naskh); color: var(--muted); }

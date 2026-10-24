@@ -33,6 +33,13 @@ export const GUESS_SIMILARITY = 0.6
 /** كلمة اليوم: the admin pages warn when fewer days than this ahead have a curated word. */
 export const DAILY_QUEUE_WARNING_DAYS = 14
 
+/**
+ * Days of results each game keeps in the player's browser (useGameProgress).
+ * Older days are dropped, oldest first; the archive page then simply does not
+ * say how that day went. A year of the daily game is about 40 KB.
+ */
+export const GAME_HISTORY_DAYS = 366
+
 /** من أي لهجة؟: rounds a day. The share card and the «جولة ١ من ٣» line follow it. */
 export const QUIZ_ROUNDS = 3
 

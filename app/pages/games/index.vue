@@ -36,9 +36,6 @@ useSeo({
 </template>
 
 <style scoped>
-.head > h1 { font-size: var(--step-3); }
-.head > p { margin-block-start: var(--space-2xs); color: var(--muted); font-size: var(--step--1); max-width: var(--measure); }
-
 dt a { display: inline-flex; align-items: center; gap: var(--space-3xs); }
 dt svg { width: 0.9em; height: 0.9em; flex: none; color: var(--accent); }
 </style>
