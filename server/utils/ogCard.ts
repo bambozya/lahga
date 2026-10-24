@@ -2,6 +2,7 @@ import { Resvg } from '@resvg/resvg-js'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { writeFile } from 'node:fs/promises'
+import { PALETTE } from '../../shared/tokens'
 
 /**
  * Share cards (docs/REACH.md, Phase R2). Hand-written SVG, not satori: satori
@@ -26,11 +27,8 @@ import { writeFile } from 'node:fs/promises'
 export const CARD_WIDTH = 1080
 export const CARD_HEIGHT = 1350
 
-const PAPER = '#f6f3ec'
-const INK = '#16140f'
-const MUTED = '#5c574c'
-const HAIR = '#d5cfc0'
-const ACCENT = '#b8321a'
+// The site's light palette (shared/tokens.ts): a card is seen on someone else's screen.
+const { paper: PAPER, ink: INK, muted: MUTED, hair: HAIR, accent: ACCENT } = PALETTE.light
 
 const PAD = 52
 
