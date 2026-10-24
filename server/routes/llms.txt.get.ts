@@ -1,7 +1,8 @@
 import { eq, isNull } from 'drizzle-orm'
 import { useDb, schema } from '../db'
-import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
+import { entryCounts } from '../api/dialects/index.get'
 import { loadExport } from '../utils/exportData'
+import { MIN_ENTRIES } from '../../shared/config/rules'
 
 /**
  * /llms.txt (https://llmstxt.org): a short, plain-text map of the site for

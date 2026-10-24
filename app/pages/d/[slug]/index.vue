@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import { RANDOM_SAMPLE } from '~~/shared/config/rules'
 const route = useRoute()
 // Five of the dialect's words, drawn at random: the page is a way in, not an
 // inventory, and whoever wants one word in particular searches for it above.
 // The dice below ask for another five.
-const SAMPLE = 5
 const { data: dialect, error, status, refresh } = await useFetch(`/api/dialects/${route.params.slug}`, {
-  query: { random: 1, limit: SAMPLE },
+  query: { random: 1, limit: RANDOM_SAMPLE },
 })
 const shuffling = computed(() => status.value === 'pending')
 if (error.value) throw createError({ statusCode: error.value.statusCode ?? 404, statusMessage: 'اللهجة غير موجودة', fatal: true })

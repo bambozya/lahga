@@ -1,8 +1,9 @@
 import { inArray } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { ensurePuzzle, visibleRevealOrder } from '../../utils/daily'
-import { REVEALS, todayDate } from '../../../shared/utils/daily'
+import { todayDate } from '../../../shared/utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
+import { REVEALS } from '../../../shared/config/rules'
 
 /**
  * Today's puzzle: the dialect forms up to the reveal the client says it has

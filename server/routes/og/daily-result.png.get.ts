@@ -1,4 +1,5 @@
-import { REVEALS, puzzleNumber } from '../../../shared/utils/daily'
+import { puzzleNumber } from '../../../shared/utils/daily'
+import { REVEALS } from '../../../shared/config/rules'
 
 /**
  * The daily game's result card (docs/REACH.md, Phase R3): one per player, not

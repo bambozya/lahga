@@ -4,11 +4,8 @@ import { and, eq, inArray, sql } from 'drizzle-orm'
 import { schema } from '../db'
 import { recordRevision, type Tx } from './contribute'
 import { clientIp } from './rateLimit'
+import { CONFIRM_SCORE, GUEST_WEIGHT } from '../../shared/config/rules'
 
-/** Net upvotes on a link that take a draft off the review list. */
-export const CONFIRM_SCORE = 2
-/** What a guest's answer on a draft counts next to a member's (schema.guestVotes). */
-export const GUEST_WEIGHT = 0.5
 
 export type VoteTarget = 'word' | 'entry' | 'link' | 'example'
 

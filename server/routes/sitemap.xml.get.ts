@@ -1,10 +1,11 @@
 import { desc, eq, lt } from 'drizzle-orm'
 import { useDb, schema } from '../db'
-import { entryCounts, MIN_ENTRIES } from '../api/dialects/index.get'
+import { entryCounts } from '../api/dialects/index.get'
 import { topPairs } from '../api/dialect-pairs.get'
 import { todayDate } from '../../shared/utils/daily'
 import { indexableForms } from '../utils/forms'
 import { encodePath } from 'ufo'
+import { MIN_ENTRIES } from '../../shared/config/rules'
 
 /**
  * The sitemap, built from the database on request: every public page, every

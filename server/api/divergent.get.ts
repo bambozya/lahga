@@ -1,5 +1,6 @@
 import { and, eq, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../db'
+import { MIN_GROUPS } from '../../shared/config/rules'
 
 /**
  * The words the dialects disagree about most (docs/REACH.md, Phase R4).
@@ -15,12 +16,10 @@ import { useDb, schema } from '../db'
  * eight, and without that they would drown out a word that genuinely splits
  * the map.
  *
- * MIN_GROUPS keeps the top of the list meaningful — with two groups, any
+ * MIN_GROUPS (shared/config/rules.ts) keeps the top of the list meaningful — with two groups, any
  * disagreement at all scores a perfect 1, which would fill the page with
  * thinly-attested words rather than the interesting ones.
  */
-export const MIN_GROUPS = 4
-
 export default defineEventHandler(async (event) => {
   const { limit } = getQuery(event)
   const max = limitParam(limit, 50, 100)

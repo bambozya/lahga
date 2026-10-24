@@ -12,18 +12,20 @@ describe('assertRateLimit', () => {
     vi.useFakeTimers()
     vi.setSystemTime(new Date('2026-10-21T12:00:00Z'))
     const key = `test:${Math.random()}`
-    for (let i = 0; i < 3; i++) assertRateLimit(key, 3, 1000)
-    expect(() => assertRateLimit(key, 3, 1000)).toThrow(expect.objectContaining({ statusCode: 429 }))
+    const rule = { limit: 3, windowMs: 1000 }
+    for (let i = 0; i < 3; i++) assertRateLimit(key, rule)
+    expect(() => assertRateLimit(key, rule)).toThrow(expect.objectContaining({ statusCode: 429 }))
 
     vi.setSystemTime(new Date('2026-10-21T12:00:01.001Z'))
-    expect(() => assertRateLimit(key, 3, 1000)).not.toThrow()
+    expect(() => assertRateLimit(key, rule)).not.toThrow()
   })
 
   it('keeps one bucket per key', () => {
     const a = `a:${Math.random()}`, b = `b:${Math.random()}`
-    assertRateLimit(a, 1, 60_000)
-    expect(() => assertRateLimit(a, 1, 60_000)).toThrow()
-    expect(() => assertRateLimit(b, 1, 60_000)).not.toThrow()
+    const rule = { limit: 1, windowMs: 60_000 }
+    assertRateLimit(a, rule)
+    expect(() => assertRateLimit(a, rule)).toThrow()
+    expect(() => assertRateLimit(b, rule)).not.toThrow()
   })
 })
 

@@ -1,3 +1,4 @@
+import { RATE_LIMITS } from '../../shared/config/rules'
 /**
  * One limit for every share card (/og/*). A miss rasterises a PNG, which is the
  * most expensive thing an anonymous request can ask this server for: each route
@@ -9,5 +10,5 @@
  */
 export default defineEventHandler((event) => {
   if (!event.path.startsWith('/og/')) return
-  assertRateLimit(`og:${clientIp(event)}`, 120, 60 * 1000)
+  assertRateLimit(`og:${clientIp(event)}`, RATE_LIMITS.shareCards)
 })

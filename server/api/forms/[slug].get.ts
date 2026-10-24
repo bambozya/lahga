@@ -1,6 +1,7 @@
 import { and, desc, eq, ilike, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { formKey } from '../../../shared/utils/arabic'
+import { FORM_PAGE_OTHERS, FORM_PAGE_PHRASES, RATE_LIMITS } from '../../../shared/config/rules'
 
 /**
  * A dialect form's own page (server/utils/forms.ts): every meaning the
@@ -14,7 +15,7 @@ export default defineEventHandler(async (event) => {
   if (!key || key.length > 100) throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة' })
   // Generous: nine thousand of these pages are new to the crawlers at once, and
   // a first visit is uncached (the page's own SSR fetch spends the same bucket).
-  assertRateLimit(`forms:${clientIp(event)}`, 600, 60 * 1000)
+  assertRateLimit(`forms:${clientIp(event)}`, RATE_LIMITS.forms)
   const db = await useDb()
 
   const matched = await db.select({ id: schema.entries.id }).from(schema.entries)
@@ -118,10 +119,10 @@ export default defineEventHandler(async (event) => {
       ...s,
       others: [...(others.get(s.word.id)?.values() ?? [])]
         .sort((a, b) => Number(a.draft) - Number(b.draft) || b.rank - a.rank)
-        .slice(0, 16)
+        .slice(0, FORM_PAGE_OTHERS)
         .map(({ rank, ...o }) => o),
       entries: s.entries.map(({ rank, score, ...e }) => e),
     })),
-    phrases: [...phrases.values()].sort((a, b) => Number(a.draft) - Number(b.draft)).slice(0, 12),
+    phrases: [...phrases.values()].sort((a, b) => Number(a.draft) - Number(b.draft)).slice(0, FORM_PAGE_PHRASES),
   }
 })

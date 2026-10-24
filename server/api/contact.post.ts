@@ -1,5 +1,6 @@
 import * as v from 'valibot'
 import { readBody$ } from '../utils/validate'
+import { RATE_LIMITS } from '../../shared/config/rules'
 
 /** The contact form: forwards the message by email to the site owner. */
 const Body = v.object({
@@ -12,7 +13,7 @@ const Body = v.object({
 })
 
 export default defineEventHandler(async (event) => {
-  assertRateLimit(`contact:${clientIp(event)}`, 5, 60 * 60 * 1000)
+  assertRateLimit(`contact:${clientIp(event)}`, RATE_LIMITS.contact)
   const body = await readBody$(event, Body)
   if (body.website) return { ok: true }
   const to = process.env.CONTACT_EMAIL

@@ -2,10 +2,11 @@ import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$, token, password } from '../../utils/validate'
+import { RATE_LIMITS } from '../../../shared/config/rules'
 
 /** Sets a new password from a reset link, confirms the email on the way, and logs the user in. */
 export default defineEventHandler(async (event) => {
-  assertRateLimit(`reset:${clientIp(event)}`, 10, 60 * 60 * 1000)
+  assertRateLimit(`reset:${clientIp(event)}`, RATE_LIMITS.reset)
   const body = await readBody$(event, v.object({ token, password }))
   const userId = await consumeToken(body.token, 'reset')
   if (!userId) throw createError({ statusCode: 400, statusMessage: 'الرابط غير صالح أو انتهت صلاحيته' })

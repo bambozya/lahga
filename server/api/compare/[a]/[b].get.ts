@@ -1,5 +1,6 @@
 import { and, eq, inArray } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
+import { MIN_SHARED } from '../../../../shared/config/rules'
 
 /**
  * Two dialects side by side: the words they say differently (docs/REACH.md,
@@ -18,8 +19,6 @@ import { useDb, schema } from '../../../db'
  * Lives under /api/compare rather than /api/dialects so that the dialect
  * page's own `useFetch('/api/dialects/' + slug)` keeps a single, narrow type.
  */
-export const MIN_SHARED = 40
-
 export default defineEventHandler(async (event) => {
   const aSlug = getRouterParam(event, 'a')!
   const bSlug = getRouterParam(event, 'b')!

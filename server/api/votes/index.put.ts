@@ -2,6 +2,7 @@ import * as v from 'valibot'
 import { useDb } from '../../db'
 import { readBody$ } from '../../utils/validate'
 import { fields } from '../../utils/contribute'
+import { RATE_LIMITS } from '../../../shared/config/rules'
 
 /** Sets the caller's vote on one item: 1 (up), -1 (down) or 0 (remove). Idempotent. */
 const Body = v.object({
@@ -13,7 +14,7 @@ const Body = v.object({
 export default defineEventHandler(async (event) => {
   const user = await requireUser(event)
   if (!user.emailVerifiedAt) throw createError({ statusCode: 403, statusMessage: 'أكّد بريدك الإلكتروني أولاً لتتمكن من التصويت' })
-  assertRateLimit(`vote:${user.id}`, 120, 60 * 60 * 1000)
+  assertRateLimit(`vote:${user.id}`, RATE_LIMITS.vote)
   const body = await readBody$(event, Body)
   const db = await useDb()
   const target = await findTarget(db, body.targetType, body.targetId)

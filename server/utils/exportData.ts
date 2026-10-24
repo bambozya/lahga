@@ -1,6 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../db'
 import { dialectTag } from '../../shared/utils/dialectTags'
+import { EXPORT_MAX_AGE_MS } from '../../shared/config/rules'
 
 /**
  * The whole public dictionary as one plain object (docs/DISCOVERY.md): what
@@ -34,13 +35,12 @@ export interface ExportData {
   words: ExportWord[]
 }
 
-const MAX_AGE_MS = 60 * 60_000
 let memo: { at: number, data: ExportData } | undefined
 
 export function invalidateExport() { memo = undefined }
 
 export async function loadExport(): Promise<ExportData> {
-  if (memo && Date.now() - memo.at < MAX_AGE_MS) return memo.data
+  if (memo && Date.now() - memo.at < EXPORT_MAX_AGE_MS) return memo.data
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')
   const db = await useDb()
 

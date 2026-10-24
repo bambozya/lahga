@@ -4,9 +4,6 @@
  * the share text) need to agree on.
  */
 
-/** Six reveals, per the plan — fewer only for a word thin enough that MIN_GROUPS barely clears. */
-export const REVEALS = 6
-
 /** The day server/utils/daily.ts started numbering puzzles from. */
 const EPOCH = '2026-09-20'
 

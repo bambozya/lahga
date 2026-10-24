@@ -1,6 +1,7 @@
 import { and, desc, eq, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { entryCounts, MIN_ENTRIES } from './index.get'
+import { entryCounts } from './index.get'
+import { DIALECT_DESCRIPTION_FORMS, MIN_ENTRIES } from '../../../shared/config/rules'
 
 /**
  * One dialect with the entries tagged with it or any of its sub-dialects. The
@@ -39,7 +40,7 @@ export default defineEventHandler(async (event) => {
   // description: that would rewrite it on every crawl. The best-supported few
   // are asked for separately and stay the same from one visit to the next.
   const topForms = await db.select({ form: schema.entries.form }).from(schema.entries)
-    .where(inDialect).orderBy(desc(schema.entries.score), schema.entries.id).limit(6)
+    .where(inDialect).orderBy(desc(schema.entries.score), schema.entries.id).limit(DIALECT_DESCRIPTION_FORMS)
 
   // A cache-warming request (docs/REACH.md, Phase R6) has no one real viewer.
   const { user } = event.context.cache ? { user: undefined } : await getUserSession(event)

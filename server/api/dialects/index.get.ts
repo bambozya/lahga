@@ -1,5 +1,6 @@
 import { and, asc, eq, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
+import { MIN_ENTRIES } from '../../../shared/config/rules'
 
 /**
  * The dialect tree: active top-level groups, each with its active children.
@@ -32,9 +33,6 @@ export default defineEventHandler(async (event) => {
       .map(c => ({ id: c.id, slug: c.slug, nameAr: c.nameAr, words: counted.get(c.id) ?? 0 })),
   }))
 })
-
-/** How many words a sub-dialect needs before it is listed among its siblings. */
-export const MIN_ENTRIES = 1
 
 /** How many live words each dialect holds, by id; a dialect with none is absent. */
 export async function entryCounts(db: Awaited<ReturnType<typeof useDb>>) {

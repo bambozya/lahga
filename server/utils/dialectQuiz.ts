@@ -2,15 +2,13 @@ import { and, eq, inArray, isNull, sql } from 'drizzle-orm'
 import { schema, type Db } from '../db'
 import type { Tx } from './contribute'
 import { looseArabicKey } from '../../shared/utils/arabic'
+import { QUIZ_CHOICES } from '../../shared/config/rules'
 
 /**
  * «من أي لهجة؟»: three multiple-choice rounds a day, each asking which
  * dialect group says a given form. This file builds a day's rounds; the
  * server/api/dialect-quiz/* routes are the thin HTTP layer on top.
  */
-
-export const SLOTS = 3
-export const CHOICES = 4
 
 type RoundRow = typeof schema.dialectQuizRounds.$inferSelect
 
@@ -24,7 +22,7 @@ export async function ensureRound(db: Db, date: string, slot: number): Promise<R
 }
 
 /**
- * Words worth asking about: at least CHOICES dialect groups have a confirmed
+ * Words worth asking about: at least QUIZ_CHOICES dialect groups have a confirmed
  * form for them, so there is a right answer and enough wrong ones. A form
  * is confirmed when its link is not marked needs_review (a language-model
  * draft nobody has checked) and has not been voted down — a weak form must
@@ -44,7 +42,7 @@ async function candidateWords(tx: Tx): Promise<number[]> {
       and ${schema.words.status} = 'active'
       and ${CONFIRMED}
     group by ${schema.wordEntryLinks.wordId}
-    having count(distinct coalesce(${schema.dialects.parentId}, ${schema.dialects.id})) >= ${CHOICES}
+    having count(distinct coalesce(${schema.dialects.parentId}, ${schema.dialects.id})) >= ${QUIZ_CHOICES}
     order by random()
     limit 20
   `)
@@ -101,8 +99,8 @@ async function pickFromWord(tx: Tx, wordId: number, activeGroups: Set<number>) {
     const distractors = shuffle(others
       .filter(([g, keys]) => confirmedGroups.has(g) && !keys.has(answer.key))
       .map(([g]) => g))
-    if (distractors.length < CHOICES - 1) continue
-    return { entryId: answer.entryId, groupId: answer.groupId, distractors: distractors.slice(0, CHOICES - 1) }
+    if (distractors.length < QUIZ_CHOICES - 1) continue
+    return { entryId: answer.entryId, groupId: answer.groupId, distractors: distractors.slice(0, QUIZ_CHOICES - 1) }
   }
   return null
 }

@@ -1,4 +1,5 @@
 import type { H3Event } from 'h3'
+import type { RateRule } from '../../shared/config/rules'
 
 /**
  * Sliding-window rate limit kept in memory. The site runs as one process, so this
@@ -25,8 +26,8 @@ export function clientIp(event: H3Event): string {
   return pageVisitIp(event) || getRequestIP(event, { xForwardedFor: true }) || 'unknown'
 }
 
-/** Throws 429 when `key` was seen more than `limit` times in the last `windowMs`. */
-export function assertRateLimit(key: string, limit: number, windowMs: number) {
+/** Throws 429 when `key` was seen more than `rule.limit` times in the last `rule.windowMs` (rules in shared/config/rules.ts, RATE_LIMITS). */
+export function assertRateLimit(key: string, { limit, windowMs }: RateRule) {
   const now = Date.now()
   sweep(now)
   const times = (hits.get(key)?.times ?? []).filter(t => now - t < windowMs)

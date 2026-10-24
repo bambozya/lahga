@@ -1,3 +1,5 @@
+import { PAGE_CACHE_SECONDS } from './shared/config/rules'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
@@ -98,23 +100,23 @@ export default defineNuxtConfig({
     // (/w/[id]/edit, /w/[id]/history) and must not be swept in — history
     // shows every past revision and an admin's revert button, and caching
     // either would serve a stale form or a stale moderation view.
-    '/': { swr: 60 },
-    '/w/*': { swr: 300 },
-    '/d/**': { swr: 300 },
-    '/f/*': { swr: 300 },
-    '/divergent': { swr: 900 },
+    '/': { swr: PAGE_CACHE_SECONDS.home },
+    '/w/*': { swr: PAGE_CACHE_SECONDS.word },
+    '/d/**': { swr: PAGE_CACHE_SECONDS.dialect },
+    '/f/*': { swr: PAGE_CACHE_SECONDS.form },
+    '/divergent': { swr: PAGE_CACHE_SECONDS.divergent },
     // The daily game (docs/REACH.md, Phase R3) has no per-viewer server data —
     // progress and the streak live in the browser, not in the page's own
     // response — so it is as cacheable as any other page here. Today's puzzle
     // is unchanged for a whole day; a solved day at /daily/[date] never
     // changes again, so it is cached far longer.
-    '/daily': { swr: 300 },
-    '/daily/*': { swr: 86400 },
+    '/daily': { swr: PAGE_CACHE_SECONDS.daily },
+    '/daily/*': { swr: PAGE_CACHE_SECONDS.dailyArchive },
     // من أي لهجة؟ has the same no-per-viewer-data shape as لهجة اليوم above.
-    '/games': { swr: 3600 },
-    '/which-dialect': { swr: 300 },
+    '/games': { swr: PAGE_CACHE_SECONDS.games },
+    '/which-dialect': { swr: PAGE_CACHE_SECONDS.quiz },
     // The open-data page shows counts from a build that is itself an hour old.
-    '/data': { swr: 3600 },
+    '/data': { swr: PAGE_CACHE_SECONDS.data },
   },
   nitro: {
     // PGlite ships WASM assets, and @resvg/resvg-js (the card renderer, docs/REACH.md

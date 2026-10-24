@@ -2,11 +2,12 @@ import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$, email, password, displayName } from '../../utils/validate'
+import { RATE_LIMITS } from '../../../shared/config/rules'
 
 const Body = v.object({ email, password, displayName, turnstile: v.optional(v.string()) })
 
 export default defineEventHandler(async (event) => {
-  assertRateLimit(`register:${clientIp(event)}`, 5, 60 * 60 * 1000)
+  assertRateLimit(`register:${clientIp(event)}`, RATE_LIMITS.register)
   const body = await readBody$(event, Body)
   await assertTurnstile(event, body.turnstile)
 

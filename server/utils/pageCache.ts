@@ -1,3 +1,5 @@
+import { PAGE_CACHE_MAX_ENTRIES } from '../../shared/config/rules'
+
 /**
  * The rendered-page cache behind the `swr` route rules in nuxt.config.ts.
  *
@@ -18,13 +20,6 @@
 /** Where Nitro files route-rule pages inside the `cache` mount: base:group:name. */
 const ROUTES_PREFIX = 'nitro:routes'
 
-/**
- * Past this many cached pages the oldest are dropped. The site has ~600
- * cacheable pages, so in normal use this is never reached; it exists because a
- * search term is part of the key on `/` and nobody can be stopped from
- * inventing them.
- */
-const MAX_ENTRIES = 2000
 
 /**
  * The query parameters that change what a cached page renders. Everything else
@@ -70,14 +65,14 @@ export function normalizeCacheKey(url: string): string | undefined {
 }
 
 /**
- * Drops the oldest pages once there are more than MAX_ENTRIES. Reads each
+ * Drops the oldest pages once there are more than PAGE_CACHE_MAX_ENTRIES. Reads each
  * entry for the `mtime` Nitro stores on it; that is a map lookup per key, so
  * it stays cheap at this size, and the caller runs it at most once a minute.
  */
 export async function sweepPageCache(): Promise<number> {
   const storage = useStorage('cache')
   const keys = await storage.getKeys(ROUTES_PREFIX)
-  if (keys.length <= MAX_ENTRIES) return 0
+  if (keys.length <= PAGE_CACHE_MAX_ENTRIES) return 0
 
   const aged = await Promise.all(keys.map(async (key) => {
     const entry = await storage.getItem(key).catch(() => null) as { mtime?: number } | null
@@ -85,7 +80,7 @@ export async function sweepPageCache(): Promise<number> {
   }))
   aged.sort((a, b) => a.mtime - b.mtime)
   // Down to four fifths, so a busy minute does not sweep on every request.
-  const doomed = aged.slice(0, keys.length - Math.floor(MAX_ENTRIES * 0.8))
+  const doomed = aged.slice(0, keys.length - Math.floor(PAGE_CACHE_MAX_ENTRIES * 0.8))
   await Promise.all(doomed.map(d => storage.removeItem(d.key).catch(() => {})))
   return doomed.length
 }

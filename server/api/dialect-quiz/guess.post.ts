@@ -2,9 +2,10 @@ import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
-import { ensureRound, groupNames, SLOTS } from '../../utils/dialectQuiz'
+import { ensureRound, groupNames } from '../../utils/dialectQuiz'
 import { gameDate } from '../../utils/daily'
 import { assertRateLimit, clientIp } from '../../utils/rateLimit'
+import { QUIZ_ROUNDS, RATE_LIMITS } from '../../../shared/config/rules'
 
 /**
  * A guess for one of today's three rounds of «من أي لهجة؟». One guess ends
@@ -12,13 +13,13 @@ import { assertRateLimit, clientIp } from '../../utils/rateLimit'
  * word game has, so the correct group is always returned, right or wrong.
  */
 const Body = v.object({
-  slot: v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(3)),
+  slot: v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(QUIZ_ROUNDS)),
   groupId: v.pipe(v.number(), v.integer(), v.minValue(1)),
   date: v.optional(v.string()),
 })
 
 export default defineEventHandler(async (event) => {
-  assertRateLimit(`dialect-quiz-guess:${clientIp(event)}`, 60, 60 * 60 * 1000)
+  assertRateLimit(`dialect-quiz-guess:${clientIp(event)}`, RATE_LIMITS.quizGuess)
   const body = await readBody$(event, Body)
   const db = await useDb()
   const round = await ensureRound(db, gameDate(body.date), body.slot)

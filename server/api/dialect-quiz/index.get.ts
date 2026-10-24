@@ -1,7 +1,8 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { ensureRound, groupNames, SLOTS } from '../../utils/dialectQuiz'
+import { ensureRound, groupNames } from '../../utils/dialectQuiz'
 import { gameDate } from '../../utils/daily'
+import { QUIZ_ROUNDS } from '../../../shared/config/rules'
 
 /**
  * One of today's three rounds of «من أي لهجة؟»: the form and its MSA word
@@ -11,7 +12,7 @@ import { gameDate } from '../../utils/daily'
  */
 export default defineEventHandler(async (event) => {
   const { slot, date } = getQuery(event)
-  const n = Math.min(Math.max(Number(slot) || 1, 1), SLOTS)
+  const n = Math.min(Math.max(Number(slot) || 1, 1), QUIZ_ROUNDS)
   const db = await useDb()
   const round = await ensureRound(db, gameDate(date), n)
 
@@ -23,7 +24,7 @@ export default defineEventHandler(async (event) => {
   if (!entry || !word) throw createError({ statusCode: 404, statusMessage: 'الجولة غير موجودة' })
 
   return {
-    date: round.date, slot: n, total: SLOTS,
+    date: round.date, slot: n, total: QUIZ_ROUNDS,
     form: entry.form,
     word: { headword: word.headword, definition: word.definition },
     choices: round.choiceGroupIds.map(id => ({ id, nameAr: names.get(id) ?? '' })),

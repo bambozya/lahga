@@ -1,6 +1,6 @@
 import { sql } from 'drizzle-orm'
 import { useDb } from '../db'
-import { MIN_SHARED } from './compare/[a]/[b].get'
+import { MIN_SHARED } from '../../shared/config/rules'
 
 /**
  * The dialect pairs worth comparing, most words in common first (docs/REACH.md,

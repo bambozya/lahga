@@ -3,6 +3,7 @@ import { and, desc, eq, ilike, or, sql } from 'drizzle-orm'
 import type { AnyColumn, SQL } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { looseArabicPattern, normalizeArabic } from '../../../shared/utils/arabic'
+import { RATE_LIMITS } from '../../../shared/config/rules'
 
 /**
  * List words, newest first, or search them.
@@ -25,10 +26,10 @@ export default defineEventHandler(async (event) => {
   // and once for the «هل تقصد» suggestions — which is the point: a search costs
   // the database the same whether a browser or our own renderer asked for it.
   const ip = clientIp(event)
-  assertRateLimit(`words:${ip}`, 240, 60 * 1000)
+  assertRateLimit(`words:${ip}`, RATE_LIMITS.words)
   // Trigram matching across every headword and every dialect form, twice over
   // when nothing is found. The only public route that does real work per request.
-  if (term) assertRateLimit(`words-search:${ip}`, 90, 60 * 1000)
+  if (term) assertRateLimit(`words-search:${ip}`, RATE_LIMITS.wordsSearch)
 
   const db = await useDb()
   if (!term) {

@@ -1,11 +1,9 @@
 import { and, eq, inArray, ne, sql } from 'drizzle-orm'
 import { schema, type Db } from '../db'
 import { normalizeArabic } from '../../shared/utils/arabic'
-import { REVEALS, dayBefore, todayDate } from '../../shared/utils/daily'
-import { MIN_GROUPS } from '../api/divergent.get'
+import { dayBefore, todayDate } from '../../shared/utils/daily'
+import { GUESS_SIMILARITY, MIN_GROUPS, REVEALS } from '../../shared/config/rules'
 import type { Tx } from './contribute'
-
-export { MIN_GROUPS }
 
 /**
  * The daily game (docs/REACH.md, Phase R3): one word, revealed one dialect
@@ -33,13 +31,14 @@ export function gameDate(input: unknown): string {
  * A puzzle's reveal order without the forms hidden or deleted since it was
  * picked: a form an admin took down must not come back as a clue. Both the
  * puzzle and the guess endpoint count reveals on this list, so they agree.
+ * Capped at REVEALS, so lowering it also shortens puzzles already stored.
  */
 export async function visibleRevealOrder(db: Db, puzzle: PuzzleRow): Promise<number[]> {
   if (!puzzle.revealOrder.length) return []
   const live = await db.select({ id: schema.entries.id }).from(schema.entries)
     .where(and(inArray(schema.entries.id, puzzle.revealOrder), eq(schema.entries.status, 'active')))
   const ids = new Set(live.map(r => r.id))
-  return puzzle.revealOrder.filter(id => ids.has(id))
+  return puzzle.revealOrder.filter(id => ids.has(id)).slice(0, REVEALS)
 }
 
 type PuzzleRow = typeof schema.dailyPuzzles.$inferSelect
@@ -153,5 +152,5 @@ export async function isCorrectGuess(db: Db, guess: string, headwordNormalized: 
   if (g === headwordNormalized) return true
   const result: any = await db.execute(sql`select similarity(${g}, ${headwordNormalized}) as sim`)
   const rows: any[] = Array.isArray(result) ? result : result?.rows ?? []
-  return Number(rows[0]?.sim ?? 0) >= 0.6
+  return Number(rows[0]?.sim ?? 0) >= GUESS_SIMILARITY
 }

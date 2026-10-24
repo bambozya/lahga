@@ -5,6 +5,7 @@ import { readBody$ } from '../../utils/validate'
 import { ensurePuzzle, gameDate, isCorrectGuess, visibleRevealOrder } from '../../utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
 import { assertRateLimit, clientIp } from '../../utils/rateLimit'
+import { RATE_LIMITS, REVEALS } from '../../../shared/config/rules'
 
 /**
  * A guess against the day's puzzle (docs/REACH.md, Phase R3) — the day the
@@ -15,12 +16,12 @@ import { assertRateLimit, clientIp } from '../../utils/rateLimit'
  */
 const Body = v.object({
   guess: v.pipe(v.string(), v.trim(), v.maxLength(80)),
-  reveal: v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(6)),
+  reveal: v.pipe(v.number(), v.integer(), v.minValue(1), v.maxValue(REVEALS)),
   date: v.optional(v.string()),
 })
 
 export default defineEventHandler(async (event) => {
-  assertRateLimit(`daily-guess:${clientIp(event)}`, 60, 60 * 60 * 1000)
+  assertRateLimit(`daily-guess:${clientIp(event)}`, RATE_LIMITS.dailyGuess)
   const body = await readBody$(event, Body)
   const db = await useDb()
   const puzzle = await ensurePuzzle(db, gameDate(body.date))

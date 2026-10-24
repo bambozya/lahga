@@ -2,6 +2,7 @@ import * as v from 'valibot'
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
 import { readBody$ } from '../../../utils/validate'
+import { RATE_LIMITS } from '../../../../shared/config/rules'
 
 /**
  * «هل تُقال هكذا في …؟» under a draft (schema.wordEntryLinks.needsReview),
@@ -22,8 +23,8 @@ export default defineEventHandler(async (event) => {
   const { user: signedIn } = await getUserSession(event)
   const user = signedIn ? await requireUser(event) : null
   const member = user?.emailVerifiedAt ? user : null
-  if (member) assertRateLimit(`vote:${member.id}`, 120, 60 * 60 * 1000)
-  else assertRateLimit(`guest-vote:${clientIp(event)}`, 60, 60 * 60 * 1000)
+  if (member) assertRateLimit(`vote:${member.id}`, RATE_LIMITS.vote)
+  else assertRateLimit(`guest-vote:${clientIp(event)}`, RATE_LIMITS.guestVote)
 
   const db = await useDb()
   const l = schema.wordEntryLinks

@@ -3,13 +3,13 @@ import * as v from 'valibot'
 import { and, eq, sql } from 'drizzle-orm'
 import { useDb, schema, type Db } from '../db'
 import { isArabicOnly, normalizeArabic } from '../../shared/utils/arabic'
+import { NEW_ACCOUNT_MS, RATE_LIMITS } from '../../shared/config/rules'
 
 type User = typeof schema.users.$inferSelect
 type Target = 'word' | 'entry' | 'link' | 'example'
 /** A transaction handle or the plain database: both run the same queries. */
 export type Tx = Parameters<Parameters<Db['transaction']>[0]>[0] | Db
 
-const WEEK = 7 * 24 * 60 * 60 * 1000
 
 /** A logged-in user with a confirmed email, within the contribution limits. */
 export async function requireContributor(event: H3Event): Promise<User> {
@@ -17,9 +17,9 @@ export async function requireContributor(event: H3Event): Promise<User> {
   if (!user.emailVerifiedAt) {
     throw createError({ statusCode: 403, statusMessage: 'أكّد بريدك الإلكتروني أولاً لتتمكن من الإضافة' })
   }
-  assertRateLimit(`contrib:${user.id}`, 20, 60 * 60 * 1000)
-  if (Date.now() - new Date(user.createdAt).getTime() < WEEK) {
-    assertRateLimit(`contrib-new:${user.id}`, 30, 24 * 60 * 60 * 1000)
+  assertRateLimit(`contrib:${user.id}`, RATE_LIMITS.contribute)
+  if (Date.now() - new Date(user.createdAt).getTime() < NEW_ACCOUNT_MS) {
+    assertRateLimit(`contrib-new:${user.id}`, RATE_LIMITS.contributeNew)
   }
   return user
 }

@@ -3,8 +3,9 @@ import { and, eq, ne } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
 import { readBody$ } from '../../../utils/validate'
 import { normalizeArabic } from '../../../../shared/utils/arabic'
-import { MIN_GROUPS, revealOrderFor } from '../../../utils/daily'
+import { revealOrderFor } from '../../../utils/daily'
 import { todayDate } from '../../../../shared/utils/daily'
+import { MIN_GROUPS } from '../../../../shared/config/rules'
 
 /**
  * Sets (or swaps) the word for a future day of كلمة اليوم (docs/REACH.md,

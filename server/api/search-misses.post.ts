@@ -1,6 +1,7 @@
 import { sql } from 'drizzle-orm'
 import { useDb, schema } from '../db'
 import { normalizeArabic } from '../../shared/utils/arabic'
+import { RATE_LIMITS } from '../../shared/config/rules'
 
 /**
  * «ليست الكلمة التي أبحث عنها»: a search found words, and the searcher says
@@ -15,7 +16,7 @@ import { normalizeArabic } from '../../shared/utils/arabic'
  * the site a row, not a page. Limited per IP so it cannot flood the list.
  */
 export default defineEventHandler(async (event) => {
-  assertRateLimit(`search-report:${clientIp(event)}`, 10, 10 * 60 * 1000)
+  assertRateLimit(`search-report:${clientIp(event)}`, RATE_LIMITS.searchReport)
   const body = await readBody<{ q?: unknown }>(event)
   const raw = searchTerm(body?.q)
   const term = normalizeArabic(raw)

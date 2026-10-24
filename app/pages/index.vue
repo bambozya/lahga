@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RANDOM_SAMPLE, SEARCH_RESULTS } from '~~/shared/config/rules'
 // The home page is the dictionary itself: the search results when something is
 // being looked for, a handful of words drawn at random otherwise. Nothing stands
 // between the search box in the header and the answer — one column, and no
@@ -9,8 +10,6 @@
 // list — five words to read, and dice to draw five more.
 const route = useRoute()
 const activeQuery = computed(() => String(route.query.q ?? '').trim())
-const LIMIT = 50
-const SAMPLE = 5
 
 type WordList = { id: number, slug: string, headword: string, definition: string | null, score: number,
   entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[] }[]
@@ -19,8 +18,8 @@ const searchHeaders = useSearchHeaders()
 const { data: words, status, refresh } = await useFetch<WordList>('/api/words', {
   headers: searchHeaders,
   query: computed(() => activeQuery.value
-    ? { q: activeQuery.value, limit: LIMIT }
-    : { random: 1, limit: SAMPLE }),
+    ? { q: activeQuery.value, limit: SEARCH_RESULTS }
+    : { random: 1, limit: RANDOM_SAMPLE }),
 })
 
 // The term as a dialect word in its own right (/f/…): «عيش» is answered first
@@ -86,7 +85,7 @@ const countLabel = computed(() => {
   if (n === 0) return 'لا نتائج'
   if (n === 1) return 'نتيجة واحدة'
   if (n === 2) return 'نتيجتان'
-  if (n === LIMIT) return `أول ${n} نتيجة`
+  if (n === SEARCH_RESULTS) return `أول ${n} نتيجة`
   return n <= 10 ? `${n} نتائج` : `${n} نتيجة`
 })
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { REVEALS } from '~~/shared/config/rules'
 // «كلمة اليوم» (docs/REACH.md, Phase R3): one word, revealed one dialect at a
 // time, hardest form first. No account, no server-side session — progress and
 // the streak live in the browser (useDailyProgress), and the answer is never

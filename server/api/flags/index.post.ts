@@ -4,6 +4,7 @@ import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
 import { fields } from '../../utils/contribute'
 import { isArabicOnly } from '../../../shared/utils/arabic'
+import { RATE_LIMITS } from '../../../shared/config/rules'
 
 /** Reports an item for the moderation queue. One open flag per user per item. */
 const Body = v.object({
@@ -16,7 +17,7 @@ const Body = v.object({
 export default defineEventHandler(async (event) => {
   const user = await requireUser(event)
   if (!user.emailVerifiedAt) throw createError({ statusCode: 403, statusMessage: 'أكّد بريدك الإلكتروني أولاً' })
-  assertRateLimit(`flag:${user.id}`, 20, 60 * 60 * 1000)
+  assertRateLimit(`flag:${user.id}`, RATE_LIMITS.flag)
   const body = await readBody$(event, Body)
   const db = await useDb()
   if (!await findTarget(db, body.targetType, body.targetId)) throw createError({ statusCode: 404, statusMessage: 'العنصر غير موجود' })
