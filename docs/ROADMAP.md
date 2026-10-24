@@ -363,13 +363,16 @@ Nothing here is *Now*. The site has enough features for its content.
   carry the other ways speakers spell it (Darija *had*: هذا، هدا، هاد، هاذ،
   هد، هذ), and search and the form pages find every one of them. Lahga
   records spellings; it does not standardise them.
+- **Audio** (PLAN.md 6.1, a few days, #38): a short clip recorded in the
+  browser for a dialect form, stored in S3-compatible storage, published at
+  once and removable by flag. No trigger: pronunciation is the one thing
+  Arabic script cannot carry and the first objection dialectologists raised,
+  so it does not wait for a contributor count.
 
 ### Later, with triggers
 
 - **A third game.** Trigger: B3 is done and the two games bring back more than
   a fifth of their players the next day.
-- **Audio** (PLAN.md 6.1). Trigger: the bucket from A1 exists and 20
-  contributors are active.
 - **Sign in to keep a streak across devices.** Trigger: people ask.
 
 ## Distribution
@@ -427,6 +430,9 @@ machinery for that.
 ## Decision log
 
 Newest first. One line each.
+
+- 2026-10-22. Audio (#38) moves from *Later* to *Next* without its trigger
+  of 20 active contributors: the maintainer's call, on the AIDA feedback.
 
 - 2026-10-21. D1 (#27), C5 (#44) and A7 (#7) shipped. Also fixed: the
   stretched card link covered every button and link inside a card for
