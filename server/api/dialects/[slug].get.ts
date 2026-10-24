@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { entryCounts } from './index.get'
+import { entryCounts } from '../../utils/dialects'
 import { DIALECT_DESCRIPTION_FORMS, MIN_ENTRIES } from '../../../shared/config/rules'
 
 /**

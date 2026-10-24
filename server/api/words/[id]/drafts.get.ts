@@ -1,5 +1,6 @@
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
+import { idParam } from '../../../utils/validate'
 
 /**
  * The drafts on one word page (schema.wordEntryLinks.needsReview): the links
@@ -10,8 +11,7 @@ import { useDb, schema } from '../../../db'
  * depends on who asks; the word page asks for it once it has loaded.
  */
 export default defineEventHandler(async (event) => {
-  const id = Number(getRouterParam(event, 'id'))
-  if (!Number.isInteger(id) || id < 1) throw createError({ statusCode: 400, statusMessage: 'رقم غير صالح' })
+  const id = idParam(event, 'الكلمة غير موجودة')
   const { user } = await getUserSession(event)
   const db = await useDb()
   const l = schema.wordEntryLinks

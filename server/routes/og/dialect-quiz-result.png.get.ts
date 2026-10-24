@@ -1,3 +1,6 @@
+import { QUIZ_ROUNDS } from '../../../shared/config/rules'
+import { clampParam } from '../../utils/validate'
+
 /**
  * «من أي لهجة؟»'s result card, built from the query string a finished session
  * passes it (?date=&correct=&total=) — the same reasoning as
@@ -9,8 +12,8 @@ const cache = new LruCache<string, Buffer>(200)
 export default defineEventHandler(async (event) => {
   const { date, correct, total } = getQuery(event)
   if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw createError({ statusCode: 400 })
-  const t = Math.min(Math.max(Number(total) || 3, 1), 10)
-  const c = Math.min(Math.max(Number(correct) || 0, 0), t)
+  const t = clampParam(total, QUIZ_ROUNDS, QUIZ_ROUNDS)
+  const c = clampParam(correct, 0, t, 0)
 
   const cacheKey = `${date}:${c}:${t}`
   let png = cache.get(cacheKey)

@@ -1,6 +1,6 @@
 import * as v from 'valibot'
 import { useDb } from '../../../../db'
-import { readBody$ } from '../../../../utils/validate'
+import { idParam, readBody$ } from '../../../../utils/validate'
 
 /** Hide, restore or delete any content row. */
 const Body = v.object({
@@ -11,8 +11,8 @@ const Body = v.object({
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
   const type = getRouterParam(event, 'type') as string
-  const id = Number(getRouterParam(event, 'id'))
-  if (!(type in contentTables) || !Number.isInteger(id)) throw createError({ statusCode: 404, statusMessage: 'العنصر غير موجود' })
+  const id = idParam(event, 'العنصر غير موجود')
+  if (!(type in contentTables)) throw createError({ statusCode: 404, statusMessage: 'العنصر غير موجود' })
   const body = await readBody$(event, Body)
   const db = await useDb()
   await db.transaction(tx => setContentStatus(tx, admin.id, type as ContentType, id, body.status, body.reason))

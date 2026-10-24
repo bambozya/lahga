@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
-import { readBody$ } from '../../../utils/validate'
+import { idParam, readBody$ } from '../../../utils/validate'
 
 /** Approves or rejects a proposal. Approval applies the change. */
 const Body = v.object({
@@ -11,7 +11,7 @@ const Body = v.object({
 
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'الاقتراح غير موجود')
   const body = await readBody$(event, Body)
   const db = await useDb()
   const p = await db.query.proposals.findFirst({ where: eq(schema.proposals.id, id) })

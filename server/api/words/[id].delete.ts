@@ -1,5 +1,6 @@
 import { and, eq, ne, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
+import { idParam } from '../../utils/validate'
 
 /**
  * Soft-deletes a word. Refused once other people have built on it: an entry or
@@ -8,7 +9,7 @@ import { useDb, schema } from '../../db'
  */
 export default defineEventHandler(async (event) => {
   const user = await requireContributor(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'الكلمة غير موجودة')
   const db = await useDb()
   const word = await db.query.words.findFirst({
     where: eq(schema.words.id, id),

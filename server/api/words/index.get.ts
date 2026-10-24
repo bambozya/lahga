@@ -192,20 +192,3 @@ function shape(rows: any[]) {
  * The dialect forms a result card shows: flat, but in the word page's own
  * order, so a card and the page it opens name the forms in the same sequence.
  */
-function cardEntries(links: any[]) {
-  const entries = links
-    .filter(l => l.status === 'active' && l.entry.status === 'active')
-    .map(l => ({
-      id: l.entry.id as number,
-      form: l.entry.form as string,
-      score: l.entry.score as number,
-      rank: wilson(l.entry.upvotes, l.entry.downvotes),
-      dialect: { slug: l.entry.dialect.slug as string, nameAr: l.entry.dialect.nameAr as string },
-      group: l.entry.dialect.parent
-        ? { slug: l.entry.dialect.parent.slug as string, nameAr: l.entry.dialect.parent.nameAr as string }
-        : { slug: l.entry.dialect.slug as string, nameAr: l.entry.dialect.nameAr as string },
-    }))
-  return groupByRegion(entries)
-    .flatMap(g => g.entries)
-    .map(e => ({ id: e.id, form: e.form, dialect: e.dialect }))
-}

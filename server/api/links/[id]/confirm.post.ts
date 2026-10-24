@@ -1,4 +1,5 @@
 import { useDb } from '../../../db'
+import { idParam } from '../../../utils/validate'
 
 /**
  * An admin or moderator vouches for a draft (schema.wordEntryLinks.needsReview):
@@ -9,8 +10,7 @@ import { useDb } from '../../../db'
 export default defineEventHandler(async (event) => {
   const user = await requireUser(event)
   if (user.role !== 'admin' && user.role !== 'moderator') throw createError({ statusCode: 403, statusMessage: 'التأكيد للمشرفين فقط' })
-  const id = Number(getRouterParam(event, 'id'))
-  if (!Number.isInteger(id) || id < 1) throw createError({ statusCode: 400, statusMessage: 'رقم غير صالح' })
+  const id = idParam(event, 'العنصر غير موجود')
   const db = await useDb()
   return db.transaction(async (tx) => {
     if (!await confirmDraft(tx, id, user.id, 'تأكيد')) throw createError({ statusCode: 400, statusMessage: 'ليس بحاجة إلى تحقق' })

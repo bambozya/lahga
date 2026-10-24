@@ -3,6 +3,7 @@ import { useDb, schema } from '../../db'
 import { ensureRound, groupNames } from '../../utils/dialectQuiz'
 import { gameDate } from '../../utils/daily'
 import { QUIZ_ROUNDS } from '../../../shared/config/rules'
+import { clampParam } from '../../utils/validate'
 
 /**
  * One of today's three rounds of «من أي لهجة؟»: the form and its MSA word
@@ -12,7 +13,7 @@ import { QUIZ_ROUNDS } from '../../../shared/config/rules'
  */
 export default defineEventHandler(async (event) => {
   const { slot, date } = getQuery(event)
-  const n = Math.min(Math.max(Number(slot) || 1, 1), QUIZ_ROUNDS)
+  const n = clampParam(slot, 1, QUIZ_ROUNDS)
   const db = await useDb()
   const round = await ensureRound(db, gameDate(date), n)
 

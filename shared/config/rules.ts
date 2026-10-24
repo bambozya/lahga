@@ -147,6 +147,12 @@ export const SEARCH_RESULTS = 50
 /** The dialect's best-supported forms that go into its page's meta description. */
 export const DIALECT_DESCRIPTION_FORMS = 6
 
+/**
+ * Forms on a word's share card (/og/w/…), best-supported first. The card has a
+ * fixed portrait height; past about this many the «تُقال» lines run off it.
+ */
+export const WORD_CARD_FORMS = 14
+
 /** On a form page (/f/…): the other forms listed per meaning, and the phrases that use the form. */
 export const FORM_PAGE_OTHERS = 16
 export const FORM_PAGE_PHRASES = 12

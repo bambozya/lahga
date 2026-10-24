@@ -74,3 +74,28 @@ export function searchTerm(raw: unknown, max = 100): string {
   }
   return raw.trim()
 }
+
+/**
+ * A numeric id from the route, as in /api/entries/12. Anything that is not a
+ * positive whole number gets the route's own 404, the same answer as an id
+ * that does not exist: passed on as NaN, it reached the database and came
+ * back a 500 (and, since the error mails, an email).
+ */
+export function idParam(event: H3Event, notFound: string, name = 'id'): number {
+  const id = Number(getRouterParam(event, name))
+  if (!Number.isSafeInteger(id) || id < 1) throw createError({ statusCode: 404, statusMessage: notFound })
+  return id
+}
+
+/**
+ * A small counter a page sends about its own progress (?reveal=3, ?slot=2):
+ * a whole number from `min` (1 unless said) to `max`, `fallback` when missing
+ * or not a number. Quietly clamped rather than refused, because the only
+ * sender is our own page, and an out-of-range value there is a stale tab.
+ */
+export function clampParam(raw: unknown, fallback: number, max: number, min = 1): number {
+  if (raw === undefined || raw === null || raw === '') return Math.min(Math.max(fallback, min), max)
+  const n = Math.trunc(Number(raw))
+  if (!Number.isFinite(n)) return Math.min(Math.max(fallback, min), max)
+  return Math.min(Math.max(n, min), max)
+}

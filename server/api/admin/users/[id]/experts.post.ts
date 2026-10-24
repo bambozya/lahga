@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../../db'
-import { readBody$ } from '../../../../utils/validate'
+import { idParam, readBody$ } from '../../../../utils/validate'
 
 /**
  * Makes a member an expert in a dialect, or stops them being one
@@ -15,7 +15,7 @@ const Body = v.object({
 
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'المستخدم غير موجود')
   const body = await readBody$(event, Body)
   const db = await useDb()
   const user = await db.query.users.findFirst({ where: eq(schema.users.id, id) })

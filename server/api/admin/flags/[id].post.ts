@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { and, eq, isNull } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
-import { readBody$ } from '../../../utils/validate'
+import { idParam, readBody$ } from '../../../utils/validate'
 
 /**
  * Resolves a flag. "dismissed" leaves the content alone; "hidden" and "deleted"
@@ -15,7 +15,7 @@ const Body = v.object({
 
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'البلاغ غير موجود')
   const body = await readBody$(event, Body)
   const db = await useDb()
   const flag = await db.query.flags.findFirst({ where: eq(schema.flags.id, id) })

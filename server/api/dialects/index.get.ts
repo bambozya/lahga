@@ -1,6 +1,7 @@
-import { and, asc, eq, sql } from 'drizzle-orm'
+import { asc, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { MIN_ENTRIES } from '../../../shared/config/rules'
+import { entryCounts } from '../../utils/dialects'
 
 /**
  * The dialect tree: active top-level groups, each with its active children.
@@ -34,12 +35,3 @@ export default defineEventHandler(async (event) => {
   }))
 })
 
-/** How many live words each dialect holds, by id; a dialect with none is absent. */
-export async function entryCounts(db: Awaited<ReturnType<typeof useDb>>) {
-  const rows = await db.select({ id: schema.entries.dialectId, n: sql<number>`count(*)::int` })
-    .from(schema.entries)
-    .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
-    .where(and(eq(schema.entries.status, 'active'), eq(schema.wordEntryLinks.status, 'active')))
-    .groupBy(schema.entries.dialectId)
-  return new Map(rows.map(r => [r.id, Number(r.n)]))
-}

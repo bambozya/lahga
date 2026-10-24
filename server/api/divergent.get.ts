@@ -1,6 +1,7 @@
 import { and, eq, inArray, sql } from 'drizzle-orm'
 import { useDb, schema } from '../db'
 import { MIN_GROUPS } from '../../shared/config/rules'
+import { rowsOf } from '../utils/sql'
 
 /**
  * The words the dialects disagree about most (docs/REACH.md, Phase R4).
@@ -54,7 +55,7 @@ export default defineEventHandler(async (event) => {
     order by score desc, count(distinct group_id) desc, count(distinct form_normalized) desc, word_id
     limit ${max}
   `)
-  const ranked: Ranked[] = (Array.isArray(result) ? result : result?.rows ?? []).map((r: any) => ({
+  const ranked: Ranked[] = rowsOf(result).map((r: any) => ({
     wordId: Number(r.wordId ?? r.wordid ?? r.word_id),
     forms: Number(r.forms),
     groups: Number(r.groups),
@@ -89,20 +90,3 @@ export default defineEventHandler(async (event) => {
 })
 
 /** The dialect forms a result card shows, in the word page's own order — the same as /api/words. */
-function cardEntries(links: any[]) {
-  const entries = links
-    .filter(l => l.status === 'active' && l.entry.status === 'active')
-    .map(l => ({
-      id: l.entry.id as number,
-      form: l.entry.form as string,
-      score: l.entry.score as number,
-      rank: wilson(l.entry.upvotes, l.entry.downvotes),
-      dialect: { slug: l.entry.dialect.slug as string, nameAr: l.entry.dialect.nameAr as string },
-      group: l.entry.dialect.parent
-        ? { slug: l.entry.dialect.parent.slug as string, nameAr: l.entry.dialect.parent.nameAr as string }
-        : { slug: l.entry.dialect.slug as string, nameAr: l.entry.dialect.nameAr as string },
-    }))
-  return groupByRegion(entries)
-    .flatMap(g => g.entries)
-    .map(e => ({ id: e.id, form: e.form, dialect: e.dialect }))
-}

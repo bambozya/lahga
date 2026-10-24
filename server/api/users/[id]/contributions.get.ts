@@ -1,9 +1,10 @@
 import { and, desc, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
+import { idParam } from '../../../utils/validate'
 
 /** A user's public contributions: the words and dialect entries they added. */
 export default defineEventHandler(async (event) => {
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'المستخدم غير موجود')
   const db = await useDb()
   const [words, entries] = await Promise.all([
     db.query.words.findMany({

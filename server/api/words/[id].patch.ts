@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { readBody$ } from '../../utils/validate'
+import { idParam, readBody$ } from '../../utils/validate'
 import { fields } from '../../utils/contribute'
 import { normalizeArabic } from '../../../shared/utils/arabic'
 
@@ -14,7 +14,7 @@ const Body = v.object({
 
 export default defineEventHandler(async (event) => {
   const user = await requireContributor(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'الكلمة غير موجودة')
   const body = await readBody$(event, Body)
   const db = await useDb()
   const word = await db.query.words.findFirst({ where: eq(schema.words.id, id) })

@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
-import { readBody$ } from '../../../utils/validate'
+import { idParam, readBody$ } from '../../../utils/validate'
 import { RATE_LIMITS } from '../../../../shared/config/rules'
 
 /**
@@ -17,8 +17,7 @@ import { RATE_LIMITS } from '../../../../shared/config/rules'
 const Body = v.object({ value: v.picklist([1, -1, 0], 'قيمة التصويت غير صالحة') })
 
 export default defineEventHandler(async (event) => {
-  const id = Number(getRouterParam(event, 'id'))
-  if (!Number.isInteger(id) || id < 1) throw createError({ statusCode: 400, statusMessage: 'رقم غير صالح' })
+  const id = idParam(event, 'العنصر غير موجود')
   const { value } = await readBody$(event, Body)
   const { user: signedIn } = await getUserSession(event)
   const user = signedIn ? await requireUser(event) : null

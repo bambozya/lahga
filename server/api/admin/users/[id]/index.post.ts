@@ -1,7 +1,7 @@
 import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../../db'
-import { readBody$ } from '../../../../utils/validate'
+import { idParam, readBody$ } from '../../../../utils/validate'
 
 /** Bans or unbans a user. A banned user cannot log in or act; their content stays. */
 const Body = v.object({
@@ -11,7 +11,7 @@ const Body = v.object({
 
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'المستخدم غير موجود')
   const body = await readBody$(event, Body)
   if (id === admin.id) throw createError({ statusCode: 400, statusMessage: 'لا يمكنك إيقاف حسابك' })
   const db = await useDb()

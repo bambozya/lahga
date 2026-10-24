@@ -1,6 +1,7 @@
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../../db'
 import { normalizeArabic } from '../../../../../shared/utils/arabic'
+import { idParam } from '../../../../utils/validate'
 
 /**
  * Puts the content of an older revision back as a new revision (the history
@@ -8,7 +9,7 @@ import { normalizeArabic } from '../../../../../shared/utils/arabic'
  */
 export default defineEventHandler(async (event) => {
   const admin = await requireAdmin(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'الإصدار غير موجود')
   const db = await useDb()
   const rev = await db.query.revisions.findFirst({ where: eq(schema.revisions.id, id) })
   if (!rev) throw createError({ statusCode: 404, statusMessage: 'الإصدار غير موجود' })

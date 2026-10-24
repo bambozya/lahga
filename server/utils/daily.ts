@@ -4,6 +4,7 @@ import { normalizeArabic } from '../../shared/utils/arabic'
 import { dayBefore, todayDate } from '../../shared/utils/daily'
 import { GUESS_SIMILARITY, MIN_GROUPS, REVEALS } from '../../shared/config/rules'
 import type { Tx } from './contribute'
+import { rowsOf } from './sql'
 
 /**
  * The daily game (docs/REACH.md, Phase R3): one word, revealed one dialect
@@ -80,7 +81,7 @@ export async function revealOrderFor(tx: Tx, word: { id: number, headwordNormali
     order by sim asc, entry_id
     limit ${REVEALS}
   `)
-  const rows: { entryId: number }[] = Array.isArray(result) ? result : result?.rows ?? []
+  const rows = rowsOf<{ entryId: number }>(result)
   return rows.map(r => Number(r.entryId))
 }
 
@@ -113,7 +114,7 @@ async function pickUnusedWord(tx: Tx) {
     order by score desc, count(distinct group_id) desc, word_id
     limit 1
   `)
-  const rows: any[] = Array.isArray(result) ? result : result?.rows ?? []
+  const rows = rowsOf(result)
   if (!rows.length) return null
   const wordId = Number(rows[0].wordId ?? rows[0].word_id)
   return tx.query.words.findFirst({ where: eq(schema.words.id, wordId) })
@@ -151,6 +152,6 @@ export async function isCorrectGuess(db: Db, guess: string, headwordNormalized: 
   if (!g) return false
   if (g === headwordNormalized) return true
   const result: any = await db.execute(sql`select similarity(${g}, ${headwordNormalized}) as sim`)
-  const rows: any[] = Array.isArray(result) ? result : result?.rows ?? []
+  const rows = rowsOf(result)
   return Number(rows[0]?.sim ?? 0) >= GUESS_SIMILARITY
 }

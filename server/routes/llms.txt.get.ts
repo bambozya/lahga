@@ -1,6 +1,6 @@
 import { eq, isNull } from 'drizzle-orm'
 import { useDb, schema } from '../db'
-import { entryCounts } from '../api/dialects/index.get'
+import { entryCounts } from '../utils/dialects'
 import { loadExport } from '../utils/exportData'
 import { MIN_ENTRIES } from '../../shared/config/rules'
 

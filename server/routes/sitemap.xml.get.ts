@@ -1,7 +1,6 @@
 import { desc, eq, lt } from 'drizzle-orm'
 import { useDb, schema } from '../db'
-import { entryCounts } from '../api/dialects/index.get'
-import { topPairs } from '../api/dialect-pairs.get'
+import { entryCounts, topPairs } from '../utils/dialects'
 import { todayDate } from '../../shared/utils/daily'
 import { indexableForms } from '../utils/forms'
 import { encodePath } from 'ufo'

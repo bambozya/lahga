@@ -4,6 +4,7 @@ import { ensurePuzzle, visibleRevealOrder } from '../../utils/daily'
 import { todayDate } from '../../../shared/utils/daily'
 import { puzzleNumber } from '../../../shared/utils/daily'
 import { REVEALS } from '../../../shared/config/rules'
+import { clampParam } from '../../utils/validate'
 
 /**
  * Today's puzzle: the dialect forms up to the reveal the client says it has
@@ -14,7 +15,7 @@ import { REVEALS } from '../../../shared/config/rules'
  */
 export default defineEventHandler(async (event) => {
   const { reveal } = getQuery(event)
-  const n = Math.min(Math.max(Number(reveal) || 1, 1), REVEALS)
+  const n = clampParam(reveal, 1, REVEALS)
   const db = await useDb()
   const date = todayDate()
   const puzzle = await ensurePuzzle(db, date)

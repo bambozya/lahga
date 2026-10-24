@@ -1,9 +1,10 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
+import { idParam } from '../../utils/validate'
 
 export default defineEventHandler(async (event) => {
   const user = await requireContributor(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'المثال غير موجود')
   const db = await useDb()
   const ex = await db.query.examples.findFirst({ where: eq(schema.examples.id, id) })
   if (!ex || ex.status !== 'active') throw createError({ statusCode: 404, statusMessage: 'المثال غير موجود' })

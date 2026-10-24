@@ -1,5 +1,6 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../db'
+import { WORD_CARD_FORMS } from '../../../../shared/config/rules'
 
 /**
  * The share card for a word (docs/REACH.md, Phase R2): pasted into WhatsApp,
@@ -41,17 +42,13 @@ export default defineEventHandler(async (event) => {
       // and Egyptian entries land next to each other even though their names
       // differ.
       dialectName: l.entry.dialect.nameAr,
-      group: l.entry.dialect.parent
-        ? { slug: l.entry.dialect.parent.slug, nameAr: l.entry.dialect.parent.nameAr }
-        : { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr },
+      group: dialectGroup(l.entry.dialect),
     }))
 
   const ranked = groupByRegion(entries).flatMap(g => g.entries)
   const newest = ranked.reduce((max, e) => Math.max(max, +new Date(e.updatedAt)), +new Date(word.updatedAt))
-  // Capped so a very well-documented word cannot push the card past its fixed
-  // portrait height; 14 keeps the "تُقال" line to a handful of lines at the
-  // card's font size in practice.
-  const CAP = 14
+  // Capped (WORD_CARD_FORMS) so a well-documented word cannot push the card past its fixed height.
+  const CAP = WORD_CARD_FORMS
   const cacheKey = `${id}:${newest}:${CAP}`
 
   let png = cache.get(cacheKey)

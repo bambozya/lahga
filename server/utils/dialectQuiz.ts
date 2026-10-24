@@ -3,6 +3,7 @@ import { schema, type Db } from '../db'
 import type { Tx } from './contribute'
 import { looseArabicKey } from '../../shared/utils/arabic'
 import { QUIZ_CHOICES } from '../../shared/config/rules'
+import { rowsOf } from './sql'
 
 /**
  * «من أي لهجة؟»: three multiple-choice rounds a day, each asking which
@@ -46,7 +47,7 @@ async function candidateWords(tx: Tx): Promise<number[]> {
     order by random()
     limit 20
   `)
-  const rows: any[] = Array.isArray(result) ? result : result?.rows ?? []
+  const rows = rowsOf(result)
   return rows.map(r => Number(r.wordId ?? r.wordid))
 }
 
@@ -72,7 +73,7 @@ async function pickFromWord(tx: Tx, wordId: number, activeGroups: Set<number>) {
       and ${schema.entries.status} = 'active'
       and ${schema.wordEntryLinks.status} = 'active'
   `)
-  const rows: any[] = Array.isArray(result) ? result : result?.rows ?? []
+  const rows = rowsOf(result)
   const forms = rows
     .map(r => ({
       entryId: Number(r.entryId ?? r.entryid),

@@ -52,9 +52,7 @@ export default defineEventHandler(async (event) => {
       createdBy: l.entry.createdBy,
       author: l.entry.author && !l.entry.author.deletedAt ? { id: l.entry.author.id, displayName: l.entry.author.displayName } : null,
       dialect: { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr },
-      group: l.entry.dialect.parent
-        ? { slug: l.entry.dialect.parent.slug, nameAr: l.entry.dialect.parent.nameAr }
-        : { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr },
+      group: dialectGroup(l.entry.dialect),
       examples: l.entry.examples
         .filter(x => x.status === 'active')
         .sort((a, b) => b.score - a.score)

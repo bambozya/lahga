@@ -1,5 +1,6 @@
 import { puzzleNumber } from '../../../shared/utils/daily'
 import { REVEALS } from '../../../shared/config/rules'
+import { clampParam } from '../../utils/validate'
 
 /**
  * The daily game's result card (docs/REACH.md, Phase R3): one per player, not
@@ -15,8 +16,8 @@ const cache = new LruCache<string, Buffer>(500)
 export default defineEventHandler(async (event) => {
   const { date, guesses, correct, total } = getQuery(event)
   if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw createError({ statusCode: 400 })
-  const n = Math.min(Math.max(Number(guesses) || 1, 1), REVEALS)
-  const t = Math.min(Math.max(Number(total) || REVEALS, 1), REVEALS)
+  const n = clampParam(guesses, 1, REVEALS)
+  const t = clampParam(total, REVEALS, REVEALS)
   const isCorrect = correct === '1' || correct === 'true'
 
   const cacheKey = `${date}:${n}:${isCorrect ? 1 : 0}:${t}`

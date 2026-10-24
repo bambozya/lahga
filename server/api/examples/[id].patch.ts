@@ -1,12 +1,12 @@
 import * as v from 'valibot'
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
-import { readBody$ } from '../../utils/validate'
+import { idParam, readBody$ } from '../../utils/validate'
 import { fields } from '../../utils/contribute'
 
 export default defineEventHandler(async (event) => {
   const user = await requireContributor(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'المثال غير موجود')
   const body = await readBody$(event, v.object({ text: v.optional(fields.text), gloss: fields.gloss, reason: fields.reason }))
   const db = await useDb()
   const ex = await db.query.examples.findFirst({ where: eq(schema.examples.id, id) })

@@ -1,10 +1,11 @@
 import { eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
+import { idParam } from '../../utils/validate'
 
 /** Soft-deletes an entry and its links. Refused if others added examples or anyone voted. */
 export default defineEventHandler(async (event) => {
   const user = await requireContributor(event)
-  const id = Number(getRouterParam(event, 'id'))
+  const id = idParam(event, 'المدخل غير موجود')
   const db = await useDb()
   const entry = await db.query.entries.findFirst({ where: eq(schema.entries.id, id), with: { examples: true, links: true } })
   if (!entry || entry.status !== 'active') throw createError({ statusCode: 404, statusMessage: 'المدخل غير موجود' })
