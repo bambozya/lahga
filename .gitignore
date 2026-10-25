@@ -35,3 +35,5 @@ docs/seed/
 # scripts/import-sources/wiktionary.ts, see docs/seed/SOURCES.md.
 scripts/import-sources/.wiktionary/
 docs/launch
+# The maintainer's own recipes (add a dialect, a game, a source, …): kept on the Mac only.
+docs/HOWTO.md

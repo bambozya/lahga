@@ -71,7 +71,15 @@ The cross-dialect graph.
 | created_at  | timestamptz  |                                       |
 | score       | int          |                                       |
 | status      | enum         |                                       |
+| needs_review | boolean     | true: a language-model draft nobody has checked yet |
 | unique (word_id, entry_id) |
+
+`needs_review` sits on the link, not the entry, because the same form can be
+right under one headword and a guess under another. The importer or
+`/api/admin/review-marks` sets it; two net upvotes clear it (a guest's answer
+counting half, see `guest_votes`), as does a «yes» from an admin, a moderator
+or an expert in that dialect (`dialect_experts`). Drafts show an outlined dot
+and are listed at `/review`.
 
 A word page shows the entries of its active links, grouped by top-level
 dialect and ordered as described under Ranking. A score threshold with a
@@ -123,10 +131,28 @@ One table for all targets.
 | updated_at   | timestamptz | changes when the vote flips                  |
 | unique (target_type, target_id, user_id) |
 
-Authors cannot vote on their own rows. Each content table carries `upvotes`,
+Authors cannot vote on their own rows. Visitors without an account can only
+answer drafts, through `guest_votes` below. Each content table carries `upvotes`,
 `downvotes` and `score` (= up − down), recomputed from this table on every
 vote so they never drift. A `weight` column will be added when reputation
 lands; until then every vote weighs 1.
+
+### guest_votes
+A visitor's «yes» or «no» on a draft link (`needs_review`), without an
+account. It counts half a member's vote (`GUEST_WEIGHT` in
+`shared/config/rules.ts`).
+
+| column     | type        | notes                                            |
+|------------|-------------|--------------------------------------------------|
+| id         | int pk      |                                                  |
+| link_id    | int fk      | deleted with the link                            |
+| voter      | text        | keyed hash of IP address + this link, nothing more |
+| value      | smallint    | +1 or -1                                         |
+| created_at, updated_at | timestamptz |                                  |
+| unique (link_id, voter) |
+
+No cookie and no address are kept. Because the hash includes the link, two
+answers by the same visitor on two drafts cannot be tied together.
 
 ### flags
 
@@ -168,6 +194,22 @@ Deleting an account keeps the row and anonymises it (email becomes
 `deleted-<id>@lahga.invalid`, display_name «مستخدم محذوف», everything personal
 nulled, `deleted_at` set). Content stays attributed to the row, so other
 people's examples and votes on it survive.
+
+### dialect_experts
+A member an admin trusts to speak for a dialect. Their «yes» under a draft in
+that dialect confirms it on its own, and a form they add in it starts out
+confirmed (`server/utils/experts.ts`). Expertise in a region (مصري) covers the
+cities inside it (قاهري), not the other way round. Granted on
+`/settings/admin/users`.
+
+| column     | type        | notes                         |
+|------------|-------------|-------------------------------|
+| id         | int pk      |                               |
+| user_id    | int fk      |                               |
+| dialect_id | int fk      |                               |
+| granted_by | int fk null | the admin                     |
+| created_at | timestamptz |                               |
+| unique (user_id, dialect_id) |
 
 ### oauth_accounts
 
@@ -221,21 +263,28 @@ dialect page credits the author of the latest approved description.
 
 ### moderation_log
 
-Every admin action, on record: actor, action (hide, restore, delete, revert,
-resolve_flag, approve, reject, ban, unban), target type and id, reason, time.
+Every admin action, on record: actor, action, target type and id, reason,
+time. Actions in use: hide, restore, delete, revert, resolve_flag, approve,
+reject, ban, unban, confirm, grant_expert, revoke_expert, import, merge,
+prune, tidy, delete_search_miss.
 
 ### daily_puzzles
 
-One row per day for the daily game «خمّن الكلمة». Created on first request for
-that day, from the most divergent unused word unless an admin picked one.
+One row per day for the daily game «كلمة اليوم». An admin can set a word for
+a coming day ahead of time at `/settings/admin/daily`; a day without one gets
+the most divergent word not used before, picked on the day's first request.
 
 | column       | type        | notes                                          |
 |--------------|-------------|------------------------------------------------|
 | id           | int pk      |                                                |
 | date         | text uniq   | YYYY-MM-DD                                     |
 | word_id      | int fk      |                                                |
-| reveal_order | jsonb       | entry ids, most divergent first, one per group, up to six |
+| reveal_order | jsonb       | entry ids, most divergent first, one per group |
 | created_at   | timestamptz |                                                |
+
+When the game reads a puzzle it drops forms hidden since it was picked and
+stops at `REVEALS` (`shared/config/rules.ts`), so changing that number also
+shortens puzzles already stored.
 
 ### dialect_quiz_rounds
 
@@ -266,8 +315,29 @@ at `/settings/admin/search-misses`.
 | term             | text        | as typed, for display                  |
 | term_normalized  | text uniq   |                                        |
 | count            | int         |                                        |
+| reports          | int         | searches that found words, where the searcher said none was the one meant |
 | last_searched_at | timestamptz |                                        |
 | created_at       | timestamptz |                                        |
+
+### search_miss_events
+Each miss once more, as it happened, so the list above can tell a person in
+Cairo from a crawler in a data centre. Never the IP address and never an
+account: country and network are looked up from the IP and the IP is dropped,
+and `visitor` is a hash that changes every day. Kept 90 days
+(`server/utils/searchVisitor.ts`); the counters on `search_misses` stay.
+
+Columns: `miss_id`, `at`, `country`, `asn`, `network`, `visitor`, `device`,
+`os`, `browser`, `lang`, `timezone`, `referrer` (host only), `via` (app, page
+or api), `signed_in`, `bot` (why it looks automated, or null), `kind` (miss
+or report).
+
+## Kept in the browser, not here
+
+The games need no account, so a player's results, streak and round in
+progress live in their browser's localStorage (`app/composables/useGameProgress.ts`,
+keys `lahga-daily` and `lahga-dialect-quiz`), as does the chosen theme. The
+stored game shape is versioned; to change it, raise `VERSION` there and extend
+`migrate()`.
 
 ## Ranking
 
@@ -288,4 +358,6 @@ gloss, display_name) must match:
   away, ASCII and Arabic digits, whitespace, and common punctuation
 - rejected: any Latin letter (a–z, A–Z)
 
-This is the mechanical form of the "Arabic script only" rule.
+This is the mechanical form of the "Arabic script only" rule
+(`isArabicOnly` in `shared/utils/arabic.ts`). It accepts the letters dialect
+writers add for sounds Standard Arabic lacks: گ ڨ ݣ چ ڤ پ.

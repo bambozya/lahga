@@ -19,8 +19,9 @@ The site is live and the two plans behind it, [PLAN.md](docs/PLAN.md) and
 history, flags, moderation and proposals, an admin area, trigram search, share
 cards, two daily games, the divergence ranking, dialect-versus-dialect pages,
 a page per dialect form (`/f/دلوقتي`, «what does this word mean?»), open data
-exports and `llms.txt` ([DISCOVERY.md](docs/DISCOVERY.md)), offsite backups
-and an outside uptime check.
+exports and `llms.txt` ([DISCOVERY.md](docs/DISCOVERY.md)), offsite backups,
+an outside uptime check and error mails. Every push is typechecked, tested and
+smoke-tested on GitHub Actions.
 
 Forms drafted by a language model carry a «needs checking» mark until speakers
 confirm them: every reader, signed in or not, can answer under the form
@@ -76,22 +77,33 @@ app/                Vue side (Nuxt 4)
                     /divergent, the games (/games, /daily, /which-dialect), /data, /u/[id],
                     account pages, /review and /settings/admin/* for staff, static pages
   components/       AppLogo, WordCard and FormCard (search results), ReviewMark, VoteBox, FlagButton,
-                    ContributeGate, the forms, ShuffleButton, ThemeSwitch, BreadCrumbs, admin pieces
-  composables/      useSeo, useForm, useAnalytics, useSearchHeaders, the two games' local progress
+                    ContributeGate, the forms, ShuffleButton, ThemeSwitch, BreadCrumbs, admin pieces,
+                    GameResult and GameShare (the end of any game's round)
+  composables/      useSeo, useForm, useAnalytics, useSearchHeaders, useGameProgress (the game kit:
+                    results, streak and round in progress in the browser) and useDailyProgress on it
   middleware/       auth, guest, staff, admin route guards
   assets/css/       main.css (the design), scale.css (fluid type and space), fonts.css
   error.vue         the error page
-shared/             code used by both client and server: Arabic normalisation and slugs, dialect language tags, the daily date helpers
+shared/             code used by both client and server
+  config/rules.ts   every number worth tuning: game rules, thresholds, rate limits, cache times, list sizes
+  tokens.ts         the palette, for the share cards and emails (main.css keeps its own copy, tested to match)
+  utils/            Arabic normalisation and slugs, dialect language tags, the daily date helpers
 server/
   api/              HTTP endpoints, one file per route; /api/admin/* for admins; /api/health for the container
   routes/           non-API routes: Google login callback, share-card images (/og/*), sitemap, robots, llms.txt,
                     the data exports (/data/lahga.json, /data/entries.csv), the IndexNow key, old /browse redirect
   middleware/       page cache, share-card rate limit, Google login redirect, search-visit (who searched, for the miss log)
   db/               Drizzle schema, connection with retry and migration lock, seed data (dialect tree, a few words)
-  utils/            session, validation, rate limits, page cache, email, tokens, games, form pages, contribution and admin helpers
-  plugins/          startup: warm the database and seed it, purge the page cache after edits, drop the session cookie for anonymous visitors
+  utils/            session, validation (incl. idParam, clampParam), rate limits, page cache, email, tokens,
+                    games, form pages, contribution and admin helpers, ordering (cardEntries, dialectGroup),
+                    dialects (entryCounts, topPairs), sql (rowsOf)
+  plugins/          startup: warm the database and seed it, purge the page cache after edits, drop the session
+                    cookie for anonymous visitors, mail server errors to the owner
 drizzle/            generated SQL migrations, committed
 scripts/            seed tooling (import, checks, review marks, source converters), the geo download and the backup restore drill
+tests/unit/         Vitest: the rules, not the pages (npm test)
+tests/smoke/        boots the build on a fresh database and fetches six pages (npm run test:smoke)
+.github/workflows/  CI: typecheck, tests, build and smoke test on every push
 ops/uptime/         the Cloudflare Worker that watches the site from outside
 public/             favicons, the default share image, self-hosted fonts
 docs/               product, data model, plans, roadmap, discovery
@@ -116,6 +128,12 @@ top of `app/assets/css/main.css`.
 - **Fluid scales.** Type and space steps come from Utopia (`scale.css`), so
   there are no breakpoints for sizing.
 - **Light and dark** come from `light-dark()`. `ThemeSwitch.vue` can force one.
+- **One palette.** The colours are defined twice on purpose: in `main.css` for
+  the page, and in `shared/tokens.ts` for the share cards and emails.
+  `tests/unit/palette.test.ts` fails if the two disagree.
+- **Accessible by default.** Buttons are at least 44px, an action inside a line
+  of text is a `button.link`, and the games announce each move through a live
+  region and move focus with the round.
 - The whole interface is right-to-left Arabic.
 
 ## Database workflow
