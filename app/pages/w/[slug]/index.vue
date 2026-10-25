@@ -133,7 +133,7 @@ const removeWord = async () => {
     </p>
 
     <p class="tools">
-      <small v-if="mine(word.createdBy)"><NuxtLink :to="`/w/${word.slug}/edit`">تعديل الكلمة</NuxtLink> · <a href="#" @click.prevent="removeWord">حذف</a> · </small>
+      <small v-if="mine(word.createdBy)"><NuxtLink :to="`/w/${word.slug}/edit`">تعديل الكلمة</NuxtLink> · <button type="button" class="link" @click="removeWord">حذف</button> · </small>
       <FlagButton target-type="word" :target-id="word.id" />
     </p>
 
@@ -161,14 +161,14 @@ const removeWord = async () => {
                   <template v-else>
                     <q :lang="dialectTag(e.dialect.slug)">{{ x.text }}</q>
                     <small v-if="x.gloss"> {{ x.gloss }}</small>
-                    <small v-if="mine(x.createdBy)"> · <a href="#" @click.prevent="toggle(`example-${x.id}`)">تعديل</a> · <a href="#" @click.prevent="remove('examples', x.id, 'المثال')">حذف</a></small>
+                    <small v-if="mine(x.createdBy)"> · <button type="button" class="link" :aria-expanded="open === `example-${x.id}`" @click="toggle(`example-${x.id}`)">تعديل</button> · <button type="button" class="link" @click="remove('examples', x.id, 'المثال')">حذف</button></small>
                   </template>
                 </li>
               </ul>
               <p v-if="loggedIn"><small class="left">
                 <template v-if="e.author">أضافها <NuxtLink :to="`/u/${e.author.id}`">{{ e.author.displayName }}</NuxtLink></template>
-                <template v-if="mine(e.createdBy)"> · <a href="#" @click.prevent="toggle(`entry-${e.id}`)">تعديل</a> · <a href="#" @click.prevent="remove('entries', e.id, 'المدخل')">حذف</a></template>
-                <template v-if="loggedIn && user?.emailVerified"> · <a href="#" @click.prevent="toggle(`add-example-${e.id}`)">أضف مثالاً</a></template>
+                <template v-if="mine(e.createdBy)"> · <button type="button" class="link" :aria-expanded="open === `entry-${e.id}`" @click="toggle(`entry-${e.id}`)">تعديل</button> · <button type="button" class="link" @click="remove('entries', e.id, 'المدخل')">حذف</button></template>
+                <template v-if="loggedIn && user?.emailVerified"> · <button type="button" class="link" :aria-expanded="open === `add-example-${e.id}`" @click="toggle(`add-example-${e.id}`)">أضف مثالاً</button></template>
               </small></p>
               <ExampleForm v-if="open === `add-example-${e.id}`" :entry-id="e.id" @done="done" @cancel="open = null" />
               <FlagButton target-type="entry" :target-id="e.id" />

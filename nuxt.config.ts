@@ -39,13 +39,24 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'ar', dir: 'rtl' },
-      // Apply the saved theme before the first paint (see app/components/ThemeSwitch.vue).
+      // Two things before any of the site's code runs:
+      //
+      // 1. A browser that refuses storage (site data blocked, some private
+      //    modes) throws on the first localStorage access. nuxt-auth-utils
+      //    reads it unguarded while a cached page hydrates, and the whole page
+      //    became the error page. In that case an in-memory stand-in takes
+      //    over for the visit: everything works, nothing outlives the tab.
+      // 2. Apply the saved theme before the first paint (app/components/ThemeSwitch.vue).
+      //
       // The analytics tag is not here: anything in app.head is baked in at build
       // time, and the build runs inside Docker without the site's environment,
       // so the tag would be compiled out for good. It is added at runtime
       // instead — see app/plugins/analytics.ts.
       script: [{
-        innerHTML: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
+        innerHTML: [
+          `try{localStorage.getItem('theme')}catch(e){var m=function(){var d={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(d,k)?d[k]:null},setItem:function(k,v){d[k]=String(v)},removeItem:function(k){delete d[k]},clear:function(){d={}},key:function(i){return Object.keys(d)[i]||null},get length(){return Object.keys(d).length}}};['localStorage','sessionStorage'].forEach(function(n){try{Object.defineProperty(window,n,{value:m(),configurable:true})}catch(e){}})}`,
+          `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`,
+        ].join(';'),
       }],
       title: 'لهجة - معجم اللهجات العربية',
       meta: [

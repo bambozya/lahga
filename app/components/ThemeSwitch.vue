@@ -5,9 +5,13 @@
 type Theme = 'auto' | 'light' | 'dark'
 const theme = ref<Theme>('auto')
 
+// Storage can throw (a private window, blocked site data); the switch then
+// still works for this visit, it just is not remembered.
 onMounted(() => {
-  const saved = localStorage.getItem('theme')
-  if (saved === 'light' || saved === 'dark') theme.value = saved
+  try {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light' || saved === 'dark') theme.value = saved
+  } catch { /* nothing remembered */ }
 })
 
 const choose = (value: Theme) => {
@@ -15,11 +19,13 @@ const choose = (value: Theme) => {
   const root = document.documentElement
   if (value === 'auto') {
     delete root.dataset.theme
-    localStorage.removeItem('theme')
   } else {
     root.dataset.theme = value
-    localStorage.setItem('theme', value)
   }
+  try {
+    if (value === 'auto') localStorage.removeItem('theme')
+    else localStorage.setItem('theme', value)
+  } catch { /* applied for this visit only */ }
 }
 </script>
 

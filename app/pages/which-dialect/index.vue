@@ -27,6 +27,14 @@ const busy = ref(false)
 const failure = ref('')
 const finalResult = ref<QuizResult | null>(null)
 
+// For screen readers (docs/ROADMAP.md B5): one live region, on the page from
+// the start, and focus that follows the game: to «الجولة التالية» after an
+// answer, to the new question after it, to the result at the end.
+const announcement = ref('')
+const nextButton = ref<HTMLButtonElement | null>(null)
+const question = ref<HTMLElement | null>(null)
+const resultPanel = ref<{ $el: HTMLElement } | null>(null)
+
 const remember = () => {
   if (round.value) progress.saveRound(date.value, { round: round.value, scores: scores.value, selectedId: selectedId.value, feedback: feedback.value })
 }
@@ -49,6 +57,13 @@ onMounted(() => {
   }
 })
 
+// Focus moves once busy is cleared (a disabled button cannot take focus) and
+// the page has redrawn (the button may not exist yet).
+const focusSoon = async (target: () => { focus(): void } | null | undefined) => {
+  await nextTick()
+  target()?.focus()
+}
+
 const choose = async (groupId: number) => {
   if (answered.value || busy.value || !round.value) return
   busy.value = true
@@ -59,11 +74,13 @@ const choose = async (groupId: number) => {
     feedback.value = data
     scores.value = [...scores.value, data.correct]
     remember()
+    announcement.value = data.correct ? 'صحيح!' : `غير صحيح. الإجابة: ${data.correctNameAr}.`
   } catch (e: any) {
     failure.value = e?.data?.statusMessage || 'تعذر إرسال الإجابة'
   } finally {
     busy.value = false
   }
+  if (answered.value) await focusSoon(() => nextButton.value)
 }
 
 const next = async () => {
@@ -71,6 +88,8 @@ const next = async () => {
     const result = { correct: scores.value.filter(Boolean).length, total: total.value }
     finalResult.value = result
     progress.recordResult(date.value, result)
+    announcement.value = `${arabicDigits(result.correct)} من ${arabicDigits(result.total)} إجابات صحيحة اليوم.`
+    await focusSoon(() => resultPanel.value?.$el)
     return
   }
   busy.value = true
@@ -80,13 +99,18 @@ const next = async () => {
     selectedId.value = null
     feedback.value = null
     remember()
+    announcement.value = `جولة ${arabicDigits(round.value.slot)} من ${arabicDigits(total.value)}: ${round.value.form}`
   } catch (e: any) {
     failure.value = e?.data?.statusMessage || 'تعذر تحميل الجولة التالية'
   } finally {
     busy.value = false
   }
+  if (!answered.value && !failure.value) await focusSoon(() => question.value)
 }
 
+const cardAlt = computed(() => finalResult.value
+  ? `بطاقة نتيجة من أي لهجة؟: ${arabicDigits(finalResult.value.correct)} من ${arabicDigits(finalResult.value.total)} إجابات صحيحة`
+  : '')
 const cardUrl = computed(() => {
   if (!date.value || !finalResult.value) return ''
   const q = new URLSearchParams({ date: date.value, correct: String(finalResult.value.correct), total: String(finalResult.value.total) })
@@ -114,9 +138,11 @@ useSeo({
       <p>كلمة كما تُقال في لهجة ما — أيّ لهجة تكون؟</p>
     </hgroup>
 
+    <p class="visually-hidden" aria-live="polite">{{ announcement }}</p>
+
     <GameResult
-      v-if="finalResult"
-      :card-url="cardUrl" card-alt="بطاقة نتيجة من أي لهجة؟" file-name="lahga-which-dialect.png"
+      v-if="finalResult" ref="resultPanel"
+      :card-url="cardUrl" :card-alt="cardAlt" file-name="lahga-which-dialect.png"
       :share-text="shareText" :streak="progress.streak(date)"
     >
       <p>{{ arabicDigits(finalResult.correct) }}/{{ arabicDigits(finalResult.total) }} إجابات صحيحة اليوم.</p>
@@ -128,7 +154,7 @@ useSeo({
       <p role="alert" v-if="failure">{{ failure }}</p>
       <p class="progress"><small>جولة {{ arabicDigits(round.slot) }} من {{ arabicDigits(total) }}</small></p>
 
-      <div class="question">
+      <div ref="question" class="question" tabindex="-1">
         <p class="context">
           بالفصحى: <b>{{ round.word.headword }}</b>
           <template v-if="round.word.definition"> — {{ round.word.definition }}</template>
@@ -147,11 +173,11 @@ useSeo({
         </li>
       </ul>
 
-      <div v-if="answered && feedback" class="feedback" role="status">
+      <div v-if="answered && feedback" class="feedback">
         <p v-if="feedback.correct">صحيح!</p>
         <p v-else>غير صحيح. الإجابة: <b>{{ feedback.correctNameAr }}</b></p>
         <p><NuxtLink v-if="feedback.word.slug" :to="`/w/${feedback.word.slug}`">افتح صفحة «{{ feedback.word.headword }}»</NuxtLink></p>
-        <p><button type="button" :disabled="busy" @click="next">{{ round.slot >= total ? 'النتيجة النهائية' : 'الجولة التالية' }}</button></p>
+        <p><button ref="nextButton" type="button" :disabled="busy" @click="next">{{ round.slot >= total ? 'النتيجة النهائية' : 'الجولة التالية' }}</button></p>
       </div>
     </template>
   </article>
@@ -169,5 +195,7 @@ useSeo({
 .choices button.correct { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 .choices button.wrong { text-decoration: line-through; opacity: 0.7; }
 
-.feedback { margin-block-start: var(--space-m); }
+/* The look of a status line (main.css [role="status"]), without the role: the
+   page's live region does the announcing. */
+.feedback { margin-block-start: var(--space-m); background: var(--surface); border-inline-start: 6px solid var(--accent); padding: var(--space-xs) var(--space-s); font-weight: 600; }
 </style>

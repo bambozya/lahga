@@ -24,7 +24,7 @@ const { busy, error, run } = useForm(async () => {
   <span v-if="loggedIn">
     <small v-if="sent" role="status">شكراً، وصل بلاغك.</small>
     <template v-else>
-      <small><a href="#" @click.prevent="open = !open">إبلاغ</a></small>
+      <small><button type="button" class="link" :aria-expanded="open" @click="open = !open">إبلاغ</button></small>
       <form v-if="open" @submit.prevent="run">
         <fieldset :disabled="busy">
           <legend>الإبلاغ عن مشكلة</legend>

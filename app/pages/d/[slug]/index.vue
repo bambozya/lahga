@@ -57,7 +57,7 @@ const proposal = useForm(async () => {
     <p><small>
       <template v-if="dialect.descriptionBy">الوصف من <NuxtLink v-if="dialect.descriptionBy.id" :to="`/u/${dialect.descriptionBy.id}`">{{ dialect.descriptionBy.displayName }}</NuxtLink><template v-else>{{ dialect.descriptionBy.displayName }}</template> · </template>
       <span v-if="proposed" role="status">شكراً، وصل اقتراحك وسينظر فيه المديرون.</span>
-      <a v-else href="#" @click.prevent="proposing = !proposing; description = description || dialect.descriptionAr || ''">اقترح وصفاً أفضل</a>
+      <button type="button" class="link" v-else :aria-expanded="proposing" @click="proposing = !proposing; description = description || dialect.descriptionAr || ''">اقترح وصفاً أفضل</button>
     </small></p>
     <ContributeGate v-if="proposing">
       <form @submit.prevent="proposal.run">

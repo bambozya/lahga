@@ -574,8 +574,9 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.4em;
-  min-height: 2.25rem;
-  min-width: 2.25rem;
+  /* 44px: a fingertip, not a cursor (WCAG 2.5.5). Fields and a.cta match. */
+  min-height: 2.75rem;
+  min-width: 2.75rem;
   padding: 0 1.1em;
   font-weight: 600;
   cursor: pointer;
@@ -613,6 +614,40 @@ button[aria-pressed="true"]:hover {
   background: var(--ink);
   border-color: var(--ink);
   color: var(--paper);
+}
+/* An action that sits inside a line of text (تعديل · حذف · إبلاغ) is a button
+   for the keyboard and the screen reader, and a link to the eye. Inline, so the
+   44px rule does not apply to it (WCAG 2.5.5, the inline exception). */
+button.link,
+button.link:hover {
+  display: inline;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+button.link:hover {
+  color: var(--accent);
+}
+/* Focus that a script moves (a new question, a finished round) for screen
+   readers: nothing to see, since the element is not one the keyboard reaches. */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+/* Text for screen readers only: on the page, not on the screen. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 /* A link that carries the main action of a page wears the button's clothes:
    the empty search result, the invitation to contribute. */
@@ -699,10 +734,11 @@ legend {
   font-family: var(--naskh);
   font-size: var(--step-1);
 }
-/* The end of a round: a status panel, roomier and in body weight. */
+/* The end of a round: the accent panel, roomier than a status line. */
 .game-result {
   margin-block-start: var(--space-m);
   padding: var(--space-m);
+  background: var(--surface);
   border: var(--thin);
   border-inline-start: 6px solid var(--accent);
   border-radius: var(--radius);

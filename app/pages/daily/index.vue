@@ -27,6 +27,13 @@ const failure = ref('')
 const result = ref<DailyResult | null>(null)
 const finished = computed(() => !!result.value)
 
+// For screen readers (docs/ROADMAP.md B5): one live region, on the page from
+// the start, so what changes after a guess is read out, and focus that follows
+// the round: back to the field for the next guess, to the result at the end.
+const announcement = ref('')
+const guessInput = ref<HTMLInputElement | null>(null)
+const resultPanel = ref<{ $el: HTMLElement } | null>(null)
+
 // A round already finished today shows its saved result straight away, with
 // no second request; one begun and left (a refresh, a closed tab) resumes
 // with the forms it had revealed.
@@ -45,6 +52,8 @@ const submit = async (skip: boolean) => {
   if (busy.value || finished.value) return
   busy.value = true
   failure.value = ''
+  // Focused once the form is enabled again: a disabled field cannot take focus.
+  let focusNext: (() => void) | undefined
   try {
     const data = await $fetch('/api/daily/guess', {
       method: 'POST',
@@ -54,14 +63,24 @@ const submit = async (skip: boolean) => {
     if ('word' in data) {
       result.value = data
       progress.recordResult(date.value, data)
+      announcement.value = data.correct
+        ? `أحسنت! خمّنتها من ${arabicDigits(data.guesses)} كشوف: ${data.word.headword}.`
+        : `لم تُخمَّن اليوم. الكلمة كانت ${data.word.headword}.`
+      focusNext = () => resultPanel.value?.$el.focus()
     } else if (data.next) {
       forms.value = [...forms.value, data.next]
       progress.saveRound(date.value, { forms: forms.value })
+      announcement.value = `${skip ? '' : 'ليست هي. '}التلميح ${arabicDigits(forms.value.length)}: ${data.next.form}، ${data.next.nameAr}.`
+      focusNext = () => guessInput.value?.focus()
     }
   } catch (e: any) {
     failure.value = e?.data?.statusMessage || 'تعذر إرسال التخمين'
   } finally {
     busy.value = false
+  }
+  if (focusNext) {
+    await nextTick()
+    focusNext()
   }
 }
 
@@ -82,6 +101,13 @@ const shareText = computed(() => {
 // Spoiler-free (docs/REACH.md, Phase R3): built from the score alone, so it
 // carries nothing that would give the word away to someone who has not
 // played yet.
+const cardAlt = computed(() => {
+  if (!result.value) return ''
+  const score = result.value.correct
+    ? `خُمّنت من ${arabicDigits(result.value.guesses)} كشوف من ${arabicDigits(total.value)}`
+    : 'لم تُخمَّن'
+  return `بطاقة نتيجة كلمة اليوم ${arabicDigits(number.value)}: ${score}`
+})
 const cardUrl = computed(() => {
   if (!date.value || !result.value) return ''
   const q = new URLSearchParams({
@@ -106,6 +132,8 @@ useSeo({
       <p>كلمة واحدة بالفصحى، تُكشف لهجة بعد لهجة. خمّنها بأقل عدد من الكشوف.</p>
     </hgroup>
 
+    <p class="visually-hidden" aria-live="polite">{{ announcement }}</p>
+
     <ol v-if="forms.length" class="reveals">
       <li v-for="f in forms" :key="f.dialect">
         <b>{{ f.form }}</b> <small>{{ f.nameAr }}</small>
@@ -113,8 +141,8 @@ useSeo({
     </ol>
 
     <GameResult
-      v-if="finished && result"
-      :card-url="cardUrl" card-alt="بطاقة نتيجة كلمة اليوم" file-name="lahga-daily.png"
+      v-if="finished && result" ref="resultPanel"
+      :card-url="cardUrl" :card-alt="cardAlt" file-name="lahga-daily.png"
       :share-text="shareText" :streak="progress.streak(date)"
     >
       <p v-if="result.correct">أحسنت! خمّنتها من {{ arabicDigits(result.guesses) }} كشوف.</p>
@@ -134,7 +162,7 @@ useSeo({
         <fieldset :disabled="busy">
           <label for="guess">الكلمة بالفصحى</label>
           <p class="row">
-            <input id="guess" v-model="guess" required maxlength="80" autocomplete="off" />
+            <input id="guess" ref="guessInput" v-model="guess" required maxlength="80" autocomplete="off" />
             <button type="submit">خمّن</button>
           </p>
         </fieldset>

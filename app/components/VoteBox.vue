@@ -67,6 +67,6 @@ const vote = async (value: 1 | -1) => {
 fieldset { display: inline-flex; align-items: center; gap: var(--space-2xs); margin: 0; padding: 0; border: 0; }
 fieldset > * { margin: 0; }
 legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-button { min-height: 2.25rem; min-width: 2.25rem; border-radius: 99rem; }
+button { border-radius: 99rem; }
 output { min-width: 2ch; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
 </style>
