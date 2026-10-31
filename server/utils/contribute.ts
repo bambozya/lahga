@@ -90,7 +90,9 @@ export const fields = {
   kind: v.optional(v.picklist(['word', 'phrase', 'proverb'], 'النوع غير معروف'), 'word'),
   dialect: v.pipe(v.string('اللهجة مطلوبة'), v.regex(/^[a-z0-9-]{2,60}$/, 'اللهجة غير معروفة')),
   form: arabic('الكلمة باللهجة', 1, 80),
-  // The same word with its harakat; see resolveForm().
+  // The same word with its harakat, for API callers that keep the two apart.
+  // The site's own forms send one field, harakat and all, and resolveForm()
+  // splits it.
   formVocalized: optionalArabic('الكلمة بالتشكيل', 80),
   // Optional: the MSA headword already defines the sense (see entries.meaning).
   meaning: optionalArabic('المعنى', 400),

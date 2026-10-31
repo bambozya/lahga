@@ -11,8 +11,9 @@ const emit = defineEmits<{ done: [], cancel: [] }>()
 const uid = useId()
 const form = reactive({
   dialect: props.entry?.dialect.slug ?? '',
-  form: props.entry?.form ?? '',
-  formVocalized: props.entry?.formVocalized ?? '',
+  // One field, with the harakat when the entry has them: the server splits
+  // it into the bare form and the vowelled one (splitForm).
+  form: props.entry?.formVocalized ?? props.entry?.form ?? '',
   meaning: props.entry?.meaning ?? '',
   notes: props.entry?.notes ?? '',
   exampleText: '',
@@ -21,10 +22,10 @@ const form = reactive({
 })
 const { busy, error, run } = useForm(async () => {
   if (props.entry) {
-    await $fetch(`/api/entries/${props.entry.id}`, { method: 'PATCH', body: { dialect: form.dialect, form: form.form, formVocalized: form.formVocalized, meaning: form.meaning, notes: form.notes, reason: form.reason } })
+    await $fetch(`/api/entries/${props.entry.id}`, { method: 'PATCH', body: { dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes, reason: form.reason } })
   } else {
     await $fetch('/api/entries', { method: 'POST', body: {
-      wordId: props.wordId, dialect: form.dialect, form: form.form, formVocalized: form.formVocalized, meaning: form.meaning, notes: form.notes,
+      wordId: props.wordId, dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
   }
@@ -44,12 +45,7 @@ const { busy, error, run } = useForm(async () => {
       <p>
         <label :for="`${uid}-form`">الكلمة كما تُقال في لهجتك</label>
         <input :id="`${uid}-form`" v-model="form.form" required maxlength="80" />
-        <small>اكتبها كما تكتبها في رسالة لأحد من أهل لهجتك، بلا حركات.</small>
-      </p>
-      <p>
-        <label :for="`${uid}-vocalized`">بالتشكيل <small>(اختياري)</small></label>
-        <input :id="`${uid}-vocalized`" v-model="form.formVocalized" maxlength="80" />
-        <small>الكلمة نفسها بالتشكيل، مثل «يِغَنِّج» لا «يغنج»؛ بها يقرؤها من لم يسمعها قط.</small>
+        <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات.</small>
       </p>
       <p>
         <label :for="`${uid}-meaning`">المعنى <small>(اختياري)</small></label>
