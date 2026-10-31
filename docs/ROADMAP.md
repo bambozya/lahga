@@ -120,6 +120,11 @@ Sizes assume evenings and weekends, as in PLAN.md.
    game with no account cannot stop someone passing six times to read the
    answer. The server protects two things only: the answer is not in the page,
    and a guess is checked against the right day's word.
+8. **Spelling follows CODA\*, with no exception for /g/.** Historical ق is
+   written ق in every dialect (قلب, قهوة, أقول), whether said /g/, /q/ or
+   /ʔ/; گ and ڨ are recorded as variants (#43) so they are still found, and
+   the sound lives in the pronunciation field (#45). Dialect letters stay
+   for sounds with no etymological letter: چ ڤ پ. Decided 2026-10-31.
 
 ## Track A: foundation
 
@@ -359,10 +364,24 @@ Nothing here is *Now*. The site has enough features for its content.
   the player's local midnight instead of 02:00 or 03:00 in Cairo and Riyadh.
   The server accepts today's date plus or minus one. A product decision; see
   "Needs from you".
+- **One spelling per form, following CODA\*** (two evenings plus a review
+  pass over weeks, #46): a one-screen Arabic house-style page with the
+  handful of CODA\* rules (etymological ق ث ذ ض ظ, ة kept, clitics attached,
+  dialect letters only where no etymological letter exists), the main form
+  made canonical, and a script that flags the existing forms that break the
+  rules for reviewers to settle in batches. Decision 8.
+  Pointed to by Nizar Habash (CAMeL Lab) on ARABIC-L, 2026-10-30; promised
+  there. The MADAR lexicon is a reference, never a source: its licence is
+  non-commercial.
 - **Other spellings of one word** (two or three evenings, #43): an entry can
   carry the other ways speakers spell it (Darija *had*: هذا، هدا، هاد، هاذ،
-  هد، هذ), and search and the form pages find every one of them. Lahga
-  records spellings; it does not standardise them.
+  هد، هذ), and search and the form pages find every one of them. The main
+  form is the canonical spelling (#46); the rest are variants under it.
+- **Pronunciation in writing** (two evenings, #45): a `pronunciation` field
+  per form in CAPHI, the ASCII notation from the same paper (`d i l w a 2 t
+  i`), validated at input, shown under the form, in the export. The cheap
+  sibling of audio: it answers "the script cannot show the Moroccan schwa"
+  before the bucket exists and stays next to the clip afterwards.
 - **Audio** (PLAN.md 6.1, a few days, #38): a short clip recorded in the
   browser for a dialect form, stored in S3-compatible storage, published at
   once and removable by flag. No trigger: pronunciation is the one thing
@@ -431,6 +450,11 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-10-31. Nizar Habash answered the ARABIC-L post with the CODA\*/CAPHI
+  guidelines; the reply promised to adopt them. #46 (canonical spelling) and
+  #45 (CAPHI field) added to *Next*; #43 reframed: the main form is
+  canonical, the others are variants. Decision 8 taken the same day: ق
+  canonical, گ/ڨ variants.
 - 2026-10-22. Audio (#38) moves from *Later* to *Next* without its trigger
   of 20 active contributors: the maintainer's call, on the AIDA feedback.
 
