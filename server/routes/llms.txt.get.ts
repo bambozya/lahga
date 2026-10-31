@@ -26,10 +26,10 @@ export default defineEventHandler(async (event) => {
   const lines = [
     '# لهجة (lahga.fyi)',
     '',
-    '> معجم تشاركي للهجات العربية: كل صفحة تبدأ من معنى بالفصحى، وتحتها الأشكال التي يُقال بها في اللهجات، كل شكل منسوب إلى لهجته، مع ملاحظات وأمثلة. Lahga is a crowd-sourced dictionary of spoken Arabic dialects, pivoted on Modern Standard Arabic; every page answers "how is this said in each dialect?".',
+    '> معجم تشاركي للهجات العربية: كل صفحة معنى واحد عنوانه بالفصحى، وتحته الكلمات التي يُقال بها في اللهجات، كل كلمة منسوبة إلى لهجتها، مع ملاحظات وأمثلة. الفصحى لغة العناوين فقط، لا أصل تُقاس عليه اللهجات. Lahga is a crowd-sourced, concept-based dictionary of spoken Arabic dialects: one page per meaning, every dialect\'s word for it, with Modern Standard Arabic as the language of the headwords; every page answers "how is this said in each dialect?".',
     '',
     // Exact counts with their date: a number is what an answer engine quotes.
-    `- الحجم: ${meta.words} كلمة بالفصحى، ${meta.entries} شكلاً دارجاً، ${meta.examples} مثالاً، في ${meta.dialects_with_forms} لهجة (بتاريخ ${meta.generated.slice(0, 10)}). من الأشكال ${meta.needs_review} لم يتحقق منها متحدّث بعد.`,
+    `- الحجم: ${meta.words} معنى، ${meta.entries} شكلاً دارجاً، ${meta.examples} مثالاً، في ${meta.dialects_with_forms} لهجة (بتاريخ ${meta.generated.slice(0, 10)}). من الأشكال ${meta.needs_review} لم يتحقق منها متحدّث بعد.`,
     '- اللغة: العربية فقط. الروابط ثابتة: /w/<الكلمة> لصفحة كلمة، /f/<الشكل> لصفحة كلمة دارجة، /d/<اللهجة> لصفحة لهجة، /d/<أ>/vs/<ب> لمقارنة لهجتين.',
     `- الرخصة: المحتوى كله برخصة CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). الاستشهاد: «لهجة، معجم اللهجات العربية» مع رابط الصفحة، مثلاً ${site}/w/…`,
     '- الصفحات تحمل بيانات منظمة (schema.org DefinedTerm / DefinedTermSet) ووسم لغة BCP-47 لكل شكل (arz، apc، afb، ary…).',

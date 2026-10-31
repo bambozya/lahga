@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
   const wordIds = [...new Set(rows.flatMap(e => e.links.filter(l => l.status === 'active' && l.word.status === 'active').map(l => l.wordId)))]
   const siblings = wordIds.length
     ? await db.select({
-        wordId: schema.wordEntryLinks.wordId, id: schema.entries.id, form: schema.entries.form,
+        wordId: schema.wordEntryLinks.wordId, id: schema.entries.id, form: schema.entries.form, formVocalized: schema.entries.formVocalized,
         slug: schema.dialects.slug, nameAr: schema.dialects.nameAr,
       })
       .from(schema.wordEntryLinks)
@@ -45,9 +45,9 @@ export default defineEventHandler(async (event) => {
     const words = e.links.filter(l => l.status === 'active' && l.word.status === 'active').map(l => l.word)
     const synonyms = words.flatMap(w => (byWord.get(w.id) ?? [])
       .filter(s => s.id !== e.id)
-      .map(s => ({ id: s.id, form: s.form, wordId: w.id, dialect: { slug: s.slug, nameAr: s.nameAr } })))
+      .map(s => ({ id: s.id, form: s.form, formVocalized: s.formVocalized, wordId: w.id, dialect: { slug: s.slug, nameAr: s.nameAr } })))
     return {
-      id: e.id, form: e.form, meaning: e.meaning, notes: e.notes, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy, createdAt: e.createdAt,
+      id: e.id, form: e.form, formVocalized: e.formVocalized, meaning: e.meaning, notes: e.notes, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy, createdAt: e.createdAt,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },
       words: words.map(w => ({ id: w.id, headword: w.headword })),
       examples: e.examples.filter(x => x.status === 'active').map(x => ({ id: x.id, text: x.text, gloss: x.gloss })),

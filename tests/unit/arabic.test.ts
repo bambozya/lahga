@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
-  arabicDigits, formKey, isArabicOnly, looseArabicKey, looseArabicPattern, normalizeArabic, slugify,
+  arabicDigits, bareForm, formKey, hasDiacritics, isArabicOnly, looseArabicKey, looseArabicPattern, normalizeArabic, slugify, splitForm,
 } from '../../shared/utils/arabic'
 
 describe('normalizeArabic', () => {
@@ -101,5 +101,33 @@ describe('arabicDigits', () => {
   it('renders Arabic-Indic digits', () => {
     expect(arabicDigits(18)).toBe('١٨')
     expect(arabicDigits(0)).toBe('٠')
+  })
+})
+
+describe('splitForm', () => {
+  it('keeps a bare form bare', () => {
+    expect(splitForm('يغنج')).toEqual({ form: 'يغنج', formVocalized: null })
+    expect(splitForm('يغنج', '')).toEqual({ form: 'يغنج', formVocalized: null })
+  })
+  it('pairs a bare form with its vowelled spelling', () => {
+    expect(splitForm('يغنج', 'يِغَنِّج')).toEqual({ form: 'يغنج', formVocalized: 'يِغَنِّج' })
+    expect(splitForm('هلق', 'هلّق')).toEqual({ form: 'هلق', formVocalized: 'هلّق' })
+  })
+  it('splits a form typed with harakat and no separate vowelled spelling', () => {
+    expect(splitForm('يِغَنِّج')).toEqual({ form: 'يغنج', formVocalized: 'يِغَنِّج' })
+    expect(splitForm('كتّر خيرك')).toEqual({ form: 'كتر خيرك', formVocalized: 'كتّر خيرك' })
+  })
+  it('refuses a vowelled spelling that is another word', () => {
+    expect(splitForm('يغنج', 'يِغَنِّي')).toBeNull()
+    expect(splitForm('بيت', 'بِنْت')).toBeNull()
+  })
+  it('drops a vowelled spelling that carries no mark', () => {
+    expect(splitForm('يغنج', 'يغنج')).toEqual({ form: 'يغنج', formVocalized: null })
+  })
+  it('bareForm and hasDiacritics agree with the search index on what a mark is', () => {
+    expect(bareForm('يِغَنِّج')).toBe('يغنج')
+    expect(bareForm('كـتاب')).toBe('كتاب')
+    expect(hasDiacritics('هلّق')).toBe(true)
+    expect(hasDiacritics('هلق')).toBe(false)
   })
 })

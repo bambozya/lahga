@@ -44,6 +44,7 @@ export default defineEventHandler(async (event) => {
       linkScore: l.score,
       id: l.entry.id,
       form: l.entry.form,
+      formVocalized: l.entry.formVocalized,
       meaning: l.entry.meaning,
       notes: l.entry.notes,
       score: l.entry.score,

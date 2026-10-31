@@ -34,7 +34,7 @@ export function dialectGroup(dialect: DialectRef & { parent?: DialectRef | null 
 type CardLink = {
   status: string
   entry: {
-    id: number, form: string, score: number, upvotes: number, downvotes: number, status: string,
+    id: number, form: string, formVocalized?: string | null, score: number, upvotes: number, downvotes: number, status: string,
     dialect: DialectRef & { parent?: DialectRef | null }
   }
 }
@@ -50,6 +50,7 @@ export function cardEntries(links: CardLink[]) {
     .map(l => ({
       id: l.entry.id,
       form: l.entry.form,
+      formVocalized: l.entry.formVocalized ?? null,
       score: l.entry.score,
       rank: wilson(l.entry.upvotes, l.entry.downvotes),
       dialect: { slug: l.entry.dialect.slug, nameAr: l.entry.dialect.nameAr },
@@ -57,5 +58,5 @@ export function cardEntries(links: CardLink[]) {
     }))
   return groupByRegion(entries)
     .flatMap(g => g.entries)
-    .map(e => ({ id: e.id, form: e.form, dialect: e.dialect }))
+    .map(e => ({ id: e.id, form: e.form, formVocalized: e.formVocalized, dialect: e.dialect }))
 }

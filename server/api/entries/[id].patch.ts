@@ -8,6 +8,7 @@ import { normalizeArabic } from '../../../shared/utils/arabic'
 const Body = v.object({
   dialect: v.optional(fields.dialect),
   form: v.optional(fields.form),
+  formVocalized: fields.formVocalized,
   meaning: v.optional(fields.meaning),
   notes: fields.notes,
   reason: fields.reason,
@@ -26,13 +27,16 @@ export default defineEventHandler(async (event) => {
   await db.transaction(async (tx) => {
     const [updated] = await tx.update(schema.entries).set({
       ...(dialect && { dialectId: dialect.id }),
-      ...(body.form !== undefined && { form: body.form, formNormalized: normalizeArabic(body.form) }),
+      ...(body.form !== undefined && (() => {
+        const split = resolveForm(body.form, body.formVocalized)
+        return { form: split.form, formVocalized: split.formVocalized, formNormalized: normalizeArabic(split.form) }
+      })()),
       ...(body.meaning !== undefined && { meaning: body.meaning || null }),
       ...(body.notes !== undefined && { notes: body.notes || null }),
       updatedAt: new Date(),
     }).where(eq(schema.entries.id, id)).returning()
     const slug = dialect?.slug ?? (await tx.query.dialects.findFirst({ where: eq(schema.dialects.id, updated!.dialectId) }))?.slug
-    await recordRevision(tx, 'entry', id, { dialect: slug, form: updated!.form, meaning: updated!.meaning, notes: updated!.notes }, user.id, body.reason)
+    await recordRevision(tx, 'entry', id, { dialect: slug, form: updated!.form, formVocalized: updated!.formVocalized, meaning: updated!.meaning, notes: updated!.notes }, user.id, body.reason)
   })
   return { ok: true }
 })

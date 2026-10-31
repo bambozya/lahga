@@ -45,6 +45,6 @@ export default defineEventHandler(async (event) => {
   const nextEntry = await db.query.entries.findFirst({ where: eq(schema.entries.id, nextId), with: { dialect: true } })
   return {
     correct: false,
-    next: nextEntry ? { dialect: nextEntry.dialect.slug, nameAr: nextEntry.dialect.nameAr, form: nextEntry.form } : null,
+    next: nextEntry ? { dialect: nextEntry.dialect.slug, nameAr: nextEntry.dialect.nameAr, form: nextEntry.formVocalized ?? nextEntry.form } : null,
   }
 })

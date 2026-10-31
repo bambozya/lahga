@@ -6,6 +6,7 @@
 defineProps<{
   form: {
     form: string
+    formVocalized?: string | null
     slug: string
     senses: {
       word: { id: number, slug: string | null, headword: string }
@@ -17,7 +18,7 @@ defineProps<{
 
 <template>
   <div class="form-card">
-    <dt><NuxtLink :to="`/f/${form.slug}`">{{ form.form }}</NuxtLink> <small>بالعامية · {{ namesOf(form.senses).join('، ') }}</small></dt>
+    <dt><NuxtLink :to="`/f/${form.slug}`">{{ shown(form) }}</NuxtLink> <small>بالعامية · {{ namesOf(form.senses).join('، ') }}</small></dt>
     <dd>
       <p class="glance">
         <span>معناها بالفصحى:</span>

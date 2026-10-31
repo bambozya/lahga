@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
     .where(live).groupBy(d.slug, d.nameAr, d.sortOrder).orderBy(asc(d.sortOrder))
 
   const items = slug
-    ? await db.select({ linkId: l.id, form: e.form, headword: w.headword, wordSlug: w.slug })
+    ? await db.select({ linkId: l.id, form: e.form, formVocalized: e.formVocalized, headword: w.headword, wordSlug: w.slug })
       .from(l).innerJoin(e, eq(l.entryId, e.id)).innerJoin(w, eq(l.wordId, w.id)).innerJoin(d, eq(e.dialectId, d.id))
       .where(and(live, eq(d.slug, slug))).orderBy(asc(w.headword)).limit(PAGE).offset((page - 1) * PAGE)
     : []

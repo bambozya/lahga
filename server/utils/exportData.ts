@@ -20,7 +20,7 @@ import { EXPORT_MAX_AGE_MS } from '../../shared/config/rules'
  */
 export interface ExportDialect { id: number, slug: string, name: string, language: string, parent: string | null, description: string | null, url: string }
 export interface ExportExample { id: number, text: string, gloss: string | null }
-export interface ExportEntry { id: number, form: string, dialect: string, language: string, meaning: string | null, notes: string | null, needs_review: boolean, examples: ExportExample[] }
+export interface ExportEntry { id: number, form: string, form_vocalized: string | null, dialect: string, language: string, meaning: string | null, notes: string | null, needs_review: boolean, examples: ExportExample[] }
 export interface ExportWord { id: number, slug: string, headword: string, kind: 'word' | 'phrase' | 'proverb', definition: string | null, source: string, updated: string, entries: ExportEntry[] }
 export interface ExportData {
   meta: {
@@ -73,7 +73,7 @@ export async function loadExport(): Promise<ExportData> {
         exampleCount += examples.length
         if (l.needsReview) reviewCount++
         filled.add(e.dialect.slug)
-        return { id: e.id, form: e.form, dialect: e.dialect.slug, language: dialectTag(e.dialect.slug), meaning: e.meaning, notes: e.notes, needs_review: l.needsReview, examples }
+        return { id: e.id, form: e.form, form_vocalized: e.formVocalized, dialect: e.dialect.slug, language: dialectTag(e.dialect.slug), meaning: e.meaning, notes: e.notes, needs_review: l.needsReview, examples }
       })
     entryCount += entries.length
     return {
@@ -88,7 +88,7 @@ export async function loadExport(): Promise<ExportData> {
     meta: {
       name: 'لهجة: معجم اللهجات العربية',
       url: site,
-      description: 'كلمات وعبارات وأمثال من اللهجات العربية، كل منها مربوط بمعناه بالفصحى ومنسوب إلى لهجته.',
+      description: 'كلمات وعبارات وأمثال من اللهجات العربية، مجموعة تحت المعنى الذي تقوله، كل منها منسوب إلى لهجته. عناوين المعاني بالفصحى.',
       license: 'https://creativecommons.org/licenses/by-sa/4.0/',
       attribution: `لهجة، معجم اللهجات العربية (${site})، برخصة CC BY-SA 4.0`,
       generated: new Date().toISOString(),
@@ -109,11 +109,11 @@ export function entriesCsv(data: ExportData): string {
     const s = v == null ? '' : String(v)
     return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
   }
-  const header = ['headword', 'kind', 'definition', 'form', 'dialect', 'dialect_name', 'language', 'meaning', 'notes', 'entry_id', 'word_id', 'source', 'license', 'needs_review']
+  const header = ['headword', 'kind', 'definition', 'form', 'form_vocalized', 'dialect', 'dialect_name', 'language', 'meaning', 'notes', 'entry_id', 'word_id', 'source', 'license', 'needs_review']
   const lines = [header.join(',')]
   for (const w of data.words) {
     for (const e of w.entries) {
-      lines.push([w.headword, w.kind, w.definition, e.form, e.dialect, names.get(e.dialect) ?? '', e.language, e.meaning, e.notes, e.id, w.id, w.source, 'CC BY-SA 4.0', e.needs_review].map(cell).join(','))
+      lines.push([w.headword, w.kind, w.definition, e.form, e.form_vocalized, e.dialect, names.get(e.dialect) ?? '', e.language, e.meaning, e.notes, e.id, w.id, w.source, 'CC BY-SA 4.0', e.needs_review].map(cell).join(','))
     }
   }
   // A byte-order mark, so a spreadsheet opened by double-click reads the Arabic.

@@ -3,7 +3,7 @@ import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
 import { fields } from '../../utils/contribute'
-import { normalizeArabic } from '../../../shared/utils/arabic'
+import { normalizeArabic, splitForm } from '../../../shared/utils/arabic'
 
 /**
  * Bulk import of seed content (admin only). The body is a list of words, each
@@ -119,8 +119,9 @@ export default defineEventHandler(async (event) => {
           continue
         }
         const meaning = echoesWord(e.meaning, e.form, w.headword) ? null : (e.meaning || null)
-        const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form: e.form, formNormalized, meaning, notes: e.notes || null, createdBy: authorId }).returning()
-        await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
+        const { form, formVocalized } = splitForm(e.form)!
+        const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form, formVocalized, formNormalized, meaning, notes: e.notes || null, createdBy: authorId }).returning()
+        await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
         const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId, needsReview: e.review }).returning()
         await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, authorId, 'استيراد')
         report.entriesCreated++

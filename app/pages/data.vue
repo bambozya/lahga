@@ -15,7 +15,7 @@ useSeo({
     '@type': 'Dataset',
     name: 'لهجة: معجم اللهجات العربية',
     alternateName: 'Lahga Arabic dialects dictionary',
-    description: 'كلمات وعبارات وأمثال من اللهجات العربية، كل منها مربوط بمعناه بالفصحى ومنسوب إلى لهجته، مع وسم لغة BCP-47 لكل شكل. Crowd-sourced dictionary of spoken Arabic dialects pivoted on Modern Standard Arabic.',
+    description: 'كلمات وعبارات وأمثال من اللهجات العربية، مجموعة تحت المعنى الذي تقوله، كل منها منسوب إلى لهجته، مع وسم لغة BCP-47 لكل شكل. Crowd-sourced, concept-based dictionary of spoken Arabic dialects: one entry per meaning, every dialect\'s word for it, with Modern Standard Arabic as the language of the headwords.',
     url: `${site}/data`,
     sameAs: [site, 'https://huggingface.co/datasets/lahga/arabic-dialects'],
     license: 'https://creativecommons.org/licenses/by-sa/4.0/',
@@ -47,11 +47,11 @@ useSeo({
     <dl>
       <div>
         <dt><a :href="`${site}/data/lahga.json`" download="lahga.json">lahga.json</a></dt>
-        <dd>المعجم كاملاً: اللهجات، ثم الكلمات وتحت كل كلمة أشكالها في اللهجات، وتحت كل شكل معناه وملاحظاته وأمثلته. لكل كلمة حقل <code>source</code> برابط صفحتها.</dd>
+        <dd>المعجم كاملاً: اللهجات، ثم الكلمات وتحت كل كلمة أشكالها في اللهجات، وتحت كل شكل معناه وملاحظاته وأمثلته. الشكل في <code>form</code> بلا حركات، وفي <code>form_vocalized</code> بالتشكيل حين أضافه أهله. لكل كلمة حقل <code>source</code> برابط صفحتها.</dd>
       </div>
       <div>
         <dt><a :href="`${site}/data/entries.csv`" download="lahga-entries.csv">entries.csv</a></dt>
-        <dd>جدول مسطّح: سطر لكل شكل في لهجته، مع الكلمة الفصيحة التي يُقال بها، ورابط المصدر، والرخصة. يُفتح في أي برنامج جداول.</dd>
+        <dd>جدول مسطّح: سطر لكل شكل في لهجته، بلا حركات وبها، مع الكلمة الفصيحة التي يُقال بها، ورابط المصدر، والرخصة. يُفتح في أي برنامج جداول.</dd>
       </div>
     </dl>
     <p v-if="meta">

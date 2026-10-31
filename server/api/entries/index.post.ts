@@ -10,6 +10,7 @@ const Body = v.object({
   wordId: fields.id,
   dialect: fields.dialect,
   form: fields.form,
+  formVocalized: fields.formVocalized,
   meaning: fields.meaning,
   notes: fields.notes,
   example: v.optional(v.object({ text: fields.text, gloss: fields.gloss })),
@@ -23,7 +24,8 @@ export default defineEventHandler(async (event) => {
   if (!word) throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة' })
   const dialect = await findDialect(db, body.dialect)
 
-  const formNormalized = normalizeArabic(body.form)
+  const { form, formVocalized } = resolveForm(body.form, body.formVocalized)
+  const formNormalized = normalizeArabic(form)
   const duplicate = await db.select({ id: schema.entries.id }).from(schema.entries)
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
     .where(and(
@@ -34,9 +36,9 @@ export default defineEventHandler(async (event) => {
 
   const id = await db.transaction(async (tx) => {
     const [entry] = await tx.insert(schema.entries).values({
-      dialectId: dialect.id, form: body.form, formNormalized, meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
+      dialectId: dialect.id, form, formVocalized, formNormalized, meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
-    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, user.id)
+    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, meaning: entry!.meaning, notes: entry!.notes }, user.id)
     const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: user.id, needsReview: await startsUnchecked(tx, user, dialect.id) }).returning()
     await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id, needsReview: link!.needsReview }, user.id)
     if (body.example) {

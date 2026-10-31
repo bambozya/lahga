@@ -1,6 +1,6 @@
 import { and, eq } from 'drizzle-orm'
 import { useDb, schema } from '../../../../db'
-import { normalizeArabic } from '../../../../../shared/utils/arabic'
+import { normalizeArabic, splitForm } from '../../../../../shared/utils/arabic'
 import { idParam } from '../../../../utils/validate'
 
 /**
@@ -29,11 +29,14 @@ export default defineEventHandler(async (event) => {
       }
       case 'entry': {
         const dialect = d.dialect ? await tx.query.dialects.findFirst({ where: and(eq(schema.dialects.slug, d.dialect)) }) : null
+        // A revision from before form_vocalized existed carries the harakat
+        // inside `form`; splitForm sorts that out the way the migration did.
+        const split = splitForm(d.form, d.formVocalized) ?? splitForm(d.form)!
         const [e] = await tx.update(schema.entries).set({
-          ...(dialect && { dialectId: dialect.id }), form: d.form, formNormalized: normalizeArabic(d.form), meaning: d.meaning ?? null, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
+          ...(dialect && { dialectId: dialect.id }), form: split.form, formVocalized: split.formVocalized, formNormalized: normalizeArabic(split.form), meaning: d.meaning ?? null, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
         }).where(eq(schema.entries.id, rev.targetId)).returning()
         if (!e) throw createError({ statusCode: 404, statusMessage: 'المدخل غير موجود' })
-        await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, meaning: e.meaning, notes: e.notes }, admin.id, reason)
+        await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, formVocalized: e.formVocalized, meaning: e.meaning, notes: e.notes }, admin.id, reason)
         break
       }
       case 'example': {

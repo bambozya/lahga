@@ -3,7 +3,7 @@
 // search that found nothing is told so on the page rather than bounced to the
 // login form and left to find the way back: ContributeGate carries ?headword=
 // into the link, so the form is waiting, filled in, when they return.
-useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى معجم لهجة: اربطها بمعناها بالفصحى واذكر مثالاً على استعمالها.', noindex: true })
+useSeo({ title: 'أضف كلمة', description: 'أضف كلمة من لهجتك إلى معجم لهجة: ضعها تحت المعنى الذي تقوله واذكر مثالاً على استعمالها.', noindex: true })
 // A search that found nothing sends the term along (?headword=…), so the page
 // opens on the word the visitor was already looking for.
 const route = useRoute()
@@ -13,7 +13,7 @@ const headword = String(route.query.headword ?? '').trim().slice(0, 80)
 const dialect = /^[a-z0-9-]{2,60}$/.test(String(route.query.dialect ?? '')) ? String(route.query.dialect) : ''
 const form = reactive({
   headword, definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
-  dialect, form: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
+  dialect, form: '', formVocalized: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
 })
 const existingSlug = ref<string | null>(null)
 const { busy, error, run } = useForm(async () => {
@@ -21,7 +21,7 @@ const { busy, error, run } = useForm(async () => {
   try {
     const { slug } = await $fetch('/api/words', { method: 'POST', body: {
       headword: form.headword, definition: form.definition, kind: form.kind,
-      dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes,
+      dialect: form.dialect, form: form.form, formVocalized: form.formVocalized, meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
     await navigateTo(`/w/${slug}?added=1`)
@@ -36,7 +36,7 @@ const { busy, error, run } = useForm(async () => {
   <article>
     <BreadCrumbs :trail="[{ label: 'أضف كلمة' }]" />
     <h1>أضف كلمة</h1>
-    <p>كل كلمة تُربط بمعناها بالفصحى، ثم يُضاف الشكل الذي تُقال به في لهجتك مع مثال. هكذا تظهر الكلمة نفسها بجانب مرادفاتها في اللهجات الأخرى.</p>
+    <p>كل صفحة في المعجم معنى واحد، وعنوانها بالفصحى. اختر المعنى أو أضفه، ثم اكتب الكلمة التي تقوله بها لهجتك مع مثال. هكذا تظهر كلمتك بجانب كلمات اللهجات الأخرى للمعنى نفسه.</p>
     <ContributeGate>
       <p role="alert" v-if="error">
         {{ error }}
@@ -73,7 +73,12 @@ const { busy, error, run } = useForm(async () => {
           <p>
             <label for="form">الكلمة كما تُقال في لهجتك</label>
             <input id="form" v-model="form.form" required maxlength="80" />
-            <small>اكتبها كما تكتبها في رسالة لأحد من أهل لهجتك. والتشكيل اختياري، يفيد حين يلتبس النطق.</small>
+            <small>اكتبها كما تكتبها في رسالة لأحد من أهل لهجتك، بلا حركات.</small>
+          </p>
+          <p>
+            <label for="vocalized">بالتشكيل <small>(اختياري)</small></label>
+            <input id="vocalized" v-model="form.formVocalized" maxlength="80" />
+            <small>الكلمة نفسها بالتشكيل، مثل «يِغَنِّج» لا «يغنج»؛ بها يقرؤها من لم يسمعها قط.</small>
           </p>
           <p>
             <label for="meaning">المعنى <small>(اختياري)</small></label>

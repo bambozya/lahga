@@ -382,6 +382,12 @@ Nothing here is *Now*. The site has enough features for its content.
   i`), validated at input, shown under the form, in the export. The cheap
   sibling of audio: it answers "the script cannot show the Moroccan schwa"
   before the bucket exists and stays next to the clip afterwards.
+- **Short vowels on forms** (shipped 2026-10-31, #47): a `form_vocalized` field
+  (يِغَنِّج) shown as the display form, validated to strip back to the bare
+  `form`, which stays canonical and searchable. Asked for at input; the
+  existing forms filled in by reviewers over time. Asked for by Nesrine
+  Basheer (UBC) on ARABIC-L for learners; promised there. Three layers:
+  harakat for readers, CAPHI (#45) for precision, audio (#38) for the sound.
 - **Audio** (PLAN.md 6.1, a few days, #38): a short clip recorded in the
   browser for a dialect form, stored in S3-compatible storage, published at
   once and removable by flag. No trigger: pronunciation is the one thing
@@ -450,6 +456,13 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-10-31. Short vowels (#47) shipped the same day: `form_vocalized` on
+  entries, shown wherever a form is a title, asked for in both forms,
+  validated to strip back to the bare form, in both exports; the 3,000
+  forms that already carried harakat inside `form` are split by the
+  migration. Haseeb Shehadeh (Helsinki) asked for the same thing on the list.
+- 2026-10-31. Nesrine Basheer (UBC) asked on ARABIC-L for short vowels on
+  forms, for learners; #47 added to *Next* and promised in reply.
 - 2026-10-31. Nizar Habash answered the ARABIC-L post with the CODA\*/CAPHI
   guidelines; the reply promised to adopt them. #46 (canonical spelling) and
   #45 (CAPHI field) added to *Next*; #43 reframed: the main form is

@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
     word: { id: number, slug: string | null, headword: string, definition: string | null, kind: string }
     draft: boolean
     entries: {
-      id: number, form: string, meaning: string | null, notes: string | null, draft: boolean, rank: number, score: number
+      id: number, form: string, formVocalized: string | null, meaning: string | null, notes: string | null, draft: boolean, rank: number, score: number
       dialect: { slug: string, nameAr: string, top: boolean }
       examples: { id: number, text: string, gloss: string | null }[]
     }[]
@@ -49,7 +49,7 @@ export default defineEventHandler(async (event) => {
       }).get(l.word.id)!
       if (!l.needsReview) s.draft = false
       s.entries.push({
-        id: e.id, form: e.form, meaning: e.meaning, notes: e.notes, draft: l.needsReview,
+        id: e.id, form: e.form, formVocalized: e.formVocalized, meaning: e.meaning, notes: e.notes, draft: l.needsReview,
         rank: wilson(e.upvotes, e.downvotes), score: e.score,
         // A region (مصري) is named before a city inside it (قاهري).
         dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr, top: e.dialect.parentId === null },
@@ -72,13 +72,14 @@ export default defineEventHandler(async (event) => {
     where: and(inArray(schema.wordEntryLinks.wordId, wordIds), eq(schema.wordEntryLinks.status, 'active')),
     with: { entry: { with: { dialect: true } } },
   })
-  const others = new Map<number, Map<string, { form: string, dialects: string[], draft: boolean, rank: number }>>()
+  const others = new Map<number, Map<string, { form: string, formVocalized: string | null, dialects: string[], draft: boolean, rank: number }>>()
   for (const l of siblings) {
     if (l.entry.status !== 'active') continue
     const k = formKey(l.entry.form)
     if (k === key) continue
     const forWord = others.get(l.wordId) ?? others.set(l.wordId, new Map()).get(l.wordId)!
-    const o = forWord.get(k) ?? forWord.set(k, { form: l.entry.form, dialects: [], draft: true, rank: 0 }).get(k)!
+    const o = forWord.get(k) ?? forWord.set(k, { form: l.entry.form, formVocalized: null, dialects: [], draft: true, rank: 0 }).get(k)!
+    o.formVocalized ??= l.entry.formVocalized
     if (!o.dialects.includes(l.entry.dialect.nameAr)) o.dialects.push(l.entry.dialect.nameAr)
     if (!l.needsReview) o.draft = false
     o.rank = Math.max(o.rank, wilson(l.entry.upvotes, l.entry.downvotes))
@@ -97,22 +98,26 @@ export default defineEventHandler(async (event) => {
     limit: 200,
     with: { dialect: true, links: { with: { word: true } } },
   })
-  const phrases = new Map<string, { form: string, dialects: string[], headword: string, wordSlug: string | null, draft: boolean }>()
+  const phrases = new Map<string, { form: string, formVocalized: string | null, dialects: string[], headword: string, wordSlug: string | null, draft: boolean }>()
   for (const e of near) {
     const k = formKey(e.form)
     const live = e.links.filter(l => l.status === 'active' && l.word.status === 'active')
     const link = live.find(l => !l.needsReview) ?? live[0]
     if (!link || !within(k)) continue
-    const p = phrases.get(k) ?? phrases.set(k, { form: e.form, dialects: [], headword: link.word.headword, wordSlug: link.word.slug, draft: true }).get(k)!
+    const p = phrases.get(k) ?? phrases.set(k, { form: e.form, formVocalized: null, dialects: [], headword: link.word.headword, wordSlug: link.word.slug, draft: true }).get(k)!
+    p.formVocalized ??= e.formVocalized
     if (!p.dialects.includes(e.dialect.nameAr)) p.dialects.push(e.dialect.nameAr)
     if (!link.needsReview) p.draft = false
   }
 
   // Counted per link, as the sitemap counts them (indexableForms), so the
   // address listed there is the one this page settles on.
-  const form = canonicalForm(ordered.flatMap(s => s.entries))
+  const all = ordered.flatMap(s => s.entries)
+  const form = canonicalForm(all)
   return {
     form,
+    // The title with its harakat, from the first entry of that spelling to carry them.
+    formVocalized: all.find(e => e.form === form && e.formVocalized)?.formVocalized ?? null,
     slug: formSlug(form),
     indexable: isIndexable(key, ordered.map(s => ({ headword: s.word.headword, draft: s.draft }))),
     senses: ordered.map(s => ({

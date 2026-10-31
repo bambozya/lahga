@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
 
   return {
     date: round.date, slot: n, total: QUIZ_ROUNDS,
-    form: entry.form,
+    form: entry.formVocalized ?? entry.form,
     word: { headword: word.headword, definition: word.definition },
     choices: round.choiceGroupIds.map(id => ({ id, nameAr: names.get(id) ?? '' })),
   }

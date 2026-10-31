@@ -46,7 +46,8 @@ A dialect's word for a concept.
 |------------------|--------------|-----------------------------------------|
 | id               | int pk       |                                         |
 | dialect_id       | int fk       | may point at a group or a sub-dialect   |
-| form             | text         | the dialect word, Arabic script         |
+| form             | text         | the dialect word, Arabic script, no harakat (canonical, searchable, the form page's address) |
+| form_vocalized   | text null    | the same word with its harakat (يِغَنِّج); stripped of them it must equal `form` |
 | form_normalized  | text idx     |                                         |
 | meaning          | text null    | only when the dialect word means something narrower than the headword |
 | notes            | text null    | register, connotation, origin           |

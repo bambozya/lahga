@@ -141,8 +141,8 @@ useSeo({
     <hgroup v-else class="intro">
       <h1>معجم اللهجات العربية</h1>
       <p v-if="size.ready.value && size.dialects.value">
-        «لهجة» معجم تشاركي مفتوح: أكثر من {{ size.words.value }} كلمة بالفصحى
-        و{{ size.entries.value }} مرادف لها في {{ size.dialects.value }} لهجة عربية.
+        «لهجة» معجم تشاركي مفتوح: أكثر من {{ size.words.value }} معنى،
+        و{{ size.entries.value }} كلمة دارجة لها في {{ size.dialects.value }} لهجة عربية.
         ابحث في الأعلى بالفصحى أو بأي لهجة، أو اقرأ ما وقعت عليه القرعة.
       </p>
       <p v-else>

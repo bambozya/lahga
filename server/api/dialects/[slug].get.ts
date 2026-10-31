@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
     descriptionBy: lastApproved ? publicUser(lastApproved.author) : null,
     topForms: topForms.map(f => f.form),
     entries: entries.map(e => ({
-      id: e.id, form: e.form, meaning: e.meaning, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy,
+      id: e.id, form: e.form, formVocalized: e.formVocalized, meaning: e.meaning, score: e.score, myVote: mine[e.id] ?? 0, createdBy: e.createdBy,
       dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr },
       words: e.links.filter(l => l.status === 'active').map(l => ({ id: l.word.id, slug: l.word.slug, headword: l.word.headword })),
     })),

@@ -2,7 +2,7 @@ import type { H3Event } from 'h3'
 import * as v from 'valibot'
 import { and, eq, sql } from 'drizzle-orm'
 import { useDb, schema, type Db } from '../db'
-import { isArabicOnly, normalizeArabic } from '../../shared/utils/arabic'
+import { isArabicOnly, normalizeArabic, splitForm } from '../../shared/utils/arabic'
 import { NEW_ACCOUNT_MS, RATE_LIMITS } from '../../shared/config/rules'
 
 type User = typeof schema.users.$inferSelect
@@ -90,6 +90,8 @@ export const fields = {
   kind: v.optional(v.picklist(['word', 'phrase', 'proverb'], 'النوع غير معروف'), 'word'),
   dialect: v.pipe(v.string('اللهجة مطلوبة'), v.regex(/^[a-z0-9-]{2,60}$/, 'اللهجة غير معروفة')),
   form: arabic('الكلمة باللهجة', 1, 80),
+  // The same word with its harakat; see resolveForm().
+  formVocalized: optionalArabic('الكلمة بالتشكيل', 80),
   // Optional: the MSA headword already defines the sense (see entries.meaning).
   meaning: optionalArabic('المعنى', 400),
   notes: optionalArabic('الملاحظات', 400),
@@ -97,4 +99,15 @@ export const fields = {
   gloss: optionalArabic('شرح المثال', 400),
   reason: optionalArabic('سبب التعديل', 200),
   id: v.pipe(v.number('المعرّف مطلوب'), v.integer(), v.minValue(1)),
+}
+
+/**
+ * The bare form and its vowelled spelling as they are stored (splitForm,
+ * shared/utils/arabic.ts), or a 400 when the vowelled spelling is a different
+ * word from the bare one.
+ */
+export function resolveForm(form: string, formVocalized?: string | null) {
+  const split = splitForm(form, formVocalized)
+  if (!split) throw createError({ statusCode: 400, statusMessage: 'الكلمة بالتشكيل يجب أن تكون الكلمة نفسها، لا كلمة أخرى' })
+  return split
 }

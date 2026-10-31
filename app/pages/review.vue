@@ -43,7 +43,7 @@ useSeo({
       <h2>{{ current.nameAr }}: {{ current.n }} شكلاً</h2>
       <dl class="drafts">
         <div v-for="it in data?.items" :key="it.linkId">
-          <dt><NuxtLink :to="`/w/${it.wordSlug}`">{{ it.form }}</NuxtLink></dt>
+          <dt><NuxtLink :to="`/w/${it.wordSlug}`">{{ shown(it) }}</NuxtLink></dt>
           <dd>{{ it.headword }}</dd>
         </div>
       </dl>

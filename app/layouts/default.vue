@@ -14,7 +14,7 @@ const { loggedIn, user } = useUserSession()
 // plain placeholder stands.
 const size = useDictionarySize()
 const placeholder = computed(() => size.ready.value
-  ? `ابحث في أكثر من ${size.words.value} كلمة و${size.entries.value} مرادف…`
+  ? `ابحث في أكثر من ${size.words.value} معنى و${size.entries.value} كلمة دارجة…`
   : 'ابحث عن كلمة…')
 </script>
 

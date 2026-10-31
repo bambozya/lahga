@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
     .filter(l => l.status === 'active' && l.entry.status === 'active')
     .map(l => ({
       id: l.entry.id,
-      form: l.entry.form,
+      form: l.entry.formVocalized ?? l.entry.form,
       score: l.entry.score,
       rank: wilson(l.entry.upvotes, l.entry.downvotes),
       updatedAt: l.entry.updatedAt,

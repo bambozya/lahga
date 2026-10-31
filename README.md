@@ -2,9 +2,11 @@
 
 معجم اللهجات العربية بمشاركة المستخدمين.
 
-A user-driven dictionary of Arabic dialects. Every dialect word is linked to a
-Modern Standard Arabic headword, so the site can show how the same idea is said
-across the Arab world.
+A user-driven, concept-based dictionary of Arabic dialects. Every page is one
+meaning, with every dialect's word for it side by side, so the site can show how
+the same idea is said across the Arab world. The headwords are in Modern
+Standard Arabic because it is the register every reader shares; it labels the
+meaning and is not the yardstick the dialects are measured against.
 
 - **Live site:** https://lahga.fyi
 - **Product description:** [docs/PROJECT.md](docs/PROJECT.md)

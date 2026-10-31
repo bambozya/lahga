@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
   const forms = puzzle.revealOrder
     .map(id => byId.get(id))
     .filter((e): e is NonNullable<typeof e> => !!e)
-    .map(e => ({ dialect: e.dialect.slug, nameAr: e.dialect.nameAr, form: e.form }))
+    .map(e => ({ dialect: e.dialect.slug, nameAr: e.dialect.nameAr, form: e.formVocalized ?? e.form }))
 
   return {
     date, number: puzzleNumber(date),

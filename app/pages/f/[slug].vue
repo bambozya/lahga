@@ -56,12 +56,12 @@ useSeo({
 
 <template>
   <article v-if="page">
-    <BreadCrumbs :trail="[{ label: page.form }]" />
+    <BreadCrumbs :trail="[{ label: shown(page) }]" />
 
     <!-- The form is the page; what it means in MSA is the answer, right under it. -->
     <hgroup class="pivot">
       <p><b>بالعامية</b> · {{ dialects.join('، ') }}</p>
-      <h1><dfn :lang="lang">{{ page.form }}</dfn></h1>
+      <h1><dfn :lang="lang">{{ shown(page) }}</dfn></h1>
       <p class="definition">
         معناها بالفصحى:
         <template v-for="(s, i) in page.senses" :key="s.word.id">

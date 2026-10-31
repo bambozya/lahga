@@ -5,6 +5,36 @@
 // Tashkeel (harakat), superscript alef, and tatweel.
 const DIACRITICS = /[ً-ْٰـ]/g
 
+/** The spelling without its harakat: what search, slugs and the canonical form use. */
+export function bareForm(input: string): string {
+  return input.normalize('NFKC').replace(DIACRITICS, '').replace(/\s+/g, ' ').trim()
+}
+
+/** Whether the text carries any harakat (or tatweel) at all. */
+export function hasDiacritics(input: string): boolean {
+  return new RegExp(DIACRITICS.source).test(input.normalize('NFKC'))
+}
+
+/**
+ * A dialect form and its vowelled spelling (entries.form, entries.form_vocalized):
+ * يغنج and يِغَنِّج. The bare form is canonical, searchable and the address of
+ * the form page; the vowelled one is for readers, and it must be the same
+ * word: strip its harakat and the bare form must come out. A form typed with
+ * harakat and no separate vowelled spelling is split, not refused, since
+ * that is how 3,000 forms were written before the field existed.
+ *
+ * Returns null when the two disagree — the caller turns that into a 400.
+ */
+export function splitForm(form: string, vocalized?: string | null): { form: string, formVocalized: string | null } | null {
+  const v = (vocalized ?? '').normalize('NFKC').replace(/\s+/g, ' ').trim()
+  if (!v) {
+    return hasDiacritics(form) ? { form: bareForm(form), formVocalized: form.normalize('NFKC').replace(/\s+/g, ' ').trim() } : { form: bareForm(form), formVocalized: null }
+  }
+  if (bareForm(v) !== bareForm(form)) return null
+  // A vowelled spelling without a single mark adds nothing.
+  return { form: bareForm(form), formVocalized: hasDiacritics(v) ? v : null }
+}
+
 /**
  * Normalises Arabic text for indexing and searching.
  * The original spelling is always stored and displayed; only the index uses this.

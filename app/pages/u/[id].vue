@@ -40,7 +40,7 @@ const roleLabel = { user: '', moderator: 'مشرف', admin: 'مدير' } as cons
       <h2>أشكال من لهجته</h2>
       <ul>
         <li v-for="e in contributions.entries" :key="e.id">
-          <b>{{ e.form }}</b> <NuxtLink :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
+          <b>{{ shown(e) }}</b> <NuxtLink :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           <template v-if="e.word"> بمعنى <NuxtLink :to="`/w/${e.word.slug}`">{{ e.word.headword }}</NuxtLink></template>
         </li>
       </ul>

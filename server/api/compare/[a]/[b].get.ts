@@ -40,6 +40,7 @@ export default defineEventHandler(async (event) => {
     definition: schema.words.definition,
     dialectId: schema.entries.dialectId,
     form: schema.entries.form,
+    formVocalized: schema.entries.formVocalized,
     formNormalized: schema.entries.formNormalized,
   })
     .from(schema.entries)
@@ -63,7 +64,7 @@ export default defineEventHandler(async (event) => {
     const side = aSet.has(r.dialectId) ? w.a : w.b
     if (!side.normalized.has(r.formNormalized)) {
       side.normalized.add(r.formNormalized)
-      side.forms.push(r.form)
+      side.forms.push(r.formVocalized ?? r.form)
     }
   }
 

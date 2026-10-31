@@ -109,8 +109,14 @@ export const words = pgTable('words', {
 export const entries = pgTable('entries', {
   id: serial('id').primaryKey(),
   dialectId: integer('dialect_id').notNull().references(() => dialects.id),
+  // The bare spelling, without harakat: canonical (one spelling per form),
+  // searchable, and what the form page is addressed by.
   form: text('form').notNull(),
   formNormalized: text('form_normalized').notNull(),
+  // The same word with its harakat (يِغَنِّج for يغنج), for readers who have
+  // never heard it. Optional; stripped of its marks it must equal `form`
+  // (splitForm in shared/utils/arabic.ts). Shown wherever the form is a title.
+  formVocalized: text('form_vocalized'),
   // Optional: the MSA word this entry links to already defines the sense. A
   // meaning is only worth writing when the dialect word says something the
   // headword does not — a narrower use, a different colour.

@@ -15,6 +15,7 @@ const Body = v.object({
   kind: fields.kind,
   dialect: fields.dialect,
   form: fields.form,
+  formVocalized: fields.formVocalized,
   meaning: fields.meaning,
   notes: fields.notes,
   example: v.optional(v.object({ text: fields.text, gloss: fields.gloss })),
@@ -45,11 +46,12 @@ export default defineEventHandler(async (event) => {
     }).returning()
     await recordRevision(tx, 'word', word!.id, { headword: word!.headword, definition: word!.definition, kind: word!.kind }, user.id)
 
+    const { form, formVocalized } = resolveForm(body.form, body.formVocalized)
     const [entry] = await tx.insert(schema.entries).values({
-      dialectId: dialect.id, form: body.form, formNormalized: normalizeArabic(body.form),
+      dialectId: dialect.id, form, formVocalized, formNormalized: normalizeArabic(form),
       meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
-    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, meaning: entry!.meaning, notes: entry!.notes }, user.id)
+    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, meaning: entry!.meaning, notes: entry!.notes }, user.id)
 
     const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word!.id, entryId: entry!.id, createdBy: user.id, needsReview: await startsUnchecked(tx, user, dialect.id) }).returning()
     await recordRevision(tx, 'link', link!.id, { wordId: word!.id, entryId: entry!.id, needsReview: link!.needsReview }, user.id)

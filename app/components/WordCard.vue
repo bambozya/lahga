@@ -7,7 +7,7 @@ const props = defineProps<{
     slug: string
     headword: string
     definition: string | null
-    entries: { id: number, form: string, dialect: { slug: string, nameAr: string } }[]
+    entries: { id: number, form: string, formVocalized?: string | null, dialect: { slug: string, nameAr: string } }[]
   }
   /** A word's evidence where a list is ranked by something — /divergent says how many forms across how many dialects. */
   note?: string
@@ -28,7 +28,7 @@ const forms = computed(() => formsOf(props.word.entries))
       <p v-if="forms.length" class="glance">
         <span>تُقال:</span>
         <template v-for="(f, i) in forms" :key="f.form">
-          <template v-if="i">، </template><NuxtLink :to="formPath(f.form)"><b>{{ f.form }}</b></NuxtLink> <small>{{ f.dialects.join('، ') }}</small>
+          <template v-if="i">، </template><NuxtLink :to="formPath(f.form)"><b>{{ shown(f) }}</b></NuxtLink> <small>{{ f.dialects.join('، ') }}</small>
         </template>
       </p>
     </dd>

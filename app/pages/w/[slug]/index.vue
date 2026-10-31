@@ -128,7 +128,7 @@ const removeWord = async () => {
     <p v-if="forms.length" class="glance">
       <span>تُقال:</span>
       <template v-for="(f, i) in forms" :key="f.form">
-        <template v-if="i">، </template><span :data-draft="f.draft || undefined" :title="f.draft ? 'لم يتحقق منها متحدّث بعد' : undefined"><a :href="`#entry-${f.entryId}`"><b>{{ f.form }}</b></a> <small>{{ f.dialects.join('، ') }}</small></span>
+        <template v-if="i">، </template><span :data-draft="f.draft || undefined" :title="f.draft ? 'لم يتحقق منها متحدّث بعد' : undefined"><a :href="`#entry-${f.entryId}`"><b>{{ shown(f) }}</b></a> <small>{{ f.dialects.join('، ') }}</small></span>
       </template>
     </p>
 
@@ -142,7 +142,7 @@ const removeWord = async () => {
       <dl>
         <div v-for="e in g.entries" :id="`entry-${e.id}`" :key="e.id">
           <dt :data-draft="isDraft(e) || undefined" :title="isDraft(e) ? 'لم يتحقق منها متحدّث بعد' : undefined">
-            <NuxtLink :to="formPath(e.form)"><b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b></NuxtLink>
+            <NuxtLink :to="formPath(e.form)"><b :lang="dialectTag(e.dialect.slug)">{{ shown(e) }}</b></NuxtLink>
             <NuxtLink v-if="e.dialect.slug !== g.slug" :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
           <dd>

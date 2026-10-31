@@ -6,10 +6,12 @@
  * The first entry that says it carries the line, so a list of forms doubles as
  * a table of contents for the detail below it.
  */
-export function formsOf(entries: { id: number, form: string, dialect: { nameAr: string }, needsReview?: boolean }[]) {
-  const byForm = new Map<string, { form: string, entryId: number, dialects: string[], draft: boolean }>()
+export function formsOf(entries: { id: number, form: string, formVocalized?: string | null, dialect: { nameAr: string }, needsReview?: boolean }[]) {
+  const byForm = new Map<string, { form: string, formVocalized: string | null, entryId: number, dialects: string[], draft: boolean }>()
   for (const e of entries) {
-    const seen = byForm.get(e.form) ?? byForm.set(e.form, { form: e.form, entryId: e.id, dialects: [], draft: true }).get(e.form)!
+    const seen = byForm.get(e.form) ?? byForm.set(e.form, { form: e.form, formVocalized: null, entryId: e.id, dialects: [], draft: true }).get(e.form)!
+    // The first entry to carry the harakat lends them to the line.
+    seen.formVocalized ??= e.formVocalized ?? null
     if (!seen.dialects.includes(e.dialect.nameAr)) seen.dialects.push(e.dialect.nameAr)
     // A line is a draft only while every dialect behind it is: one checked
     // speaker of the form is enough to write it plainly.
@@ -17,6 +19,12 @@ export function formsOf(entries: { id: number, form: string, dialect: { nameAr: 
   }
   return [...byForm.values()]
 }
+
+/**
+ * How a form is written where it is a title: with its harakat when a speaker
+ * added them (يِغَنِّج), bare otherwise. Links and keys keep using `form`.
+ */
+export const shown = (e: { form: string, formVocalized?: string | null }) => e.formVocalized || e.form
 
 /** A dialect form's own page (/f/…, server/utils/forms.ts). */
 export const formPath = (form: string) => `/f/${slugify(form)}`
