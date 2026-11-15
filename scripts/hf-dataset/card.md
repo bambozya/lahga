@@ -161,12 +161,15 @@ Uneven, and the table says how. Groups are followed by their varieties.
 
 ## Spelling
 
-Dialects have no standard spelling and none is imposed here: a form is written
-the way its speakers usually write it, mostly without diacritics. The same word
-can therefore differ by a letter between two varieties that pronounce it alike.
-No normalisation such as CODA has been applied yet. Where a form is written
-several ways, `form` is the one the site treats as main and `spellings` lists
-the others; a search for any of them finds the row.
+Dialects have no standard spelling. Since November 2026 the site's house style
+for `form` follows CODA\* (Habash et al., 2018): one conventional spelling per
+word, the same rules in every variety, etymological letters kept (ق for /g/,
+/q/ and /ʔ/ alike; ث ذ ظ; final ة), the negation particle ما written apart. The
+rules are at [{{site}}/spelling]({{site}}/spelling). Forms imported before that
+were written the way their speakers write them and are being brought to the
+house style one by one, so a snapshot still holds both kinds. Where a form is
+written several ways, `form` is the main spelling and `spellings` lists the
+others; a search for any of them finds the row.
 
 Where the script hides the pronunciation (ق said /g/, /q/ or /ʔ/, a vowel the
 harakat cannot write), `pronunciation` carries it in CAPHI, the ASCII notation

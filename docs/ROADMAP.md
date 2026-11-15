@@ -377,7 +377,7 @@ Nothing here is *Now*. The site has enough features for its content.
   the player's local midnight instead of 02:00 or 03:00 in Cairo and Riyadh.
   The server accepts today's date plus or minus one. A product decision; see
   "Needs from you".
-- **One spelling per form, following CODA\*** (two evenings plus a review
+- **One spelling per form, following CODA\*** (shipped 2026-11-15 as code; the review pass is content work; two evenings plus a review
   pass over weeks, #46): a one-screen Arabic house-style page with the
   handful of CODA\* rules (etymological ق ث ذ ض ظ, ة kept, clitics attached,
   dialect letters only where no etymological letter exists), the main form
@@ -481,6 +481,16 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-11-15. Spelling house style (#46) shipped: /spelling, one screen of
+  the CODA\* rules that decide most cases, linked from the add and edit
+  forms, the about page («الكتابة والنطق» rewritten), the pronunciation page
+  and the dataset card; `shared/utils/coda.ts` checks four of the rules
+  (گ ڨ ݣ for ق, ت د ض ز for ث ذ ظ ق when the dictionary knows the
+  etymological spelling, final ه for ة, ما glued to a verb) and
+  `npm run coda:flags` lists every form on the site that breaks one, with
+  the suggested spelling. The review pass over the flagged forms is content
+  work in batches, each change a revision; the old spelling goes under
+  «كتابات أخرى» (#43) when people write it.
 - 2026-11-15. «هل تُقال هكذا؟» (D5, #50) shipped: public /check queue of
   drafts, one card at a time, answers through the existing
   PUT /api/links/[id]/answer; turned-down drafts (shared/utils/drafts.ts,

@@ -12,7 +12,7 @@ import { MIN_ENTRIES } from '../../shared/config/rules'
  * indexing (server/utils/forms.ts). Cached for an hour, since the set changes
  * slowly and crawlers fetch it often.
  */
-const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', '/contact', '/games', '/daily', '/which-dialect', '/check', '/data', '/pronunciation']
+const STATIC = ['/', '/dialects', '/divergent', '/about', '/terms', '/privacy', '/contact', '/games', '/daily', '/which-dialect', '/check', '/data', '/spelling', '/pronunciation']
 
 export default defineEventHandler(async (event) => {
   const site = useRuntimeConfig().public.siteUrl.replace(/\/$/, '')

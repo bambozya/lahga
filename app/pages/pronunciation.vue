@@ -67,7 +67,8 @@ useSeo({
         الترميز من مختبر CAMeL في جامعة نيويورك أبوظبي، والجدول والأمثلة من ورقة
         <a href="https://aclanthology.org/L18-1574/" rel="noopener">Unified Guidelines and Resources for Arabic Dialect Orthography</a>
         (Habash et al., LREC 2018)، التي تضع أيضاً قواعد CODA* لكتابة الكلمة
-        الدارجة. وموارد المختبر في
+        الدارجة، وهي قواعد <NuxtLink to="/spelling">رسم الكلمة</NuxtLink> في هذا
+        المعجم. وموارد المختبر في
         <a href="http://resources.camel-lab.com/" rel="noopener">resources.camel-lab.com</a>.
       </p>
     </section>

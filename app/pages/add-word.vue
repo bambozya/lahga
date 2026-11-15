@@ -74,7 +74,7 @@ const { busy, error, run } = useForm(async () => {
           <p>
             <label for="form">الكلمة كما تُقال في لهجتك</label>
             <input id="form" v-model="form.form" required maxlength="80" />
-            <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات.</small>
+            <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات. والرسم على <NuxtLink to="/spelling">قواعد المعجم</NuxtLink>: الحرف على أصله، «قال» لا «گال».</small>
           </p>
           <p>
             <label for="spellings">كتابات أخرى <small>(اختيارية)</small></label>
