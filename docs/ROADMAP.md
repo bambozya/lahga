@@ -334,6 +334,19 @@ with answers come first so they get confirmed instead of spreading thin.
 Guest answer limit 60 → 240 an hour. *Done when:* a signed-out stranger on a
 phone answers twenty drafts in a row without leaving the page.
 
+**D6. «هل تُقال هكذا؟» as rounds** (shipped 2026-11-15, #51). D5 gave nothing
+back: an endless queue and a grey count, and people left after three cards.
+Now a round is ten cards under a row of nuqtas, then a result panel with a
+daily streak (the games' kit, its own key), a line to share that carries the
+`/check?dialect=…` link, and «جولة أخرى». An answer that settles a draft turns
+its nuqta green and says so at full size. The picker is a list: main dialects
+with their sub-dialects indented under them, each with a bar of how many of
+its forms a speaker stands behind. The rule that holds: a card counts once it
+is seen, so «لا» and «لا أعرف» move the round on exactly as «نعم» does; no
+points, no leaderboard. On `/games` the entry reads as the third thing to do
+each day, with an icon that can be read (`rule`: a check and a cross, #53).
+Left as an idea: showing how others answered, after you answer.
+
 ### Next
 
 **D2. «كيف تقولها في لهجتك؟»** (2 to 3 days). On a word page, a visitor picks
@@ -481,6 +494,16 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-11-15. «هل تُقال هكذا؟» as rounds (D6, #51) shipped: CHECK_ROUND = 10,
+  a round kept in the browser through useGameProgress (`lahga-check`), one
+  finished round a day for the streak; /api/check returns every dialect with
+  forms as a tree (`depth`, `n` still asked, `checked`, `total`;
+  shared/utils/check.ts), and the bar is checked of total, so it counts
+  forms from human sources as checked from the start. A settled draft is
+  green (`right`), and «تراجع» is not offered on it, since a settled draft is
+  never reopened. Fixed on the way: the page never asked for more cards
+  after «نعم» or «لا». The entry's icon on /games replaced with Material's
+  `rule` (#53); the old path was no icon at all.
 - 2026-11-15. Games (#48, #49) shipped: `right` (green, #2f6b3a / #7fd08a)
   in shared/tokens.ts and `--right` in main.css, used by the games alone for
   a right answer; wrong is ink, red is never a result colour. Both share
