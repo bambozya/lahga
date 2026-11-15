@@ -2,7 +2,8 @@
 @import "./scale.css";
 
 /* ------------------------------------------------------------------
-   Nuqta. Ink, paper and one colour.
+   Nuqta. Ink, paper and one colour; and green, in the games only, for a
+   right answer (--right), because red reads as "wrong".
    The skeleton is still classless: elements are styled by what they
    are, so the markup must be honest (the feed is a <dl>, a dialect tag
    is <a rel="tag">, an example is <q>, a date is <time>, the vote score
@@ -27,6 +28,7 @@
   --muted: light-dark(#5c574c, #aaa397);
   --hair: light-dark(#d5cfc0, #3b372e);
   --accent: light-dark(#b8321a, #ff8466);
+  --right: light-dark(#2f6b3a, #7fd08a);
   --rule: 3px solid var(--ink);
   --thin: 1px solid var(--hair);
   --radius: 6px;

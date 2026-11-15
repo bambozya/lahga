@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { PALETTE } from '../../shared/tokens'
+import { NUQTA_PATH, PALETTE } from '../../shared/tokens'
 
 // main.css keeps its own copy of the palette (CSS stays plain CSS), so this is
 // what keeps the copy honest (docs/ROADMAP.md B2): change a colour in one place
@@ -37,6 +37,15 @@ describe('the palette', () => {
 
   it('keeps the mark\'s tile the same ink as the page', () => {
     expect(PALETTE.mark.tile).toBe(PALETTE.light.ink)
+  })
+
+  it('main.css draws the nuqta masks with the path shared/tokens.ts has', () => {
+    const block = css.match(/:root\s*\{([^}]*)\}/)?.[1] ?? ''
+    for (const name of ['nuqta', 'nuqta-open']) {
+      const uri = block.match(new RegExp(`--${name}:\\s*url\\("([^"]+)"\\)`))?.[1]
+      expect(uri, `--${name} is missing from main.css`).toBeDefined()
+      expect(decodeURIComponent(uri!), `--${name}`).toContain(`d='${NUQTA_PATH}'`)
+    }
   })
 
   it('the favicon only uses colours from the palette', () => {

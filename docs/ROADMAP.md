@@ -405,11 +405,11 @@ Nothing here is *Now*. The site has enough features for its content.
   existing forms filled in by reviewers over time. Asked for by Nesrine
   Basheer (UBC) on ARABIC-L for learners; promised there. Three layers:
   harakat for readers, CAPHI (#45) for precision, audio (#38) for the sound.
-- **Games: a right answer is green, not red** (one evening, #48): the result
+- **Games: a right answer is green, not red** (shipped 2026-11-15; one evening, #48): the result
   cards and «من أي لهجة؟» show a right answer in the accent, and red reads as
   wrong. A second colour, `right`, used only for results in the games; wrong
   stays ink, and the emoji line follows (🟩 ⬛ ⬜).
-- **Games: nuqtas instead of squares** (one evening, #49): the result row on
+- **Games: nuqtas instead of squares** (shipped 2026-11-15; one evening, #49): the result row on
   the cards and the result panels drawn with the nuqta, filled for a used
   attempt and open for one never reached. The share text stays emoji. Check
   first that six in a row still read as a score at preview size.
@@ -481,6 +481,12 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-11-15. Games (#48, #49) shipped: `right` (green, #2f6b3a / #7fd08a)
+  in shared/tokens.ts and `--right` in main.css, used by the games alone for
+  a right answer; wrong is ink, red is never a result colour. Both share
+  cards and both result panels draw the result as a row of nuqtas
+  (NUQTA_PATH in shared/tokens.ts, the same path as the CSS masks, checked by
+  the palette test), filled or open; share text 🟩 ⬛ ⬜.
 - 2026-11-15. Spelling house style (#46) shipped: /spelling, one screen of
   the CODA\* rules that decide most cases, linked from the add and edit
   forms, the about page («الكتابة والنطق» rewritten), the pronunciation page

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { REVEALS } from '~~/shared/config/rules'
+import { dailyMarks, marksText } from '~~/shared/utils/games'
 import type { DailyForm, DailyResult } from '~/composables/useDailyProgress'
 // «كلمة اليوم» (docs/REACH.md, Phase R3): one word, revealed one dialect at a
 // time, hardest form first. No account, no server-side session — progress and
@@ -84,19 +85,13 @@ const submit = async (skip: boolean) => {
   }
 }
 
-const arSquares = computed(() => {
-  if (!result.value) return ''
-  const { guesses, correct } = result.value
-  return Array.from({ length: total.value }, (_, i) => {
-    const attempt = i + 1
-    if (attempt > guesses) return '⬜'
-    return attempt === guesses && correct ? '🟩' : '🟥'
-  }).join('')
-})
+// One mark per attempt (shared/utils/games.ts): nuqtas on the page and the
+// card, emoji in the share text, all from the same list.
+const marks = computed(() => result.value ? dailyMarks(result.value.guesses, result.value.correct, total.value) : [])
 const shareText = computed(() => {
   if (!result.value) return ''
   const score = result.value.correct ? arabicDigits(result.value.guesses) : '✗'
-  return `كلمة اليوم ${arabicDigits(number.value)} · ${score}/${arabicDigits(total.value)}\n${arSquares.value}\nlahga.fyi/daily`
+  return `كلمة اليوم ${arabicDigits(number.value)} · ${score}/${arabicDigits(total.value)}\n${marksText(marks.value)}\nlahga.fyi/daily`
 })
 // Spoiler-free (docs/REACH.md, Phase R3): built from the score alone, so it
 // carries nothing that would give the word away to someone who has not
@@ -151,7 +146,7 @@ useSeo({
         <NuxtLink :to="`/w/${result.word.slug}`"><b>{{ result.word.headword }}</b></NuxtLink>
         <template v-if="result.word.definition"> — {{ result.word.definition }}</template>
       </p>
-      <p class="squares" dir="ltr">{{ arSquares }}</p>
+      <NuqtaRow :marks="marks" :label="result.correct ? `خُمّنت من ${arabicDigits(result.guesses)} كشوف من ${arabicDigits(total)}` : `لم تُخمَّن من ${arabicDigits(total)} كشوف`" />
       <template #links>
         <NuxtLink :to="`/w/${result.word.slug}`" class="cta">افتح صفحة الكلمة</NuxtLink>
       </template>
@@ -180,7 +175,6 @@ useSeo({
 .guess input { flex: 1; min-width: 0; font-size: var(--step-1); }
 
 .answer { font-size: var(--step-1); }
-.squares { font-size: var(--step-2); letter-spacing: 0.15em; }
 
 .archive { margin-block-start: var(--space-l); border-block-start: var(--rule); padding-block-start: var(--space-s); }
 </style>

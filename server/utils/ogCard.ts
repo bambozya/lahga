@@ -2,7 +2,8 @@ import { Resvg } from '@resvg/resvg-js'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { writeFile } from 'node:fs/promises'
-import { PALETTE } from '../../shared/tokens'
+import { NUQTA_PATH, PALETTE } from '../../shared/tokens'
+import { dailyMarks, quizMarks, type Mark } from '../../shared/utils/games'
 
 /**
  * Share cards (docs/REACH.md, Phase R2). Hand-written SVG, not satori: satori
@@ -28,7 +29,7 @@ export const CARD_WIDTH = 1080
 export const CARD_HEIGHT = 1350
 
 // The site's light palette (shared/tokens.ts): a card is seen on someone else's screen.
-const { paper: PAPER, ink: INK, muted: MUTED, hair: HAIR, accent: ACCENT } = PALETTE.light
+const { paper: PAPER, ink: INK, muted: MUTED, hair: HAIR, accent: ACCENT, right: RIGHT } = PALETTE.light
 
 const PAD = 52
 
@@ -420,13 +421,35 @@ export async function divergentCardSvg(opts: { words: { headword: string, forms:
 }
 
 /**
+ * A result row on a card (#49): one nuqta per attempt or round, the shape the
+ * site uses everywhere (NUQTA_PATH), centred between the two rules. Green for
+ * the one that was right (#48: the accent is red, and red reads as "wrong"),
+ * ink once used, the open outline if the round ended before it was reached.
+ * Left to right, oldest first, the way the page sets it, not by the text
+ * direction around it.
+ */
+function nuqtaRow(marks: Mark[], size: number, gap: number) {
+  const n = marks.length
+  let x = (CARD_WIDTH - (n * size + (n - 1) * gap)) / 2
+  const y = (RULE1_Y + RULE2_Y) / 2 - size / 2
+  const k = size / 100
+  let out = ''
+  for (const m of marks) {
+    const paint = m === 'open'
+      ? `fill="none" stroke="${HAIR}" stroke-width="${(8 / k).toFixed(1)}"`
+      : `fill="${m === 'right' ? RIGHT : INK}"`
+    out += `<path transform="translate(${x} ${y}) scale(${k})" d="${NUQTA_PATH}" ${paint}/>`
+    x += size + gap
+  }
+  return out
+}
+
+/**
  * The daily game's result card (docs/REACH.md, Phase R3): spoiler-free — no
  * headword, no dialect form, nothing that gives the answer away — so today's
  * result can be shared by someone who has not played yet without ruining it
- * for them. The palette stays inside the site's own ink/paper/one-accent
- * system rather than borrowing Wordle's green: a square is ink once used, the
- * accent on the one that landed, hollow if the round ended before it was
- * reached.
+ * for them. One nuqta per attempt (nuqtaRow): green where it landed, ink once
+ * used, open if the round ended first; the status line goes green with it.
  */
 export async function dailyResultCardSvg(opts: { number: number, guesses: number, correct: boolean, total: number }) {
   let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">كلمة اليوم</text>`
@@ -444,33 +467,21 @@ export async function dailyResultCardSvg(opts: { number: number, guesses: number
   body += `<text x="${CONTENT_RIGHT - hashWidth - numSize * 0.05}" y="${HEADWORD_Y}" text-anchor="end" font-family="${NASKH}" font-weight="700" font-size="${numSize}" fill="${INK}">${esc(numText)}</text>`
 
   const status = opts.correct ? `حلّها من ${arabicDigits(opts.guesses)} كشوف` : 'لم تُحل اليوم'
-  body += `<text x="${CONTENT_RIGHT}" y="${DEFINITION_Y}" text-anchor="end" font-family="${SANS}" font-size="44" fill="${opts.correct ? ACCENT : MUTED}">${esc(status)}</text>`
+  body += `<text x="${CONTENT_RIGHT}" y="${DEFINITION_Y}" text-anchor="end" font-family="${SANS}" font-size="44" fill="${opts.correct ? RIGHT : MUTED}">${esc(status)}</text>`
   body += `<line x1="${PAD}" y1="${RULE1_Y}" x2="${CONTENT_RIGHT}" y2="${RULE1_Y}" stroke="${HAIR}" stroke-width="4"/>`
 
-  // Left to right, oldest attempt first: a sequence of attempts over time
-  // reads the way the page itself sets it (see app/pages/daily/index.vue),
-  // not by the text direction around it.
-  const n = Math.max(1, Math.min(opts.total, 6))
-  const size = 116
-  const gap = 24
-  let x = (CARD_WIDTH - (n * size + (n - 1) * gap)) / 2
-  const y = (RULE1_Y + RULE2_Y) / 2 - size / 2
-  for (let i = 1; i <= n; i++) {
-    const used = i <= opts.guesses
-    const landed = opts.correct && i === opts.guesses
-    const fill = landed ? ACCENT : used ? INK : PAPER
-    body += `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="18" fill="${fill}" stroke="${used ? fill : HAIR}" stroke-width="6"/>`
-    x += size + gap
-  }
+  // A nuqta covers less of its box than a square did, so the box is larger
+  // (136 for 116) to keep six of them reading as a score at preview size.
+  body += nuqtaRow(dailyMarks(opts.guesses, opts.correct, Math.max(1, Math.min(opts.total, 6))), 136, 20)
   return frame(body)
 }
 
 /**
- * «من أي لهجة؟»'s result card (docs/REACH.md, Phase R3): three squares, ink
- * for a wrong round and the accent for a right one — no unused/hollow state
- * the way كلمة اليوم's card has, since every round here is always answered.
- * Spoiler-free the same way: nothing naming a word or a dialect is ever read
- * here, only the score.
+ * «من أي لهجة؟»'s result card (docs/REACH.md, Phase R3): three nuqtas, green
+ * for a right round and ink for a wrong one — no open state the way كلمة
+ * اليوم's card has, since every round here is always answered. Spoiler-free
+ * the same way: nothing naming a word or a dialect is ever read here, only
+ * the score.
  */
 export async function dialectQuizResultCardSvg(opts: { correct: number, total: number }) {
   let body = `<text x="${CONTENT_RIGHT}" y="${LABEL_Y}" text-anchor="end" font-family="${SANS}" font-weight="600" font-size="44" fill="${MUTED}">من أي لهجة؟</text>`
@@ -478,16 +489,7 @@ export async function dialectQuizResultCardSvg(opts: { correct: number, total: n
   body += `<text x="${CONTENT_RIGHT}" y="${DEFINITION_Y}" text-anchor="end" font-family="${SANS}" font-size="44" fill="${MUTED}">إجابات صحيحة اليوم</text>`
   body += `<line x1="${PAD}" y1="${RULE1_Y}" x2="${CONTENT_RIGHT}" y2="${RULE1_Y}" stroke="${HAIR}" stroke-width="4"/>`
 
-  const n = Math.max(1, opts.total)
-  const size = 140
-  const gap = 32
-  let x = (CARD_WIDTH - (n * size + (n - 1) * gap)) / 2
-  const y = (RULE1_Y + RULE2_Y) / 2 - size / 2
-  for (let i = 1; i <= n; i++) {
-    const fill = i <= opts.correct ? ACCENT : INK
-    body += `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="20" fill="${fill}"/>`
-    x += size + gap
-  }
+  body += nuqtaRow(quizMarks(opts.correct, Math.max(1, opts.total)), 168, 32)
   return frame(body)
 }
 

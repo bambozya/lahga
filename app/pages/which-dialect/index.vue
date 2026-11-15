@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { QUIZ_ROUNDS } from '~~/shared/config/rules'
+import { marksText, quizMarks } from '~~/shared/utils/games'
 // «من أي لهجة؟» (docs/REACH.md, Phase R3): three multiple-choice rounds a day,
 // each asking which dialect group says a given form. Unlike كلمة اليوم there is
 // nothing to reveal gradually — one guess ends a round either way — so the
@@ -119,8 +120,7 @@ const cardUrl = computed(() => {
 const shareText = computed(() => {
   if (!finalResult.value) return ''
   const { correct, total: t } = finalResult.value
-  const squares = Array.from({ length: t }, (_, i) => i < correct ? '🟩' : '🟥').join('')
-  return `من أي لهجة؟ ${arabicDigits(correct)}/${arabicDigits(t)}\n${squares}\nlahga.fyi/which-dialect`
+  return `من أي لهجة؟ ${arabicDigits(correct)}/${arabicDigits(t)}\n${marksText(quizMarks(correct, t))}\nlahga.fyi/which-dialect`
 })
 
 useSeo({
@@ -146,6 +146,7 @@ useSeo({
       :share-text="shareText" :streak="progress.streak(date)"
     >
       <p>{{ arabicDigits(finalResult.correct) }}/{{ arabicDigits(finalResult.total) }} إجابات صحيحة اليوم.</p>
+      <NuqtaRow :marks="quizMarks(finalResult.correct, finalResult.total)" :label="`${arabicDigits(finalResult.correct)} من ${arabicDigits(finalResult.total)} إجابات صحيحة`" />
       <template #links>
         <NuxtLink to="/daily" class="cta">العب كلمة اليوم</NuxtLink>
       </template>
@@ -173,7 +174,7 @@ useSeo({
         </li>
       </ul>
 
-      <div v-if="answered && feedback" class="feedback">
+      <div v-if="answered && feedback" class="feedback" :class="{ right: feedback.correct }">
         <p v-if="feedback.correct">صحيح!</p>
         <p v-else>غير صحيح. الإجابة: <b>{{ feedback.correctNameAr }}</b></p>
         <p><NuxtLink v-if="feedback.word.slug" :to="`/w/${feedback.word.slug}`">افتح صفحة «{{ feedback.word.headword }}»</NuxtLink></p>
@@ -192,10 +193,12 @@ useSeo({
 .choices { list-style: none; margin: var(--space-m) 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xs); }
 .choices button { width: 100%; }
 .choices button.chosen { border-color: var(--ink); }
-.choices button.correct { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+/* Green for the right choice (#48); the wrong one is also struck through, for readers who cannot tell the colours apart. */
+.choices button.correct { background: var(--right); border-color: var(--right); color: var(--paper); }
 .choices button.wrong { text-decoration: line-through; opacity: 0.7; }
 
 /* The look of a status line (main.css [role="status"]), without the role: the
    page's live region does the announcing. */
-.feedback { margin-block-start: var(--space-m); background: var(--surface); border-inline-start: 6px solid var(--accent); padding: var(--space-xs) var(--space-s); font-weight: 600; }
+.feedback { margin-block-start: var(--space-m); background: var(--surface); border-inline-start: 6px solid var(--ink); padding: var(--space-xs) var(--space-s); font-weight: 600; }
+.feedback.right { border-color: var(--right); }
 </style>
