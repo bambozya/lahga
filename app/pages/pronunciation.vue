@@ -5,7 +5,7 @@
  * page and the validator cannot disagree). Linked from the forms that ask for
  * a pronunciation and from the line that shows one.
  */
-import { CAPHI_GROUPS, CAPHI_MARKERS } from '../../shared/utils/caphi'
+import { CAPHI_GROUPS, CAPHI_MARKERS } from '~~/shared/utils/caphi'
 useSeo({
   title: 'النطق بالرموز',
   description: 'كيف يُكتب نطق الكلمة الدارجة في معجم لهجة: ترميز CAPHI، رمز لاتيني لكل صوت وبين الأصوات مسافة، مع جدول الرموز وأمثلتها.',
