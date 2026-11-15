@@ -48,7 +48,7 @@
     "drizzle-kit": "^0.31.10",
     "tsx": "^4.23.13",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4",
+    "vitest": "^4.1.11",
     "vue-tsc": "^3.3.11"
   },
   "overrides": {
