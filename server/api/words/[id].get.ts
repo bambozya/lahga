@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
     with: {
       links: {
         with: {
-          entry: { with: { dialect: { with: { parent: true } }, examples: true, author: true } },
+          entry: { with: { dialect: { with: { parent: true } }, examples: true, spellings: true, author: true } },
         },
       },
     },
@@ -46,6 +46,7 @@ export default defineEventHandler(async (event) => {
       form: l.entry.form,
       formVocalized: l.entry.formVocalized,
       pronunciation: l.entry.pronunciation,
+      spellings: l.entry.spellings.map(s => s.form),
       meaning: l.entry.meaning,
       notes: l.entry.notes,
       score: l.entry.score,

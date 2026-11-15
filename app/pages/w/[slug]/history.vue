@@ -14,7 +14,7 @@ const revert = async (id: number) => {
 if (error.value || !data.value) throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
 useSeo({ title: () => `سجل التعديلات: ${data.value?.word.headword ?? ''}`, noindex: true })
 const typeLabel = { word: 'الكلمة', entry: 'مدخل', link: 'ربط', example: 'مثال' } as const
-const fieldLabel: Record<string, string> = { headword: 'الكلمة', definition: 'التعريف', kind: 'النوع', dialect: 'اللهجة', form: 'الشكل', formVocalized: 'بالتشكيل', pronunciation: 'النطق', meaning: 'المعنى', notes: 'ملاحظات', text: 'المثال', gloss: 'الشرح', status: 'الحالة' }
+const fieldLabel: Record<string, string> = { headword: 'الكلمة', definition: 'التعريف', kind: 'النوع', dialect: 'اللهجة', form: 'الشكل', formVocalized: 'بالتشكيل', pronunciation: 'النطق', spellings: 'كتابات أخرى', meaning: 'المعنى', notes: 'ملاحظات', text: 'المثال', gloss: 'الشرح', status: 'الحالة' }
 const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(d))
 
 // Three of the stored fields are English by nature — a dialect's slug, and the
@@ -31,9 +31,12 @@ const dialectName = computed(() => {
 })
 const kindLabel: Record<string, string> = { word: 'كلمة', phrase: 'عبارة', proverb: 'مثل شعبي' }
 const statusLabel: Record<string, string> = { active: 'ظاهر', hidden: 'مخفي', deleted: 'محذوف' }
+/** Whether a stored field is worth a line: not null, not empty, and not an empty list of spellings. */
+const hasValue = (val: unknown) => val !== null && val !== '' && !(Array.isArray(val) && val.length === 0)
 /** A revision field's stored value, translated where the field is one of the three English-by-nature ones above. */
 const displayValue = (key: string, val: unknown) => {
   if (val === null || val === '') return val
+  if (Array.isArray(val)) return val.join('، ')
   if (key === 'dialect') return dialectName.value[String(val)] ?? val
   if (key === 'kind') return kindLabel[String(val)] ?? val
   if (key === 'status') return statusLabel[String(val)] ?? val
@@ -58,7 +61,7 @@ const displayValue = (key: string, val: unknown) => {
         <p v-if="user?.role === 'admin' && r.targetType !== 'link' && r.data.status !== 'deleted'"><small><button type="button" :disabled="busy === r.id" @click="revert(r.id)">إرجاع هذا الإصدار</button></small></p>
         <dl>
           <template v-for="(val, key) in r.data" :key="key">
-            <div v-if="val !== null && val !== '' && fieldLabel[String(key)]">
+            <div v-if="hasValue(val) && fieldLabel[String(key)]">
               <dt><small>{{ fieldLabel[String(key)] }}</small></dt>
               <dd>{{ displayValue(String(key), val) }}</dd>
             </div>

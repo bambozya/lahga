@@ -85,11 +85,15 @@ export default defineEventHandler(async (event) => {
  * trigram similarity, then by score.
  */
 async function matchingIds(db: Awaited<ReturnType<typeof useDb>>, match: (col: AnyColumn) => SQL, term: string, max: number) {
+  // Entries whose other spellings (entry_spellings) satisfy `match`: هاد finds هدا.
+  const spelled = (test: (col: AnyColumn) => SQL) => db.select({ id: schema.entrySpellings.entryId })
+    .from(schema.entrySpellings).where(test(schema.entrySpellings.formNormalized))
+
   const matchedEntryWords = db.select({ id: schema.wordEntryLinks.wordId })
     .from(schema.entries)
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
     .where(and(
-      match(schema.entries.formNormalized),
+      or(match(schema.entries.formNormalized), sql`${schema.entries.id} in ${spelled(match)}`),
       eq(schema.entries.status, 'active'),
       eq(schema.wordEntryLinks.status, 'active'),
     ))
@@ -98,7 +102,7 @@ async function matchingIds(db: Awaited<ReturnType<typeof useDb>>, match: (col: A
     .from(schema.entries)
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
     .where(and(
-      eq(schema.entries.formNormalized, term),
+      or(eq(schema.entries.formNormalized, term), sql`${schema.entries.id} in ${spelled(col => eq(col, term))}`),
       eq(schema.entries.status, 'active'),
       eq(schema.wordEntryLinks.status, 'active'),
     ))

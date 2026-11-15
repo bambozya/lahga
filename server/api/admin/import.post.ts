@@ -22,7 +22,7 @@ const Example = v.object({ text: fields.text, gloss: fields.gloss })
 // `review: true` marks a language-model draft: the link lands on the review
 // list (schema.wordEntryLinks.needsReview). The import only ever sets the mark,
 // never clears it — a checked form stays checked when a draft file repeats it.
-const Entry = v.object({ dialect: fields.dialect, form: fields.form, meaning: fields.meaning, notes: fields.notes, examples: v.optional(v.array(Example), []), review: v.optional(v.boolean(), false) })
+const Entry = v.object({ dialect: fields.dialect, form: fields.form, spellings: fields.spellings, meaning: fields.meaning, notes: fields.notes, examples: v.optional(v.array(Example), []), review: v.optional(v.boolean(), false) })
 const Word = v.object({ headword: fields.headword, definition: fields.definition, kind: fields.kind, entries: v.pipe(v.array(Entry), v.minLength(1, 'كل كلمة تحتاج إلى مدخل واحد على الأقل')) })
 const Body = v.object({ words: v.pipe(v.array(v.unknown()), v.minLength(1, 'القائمة فارغة'), v.maxLength(500, '500 كلمة كحد أقصى في المرة الواحدة')), dryRun: v.optional(v.boolean(), false), authorId: v.optional(v.number()) })
 
@@ -121,7 +121,8 @@ export default defineEventHandler(async (event) => {
         const meaning = echoesWord(e.meaning, e.form, w.headword) ? null : (e.meaning || null)
         const { form, formVocalized } = splitForm(e.form)!
         const [entry] = await tx.insert(schema.entries).values({ dialectId: dialect.id, form, formVocalized, formNormalized, meaning, notes: e.notes || null, createdBy: authorId }).returning()
-        await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
+        const spellings = await replaceSpellings(tx, entry!.id, entry!.form, e.spellings)
+        await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, spellings, meaning: entry!.meaning, notes: entry!.notes }, authorId, 'استيراد')
         const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: authorId, needsReview: e.review }).returning()
         await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id }, authorId, 'استيراد')
         report.entriesCreated++

@@ -163,3 +163,10 @@ export const WORD_CARD_FORMS = 14
 /** On a form page (/f/…): the other forms listed per meaning, and the phrases that use the form. */
 export const FORM_PAGE_OTHERS = 16
 export const FORM_PAGE_PHRASES = 12
+
+/**
+ * Other spellings one dialect form may list (entry_spellings, #43): «هاد، هد»
+ * under هدا. Enough for the six ways Darija writes *had*; more is a sign the
+ * form is really two words.
+ */
+export const MAX_SPELLINGS = 8

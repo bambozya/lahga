@@ -61,6 +61,22 @@ An entry is created standalone. Its connection to one or more words lives in
 `word_entry_links`, so that linking is a user action and votable, and so one
 dialect form can map to several MSA concepts (polysemy).
 
+### entry_spellings
+The other ways one entry's form is written (#43). `entries.form` is the
+canonical spelling and the form page's address; a search or a form-page
+request for any spelling here leads to that entry.
+
+| column          | type         | notes                                          |
+|-----------------|--------------|------------------------------------------------|
+| id              | int pk       |                                                |
+| entry_id        | int fk       | cascades on delete                             |
+| form            | text         | bare, like `form`; never equal to it           |
+| form_normalized | text idx     | btree + trigram, as entries.form_normalized    |
+
+Unique on (entry_id, form_normalized). At most MAX_SPELLINGS per entry
+(shared/config/rules.ts); the list is replaced whole on every edit and stored
+in the entry's revision as `spellings`.
+
 ### word_entry_links
 The cross-dialect graph.
 

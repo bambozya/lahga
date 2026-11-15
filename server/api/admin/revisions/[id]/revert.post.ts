@@ -36,7 +36,9 @@ export default defineEventHandler(async (event) => {
           ...(dialect && { dialectId: dialect.id }), form: split.form, formVocalized: split.formVocalized, formNormalized: normalizeArabic(split.form), pronunciation: d.pronunciation ?? null, meaning: d.meaning ?? null, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
         }).where(eq(schema.entries.id, rev.targetId)).returning()
         if (!e) throw createError({ statusCode: 404, statusMessage: 'المدخل غير موجود' })
-        await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, formVocalized: e.formVocalized, pronunciation: e.pronunciation, meaning: e.meaning, notes: e.notes }, admin.id, reason)
+        // A revision from before spellings existed lists none, and reverting to it clears them.
+        const spellings = await replaceSpellings(tx, e.id, e.form, Array.isArray(d.spellings) ? d.spellings : [])
+        await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, formVocalized: e.formVocalized, pronunciation: e.pronunciation, spellings, meaning: e.meaning, notes: e.notes }, admin.id, reason)
         break
       }
       case 'example': {

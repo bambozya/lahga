@@ -1,4 +1,4 @@
-import { and, desc, eq, ilike, inArray, sql } from 'drizzle-orm'
+import { and, desc, eq, ilike, inArray, or, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { formKey } from '../../../shared/utils/arabic'
 import { FORM_PAGE_OTHERS, FORM_PAGE_PHRASES, RATE_LIMITS } from '../../../shared/config/rules'
@@ -18,13 +18,18 @@ export default defineEventHandler(async (event) => {
   assertRateLimit(`forms:${clientIp(event)}`, RATE_LIMITS.forms)
   const db = await useDb()
 
+  // By the form itself, or by any other spelling listed under it (هاد → هدا):
+  // the page is then the main form's, and the request redirects to its slug.
+  const viaSpelling = db.select({ id: schema.entrySpellings.entryId }).from(schema.entrySpellings)
+    .where(sql`${formKeySql(schema.entrySpellings.formNormalized)} = ${key}`)
   const matched = await db.select({ id: schema.entries.id }).from(schema.entries)
-    .where(and(eq(schema.entries.status, 'active'), sql`${formKeySql(schema.entries.formNormalized)} = ${key}`))
+    .where(and(eq(schema.entries.status, 'active'), or(sql`${formKeySql(schema.entries.formNormalized)} = ${key}`, sql`${schema.entries.id} in ${viaSpelling}`)))
   if (!matched.length) throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة' })
+  const matchedIds = new Set(matched.map(m => m.id))
 
   const rows = await db.query.entries.findMany({
     where: inArray(schema.entries.id, matched.map(m => m.id)),
-    with: { dialect: { with: { parent: true } }, examples: true, links: { with: { word: true } } },
+    with: { dialect: { with: { parent: true } }, examples: true, spellings: true, links: { with: { word: true } } },
   })
 
   // One sense per MSA word the spelling links to, each with the dialects that
@@ -33,7 +38,7 @@ export default defineEventHandler(async (event) => {
     word: { id: number, slug: string | null, headword: string, definition: string | null, kind: string }
     draft: boolean
     entries: {
-      id: number, form: string, formVocalized: string | null, pronunciation: string | null, meaning: string | null, notes: string | null, draft: boolean, rank: number, score: number
+      id: number, form: string, formVocalized: string | null, pronunciation: string | null, spellings: string[], meaning: string | null, notes: string | null, draft: boolean, rank: number, score: number
       dialect: { slug: string, nameAr: string, top: boolean }
       examples: { id: number, text: string, gloss: string | null }[]
     }[]
@@ -49,7 +54,7 @@ export default defineEventHandler(async (event) => {
       }).get(l.word.id)!
       if (!l.needsReview) s.draft = false
       s.entries.push({
-        id: e.id, form: e.form, formVocalized: e.formVocalized, pronunciation: e.pronunciation, meaning: e.meaning, notes: e.notes, draft: l.needsReview,
+        id: e.id, form: e.form, formVocalized: e.formVocalized, pronunciation: e.pronunciation, spellings: e.spellings.map(s => s.form), meaning: e.meaning, notes: e.notes, draft: l.needsReview,
         rank: wilson(e.upvotes, e.downvotes), score: e.score,
         // A region (مصري) is named before a city inside it (قاهري).
         dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr, top: e.dialect.parentId === null },
@@ -76,7 +81,8 @@ export default defineEventHandler(async (event) => {
   for (const l of siblings) {
     if (l.entry.status !== 'active') continue
     const k = formKey(l.entry.form)
-    if (k === key) continue
+    // Not the page's own entries, whichever spelling the request came in by.
+    if (k === key || matchedIds.has(l.entry.id)) continue
     const forWord = others.get(l.wordId) ?? others.set(l.wordId, new Map()).get(l.wordId)!
     const o = forWord.get(k) ?? forWord.set(k, { form: l.entry.form, formVocalized: null, dialects: [], draft: true, rank: 0 }).get(k)!
     o.formVocalized ??= l.entry.formVocalized

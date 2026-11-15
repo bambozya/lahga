@@ -151,6 +151,7 @@ const removeWord = async () => {
             </template>
             <template v-else>
               <ReviewMark v-if="isDraft(e)" :link-id="e.linkId" :my-vote="drafts.get(e.linkId) ?? 0" :dialect="e.dialect" @confirmed="loadDrafts()" />
+              <p v-if="e.spellings?.length" class="spellings"><small>وتُكتب أيضاً: {{ e.spellings.join('، ') }}</small></p>
               <Pronunciation v-if="e.pronunciation" :value="e.pronunciation" />
               <p v-if="e.meaning">{{ e.meaning }}</p>
               <p v-if="e.notes"><small>{{ e.notes }}</small></p>

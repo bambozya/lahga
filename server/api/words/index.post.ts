@@ -17,6 +17,7 @@ const Body = v.object({
   form: fields.form,
   formVocalized: fields.formVocalized,
   pronunciation: fields.pronunciation,
+  spellings: fields.spellings,
   meaning: fields.meaning,
   notes: fields.notes,
   example: v.optional(v.object({ text: fields.text, gloss: fields.gloss })),
@@ -52,7 +53,8 @@ export default defineEventHandler(async (event) => {
       dialectId: dialect.id, form, formVocalized, formNormalized: normalizeArabic(form), pronunciation: body.pronunciation || null,
       meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
-    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, pronunciation: entry!.pronunciation, meaning: entry!.meaning, notes: entry!.notes }, user.id)
+    const spellings = await replaceSpellings(tx, entry!.id, entry!.form, body.spellings)
+    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, pronunciation: entry!.pronunciation, spellings, meaning: entry!.meaning, notes: entry!.notes }, user.id)
 
     const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word!.id, entryId: entry!.id, createdBy: user.id, needsReview: await startsUnchecked(tx, user, dialect.id) }).returning()
     await recordRevision(tx, 'link', link!.id, { wordId: word!.id, entryId: entry!.id, needsReview: link!.needsReview }, user.id)

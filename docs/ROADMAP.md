@@ -373,10 +373,12 @@ Nothing here is *Now*. The site has enough features for its content.
   Pointed to by Nizar Habash (CAMeL Lab) on ARABIC-L, 2026-10-30; promised
   there. The MADAR lexicon is a reference, never a source: its licence is
   non-commercial.
-- **Other spellings of one word** (two or three evenings, #43): an entry can
-  carry the other ways speakers spell it (Darija *had*: هذا، هدا، هاد، هاذ،
-  هد، هذ), and search and the form pages find every one of them. The main
-  form is the canonical spelling (#46); the rest are variants under it.
+- **Other spellings of one word** (shipped 2026-11-15, #43): an entry
+  carries the other ways speakers spell it (Darija *had*: هذا، هدا، هاد، هاذ،
+  هد، هذ) in `entry_spellings`; search and the form pages find every one of
+  them, the form page redirects a variant to the main form's address, the
+  entry shows «وتُكتب أيضاً», both exports carry the list. The main form is
+  the canonical spelling (#46); the rest are variants under it.
 - **Pronunciation in writing** (shipped 2026-11-15, #45): a `pronunciation`
   field per form in CAPHI, the ASCII notation from the same paper (`d i l w a
   2 t i`), validated against the inventory at input, shown under the form on
@@ -466,6 +468,13 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-11-15. Other spellings (#43) shipped: `entry_spellings` (migration
+  0020, trigram-indexed like entries.form_normalized), at most MAX_SPELLINGS
+  per entry, taken as one comma-separated line in the add and edit forms and
+  as a list in the API and the importer; a new entry whose form is a listed
+  spelling of an existing one is a duplicate; search, the form pages and the
+  duplicate check match them; shown as «وتُكتب أيضاً»; in JSON, CSV and the
+  Hugging Face snapshot. Unblocks #46.
 - 2026-11-15. Pronunciation in writing (#45) shipped: `pronunciation` on
   entries in CAPHI, the inventory from the CODA\* paper's Figure 2 in
   shared/utils/caphi.ts, refused at input when a symbol is not in it; shown

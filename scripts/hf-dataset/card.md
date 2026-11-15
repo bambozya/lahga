@@ -125,6 +125,7 @@ examples = load_dataset("{{repo}}", "examples", split="train")
 | `definition` | a short definition of the headword in MSA; may be null |
 | `form` | how the variety says it, in Arabic script without diacritics |
 | `form_vocalized` | the same form with its short vowels (harakat), when a speaker added them; may be null |
+| `spellings` | other ways speakers write the same form (Darija *had*: `["هذا", "هاد", "هاذ", "هد", "هذ"]` under `هدا`); usually empty |
 | `pronunciation` | how it is said, in [CAPHI](https://aclanthology.org/L18-1574/) (ASCII, one symbol per sound, space-separated: `d i l w a 2 t i`), when a speaker added it; may be null |
 | `dialect` | the variety's id, e.g. `egyptian`, `lebanese`, `najdi` |
 | `dialect_name` | its name in Arabic |
@@ -163,7 +164,9 @@ Uneven, and the table says how. Groups are followed by their varieties.
 Dialects have no standard spelling and none is imposed here: a form is written
 the way its speakers usually write it, mostly without diacritics. The same word
 can therefore differ by a letter between two varieties that pronounce it alike.
-No normalisation such as CODA has been applied yet.
+No normalisation such as CODA has been applied yet. Where a form is written
+several ways, `form` is the one the site treats as main and `spellings` lists
+the others; a search for any of them finds the row.
 
 Where the script hides the pronunciation (ق said /g/, /q/ or /ʔ/, a vowel the
 harakat cannot write), `pronunciation` carries it in CAPHI, the ASCII notation

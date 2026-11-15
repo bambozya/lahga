@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { splitSpellings } from '~~/shared/utils/spellings'
 // Adding a word needs a verified account, but a visitor who lands here from a
 // search that found nothing is told so on the page rather than bounced to the
 // login form and left to find the way back: ContributeGate carries ?headword=
@@ -13,7 +14,7 @@ const headword = String(route.query.headword ?? '').trim().slice(0, 80)
 const dialect = /^[a-z0-9-]{2,60}$/.test(String(route.query.dialect ?? '')) ? String(route.query.dialect) : ''
 const form = reactive({
   headword, definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
-  dialect, form: '', pronunciation: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
+  dialect, form: '', pronunciation: '', spellings: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
 })
 const existingSlug = ref<string | null>(null)
 const { busy, error, run } = useForm(async () => {
@@ -21,7 +22,7 @@ const { busy, error, run } = useForm(async () => {
   try {
     const { slug } = await $fetch('/api/words', { method: 'POST', body: {
       headword: form.headword, definition: form.definition, kind: form.kind,
-      dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, meaning: form.meaning, notes: form.notes,
+      dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, spellings: splitSpellings(form.spellings), meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
     await navigateTo(`/w/${slug}?added=1`)
@@ -74,6 +75,11 @@ const { busy, error, run } = useForm(async () => {
             <label for="form">الكلمة كما تُقال في لهجتك</label>
             <input id="form" v-model="form.form" required maxlength="80" />
             <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات.</small>
+          </p>
+          <p>
+            <label for="spellings">كتابات أخرى <small>(اختيارية)</small></label>
+            <input id="spellings" v-model="form.spellings" maxlength="400" placeholder="هاد، هد" />
+            <small>إن كتبها الناس بأشكال أخرى، اذكرها مفصولة بفاصلة: «هاد، هد» تحت «هدا». كلها تقود إلى الكلمة نفسها.</small>
           </p>
           <p>
             <label for="pronunciation">النطق <small>(اختياري)</small></label>

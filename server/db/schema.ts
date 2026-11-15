@@ -140,6 +140,25 @@ export const entries = pgTable('entries', {
   index('entries_created_by_idx').on(t.createdBy),
 ])
 
+// ---------- spellings: the other ways a form is written ----------
+
+/**
+ * Other spellings of one entry's form (#43): هاد and هد under هدا. `form` is
+ * the canonical spelling and the address of the form page; a search or a
+ * form-page request for any spelling here lands on that entry. Bare, like
+ * `form`; normalised and trigram-indexed (migration 0020) the way
+ * entries.form_normalized is, so the one search treats both alike.
+ */
+export const entrySpellings = pgTable('entry_spellings', {
+  id: serial('id').primaryKey(),
+  entryId: integer('entry_id').notNull().references(() => entries.id, { onDelete: 'cascade' }),
+  form: text('form').notNull(),
+  formNormalized: text('form_normalized').notNull(),
+}, t => [
+  uniqueIndex('entry_spellings_unique').on(t.entryId, t.formNormalized),
+  index('entry_spellings_form_normalized_idx').on(t.formNormalized),
+])
+
 // ---------- links: the cross-dialect graph ----------
 
 export const wordEntryLinks = pgTable('word_entry_links', {
@@ -453,7 +472,12 @@ export const entriesRelations = relations(entries, ({ one, many }) => ({
   dialect: one(dialects, { fields: [entries.dialectId], references: [dialects.id] }),
   links: many(wordEntryLinks),
   examples: many(examples),
+  spellings: many(entrySpellings),
   author: one(users, { fields: [entries.createdBy], references: [users.id] }),
+}))
+
+export const entrySpellingsRelations = relations(entrySpellings, ({ one }) => ({
+  entry: one(entries, { fields: [entrySpellings.entryId], references: [entries.id] }),
 }))
 
 export const wordEntryLinksRelations = relations(wordEntryLinks, ({ one }) => ({

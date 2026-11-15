@@ -4,7 +4,7 @@ import { and, eq, sql } from 'drizzle-orm'
 import { useDb, schema, type Db } from '../db'
 import { isArabicOnly, normalizeArabic, splitForm } from '../../shared/utils/arabic'
 import { isCaphi, normalizeCaphi, unknownCaphi } from '../../shared/utils/caphi'
-import { NEW_ACCOUNT_MS, RATE_LIMITS } from '../../shared/config/rules'
+import { MAX_SPELLINGS, NEW_ACCOUNT_MS, RATE_LIMITS } from '../../shared/config/rules'
 
 type User = typeof schema.users.$inferSelect
 type Target = 'word' | 'entry' | 'link' | 'example'
@@ -105,6 +105,12 @@ export const fields = {
         addIssue({ message: `النطق يُكتب برموز CAPHI، رمز لكل صوت وبينها مسافة (d i l w a 2 t i)؛ رموز غير معروفة: ${unknownCaphi(dataset.value).join('، ')}` })
       }
     }),
+  )),
+  // Other spellings of the form (entry_spellings, shared/utils/spellings.ts):
+  // a list; the site's forms split one comma-separated line into it.
+  spellings: v.optional(v.pipe(
+    v.array(v.pipe(v.string(), v.trim(), v.maxLength(80, 'الكتابة الأخرى طويلة جداً (80 حرفاً كحد أقصى)'), v.check(isArabicOnly, 'الكتابات الأخرى يجب أن تكون بالحروف العربية'))),
+    v.maxLength(MAX_SPELLINGS, `${MAX_SPELLINGS} كتابات أخرى كحد أقصى`),
   )),
   // Optional: the MSA headword already defines the sense (see entries.meaning).
   meaning: optionalArabic('المعنى', 400),

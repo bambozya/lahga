@@ -1,5 +1,5 @@
 import * as v from 'valibot'
-import { and, eq } from 'drizzle-orm'
+import { and, eq, or, sql } from 'drizzle-orm'
 import { useDb, schema } from '../../db'
 import { readBody$ } from '../../utils/validate'
 import { fields } from '../../utils/contribute'
@@ -12,6 +12,7 @@ const Body = v.object({
   form: fields.form,
   formVocalized: fields.formVocalized,
   pronunciation: fields.pronunciation,
+  spellings: fields.spellings,
   meaning: fields.meaning,
   notes: fields.notes,
   example: v.optional(v.object({ text: fields.text, gloss: fields.gloss })),
@@ -27,11 +28,13 @@ export default defineEventHandler(async (event) => {
 
   const { form, formVocalized } = resolveForm(body.form, body.formVocalized)
   const formNormalized = normalizeArabic(form)
+  // A form somebody lists as another spelling of theirs is that entry, not a new one.
+  const sameSpelling = db.select({ id: schema.entrySpellings.entryId }).from(schema.entrySpellings).where(eq(schema.entrySpellings.formNormalized, formNormalized))
   const duplicate = await db.select({ id: schema.entries.id }).from(schema.entries)
     .innerJoin(schema.wordEntryLinks, eq(schema.wordEntryLinks.entryId, schema.entries.id))
     .where(and(
       eq(schema.wordEntryLinks.wordId, word.id), eq(schema.wordEntryLinks.status, 'active'),
-      eq(schema.entries.dialectId, dialect.id), eq(schema.entries.formNormalized, formNormalized), eq(schema.entries.status, 'active'),
+      eq(schema.entries.dialectId, dialect.id), or(eq(schema.entries.formNormalized, formNormalized), sql`${schema.entries.id} in ${sameSpelling}`), eq(schema.entries.status, 'active'),
     )).limit(1)
   if (duplicate.length) throw createError({ statusCode: 409, statusMessage: 'هذا الشكل مضاف بالفعل لهذه اللهجة' })
 
@@ -39,7 +42,8 @@ export default defineEventHandler(async (event) => {
     const [entry] = await tx.insert(schema.entries).values({
       dialectId: dialect.id, form, formVocalized, formNormalized, pronunciation: body.pronunciation || null, meaning: body.meaning || null, notes: body.notes || null, createdBy: user.id,
     }).returning()
-    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, pronunciation: entry!.pronunciation, meaning: entry!.meaning, notes: entry!.notes }, user.id)
+    const spellings = await replaceSpellings(tx, entry!.id, entry!.form, body.spellings)
+    await recordRevision(tx, 'entry', entry!.id, { dialect: dialect.slug, form: entry!.form, formVocalized: entry!.formVocalized, pronunciation: entry!.pronunciation, spellings, meaning: entry!.meaning, notes: entry!.notes }, user.id)
     const [link] = await tx.insert(schema.wordEntryLinks).values({ wordId: word.id, entryId: entry!.id, createdBy: user.id, needsReview: await startsUnchecked(tx, user, dialect.id) }).returning()
     await recordRevision(tx, 'link', link!.id, { wordId: word.id, entryId: entry!.id, needsReview: link!.needsReview }, user.id)
     if (body.example) {

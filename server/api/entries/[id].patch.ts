@@ -10,6 +10,7 @@ const Body = v.object({
   form: v.optional(fields.form),
   formVocalized: fields.formVocalized,
   pronunciation: fields.pronunciation,
+  spellings: fields.spellings,
   meaning: v.optional(fields.meaning),
   notes: fields.notes,
   reason: fields.reason,
@@ -37,8 +38,13 @@ export default defineEventHandler(async (event) => {
       ...(body.notes !== undefined && { notes: body.notes || null }),
       updatedAt: new Date(),
     }).where(eq(schema.entries.id, id)).returning()
+    // A new list replaces the old; a new main form re-resolves the old list
+    // against it (a spelling that became the form drops out).
+    const spellings = body.spellings !== undefined || body.form !== undefined
+      ? await replaceSpellings(tx, id, updated!.form, body.spellings ?? await spellingsOf(tx, id))
+      : await spellingsOf(tx, id)
     const slug = dialect?.slug ?? (await tx.query.dialects.findFirst({ where: eq(schema.dialects.id, updated!.dialectId) }))?.slug
-    await recordRevision(tx, 'entry', id, { dialect: slug, form: updated!.form, formVocalized: updated!.formVocalized, pronunciation: updated!.pronunciation, meaning: updated!.meaning, notes: updated!.notes }, user.id, body.reason)
+    await recordRevision(tx, 'entry', id, { dialect: slug, form: updated!.form, formVocalized: updated!.formVocalized, pronunciation: updated!.pronunciation, spellings, meaning: updated!.meaning, notes: updated!.notes }, user.id, body.reason)
   })
   return { ok: true }
 })

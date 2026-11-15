@@ -3,9 +3,10 @@
  * Add or edit a dialect entry. With `entry` it edits (PATCH), otherwise it adds one
  * to `wordId` (POST). Emits `done` after a successful save, `cancel` on cancel.
  */
+import { joinSpellings, splitSpellings } from '~~/shared/utils/spellings'
 const props = defineProps<{
   wordId: number
-  entry?: { id: number, form: string, formVocalized?: string | null, pronunciation?: string | null, meaning?: string | null, notes?: string | null, dialect: { slug: string } }
+  entry?: { id: number, form: string, formVocalized?: string | null, pronunciation?: string | null, spellings?: string[], meaning?: string | null, notes?: string | null, dialect: { slug: string } }
 }>()
 const emit = defineEmits<{ done: [], cancel: [] }>()
 const uid = useId()
@@ -15,6 +16,8 @@ const form = reactive({
   // it into the bare form and the vowelled one (splitForm).
   form: props.entry?.formVocalized ?? props.entry?.form ?? '',
   pronunciation: props.entry?.pronunciation ?? '',
+  // One line, comma-separated; split on the way out (splitSpellings).
+  spellings: joinSpellings(props.entry?.spellings ?? []),
   meaning: props.entry?.meaning ?? '',
   notes: props.entry?.notes ?? '',
   exampleText: '',
@@ -23,10 +26,10 @@ const form = reactive({
 })
 const { busy, error, run } = useForm(async () => {
   if (props.entry) {
-    await $fetch(`/api/entries/${props.entry.id}`, { method: 'PATCH', body: { dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, meaning: form.meaning, notes: form.notes, reason: form.reason } })
+    await $fetch(`/api/entries/${props.entry.id}`, { method: 'PATCH', body: { dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, spellings: splitSpellings(form.spellings), meaning: form.meaning, notes: form.notes, reason: form.reason } })
   } else {
     await $fetch('/api/entries', { method: 'POST', body: {
-      wordId: props.wordId, dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, meaning: form.meaning, notes: form.notes,
+      wordId: props.wordId, dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, spellings: splitSpellings(form.spellings), meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
   }
@@ -47,6 +50,11 @@ const { busy, error, run } = useForm(async () => {
         <label :for="`${uid}-form`">الكلمة كما تُقال في لهجتك</label>
         <input :id="`${uid}-form`" v-model="form.form" required maxlength="80" />
         <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات.</small>
+      </p>
+      <p>
+        <label :for="`${uid}-spellings`">كتابات أخرى <small>(اختيارية)</small></label>
+        <input :id="`${uid}-spellings`" v-model="form.spellings" maxlength="400" placeholder="هاد، هد" />
+        <small>إن كتبها الناس بأشكال أخرى، اذكرها مفصولة بفاصلة: «هاد، هد» تحت «هدا». كلها تقود إلى الكلمة نفسها.</small>
       </p>
       <p>
         <label :for="`${uid}-pron`">النطق <small>(اختياري)</small></label>
