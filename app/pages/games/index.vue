@@ -32,8 +32,8 @@ useSeo({
         </dd>
       </div>
       <div>
-        <!-- Help with the shape of a game (#51): rounds, a streak, a line to share. Icon: Material Symbols (Apache 2.0): volunteer_activism, a hand offering. -->
-        <dt><NuxtLink to="/check"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M160-80v-440h160v440H160Zm240 0v-360h-40v-80h200v80h-40v360h-120Zm120-320v-80h200v80H520Zm0-160v-80h200v80H520Zm-40-200 100-100 100 100-100 100-100-100Z" /></svg>هل تُقال هكذا؟</NuxtLink></dt>
+        <!-- Help with the shape of a game (#51): rounds, a streak, a line to share. Icon: Material Symbols (Apache 2.0): rule — a check and a cross beside two lines, the page's «نعم / لا». -->
+        <dt><NuxtLink to="/check"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="m576-160-56-56 104-104-104-104 56-56 104 104 104-104 56 56-104 104 104 104-56 56-104-104-104 104Zm79-360L513-662l56-56 85 85 170-170 56 57-225 226ZM80-280v-80h360v80H80Zm0-320v-80h360v80H80Z" /></svg>هل تُقال هكذا؟</NuxtLink></dt>
         <dd>
           <p>جولة من عشر كلمات من لهجتك لم يؤكدها متحدّث بعد: نعم، لا، لا أعرف. جوابك يثبّتها في المعجم.</p>
         </dd>
