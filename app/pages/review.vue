@@ -7,8 +7,12 @@ definePageMeta({ middleware: 'staff' })
 const route = useRoute()
 const dialect = computed(() => typeof route.query.dialect === 'string' ? route.query.dialect : '')
 const page = computed(() => Math.max(1, Number(route.query.page) || 1))
-const { data } = await useFetch('/api/review', { query: { dialect, page } })
-const current = computed(() => data.value?.counts.find(c => c.slug === dialect.value))
+// ?rejected=1: only the drafts speakers turned down on /check (net −2); the
+// queue no longer asks about them, so they wait here to be fixed or deleted.
+const rejected = computed(() => route.query.rejected === '1' ? '1' : '')
+const { data } = await useFetch('/api/review', { query: { dialect, page, rejected } })
+const current = computed(() => (rejected.value ? data.value?.rejected : data.value?.counts)?.find(c => c.slug === dialect.value))
+const rejectedTotal = computed(() => data.value?.rejected.reduce((n, c) => n + c.n, 0) ?? 0)
 const total = computed(() => data.value?.counts.reduce((n, c) => n + c.n, 0) ?? 0)
 const pages = computed(() => current.value ? Math.ceil(current.value.n / (data.value?.pageSize ?? 200)) : 0)
 
@@ -29,27 +33,46 @@ useSeo({
       أو احذفها إن كانت خطأ. جوابان بـ«نعم» من المشرفين يكفيان أيضاً.
     </p>
 
+    <p>
+      وكل زائر يمكنه أن يجيب عن المسودات واحدةً واحدة في
+      <NuxtLink to="/check">«هل تُقال هكذا؟»</NuxtLink>؛ أرسل رابط لهجة إلى من يتكلمها.
+    </p>
+
     <p v-if="!total">لا شيء ينتظر التحقق الآن.</p>
     <nav v-else aria-label="اللهجات">
       <ul class="dialects">
         <li v-for="c in data?.counts" :key="c.slug">
-          <NuxtLink :to="{ query: { dialect: c.slug } }" :aria-current="c.slug === dialect ? 'page' : undefined">{{ c.nameAr }}</NuxtLink>
+          <NuxtLink :to="{ query: { dialect: c.slug } }" :aria-current="c.slug === dialect && !rejected ? 'page' : undefined">{{ c.nameAr }}</NuxtLink>
           <small> {{ c.n }}</small>
         </li>
       </ul>
     </nav>
 
+    <!-- What speakers said «no» to, twice over: not asked again, waiting for a hand here. -->
+    <template v-if="rejectedTotal">
+      <h2>رفضها المتحدثون: {{ rejectedTotal }}</h2>
+      <p>قال متحدثان (أو أربعة ضيوف) إنها لا تُقال هكذا؛ لم تعد تُعرض للسؤال. صحّحها أو احذفها من صفحة الكلمة.</p>
+      <nav aria-label="اللهجات، المرفوضة">
+        <ul class="dialects">
+          <li v-for="c in data?.rejected" :key="c.slug">
+            <NuxtLink :to="{ query: { dialect: c.slug, rejected: 1 } }" :aria-current="c.slug === dialect && rejected ? 'page' : undefined">{{ c.nameAr }}</NuxtLink>
+            <small> {{ c.n }}</small>
+          </li>
+        </ul>
+      </nav>
+    </template>
+
     <template v-if="current">
-      <h2>{{ current.nameAr }}: {{ current.n }} شكلاً</h2>
+      <h2>{{ current.nameAr }}: {{ current.n }} شكلاً<template v-if="rejected"> رفضها المتحدثون</template></h2>
       <dl class="drafts">
         <div v-for="it in data?.items" :key="it.linkId">
           <dt><NuxtLink :to="`/w/${it.wordSlug}`">{{ shown(it) }}</NuxtLink></dt>
-          <dd>{{ it.headword }}</dd>
+          <dd>{{ it.headword }}<small v-if="it.score || Number(it.guestNet)"> · الأصوات: {{ it.score }} من الأعضاء، {{ Number(it.guestNet) }} من الضيوف</small></dd>
         </div>
       </dl>
       <p v-if="pages > 1">
         <template v-for="p in pages" :key="p">
-          <NuxtLink v-if="p !== page" :to="{ query: { dialect, page: p } }">{{ p }}</NuxtLink>
+          <NuxtLink v-if="p !== page" :to="{ query: { dialect, page: p, ...(rejected ? { rejected } : {}) } }">{{ p }}</NuxtLink>
           <b v-else>{{ p }}</b>
           {{ ' ' }}
         </template>

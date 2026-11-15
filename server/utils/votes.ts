@@ -4,7 +4,7 @@ import { and, eq, inArray, sql } from 'drizzle-orm'
 import { schema } from '../db'
 import { recordRevision, type Tx } from './contribute'
 import { clientIp } from './rateLimit'
-import { CONFIRM_SCORE, GUEST_WEIGHT } from '../../shared/config/rules'
+import { isConfirmed } from '../../shared/utils/drafts'
 
 
 export type VoteTarget = 'word' | 'entry' | 'link' | 'example'
@@ -50,7 +50,7 @@ export async function applyVote(tx: Tx, userId: number, targetType: VoteTarget, 
 /**
  * Two speakers more saying «yes, we say that» than «no» is what checks a draft
  * (schema.wordEntryLinks.needsReview): members' net votes on the link, plus
- * guests' at GUEST_WEIGHT. Only ever cleared here, never set back: a form that
+ * guests' at GUEST_WEIGHT (shared/utils/drafts.ts). Only ever cleared here, never set back: a form that
  * later draws downvotes is a matter for flags. True when this call cleared it.
  */
 export async function settleDraft(tx: Tx, linkId: number, byUserId: number | null) {
@@ -58,7 +58,7 @@ export async function settleDraft(tx: Tx, linkId: number, byUserId: number | nul
   const [link] = await tx.select({ score: l.score, needsReview: l.needsReview }).from(l).where(eq(l.id, linkId))
   if (!link?.needsReview) return false
   const [guests] = await tx.select({ net: sql<number>`coalesce(sum(${g.value}), 0)` }).from(g).where(eq(g.linkId, linkId))
-  if (link.score + GUEST_WEIGHT * Number(guests?.net ?? 0) < CONFIRM_SCORE) return false
+  if (!isConfirmed(link.score, Number(guests?.net ?? 0))) return false
   const [cleared] = await tx.update(l).set({ needsReview: false })
     .where(and(eq(l.id, linkId), eq(l.needsReview, true))).returning({ id: l.id })
   if (cleared) await recordRevision(tx, 'link', linkId, { needsReview: false }, byUserId, 'تأكيد بالتصويت')

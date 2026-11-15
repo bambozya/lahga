@@ -71,6 +71,13 @@ export const CONFIRM_SCORE = 2
 /** What a guest's answer on a draft counts next to a member's. 0 would ignore guests; 1 would trust them fully. */
 export const GUEST_WEIGHT = 0.5
 
+/**
+ * «هل تُقال هكذا؟» (/check): drafts handed out per request. Small, so a
+ * visitor who stops after three has not reserved thirty; the page asks again
+ * before it runs dry.
+ */
+export const CHECK_BATCH = 10
+
 /** How long an account counts as new, and so falls under RATE_LIMITS.contributeNew. */
 export const NEW_ACCOUNT_MS = 7 * DAY
 
@@ -89,6 +96,7 @@ export const RATE_LIMITS = {
   words: { limit: 240, windowMs: MINUTE }, // the word list API, per IP; the SSR fetches of a page view count too
   wordsSearch: { limit: 90, windowMs: MINUTE }, // a search term on top of that; one empty search costs two
   forms: { limit: 600, windowMs: MINUTE }, // form pages (/f/…), per IP
+  check: { limit: 120, windowMs: MINUTE }, // the «هل تُقال هكذا؟» queue (/api/check), per IP; a batch is CHECK_BATCH drafts
   shareCards: { limit: 120, windowMs: MINUTE }, // rendering a share image (/og/*), per IP
 
   // Games
@@ -99,7 +107,7 @@ export const RATE_LIMITS = {
   contribute: { limit: 20, windowMs: HOUR }, // adds and edits, per account
   contributeNew: { limit: 30, windowMs: DAY }, // on top, for an account younger than NEW_ACCOUNT_MS
   vote: { limit: 120, windowMs: HOUR }, // per account, votes and draft answers together
-  guestVote: { limit: 60, windowMs: HOUR }, // a guest's draft answers, per IP
+  guestVote: { limit: 240, windowMs: HOUR }, // a guest's draft answers, per IP; a keen speaker on /check answers one every few seconds
   flag: { limit: 20, windowMs: HOUR }, // per account
   searchReport: { limit: 10, windowMs: 10 * MINUTE }, // «أبلغ عن كلمة ناقصة», per IP
   contact: { limit: 5, windowMs: HOUR }, // the contact form, per IP

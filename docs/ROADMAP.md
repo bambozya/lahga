@@ -321,6 +321,19 @@ registrations, verified accounts, contributions by people other than the
 system user, votes, flags. *Done when:* you can say how many strangers
 contributed last week. Everything below is sized by that answer.
 
+**D5. «هل تُقال هكذا؟»: drafts, one at a time** (shipped 2026-11-15, #50).
+3,542 forms are language-model drafts no speaker has confirmed, and the
+line under a draft on a word page only reaches whoever happens on that page.
+`/check` hands them out one after another: pick a dialect once (remembered in
+the browser; `/check?dialect=libyan` is a link to send a speaker), one card,
+three answers (نعم، لا، لا أعرف), «تراجع» for the last one, a count of your
+own. Answers go where the word-page line sends them. The queue leaves out what
+the visitor answered, what a member added, and what speakers turned down (net
+−2, the mirror of what confirms), which `/review` lists for staff. Drafts
+with answers come first so they get confirmed instead of spreading thin.
+Guest answer limit 60 → 240 an hour. *Done when:* a signed-out stranger on a
+phone answers twenty drafts in a row without leaving the page.
+
 ### Next
 
 **D2. «كيف تقولها في لهجتك؟»** (2 to 3 days). On a word page, a visitor picks
@@ -468,6 +481,12 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-11-15. «هل تُقال هكذا؟» (D5, #50) shipped: public /check queue of
+  drafts, one card at a time, answers through the existing
+  PUT /api/links/[id]/answer; turned-down drafts (shared/utils/drafts.ts,
+  −CONFIRM_SCORE) leave the queue and appear on /review; CHECK_BATCH = 10,
+  guest answers 240/hour; listed on /games as help, in the sitemap; privacy
+  page updated.
 - 2026-11-15. Other spellings (#43) shipped: `entry_spellings` (migration
   0020, trigram-indexed like entries.form_normalized), at most MAX_SPELLINGS
   per entry, taken as one comma-separated line in the add and edit forms and
