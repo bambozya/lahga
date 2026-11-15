@@ -14,7 +14,7 @@ const revert = async (id: number) => {
 if (error.value || !data.value) throw createError({ statusCode: 404, statusMessage: 'الكلمة غير موجودة', fatal: true })
 useSeo({ title: () => `سجل التعديلات: ${data.value?.word.headword ?? ''}`, noindex: true })
 const typeLabel = { word: 'الكلمة', entry: 'مدخل', link: 'ربط', example: 'مثال' } as const
-const fieldLabel: Record<string, string> = { headword: 'الكلمة', definition: 'التعريف', kind: 'النوع', dialect: 'اللهجة', form: 'الشكل', meaning: 'المعنى', notes: 'ملاحظات', text: 'المثال', gloss: 'الشرح', status: 'الحالة' }
+const fieldLabel: Record<string, string> = { headword: 'الكلمة', definition: 'التعريف', kind: 'النوع', dialect: 'اللهجة', form: 'الشكل', formVocalized: 'بالتشكيل', pronunciation: 'النطق', meaning: 'المعنى', notes: 'ملاحظات', text: 'المثال', gloss: 'الشرح', status: 'الحالة' }
 const fmt = (d: string | Date) => new Intl.DateTimeFormat('ar', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(d))
 
 // Three of the stored fields are English by nature — a dialect's slug, and the

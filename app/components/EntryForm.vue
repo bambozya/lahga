@@ -5,7 +5,7 @@
  */
 const props = defineProps<{
   wordId: number
-  entry?: { id: number, form: string, formVocalized?: string | null, meaning?: string | null, notes?: string | null, dialect: { slug: string } }
+  entry?: { id: number, form: string, formVocalized?: string | null, pronunciation?: string | null, meaning?: string | null, notes?: string | null, dialect: { slug: string } }
 }>()
 const emit = defineEmits<{ done: [], cancel: [] }>()
 const uid = useId()
@@ -14,6 +14,7 @@ const form = reactive({
   // One field, with the harakat when the entry has them: the server splits
   // it into the bare form and the vowelled one (splitForm).
   form: props.entry?.formVocalized ?? props.entry?.form ?? '',
+  pronunciation: props.entry?.pronunciation ?? '',
   meaning: props.entry?.meaning ?? '',
   notes: props.entry?.notes ?? '',
   exampleText: '',
@@ -22,10 +23,10 @@ const form = reactive({
 })
 const { busy, error, run } = useForm(async () => {
   if (props.entry) {
-    await $fetch(`/api/entries/${props.entry.id}`, { method: 'PATCH', body: { dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes, reason: form.reason } })
+    await $fetch(`/api/entries/${props.entry.id}`, { method: 'PATCH', body: { dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, meaning: form.meaning, notes: form.notes, reason: form.reason } })
   } else {
     await $fetch('/api/entries', { method: 'POST', body: {
-      wordId: props.wordId, dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes,
+      wordId: props.wordId, dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
   }
@@ -46,6 +47,11 @@ const { busy, error, run } = useForm(async () => {
         <label :for="`${uid}-form`">الكلمة كما تُقال في لهجتك</label>
         <input :id="`${uid}-form`" v-model="form.form" required maxlength="80" />
         <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات.</small>
+      </p>
+      <p>
+        <label :for="`${uid}-pron`">النطق <small>(اختياري)</small></label>
+        <input :id="`${uid}-pron`" v-model="form.pronunciation" class="caphi" dir="ltr" maxlength="200" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="d i l w a 2 t i" />
+        <small>رمز لاتيني لكل صوت وبينها مسافة: «دلوقتي» <code dir="ltr">d i l w a 2 t i</code>. <NuxtLink to="/pronunciation">جدول الرموز</NuxtLink>.</small>
       </p>
       <p>
         <label :for="`${uid}-meaning`">المعنى <small>(اختياري)</small></label>

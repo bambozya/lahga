@@ -756,3 +756,8 @@ legend {
 .game-result .streak {
   color: var(--muted);
 }
+
+/* The pronunciation field (CAPHI, shared/utils/caphi.ts) is the one input
+   written in Latin letters: monospace and left to right, like the run it
+   becomes on the page, so a doubled letter can be counted. */
+input.caphi { font-family: ui-monospace, Menlo, Consolas, monospace; letter-spacing: 0.04em; }

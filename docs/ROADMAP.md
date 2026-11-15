@@ -377,17 +377,27 @@ Nothing here is *Now*. The site has enough features for its content.
   carry the other ways speakers spell it (Darija *had*: هذا، هدا، هاد، هاذ،
   هد، هذ), and search and the form pages find every one of them. The main
   form is the canonical spelling (#46); the rest are variants under it.
-- **Pronunciation in writing** (two evenings, #45): a `pronunciation` field
-  per form in CAPHI, the ASCII notation from the same paper (`d i l w a 2 t
-  i`), validated at input, shown under the form, in the export. The cheap
-  sibling of audio: it answers "the script cannot show the Moroccan schwa"
-  before the bucket exists and stays next to the clip afterwards.
+- **Pronunciation in writing** (shipped 2026-11-15, #45): a `pronunciation`
+  field per form in CAPHI, the ASCII notation from the same paper (`d i l w a
+  2 t i`), validated against the inventory at input, shown under the form on
+  the word and form pages, in both exports, with the symbol table at
+  /pronunciation. The cheap sibling of audio: it answers "the script cannot
+  show the Moroccan schwa" before the bucket exists and stays next to the
+  clip afterwards. Promised to Nizar Habash on ARABIC-L.
 - **Short vowels on forms** (shipped 2026-10-31, #47): a `form_vocalized` field
   (يِغَنِّج) shown as the display form, validated to strip back to the bare
   `form`, which stays canonical and searchable. Asked for at input; the
   existing forms filled in by reviewers over time. Asked for by Nesrine
   Basheer (UBC) on ARABIC-L for learners; promised there. Three layers:
   harakat for readers, CAPHI (#45) for precision, audio (#38) for the sound.
+- **Games: a right answer is green, not red** (one evening, #48): the result
+  cards and «من أي لهجة؟» show a right answer in the accent, and red reads as
+  wrong. A second colour, `right`, used only for results in the games; wrong
+  stays ink, and the emoji line follows (🟩 ⬛ ⬜).
+- **Games: nuqtas instead of squares** (one evening, #49): the result row on
+  the cards and the result panels drawn with the nuqta, filled for a used
+  attempt and open for one never reached. The share text stays emoji. Check
+  first that six in a row still read as a score at preview size.
 - **Audio** (PLAN.md 6.1, a few days, #38): a short clip recorded in the
   browser for a dialect form, stored in S3-compatible storage, published at
   once and removable by flag. No trigger: pronunciation is the one thing
@@ -456,6 +466,13 @@ machinery for that.
 
 Newest first. One line each.
 
+- 2026-11-15. Pronunciation in writing (#45) shipped: `pronunciation` on
+  entries in CAPHI, the inventory from the CODA\* paper's Figure 2 in
+  shared/utils/caphi.ts, refused at input when a symbol is not in it; shown
+  under the form on the word and form pages; in the JSON, the CSV and the
+  Hugging Face snapshot; symbol table and rules at /pronunciation, linked
+  from the add and edit forms and the about page. Existing forms carry none
+  yet: speakers write them.
 - 2026-10-31. Short vowels (#47) shipped the same day: `form_vocalized` on
   entries, shown wherever a form is a title, asked for in both forms,
   validated to strip back to the bare form, in both exports; the 3,000

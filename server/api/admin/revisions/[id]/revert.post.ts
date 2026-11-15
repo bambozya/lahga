@@ -33,10 +33,10 @@ export default defineEventHandler(async (event) => {
         // inside `form`; splitForm sorts that out the way the migration did.
         const split = splitForm(d.form, d.formVocalized) ?? splitForm(d.form)!
         const [e] = await tx.update(schema.entries).set({
-          ...(dialect && { dialectId: dialect.id }), form: split.form, formVocalized: split.formVocalized, formNormalized: normalizeArabic(split.form), meaning: d.meaning ?? null, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
+          ...(dialect && { dialectId: dialect.id }), form: split.form, formVocalized: split.formVocalized, formNormalized: normalizeArabic(split.form), pronunciation: d.pronunciation ?? null, meaning: d.meaning ?? null, notes: d.notes ?? null, status: 'active', updatedAt: new Date(),
         }).where(eq(schema.entries.id, rev.targetId)).returning()
         if (!e) throw createError({ statusCode: 404, statusMessage: 'المدخل غير موجود' })
-        await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, formVocalized: e.formVocalized, meaning: e.meaning, notes: e.notes }, admin.id, reason)
+        await recordRevision(tx, 'entry', e.id, { dialect: d.dialect, form: e.form, formVocalized: e.formVocalized, pronunciation: e.pronunciation, meaning: e.meaning, notes: e.notes }, admin.id, reason)
         break
       }
       case 'example': {

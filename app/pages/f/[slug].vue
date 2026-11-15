@@ -79,7 +79,8 @@ useSeo({
             <b :lang="dialectTag(e.dialect.slug)">{{ e.form }}</b>
             <NuxtLink :to="`/d/${e.dialect.slug}`" rel="tag">{{ e.dialect.nameAr }}</NuxtLink>
           </dt>
-          <dd v-if="e.meaning || e.notes || e.examples.length">
+          <dd v-if="e.pronunciation || e.meaning || e.notes || e.examples.length">
+            <Pronunciation v-if="e.pronunciation" :value="e.pronunciation" />
             <p v-if="e.meaning">{{ e.meaning }}</p>
             <p v-if="e.notes"><small>{{ e.notes }}</small></p>
             <ul v-if="e.examples.length">

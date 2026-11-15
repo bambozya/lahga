@@ -3,6 +3,7 @@ import * as v from 'valibot'
 import { and, eq, sql } from 'drizzle-orm'
 import { useDb, schema, type Db } from '../db'
 import { isArabicOnly, normalizeArabic, splitForm } from '../../shared/utils/arabic'
+import { isCaphi, normalizeCaphi, unknownCaphi } from '../../shared/utils/caphi'
 import { NEW_ACCOUNT_MS, RATE_LIMITS } from '../../shared/config/rules'
 
 type User = typeof schema.users.$inferSelect
@@ -94,6 +95,17 @@ export const fields = {
   // The site's own forms send one field, harakat and all, and resolveForm()
   // splits it.
   formVocalized: optionalArabic('الكلمة بالتشكيل', 80),
+  // How the form is said, in CAPHI (shared/utils/caphi.ts). The one field
+  // that is not Arabic script: ASCII symbols from a closed inventory, so the
+  // check is membership, and the message names the symbols it did not know.
+  pronunciation: v.optional(v.pipe(
+    v.string(), v.transform(normalizeCaphi), v.maxLength(200, 'النطق طويل جداً (200 حرفاً كحد أقصى)'),
+    v.rawCheck(({ dataset, addIssue }) => {
+      if (dataset.typed && !isCaphi(dataset.value)) {
+        addIssue({ message: `النطق يُكتب برموز CAPHI، رمز لكل صوت وبينها مسافة (d i l w a 2 t i)؛ رموز غير معروفة: ${unknownCaphi(dataset.value).join('، ')}` })
+      }
+    }),
+  )),
   // Optional: the MSA headword already defines the sense (see entries.meaning).
   meaning: optionalArabic('المعنى', 400),
   notes: optionalArabic('الملاحظات', 400),

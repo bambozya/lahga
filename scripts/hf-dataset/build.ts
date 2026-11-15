@@ -62,7 +62,7 @@ for (const w of data.words) {
     const d = dialect.get(e.dialect)
     entries.push({
       headword: w.headword, kind: w.kind, definition: w.definition,
-      form: e.form, dialect: e.dialect, dialect_name: d?.name ?? null, dialect_group: group(e.dialect), language: e.language,
+      form: e.form, form_vocalized: e.form_vocalized, pronunciation: e.pronunciation, dialect: e.dialect, dialect_name: d?.name ?? null, dialect_group: group(e.dialect), language: e.language,
       meaning: e.meaning, notes: e.notes, needs_review: e.needs_review, examples: e.examples.length,
       entry_id: e.id, word_id: w.id, source: w.source,
     })

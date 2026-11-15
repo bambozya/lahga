@@ -45,6 +45,7 @@ export default defineEventHandler(async (event) => {
       id: l.entry.id,
       form: l.entry.form,
       formVocalized: l.entry.formVocalized,
+      pronunciation: l.entry.pronunciation,
       meaning: l.entry.meaning,
       notes: l.entry.notes,
       score: l.entry.score,

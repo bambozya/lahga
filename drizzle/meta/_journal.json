@@ -134,6 +134,13 @@
       "when": 1793460476543,
       "tag": "0018_form_vocalized",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1794739233928,
+      "tag": "0019_pronunciation",
+      "breakpoints": true
     }
   ]
 }

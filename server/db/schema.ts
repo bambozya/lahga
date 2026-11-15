@@ -117,6 +117,11 @@ export const entries = pgTable('entries', {
   // never heard it. Optional; stripped of its marks it must equal `form`
   // (splitForm in shared/utils/arabic.ts). Shown wherever the form is a title.
   formVocalized: text('form_vocalized'),
+  // How the form is said, in CAPHI (shared/utils/caphi.ts): ASCII symbols
+  // with a space between sounds, `d i l w a 2 t i` for دلوقتي. Optional; only
+  // symbols from the inventory are accepted. What the script and the harakat
+  // cannot carry (a Moroccan short vowel, a Gulf ق said /g/) goes here.
+  pronunciation: text('pronunciation'),
   // Optional: the MSA word this entry links to already defines the sense. A
   // meaning is only worth writing when the dialect word says something the
   // headword does not — a narrower use, a different colour.

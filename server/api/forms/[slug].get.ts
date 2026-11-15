@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
     word: { id: number, slug: string | null, headword: string, definition: string | null, kind: string }
     draft: boolean
     entries: {
-      id: number, form: string, formVocalized: string | null, meaning: string | null, notes: string | null, draft: boolean, rank: number, score: number
+      id: number, form: string, formVocalized: string | null, pronunciation: string | null, meaning: string | null, notes: string | null, draft: boolean, rank: number, score: number
       dialect: { slug: string, nameAr: string, top: boolean }
       examples: { id: number, text: string, gloss: string | null }[]
     }[]
@@ -49,7 +49,7 @@ export default defineEventHandler(async (event) => {
       }).get(l.word.id)!
       if (!l.needsReview) s.draft = false
       s.entries.push({
-        id: e.id, form: e.form, formVocalized: e.formVocalized, meaning: e.meaning, notes: e.notes, draft: l.needsReview,
+        id: e.id, form: e.form, formVocalized: e.formVocalized, pronunciation: e.pronunciation, meaning: e.meaning, notes: e.notes, draft: l.needsReview,
         rank: wilson(e.upvotes, e.downvotes), score: e.score,
         // A region (مصري) is named before a city inside it (قاهري).
         dialect: { slug: e.dialect.slug, nameAr: e.dialect.nameAr, top: e.dialect.parentId === null },

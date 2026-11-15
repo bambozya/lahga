@@ -13,7 +13,7 @@ const headword = String(route.query.headword ?? '').trim().slice(0, 80)
 const dialect = /^[a-z0-9-]{2,60}$/.test(String(route.query.dialect ?? '')) ? String(route.query.dialect) : ''
 const form = reactive({
   headword, definition: '', kind: 'word' as 'word' | 'phrase' | 'proverb',
-  dialect, form: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
+  dialect, form: '', pronunciation: '', meaning: '', notes: '', exampleText: '', exampleGloss: '',
 })
 const existingSlug = ref<string | null>(null)
 const { busy, error, run } = useForm(async () => {
@@ -21,7 +21,7 @@ const { busy, error, run } = useForm(async () => {
   try {
     const { slug } = await $fetch('/api/words', { method: 'POST', body: {
       headword: form.headword, definition: form.definition, kind: form.kind,
-      dialect: form.dialect, form: form.form, meaning: form.meaning, notes: form.notes,
+      dialect: form.dialect, form: form.form, pronunciation: form.pronunciation, meaning: form.meaning, notes: form.notes,
       example: form.exampleText.trim() ? { text: form.exampleText, gloss: form.exampleGloss } : undefined,
     } })
     await navigateTo(`/w/${slug}?added=1`)
@@ -74,6 +74,11 @@ const { busy, error, run } = useForm(async () => {
             <label for="form">الكلمة كما تُقال في لهجتك</label>
             <input id="form" v-model="form.form" required maxlength="80" />
             <small>اكتبها بالتشكيل إن استطعت: «يِغَنِّج» لا «يغنج»، فيقرؤها من لم يسمعها قط. البحث والروابط يتجاهلان الحركات.</small>
+          </p>
+          <p>
+            <label for="pronunciation">النطق <small>(اختياري)</small></label>
+            <input id="pronunciation" v-model="form.pronunciation" class="caphi" dir="ltr" maxlength="200" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="d i l w a 2 t i" />
+            <small>رمز لاتيني لكل صوت وبينها مسافة: «دلوقتي» <code dir="ltr">d i l w a 2 t i</code>. <NuxtLink to="/pronunciation">جدول الرموز</NuxtLink>.</small>
           </p>
           <p>
             <label for="meaning">المعنى <small>(اختياري)</small></label>
