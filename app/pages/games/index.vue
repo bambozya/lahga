@@ -32,10 +32,10 @@ useSeo({
         </dd>
       </div>
       <div>
-        <!-- Not a game: help. Icon: Material Symbols (Apache 2.0): volunteer_activism, a hand offering. -->
+        <!-- Help with the shape of a game (#51): rounds, a streak, a line to share. Icon: Material Symbols (Apache 2.0): volunteer_activism, a hand offering. -->
         <dt><NuxtLink to="/check"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M160-80v-440h160v440H160Zm240 0v-360h-40v-80h200v80h-40v360h-120Zm120-320v-80h200v80H520Zm0-160v-80h200v80H520Zm-40-200 100-100 100 100-100 100-100-100Z" /></svg>هل تُقال هكذا؟</NuxtLink></dt>
         <dd>
-          <p>ليست لعبة: كلمات من لهجتك لم يؤكدها متحدّث بعد، واحدة واحدة. نعم، لا، لا أعرف. بلا حساب.</p>
+          <p>جولة من عشر كلمات من لهجتك لم يؤكدها متحدّث بعد: نعم، لا، لا أعرف. جوابك يثبّتها في المعجم.</p>
         </dd>
       </div>
     </dl>

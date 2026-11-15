@@ -78,6 +78,9 @@ export const GUEST_WEIGHT = 0.5
  */
 export const CHECK_BATCH = 10
 
+/** Cards in one round of «هل تُقال هكذا؟» (#51): few enough to finish in a minute, enough to matter. */
+export const CHECK_ROUND = 10
+
 /** How long an account counts as new, and so falls under RATE_LIMITS.contributeNew. */
 export const NEW_ACCOUNT_MS = 7 * DAY
 
